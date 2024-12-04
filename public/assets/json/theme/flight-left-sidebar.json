@@ -1,0 +1,116 @@
+{
+  "airlines": [
+    {
+      "id": 1,
+      "airlineName": "rica airlines",
+      "title": "student new offer",
+      "subTitle": "enjoy extra baggage allowance"
+    },
+    {
+      "id": 2,
+      "airlineName": "airlines",
+      "title": "10% bonus cashback",
+      "subTitle": "enjoy extra baggage allowance"
+    },
+    {
+      "id": 3,
+      "airlineName": "rica airlines",
+      "title": "student new offer",
+      "subTitle": "enjoy extra baggage allowance"
+    },
+    {
+      "id": 4,
+      "airlineName": "airlines",
+      "title": "10% bonus cashback",
+      "subTitle": "enjoy extra baggage allowance"
+    },
+    {
+      "id": 5,
+      "airlineName": "rica airlines",
+      "title": "student new offer",
+      "subTitle": "enjoy extra baggage allowance"
+    }
+  ],
+  "destination": [
+    {
+      "id": 1,
+      "cityName": "dubai",
+      "price": 220,
+      "image": "assets/images/tour/slider/1.jpg",
+      "tag": true,
+      "tagText": "Recommended"
+    },
+    {
+      "id": 2,
+      "cityName": "abu dhabi",
+      "price": 220,
+      "image": "assets/images/tour/slider/2.jpg",
+      "tag": false
+    },
+    {
+      "id": 3,
+      "cityName": "dubai",
+      "price": 220,
+      "image": "assets/images/tour/slider/6.jpg",
+      "tag": false
+    },{
+      "id": 4,
+      "cityName": "sydney",
+      "price": 220,
+      "image": "assets/images/tour/slider/4.jpg",
+      "tag": false
+    },
+    {
+      "id": 5,
+      "cityName": "spain",
+      "price": 220,
+      "image": "assets/images/tour/slider/9.jpg",
+      "tag": true,
+      "tagText": "certified"
+    }
+  ],
+  "deals": [
+    {
+      "id": 1,
+      "from": "paris",
+      "to": "dubai",
+      "price": 250,
+      "date": "18 march, 2019"
+    },
+    {
+      "id": 2,
+      "from": "dubai",
+      "to": "sydney",
+      "price": 250,
+      "date": "18 march, 2019"
+    },
+    {
+      "id": 3,
+      "from": "bali",
+      "to": "dubai",
+      "price": 250,
+      "date": "18 march, 2019"
+    },
+    {
+      "id": 4,
+      "from": "newyork",
+      "to": "paris",
+      "price": 250,
+      "date": "18 march, 2019"
+    },
+    {
+      "id": 5,
+      "from": "paris",
+      "to": "dubai",
+      "price": 250,
+      "date": "18 march, 2019"
+    },
+    {
+      "id": 6,
+      "from": "dubai",
+      "to": "sydney",
+      "price": 250,
+      "date": "18 march, 2019"
+    }
+  ]
+}

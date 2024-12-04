@@ -1,0 +1,93 @@
+@if(imageSlider){
+  <div class="slide-1">
+    <owl-carousel-o [options]="options">
+      @for(image of images.images; track image){
+        @if(image.fileType == 'image'){
+          <ng-template carouselSlide>
+            <div>
+              <img [src]="image.url" class="img-fluid blur-up lazyload" alt="hotel-image">
+            </div>
+          </ng-template>
+        }
+      }
+    </owl-carousel-o>
+  </div>
+}
+
+<!-- thumbnail image -->
+@if(thumbnailImages){
+  <div class="slider-for">
+    <owl-carousel-o [options]="options" #owlCar>
+      @for(image of images.images; track image){
+        @if(image.fileType == 'image'){
+          <ng-template carouselSlide [id]="image.url" [width]="430">
+            <a href="javascript:void(0)" class="bg-size" [style.background-image]="'url('+image.url+')'" [routerLink]="['/hotel/single-page/image-box']">
+              <img [src]="image.url" class="bg-img" alt="property-image" style="display: none;" />
+            </a>
+          </ng-template>
+        }
+      }
+    </owl-carousel-o>
+  </div>
+  <div class="slider-nav">
+    <owl-carousel-o [options]="thumbnailCarouselOptions">
+      @for(image of images.images; track image; let i = $index){
+        @if(image.fileType == 'image'){
+          <ng-template carouselSlide [id]="image.url+i" [width]="30">
+            <a (click)="owlCar.to(image.url); changeImage(image.url+i)">
+              <div>
+                <img [src]="image.url" class="img-fluid" alt="property-image">
+              </div>
+            </a>
+          </ng-template>
+        }
+      }
+    </owl-carousel-o>
+  </div>
+}
+
+<!-- thumbnail video -->
+@if(thumbnailVideo){
+  <div class="slider-for">
+    <owl-carousel-o [options]="options" #owlCar2>
+      @for(image of images.images; track image){
+        <ng-template carouselSlide>
+          @if(image.fileType == 'video'){
+            <div>
+              <div id="block" style="width: 100%; height: 280px; position: relative;">
+                <div style="position: absolute; z-index: -1; inset: 0px; overflow: hidden; background-size: cover; background-color: transparent; background-repeat: no-repeat; background-position: 0% 50%; background-image: none;">
+                  <video autoplay="" loop="" muted="" style="margin: auto; position: absolute; z-index: -1; top: 50%; left: 0%; transform: translate(0%, -50%); visibility: visible; opacity: 1; width: auto; height: 282px;">
+                    <source [src]="image.url" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+          }@else {
+            <a href="javascript:void(0)" class="bg-size" [style.background-image]="'url('+image.url+')'" [routerLink]="['/hotel/single-page/image-box']">
+                <img [src]="image.url" class="bg-img" alt="property-image" style="display: none;" />
+            </a>
+          }
+        </ng-template>
+      }
+    </owl-carousel-o>
+  </div>
+  <div class="slider-nav">
+    <owl-carousel-o [options]="thumbnailCarouselOptions">
+      @for(image of images.images; track image; let i = $index){
+        <ng-template carouselSlide>
+            <a (click)="owlCar2.to(image.url); changeImage(image.url+i)">
+              @if(image.fileType == 'video' && thumbnailVideo == true){
+                <div>
+                  <img [src]="'assets/video/hotel.jpg'" class="img-fluid" alt="property-image">
+                </div>
+              }@else {
+                <div>
+                  <img [src]="image.url" class="img-fluid" alt="property-image">
+                </div>
+              }
+            </a>
+        </ng-template>
+      }
+    </owl-carousel-o>
+  </div>
+}

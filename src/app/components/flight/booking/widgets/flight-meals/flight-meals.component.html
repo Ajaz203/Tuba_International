@@ -1,0 +1,27 @@
+<div class="order-section">
+  <div class="order-items">
+    @for(details of flightMeals; track details){
+      <div class="items" [class.non-veg]="details.mealType == 'non-veg'" [class.veg]="details.mealType == 'veg'">
+        <h6>{{ details.title }}</h6>
+        <p>{{ details.description }}</p>
+        <h5>{{ details.price | currencyPipe: hotelService.currency }}</h5>
+        <div class="addtocart_btn">
+          <button class="add-button add_cart" title="Add to cart" tabindex="0" (click)="showTouchSpin(details.id)">
+            add
+          </button>
+          <div class="qty-box cart_qty" [class.open]="details.active">
+            <div class="input-group">
+              <button type="button" class="btn qty-left-minus" (click)="changeValue(details.id, -1)">
+                <i class="fa fa-minus" aria-hidden="true"></i>
+              </button>
+              <input type="text" name="quantity" class="form-control input-number qty-input" value="{{ details.value }}" tabindex="0">
+              <button type="button" class="btn qty-right-plus" (click)="changeValue(details.id, 1)">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

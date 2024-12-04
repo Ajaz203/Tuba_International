@@ -1,0 +1,15 @@
+<section class="breadcrumb-section order-food-section pt-0 bg-size" [style.background-image]="'url(assets/images/restaurant/breadcrumb.jpg)'">
+  <img src="assets/images/restaurant/breadcrumb.jpg" class="bg-img img-fluid blur-up lazyload" alt="background-image" style="display: none;">
+  <div class="breadcrumb-content restaurant-name">
+    <div>
+      <img src="assets/images/restaurant/logo.png" class="img-fluid blur-up lazyload" alt="restaurant-logo">
+      <h3>italian restro</h3>
+      <h6>Fast Food, Cafe, Italian</h6>
+      <ul>
+        <li>4.5 Rating</li>
+        <li>30 mins</li>
+        <li>{{ 25 | currencyPipe: hotelService.currency }} for 2</li>
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+<app-header [headerClass]="'inner-page overlay-black'"></app-header>
+
+<app-breadcrumbs [type]="'tour'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child" ></app-breadcrumbs>
+
+<section class="small-section bg-inner">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <app-grid-panel [type]="'tour'" (selectedTabValue)="getTabValue($event)" [filterClass]="true"></app-grid-panel>
+      </div>
+      <div class="col-xl-12 onclick-map" [class.show]="tourService.isOpenFindTours">
+        <div class="book-table single-table bg-inner">
+          <div class="table-form classic-form">
+            <app-search-box [type]="'classic'"></app-search-box>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <app-filter [type]="'tour'"></app-filter>
+      </div>
+      <div class="col-lg-9 ratio3_2">
+        <app-details [type]="'tour'" [selectedTabValue]="selectedTabValue" [gridType]="'3-grid'" [responsiveLatestFilter]="true" [includeText]="false"></app-details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout [loaderType]="'skeleton'" [skeletonType]="'tour'" [filterType]="'left'" [gridType]="'3-grid'" [filter]="true"></app-layout>

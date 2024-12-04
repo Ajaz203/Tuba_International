@@ -1,0 +1,78 @@
+@for(items of restaurantOrders; track items){
+  <div id="{{ items.value }}" class="order-section" [class.top-section]="items.children">
+    @if(items.children){
+      <h4>{{items.title}}</h4>
+      @for(subItem of items.children; track subItem){
+        <div id="{{ subItem.value }}" class="order-section">
+          <div class="order-title">
+            <h5>{{ subItem.title }}</h5>
+            @if(subItem.totalItems){
+              <h6>{{ subItem.totalItems }} items</h6>
+            }
+          </div>
+          <div class="order-items">
+            @for(menu of subItem.items; track menu){
+              <div class="items" [ngClass]="{ 'veg' : menu.mealType == 'veg', 'non-veg' : menu.mealType == 'non-veg'}">
+                <h6>{{ menu.title }}</h6>
+                <p>{{ menu.description }}</p>
+                <h5>{{ menu.price | currencyPipe: hotelService.currency }}</h5>
+                <div class="addtocart_btn">
+                  <button class="add_cart" title="Add to cart" (click)="open(menu)">
+                    add
+                    @if(menu.customized){
+                      * <span>customized</span>
+                    }
+                  </button>
+                  <div class="qty-box cart_qty qty__box" [class.open]="menu.active">
+                    <div class="input-group">
+                      <button type="button" class="btn qty-left-minus" (click)="setValue(menu, -1)">
+                        <i class="fa fa-minus" aria-hidden="true"></i>
+                      </button>
+                      <input type="text" name="quantity" class="form-control input-number qty-input" value="{{ menu.itemsValue }}" tabindex="0">
+                      <button type="button" class="btn qty-right-plus" (click)="setValue(menu, 1)">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    }@else {
+      <div class="order-title">
+        <h5>{{ items.title }}</h5>
+        <h6>{{ items.totalItems }} items</h6>
+      </div>
+      <div class="order-items">
+        @for(menu of items.items; track menu){
+        <div class="items" [ngClass]="{ 'veg' : menu.mealType == 'veg', 'non-veg' : menu.mealType == 'non-veg'}">
+          <h6>{{ menu.title }}</h6>
+          <p>{{ menu.description }}</p>
+          <h5>{{ menu.price | currencyPipe: hotelService.currency }}</h5>
+          <div class="addtocart_btn">
+            <button class="add_cart" title="Add to cart" (click)="open(menu)">
+              add
+              @if(menu.customized){
+              * <span>customized</span>
+              }
+            </button>
+            <div class="qty-box cart_qty qty__box" [class.open]="menu.active">
+              <div class="input-group">
+                <button type="button" class="btn qty-left-minus" (click)="setValue(menu, -1)">
+                  <i class="fa fa-minus" aria-hidden="true"></i>
+                </button>
+                <input type="text" name="quantity" class="form-control input-number qty-input" value="{{ menu.itemsValue }}" tabindex="0">
+                <button type="button" class="btn qty-right-plus" (click)="setValue(menu, 1)">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    }
+  </div>
+}

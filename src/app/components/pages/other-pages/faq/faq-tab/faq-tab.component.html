@@ -1,0 +1,27 @@
+<div class="faq-tab">
+  <ul class="nav nav-tabs" id="top-tab" role="tablist">
+    @for(tabs of tabs; track tabs){
+      <li class="nav-item">
+        <a class="nav-link" [class.active]="activeTab == tabs.value" href="javascript:void(0)" (click)="changeTab(tabs.value)">{{ tabs.title }}</a>
+      </li>
+    }
+  </ul>
+</div>
+
+<div class="single-section mt-3 d-none d-lg-block">
+  <div class="single-sidebar p-0">
+    <div class="newsletter-sec">
+      <div>
+        <h4 class="title">always first</h4>
+        <p>Be the first to find out latest deals and exclusive offers and get 15% off
+          your first order.</p>
+        <form>
+          <input type="email" id="email1" class="form-control" placeholder="Enter your email">
+          <div class="button">
+            <a href="javascript:void(0)" class="btn btn-solid ">be the first</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

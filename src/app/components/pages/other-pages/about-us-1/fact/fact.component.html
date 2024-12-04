@@ -1,0 +1,15 @@
+<div class="row">
+  @for(details of fact; track details){
+    <div class="col-lg-3 col-6">
+      <div class="facts-box">
+        <div>
+          <div class="img">
+            <img [src]="details.image" class="img-fluid blur-up lazyload" alt="icon">
+          </div>
+          <h3 class="counter">{{ details.count }}</h3>
+          <h6>{{ details.title }}</h6>
+        </div>
+      </div>
+    </div>
+  }
+</div>

@@ -1,0 +1,26 @@
+<app-header [headerClass]="'light_header'"></app-header>
+
+<app-flight-booking-breadcrumb [bg_image]="bg_image" [parent]="parent" [subParent]="subParent" [child]="child"></app-flight-booking-breadcrumb>
+
+<section class="small-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <app-booking [title]="true"></app-booking>
+      </div>
+      <div class="col-lg-4 res-margin">
+        <div class="sticky-cls-top">
+          <div class="review-section">
+            <div class="review_box">
+              <app-flight-travel-addons [title]="'booking summery'"></app-flight-travel-addons>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout></app-layout>

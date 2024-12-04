@@ -1,0 +1,32 @@
+<form>
+  @if(type == 'register'){
+    <div class="form-group">
+      <label for="name">Full name</label>
+      <input type="email" class="form-control" id="name" placeholder="Enter your name">
+    </div>
+  }
+  <div class="form-group">
+    <label for="exampleInputEmail1">{{ type == 'register' ? 'Email address' : 'user name or Email address'}}</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    @if(type == 'login'){
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    }
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  @if(type == 'login'){
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">remember me</label>
+    </div>
+  }
+  <div class="button-bottom">
+    <button type="submit" class="w-100 btn btn-solid">{{ type == 'register' ? 'create account' : 'login' }}</button>
+    <div class="divider">
+      <h6>or</h6>
+    </div>
+    <button type="submit" class="w-100 btn btn-solid btn-outline">{{ type == 'register' ? 'login' : 'create account' }}</button>
+  </div>
+</form>

@@ -1,0 +1,62 @@
+<app-header [headerClass]="'overlay-black'"></app-header>
+
+<app-breadcrumbs [type]="'tour-single-page'" [bg_image]="bg_image" [title]="title" [days]="7" [date]="date" [tourVideo]="true"></app-breadcrumbs>
+
+<section class="single-section small-section bg-inner">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 col-lg-8">
+        <div class="description-section tab-section">
+          <div class="menu-top menu-up">
+            <app-tour-tabs (tabValue)="getTabValue($event)" [type]="'tab'"></app-tour-tabs>
+            <div class="description-details tab-content" id="top-tabContent">
+              <div class="menu-part tab-pane fade show active" id="highlight" [class.about]="activeTab == 'highlight' || activeTab == 'policy'" [class.accordion]="activeTab == 'itinerary'" [class.map]="activeTab == 'location'" [class.review]="activeTab == 'reviews'">
+                @if(tourDetail){
+                  @for(details of tourDetail.tour; track details){
+                    @if(activeTab == 'highlight' && details.highlight){
+                      <app-tour-highlight [highlights]="details.highlight"></app-tour-highlight>
+                    }
+                    @if(activeTab == 'itinerary' && details.itinerary){
+                      <app-tour-itinerary [itinerary]="details.itinerary"></app-tour-itinerary>
+                    }
+                    @if(activeTab == 'gallery' && details.gallery){
+                      <app-tour-gallery [gallery]="details.gallery"></app-tour-gallery>
+                    }
+                    @if(activeTab == 'accommodations' && details.accommodation){
+                      <app-tour-accommodation [accommodations]="details.accommodation"></app-tour-accommodation>
+                    }
+                    @if(activeTab == 'location' && details.location){
+                      <app-tour-location [location]="details.location"></app-tour-location>
+                    }
+                    @if(activeTab == 'reviews' && details.review){
+                      <app-tour-review [review]="details.review"></app-tour-review>
+                    }
+                    @if(activeTab == 'policy' && details.policy){
+                      <app-tour-policy [policy]="details.policy"></app-tour-policy>
+                    }
+                  }
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="special-section related-box ratio3_2 grid-box">
+          <div class="slider-3 no-arrow">
+            <app-tour-gallery-slider></app-tour-gallery-slider>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-4 ">
+        <div class="sticky-cls-top">
+          <app-tour-single-page-filter></app-tour-single-page-filter>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-tour-single-page-modal></app-tour-single-page-modal>
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout [loaderType]="'skeleton'" [skeletonType]="'single-page'" [tour]="true"></app-layout>

@@ -1,0 +1,21 @@
+<div class="footer-title">
+  <h5>top places</h5>
+</div>
+<div class="footer-content">
+  <div class="footer-place">
+    <div class="row">
+      @for(data of topPlacesData; track data){
+        <div class="col-4">
+          <div class="place rounded5">
+            <a href="javascript:void(0)" [routerLink]="['/page/portfolio/2-grid-title']">
+              <img [src]="data.image" class="img-fluid blur-up lazyload" alt="destination-image">
+              <div class="overlay">
+                <h6>{{ data.title }}</h6>
+              </div>
+            </a>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>

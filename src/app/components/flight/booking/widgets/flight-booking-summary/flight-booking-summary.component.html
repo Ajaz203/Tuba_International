@@ -1,0 +1,30 @@
+<div class="title-top">
+  <h5>booking summery</h5>
+</div>
+<div class="flight_detail">
+  <div class="summery_box">
+    <table class="table table-borderless">
+      <tbody>
+        <tr>
+          <td>adults (3 X {{ 2501 | currencyPipe: hotelService.currency }})</td>
+          <td>{{ 250 | currencyPipe: hotelService.currency }}</td>
+        </tr>
+        <tr>
+          <td>total taxes</td>
+          <td>{{ 25 | currencyPipe: hotelService.currency }}</td>
+        </tr>
+        <tr>
+          <td>Insurance</td>
+          <td>{{ 15 | currencyPipe: hotelService.currency }}</td>
+        </tr>
+        <tr>
+          <td>Convenience fee</td>
+          <td>{{ 18 | currencyPipe: hotelService.currency}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="grand_total">
+      <h5>grand total: <span>{{ 2500 | currencyPipe: hotelService.currency}}</span></h5>
+    </div>
+  </div>
+</div>

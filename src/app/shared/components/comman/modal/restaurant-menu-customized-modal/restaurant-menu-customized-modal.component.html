@@ -1,0 +1,59 @@
+<div class="modal-content ">
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalCenterTitle">Veg Cheese Quesadillas</h5>
+    <button type="button" class="btn-close"(click)=closeModal()></button>
+  </div>
+  <div class="modal-body">
+    <div class="size-option">
+      <div class="item">
+        <h5>Size</h5>
+        <form>
+          <div class="form-check">
+            <input class="form-check-input radio_animated" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              15 Cm [6 Inches]
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input radio_animated" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+            <label class="form-check-label" for="exampleRadios2">
+              30 Cm [12 Inches]
+            </label>
+          </div>
+        </form>
+      </div>
+      <div class="item">
+        <h5>Extra Toppings</h5>
+        <form>
+          <div class="form-check">
+            <input class="form-check-input checkbox_animated" type="checkbox" name="exampleRadios" id="cheese" value="cheese" checked>
+            <label class="form-check-label" for="cheese">
+              extra cheese ({{ 2 | currencyPipe: hotelService.currency }})
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input checkbox_animated" type="checkbox" name="exampleRadios" id="jalapeno" value="jalapeno">
+            <label class="form-check-label" for="jalapeno">
+              jalapeno ({{ 5 | currencyPipe: hotelService.currency }})
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input checkbox_animated" type="checkbox" name="exampleRadios" id="olive" value="olive">
+            <label class="form-check-label" for="olive">
+              olive
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input checkbox_animated" type="checkbox" name="exampleRadios" id="corn" value="corn">
+            <label class="form-check-label" for="corn">
+              golden corn ({{ 5 | currencyPipe: hotelService.currency }})
+            </label>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn add__button btn-solid" (click)="addToCart()">add to cart</button>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title">change phone no</h5>
+    <button type="button" class="btn-close" (click)="closeModal()"> </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="row">
+        <div class="form-group col-12">
+          <label for="ph-o">old phone no</label>
+          <input type="number" class="form-control" id="ph-o">
+        </div>
+        <div class="form-group col-12">
+          <label for="ph-n">enter new phone no</label>
+          <input type="number" class="form-control" id="ph-n">
+        </div>
+        <div class="form-group col-12">
+          <label for="ph-c">confirm your phone no</label>
+          <input type="number" class="form-control" id="ph-c">
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+    <button type="button" class="btn btn-solid">Save changes</button>
+  </div>
+</div>

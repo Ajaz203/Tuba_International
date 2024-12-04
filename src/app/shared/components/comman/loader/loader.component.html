@@ -1,0 +1,24 @@
+
+@if(loaderType == 'basic'){
+  <app-loader-one></app-loader-one>
+}
+
+@if(loaderType == 'simple'){
+  <app-loader-two></app-loader-two>
+}
+
+@if(loaderType == 'skeleton'){
+  <app-skeleton-loader [skeletonType]="skeletonType" [gridType]="gridType" [filter]="filter" [filterType]="filterType" [mapFilter]="mapFilter" [mapSide]="mapSide" [list]="list" [grid]="grid" [withOutTopPage]="withOutTopPage" [breadcrumbSection]="breadcrumbSection" [hotel]="hotel" [tour]="tour" [tourClassicGallery]="tourClassicGallery" [flight]="flight" [map]="map" [horizontalFilter]="horizontalFilter" [restaurantBreadcrumb]="restaurantBreadcrumb"></app-skeleton-loader>
+}
+
+@if(loaderType == 'flight-loader'){
+  <app-flight-loader></app-flight-loader>
+}
+
+@if(loaderType == 'blog-skeleton'){
+  <app-blog-skeleton [skeletonType]="loaderType" [filterType]="filterType" [gridType]="gridType" [creativeList]="creativeList" [list]="list" [mix]="mix"></app-blog-skeleton>
+}
+
+@if(loaderType == 'blog-detail-skeleton'){
+  <app-blog-detail-page-skeleton [skeletonType]="loaderType" [filterType]="filterType"></app-blog-detail-page-skeleton>
+}

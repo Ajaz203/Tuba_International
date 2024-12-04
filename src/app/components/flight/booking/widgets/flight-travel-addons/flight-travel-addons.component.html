@@ -1,0 +1,43 @@
+<div class="title-top">
+  <h5>{{ title }}</h5>
+</div>
+<div class="flight_detail">
+  <div class="summery_box">
+    <table class="table table-borderless">
+      <tbody>
+        <tr>
+          <td>flight fare</td>
+          <td>{{ 2500 | currencyPipe: hotelService.currency }}</td>
+        </tr>
+        <tr class="title">
+          <td>additional baggage</td>
+        </tr>
+        <tr>
+          <td>additional 15kg</td>
+          <td>+ {{ 25 | currencyPipe: hotelService.currency}}</td>
+        </tr>
+        <tr class="title">
+          <td>inflight meals</td>
+        </tr>
+        <tr>
+          <td>veg meal X (1)</td>
+          <td>+ {{ 18 | currencyPipe: hotelService.currency}}</td>
+        </tr>
+        <tr>
+          <td>non-veg meal X (1)</td>
+          <td>+ {{ 18 | currencyPipe: hotelService.currency}}</td>
+        </tr>
+        <tr class="title">
+          <td>seats</td>
+        </tr>
+        <tr>
+          <td>seat(10D)</td>
+          <td>+ {{ 5 | currencyPipe: hotelService.currency }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="grand_total">
+      <h5>grand total: <span>{{ 2750 | currencyPipe: hotelService.currency }}</span></h5>
+    </div>
+  </div>
+</div>

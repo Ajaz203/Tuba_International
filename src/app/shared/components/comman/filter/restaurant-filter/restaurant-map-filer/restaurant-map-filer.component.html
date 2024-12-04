@@ -1,0 +1,25 @@
+<div class="collection-collapse-block border-bottom-0 open">
+  <h6 class="collapse-block-title">hotels</h6>
+  <div class="collection-collapse-block-content pb-0">
+    <div class="sidebar-hotels">
+      @for(details of restaurants; track details){
+        <div class="hotel-box" data-class="first">
+          <div class="img-left">
+            <img [src]="details.image" class="img-fluid blur-up lazyload" alt="restaurant-dish-image">
+          </div>
+          <div class="content-right">
+            <a href="javascript:void(0)">
+              <h5>{{ details.title }}</h5>
+            </a>
+            <div class="rating">
+              <ngb-rating [rate]="details.rating"></ngb-rating>
+            </div>
+            <div class="price">
+              {{ details.price | currencyPipe: hotelService.currency }} <span>/ cost per two</span>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>

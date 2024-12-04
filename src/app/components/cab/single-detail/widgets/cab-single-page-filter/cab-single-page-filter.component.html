@@ -1,0 +1,33 @@
+<div class="selection-section flight-search">
+  <h4 class="title">book your ride</h4>
+  <div class="flight-search-detail">
+    <form>
+      <div class="form-group">
+        <label>pick up</label>
+        <input type="text" class="form-control open-select" id="exampleInputEmail1" placeholder="pick up">
+        <img src="assets/images/icon/from.png" class="img-fluid blur-up lazyload" alt="pickup-icon">
+      </div>
+      <div class="form-group">
+        <label>drop off</label>
+        <input type="text" class="form-control open-select" placeholder="drop off">
+        <img src="assets/images/icon/location.png" class="img-fluid blur-up lazyload" alt="location-icon">
+      </div>
+      <div class="form-group">
+        <label>pick up date</label>
+        <input class="form-control" placeholder="Depart Date" name="dp" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" />
+      </div>
+      <div class="form-group">
+        <label>pick up time</label>
+        <input class="form-control" placeholder="Time" [owlDateTimeTrigger]="dt4" [owlDateTime]="dt4">
+        <owl-date-time [pickerType]="'timer'" #dt4></owl-date-time>
+      </div>
+      <div class="form-group">
+        <label>drop off date</label>
+        <input class="form-control" placeholder="Return Date" name="dp" ngbDatepicker #d2="ngbDatepicker" (click)="d2.toggle()" />
+      </div>
+      <div class="search-btn">
+        <a href="javascript:void(0)" class="btn btn-solid color1">book now</a>
+      </div>
+    </form>
+  </div>
+</div>

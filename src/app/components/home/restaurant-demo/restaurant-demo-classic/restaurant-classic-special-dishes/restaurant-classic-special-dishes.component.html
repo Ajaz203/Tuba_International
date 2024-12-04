@@ -1,0 +1,54 @@
+<section class=" category-section section-b-space ratio3_2">
+  <div class="container">
+    <div class="title-3" [class.rounded]="rounded">
+      <span class="title-label">best</span>
+      <h2>our special dishes<span>special</span></h2>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="slide-3 no-arrow">
+          @if(dishes){
+            <owl-carousel-o [options]="options">
+              @for(dishes of dishes; track dishes){
+                <ng-template carouselSlide>
+                  <a href="javascript:void(0)" [routerLink]="['/restaurant/listing/grid-view/2-grid']">
+                    <div class="category-box">
+                      <div class="side-effect"></div>
+                      <div>
+                        <img [src]="dishes.categoryImage" alt="dish-image" class="img-fluid blur-up lazyload bg-img">
+                        <div class="overlay"></div>
+                      </div>
+                      <div class="top-bar">
+                        @if(dishes.tag){
+                          <span class="offer">{{ dishes.tagTitle }}</span>
+                        }
+                        <h5><del>{{ dishes.price | currencyPipe: hotelService.currency }}</del> {{ dishes.discountPrice | currencyPipe: hotelService.currency }}</h5>
+                      </div>
+                      <div class="like-cls">
+                        <i class="fas fa-heart"><span class="effect"></span></i>
+                      </div>
+                      <div class="bottom-bar">
+                        <div class="top">
+                          <h5>{{ dishes.categoryTitle }}</h5>
+                          <div class="rating">
+                            @if(dishes.rating){
+                              <ngb-rating [rate]="dishes.rating"></ngb-rating>
+                            }
+                          </div>
+                          @if(dishes.time){
+                            <h6>{{ dishes.time }}</h6>
+                          }
+                        </div>
+                        <p>{{ dishes.categoryDescription }}</p>
+                      </div>
+                    </div>
+                  </a>
+                </ng-template>
+              }
+            </owl-carousel-o>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

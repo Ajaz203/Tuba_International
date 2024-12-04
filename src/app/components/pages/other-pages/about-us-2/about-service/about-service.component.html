@@ -1,0 +1,22 @@
+<div class="row service-section color-svg">
+  @for(details of services; track details){
+    <div class="col-lg-4">
+      <div class="service-box wow fadeInUp">
+        <div>
+          <div class="service-icon">
+            <svg-icon [src]="details.icon"></svg-icon>
+          </div>
+          <h3>{{ details.title }}</h3>
+          <p>{{ details.description }}</p>
+          <div class="lower-section">
+            <div class="rating">
+              <ngb-rating [rate]="details.rating"></ngb-rating>
+            </div>
+            <h6>{{ details.subTitle }}</h6>
+          </div>
+          <a href="javascript:void(0)" class="btn btn-curve btn-lower color1">learn more</a>
+        </div>
+      </div>
+    </div>
+  }
+</div>

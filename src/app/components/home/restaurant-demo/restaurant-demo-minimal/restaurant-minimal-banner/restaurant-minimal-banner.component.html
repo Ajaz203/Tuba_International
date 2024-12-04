@@ -1,0 +1,23 @@
+<section class="p-t-0 section-b-space ratio_40">
+  <div class="container">
+    <div class="row partition2">
+      @for(banner of banner; track banner){
+        <div class="col-md-6">
+          <a href="javascript:void(0)">
+            <div class="collection-banner" [ngClass]="{ 'p-left text-start' : banner.left == true, 'p-right text-end' : banner.right == true}">
+              <div class="img-part bg-size" [style.background-image]="'url('+ banner.image +')'">
+                <img [src]="banner.image" class="img-fluid blur-up lazyload bg-img" alt="banner" style="display: none;">
+              </div>
+              <div class="contain-banner">
+                <div>
+                  <h4>{{ banner.title }}</h4>
+                  <h2>{{ banner.subTitle }}</h2>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+<div class="title-top">
+  <h5>booking summery</h5>
+</div>
+<div class="flight_detail">
+  <div class="summery_box">
+    <table class="table table-borderless">
+      <tbody>
+        <tr>
+          <td>Itinerary :</td>
+          <td>Paris > Toulouse</td>
+        </tr>
+        <tr>
+          <td>pickup date:</td>
+          <td>10/01/2019, 11.35pm</td>
+        </tr>
+        <tr>
+          <td>return date:</td>
+          <td>14/01/2019</td>
+        </tr>
+        <tr>
+          <td>car type</td>
+          <td>Fiat Chrysler</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="grand_total">
+      <h5>total fare: <span>{{ 1250 | currencyPipe: hotelService.currency }}</span></h5>
+    </div>
+  </div>
+</div>

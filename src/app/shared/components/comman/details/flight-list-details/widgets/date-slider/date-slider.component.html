@@ -1,0 +1,16 @@
+<div class="fare-6">
+  <owl-carousel-o [options]="options">
+    @for(dates of dateSlider; track dates){
+      <ng-template carouselSlide>
+        <div>
+          <a href="javascript:void(0)">
+            <div class="fare-box" [class.active]="dates.active">
+              <h5 class="date">{{ dates.date }}</h5>
+              <h6 class="fare">{{ dates.price | currencyPipe: hotelService.currency }}</h6>
+            </div>
+          </a>
+        </div>
+      </ng-template>
+    }
+  </owl-carousel-o>
+</div>

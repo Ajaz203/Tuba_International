@@ -1,0 +1,101 @@
+{
+  "exploreThemes": [
+    {
+      "id": 1,
+      "title": "family",
+      "image": "assets/images/tour/vector/1.jpg",
+      "destination": 100
+    },
+    {
+      "id": 2,
+      "title": "honeymoon",
+      "image": "assets/images/tour/vector/2.jpg",
+      "destination": 15
+    },
+    {
+      "id": 3,
+      "title": "friends",
+      "image": "assets/images/tour/vector/3.jpg",
+      "destination": 50
+    },
+    {
+      "id": 4,
+      "title": "solo traveller",
+      "image": "assets/images/tour/vector/4.jpg",
+      "destination": 55
+    },
+    {
+      "id": 5,
+      "title": "adventure",
+      "image": "assets/images/tour/vector/5.jpg",
+      "destination": 25
+    },
+    {
+      "id": 6,
+      "title": "nature",
+      "image": "assets/images/tour/vector/6.jpg",
+      "destination": 15
+    }
+  ],
+  "booking": [
+    {
+      "id": 1,
+      "title": "explore",
+      "image": "assets/images/tour/vector/13.png"
+    },
+    {
+      "id": 2,
+      "title": "Get Quotes",
+      "image": "assets/images/tour/vector/14.png"
+    },
+    {
+      "id": 3,
+      "title": "customize",
+      "image": "assets/images/tour/vector/15.png"
+    },
+    {
+      "id": 4,
+      "title": "book & enjoy",
+      "image": "assets/images/tour/vector/16.png"
+    }
+  ],
+  "popularDestination": [
+    {
+      "id": 1,
+      "countryName": "south africa",
+      "image": "assets/images/tour/vector/8.jpg",
+      "price": 5000
+    },
+    {
+      "id": 2,
+      "countryName": "india",
+      "image": "assets/images/tour/vector/7.jpg",
+      "price": 10000
+    },
+    {
+      "id": 3,
+      "countryName": "australia",
+      "image": "assets/images/tour/vector/9.jpg",
+      "price": 5000
+    },
+    {
+      "id": 4,
+      "countryName": "europe",
+      "image": "assets/images/tour/vector/10.jpg",
+      "price": 15000
+    },
+    {
+      "id": 5,
+      "countryName": "america",
+      "image": "assets/images/tour/vector/11.jpg",
+      "price": 5000
+    },
+    {
+      "id": 6,
+      "countryName": "japan",
+      "image": "assets/images/tour/vector/12.jpg",
+      "price": 10000
+    }
+  ],
+  "blog": [5,6,7]
+}

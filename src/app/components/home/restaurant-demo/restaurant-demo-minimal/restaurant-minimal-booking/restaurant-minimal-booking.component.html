@@ -1,0 +1,39 @@
+<section class="section-b-space process-steps parallax-img bg-size" [style.background-image]="'url(assets/images/restaurant/bg-4.jpg)'">
+  <img src="assets/images/restaurant/bg-4.jpg" class="img-fluid blur-up lazyload bg-img" alt="background-image" style="display: none;">
+  <div class="parallax-effect">
+    <div class="food-img food1" style="transform: rotate({{ rotate1 + 'rad'}}); top: {{ top1 + '%'}};">
+      <img src="assets/images/restaurant/food/1.png">
+    </div>
+    <div class="food-img food2" style="transform: rotate({{ rotate2 + 'rad'}}); top: {{ top2 + '%'}};">
+      <img src="assets/images/restaurant/food/2.png">
+    </div>
+    <div class="food-img food3"  style="transform: rotate({{ rotate3 + 'rad'}}); top: {{ top3 + '%'}};">
+      <img src="assets/images/restaurant/food/3.png">
+    </div>
+    <div class="food-img food4" style="top: {{ top4 + '%'}};">
+      <img src="assets/images/restaurant/food/4.png">
+    </div>
+  </div>
+  <div class="container">
+    <div class="title-1 detail-title">
+      <h2 class="pt-0">super easy booking</h2>
+      <p class="font-design">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aperiam
+        at, aut commodi corporis dolorum ducimus labore magnam mollitia natus porro possimus quae sit
+        tenetur veniam veritatis voluptate voluptatem!</p>
+    </div>
+    <div class="step-bg invert-lines">
+      <div class="row">
+        @for(details of booking; track details){
+          <div class="col-md-3">
+            <div class="step-box">
+              <div>
+                <img [src]="details.image" class="img-fluid blur-up lazyload" alt="icon">
+                <h4>{{ details.title }}</h4>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

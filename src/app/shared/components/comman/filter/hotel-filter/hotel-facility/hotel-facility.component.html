@@ -1,0 +1,13 @@
+<div class="collection-collapse-block" [class.open]="isOpenFacility">
+  <h6 class="collapse-block-title" (click)="openFacility()">facility</h6>
+  <div class="collection-collapse-block-content" [ngStyle]="{ 'display' : isOpenFacility == true ? 'block' : 'none'}">
+    <div class="collection-brand-filter">
+      @for(data of hotelFacility; track data){
+        <div class="form-check collection-filter-checkbox">
+          <input type="checkbox" class="form-check-input" id="{{ data.checkID }}" [value]="data.checkID" [checked]="checked(data.checkID)" (change)="applyFilter($event)">
+          <label class="form-check-label" for="{{ data.checkID }}">{{ data.title }}</label>
+        </div>
+      }
+    </div>
+  </div>
+</div>

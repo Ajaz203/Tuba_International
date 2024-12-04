@@ -1,0 +1,30 @@
+<div class="flight_detail">
+  <div class="promo-section">
+    <div class="form-group mb-0">
+      <label>have a coupon code?</label>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Promo Code">
+        <div class="input-group-prepend">
+          <span class="input-group-text">apply</span>
+        </div>
+      </div>
+    </div>
+    <div class="promos">
+      <form>
+        @for(details of flightPromoCode; track details){
+          <div class="form-check">
+            <input class="form-check-input radio_animated" type="radio" name="exampleRadios2" id="{{ details.radioId }}" value="{{ details.radioValue }}" [checked]="details.checked">
+            <div>
+              <label class="form-check-label title" for="{{ details.radioId }}">
+                {{ details.title }}
+              </label>
+              <label class="form-check-label" for="{{ details.radioId }}">
+                {{ details.description }}
+              </label>
+            </div>
+          </div>
+        }
+      </form>
+    </div>
+  </div>
+</div>

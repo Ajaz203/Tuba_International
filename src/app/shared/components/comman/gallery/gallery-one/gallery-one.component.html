@@ -1,0 +1,20 @@
+@if(gallery){
+  <owl-carousel-o [options]="Options">
+    @for(details of gallery; track details){
+      <ng-template carouselSlide>
+        <div>
+          <div class="gallery-box">
+            <div class="gallery-img">
+              <div class="overlay"></div>
+              <img [src]="details.url" alt="gallery" class="img-fluid blur-up lazyload bg-img">
+            </div>
+            <div class="gallery-content">
+              <h5>{{ details.title }}</h5>
+              <a href="" class="btn btn-solid" [routerLink]="['/page/portfolio/2-grid-title']">view</a>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    }
+  </owl-carousel-o>
+}

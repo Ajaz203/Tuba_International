@@ -1,0 +1,28 @@
+<h4 class="comment">comments:</h4>
+<div class="comment-wrapper">
+  <div class="comment-box">
+    @for(details of blogComments; track details; let i = $index){
+      <div class="media" [class.inner-comment]=" i % 2 !== 0">
+        <img [src]="details.image" class="img-fluid blur-up lazyload" alt="blog-image">
+        <div class="media-body">
+          <div class="title">
+            <div class="comment-user">
+              <i class="fa fa-user"></i>
+              <h6>{{ details.name }}</h6>
+            </div>
+            <div class="comment-date">
+              <i class="fas fa-clock"></i>
+              <h6> {{ details.date }} </h6>
+            </div>
+          </div>
+          <div class="comment-detail">
+            <p>{{ details.comment }}</p>
+          </div>
+          <div class="reply-btn">
+            <a href="javascript:void(0)"><i class="fa fa-reply pe-2"></i> reply</a>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

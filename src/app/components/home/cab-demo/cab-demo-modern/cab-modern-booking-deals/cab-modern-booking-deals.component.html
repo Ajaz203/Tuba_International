@@ -1,0 +1,34 @@
+<section class="section-b-space deals ratio3_2 bg-size" [style.background-image]="'url(assets/images/cab/app-bg.jpg)'">
+  <img src="assets/images/cab/app-bg.jpg" alt="background-image" class="bg-img" style="display: none;">
+  <div class="container-fluid p-0">
+    <app-title [type]="'simple'" [title]="'new'" [subTitle]="'deals on booking'" [textWhite]="true"></app-title>
+    <div class="row">
+      <div class="col">
+        <div class="slide-3 no-arrow">
+          <owl-carousel-o [options]="options">
+            @for(details of cab; track details){
+              <ng-template carouselSlide>
+                <div>
+                  <div class="deals-box row">
+                    <div class="left-portion col">
+                      <div class="deals-content">
+                        <div class="detail">
+                          <h3>{{ details.title }}</h3>
+                          <h2>{{ details.price | currencyPipe: hotelService.currency }} <span> / per day</span></h2>
+                        </div>
+                        <img [src]="details.barcode" alt="barcode" class="img-fluid blur-up lazyload" style="width: auto;">
+                      </div>
+                    </div>
+                    <div class="deals-img col bg-size" [style.background-image]="'url('+ details.image +')'">
+                      <img [src]="details.image" alt="cab-image" class="img-fluid blur-up lazyload bg-img" style="display: none;">
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
+            }
+          </owl-carousel-o>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

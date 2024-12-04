@@ -1,0 +1,85 @@
+<app-header [headerClass]="'light_header'"></app-header>
+
+<section class="section-b-space bg-inner">
+  <div class="container">
+    <div class="title-1">
+      <span class="title-label">rica</span>
+      <h2>date & time picker</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <label>Date Picker</label>
+        <input class="form-control" placeholder="Date" name="dp" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" />
+      </div>
+      <div class="col-md-4">
+        <label>Time Picker</label>
+        <input class="form-control" placeholder="Time" [owlDateTimeTrigger]="dt4" [owlDateTime]="dt4">
+        <owl-date-time [pickerType]="'timer'" #dt4></owl-date-time>
+      </div>
+      <div class="col-md-4">
+        <label>Date & Time Picker</label>
+        <input class="form-control datetimepicker-input digits" placeholder="Date & time picker" type="text" [owlDateTimeTrigger]="pickup" [owlDateTime]="pickup">
+        <owl-date-time #pickup></owl-date-time>
+      </div>
+    </div>
+    <div class="row mt-5" (clickOutside)="clickOutside()">
+      <div class="col-md-6">
+        <div class="rooms-section" >
+          <label>Rooms & Guests</label>
+          <input type="text" class="form-control open-select" placeholder="Rooms & guests" (click)="openTraveler()">
+          <div class="selector-box-flight" [class.show]="isTraveler">
+            <div class="room-cls">
+              <div class="qty-box">
+                <label>adult</label>
+                <div class="input-group">
+                  <button type="button" class="btn quantity-left-minus" (click)="changeValue('adult',-1)"> - </button>
+                  <input type="text" name="quantity" class="form-control qty-input input-number" [value]="adults">
+                  <button type="button" class="btn quantity-right-plus" (click)="changeValue('adult',1)">+</button>
+                </div>
+              </div>
+              <div class="qty-box">
+                <label>children</label>
+                <div class="input-group">
+                  <button type="button" class="btn quantity-left-minus" (click)="changeValue('children',-1)"> - </button>
+                  <input type="text" name="quantity" class="form-control qty-input input-number" [value]="child">
+                  <button type="button" class="btn quantity-right-plus" (click)="changeValue('children',1)"> + </button>
+                </div>
+              </div>
+            </div>
+            <div class="bottom-part">
+              <a href="javascript:void(0)" class="add-room">add room +</a>
+              <a href="javascript:void(0)" class="btn">apply</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="suggestion_box" >
+          <div class="form-group">
+            <label>Destination</label>
+            <input type="text" class="form-control open-select" placeholder="To" (click)="openLocation()" [value]="fromLocation">
+            <img src="assets/images/icon/location.png" class="img-fluid blur-up lazyload" alt="location-icon">
+            <div class="selector-box" [class.show]="isFrom">
+              <h6 class="title">popular cities</h6>
+              <ul>
+                @for(data of flightLocation; track data){
+                <li>
+                  <a href="javascript:void(0)" (click)="selectLocation(data.id)">
+                    <h5>{{ data.city }}</h5>
+                    <h6>{{ data.airport }}</h6>
+                    <span>{{ data.code }}</span>
+                  </a>
+                </li>
+                }
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout></app-layout>

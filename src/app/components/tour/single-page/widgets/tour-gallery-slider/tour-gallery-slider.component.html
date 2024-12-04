@@ -1,0 +1,21 @@
+<owl-carousel-o [options]="options">
+  @for(details of tourDetails; track details){
+    <ng-template carouselSlide>
+      <div>
+        <div class="special-box p-0">
+          <div class="special-img">
+            <a href="javascript:void(0)" class="bg-size" [style.background-image]="'url('+ details.img +')'" [routerLink]="['/tour/single-page/classic-design']">
+              <img [src]="details.img" class="img-fluid blur-up lazyload bg-img" alt="destination-image" style="display: none;">
+            </a>
+            <div class="content_inner">
+              <a href="javascript:void(0)" [routerLink]="['/tour/single-page/classic-design']">
+                <h5>{{ details.title }}</h5>
+              </a>
+              <h6>{{ details.night }}N {{ details.days }}D</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  }
+</owl-carousel-o>

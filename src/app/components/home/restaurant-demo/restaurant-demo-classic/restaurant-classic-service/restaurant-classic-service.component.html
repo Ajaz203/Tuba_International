@@ -1,0 +1,13 @@
+<section class="section-b-space animated-section">
+  <app-animations [type]="'dots'"></app-animations>
+  <div class="container">
+    <app-title [type]="'basic'" [title]="'rica'" [subTitle]="'awesome service'" [background_text]="'Service'" [rounded]="true"></app-title>
+    <div class="row service_section">
+      @for(services of services; track services){
+        <div class="col-lg-4 col-6">
+          <app-services [service]="services" [type]="'basic'"></app-services>
+        </div>
+      }
+    </div>
+  </div>
+</section>

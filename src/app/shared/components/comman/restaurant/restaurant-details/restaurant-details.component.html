@@ -1,0 +1,22 @@
+<div class="special-box p-0">
+  <div class="special-img">
+    <a href="javascript:void(0)" [routerLink]="['/restaurant/listing/grid-view/2-grid']">
+      <img [src]="restaurantDetails.image" class="img-fluid blur-up lazyload bg-img" alt="restaurant-image">
+    </a>
+  </div>
+  <div class="special-content restaurant-detail">
+    <a href="javascript:void(0)" [routerLink]="['/restaurant/listing/grid-view/2-grid']">
+      <h5>{{ restaurantDetails.restaurantName }}
+        <span [ngClass]="restaurantDetails.rating < 3 ? 'nagative' : 'positive' ">{{ restaurantDetails.rating }} <i class="fas fa-star"></i></span>
+      </h5>
+    </a>
+    <ul>
+      <li>{{ restaurantDetails.foodList }}</li>
+      <li>{{ restaurantDetails.time }}</li>
+      <li>cost {{ restaurantDetails.price | currencyPipe: hotelService.currency }} for two</li>
+    </ul>
+  </div>
+  @if(restaurantDetails.tag){
+    <div class="label-offer">{{ restaurantDetails.tagTitle }}</div>
+  }
+</div>

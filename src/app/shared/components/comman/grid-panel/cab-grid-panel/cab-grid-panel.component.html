@@ -1,0 +1,54 @@
+<div class="filter-panel shadow-cls">
+  <div class="left-filter">
+    <div class="respon-filter-btn" (click)="openResponsiveTab()">
+      <h6> filter <i class="fas fa-sort-down"></i></h6>
+      <span class="according-menu"></span>
+    </div>
+    <div class="filters respon-filter-content filter-button-group" [class.show]="isOpenTab">
+      <ul>
+        <li [class.active]="activeTab == 'all'" (click)="changedValue('all')">All</li>
+        <li [class.active]="activeTab == 'popular'" (click)="changedValue('popular')">popular</li>
+        <li [class.active]="activeTab == 'latest'" (click)="changedValue('latest')">latest</li>
+        <li [class.active]="activeTab == 'trend'" (click)="changedValue('trend')">trend</li>
+      </ul>
+    </div>
+  </div>
+  <div class="right-panel">
+    <a href="javascript:void(0)" class="filter_button filter-bottom-title" (click)="openHorizontalFilter()">
+      <img src="assets/images/icon/adjust.png" class="img-fluid blur-up lazyload" alt="filter-icon">
+      <h5>latest filter</h5>
+    </a>
+    <app-filter [type]="'cab'" [cabHorizontal]="true"></app-filter>
+    <div class="collection-grid-view">
+      <ul>
+        <li>
+          <a href="javascript:void(0)" class="product-2-layout-view" (click)="grid2()">
+            <ul class="filter-select">
+              <li></li>
+              <li></li>
+            </ul>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" class="product-3-layout-view" (click)="grid3()">
+            <ul class="filter-select">
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" class="product-4-layout-view" (click)="grid4()">
+            <ul class="filter-select">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

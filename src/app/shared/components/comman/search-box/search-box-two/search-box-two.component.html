@@ -1,0 +1,31 @@
+<form class="row m-0">
+  <div class="col p-0">
+    <div class="form-group">
+      <input type="text" name="text" placeholder="select location, hotel.." class="form-control ">
+      <i class="fas fa-hotel icon"></i>
+    </div>
+  </div>
+  <div class="col p-0">
+    <div class="form-group">
+      <input class="form-control" placeholder="check-in" name="dp" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" />
+      <i class="far fa-calendar-alt icon"></i>
+    </div>
+  </div>
+  <div class="col p-0">
+    <div class="form-group">
+      <input class="form-control" placeholder="check-out" name="dp" ngbDatepicker #d2="ngbDatepicker" (click)="d2.toggle()" />
+      <i class="far fa-calendar-alt icon"></i>
+    </div>
+  </div>
+  <div id="dropdate" class="col p-0">
+    <div class="form-group rooms-section">
+      <input type="text" class="form-control open-select" placeholder="rooms & guests">
+      <i class="fas fa-user-alt icon"></i>
+    </div>
+  </div>
+  <div class="col search-col p-0">
+    <div class="search-btn">
+      <a href="javascript:void(0)" class="btn btn-solid color1">search</a>
+    </div>
+  </div>
+</form>

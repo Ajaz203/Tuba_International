@@ -1,0 +1,45 @@
+<app-header [headerClass]="'light_header'"></app-header>
+
+<app-flight-booking-breadcrumb [bg_image]="bg_image" [parent]="parent" [subParent]="subParent" [child]="child"></app-flight-booking-breadcrumb>
+
+<section class="small-section">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-8">
+              <div class="review-section">
+                  <div class="review_box">
+                    <app-selected-flight></app-selected-flight>
+                  </div>
+                  <div class="review_box">
+                    <app-flight-information></app-flight-information>
+                  </div>
+                  <div class="review_box">
+                    <app-flight-traveller-details></app-flight-traveller-details>
+                  </div>
+                  <div class="review_box">
+                    <app-flight-travel-insurance></app-flight-travel-insurance>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4 res-margin">
+              <div class="sticky-cls-top">
+                  <div class="review-section">
+                      <div class="review_box">
+                        <app-flight-booking-summary></app-flight-booking-summary>
+                      </div>
+                      <div class="review_box">
+                        <app-flight-promo-code></app-flight-promo-code>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="continue-btn">
+          <button class="btn btn-solid" type="submit">continue booking</button>
+      </div>
+  </div>
+</section>
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout></app-layout>

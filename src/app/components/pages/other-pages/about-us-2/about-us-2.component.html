@@ -1,0 +1,79 @@
+<app-header [headerClass]="'inner-page overlay-black'"></app-header>
+
+<section class="breadcrumb-section no-bg pt-0" id="block" style="width: 100%; " data-vide-bg="assets/video/sea.mp4" data-vide-options="position: left, loop: true">
+  <div style="position: absolute; z-index: -1; inset: 0px; overflow: hidden; background-size: cover; background-color: transparent; background-repeat: no-repeat; background-position: 0% 50%; background-image: none;"><video autoplay="" loop="" muted="" style="margin: auto; position: absolute; z-index: -1; top: 50%; left: 0%; transform: translate(0%, -50%); visibility: visible; opacity: 1; width: 100%; height: 100%; object-fit: cover;">
+      <source src="assets/video/sea.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="breadcrumb-content overlay-black">
+    <div>
+      <h2>about us</h2>
+      <nav aria-label="breadcrumb" class="theme-breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">about us</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <div class="title-breadcrumb">Rica</div>
+</section>
+
+@if(aboutDetail){
+  @for(details of aboutDetail.about; track details){
+    @if(details.gallery){
+      <section class="about-section three-image about_page animated-section section-b-space">
+        <app-animations [type]="'dots'"></app-animations>
+        <div class="container">
+          <app-title [type]="'simple'" [title]="'rica'" [subTitle]="'about us'"></app-title>
+          <app-introduction [gallery]="details.gallery" [classic]="true"></app-introduction>
+        </div>
+      </section>
+    }
+    @if(details.services){
+      <section class="section-b-space dark-cls bg-size" [style.background-image]="'url(assets/images/cab/grey-bg.jpg)'">
+        <img [src]="'assets/images/cab/grey-bg.jpg'" alt="background-image" class="img-fluid blur-up lazyload bg-img" style="display: none;">
+        <div class="container">
+          <app-title [type]="'simple'" [title]="'rica'" [subTitle]="'awesome service'"></app-title>
+          <app-about-service [services]="details.services"></app-about-service>
+        </div>
+      </section>
+    }
+    @if(details.testimonial){
+      <section class="testimonial-section  animated-section">
+        <app-animations [type]="'dots'"></app-animations>
+        <div class="container">
+          <app-title [type]="'basic'" [title]="'our'" [subTitle]="'our happy customer'" [background_text]="'customer'"></app-title>
+          <div class="slide-1">
+            <app-testimonial [type]="'basic'" [testimonial]="testimonial"></app-testimonial>
+          </div>
+        </div>
+      </section>
+    }
+    @if(details.team){
+      <section class="team-section animated-section section-b-space bg-size" [style.background-image]="'url(assets/images/cab/grey-bg.jpg)'">
+        <img [src]="'assets/images/cab/grey-bg.jpg'" alt="background-image" class="img-fluid blur-up lazyload bg-img" style="display: none;">
+        <app-animations [type]="'dots'"></app-animations>
+        <div class="container">
+          <app-title [type]="'simple'" [title]="'rica'" [subTitle]="'our team'"></app-title>
+          <app-team [team]="details.team" [classic]="true"></app-team>
+        </div>
+      </section>
+    }
+    @if(details.blog){
+      <section class="blog_section animated-section section-b-space ratio_55">
+        <app-animations [type]="'dots'"></app-animations>
+        <div class="container">
+          <app-title [type]="'simple'" [title]="'rica'" [subTitle]="'latest blog'"></app-title>
+          <div class="slide-3 no-arrow">
+            <app-blog [blogs]="blog" [type]="'basic'" [border]="false" [colorClass]="''"></app-blog>
+          </div>
+        </div>
+      </section>
+    }
+  }
+}
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout [loaderType]="'basic'"></app-layout>

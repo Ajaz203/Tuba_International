@@ -1,0 +1,55 @@
+@if(portfolio){
+  @for(portfolioDetail of portfolio; track portfolioDetail){
+    <div class="filter-button-group">
+      @if(portfolioDetail.tab){
+        <ul>
+          @for(tabData of portfolioDetail.tab; track tabData){
+            <li [class.active]="activeTab == tabData.value" (click)="getTabData(tabData.value)">{{ tabData.title }}</li>
+          }
+        </ul>
+      }
+    </div>
+    <div class="row content grid zoom-gallery overflow-hidden" gallerize>
+      @if(portfolioDetail.gallery){
+        @if(masonry){
+          <ngx-masonry [options]="masonryOptions" style="width: 100%;" [ordered]="true">
+          @for(images of images; track images; let i = $index){
+            <div class="popular grid-item wow fadeInUp col-sm-6" [class.col-lg-4]="gridType == '3-grid'" [class.col-lg-3]="gridType == '4-grid'" ngxMasonryItem [ngStyle]="{ 'max-width' : masonry && gridType == '3-grid' ? '430px' : '325px' }">
+              <div class="overlay">
+                <div class="portfolio-image">
+                  <a href="javascript:void(0)"  (click)="lightbox.open(i)">
+                    <img [src]="images.image" alt="destination-image" class="img-fluid blur-up lazyload bg-img" >
+                  </a>
+
+                </div>
+              </div>
+            </div>
+          }
+        </ngx-masonry>
+        }@else{
+          @for(images of images; track images; let i = $index){
+            <div class="popular grid-item wow fadeInUp col-sm-6" [class.col-lg-4]="gridType == '3-grid'" [class.col-lg-3]="gridType == '4-grid'">
+              <div class="overlay">
+                <div class="portfolio-image" >
+
+                    <a href="javascript:void(0)" class="bg-size" [style.background-image]="'url('+ images.image +')'" (click)="lightbox.open(i)">
+                      <img [src]="images.image" alt="destination-image" class="img-fluid blur-up lazyload bg-img" style="display: none;">
+                    </a>
+
+                </div>
+                @if(details){
+                  <div class="portfolio-text">
+                    <h3>{{ images.title }}</h3>
+                    <h6>{{ images.description }} </h6>
+                  </div>
+                }
+              </div>
+            </div>
+          }
+        }
+      }
+    </div>
+  }
+}
+
+

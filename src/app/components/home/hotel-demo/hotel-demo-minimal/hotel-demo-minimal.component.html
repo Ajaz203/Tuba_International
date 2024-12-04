@@ -1,0 +1,19 @@
+<app-header [headerClass]="'overlay-black'"></app-header>
+
+<app-hotel-minimal-home-section></app-hotel-minimal-home-section>
+
+@if(hotelMinimal){
+  <app-hotel-minimal-top-city [topCity]="hotelMinimal.topCity"></app-hotel-minimal-top-city>
+
+  <app-hotel-minimal-top-deals [hotels]="hotels"></app-hotel-minimal-top-deals>
+
+  <app-hotel-minimal-application></app-hotel-minimal-application>
+
+  <app-hotel-minimal-blog [blogs]="hotelMinimal.blog"></app-hotel-minimal-blog>
+
+  <app-hotel-minimal-rica-benifit [benefits]="hotelMinimal.ricaBenefits" [sticky]="true"></app-hotel-minimal-rica-benifit>
+}
+
+<app-footer [location]="true" [sticky]="true"></app-footer>
+
+<app-layout [loaderType]="'basic'"></app-layout>

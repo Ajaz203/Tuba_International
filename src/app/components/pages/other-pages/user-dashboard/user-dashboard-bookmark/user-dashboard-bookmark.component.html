@@ -1,0 +1,29 @@
+<div class="dashboard-box">
+  <div class="dashboard-title">
+    <h4>my bookmark</h4>
+  </div>
+  <div class="product-wrapper-grid ratio3_2 special-section grid-box">
+    <div class="row content grid">
+      @for(details of bookmark; track details){
+        <div class="col-xl-4 col-sm-6 grid-item">
+          <div class="special-box">
+            <div class="special-img">
+              <a href="javascript:void(0)" class="bg-size" [style.background-image]="'url('+ details.image +')'">
+                <img [src]="details.image" class="img-fluid blur-up lazyload bg-img" alt="destination-image" style="display: none;">
+              </a>
+              <div class="content_inner">
+                <a href="javascript:void(0)">
+                  <h5>{{ details.title }}</h5>
+                </a>
+                <h6>{{ details.subTitle }}</h6>
+              </div>
+              <div class="top-icon">
+                <a href="javascript:void(0)" class="" data-bs-toggle="tooltip" data-placement="top" title="Remove from Wishlist"><i class="fas fa-times"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>

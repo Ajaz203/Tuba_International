@@ -1,0 +1,81 @@
+{
+  "category": [24,25,26,27,28],
+  "breakfast": [
+    {
+      "id": 1,
+      "title": "fresh chips",
+      "image": "assets/images/restaurant/filter/1.jpg",
+      "rating": 4,
+      "type": "maxican"
+    },
+     {
+      "id": 2,
+      "title": "franky",
+      "image": "assets/images/restaurant/filter/2.jpg",
+      "rating": 5,
+      "type": "indian"
+    },
+     {
+      "id": 3,
+      "title": "crispy pizza",
+      "image": "assets/images/restaurant/filter/3.jpg",
+      "rating": 3,
+      "type": "maxican"
+    },
+     {
+      "id": 4,
+      "title": "pasta",
+      "image": "assets/images/restaurant/filter/4.jpg",
+      "rating": 4,
+      "type": "maxican"
+    },
+     {
+      "id": 5,
+      "title": "panner",
+      "image": "assets/images/restaurant/filter/5.jpg",
+      "rating": 4,
+      "type": "indian"
+    },
+     {
+      "id": 6,
+      "title": "dhosa",
+      "image": "assets/images/restaurant/filter/6.jpg",
+      "rating": 5,
+      "type": "indian"
+    }
+  ],
+  "service": [1,2,3,4,5,6],
+  "dishes": [29,30,31,32],
+  "meal": [7,8,9],
+  "testimonial": [1,2,3],
+  "socialGallery": [
+    {
+      "id": 1,
+      "url": "assets/images/instagram/1.jpg"
+    },
+    {
+      "id": 2,
+      "url": "assets/images/instagram/2.jpg"
+    },
+    {
+      "id": 3,
+      "url": "assets/images/instagram/3.jpg"
+    },
+    {
+      "id": 4,
+      "url": "assets/images/instagram/4.jpg"
+    },
+    {
+      "id": 5,
+      "url": "assets/images/instagram/5.jpg"
+    },
+    {
+      "id": 6,
+      "url": "assets/images/instagram/6.jpg"
+    },
+    {
+      "id": 7,
+      "url": "assets/images/instagram/3.jpg"
+    }
+  ]
+}

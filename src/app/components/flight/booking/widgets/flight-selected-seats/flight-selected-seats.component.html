@@ -1,0 +1,48 @@
+<div class="seat-details">
+  <ul>
+    <li>
+      <div class="box taken"></div>
+      <h6>taken</h6>
+    </li>
+    <li>
+      <div class="box selected"></div>
+      <h6>selected</h6>
+    </li>
+    <li>
+      <div class="box available"></div>
+      <h6>available</h6>
+    </li>
+  </ul>
+</div>
+<div class="plane">
+  <div class="cockpit">
+    <div>
+      <img src="assets/images/flights/cockpit.png" alt="cockpit-image" class="img-fluid blur-up lazyload">
+    </div>
+  </div>
+  <div class="exit exit--front fuselage">
+
+  </div>
+  <ol class="cabin fuselage">
+    @for(seats of flightSeats; track seats){
+      <li class="row" [ngClass]="seats.rowClass">
+        <ol class="seats" type="A">
+          @for(seat of seats.row; track seat){
+            <li class="seat">
+              @if(seat.disabled){
+                <input type="checkbox" disabled id="{{ seat.seatId }}" />
+                <label for="{{ seat.seatId }}">Occupied</label>
+              }@else {
+                <input type="checkbox" id="{{ seat.seatId }}" />
+                <label for="{{ seat.seatId }}">{{ seat.seatNo }}</label>
+              }
+            </li>
+          }
+        </ol>
+      </li>
+    }
+  </ol>
+  <div class="exit exit--back fuselage">
+
+  </div>
+</div>

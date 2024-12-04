@@ -1,0 +1,8 @@
+@if(type == 'slider'){
+  <h4 class="content-title">policies</h4>
+}
+<div class="menu-part policy" id="policy" [ngClass]="{ 'tab-pane' : type == 'tab', 'page-section': type == 'slider'}">
+  @for(policy of hotelPolicy; track policy){
+    <p>{{ policy.details }}</p>
+  }
+</div>

@@ -1,0 +1,63 @@
+<div class="row">
+  <div class="col-sm-8">
+    <div class="slide-1 arrow-dark zoom-gallery ratio2_3">
+      @if(hotelGallery){
+        <owl-carousel-o [options]="options">
+          @for(images of hotelGallery; track images; let i = $index){
+            @if(images.imageType == 'home'){
+              <ng-template carouselSlide>
+                <div>
+                  <a href="javascript:void(0)" class="bg-size" [style.background-image]="'url('+ images.image +')'" gallerize (click)="openLightBox()">
+                    <img [src]="images.image" class="img-fluid blur-up lazyload bg-img w-100" alt="hotel-image" style="display: none;">
+                    <h6 class="view-all">view all images</h6>
+                  </a>
+                </div>
+              </ng-template>
+            }
+          }
+        </owl-carousel-o>
+      }
+    </div>
+  </div>
+  <div class="col-sm-4 d-none d-sm-block">
+    <div class="row">
+      <div class="col-12 ratio_59">
+        <div class="slide-1 zoom-gallery no-arrow">
+          @if(hotelGallery){
+            <owl-carousel-o [options]="galleryOptions">
+              @for(images of hotelGallery; track images; let i = $index){
+                @if(images.imageType == 'room'){
+                  <ng-template carouselSlide>
+                    <div>
+                      <a href="javascript:void(0)" class="bg-size" [style.background-image]="'url('+ images.image +')'" gallerize (click)="openLightBox()">
+                        <img [src]="images.image" class="img-fluid blur-up lazyload bg-img w-100" alt="room-image" style="display: none;">
+                        <h6 class="view-all">room images</h6>
+                      </a>
+                    </div>
+                  </ng-template>
+                }
+              }
+            </owl-carousel-o>
+          }
+        <div class="slide-1 zoom-gallery no-arrow m-cls">
+          @if(hotelGallery){
+            <owl-carousel-o [options]="galleryOptions">
+                @for(images of hotelGallery; track images; let i = $index){
+                  @if(images.imageType == 'pool'){
+                    <ng-template carouselSlide>
+                      <div>
+                        <a href="javascript:void(0)" class="bg-size" [style.background-image]="'url('+ images.image +')'" gallerize (click)="openLightBox()">
+                          <img [src]="images.image" class="img-fluid blur-up lazyload bg-img w-100" alt="pool-image" style="display: none;">
+                          <h6 class="view-all">pool images</h6>
+                        </a>
+                      </div>
+                    </ng-template>
+                  }
+                }
+            </owl-carousel-o>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

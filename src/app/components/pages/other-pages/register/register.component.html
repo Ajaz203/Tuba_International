@@ -1,0 +1,44 @@
+<app-header [headerClass]="'inner-page'"></app-header>
+
+<app-breadcrumbs [type]="'pages'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child" [paddingClass]="false"></app-breadcrumbs>
+
+<section class="section-b-space dark-cls animated-section bg-size" [style.background-image]="'url(assets/images/cab/grey-bg.jpg)'">
+  <img src="assets/images/cab/grey-bg.jpg" alt="background-image" class="img-fluid blur-up lazyload bg-img" style="display: none;">
+  <app-animations [type]="'dots'"></app-animations>
+  <div class="container">
+    <div class="row">
+      <div class="offset-lg-3 col-lg-6 offset-sm-2 col-sm-8 col-12">
+        <div class="account-sign-in">
+          <div class="title">
+            <h3>sign up</h3>
+          </div>
+          <div class="login-with">
+            <h6>sign up with</h6>
+            <div class="login-social row">
+              <div class="col">
+                <a class="boxes">
+                  <img src="assets/images/icon/social/facebook.png" class="img-fluid blur-up lazyload" alt="facebook-icon">
+                  <h6>facebook</h6>
+                </a>
+              </div>
+              <div class="col">
+                <a class="boxes">
+                  <img src="assets/images/icon/social/google.png" class="img-fluid blur-up lazyload" alt="google-icon">
+                  <h6>google</h6>
+                </a>
+              </div>
+            </div>
+            <div class="divider">
+              <h6>OR</h6>
+            </div>
+          </div>
+          <app-comman-login-form [type]="'register'"></app-comman-login-form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout [loaderType]="'basic'"></app-layout>

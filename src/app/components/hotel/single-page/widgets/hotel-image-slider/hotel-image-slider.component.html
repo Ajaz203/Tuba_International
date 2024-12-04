@@ -1,0 +1,13 @@
+<div class="variable-width no-arrow">
+  @if(hotelGallery){
+    <owl-carousel-o [options]="options">
+      @for(image of hotelGallery; track image){
+        <ng-template carouselSlide>
+          <div>
+            <img [src]="image.image" class="img-fluid blur-up lazyload" alt="hotel-image">
+          </div>
+        </ng-template>
+      }
+    </owl-carousel-o>
+  }
+</div>

@@ -1,0 +1,5 @@
+<select (change)="getCurrency($event)">
+  @for(currency of currencies; track currency){
+    <option value="{{ currency.value }}">{{ currency.currency }}</option>
+  }
+</select>

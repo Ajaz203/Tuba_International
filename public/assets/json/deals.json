@@ -1,0 +1,300 @@
+{
+  "deals": [
+    {
+      "id": 1,
+      "title": "asia",
+      "bg_image": "assets/images/tour/category/3.jpg",
+      "details": [
+        {
+          "id": 1,
+          "title": "bali & singapore",
+          "subTitle": "Hawaii Oahu",
+          "image": "assets/images/flights/offer/6.jpg",
+          "price": 250,
+          "discountPrice": 200
+        },
+        {
+          "id": 2,
+          "title": "hong kong",
+          "subTitle": "Hawaii Oahu",
+          "image": "assets/images/flights/offer/7.jpg",
+          "price": 300,
+          "discountPrice": 250
+        },
+        {
+          "id": 3,
+          "title": "hawaii",
+          "subTitle": "Hawaii Oahu",
+          "image": "assets/images/flights/offer/8.jpg",
+          "price": 280,
+          "discountPrice": 260
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "america",
+      "bg_image": "assets/images/tour/category/4.jpg",
+      "details": [
+        {
+          "id": 1,
+          "title": "Eastern USA",
+          "subTitle": "USA, Canada",
+          "image": "assets/images/flights/offer/9.jpg",
+          "price": 260,
+          "discountPrice": 250
+        },
+        {
+          "id": 2,
+          "title": "canada escape",
+          "subTitle": "USA, Canada",
+          "image": "assets/images/flights/offer/10.jpg",
+          "price": 250,
+          "discountPrice": 200
+        },
+        {
+          "id": 3,
+          "title": "Canadian Rockies",
+          "subTitle": "USA, Canada",
+          "image": "assets/images/flights/offer/6.jpg",
+          "price": 245,
+          "discountPrice": 240
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "europe",
+      "bg_image": "assets/images/tour/category/5.jpg",
+      "details": [
+        {
+          "id": 1,
+          "title": "europe escape",
+          "subTitle": "Prague Paris Barcelona",
+          "image": "assets/images/flights/offer/8.jpg",
+          "price": 250,
+          "discountPrice": 200
+        },
+        {
+          "id": 2,
+          "title": "europe dream",
+          "subTitle": "Prague Paris Barcelona",
+          "image": "assets/images/flights/offer/6.jpg",
+          "price": 250,
+          "discountPrice": 200
+        },
+        {
+          "id": 3,
+          "title": "Europe Wonder",
+          "subTitle": "Prague Paris Barcelona",
+          "image": "assets/images/flights/offer/10.jpg",
+          "price": 250,
+          "discountPrice": 200
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "emirates",
+      "bg_image": "assets/images/flights/offer/3.jpg",
+      "details": [
+        {
+          "id": 1,
+          "title": "norway",
+          "subTitle": "paris, dubai",
+          "image": "assets/images/flights/offer/6.jpg",
+          "price": 250,
+          "discountPrice": 200
+        },
+        {
+          "id": 2,
+          "title": "finland",
+          "subTitle": "paris, dubai",
+          "image": "assets/images/flights/offer/7.jpg",
+          "price": 250,
+          "discountPrice": 200
+        },
+        {
+          "id": 3,
+          "title": "paris",
+          "subTitle": "finland, dubai",
+          "image": "assets/images/flights/offer/8.jpg",
+          "price": 250,
+          "discountPrice": 200
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "american eagle",
+      "bg_image": "assets/images/flights/offer/4.jpg",
+      "details": [
+        {
+          "id": 1,
+          "title": "dubai",
+          "subTitle": "paris, london",
+          "image": "assets/images/flights/offer/9.jpg",
+          "price": 250,
+          "discountPrice": 200
+        },
+        {
+          "id": 2,
+          "title": "new york",
+          "subTitle": "paris, dubai",
+          "image": "assets/images/flights/offer/10.jpg",
+          "price": 250,
+          "discountPrice": 200
+        },
+        {
+          "id": 3,
+          "title": "norway",
+          "subTitle": "paris, dubai",
+          "image": "assets/images/flights/offer/6.jpg",
+          "price": 250,
+          "discountPrice": 200
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Lufthansa",
+      "bg_image": "assets/images/flights/offer/5.jpg",
+      "details": [
+        {
+          "id": 1,
+          "title": "paris",
+          "subTitle": "paris, dubai",
+          "image": "assets/images/flights/offer/8.jpg",
+          "price": 250,
+          "discountPrice": 200
+        },
+        {
+          "id": 2,
+          "title": "norway",
+          "subTitle": "paris, dubai",
+          "image": "assets/images/flights/offer/6.jpg",
+          "price": 250,
+          "discountPrice": 200
+        },
+        {
+          "id": 3,
+          "title": "new york",
+          "subTitle": "paris, dubai",
+          "image": "assets/images/flights/offer/10.jpg",
+          "price": 250,
+          "discountPrice": 200
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "breakfast",
+      "bg_image": "assets/images/restaurant/dishes/4.jpg",
+      "details": [
+        {
+          "id": 1,
+          "title": "Maxican beans chilis",
+          "image": "assets/images/restaurant/menu/2.jpg",
+          "price": 250,
+          "discountPrice": 200,
+          "rating": 4.8,
+          "tag": true,
+          "tagTitle": "famous"
+        },
+        {
+          "id": 2,
+          "title": "Maxican beans chilis",
+          "image": "assets/images/restaurant/menu/3.jpg",
+          "price": 300,
+          "discountPrice": 250,
+          "rating": 4.8,
+          "tag": false
+        },
+        {
+          "id": 3,
+          "title": "Maxican beans chilis",
+          "image": "assets/images/restaurant/menu/4.jpg",
+          "price": 280,
+          "discountPrice": 260,
+          "rating": 4.8,
+          "tag": true,
+          "tagTitle": "-16%",
+          "tagClass": "red"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "lunch",
+      "bg_image": "assets/images/restaurant/dishes/5.jpg",
+      "details": [
+        {
+          "id": 1,
+          "title": "indian beans chilis",
+          "image": "assets/images/restaurant/menu/1.jpg",
+          "price": 250,
+          "discountPrice": 200,
+          "rating": 5,
+          "tag": true,
+          "tagTitle": "-25%",
+          "tagClass": "red"
+        },
+        {
+          "id": 2,
+          "title": "indian beans chilis",
+          "image": "assets/images/restaurant/menu/5.jpg",
+          "price": 300,
+          "discountPrice": 250,
+           "rating": 4.8,
+          "tag": false
+        },
+        {
+          "id": 3,
+          "title": "indian beans chilis",
+          "image": "assets/images/restaurant/menu/6.jpg",
+          "price": 280,
+          "discountPrice": 260,
+          "rating": 4,
+          "tag": false
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "dinner",
+      "bg_image": "assets/images/restaurant/dishes/6.jpg",
+      "details": [
+        {
+          "id": 1,
+          "title": "Italy beans chilis",
+          "image": "assets/images/restaurant/menu/7.jpg",
+          "price": 250,
+          "discountPrice": 200,
+          "rating": 3.5,
+          "tag": false
+        },
+        {
+          "id": 2,
+          "title": "Italy beans chilis",
+          "image": "assets/images/restaurant/menu/8.jpg",
+          "price": 300,
+          "discountPrice": 250,
+          "rating": 4,
+          "tag": true,
+          "tagTitle": "-25%",
+          "tagClass": "red"
+        },
+        {
+          "id": 3,
+          "title": "Italy beans chilis",
+          "image": "assets/images/restaurant/menu/9.jpg",
+          "price": 280,
+          "discountPrice": 260,
+          "rating": 5,
+          "tag": true,
+          "tagTitle": "famous"
+        }
+      ]
+    }
+  ]
+}

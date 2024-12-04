@@ -1,0 +1,24 @@
+<form class="row m-0">
+  <div class="col-lg-3">
+    <div class="form-group">
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Starting from">
+      <img src="assets/images/icon/table-no.png" class="img-fluid blur-up lazyload" alt="no.icon">
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Going to">
+      <img src="assets/images/icon/table-no.png" class="img-fluid blur-up lazyload" alt="no.icon">
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="form-group">
+      <input class="form-control" placeholder="During Date" name="dp" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" />
+    </div>
+  </div>
+  <div class="col-lg-3 search-col">
+    <div class="search-btn">
+      <a href="javascript:void(0)" class="btn btn-solid color1 lh-cls" [routerLink]="['/tour/single-page/left-sidebar']">search</a>
+    </div>
+  </div>
+</form>

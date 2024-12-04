@@ -1,0 +1,25 @@
+<div class="left-sidebar filter-bottom-content" [class.open]="hotelService.isOpenResponsiveHorizontal" [ngClass]="{ 'd-block' : hotelService.isOpenHorizontalFilter}">
+  <div class="middle-part collection-collapse-block open">
+    <div class="collection-collapse-block-content row">
+      <div class="filter-block col">
+        <app-hotel-facility></app-hotel-facility>
+      </div>
+      <div class="filter-block col">
+        <app-hotel-language></app-hotel-language>
+      </div>
+      <div class="filter-block col">
+        <app-hotel-rating></app-hotel-rating>
+      </div>
+      <div class="filter-block col">
+        <app-hotel-price></app-hotel-price>
+      </div>
+      <div class="filter-block col">
+        <app-hotel-district></app-hotel-district>
+      </div>
+      <div class="text-end button_bottom">
+        <a href="javascript:void(0)" class="btn btn-solid color1 me-2">apply</a>
+        <a href="javascript:void(0)" class="btn btn-solid color1 close-filter-bottom" (click)="closeResponsiveHorizontal()">close filter</a>
+      </div>
+    </div>
+  </div>
+</div>

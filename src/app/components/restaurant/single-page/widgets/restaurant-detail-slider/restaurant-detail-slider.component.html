@@ -1,0 +1,33 @@
+@if(restaurantDetails){
+  <owl-carousel-o [options]="options">
+    @for(details of restaurantDetails; track details){
+      <ng-template carouselSlide>
+        <div>
+          <div class="special-box p-0">
+            <div class="special-img">
+              <a href="javascript:void(0)" class="bg-size" [style.background-image]="'url('+ details.image +')'">
+                <img [src]="details.image" class="img-fluid blur-up lazyload bg-img" alt="restaurant-image" style="display: none;">
+              </a>
+            </div>
+            <div class="special-content restaurant-detail">
+              <a href="javascript:void(0)">
+                <h5>{{ details.restaurantName }}
+                  <span [ngClass]="details.rating < 3 ? 'nagative' : 'positive' ">{{ details.rating }} <i class="fas fa-star"></i></span>
+                </h5>
+              </a>
+              <ul>
+                <li>{{ details.foodList }}</li>
+                <li>{{ details.time }}</li>
+                <li>cost {{ details.price | currencyPipe: hotelService.currency }} for two</li>
+              </ul>
+            </div>
+            @if(details.tag){
+            <div class="label-offer">{{ details.tagTitle }}</div>
+            }
+          </div>
+        </div>
+      </ng-template>
+    }
+  </owl-carousel-o>
+}
+

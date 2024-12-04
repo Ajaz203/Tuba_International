@@ -1,0 +1,17 @@
+<div class="image-section">
+  @for(images of images; track images){
+    <div class="img-box">
+      <img [src]="images.url" (mousemove)="tilt($event)" (mouseleave)="tiltOver($event)" class="img-fluid blur-up lazyload" [class.radius-cls]="classic" alt="image">
+      @if(type == 'about'){
+        <div class="title-box" [class.radius-cls]="classic">
+          <h3>{{ images.title }}</h3>
+          <h6>{{ images.subTitle }}</h6>
+        </div>
+      }@else {
+        <div class="no-class">
+          <h3>{{ images.title }}</h3>
+        </div>
+      }
+    </div>
+  }
+</div>

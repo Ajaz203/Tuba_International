@@ -1,0 +1,6 @@
+@if(type == 'slider'){
+  <h4 class="content-title">location</h4>
+}
+<div class="menu-part map" id="location" [ngClass]="{ 'tab-pane' : type == 'tab', 'page-section': type == 'slider'}">
+  <iframe [src]="safe(hotelLocation.url)" style="border:0;" allowfullscreen=""></iframe>
+</div>

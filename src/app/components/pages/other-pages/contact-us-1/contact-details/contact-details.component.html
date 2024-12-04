@@ -1,0 +1,13 @@
+<div class="contact_wrap">
+  <div class="title_bar">
+    <i class="fas fa-{{ contact.icon }}"></i>
+    <h4>{{ contact.title }}</h4>
+  </div>
+  <div class="contact_content">
+    <ul>
+      @for(details of contact.details; track details){
+        <li>{{ details.data }}</li>
+      }
+    </ul>
+  </div>
+</div>

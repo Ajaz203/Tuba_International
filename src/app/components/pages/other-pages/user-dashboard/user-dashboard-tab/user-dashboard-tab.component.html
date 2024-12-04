@@ -1,0 +1,28 @@
+<div class="dashboard-sidebar">
+  <div class="profile-top">
+    <div class="profile-image">
+      <img src="assets/images/avtar/1.jpg" class="img-fluid blur-up lazyload" alt="profile">
+      <a class="profile-edit" href="javascript:void(0)">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit">
+          <path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34">
+          </path>
+          <polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon>
+        </svg>
+      </a>
+    </div>
+    <div class="profile-detail">
+      <h5>mark enderess</h5>
+      <h6>+91 123 - 456 - 7890</h6>
+      <h6>mark.enderess&#64;mail.com</h6>
+    </div>
+  </div>
+  <div class="faq-tab">
+    <ul class="nav nav-tabs" id="top-tab" role="tablist">
+      @for(tab of tabs; track tab){
+        <li class="nav-item">
+          <a data-bs-toggle="tab" class="nav-link" [class.active]="activeTab == tab.value" href="javascript:void(0)" (click)="changeTab(tab.value)">{{ tab.title }}</a>
+        </li>
+      }
+    </ul>
+  </div>
+</div>

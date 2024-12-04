@@ -1,0 +1,35 @@
+<div class="category-4 no-arrow">
+  @if(category){
+    <owl-carousel-o [options]="options">
+      @for(category of category; track category){
+        <ng-template carouselSlide>
+          <div>
+            <div class="top_box">
+              <div class="img-part">
+                <a href="javascript:void(0)"><img [src]="category.categoryImage" class="img-fluid blur-up lazyload" alt="category-image"></a>
+              </div>
+              <div class="right-content">
+                <div>
+                  <h5>{{ category.categoryTitle }} <i class="fas fa-heart"></i></h5>
+                  <div class="rating">
+                    <span>{{ category.rating }}</span>
+                    @if(category.rating){
+                      <ngb-rating [rate]="category.rating"></ngb-rating>
+                    }
+                  </div>
+                  <p>{{ category.categoryDescription }}</p>
+                  <h6><del>{{ category.price | currencyPipe: hotelService.currency }}</del>{{ category.discountPrice | currencyPipe: hotelService.currency }}</h6>
+                </div>
+              </div>
+              @if(category.tag){
+                <div class="new-label">
+                  <span>{{ category.tagTitle }}</span>
+                </div>
+              }
+            </div>
+          </div>
+        </ng-template>
+      }
+    </owl-carousel-o>
+  }
+</div>

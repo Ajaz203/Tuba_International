@@ -1,0 +1,39 @@
+<app-header [headerClass]="'overlay-black'"></app-header>
+
+<app-mix-classic-home-section></app-mix-classic-home-section>
+
+@if(mixClassic){
+  @if(category){
+    <app-mix-classic-category [id]="mixClassic.category" [category]="category"></app-mix-classic-category>
+  }
+
+  <app-mix-classic-hotel [hotelImages]="mixClassic.hotelImages"></app-mix-classic-hotel>
+}
+
+<app-tour-modern-video></app-tour-modern-video>
+
+@if(flightModern){
+  <app-flight-modern-destination [destination]="flightModern.destination"></app-flight-modern-destination>
+}
+
+<app-tour-modern-banner></app-tour-modern-banner>
+
+@if(cabModern){
+  <app-cab-modern-call [images]="cabModern.call"></app-cab-modern-call>
+}
+
+<app-hotel-classic-video></app-hotel-classic-video>
+
+@if(restaurantClassic && category){
+  <app-restaurant-classic-special-dishes [id]="restaurantClassic.dishes" [dishes]="category"></app-restaurant-classic-special-dishes>
+}
+
+@if(homeSectionData){
+  <app-hotel-classic-gallery [gallery]="homeSectionData.gallery"></app-hotel-classic-gallery>
+}
+
+<app-tour-modern-subscribe></app-tour-modern-subscribe>
+
+<app-footer [places]="true"></app-footer>
+
+<app-layout [loaderType]="'basic'"></app-layout>

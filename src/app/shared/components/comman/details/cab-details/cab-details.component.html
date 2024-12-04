@@ -1,0 +1,85 @@
+@if(responsiveLatestFilter){
+  <a href="javascript:void(0)" class="mobile-filter shadow-cls border-top-0" (click)="openResponsiveFilter()">
+    <h5>latest filter</h5>
+    <img src="assets/images/icon/adjust.png" class="img-fluid blur-up lazyload" alt="filter-icon">
+  </a>
+}
+
+<!-- Tags  -->
+<ul class="product-filter-tags">
+  <li class="me-1">
+    @if(paramsTag.length){
+      @for(tag of paramsTag; track tag){
+        @if(tag){
+          <a href="javascript:void(0)" class="filter_tag">
+            {{ tag }}
+            <button type="button" class="btn-close" aria-label="Close" (click)="removeTag(tag)"></button>
+          </a>
+        }
+      }
+    }
+    @if(minPrice && maxPrice != 0){
+      <a href="javascript:void(0)" class="filter_tag">
+        Price : {{ minPrice | currencyPipe: hotelService.currency }} - {{ maxPrice | currencyPipe: hotelService.currency }}
+      </a>
+    }
+  </li>
+</ul>
+
+<div class="product-wrapper-grid special-section grid-box">
+  <div class="row  content grid">
+    @for(details of cabs; track details){
+      <div class="popular grid-item wow fadeInUp" [class.col-sm-6]="col_sm_6" [class.col-xl-4]="col_xl_4" [class.col-xl-3]="col_xl_3" [class.col-lg-4]="col_lg_4" data-class="popular">
+        <div class="special-box cab-box">
+          <div class="special-img">
+            @if(imageSlider){
+              <div class="slide-1">
+                <owl-carousel-o [options]="options">
+                  @for(image of details.carImages; track image){
+                    <ng-template carouselSlide>
+                      <div class="bg-size" href="javascript:void(0)" [style.background-image]="'url('+ image.url +')'">
+                        <img  [src]="image.url" class="img-fluid blur-up lazyload bg-img" alt="cab-image" style="display: none;">
+                      </div>
+                    </ng-template>
+                  }
+                </owl-carousel-o>
+              </div>
+            }@else {
+              @for(image of details.carImages | slice: 0:1; track image ){
+                <a class="bg-size" href="javascript:void(0)" [style.background-image]="'url('+ image.url +')'">
+                  <img [src]="image.url" class="img-fluid blur-up lazyload bg-img" alt="cab-image" style="display: none;">
+                </a>
+              }
+            }
+            <div class="top-icon">
+              <a href="javascript:void(0)" class="" data-bs-toggle="tooltip" data-placement="top" title="" data-original-title="Add to Wishlist">
+                <i class="far fa-heart"></i>
+              </a>
+            </div>
+          </div>
+          <div class="special-content">
+            <a href="javascript:void(0)">
+              <h5>{{ details.carName }}</h5>
+            </a>
+            <ul>
+              <li>type : <span>{{ details.carType }}</span></li>
+              <li>per mile/KM : <span>{{ details.per_km | currencyPipe: hotelService.currency }}</span></li>
+              <li>passenger : <span>{{ details.passenger }}</span></li>
+              <li>luggage : <span>{{ details.luggage }}</span></li>
+              <li>gearbox : <span>{{ details.gearbox }}</span></li>
+            </ul>
+            <div class="button-botton">
+              <a href="javascript:void(0)" class="btn btn-solid color1" [routerLink]="['/cab/single-details']">details</a>
+              <a href="javascript:void(0)" class="btn btn-solid color1" [routerLink]="['/cab/booking/booking']">book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    }@empty {
+      <app-no-data [icon]="icon" [title]="title" [description]="description"></app-no-data>
+    }
+  </div>
+</div>
+
+<app-pagination [cabDetails]="cabs" [paginate]="paginate" (setPage)="setPage($event)"></app-pagination>
+

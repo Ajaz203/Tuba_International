@@ -1,0 +1,88 @@
+<div class="skeleton_loader" [class.loader-hide]="loaderHide">
+  <app-menu-skeleton [skeletonType]="skeletonType"></app-menu-skeleton>
+
+  @if(skeletonType == 'hotel' || skeletonType == 'tour'){
+    <div class="breadcrumb-section dark-bg" ></div>
+  }
+
+  @if(skeletonType == 'single-page' && breadcrumbSection && hotel){
+    <div class="hotel-single-section" ></div>
+  }
+
+  @if(skeletonType == 'single-page' && tour || skeletonType == 'single-page' && tour && tourClassicGallery){
+    <div class="home_section">
+      <div class="home home-60"></div>
+    </div>
+  }
+
+  @if(skeletonType == 'single-page' && flight){
+    <section class="breadcrumb-section flight-sec"></section>
+  }
+
+  @if(skeletonType == 'cab-list' || skeletonType == 'cab'){
+    <section class="breadcrumb-section flight-sec pt-0">
+    </section>
+  }
+
+  @if(skeletonType == 'restaurant' || skeletonType == 'restaurant-single-page'){
+    <div class="order-food-section"></div>
+  }
+
+  @if(restaurantBreadcrumb){
+    <div class="top-title-bar">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="hotel_title_section">
+              <div class="left-part">
+                <h2></h2>
+                <h6></h6>
+              </div>
+              <div class="right-part">
+                <ul></ul>
+                <h6></h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+
+  @if(skeletonType == 'hotel'){
+    <app-hotel-skeleton [gridType]="gridType" [filter]="filter" [filterType]="filterType" [mapFilter]="mapFilter" [mapSide]="mapSide" [list]="list" [grid]="grid"></app-hotel-skeleton>
+  }
+
+  @if(skeletonType == 'single-page' && hotel){
+    <app-hotel-single-page-skeleton [skeletonType]="skeletonType" [withOutTopPage]="withOutTopPage" [breadcrumbSection]="breadcrumbSection" [filterType]="filterType"></app-hotel-single-page-skeleton>
+  }
+
+  @if(skeletonType == 'tour'){
+    <app-tour-skeleton [gridType]="gridType" [filter]="filter" [filterType]="filterType" [list]="list"></app-tour-skeleton>
+  }
+
+  @if(skeletonType == 'single-page' && tour && tourClassicGallery){
+    <app-tour-page-classic-gallery-skeleton></app-tour-page-classic-gallery-skeleton>
+  }@else {
+    @if(skeletonType == 'single-page' && tour){
+      <app-tour-single-page-skeleton [filterType]="filterType"></app-tour-single-page-skeleton>
+    }
+  }
+
+  @if(skeletonType == 'single-page' && flight){
+    <app-flight-skeleton></app-flight-skeleton>
+  }
+
+  @if(skeletonType == 'cab-list' || skeletonType == 'cab'){
+    <app-cab-skeleton [filterType]="filterType" [skeletonType]="skeletonType" [gridType]="gridType" [grid]="grid" [filter]="filter" [mapSide]="mapSide" [map]="map"></app-cab-skeleton>
+  }
+
+  @if(skeletonType == 'restaurant'){
+    <app-restaurant-skeleton [filterType]="filterType" [gridType]="gridType" [horizontalFilter]="horizontalFilter" [filter]="filter" [mapFilter]="mapFilter" [mapSide]="mapSide"></app-restaurant-skeleton>
+  }
+
+  @if(skeletonType == 'restaurant-single-page'){
+    <app-restaurant-single-page-skeleton [filterType]="filterType"></app-restaurant-single-page-skeleton>
+  }
+
+</div>

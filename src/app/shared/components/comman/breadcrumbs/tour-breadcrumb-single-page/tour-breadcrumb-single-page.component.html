@@ -1,0 +1,87 @@
+<section class="home_section p-0 overflow-hidden">
+  @if(!slider){
+    @if(tourVideo){
+      <div class="home home-70" id="block" style="width: 100%; ">
+        <div style="position: absolute; z-index: -1; inset: 0px; overflow: hidden; background-size: cover; background-color: transparent; background-repeat: no-repeat; background-position: 0% 50%; background-image: none;"><video autoplay="" loop="" muted="" style="margin: auto; position: absolute; z-index: -1; top: 50%; left: 0%; transform: translate(0%, -50%); visibility: visible; opacity: 1; width: 1849px; height: auto;">
+            <source src="assets/video/city.mp4" type="video/mp4">
+          </video></div>
+          <div class="row">
+            <div class="col-md-8 offset-md-2">
+              <div class="home-content mix-layout mrg-cls">
+                <div>
+                  <h1>{{ title }}</h1>
+                  <ul class="package-detail">
+                    <li><i class="far fa-calendar-alt"></i>{{ days }} days</li>
+                    <li><i class="fas fa-plane"></i>{{ date }}</li>
+                    <li><i class="fas fa-download"></i><a href="javascript:vod(0)">download pdf</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    }@else{
+      <div>
+        <div class="home home-60 bg-size" [style.background-image]="'url('+ bg_image +')'" [class.parallax-img]="birdAnimation">
+          <img [src]="bg_image" class="bg-img img-fluid blur-up lazyload" alt="background-image" style="display: none;">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 offset-md-2">
+                <div class="home-content mix-layout mrg-cls" [class.pt-0]="!birdAnimation">
+                  <div>
+                    <h1>{{ title }}</h1>
+                    <ul class="package-detail">
+                      <li><i class="far fa-calendar-alt"></i>{{ days }} days</li>
+                      <li><i class="fas fa-plane"></i>{{ date }}</li>
+                      <li><i class="fas fa-download"></i><a href="javascript:vod(0)">download pdf</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          @if(birdAnimation){
+            <div class="bird-animation">
+              <app-animations [type]="'bird'"></app-animations>
+            </div>
+          }
+        </div>
+      </div>
+    }
+  }@else {
+      <owl-carousel-o [options]="options">
+        @for(details of carouselData; track details){
+          <ng-template carouselSlide>
+            <div>
+              <div class="home home-60 bg-size" [style.background-image]="'url('+ details.image +')'">
+                <img [src]="details.image" class="bg-img img-fluid blur-up lazyload" alt="destination-image" style="display: none;">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                      <div class="home-content pt-0 mix-layout mrg-cls">
+                        <div>
+                          <h1>{{ details.title }}
+                            @if(details.subTitle){
+                              <span>rica</span>
+                            }
+                          </h1>
+                          @if(details.details){
+                            <ul class="package-detail">
+                              <li><i class="far fa-calendar-alt"></i>{{ details.days }} days</li>
+                              <li><i class="fas fa-plane"></i>{{ details.date }}</li>
+                              <li><i class="fas fa-download"></i><a href="javascript:void(0)">download pdf</a></li>
+                            </ul>
+                          }
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        }
+      </owl-carousel-o>
+    }
+
+</section>

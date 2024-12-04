@@ -1,0 +1,79 @@
+@if(responsiveLatestFilter){
+  <a href="javascript:void(0)" class="mobile-filter border-top-0" (click)="openResponsiveFilter()">
+    <h5>latest filter</h5>
+    <img src="assets/images/icon/adjust.png" class="img-fluid blur-up lazyload" alt="filter-icon">
+  </a>
+}
+<!-- Tags  -->
+<ul class="product-filter-tags">
+  <li class="me-1">
+    @if(tags.length){
+      @for(tag of tags; track tag){
+        @if(tag){
+          <a href="javascript:void(0)" class="filter_tag">
+            {{ tag }}
+            <button type="button" class="btn-close" aria-label="Close" (click)="removeTag(tag)"></button>
+          </a>
+        }
+      }
+    }
+    @if(minPrice && maxPrice != 0){
+      <a href="javascript:void(0)" class="filter_tag">
+        Price : {{ minPrice | currencyPipe: hotelService.currency }} - {{ maxPrice | currencyPipe: hotelService.currency }}
+      </a>
+    }
+  </li>
+</ul>
+
+<div class="container">
+  <div class="list-view row content grid">
+    @for(details of tours; track details){
+      <div class="list-box col-12 popular grid-item wow fadeInUp">
+        <div class="list-img">
+          @if(imageSlider || thumbnailImages || thumbnailVideo){
+            <app-tour-list-images [images]="details" [imageSlider]="imageSlider" [thumbnailImages]="thumbnailImages" [thumbnailVideo]="thumbnailVideo"></app-tour-list-images>
+          }@else {
+            <a href="javascript:void(0)">
+              <img [src]="details.img" class="img-fluid blur-up lazyload" alt="destination-image">
+            </a>
+          }
+        </div>
+        <div class="list-content">
+          <div>
+            <a href="javascript:void(0)" [routerLink]="['/tour/single-page/classic-design']">
+              <h5>{{ details.title }}</h5>
+            </a>
+            <p>{{ details.night }} Night | {{ details.days }} Days</p>
+            <h6><i class="fas fa-plane-departure me-3"></i> {{ details.tripDetails }} <i class="fas fa-plane-arrival ms-3"></i></h6>
+            @if(description){
+              <p class="hotel-info">{{ details.description }}</p>
+            }
+            <div class="facility-icon">
+              @for(facility of details.includesDetails; track facility){
+                @if(facility.includes){
+                  <div class="facility-box">
+                    <img [src]="facility.icon" class="img-fluid blur-up lazyload">
+                    <span>{{ facility.title }}</span>
+                  </div>
+                }
+              }
+            </div>
+            <div class="price">
+              <del>{{ details.price | currencyPipe: hotelService.currency }}</del>{{ details.discountPrice | currencyPipe: hotelService.currency }} <span>/ per person</span>
+            </div>
+            @if(details.deal){
+              <div class="offer-box">
+                <i class="fas fa-fire"></i> {{ details.dealText }}
+              </div>
+            }
+            <a href="javascript:void(0)" class="btn btn-solid color1 book-now" [routerLink]="['/tour/single-page/classic-design']">view details</a>
+          </div>
+        </div>
+      </div>
+    }@empty {
+      <app-no-data [icon]="icon" [title]="title" [description]="descriptionData" [ImageClass]="true"></app-no-data>
+    }
+  </div>
+</div>
+
+<app-pagination [productsTour]="tours" [paginate]="paginate" (setPage)="setPage($event)"></app-pagination>

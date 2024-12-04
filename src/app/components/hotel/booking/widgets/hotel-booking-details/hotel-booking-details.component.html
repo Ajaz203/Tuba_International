@@ -1,0 +1,73 @@
+<div class="summery-box">
+  <h2>booking summery</h2>
+  <div class="hotel-section">
+    <div class="hotel-img">
+      <img src="assets/images/hotel/room/1.jpg" class="img-fluid blur-up lazyload" alt="hotel-room-image">
+    </div>
+    <div class="hotel-detail">
+      <h6>sea view hotel</h6>
+      <p>Mina Road, Bur Dubai, Dubai</p>
+    </div>
+  </div>
+  <div class="summery-section">
+    <div class="box">
+      <div class="left">
+        <div class="up">
+          <h6>check in</h6>
+          <h5>tue, 18 sep 2019</h5>
+        </div>
+        <div class="down">
+          <h6>check in time</h6>
+          <h5>2.00 pm</h5>
+        </div>
+      </div>
+      <div class="right">
+        <div class="up">
+          <h6>check out</h6>
+          <h5>fri, 21 sep 2019</h5>
+        </div>
+        <div class="down">
+          <h6>check out time</h6>
+          <h5>12.00 pm</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="summery-section">
+    <h5 class="mb-0">2 guest, 1 deluxe room, 3 night</h5>
+    <a href="javascript:void(0)" class="edit-cls">edit</a>
+  </div>
+  <div class="summery-section">
+    <div class="payment-details">
+      <h5>payment details</h5>
+      <table>
+        <tbody>
+          <tr>
+            <td>base price</td>
+            <td>{{ 2510 | currencyPipe: hotelService.currency }}</td>
+          </tr>
+          <tr>
+            <td>promo discount</td>
+            <td>- {{ 250 | currencyPipe: hotelService.currency }}</td>
+          </tr>
+          <tr>
+            <td>tax & service fees</td>
+            <td>+ {{ 150 | currencyPipe: hotelService.currency }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="summery-section">
+    <div class="payment-details">
+      <table>
+        <tbody>
+          <tr>
+            <td>payable amount</td>
+            <td class="amount">{{ 2410 | currencyPipe: hotelService.currency }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

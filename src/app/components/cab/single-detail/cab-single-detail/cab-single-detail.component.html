@@ -1,0 +1,32 @@
+<app-header [headerClass]="'light_header'"></app-header>
+
+<app-breadcrumbs [type]="'cab'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child"></app-breadcrumbs>
+
+<section class="single-section small-section bg-inner">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 col-lg-8">
+        @if(cabDetails){
+          <div class="image_section">
+            <app-cab-gallery [cabGallery]="cabDetails.cabGallery"></app-cab-gallery>
+          </div>
+          <div class="cab-single-detail">
+            <app-cab-single-page-detail [cabDetails]="cabDetails.cabDetails"></app-cab-single-page-detail>
+          </div>
+        }
+      </div>
+      <div class="col-xl-3 col-lg-4 ">
+        <div class="single-sidebar">
+          <app-cab-single-page-filter></app-cab-single-page-filter>
+        </div>
+        <div class="single-sidebar">
+          <app-cab-single-page-contact></app-cab-single-page-contact>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout [loaderType]="'basic'"></app-layout>

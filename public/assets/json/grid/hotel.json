@@ -1,0 +1,248 @@
+{
+  "hotels": [
+    {
+      "id": 1,
+      "hotelName": "the venetian",
+      "description": "The Venetian Hotel is a lavish resort in Las Vegas, featuring opulent Italian-inspired architecture, complete with indoor canals and gondola rides",
+      "location": "Newyork",
+      "img": "assets/images/hotel/gallery/1.jpg",
+      "images": [
+        {
+          "url": "assets/video/hotel.mp4",
+          "fileType": "video"
+        },
+        {
+          "url": "assets/images/hotel/gallery/1.jpg",
+          "fileType": "image"
+        },
+        {
+          "url": "assets/images/hotel/gallery/2.jpg",
+          "fileType": "image"
+        }
+      ],
+      "tag": true,
+      "tagTitle": "Recommended",
+      "review": 26412,
+      "category": "popular",
+      "district": "paris center",
+      "facility": ["swimming pool", "restaurant"],
+      "rating": 4,
+      "language": "french",
+      "tags": ["paris_center", "swimming_pool","restaurant", "four", "french"],
+      "price": 1300,
+      "discountPrice": 1245,
+      "deal": true,
+      "dealText": "8 people booked this hotel today",
+      "hotelFacility": ["bar","wifi","beach","swimming"]
+    },
+    {
+      "id": 2,
+      "hotelName": "The Ritz-Carlton",
+      "description": "Nestled in the heart of Paris, this iconic hotel offers exquisite luxury and impeccable service, providing an elegant retreat near the Louvre",
+      "location": "Paris",
+      "img": "assets/images/hotel/video-image.jpg",
+      "images": [
+        {
+          "url": "assets/images/hotel/video-image.jpg",
+          "fileType": "image"
+        },
+        {
+          "url": "assets/images/hotel/gallery/2.jpg",
+          "fileType": "image"
+        }
+      ],
+      "tag": true,
+      "tagTitle": "hot deal",
+      "review": 25000,
+      "category": "latest",
+      "district": "latin",
+      "facility": ["restaurant", "spa & salon"],
+      "rating": 2,
+      "language": "arabic",
+      "tags": ["latin", "spa_salon","restaurant", "two", "arabic"],
+      "price": 1200,
+      "discountPrice": 1175,
+      "deal": false,
+      "hotelFacility": ["bar","wifi","restaurant","swimming"]
+    },
+    {
+      "id": 3,
+      "hotelName": "Burj Al Arab",
+      "description": "Standing tall on its own island, this sail-shaped marvel is synonymous with luxury, offering unparalleled views of the Arabian Gulf and a lavish experience",
+      "location": "Dubai",
+      "img": "assets/images/hotel/room/3.jpg",
+      "images": [
+        {
+          "url": "assets/images/hotel/gallery/3.jpg",
+          "fileType": "image"
+        },
+        {
+          "url": "assets/images/hotel/gallery/4.jpg",
+          "fileType": "image"
+        }
+      ],
+      "tag": false,
+      "review": 27895,
+      "category": "popular",
+      "district": "latin",
+      "facility": ["parking", "fitness center"],
+      "rating": 5,
+      "language": "espanol",
+      "tags": ["latin", "parking","fitness_center", "five", "espanol"],
+      "price": 1300,
+      "discountPrice": 1245,
+      "deal": true,
+      "dealText": "Hurry, Only 1 room left",
+      "hotelFacility": ["wifi","beach","swimming"]
+
+    },
+    {
+      "id": 4,
+      "hotelName": "The Ritz-Carlton",
+      "description": "Embraced by the beauty of Kyoto's Higashiyama mountains, this hotel seamlessly integrates traditional Japanese design with contemporary luxury, creating a serene retreat in the ancient city",
+      "location": "Kyoto",
+      "img": "assets/images/hotel/gallery/3.jpg",
+      "images": [
+        {
+          "url": "assets/images/hotel/gallery/3.jpg",
+          "fileType": "image"
+        },
+        {
+          "url": "assets/images/hotel/gallery/4.jpg",
+          "fileType": "image"
+        }
+      ],
+      "tag": false,
+      "review": 26412,
+      "category": "trend",
+      "district": "la defance",
+      "facility": ["wifi", "pet allowed"],
+      "rating": 3,
+      "language": "english",
+      "tags": ["la_defance", "wifi","pet_allowed", "three", "english"],
+      "price": 1200,
+      "discountPrice": 1190,
+      "deal": false,
+      "hotelFacility": ["bar","wifi","beach","swimming"]
+    },
+    {
+      "id": 5,
+      "hotelName": "Mandarin Oriental",
+      "description": "Set in the bustling metropolis of Tokyo, this high-rise hotel boasts panoramic city views and a harmonious blend of Japanese aesthetics and contemporary luxury",
+      "location": "Tokyo",
+      "img": "assets/images/hotel/gallery/5.jpg",
+      "images": [
+        {
+          "url": "assets/images/hotel/gallery/5.jpg",
+          "fileType": "image"
+        },
+        {
+          "url": "assets/images/hotel/gallery/4.jpg",
+          "fileType": "image"
+        }
+      ],
+      "tag": true,
+      "tagTitle": "certified",
+      "review": 26412,
+      "category": "popular",
+      "district": "latin",
+      "facility": ["restaurant", "wifi"],
+      "rating": 5,
+      "language": "italiano",
+      "tags": ["latin", "wifi","restaurant", "five", "italiano"],
+      "price": 1000,
+      "discountPrice": 985,
+      "deal": false,
+      "hotelFacility": ["bar","wifi","swimming"]
+    },
+    {
+      "id": 6,
+      "hotelName": "Four Seasons Safari",
+      "description": "Surrounded by the vast plains of the Serengeti, this safari lodge offers a unique blend of wildlife adventure and five-star comfort, allowing guests to experience the wonders of Africa",
+      "location": "Tanzania",
+      "img": "assets/images/hotel/room/1.jpg",
+      "images": [
+        {
+          "url": "assets/images/hotel/room/1.jpg",
+          "fileType": "image"
+        },
+        {
+          "url": "assets/images/hotel/room/2.jpg",
+          "fileType": "image"
+        }
+      ],
+      "tag": false,
+      "review": 26412,
+      "category": "trend",
+      "district": "latin",
+      "facility": ["restaurant", "parking"],
+      "rating": 3,
+      "language": "suomi",
+      "tags": ["latin", "parking","restaurant", "three", "suomi"],
+      "price": 1500,
+      "discountPrice": 1425,
+      "deal": true,
+      "dealText": "8 people booked this hotel today",
+      "hotelFacility": ["bar","wifi","beach","restaurant","swimming"]
+    },
+    {
+      "id": 7,
+      "hotelName": "The Plaza Hotel",
+      "description": "A historic landmark on Fifth Avenue, The Plaza exudes timeless elegance, offering a quintessential New York experience with its luxurious accommodations and iconic Palm Court",
+      "location": "New York",
+      "img": "assets/images/hotel/gallery/4.jpg",
+      "images": [
+        {
+          "url": "assets/images/hotel/gallery/4.jpg",
+          "fileType": "image"
+        },
+        {
+          "url": "assets/images/hotel/room/1.jpg",
+          "fileType": "image"
+        }
+      ],
+      "tag": true,
+      "tagTitle": "certified",
+      "review": 26412,
+      "category": "latest",
+      "district": "paris center",
+      "facility": ["pet allowed", "swimming pool"],
+      "rating": 3,
+      "language": "espanol",
+      "tags": ["paris_center", "swimming_pool","pet_allowed", "three", "espanol"],
+      "price": 1100,
+      "discountPrice": 1000,
+      "deal": false,
+      "hotelFacility": ["bar","wifi","swimming"]
+    },
+    {
+      "id": 8,
+      "hotelName": "Belmond Hotel",
+      "description": "Perched on a cliff overlooking the Amalfi Coast, this former 11th-century palace is a haven of tranquility, offering breathtaking views of the Mediterranean and refined Italian charm",
+      "location": "Ravello",
+      "img": "assets/images/hotel/room/2.jpg",
+      "images": [
+        {
+          "url": "assets/images/hotel/room/2.jpg",
+          "fileType": "image"
+        },
+        {
+          "url": "assets/images/hotel/gallery/4.jpg",
+          "fileType": "image"
+        }
+      ],
+      "tag": false,
+      "review": 26412,
+      "category": "trend",
+      "district": "latin",
+      "facility": ["wifi", "fitness center"],
+      "rating": 4,
+      "language": "suomi",
+      "tags": ["latin", "wifi","fitness_center", "four", "suomi"],
+      "price": 1000,
+      "discountPrice": 985,
+      "deal": false,
+      "hotelFacility": ["bar","wifi","beach","restaurant"]
+    }
+  ]
+}

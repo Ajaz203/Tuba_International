@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 d-md-block d-none">
+      <div class="detail-bar">
+        <div class="detail-wrap">
+          <div class="row">
+            <div class="col-md-3 col-6">
+              <div class="logo-sec">
+                <img src="assets/images/flights/airlines/1.png" class="img-fluid blur-up lazyload" alt="airline-image">
+              </div>
+            </div>
+            <div class="col-md-6 d-md-block d-none">
+              <div class="airport-part">
+                <div class="airport-name">
+                  <h4>17.00</h4>
+                  <h6>DXB</h6>
+                </div>
+                <div class="airport-progress">
+                  <i class="fas fa-long-arrow-alt-right"></i>
+                </div>
+                <div class="airport-name arrival">
+                  <h4>22.20</h4>
+                  <h6>CDG</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="price">
+                <div>
+                  <h4>{{ 1200 | currencyPipe: hotelService.currency }}</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 d-md-block d-none">
+      <div class="detail-bar border-cls">
+        <div class="detail-wrap">
+          <div class="row">
+            <div class="col-md-3 col-6">
+              <div class="logo-sec">
+                <img src="assets/images/flights/airlines/3.png" class="img-fluid blur-up lazyload" alt="airline-image">
+              </div>
+            </div>
+            <div class="col-md-6 d-md-block d-none">
+              <div class="airport-part">
+                <div class="airport-name">
+                  <h4>22.20</h4>
+                  <h6>CDG</h6>
+                </div>
+                <div class="airport-progress">
+                  <i class="fas fa-long-arrow-alt-right"></i>
+                </div>
+                <div class="airport-name arrival">
+                  <h4>17.00</h4>
+                  <h6>DXB</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="price">
+                <div>
+                  <h4>{{ 1200 | currencyPipe: hotelService.currency }}</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-12">
+      <div class="grand-total">
+        <h5 class="total">grand total : <span>{{ 2400 | currencyPipe: hotelService.currency }}</span></h5>
+        <a href="javascript:void(0)" class="btn btn-solid color1">book now</a>
+      </div>
+    </div>
+  </div>
+</div>

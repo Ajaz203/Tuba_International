@@ -1,0 +1,23 @@
+<app-header [headerClass]="'light_header'"></app-header>
+
+<app-breadcrumbs [type]="'restaurant'"></app-breadcrumbs>
+
+<section class="small-section bg-inner">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <app-grid-panel [type]="'restaurant'" (selectedTabValue)="getTabValue($event)" [mapModal]="true" [mapType]="'leafletMap'"></app-grid-panel>
+      </div>
+      <div class="col-lg-3">
+        <app-filter [type]="'restaurant'"></app-filter>
+      </div>
+      <div class="col-lg-9 ratio3_2">
+        <app-details [type]="'restaurant'" [selectedTabValue]="selectedTabValue" [gridType]="'3-grid'" [responsiveLatestFilter]="true"></app-details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout [loaderType]="'skeleton'" [skeletonType]="'restaurant'" [gridType]="'3-grid'" [filterType]="'left'" [filter]="true"></app-layout>

@@ -1,0 +1,13 @@
+<div class="collection-collapse-block" [class.open]="isOpenCapacity">
+  <h6 class="collapse-block-title" (click)="openCapacity()">capacity</h6>
+  <div class="collection-collapse-block-content" [ngStyle]="{ 'display' : isOpenCapacity == true ? 'block' : 'none'}">
+    <div class="collection-brand-filter">
+      @for(capacity of cabCapacity; track capacity){
+        <div class="form-check collection-filter-checkbox">
+          <input type="checkbox" class="form-check-input" id="{{ capacity.checkId }}" [value]="capacity.checkId" [checked]="checked(capacity.checkId)" (change)="applyFilter($event)">
+          <label class="form-check-label" for="{{ capacity.checkId }}">{{ capacity.title }}</label>
+        </div>
+      }
+    </div>
+  </div>
+</div>

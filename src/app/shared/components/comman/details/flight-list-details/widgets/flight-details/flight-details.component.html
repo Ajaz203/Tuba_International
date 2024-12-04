@@ -1,0 +1,52 @@
+
+@for(details of flightDetails; track details){
+<div class="detail-wrap wow fadeInUp" [class.active]="details.activeFrom && from || details.activeTo && to" (click)="selectFlight(details.id)">
+  <div class="row">
+      <div [class.col-md-2]="!roundTrip" [class.col-xl-3]="flightClass" [class.col-md-3]="roundTrip">
+        <div class="logo-sec">
+          <img [src]="details.img" class="img-fluid blur-up lazyload" alt="airline-image">
+          <span class="title">{{ details.airline }}</span>
+        </div>
+      </div>
+      <div [class.col-md-5]="!roundTrip" [class.col-md-6]="roundTrip">
+        <div class="airport-part">
+          <div class="airport-name">
+            <h4>{{ details.departureTime }}</h4>
+            <h6>DXB</h6>
+          </div>
+          <div class="airport-progress">
+            <i class="fas fa-plane-departure float-start"></i>
+            <i class="fas fa-plane-arrival float-end"></i>
+            <div class="stop">
+              {{ details.stopTime }} ({{ details.stop }})
+            </div>
+          </div>
+          <div class="airport-name arrival">
+            <h4>{{ details.arriveTime }}</h4>
+            <h6>CDG</h6>
+          </div>
+        </div>
+      </div>
+      <div [class.col-md-2]="!roundTrip" [class.col-md-3]="roundTrip">
+        <div class="price">
+          <div>
+            <h4>{{ details.price | currencyPipe: hotelService.currency }}</h4>
+            <span>{{ details.fare }}</span>
+          </div>
+        </div>
+      </div>
+      @if(!roundTrip){
+        <div [class.col-md-3]="!roundTrip" [class.col-xl-2]="flightClass" >
+          <div class="book-flight">
+            <a href="javascript:void(0)" class="btn btn-solid color1 " [routerLink]="['/flight/booking/book-now']">book now</a>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+}@empty {
+  <app-no-data [icon]="icon" [title]="title" [description]="description"></app-no-data>
+}
+
+<app-pagination [productsFlight]="flightDetails" [paginate]="paginate" (setPage)="setPage($event)"></app-pagination>
+

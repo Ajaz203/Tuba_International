@@ -1,0 +1,52 @@
+<section class="price-section section-b-space ratio_square">
+  <div class="container-fluid">
+    <app-title [type]="'standard'" [title]="'cheap...'" [subTitle]="'airline tickets'" [description]="description"></app-title>
+    <div class="slide-3 no-arrow">
+      @if(flightDetails){
+        <owl-carousel-o [options]="options">
+          @for(details of flightDetails; track details){
+            <ng-template carouselSlide>
+              <div>
+                <div class="price-box ">
+                  <div class="price-img">
+                    <a href="javascript:void(0)" class="bg-size" [style.background-image]="'url('+ details.categoryImage  +')'"  [routerLink]="['/flight/listing/left-sidebar']">
+                      <img [src]="details.categoryImage" alt="place-image" class=" img-fluid blur-up lazyload bg-img" style="display: none;">
+                    </a>
+                    @if(details.tag){
+                      <span class="label">{{ details.tagTitle }}</span>
+                    }
+                  </div>
+                  <div class="price-content ">
+                    <div class="price-title">
+                      <a href="javascript:void(0)"  [routerLink]="['/flight/listing/left-sidebar']">
+                        <h3>{{ details.categoryTitle }}</h3>
+                      </a>
+                      <div class="like-cls">
+                        <i class="fas fa-heart"><span class="effect"></span></i>
+                      </div>
+                    </div>
+                    <div class="rating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                    @for(flights of details.flightDetails; track flights){
+                      <div class="price">
+                        <a href="javascript:void(0)"  [routerLink]="['/flight/listing/left-sidebar']">
+                          <h6>{{ flights.city }}</h6>
+                        </a>
+                        <h5><span>from</span>{{ flights.price | currencyPipe: hotelService.currency }}</h5>
+                      </div>
+                    }
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          }
+        </owl-carousel-o>
+      }
+    </div>
+  </div>
+</section>

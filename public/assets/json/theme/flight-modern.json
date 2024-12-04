@@ -1,0 +1,135 @@
+{
+  "destination": [
+    {
+      "id": 1,
+      "country": "france country",
+      "city": "paris",
+      "description": "Embark on a luxurious Paris tour in style with premium flight class, where you'll experience unparalleled comfort and service throughout your journey",
+      "image": "assets/images/flights/destination/1.jpg",
+      "price": 581
+    },
+    {
+      "id": 2,
+      "country": "united kingdom",
+      "city": "london",
+      "description": "Embark on a luxurious London tour in style with our first-class flight experience, where comfort meets elegance",
+      "image": "assets/images/flights/destination/2.jpg",
+      "price": 500
+    },
+    {
+      "id": 3,
+      "country": "switzerland",
+      "city": "zurich",
+      "description": "Experience Zurich in style with our premium flight class, where luxury meets travel for an unforgettable journey",
+      "image": "assets/images/flights/destination/3.jpg",
+      "price": 600
+    },
+    {
+      "id": 4,
+      "country": "australia",
+      "city": "sydney",
+      "description": "Embark on a luxurious Sydney tour with premium flight class, ensuring a first-class travel experience to this stunning destination",
+      "image": "assets/images/flights/destination/4.jpg",
+      "price": 550
+    }
+  ],
+  "airlines": [
+    {
+      "id": 1,
+      "airlineName": "rica airlines",
+      "title": "student offer",
+      "subTitle": "enjoy extra baggage allowance"
+    },
+    {
+      "id": 2,
+      "airlineName": "airlines",
+      "title": "10% bonus",
+      "subTitle": "enjoy extra baggage allowance"
+    },
+    {
+      "id": 3,
+      "airlineName": "rica airlines",
+      "title": "New offer",
+      "subTitle": "enjoy extra baggage allowance"
+    }
+  ],
+  "category": [13,14,15,16],
+  "flightDetails": [17,18,19,20],
+  "topDestination": [
+    {
+      "id": 1,
+      "title": "japan",
+      "image": "assets/images/flights/logo.png",
+      "flights": [
+        {
+          "id": 1,
+          "country": "australia",
+          "price": 451,
+          "airlines": 35
+        },
+        {
+          "id": 2,
+          "country": "bahrain",
+          "price": 610,
+          "airlines": 18
+        },
+        {
+          "id": 3,
+          "country": "china",
+          "price": 621,
+          "airlines": 21
+        },
+        {
+          "id": 4,
+          "country": "egypt",
+          "price": 480,
+          "airlines": 6
+        },
+        {
+          "id": 5,
+          "country": "india",
+          "price": 320,
+          "airlines": 31
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "emirates",
+      "image": "assets/images/flights/logo2.png",
+      "flights": [
+        {
+          "id": 1,
+          "country": "brazil",
+          "price": 451,
+          "airlines": 35
+        },
+        {
+          "id": 2,
+          "country": "denmark",
+          "price": 610,
+          "airlines": 18
+        },
+        {
+          "id": 3,
+          "country": "greece",
+          "price": 621,
+          "airlines": 21
+        },
+        {
+          "id": 4,
+          "country": "iran",
+          "price": 480,
+          "airlines": 6
+        },
+        {
+          "id": 5,
+          "country": "japan",
+          "price": 320,
+          "airlines": 31
+        }
+      ]
+    }
+  ],
+  "blog": [11,12,13,14]
+}

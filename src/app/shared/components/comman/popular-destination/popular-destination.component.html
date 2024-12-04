@@ -1,0 +1,39 @@
+@if(themes){
+  <owl-carousel-o [options]="options">
+    @for(destination of themes; track destination){
+      <ng-template carouselSlide>
+        <div>
+          <div class="tourBox wow zoomIn">
+            <div class="tourImg">
+              <img [src]="destination.image" class="img-fluid blur-up lazyload bg-img" alt="country-image">
+            </div>
+            <div class="tourContent">
+              <div class="tourContent">
+                <h3>{{ destination.title }}</h3>
+                <h6>{{ destination.destination }}+ destination</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    }
+  </owl-carousel-o>
+}@else {
+  <owl-carousel-o [options]="options">
+    @for(destination of popularDestination; track destination){
+      <ng-template carouselSlide>
+        <div>
+          <div class="tourBox wow zoomIn">
+            <div class="tourImg">
+              <img [src]="destination.image" class="img-fluid blur-up lazyload bg-img" alt="country-image">
+            </div>
+            <div class="tourContent">
+              <h3>{{ destination.countryName }}</h3>
+              <h6>starting from {{ destination.price | currencyPipe: hotelService.currency }}</h6>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    }
+  </owl-carousel-o>
+}

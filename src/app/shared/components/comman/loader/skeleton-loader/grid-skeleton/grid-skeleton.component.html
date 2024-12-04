@@ -1,0 +1,68 @@
+@if(mapFilter){
+  <div class="filter-panel right-filter">
+    <a href="javascript:void(0)" class="popup-btn">
+      <h5></h5>
+      <img src="assets/images/icon/adjust.png" class="img-fluid blur-up lazyload" alt="filter-icon">
+    </a>
+    <div class="left-filter ms-auto">
+      <div class="respon-filter-btn">
+        <h6></h6>
+        <span class="according-menu"></span>
+      </div>
+      <div class="filters respon-filter-content filter-button-group">
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+}@else {
+  <div class="filter-panel">
+    <div class="left-filter">
+      <div class="respon-filter-btn">
+        <h6></h6>
+        <span class="according-menu"></span>
+      </div>
+      <div class="filters respon-filter-content filter-button-group">
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    <div class="right-panel">
+      @if(horizontalFilter){
+        <a href="javascript:void(0)" class="filter_button filter-bottom-title">
+          <img src="assets/images/icon/adjust.png" class="img-fluid blur-up lazyload" alt="filter-icon">
+          <h5></h5>
+        </a>
+      }
+      <div class="collection-grid-view">
+        <ul>
+          <li>
+            <a href="javascript:void(0)" class="product-2-layout-view">
+              <ul class="filter-select">
+                <li></li>
+                <li></li>
+              </ul>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" class="product-3-layout-view">
+              <ul class="filter-select">
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+}

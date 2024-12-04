@@ -1,0 +1,21 @@
+@for(img of images; track img; let i = $index){
+  <a href="javascript:void(0)" class="img-box" (click)="open(img)">
+    <div class="gallery_box">
+      <div class="gallery-img">
+        <div class="overlay"></div>
+        <img [src]="img.url" alt="gallery" class="img-fluid blur-up lazyload w-100">
+      </div>
+      <div class="gallery-content">
+        <h3>{{ img.title }}</h3>
+        <div class="rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="far fa-star"></i>
+        </div>
+      </div>
+      <div class="view-cls"><i class="fas fa-plus"></i></div>
+    </div>
+  </a>
+}

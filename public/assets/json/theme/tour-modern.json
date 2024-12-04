@@ -1,0 +1,62 @@
+{
+  "category": [1,2,3,4],
+  "package": [5,6,7],
+  "testimonial": [1,2],
+  "gallery": [
+    {
+      "id": 1,
+      "colClass": "col-2 p-0",
+      "images": [
+        {
+          "title": "china town",
+          "url": "assets/images/tour/gallery/2.jpg",
+          "fileType": "image"
+        },
+        {
+          "title": "garden",
+          "url": "assets/images/tour/gallery/3.jpg",
+          "fileType": "image"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "colClass": "col-3 p-0",
+      "images": [
+        {
+          "title": "bangkok night",
+          "url": "assets/images/tour/gallery/4.jpg",
+          "fileType": "image"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "colClass": "col-2 p-0",
+      "images": [
+        {
+          "title": "indian zoo",
+          "url": "assets/images/tour/gallery/5.jpg",
+          "fileType": "image"
+        },
+        {
+          "title": "sunset lake",
+          "url": "assets/images/tour/gallery/6.jpg",
+          "fileType": "image"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "colClass": "col-5 p-0",
+      "images": [
+        {
+          "title": "span water fall",
+          "url": "assets/images/tour/gallery/1.jpg",
+          "fileType": "image"
+        }
+      ]
+    }
+  ],
+  "service": [7,8,9]
+}

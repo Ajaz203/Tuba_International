@@ -1,0 +1,69 @@
+<div class="search-panel" (clickOutside)="clickOutside()">
+  @if(text){
+    <h2 class="title-top">deals on every flight you book</h2>
+  }
+  <div class="search-section" [ngClass]="{ 'search-fixed' : searchFixed && searchFix }">
+    <div class="search-box" [class.rounded10]="borderClass" [ngClass]="{ 'container custom-container' : searchFixed }">
+      <div class="left-part">
+        <div class="search-body">
+          <h6>from</h6>
+          <input type="text" class="form-control open-select" id="exampleInputEmail1" value="dubai(DXB)" placeholder="from">
+        </div>
+        <div class="search-body">
+          <h6>to</h6>
+          <input type="text" class="form-control open-select" value="paris(PAR)" placeholder="to">
+        </div>
+        <div class="search-body">
+          <h6>departure</h6>
+          <input class="form-control" placeholder="Depart Date" name="dp"  value="10/01/2019" ngbDatepicker #depart="ngbDatepicker" (click)="depart.toggle()" />
+        </div>
+        <div class="search-body">
+          <h6>return</h6>
+          <input class="form-control" placeholder="Return Date" name="dp" ngbDatepicker #return="ngbDatepicker" (click)="return.toggle()" />
+        </div>
+        <div class="search-body">
+          <h6>traveller</h6>
+          <input type="text" class="form-control  open-select" value="1 traveller" placeholder="to" (click)="openTraveler()">
+          <div class="selector-box-flight" [class.show]="isTraveler">
+            <div class="room-cls">
+              <div class="qty-box">
+                <label class="me-0">adult</label>
+                <div class="input-group">
+                  <button type="button" class="btn quantity-left-minus" (click)="changeValue('adult',-1)"> - </button>
+                  <input type="text" name="quantity" class="form-control qty-input input-number" [value]="adults">
+                  <button type="button" class="btn quantity-right-plus" (click)="changeValue('adult',1)">+</button>
+                </div>
+              </div>
+              <div class="qty-box">
+                <label class="me-0">children</label>
+                <div class="input-group">
+                  <button type="button" class="btn quantity-left-minus" (click)="changeValue('children',-1)"> - </button>
+                  <input type="text" name="quantity" class="form-control qty-input input-number" [value]="child">
+                  <button type="button" class="btn quantity-right-plus" (click)="changeValue('children',1)"> + </button>
+                </div>
+              </div>
+            </div>
+            <div class="flight-class">
+              @for(seat of seatType; track seat){
+                <div class="form-check">
+                  <input class="form-check-input radio_animated" type="radio" name="exampleRadios" id="{{ seat.checkId }}" value="{{ seat.checkValue }}" [checked]="seat.checked">
+                  <label class="form-check-label" for="{{ seat.checkId }}">
+                    {{ seat.type }}
+                  </label>
+                </div>
+              }
+            </div>
+            <div class="bottom-part">
+              <a href="javascript:void(0)" class="btn">apply</a>
+            </div>
+          </div>
+        </div>
+        <div class="search-body btn-search">
+          <div class="right-part">
+            <a href="javascript:void(0)" class="btn btn-solid color1">search</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

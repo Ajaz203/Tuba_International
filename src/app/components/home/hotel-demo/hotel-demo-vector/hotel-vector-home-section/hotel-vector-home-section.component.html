@@ -1,0 +1,22 @@
+<section class="home_section p-0">
+  <div class="home home-padding" [style.background-image]="'url(assets/images/flights/banner.jpg)'">
+    <img src="assets/images/flights/banner.jpg" class="bg-img img-fluid" alt="background-image" style="display: none;">
+    <div class="animation-bg">
+      <div class="container custom-container mix-layout-section">
+        <div class="row">
+          <div class="col-lg-10 m-auto">
+            <div class=" home-content mix-layout smaller-content">
+              <div class="bg-transparent">
+                <div id="sticky_cls">
+                  <div class="search-panel" id="searchBar">
+                    <app-search-box [type]="'basic'" [text]="true" [borderClass]="true" [searchFix]="true"></app-search-box>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

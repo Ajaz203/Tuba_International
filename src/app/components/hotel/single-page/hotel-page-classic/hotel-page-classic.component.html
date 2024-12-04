@@ -1,0 +1,79 @@
+<app-header [headerClass]="'light_header'"></app-header>
+
+<section class="hotel-single-section pt-0 bg-size b-bottom" [style.background-image]="'url(assets/images/single-hotel/bg-2.jpg)'">
+  <img src="assets/images/single-hotel/bg-2.jpg" class="bg-img bg-bottom img-fluid blur-up lazyload" alt="background-image" style="display: none;">
+  <app-breadcrumbs [type]="'hotel-title'"></app-breadcrumbs>
+</section>
+
+<section class="single-section xs-section bg-inner">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 col-lg-8">
+        <div class="image_section ">
+          @if(hotelDetails){
+            <app-hotel-gallery [hotelGallery]="hotelDetails.gallery"></app-hotel-gallery>
+          }
+        </div>
+        <div class="description-section">
+          <div class="menu-top" id="searchBar" [class.sticky]="tabFixed">
+            <div class="container">
+              <app-hotel-tab-slider (tabValue)="getTabValue($event)" [type]="'slider'"></app-hotel-tab-slider>
+            </div>
+          </div>
+          <div class="description-details">
+            @if(hotelDetails){
+              @for(details of hotelDetails.details; track details){
+                @if(details.about){
+                  <div class="desc-box">
+                    <app-hotel-about [hotelAbout]="details.about" [type]="'slider'"></app-hotel-about>
+                  </div>
+                }
+                @if(details.rooms){
+                  <div class="desc-box">
+                    <app-hotel-rooms [hotelRooms]="details.rooms" [type]="'slider'"></app-hotel-rooms>
+                  </div>
+                }
+                @if(details.facility){
+                  <div class="desc-box">
+                    <app-hotel-facility [hotelFacility]="details.facility" [type]="'slider'"></app-hotel-facility>
+                  </div>
+                }
+                @if(details.location){
+                  <div class="desc-box">
+                    <app-hotel-location [hotelLocation]="details.location" [type]="'slider'"></app-hotel-location>
+                  </div>
+                }
+                @if(details.review){
+                  <div class="desc-box">
+                    <app-hotel-review [hotelReview]="details.review" [type]="'slider'"></app-hotel-review>
+                  </div>
+                }
+                @if(details.policy){
+                  <div class="desc-box">
+                    <app-hotel-policy [hotelPolicy]="details.policy" [type]="'slider'"></app-hotel-policy>
+                  </div>
+                }
+              }
+            }
+          </div>
+        </div>
+        <div class="special-section related-box ratio3_2 grid-box">
+          <div class="slider-3 no-arrow">
+            <app-single-page-hotels></app-single-page-hotels>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-4" id="booking">
+        <div class="sticky-cls">
+          <app-hotel-single-page-filter></app-hotel-single-page-filter>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-hotel-single-page-modal></app-hotel-single-page-modal>
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout [loaderType]="'skeleton'" [skeletonType]="'single-page'" [hotel]="true" [filterType]="'right'"></app-layout>

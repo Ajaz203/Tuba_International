@@ -1,0 +1,41 @@
+@for(details of booking; track details){
+  <div class="dashboard-box">
+    <div class="dashboard-title">
+      <h4>{{ details.title }}</h4>
+    </div>
+    @for(bookingData of details.details; track bookingData){
+      <div class="dashboard-detail">
+        <div class="booking-box">
+          <div class="date-box">
+            <span class="day">{{ bookingData.day }}</span>
+            <span class="date">{{ bookingData.date }}</span>
+            <span class="month">{{ bookingData.month }}</span>
+          </div>
+          <div class="detail-middle">
+            <div class="media">
+              <div class="icon">
+                <i class="fas fa-{{ bookingData.icon }}"></i>
+              </div>
+              <div class="media-body">
+                <h6 class="media-heading">{{ bookingData.title }}</h6>
+                <p>amount paid: <span>{{ bookingData.amount | currencyPipe: hotelService.currency }}</span></p>
+              </div>
+              <div class="media-body">
+                <h6 class="media-heading">ID: {{ bookingData.travelId }}</h6>
+                <p>order date: <span>{{ bookingData.travelDate }}</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="detail-last">
+            @if(bookingData.travelDetail == 'upcoming'){
+              <a href="javascript:void(0)">
+                <i class="fas fa-window-close" data-bs-toggle="tooltip" data-placement="top" title="cancle booking"></i>
+              </a>
+            }
+            <span class="badge" [ngClass]="{ 'bg-info' : bookingData.travelDetail == 'upcoming', 'bg-success': bookingData.travelDetail == 'past', 'bg-secondary' : bookingData.travelDetail == 'cancelled' }" [ngStyle]="{ 'border-radius' : '0.25rem'}">{{ bookingData.travelDetail }}</span>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+}

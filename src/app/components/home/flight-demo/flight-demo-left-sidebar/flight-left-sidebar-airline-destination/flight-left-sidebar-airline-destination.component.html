@@ -1,0 +1,42 @@
+<section class="pt-0 xs-section classic-section">
+  <div class="container-fluid">
+    <div class="title-basic">
+      <h2>popular destination</h2>
+    </div>
+    <div class=" flight-arrow product-wrapper-grid special-section grid-box ratio3_2">
+      <div class="slider-4 content grid">
+        @if(destination){
+          <owl-carousel-o [options]="options">
+            @for(details of destination; track details){
+              <ng-template carouselSlide>
+                <div class="grid-item">
+                  <div class="special-box p-0">
+                    <div class="special-img">
+                      <a href="javascript:void(0)" class="bg-size" [style.background-image]="'url('+ details.image +')'" [routerLink]="['/flight/listing/right-sidebar']">
+                        <img [src]="details.image" class="img-fluid blur-up lazyload bg-img" alt="background-image" style="display: none;">
+                      </a>
+                      <div class="top-icon">
+                        <a href="javascript:void(0)" class="" data-bs-toggle="tooltip" data-placement="top" title="" data-original-title="Add to Wishlist">
+                          <i class="far fa-heart"></i>
+                        </a>
+                      </div>
+                      <div class="content-inner">
+                        <a href="javascript:void(0)">
+                          <h5>{{ details.cityName }}</h5>
+                        </a>
+                        <h6>starting {{ details.price | currencyPipe: hotelService.currency }}</h6>
+                      </div>
+                    </div>
+                    @if(details.tag){
+                      <div class="label-offer">{{ details.tagText }}</div>
+                    }
+                  </div>
+                </div>
+              </ng-template>
+            }
+          </owl-carousel-o>
+        }
+      </div>
+    </div>
+  </div>
+</section>

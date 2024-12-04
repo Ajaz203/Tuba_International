@@ -1,0 +1,41 @@
+<app-header [headerClass]="'overlay-black'" [userClass]="'user-light bg_dark'"></app-header>
+
+<app-tour-modern-home-section></app-tour-modern-home-section>
+
+<section class="book-table section-b-space p-0 single-table">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="table-form">
+          <app-search-box [type]="'classic'"></app-search-box>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+@if(tourModern){
+  <app-tour-modern-category [id]="tourModern.category" [category]="category"></app-tour-modern-category>
+
+  <app-tour-modern-video></app-tour-modern-video>
+
+  <app-tour-modern-awesome-package [id]="tourModern.package" [package]="category"></app-tour-modern-awesome-package>
+
+  <app-tour-modern-banner></app-tour-modern-banner>
+
+  <app-tour-modern-testimonial [id]="tourModern.testimonial"></app-tour-modern-testimonial>
+
+  <div class="tour-gallery">
+    <app-tour-modern-gallery [gallery]="tourModern.gallery"></app-tour-modern-gallery>
+  </div>
+
+  <app-tour-modern-service [id]="tourModern.service"></app-tour-modern-service>
+}
+
+<app-tour-modern-app></app-tour-modern-app>
+
+<app-tour-modern-subscribe></app-tour-modern-subscribe>
+
+<app-footer [places]="true"></app-footer>
+
+<app-layout [loaderType]="'basic'"></app-layout>

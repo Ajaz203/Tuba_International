@@ -1,0 +1,33 @@
+<section class="small-section bg-inner">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <app-grid-skeleton></app-grid-skeleton>
+      </div>
+
+      @if(filterType == 'left'){
+        <div class="col-lg-3">
+          <app-hotel-skeleton-filter [filter]="filter"></app-hotel-skeleton-filter>
+        </div>
+      }
+
+      @if(list){
+        <div class="col-lg-9 ratio3_2">
+          <app-tour-list-skeleton-details></app-tour-list-skeleton-details>
+        </div>
+      }
+
+      @if(!list){
+        <div class="ratio3_2" [class.col-lg-9]="gridType == '2-grid' || filterType" [class.col_lg_12]="gridType == '3-grid' || gridType == '4-grid'">
+          <app-tour-skeleton-details [gridType]="gridType"></app-tour-skeleton-details>
+        </div>
+      }
+
+      @if(filterType == 'right'){
+        <div class="col-lg-3">
+          <app-hotel-skeleton-filter [filter]="filter"></app-hotel-skeleton-filter>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,48 @@
+@if(deals){
+  <owl-carousel-o [options]="options">
+    @for(data of deals; track data){
+      <ng-template carouselSlide>
+        <div>
+          <div class="menu-box">
+            <div class="top-bar">
+              <img [src]="data.bg_image" class="img-fluid blur-up lazyload" alt="deal-image">
+              <h2>{{ data.title }}</h2>
+              <div class="decorate">{{ data.title }}</div>
+            </div>
+            <div class="bottom-bar">
+              @for(details of data.details; track details){
+                <div class="menu-bar">
+                  <a href="javascript:void(0)" [routerLink]="['/page/other-pages/about-us-2']">
+                    <img [src]="details.image" class="img-fluid blur-up lazyload" alt="deal-image"></a>
+                  <div class="content">
+                    <a href="javascript:void(0)" [routerLink]="['/page/other-pages/about-us-2']">
+                      <h5>{{ details.title }}</h5>
+                    </a>
+                    @if(details.rating){
+                      <div class="rating">
+                        <span>{{ details.rating }}</span>
+                        <ngb-rating [rate]="details.rating"></ngb-rating>
+                      </div>
+                    }
+
+                    @if(text){
+                      <p>Dep: {{ details.subTitle }}</p>
+                    }@else {
+                      <p>{{ details.subTitle }}</p>
+                    }
+                    <h6>
+                      <del>{{ details.price | currencyPipe: hotelService.currency }}</del> {{ details.discountPrice | currencyPipe: hotelService.currency }}
+                      @if(details.tag){
+                        <label [ngClass]="details.tagClass">{{ details.tagTitle }}</label>
+                      }
+                    </h6>
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    }
+  </owl-carousel-o>
+}

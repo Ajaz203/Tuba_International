@@ -1,0 +1,115 @@
+<a href="javascript:void(0)" class="mobile-filter border-top-0" (click)="openResponsiveFilter()">
+  <h5>latest filter</h5>
+  <img src="assets/images/icon/adjust.png" class="img-fluid blur-up lazyload" alt="filter-icon">
+</a>
+<!-- Tags  -->
+<ul class="product-filter-tags">
+  <li class="me-1">
+      @for(tag of tags; track tag){
+        @if(tag){
+          <a href="javascript:void(0)" class="filter_tag">
+            {{ tag }}
+            <button type="button" class="btn-close" aria-label="Close" (click)="removeTag(tag)"></button>
+          </a>
+        }
+      }
+    @if(minPrice && maxPrice != 0){
+      <a href="javascript:void(0)" class="filter_tag">
+        Price : {{ minPrice | currencyPipe: hotelService.currency }} - {{ maxPrice | currencyPipe: hotelService.currency }}
+      </a>
+    }
+  </li>
+</ul>
+
+@if(calender){
+  <div class="top-bar-flight">
+    <div class="date-fare-slider">
+      <app-date-slider></app-date-slider>
+    </div>
+    <div class="fare-calender">
+      <app-date-calender></app-date-calender>
+    </div>
+  </div>
+}
+<div class="flight-detail-sec" [class.full_width-detail]="flightClass" [class.round_trip]="roundTrip">
+  @if(calender){
+    <div class="title-bar">
+      <div class="row">
+        <div class="col-2">
+          <p>Airline</p>
+        </div>
+        <div class="col-5">
+          <p>departure & arrival</p>
+        </div>
+        <div class="col-2">
+          <p>price</p>
+        </div>
+      </div>
+    </div>
+  }
+  @if(roundTrip){
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="selection-bar">
+          <div class="destination">
+            <span>dubai</span>
+            <span><i class="fas fa-long-arrow-alt-right"></i></span>
+            <span>paris</span>
+          </div>
+          <div class="details">
+            <span>tue, 19-Aug-2019</span>
+          </div>
+        </div>
+        <div class="title-bar">
+          <div class="row">
+            <div class="col-3">
+              <p>Airline</p>
+            </div>
+            <div class="col-6">
+              <p>departure & arrival</p>
+            </div>
+            <div class="col-3">
+              <p>price</p>
+            </div>
+          </div>
+        </div>
+        <div class="detail-bar">
+          <app-flight-details [roundTrip]="roundTrip" [from]="true" (tagData)="tagData($event)"></app-flight-details>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="selection-bar">
+          <div class="destination">
+            <span>paris</span>
+            <span><i class="fas fa-long-arrow-alt-right"></i></span>
+            <span>dubai</span>
+          </div>
+          <div class="details">
+            <span>wed, 27-Aug-2019</span>
+          </div>
+        </div>
+        <div class="title-bar">
+          <div class="row">
+            <div class="col-3">
+              <p>Airline</p>
+            </div>
+            <div class="col-6">
+              <p>departure & arrival</p>
+            </div>
+            <div class="col-3">
+              <p>price</p>
+            </div>
+          </div>
+        </div>
+        <div class="detail-bar">
+          <app-flight-details [roundTrip]="roundTrip" [to]="true"></app-flight-details>
+        </div>
+      </div>
+    </div>
+  }
+  @if(!roundTrip){
+    <div class="detail-bar">
+      <app-flight-details [flightClass]="flightClass" (tagData)="tagData($event)"></app-flight-details>
+    </div>
+  }
+</div>

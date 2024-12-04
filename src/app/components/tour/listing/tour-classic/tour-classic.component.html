@@ -1,0 +1,79 @@
+<app-header [headerClass]="'inner-page overlay-black'"></app-header>
+
+<app-breadcrumbs [type]="'tour'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child" ></app-breadcrumbs>
+
+<section class="small-section bg-inner">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <app-grid-panel [type]="'tour'" [tourHorizontalFilter]="true" (selectedTabValue)="getTabValue($event)" [filterClass]="false" [gridOptions]="false"></app-grid-panel>
+      </div>
+
+      <!-- Tags  -->
+      <ul class="product-filter-tags">
+        <li class="me-1">
+          @if(tags.length){
+            @for(tag of tags; track tag){
+              @if(tag){
+                <a href="javascript:void(0)" class="filter_tag">
+                  {{ tag }}
+                  <button type="button" class="btn-close" aria-label="Close" (click)="removeTag(tag)"></button>
+                </a>
+              }
+            }
+          }
+          @if(minPrice && maxPrice != 0){
+            <a href="javascript:void(0)" class="filter_tag">
+              Price : {{ minPrice | currencyPipe: hotelService.currency }} - {{ maxPrice | currencyPipe: hotelService.currency }}
+            </a>
+          }
+        </li>
+      </ul>
+      <div class="col-xl-12 onclick-map" [class.show]="tourService.isOpenFindTours">
+        <div class="book-table single-table bg-inner">
+          <div class="table-form classic-form">
+            <app-search-box [type]="'classic'"></app-search-box>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12 ratio3_2">
+        <div class="product-wrapper-grid special-section grid-box">
+          <div class="row content grid">
+            @for(details of tour; track details){
+              <div class="col-xl-4 col-sm-6 popular grid-item wow fadeInUp" data-class="popular">
+                <div class="special-box p-0">
+                  <div class="special-img">
+                    <a href="javascript:void(0)" class="bg-size" [style.background-image]="'url('+ details.img +')'" [routerLink]="['/tour/single-page/classic-design']">
+                      <img [src]="details.img" class="img-fluid blur-up lazyload bg-img" alt="destination-image" style="display: none;">
+                    </a>
+                    <div class="top-icon">
+                      <a href="javascript:void(0)" class="">
+                        <i class="far fa-heart"></i>
+                      </a>
+                    </div>
+                    <div class="content_inner">
+                      <a href="javascript:void(0)" [routerLink]="['/tour/single-page/classic-design']">
+                        <h5>{{ details.title }}</h5>
+                      </a>
+                      <h6>{{ details.night }}N {{ details.days }}D</h6>
+                    </div>
+                  </div>
+                  @if(details.tag){
+                    <div class="label-offer">{{ details.tagTitle }}</div>
+                  }
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+
+        <app-pagination [productsTour]="tour" [paginate]="paginate" (setPage)="setPage($event)"></app-pagination>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout [loaderType]="'basic'"></app-layout>

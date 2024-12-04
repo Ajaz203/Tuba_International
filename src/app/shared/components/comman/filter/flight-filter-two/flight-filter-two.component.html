@@ -1,0 +1,51 @@
+<div class="top-filter-section" (clickOutside)="clickOutside()" [ngStyle]="{ 'left' : flightService.isOpenResponsiveFilter == true ? '-1px' : '' }">
+  <ul>
+    <li class="back-btn">
+      <div class="mobile_back text-end" (click)="closeResponsiveFilter()">
+        <span>Back</span>
+        <i aria-hidden="true" class="fa fa-angle-right ps-2"></i>
+      </div>
+    </li>
+    <li class="filter-title">
+      <h6>filter :</h6>
+    </li>
+    <li class="onclick-title" [class.show]="isOpenStops">
+      <h6 (click)="openStops()">stops</h6>
+      <div class="onclick-content">
+        <app-flight-stops></app-flight-stops>
+      </div>
+    </li>
+    <li class="onclick-title" [class.show]="isOpenFare">
+      <h6 (click)="openFare()">fare type</h6>
+      <div class="onclick-content">
+        <app-flight-fare></app-flight-fare>
+      </div>
+    </li>
+    <li class="onclick-title" [class.show]="isOpenPrice">
+      <h6 (click)="openPrice()">price</h6>
+      <div class="onclick-content">
+        <app-flight-price></app-flight-price>
+      </div>
+    </li>
+    <li class="onclick-title" [class.show]="isOpenAirLines">
+      <h6 (click)="openAirLines()">airlines</h6>
+      <div class="onclick-content">
+        <div class="collection-brand-filter">
+          <app-flight-airlines></app-flight-airlines>
+        </div>
+      </div>
+    </li>
+    <li class="onclick-title" [class.show]="isOpenDepartureTime">
+      <h6 (click)="openDepartureTime()">departure</h6>
+      <div class="onclick-content">
+        <app-flight-departure-time></app-flight-departure-time>
+      </div>
+    </li>
+    <li class="onclick-title" [class.show]="isOpenArrivalTime">
+      <h6 (click)="openArrivalTime()">arrival</h6>
+      <div class="onclick-content">
+        <app-flight-arrival-time></app-flight-arrival-time>
+      </div>
+    </li>
+  </ul>
+</div>

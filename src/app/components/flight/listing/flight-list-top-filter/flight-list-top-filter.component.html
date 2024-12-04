@@ -1,0 +1,25 @@
+<app-header [headerClass]="'light_header'"></app-header>
+
+<app-breadcrumbs [type]="'flight'" [FlightDetails]="true" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child"></app-breadcrumbs>
+
+<div class="bg-inner small-section pb-0">
+  <div class="container">
+    <app-flight-search></app-flight-search>
+  </div>
+</div>
+
+<section class="pt-0 bg-inner small-section loader-section">
+  <app-layout [loaderType]="'flight-loader'"></app-layout>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <app-filter [type]="'flight-two'"></app-filter>
+      </div>
+      <div class="col-lg-12 ratio3_2">
+        <app-details [type]="'flight-list'" [calender]="false" [flightClass]="true"></app-details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer [location]="true"></app-footer>

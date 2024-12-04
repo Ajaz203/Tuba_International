@@ -1,0 +1,8 @@
+
+@if(type == 'basic'){
+  <app-blog-one [blogs]="blogs" [border]="border" [colorClass]="colorClass"></app-blog-one>
+}
+
+@if(type == 'simple'){
+  <app-blog-two [blogs]="blogs" [postedBy]="postedBy" [postedDate]="postedDate" [buttonClass]="buttonClass"></app-blog-two>
+}

@@ -1,0 +1,39 @@
+@if(type == 'basic'){
+  <app-search-box-one [text]="text" [borderClass]="borderClass" [searchFix]="searchFix" [shadow]="shadow"></app-search-box-one>
+}
+
+@if(type == 'simple'){
+  <app-search-box-two></app-search-box-two>
+}
+
+@if(type == 'classic'){
+  <app-search-box-three></app-search-box-three>
+}
+
+@if(type == 'standard'){
+  <app-search-box-four></app-search-box-four>
+}
+
+@if(type == 'cab'){
+  <app-search-box-five></app-search-box-five>
+}
+
+@if(type == 'flight'){
+  <app-flight-search-box [selectedValue]="selectedValue"></app-flight-search-box>
+}
+
+@if(type == 'holiday'){
+  <app-holiday-search-box [text]="text" [borderClass]="borderClass" [searchFix]="searchFix"></app-holiday-search-box>
+}
+
+@if(type == 'flight-two'){
+  <app-flight-search-box-two [text]="text" [borderClass]="borderClass" [searchFix]="searchFix"></app-flight-search-box-two>
+}
+
+@if(type == 'cab-two'){
+  <app-cab-search-box [text]="text" [borderClass]="borderClass" [searchFix]="searchFix"></app-cab-search-box>
+}
+
+@if(type == 'food'){
+  <app-food-search-box [text]="text" [borderClass]="borderClass" [searchFix]="searchFix"></app-food-search-box>
+}

@@ -1,0 +1,45 @@
+@if(package){
+  <owl-carousel-o [options]="options">
+    @for(package of package; track package){
+      <ng-template carouselSlide>
+        <div>
+          <div class="category-wrap">
+            <div class="category-img">
+              <a href="javascript:void(0)" [routerLink]="['/home/tour/treading']">
+                <img [src]="package.categoryImage" alt="category-image" class="img-fluid blur-up lazyload">
+              </a>
+              <div class="side-effect"></div>
+            </div>
+            <div class="category-content">
+              <div>
+                <div class="top">
+                  <a href="javascript:void(0)" [routerLink]="['/home/tour/treading']">
+                    <h3>{{ package.categoryTitle }}</h3>
+                  </a>
+                  <h6>{{ package.discountOn ? package.discountOn : 'group'}}</h6>
+                  @if(package.like){
+                    <div class="like-cls">
+                      <i class="fas fa-heart"><span class="effect"></span></i>
+                    </div>
+                  }
+                </div>
+                <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+                <p>{{ package.categoryDescription }}</p>
+                <div class="bottom">
+                  <h3><del>{{ package.price | currencyPipe: hotelService.currency }}</del>{{ package.discountPrice | currencyPipe: hotelService.currency }}</h3>
+                  <h6 class="coupon-code">Coupon code: <span>{{ package.coupon_code }}</span></h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    }
+  </owl-carousel-o>
+}

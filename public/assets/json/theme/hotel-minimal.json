@@ -1,0 +1,80 @@
+{
+  "topCity": [
+    {
+      "id": 1,
+      "url": "assets/images/tour/tour/9.jpg",
+      "cityName": "dubai",
+      "totalProperty": 23
+    },
+    {
+      "id": 2,
+      "url": "assets/images/tour/tour/10.jpg",
+      "cityName": "sydney",
+      "totalProperty": 20
+    },
+    {
+      "id": 3,
+      "url": "assets/images/tour/tour/11.jpg",
+      "cityName": "spain",
+      "totalProperty": 15
+    },
+    {
+      "id": 4,
+      "url": "assets/images/tour/tour/4.jpg",
+      "cityName": "india",
+      "totalProperty": 23
+    },
+    {
+      "id": 5,
+      "url": "assets/images/tour/tour/8.jpg",
+      "cityName": "europe",
+      "totalProperty": 23
+    },
+    {
+      "id": 6,
+      "url": "assets/images/tour/tour/6.jpg",
+      "cityName": "japan",
+      "totalProperty": 25
+    },
+    {
+      "id": 7,
+      "url": "assets/images/tour/tour/1.jpg",
+      "cityName": "turkey",
+      "totalProperty": 23
+    },
+    {
+      "id": 8,
+      "url": "assets/images/tour/tour/10.jpg",
+      "cityName": "australia",
+      "totalProperty": 20
+    }
+  ],
+  "hotels": [1,2,3,4],
+  "blog": [1,2,3,4],
+  "ricaBenefits": [
+    {
+      "id": 1,
+      "title": "4500 + Exclusive Hotels",
+      "description": "4500 + Exclusive Hotels Are Included In Rica Hotel.",
+      "icon": "assets/images/svg/hotel-minimal/hotel.svg"
+    },
+    {
+      "id": 2,
+      "title": "3,00,000 Happy Client",
+      "description": "Rica Cab Has More Than 3 Lakhs Happy Customer",
+      "icon": "assets/images/svg/hotel-minimal/client.svg"
+    },
+    {
+      "id": 3,
+      "title": "45,000 + Location",
+      "description": "Rica Cab Has More Than 45k Location At Different Countries",
+      "icon": "assets/images/svg/hotel-minimal/location.svg"
+    },
+    {
+      "id": 4,
+      "title": "1.5m Bookings",
+      "description": "Rica Hotels Has More Than 1.5 Hotel Bookings.",
+      "icon": "assets/images/svg/hotel-minimal/booking.svg"
+    }
+  ]
+}

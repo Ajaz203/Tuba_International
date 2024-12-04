@@ -1,0 +1,7 @@
+@for(departureTime of flightDepartureTime; track departureTime){
+  <div class="form-check collection-filter-checkbox">
+    <input type="checkbox" class="form-check-input" id="{{ departureTime.checkId }}" [value]="departureTime.checkId" [checked]="checked(departureTime.checkId)" (change)="applyFilter($event)">
+    <label class="form-check-label" for="{{ departureTime.checkId }}">
+      <img [src]="departureTime.icon" class="img-fluid blur-up lazyload me-1" alt="icon"> {{ departureTime.title }}</label>
+  </div>
+}

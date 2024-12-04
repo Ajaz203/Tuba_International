@@ -1,0 +1,31 @@
+<app-header [headerClass]="'overlay-white'" [userClass]="'rounded5'"></app-header>
+
+<app-flight-modern-home-section></app-flight-modern-home-section>
+
+@if(flightModern){
+  <app-flight-modern-destination [destination]="flightModern.destination"></app-flight-modern-destination>
+
+  <app-flight-modern-airlines-detail [airlines]="flightModern.airlines"></app-flight-modern-airlines-detail>
+
+  @if(category){
+    <app-flight-modern-category [id]="flightModern.category" [category]="category.category"></app-flight-modern-category>
+  }
+}
+
+<app-flight-modern-banner></app-flight-modern-banner>
+
+@if(flightModern){
+  @if(category){
+    <app-flight-modern-airline-ticket [id]="flightModern.flightDetails" [flightDetails]="category.category"></app-flight-modern-airline-ticket>
+  }
+
+  <app-flight-modern-top-destination [topDestination]="flightModern.topDestination"></app-flight-modern-top-destination>
+
+  <app-flight-modern-blog  [blogs]="flightModern.blog"></app-flight-modern-blog>
+}
+
+<app-flight-modern-subscribe></app-flight-modern-subscribe>
+
+<app-footer [places]="true"></app-footer>
+
+<app-layout [loaderType]="'basic'"></app-layout>

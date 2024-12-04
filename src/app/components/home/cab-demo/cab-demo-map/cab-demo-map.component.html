@@ -1,0 +1,101 @@
+<app-header [headerClass]="'light_header absolute-header'" [containerFluid]="true"></app-header>
+
+<section class="cab-full">
+  <div class="container-fluid p-0">
+    <div class="row m-0">
+      <div class="col-xl-9 col-lg-8 order-lg-1 p-0">
+        <div class="map-cls" id="map">
+          <google-map class="g-map" [options]="mapOptions" style="width: 100%; height: 100%;"></google-map>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-4 p-0">
+        <div class="left-bar">
+          <div class="flight-search">
+            <div class="flight-search-detail">
+              <div class="location-option d-flex">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked (change)="sameLocation($event)">
+                  <label class="text-dark form-check-label" for="exampleRadios1">
+                    different location
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" (change)="sameLocation($event)">
+                  <label class="text-dark form-check-label" for="exampleRadios2">
+                    same location
+                  </label>
+                </div>
+              </div>
+              <form class="row">
+                <div class="col-12">
+                  <div class="form-group">
+                    <label>pick up location</label>
+                    <input type="text" class="form-control open-select" value="sentosa, singapore" id="exampleInputEmail1" placeholder="pick up">
+                    <img src="assets/images/icon/from.png" class="img-fluid blur-up lazyload" alt="pickup-icon">
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label>drop off location</label>
+                    <input type="text" value="Marina Bay, Singapore" class="form-control open-select" placeholder="drop off">
+                    <img src="assets/images/icon/location.png" class="img-fluid blur-up lazyload" alt="location-icon">
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label>pick up date & time</label>
+                    <input class="form-control datetimepicker-input digits" placeholder="pick up date & time" type="text" [owlDateTimeTrigger]="pickup" [owlDateTime]="pickup">
+                    <owl-date-time #pickup></owl-date-time>
+                  </div>
+                </div>
+                <div id="dropdate" class="col-12" [ngClass]="{ 'd-none': selectedValue == 'option2', 'd-block': selectedValue == 'option1' }">
+                  <div class="form-group">
+                    <label>drop off date & time</label>
+                    <input class="form-control datetimepicker-input digits" placeholder="drop off date & time" type="text" [owlDateTimeTrigger]="drop" [owlDateTime]="drop">
+                    <owl-date-time #drop></owl-date-time>
+                  </div>
+                </div>
+                <div class="col-12 search-col">
+                  <div class="search-btn">
+                    <a href="javascript:void(0)" class="btn btn-solid color1" [routerLink]="['/cab/listing/list-view/left-sidebar']">search</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="cab-search-section">
+            <div class="row">
+              <div class="col-12">
+                @for(details of cab; track details){
+                  <div class="cab-search-box">
+                    <div class="row">
+                      <div class="col-3">
+                        <div class="cab-img">
+                          <img [src]="details.categoryImage" class="img-fluid blur-up lazyload" alt="cab-image">
+                        </div>
+                      </div>
+                      <div class="col-5 p-0">
+                        <div class="cab_detail">
+                          <ul>
+                            <li>{{ details.categoryTitle }}</li>
+                            <li>{{ details.car }}</li>
+                            <li>${{ details.price }} / per day</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-4 text-end">
+                        <a href="javascript:void(0)" class="btn btn-solid" [routerLink]="['/cab/booking/booking']">book now</a>
+                      </div>
+                    </div>
+                  </div>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-layout [loaderType]="'basic'"></app-layout>

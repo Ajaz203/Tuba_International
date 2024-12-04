@@ -1,0 +1,41 @@
+<div class="book-btn-section">
+  <input class="form-control" placeholder="Check In"  ngbDatepicker #checkIn="ngbDatepicker" (click)="checkIn.toggle()" />
+  <input class="form-control" placeholder="Check Out"  ngbDatepicker #checkOut="ngbDatepicker" (click)="checkOut.toggle()" style="margin-top: 10px;"/>
+  <div class="rooms-section" (clickOutside)="clickOutside()">
+    <input type="text" class="form-control open-select" placeholder="rooms & guests" (click)="open()">
+    <div class="selector-box" [class.show]="isShow">
+      <div class="room-cls">
+        <label class="title_room">room 1</label>
+        <div class="qty-box">
+          <label>adult</label>
+          <div class="input-group">
+            <button type="button" class="btn quantity-left-minus" (click)="changeValue('adult',-1)"> - </button>
+            <input type="text" name="quantity" class="form-control qty-input input-number" [value]="adults">
+            <button type="button" class="btn quantity-right-plus" (click)="changeValue('adult',1)">+</button>
+          </div>
+        </div>
+        <div class="qty-box">
+          <label>children</label>
+        <div class="input-group">
+          <button type="button" class="btn quantity-left-minus" (click)="changeValue('children',-1)"> - </button>
+          <input type="text" name="quantity" class="form-control qty-input input-number" [value]="child">
+          <button type="button" class="btn quantity-right-plus" (click)="changeValue('children',1)"> + </button>
+        </div>
+        </div>
+      </div>
+      <div class="bottom-part">
+        <a href="javascript:void(0)" class="add-room">add room +</a>
+        <a href="javascript:void(0)" class="btn">apply</a>
+      </div>
+    </div>
+  </div>
+  <div class="selector">
+    <select>
+      <option value="" disabled selected>Room Type</option>
+      <option value="saab">Deluxe Room</option>
+      <option value="audi">Suite</option>
+      <option value="opel">Royal room</option>
+    </select>
+  </div>
+  <a href="javascript:void" class="btn btn-rounded btn-sm color1" [routerLink]="['/hotel/booking/hotel-booking']">book this now</a>
+</div>

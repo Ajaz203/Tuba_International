@@ -1,0 +1,13 @@
+<div class="collection-collapse-block" [class.open]="isOpenTime">
+  <h6 class="collapse-block-title" (click)="openTime()">delivery time</h6>
+  <div class="collection-collapse-block-content" [ngStyle]="{ 'display' : isOpenTime == true ? 'block' : 'none'}">
+    <div class="collection-brand-filter">
+      @for(time of restaurantDeliveryTime; track time){
+        <div class="form-check collection-filter-checkbox">
+          <input type="checkbox" class="form-check-input" id="{{ time.checkId }}" [value]="time.checkId" [checked]="checked(time.checkId)" (change)="applyFilter($event)">
+          <label class="form-check-label" for="{{ time.checkId }}">{{ time.title }}</label>
+        </div>
+      }
+    </div>
+  </div>
+</div>

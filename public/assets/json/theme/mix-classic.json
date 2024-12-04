@@ -1,0 +1,20 @@
+{
+  "category": [33,34,35,36,37],
+  "hotelImages": [
+    {
+      "id": 1,
+      "url": "assets/images/mix/emergency/3.jpg",
+      "title": "01"
+    },
+    {
+      "id": 2,
+      "url": "assets/images/mix/emergency/4.jpg",
+      "title": "02"
+    },
+    {
+      "id": 3,
+      "url": "assets/images/mix/emergency/5.jpg",
+      "title": "03"
+    }
+   ]
+}

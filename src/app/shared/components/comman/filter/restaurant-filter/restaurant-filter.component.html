@@ -1,0 +1,65 @@
+<div class="left-sidebar" [class.sidebar-popup]="mapFilter" [class.open]="restaurantService.isOpenMapFilter" [class.sticky-cls-top]="horizontalFilter == false || mapFilter == false" [class.filter-bottom-content]="horizontalFilter" [class.d-block]="restaurantService.isOpenHorizontalFilter == true && horizontalFilter" [ngStyle]="{ 'left' : restaurantService.isOpenResponsiveFilter == true || restaurantService.isOpenHorizontalFilter == true  ? '-1px' : '' }" [ngStyle]="{ 'left' : restaurantService.isOpenResponsiveFilter == true || restaurantService.isOpenHorizontalFilter == true  ? '-1px' : '' }">
+  @if( !mapFilter){
+    <div class="back-btn" (click)="closeResponsiveFilter()">
+      back
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search here..">
+      <i class="fas fa-search"></i>
+    </div>
+  }
+  <div class="middle-part collection-collapse-block" [class.open]="isOpenFilter">
+    @if(horizontalFilter == false || mapFilter){
+      <a href="javascript:void(0)" class="section-title collapse-block-title" (click)="openFilter()">
+        <h5>latest filter</h5>
+        <img src="assets/images/icon/adjust.png" class="img-fluid blur-up lazyload" alt="hotel-image">
+      </a>
+    }
+    <div class="collection-collapse-block-content" [class.row]="horizontalFilter" [ngClass]="{ 'd-block' : isOpenFilter == true && !horizontalFilter, 'd-none' : isOpenFilter == false && !horizontalFilter}">
+      @if(tags){
+        <div class="filter-block" [class.col]="horizontalFilter">
+          <app-restaurant-popular-tags></app-restaurant-popular-tags>
+        </div>
+      }
+      @if(cuisines){
+        <div class="filter-block" [class.col]="horizontalFilter">
+          <app-restaurant-cuisines></app-restaurant-cuisines>
+        </div>
+      }
+      @if(rating){
+        <div class="filter-block" [class.col]="horizontalFilter">
+          <app-restaurant-rating></app-restaurant-rating>
+        </div>
+      }
+      @if(price){
+        <div class="filter-block" [class.col]="horizontalFilter">
+          <app-restaurant-price></app-restaurant-price>
+        </div>
+      }
+      @if(time){
+        <div class="filter-block" [class.col]="horizontalFilter">
+          <app-restaurant-delivery-time></app-restaurant-delivery-time>
+        </div>
+      }
+      @if(restaurant){
+        <div class="filter-block">
+          <app-restaurant-map-filer></app-restaurant-map-filer>
+        </div>
+      }
+      @if(horizontalFilter){
+        <div class="text-end button_bottom">
+          <a href="javascript:void(0)" class="btn btn-solid color1 me-2">apply</a>
+          <a href="javascript:void(0)" class="btn btn-solid color1 close-filter-bottom" (click)="closeResponsiveHorizontal()">close filter</a>
+        </div>
+      }
+    </div>
+  </div>
+  @if(horizontalFilter == false || mapFilter == false){
+    <div class="bottom-info">
+      <h5><span>i</span> need help</h5>
+      <h4>856 - 215 - 211</h4>
+      <h6>Monday to Friday 9.00am - 7.30pm</h6>
+    </div>
+  }
+</div>
+

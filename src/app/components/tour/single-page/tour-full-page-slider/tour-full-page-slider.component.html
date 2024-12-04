@@ -1,0 +1,57 @@
+<app-header [headerClass]="'inner-page'"></app-header>
+
+<section class="full-page pt-0  full-page-slider full-body-slider">
+  <div class="full-slider mb-0">
+    <owl-carousel-o [options]="options">
+        @for(details of carouselData; track details){
+          <ng-template carouselSlide [dotContent]="details.value">
+            <div data-title="{{ details.value}}" class="slider-image {{ details.value}}">
+              <div class="img-div black-layer bg-size" [style.background-image]="'url('+ details.image +')'">
+                <img [src]="details.image" class="img-fluid blur-up lazyload bg-img" alt="destination-image" style="display: none;">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-xl-6 offset-xl-6 col-md-10 offset-md-1">
+                      <div class="single-section">
+                        <div class="description-section">
+                          <div class=" description-details" [class.privacy-policy]="details.value == 'policy'">
+                            <div>
+                              <div class="menu-part {{ details.class }}">
+                                <div>
+                                  <h2 class="mb-3">{{ details.value }}</h2>
+                                  @if(tourDetail){
+                                    @for(data of tourDetail.tour; track data){
+                                      @if(details.value == 'highlight'){
+                                        <app-tour-highlight [highlights]="data.highlight" [image]="false" [bottomDetails]="false"></app-tour-highlight>
+                                      }
+                                      @if(details.value == 'itinerary'){
+                                      <app-tour-itinerary [itinerary]="data.itinerary"></app-tour-itinerary>
+                                      }
+                                      @if(details.value == 'review'){
+                                      <app-tour-review [review]="data.review"></app-tour-review>
+                                      }
+                                      @if(details.value == 'policy'){
+                                      <app-tour-policy [policy]="data.policy"></app-tour-policy>
+                                      }
+                                      @if(details.value == 'accommodations'){
+                                      <app-tour-accommodation [accommodations]="data.accommodation" [description]="false"></app-tour-accommodation>
+                                      }
+                                    }
+                                  }
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        }
+      </owl-carousel-o>
+  </div>
+</section>
+
+<app-layout [loaderType]="'basic'"></app-layout>

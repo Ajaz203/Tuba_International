@@ -1,0 +1,34 @@
+<div class="title-car">
+  <h5>Peugeot Citroen</h5>
+  <h6>fare/km : <span>{{ 24 | currencyPipe: hotelService.currency }}</span></h6>
+</div>
+<p class="description">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores dicta exercitationem
+  laboriosam nam non, officia omnis, quae quibusdam quis repellendus repudiandae voluptate.
+  Corporis dolore inventore non. Dolorem excepturi nostrum sint?
+</p>
+<div class="overview">
+  <h6>car overview</h6>
+  <ul>
+    <li><img src="assets/images/cab/icon/seat.png" class="img-fluid blur-up lazyload" alt="seat-icon"> 5 seater
+    </li>
+    <li><img src="assets/images/cab/icon/luggage.png" class="img-fluid blur-up lazyload" alt="luggage-icon"> 2 luggage
+    </li>
+  </ul>
+  <ul>
+    <li><img src="assets/images/cab/icon/snowflake.png" class="img-fluid blur-up lazyload" alt="ac-icon"> AC</li>
+    <li><img src="assets/images/cab/icon/settings.png" class="img-fluid blur-up lazyload" alt="setting-icon">automatic</li>
+  </ul>
+</div>
+<div class="details row">
+  @for(details of cabDetails; track details){
+    <div class="col-sm-6">
+      <h6>{{ details.title }}</h6>
+      <ul>
+        @for(data of details.details; track data){
+          <li>{{ data.data }}</li>
+        }
+      </ul>
+    </div>
+  }
+</div>

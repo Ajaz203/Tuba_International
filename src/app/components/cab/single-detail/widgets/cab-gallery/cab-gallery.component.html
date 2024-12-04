@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="col-sm-8">
+    <div class="slide-1 arrow-dark zoom-gallery ratio2_3">
+      @if(cabGallery){
+        <owl-carousel-o [options]="options">
+          @for(images of cabGallery; track images){
+            @if(images.type == 'main'){
+              <ng-template carouselSlide>
+                <div>
+                  <a class="bg-size" [style.background-image]="'url('+ images.image +')'" gallerize (click)="openLightBox()">
+                    <img [src]="images.image" class="img-fluid blur-up lazyload bg-img w-100" alt="cab" style="display: none;">
+                    <h6 class="view-all">view all images</h6>
+                  </a>
+                </div>
+              </ng-template>
+            }
+          }
+        </owl-carousel-o>
+      }
+    </div>
+  </div>
+
+  <div class="col-sm-4 d-small-none">
+    <div class="row">
+      <div class="col-12 ratio_59">
+        <div class="slide-1 zoom-gallery arrow-dark">
+          @if(cabGallery){
+            <owl-carousel-o [options]="options">
+                @for(images of cabGallery; track images){
+                  @if(images.type == 'interior'){
+                    <ng-template carouselSlide>
+                      <div>
+                        <a class="bg-size" [style.background-image]="'url('+ images.image +')'" gallerize (click)="openLightBox()">
+                          <img [src]="images.image" class="img-fluid blur-up lazyload bg-img w-100" alt="cab-interior" style="display: none;">
+                          <h6 class="view-all">interior images</h6>
+                        </a>
+                      </div>
+                    </ng-template>
+                  }
+                }
+            </owl-carousel-o>
+          }
+        </div>
+        <div class="slide-1 zoom-gallery arrow-dark m-cls">
+          @if(cabGallery){
+            <owl-carousel-o [options]="options">
+                @for(images of cabGallery; track images){
+                  @if(images.type == 'exterior'){
+                    <ng-template carouselSlide>
+                      <div>
+                        <a class="bg-size" [style.background-image]="'url('+ images.image +')'" gallerize (click)="openLightBox()">
+                          <img [src]="images.image" class="img-fluid blur-up lazyload bg-img w-100" alt="cab-exterior" style="display: none;">
+                          <h6 class="view-all">exterior images</h6>
+                        </a>
+                      </div>
+                    </ng-template>
+                  }
+                }
+            </owl-carousel-o>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

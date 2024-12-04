@@ -1,0 +1,23 @@
+<div class="row m-0">
+  @for(images of hotelGallery | slice : 0:1; track images){
+    <div class="col-md-6 p-0">
+      <a class="bg-size" [style.background-image]="'url('+ images.image +')'" (click)="openLightBox()">
+        <img [src]="images.image" class="img-fluid blur-up lazyload bg-img" alt="hotel-image" style="display: none;">
+      </a>
+    </div>
+  }
+  <div class="col-md-3 col-6 p-0">
+    @for(images of hotelGallery | slice : 1:3; track images){
+      <a class="bg-size" [style.background-image]="'url('+ images.image +')'" (click)="openLightBox()">
+        <img [src]="images.image" class="img-fluid blur-up lazyload bg-img" alt="hotel-image" style="display: none;">
+      </a>
+    }
+  </div>
+  <div class="col-md-3 col-6 p-0">
+    @for(images of hotelGallery | slice : 3:5; track images){
+      <a class="bg-size" [style.background-image]="'url('+ images.image +')'" (click)="openLightBox()">
+        <img [src]="images.image" class="img-fluid blur-up lazyload bg-img" alt="hotel-image" style="display: none;">
+      </a>
+    }
+  </div>
+</div>

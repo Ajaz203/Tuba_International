@@ -1,0 +1,74 @@
+<app-header [headerClass]="'inner-page overlay-black'"></app-header>
+
+<app-breadcrumbs [type]="'tour-single-page'" [bg_image]="bg_image" [title]="title" [days]="7" [date]="date" [birdAnimation]="true"></app-breadcrumbs>
+
+<section class="single-section bg-inner small-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        @if(tourDetail){
+          <app-tour-classic-gallery [classicGallery]="tourDetail.tourClassicGallery"></app-tour-classic-gallery>
+        }
+      </div>
+      <div class="col-12 small-section pb-0">
+        <div class="description-section tab-section">
+          <div class="menu-top menu-up">
+            <app-tour-tabs (tabValue)="getTabValue($event)" [type]="'tab'"></app-tour-tabs>
+          </div>
+          <div class="description-details tab-content" id="top-tabContent">
+            <div class="menu-part tab-pane fade show active" id="highlight" [class.about]="activeTab == 'highlight' || activeTab == 'policy'" [class.accordion]="activeTab == 'itinerary'" [class.map]="activeTab == 'location'" [class.review]="activeTab == 'reviews'">
+              @if(tourDetail){
+                @for(details of tourDetail.tour; track details){
+                  @if(activeTab == 'highlight' && details.highlight){
+                    <app-tour-highlight [highlights]="details.highlight"></app-tour-highlight>
+                  }
+                  @if(activeTab == 'itinerary' && details.itinerary){
+                    <app-tour-itinerary [itinerary]="details.itinerary"></app-tour-itinerary>
+                  }
+                  @if(activeTab == 'gallery' && details.gallery){
+                    <app-tour-gallery [gallery]="details.gallery"></app-tour-gallery>
+                  }
+                  @if(activeTab == 'accommodations' && details.accommodation){
+                    <app-tour-accommodation [accommodations]="details.accommodation"></app-tour-accommodation>
+                  }
+                  @if(activeTab == 'location' && details.location){
+                    <app-tour-location [location]="details.location"></app-tour-location>
+                  }
+                  @if(activeTab == 'reviews' && details.review){
+                    <app-tour-review [review]="details.review"></app-tour-review>
+                  }
+                  @if(activeTab == 'policy' && details.policy){
+                    <app-tour-policy [policy]="details.policy"></app-tour-policy>
+                  }
+                }
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 booking-bottom-section">
+        <div class="row">
+          <div class="col-md-6">
+            <app-tour-page-booking-section></app-tour-page-booking-section>
+          </div>
+          <div class="col-md-6">
+            <app-tour-page-inquire-section></app-tour-page-inquire-section>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="special-section related-box ratio3_2 grid-box">
+          <div class="slider-3 no-arrow">
+            <app-tour-gallery-slider></app-tour-gallery-slider>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-tour-single-page-modal></app-tour-single-page-modal>
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout [loaderType]="'skeleton'" [skeletonType]="'single-page'" [tour]="true" [tourClassicGallery]="true"></app-layout>

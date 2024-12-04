@@ -1,0 +1,70 @@
+<app-header [headerClass]="'inner-page overlay-black'"></app-header>
+
+<section class="breadcrumb-section pt-0 bg-size" [style.background-image]="'url(assets/images/inner-pages/bg-bread.jpg)'">
+  <img src="assets/images/inner-pages/bg-bread.jpg" class="bg-img img-fluid blur-up lazyload" alt="background-image" style="display: none;">
+  <div class="breadcrumb-content overlay-black">
+    <div>
+      <h2 class="text-capitalize">sea view hotel</h2>
+      <h6>Mina Road, Bur Dubai, Dubai, United Arab Emirates</h6>
+    </div>
+  </div>
+</section>
+
+<section class="single-section small-section bg-inner">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 col-lg-8">
+        <div class="image_section">
+          @if(hotelDetails){
+            <app-hotel-gallery [hotelGallery]="hotelDetails.gallery"></app-hotel-gallery>
+          }
+        </div>
+        <div class="description-section tab-section">
+          <div class="menu-top">
+            <app-hotel-tab-slider [type]="'tab'" (tabValue)="getTabValue($event)"></app-hotel-tab-slider>
+            <div class="description-details tab-content" id="top-tabContent">
+              @if(hotelDetails){
+                @for(details of hotelDetails.details; track details){
+                  @if(activeTab == 'about' && details.about){
+                    <app-hotel-about [hotelAbout]="details.about" [type]="'tab'"></app-hotel-about>
+                  }
+                  @if(activeTab == 'rooms' && details.rooms){
+                    <app-hotel-rooms [hotelRooms]="details.rooms" [type]="'tab'"></app-hotel-rooms>
+                  }
+                  @if(activeTab == 'facility' && details.facility){
+                    <app-hotel-facility [hotelFacility]="details.facility" [type]="'tab'"></app-hotel-facility>
+                  }
+                  @if(activeTab == 'location' && details.location){
+                    <app-hotel-location [hotelLocation]="details.location" [type]="'tab'"></app-hotel-location>
+                  }
+                  @if(activeTab == 'reviews' && details.review){
+                    <app-hotel-review [hotelReview]="details.review" [type]="'tab'"></app-hotel-review>
+                  }
+                  @if(activeTab == 'policy' && details.policy){
+                    <app-hotel-policy [hotelPolicy]="details.policy" [type]="'tab'"></app-hotel-policy>
+                  }
+                }
+              }
+            </div>
+          </div>
+        </div>
+        <div class="special-section related-box ratio3_2 grid-box">
+          <div class="slider-3 no-arrow">
+            <app-single-page-hotels></app-single-page-hotels>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-4" id="booking">
+        <div class="sticky-cls-top">
+          <app-hotel-single-page-filter></app-hotel-single-page-filter>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-hotel-single-page-modal></app-hotel-single-page-modal>
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout [loaderType]="'skeleton'" [skeletonType]="'single-page'" [hotel]="true" [withOutTopPage]="true" [filterType]="'right'"></app-layout>

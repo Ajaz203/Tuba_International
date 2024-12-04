@@ -1,0 +1,169 @@
+{
+  "flight": [
+    {
+      "id": 1,
+      "airline": "Cathay Pacific",
+      "img": "assets/images/flights/airlines/1.png",
+      "arrive": "morning (6am to 12pm)",
+      "departureTime": "08:00",
+      "stop": "1 Stop",
+      "stopTime": "07h 30m",
+      "departure": "evening (after 6pm)",
+      "arriveTime": "19:30",
+      "fare": "refundable",
+      "price": 1500,
+      "activeFrom": true,
+      "tags": ["1_stop","cathay","departure_evening","arrival_morning","refundable"]
+    },
+    {
+      "id": 2,
+      "airline": "Emirates",
+      "img": "assets/images/flights/airlines/2.png",
+      "arrive": "noon (12pm to 6pm)",
+      "arriveTime": "13:30",
+      "stop": "2 Stop",
+      "stopTime": "07h 30m",
+      "departure": "evening (after 6pm)",
+      "departureTime": "22:30",
+      "fare": "non-refundable",
+      "price": 1245,
+      "tags": ["2_stop","emirates","departure_evening","arrival_noon","non_refundable"]
+    },
+
+    {
+      "id": 3,
+      "airline": "Oman air",
+      "img": "assets/images/flights/airlines/3.png",
+      "arrive": "evening (after 6pm)",
+      "departureTime": "23:00",
+      "stop": "non stop",
+      "stopTime": "10h 30m",
+      "departure": "morning (6am to 12pm)",
+      "arriveTime": "09:00",
+      "fare": "refundable",
+      "price": 1100,
+      "activeTo": true,
+      "tags": ["non_stop","oman","departure_morning","arrival_evening","refundable"]
+    },
+
+    {
+      "id": 4,
+      "airline": "Middle East",
+      "img": "assets/images/flights/airlines/4.png",
+      "arrive": "noon (12pm to 6pm)",
+      "departureTime": "14:00",
+      "stop": "1 Stop",
+      "stopTime": "04h 30m",
+      "departure": "evening (after 6pm)",
+      "arriveTime": "19:30",
+      "fare": "refundable",
+      "price": 900,
+      "tags": ["1_stop","middle_east","departure_evening","arrival_noon","refundable"]
+    },
+
+    {
+      "id": 5,
+      "airline": "gulf air",
+      "img": "assets/images/flights/airlines/5.png",
+      "arrive": "evening (after 6pm)",
+      "departureTime": "23:00",
+      "stop": "2 Stop",
+      "stopTime": "11h 30m",
+      "departure": "noon (12pm to 6pm)",
+      "arriveTime": "12:30",
+      "fare": "non-refundable",
+      "price": 1000,
+      "tags": ["2_stop","gulf","departure_noon","arrival_evening","non_refundable"]
+    },
+
+    {
+      "id": 6,
+      "airline": "Royal Jordanian",
+      "img": "assets/images/flights/airlines/6.png",
+      "arrive": "evening (after 6pm)",
+      "departureTime": "25:00",
+      "stop": "2 stop",
+      "stopTime": "17h 30m",
+      "departure": "morning (6am to 12pm)",
+      "arriveTime": "15:00",
+      "fare": "non-refundable",
+      "price": 1350,
+      "tags": ["2_stop","royal","departure_morning","arrival_evening","non_refundable"]
+    },
+
+    {
+      "id": 7,
+      "airline": "China Eastern",
+      "img": "assets/images/flights/airlines/7.png",
+      "arrive": "morning (6am to 12pm)",
+      "departureTime": "08:00",
+      "stop": "non stop",
+      "stopTime": "07h 30m",
+      "departure": "evening (after 6pm)",
+      "arriveTime": "20:00",
+      "fare": "refundable",
+      "price": 1470,
+      "tags": ["non_stop","china","departure_evening","arrival_morning","refundable"]
+    },
+
+    {
+      "id": 8,
+      "airline": "Qatar airways",
+      "img": "assets/images/flights/airlines/7.png",
+      "arrive": "morning (6am to 12pm)",
+      "departureTime": "08:00",
+      "stop": "non stop",
+      "stopTime": "07h 30m",
+      "departure": "evening (after 6pm)",
+      "arriveTime": "20:00",
+      "fare": "non-refundable",
+      "price": 850,
+      "tags": ["non_stop","qatar","departure_evening","arrival_morning","non_refundable"]
+    },
+
+    {
+      "id": 9,
+      "airline": "singapore airlines",
+      "img": "assets/images/flights/airlines/5.png",
+      "arrive": "morning (6am to 12pm)",
+      "departureTime": "08:00",
+      "stop": "non stop",
+      "stopTime": "07h 30m",
+      "departure": "evening (after 6pm)",
+      "arriveTime": "20:00",
+      "fare": "non-refundable",
+      "price": 1245,
+      "tags": ["non_stop","singapore","departure_evening","arrival_morning","non_refundable"]
+    },
+
+    {
+      "id": 10,
+      "airline": "Nippon Airways",
+      "img": "assets/images/flights/airlines/4.png",
+      "arrive": "morning (6am to 12pm)",
+      "departureTime": "08:00",
+      "stop": "non stop",
+      "stopTime": "07h 30m",
+      "departure": "evening (after 6pm)",
+      "arriveTime": "20:00",
+      "fare": "refundable",
+      "price": 1440,
+      "tags": ["non_stop","nippon","departure_evening","arrival_morning","refundable"]
+    },
+
+    {
+      "id": 11,
+      "airline": "Qantas Airways",
+      "img": "assets/images/flights/airlines/4.png",
+      "arrive": "morning (6am to 12pm)",
+      "departureTime": "08:00",
+      "stop": "non stop",
+      "stopTime": "07h 30m",
+      "departure": "evening (after 6pm)",
+      "arriveTime": "20:00",
+      "fare": "refundable",
+      "price": 1050,
+      "tags": ["non_stop","qantas","departure_evening","arrival_morning","refundable"]
+    }
+  ]
+}

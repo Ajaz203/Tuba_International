@@ -1,0 +1,70 @@
+<div class="left-sidebar" [ngStyle]="{ 'left' : flightService.isOpenResponsiveFilter == true ? '-1px' : '' }">
+  <div class="back-btn" (click)="closeResponsiveFilter()">
+    back
+  </div>
+  <div class="search-bar">
+    <input type="text" placeholder="Search here..">
+    <i class="fas fa-search"></i>
+  </div>
+  <div class="middle-part collection-collapse-block" [class.open]="isOpenFilter">
+    <a href="javascript:void(0)" class="section-title collapse-block-title" (click)="openFilter()">
+      <h5>latest filter</h5>
+      <img src="assets/images/icon/adjust.png" class="img-fluid blur-up lazyload" alt="filter-icon">
+    </a>
+    <div class="collection-collapse-block-content" [ngStyle]="{ 'display' : isOpenFilter == true ? 'block' : 'none'}">
+      <div class="filter-block">
+        <div class="collection-collapse-block" [class.open]="isOpenStops">
+          <h6 class="collapse-block-title" (click)="openStops()">stops</h6>
+            <div class="collection-collapse-block-content" [ngStyle]="{ 'display' : isOpenStops == true ? 'block' : 'none'}">
+              <div class="collection-brand-filter">
+                <app-flight-stops></app-flight-stops>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="filter-block">
+        <div class="collection-collapse-block" [class.open]="isOpenPrice">
+          <h6 class="collapse-block-title" (click)="openPrice()">price</h6>
+          <div class="collection-collapse-block-content" [ngStyle]="{ 'display' : isOpenPrice == true ? 'block' : 'none'}">
+            <app-flight-price></app-flight-price>
+          </div>
+        </div>
+      </div>
+      <div class="filter-block">
+        <div class="collection-collapse-block" [class.open]="isOpenAirLines">
+          <h6 class="collapse-block-title" (click)="openAirLines()">airlines</h6>
+          <div class="collection-collapse-block-content" [ngStyle]="{ 'display' : isOpenAirLines == true ? 'block' : 'none'}">
+            <div class="collection-brand-filter">
+              <app-flight-airlines></app-flight-airlines>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="filter-block">
+        <div class="collection-collapse-block" [class.open]="isOpenDepartureTime">
+          <h6 class="collapse-block-title" (click)="openDepartureTime()">departure time</h6>
+          <div class="collection-collapse-block-content" [ngStyle]="{ 'display' : isOpenDepartureTime == true ? 'block' : 'none'}">
+            <div class="collection-brand-filter">
+              <app-flight-departure-time></app-flight-departure-time>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="filter-block">
+        <div class="collection-collapse-block" [class.open]="isOpenArrivalTime">
+          <h6 class="collapse-block-title" (click)="openArrivalTime()">arrival time</h6>
+          <div class="collection-collapse-block-content" [ngStyle]="{ 'display' : isOpenArrivalTime == true ? 'block' : 'none'}">
+            <div class="collection-brand-filter">
+              <app-flight-arrival-time></app-flight-arrival-time>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-info">
+    <h5><span>i</span> need help</h5>
+    <h4>856 - 215 - 211</h4>
+    <h6>Monday to Friday 9.00am - 7.30pm</h6>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<section class="">
+  <div class="tourSection ratio3_2">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="title-1">
+            <h2 class="pt-0">top offers</h2>
+          </div>
+          <div class="flight-5 no-arrow">
+            @if(topOffers){
+              <owl-carousel-o [options]="options">
+                @for(offers of topOffers; track offers){
+                  <ng-template carouselSlide>
+                    <div>
+                      <div class="tourBox wow zoomIn" >
+                        <div class="tourImg bg-size" [style.background-image]="'url('+ offers.image +')'">
+                          <img [src]="offers.image" class="img-fluid blur-up lazyload bg-img" alt="offer-img" style="display: none;">
+                        </div>
+                        <div class="tourContent">
+                          <h3>{{ offers.title }}</h3>
+                          <h6>{{ offers.description }}</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </ng-template>
+                }
+              </owl-carousel-o>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

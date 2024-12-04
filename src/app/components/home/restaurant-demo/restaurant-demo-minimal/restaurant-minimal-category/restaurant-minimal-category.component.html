@@ -1,0 +1,31 @@
+<div class="container">
+  <section class="category-part radius-category small-section pb-0 ratio_square">
+    <div class="row">
+      <div class="col">
+        <div class="slide-6 no-arrow">
+          @if(category){
+            <owl-carousel-o [options]="options">
+              @for(category of category; track category){
+                <ng-template carouselSlide>
+                  <div class="category-block">
+                    <a href="javascript:void(0)" [routerLink]="['/page/other-pages/about-us-2']">
+                      <div class="category-image bg-size" [style.background-image]="'url('+ category.image +')'">
+                        <img [src]="category.image" class="img-fluid blur-up lazyload bg-img" alt="restaurant-image" style="display: none;">
+                      </div>
+                    </a>
+                    <div class="category-details">
+                      <a href="javascript:void(0)">
+                        <h3>{{ category.title }}</h3>
+                      </a>
+                      <h6>{{ category.restaurant }} restaurant</h6>
+                    </div>
+                  </div>
+                </ng-template>
+              }
+            </owl-carousel-o>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

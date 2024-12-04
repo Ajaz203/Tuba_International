@@ -1,0 +1,99 @@
+<form class="row" (clickOutside)="clickOutside()">
+  <div class="col-xl-12 col-md-6">
+    <div class="form-group">
+      <label>from</label>
+    <input type="text" class="form-control open-select" id="exampleInputEmail1" placeholder="from" (click)="openLocation('from')" [value]="fromLocation">
+      <img src="assets/images/icon/from.png" class="img-fluid blur-up lazyload" alt="pickup-icon">
+      <div class="selector-box" [class.show]="isFrom">
+        <h6 class="title">popular cities</h6>
+        <ul>
+          @for(data of flightLocation; track data){
+            <li>
+              <a href="javascript:void(0)" (click)="selectLocation('from',data.id)">
+                <h5>{{ data.city }}</h5>
+                <h6>{{ data.airport }}</h6>
+                <span>{{ data.code }}</span>
+              </a>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-12 col-md-6">
+    <div class="form-group">
+      <label>to</label>
+      <input type="text" class="form-control open-select" placeholder="to" (click)="openLocation('to')" [value]="toLocation">
+      <img src="assets/images/icon/location.png" class="img-fluid blur-up lazyload" alt="location-icon">
+      <div class="selector-box" [class.show]="isTo">
+        <h6 class="title">popular cities</h6>
+        <ul>
+          @for(data of flightLocation; track data){
+            <li>
+              <a href="javascript:void(0)" (click)="selectLocation('to',data.id)">
+                <h5>{{ data.city }}</h5>
+                <h6>{{ data.airport }}</h6>
+                <span>{{ data.code }}</span>
+              </a>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-12 col-md-6">
+    <div class="form-group">
+      <label>departure</label>
+      <input class="form-control" placeholder="Depart Date" name="dp" ngbDatepicker #depart="ngbDatepicker" (click)="depart.toggle()" />
+    </div>
+  </div>
+  <div id="dropdate" class="col-xl-12 col-md-6" [ngClass]="selectedValue == 'option2' ? 'd-none' : 'd-block'">
+    <div class="form-group">
+      <label>return</label>
+      <input class="form-control" placeholder="Return Date" name="dp" ngbDatepicker #return="ngbDatepicker" (click)="return.toggle()" />
+    </div>
+  </div>
+  <div class="col-xl-12 col-md-6">
+    <div class="form-group">
+      <label>traveller & class</label>
+      <input type="text" class="form-control open-select" placeholder="traveler" (click)="openTraveler()">
+      <img src="assets/images/icon/user.png" class="img-fluid blur-up lazyload" alt="user-icon">
+      <div class="selector-box-flight" [class.show]="isTraveler">
+        <div class="room-cls">
+          <div class="qty-box">
+            <label>adult</label>
+            <div class="input-group">
+              <button type="button" class="btn quantity-left-minus" (click)="changeValue('adult',-1)"> - </button>
+              <input type="text" name="quantity" class="form-control qty-input input-number" [value]="adults">
+              <button type="button" class="btn quantity-right-plus" (click)="changeValue('adult',1)">+</button>
+            </div>
+          </div>
+          <div class="qty-box">
+            <label>children</label>
+            <div class="input-group">
+              <button type="button" class="btn quantity-left-minus" (click)="changeValue('children',-1)"> - </button>
+              <input type="text" name="quantity" class="form-control qty-input input-number" [value]="child">
+              <button type="button" class="btn quantity-right-plus" (click)="changeValue('children',1)"> + </button>
+            </div>
+          </div>
+        </div>
+        <div class="flight-class">
+          @for(seat of seatType; track seat){
+            <div class="form-check">
+              <input class="form-check-input radio_animated" type="radio" name="exampleRadios" id="{{ seat.checkId }}" value="{{ seat.checkValue }}" [checked]="seat.checked">
+              <label class="form-check-label" for="{{ seat.checkId }}">
+                {{ seat.type }}
+              </label>
+            </div>
+          }
+        </div>
+        <div class="bottom-part">
+          <a href="javascript:void(0)" class="btn">apply</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <a href="javascript:void(0)" class="btn btn-solid w-100 color1 float-end" [routerLink]="['/flight/listing/round-trip']">search now</a>
+  </div>
+</form>

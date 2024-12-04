@@ -1,0 +1,27 @@
+<app-header [headerClass]="'light_header'"></app-header>
+
+<app-breadcrumbs [type]="'flight'" [FlightDetails]="false" [bg_image]="bg_image"></app-breadcrumbs>
+
+<div class="bg-inner small-section pb-0">
+  <div class="container">
+    <app-flight-search></app-flight-search>
+  </div>
+</div>
+
+<section class="pt-0 bg-inner small-section loader-section">
+  <app-layout [loaderType]="'flight-loader'"></app-layout>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 ratio3_2">
+        <app-details [type]="'flight-list'"></app-details>
+      </div>
+      <div class="col-lg-3">
+        <app-filter [type]="'flight'"></app-filter>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<app-footer [location]="true"></app-footer>
+

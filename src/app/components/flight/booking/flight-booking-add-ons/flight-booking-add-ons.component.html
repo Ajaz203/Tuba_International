@@ -1,0 +1,83 @@
+<app-header [headerClass]="'light_header'"></app-header>
+
+<app-flight-booking-breadcrumb [bg_image]="bg_image" [parent]="parent" [subParent]="subParent" [child]="child"></app-flight-booking-breadcrumb>
+
+<section class="small-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="review-section">
+          <div class="review_box">
+            <div class="title-top">
+              <h5>add more for your trip</h5>
+            </div>
+            <div class="flight_detail">
+              <div class="row">
+                <div class="col-12">
+                  <div class="accordion addons-according" id="accordionExample" ngbAccordion [closeOthers]="true">
+                    @for(details of flightAddOnsDetails; track details){
+                      <div class="card" ngbAccordionItem [collapsed]="details.id !== 1">
+                        <div class="card-header" id="headingTwo" ngbAccordionHeader>
+                          <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" ngbAccordionButton>
+                              <img [src]="details.icon" alt="icon" class="img-fluid blur-up lazyload"> {{ details.title }}
+                            </button>
+                          </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse show" ngbAccordionCollapse>
+                          <div class="card-body" ngbAccordionBody [class.seat-select]="details.id == 1" [class.order-menu-section]="details.id == 2 || details.id == 3">
+                            <ng-template>
+                              @if(details.id == 1){
+                                <app-flight-selected-seats></app-flight-selected-seats>
+                              }@else if(details.id == 2){
+                                <app-flight-meals></app-flight-meals>
+                              }@else if(details.id == 3){
+                                <app-flight-additional-luggage></app-flight-additional-luggage>
+                              }
+                            </ng-template>
+                          </div>
+                        </div>
+                      </div>
+                    }
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 res-margin">
+        <div class="sticky-cls-top">
+          <div class="review-section">
+            <div class="review_box">
+              <app-flight-travel-addons [title]="'travel addons'"></app-flight-travel-addons>
+            </div>
+          </div>
+          <div class="single-section">
+            <div class="single-sidebar p-0">
+              <div class="newsletter-sec">
+                <div>
+                  <h4 class="title">always first</h4>
+                  <p>Be the first to find out latest tours and exclusive offers and get 15% off your first booking.</p>
+                  <form>
+                    <input type="email" id="email1" class="form-control" placeholder="Enter your email">
+                    <div class="button">
+                      <a href="javascript:void(0)" class="btn btn-solid ">be the first</a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="continue-btn">
+        <button class="btn btn-solid" type="submit">make payment</button>
+      </div>
+    </div>
+</section>
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout></app-layout>

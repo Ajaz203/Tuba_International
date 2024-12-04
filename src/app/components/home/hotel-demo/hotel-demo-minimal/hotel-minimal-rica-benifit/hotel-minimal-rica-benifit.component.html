@@ -1,0 +1,26 @@
+<section class="about-section pt-0 section-b-space bg-white" [class.sticky-section]="sticky == true">
+  <div class="container">
+    <div class="title-1 detail-title">
+      <h2>why choose rica?</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aperiam at, aut commodi
+        corporis dolorum ducimus labore magnam mollitia natus porro</p>
+    </div>
+    <div class="highlight-section">
+      <div class="row">
+        @for(benefits of benefits; track benefits){
+          <div class="col-xl-3 col-6">
+            <div class="highlight-box wow fadeInUp">
+              <div>
+                <svg-icon [src]="benefits.icon"></svg-icon>
+              </div>
+              <div class="content-sec">
+                <h5>{{ benefits.title }}</h5>
+                <p>{{ benefits.description }}</p>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,34 @@
+<app-header [headerClass]="'light_header'"></app-header>
+
+<app-breadcrumbs [type]="'cab'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child"></app-breadcrumbs>
+
+<section class="small-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="product_img_scroll" data-sticky_column>
+          <app-booking [title]="true"></app-booking>
+        </div>
+      </div>
+      <div class="col-lg-4 booking-order res-margin">
+        <div class="review-section">
+          <div class="review_box">
+            <app-cab-booking-summary></app-cab-booking-summary>
+          </div>
+          <div class="review_box">
+            <app-cab-promo-code></app-cab-promo-code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="book-panel">
+  <h6 class="mb-0 text">grand total : <span>{{ 1250 | currencyPipe: hotelService.currency }}</span></h6>
+  <button type="button" class="btn bottom-btn theme-color">continue</button>
+</div>
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout></app-layout>

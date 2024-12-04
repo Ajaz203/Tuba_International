@@ -1,0 +1,48 @@
+<section class="single-section xs-section bg-inner">
+  <div class="container">
+    <div class="row">
+      @if(withOutTopPage){
+        <div class="col-12">
+          <div class="hotel_title_section">
+            <div class="hotel-name">
+              <div class="left-part">
+                <div class="top">
+                  <h2></h2>
+                  <div class="rating"> </div>
+                  <div class="share-buttons">
+                    <div class="ldr-btn"></div>
+                    <div class="ldr-btn"></div>
+                  </div>
+                </div>
+                <p></p>
+                <div class="facility-detail">
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+              <div class="right-part">
+                <h2 class="price"></h2>
+                <div class="ldr-btn d-none d-sm-block"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+
+      @if(filterType == 'left'){
+        <div class="col-xl-3 col-lg-4">
+          <app-hotel-single-page-skeleton-filter></app-hotel-single-page-skeleton-filter>
+        </div>
+      }
+      <div class="col-xl-9 col-lg-8">
+        <app-hotel-single-page-skeleton-details></app-hotel-single-page-skeleton-details>
+      </div>
+
+      @if(filterType == 'right'){
+        <div class="col-xl-3 col-lg-4">
+          <app-hotel-single-page-skeleton-filter></app-hotel-single-page-skeleton-filter>
+        </div>
+      }
+    </div>
+  </div>
+</section>

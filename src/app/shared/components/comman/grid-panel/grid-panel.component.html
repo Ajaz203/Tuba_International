@@ -1,0 +1,15 @@
+@if(type == 'hotel'){
+  <app-hotel-grid-panel [grid4Option]="grid4Option" [horizontalFilter]="horizontalFilter" [gridOptions]="gridOptions" [mapFilter]="mapFilter" [mapModal]="mapModal" [mapType]="mapType" [onClickMap]="onClickMap" [grid]="grid" (selectedTabValue)="getTabValue($event)" (map)="openMap($event)"></app-hotel-grid-panel>
+}
+
+@if(type == 'tour'){
+  <app-tour-grid-panel [tourHorizontalFilter]="tourHorizontalFilter" [filterClass]="filterClass" [gridOptions]="gridOptions" (selectedTabValue)="getTabValue($event)"></app-tour-grid-panel>
+}
+
+@if(type == 'cab'){
+  <app-cab-grid-panel (selectedTabValue)="getTabValue($event)"></app-cab-grid-panel>
+}
+
+@if(type == 'restaurant'){
+  <app-restaurant-grid-panel (selectedTabValue)="getTabValue($event)" [horizontalFilter]="horizontalFilter" [gridOptions]="gridOptions" [mapFilter]="mapFilter" [mapModal]="mapModal" [mapType]="mapType" [onClickMap]="onClickMap" (map)="openMap($event)" [grid]="grid"></app-restaurant-grid-panel>
+}

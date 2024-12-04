@@ -1,0 +1,37 @@
+<div class="left-sidebar sticky-cls-top" [ngStyle]="{ 'left' : tourService.isOpenResponsiveFilter == true ? '-1px' : '' }">
+  <div class="back-btn" (click)="closeResponsiveFilter()">
+    back
+  </div>
+  <div class="search-bar">
+    <input type="text" placeholder="Search here..">
+    <i class="fas fa-search"></i>
+  </div>
+  <div class="middle-part collection-collapse-block" [class.open]="isOpenTour">
+    <a href="javascript:void(0)" class="section-title collapse-block-title" (click)="openTour()">
+      <h5>latest filter</h5>
+      <img src="assets/images/icon/adjust.png" class="img-fluid blur-up lazyload" alt="filter-icon">
+    </a>
+    <div class="collection-collapse-block-content " [ngStyle]="{ 'display' : isOpenTour == true ? 'block' : 'none'}">
+      <div class="filter-block">
+        <app-tour-rating></app-tour-rating>
+      </div>
+      <div class="filter-block">
+        <app-tour-flights></app-tour-flights>
+      </div>
+      <div class="filter-block">
+        <app-tour-travel-type></app-tour-travel-type>
+      </div>
+      <div class="filter-block">
+        <app-tour-budget></app-tour-budget>
+      </div>
+      <div class="filter-block">
+        <app-tour-trip-duration></app-tour-trip-duration>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-info">
+    <h5><span>i</span> need help</h5>
+    <h4>856 - 215 - 211</h4>
+    <h6>Monday to Friday 9.00am - 7.30pm</h6>
+  </div>
+</div>

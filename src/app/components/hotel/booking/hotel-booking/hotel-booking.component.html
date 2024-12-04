@@ -1,0 +1,24 @@
+<app-header [headerClass]="'inner-page'"></app-header>
+
+<app-breadcrumbs [type]="'hotel'" [bg_image]="bg_image" [title]="title" [parent]="parent" [subParent]="subParent" [child]="child"></app-breadcrumbs>
+
+<section class="section-b-space bg-inner animated-section">
+  <app-animations [type]="'dots'"></app-animations>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="guest-detail">
+          <h2>Traveller Information</h2>
+          <app-booking-form></app-booking-form>
+        </div>
+      </div>
+      <div class="col-lg-5 booking-order">
+        <app-hotel-booking-details></app-hotel-booking-details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout [loaderType]="'basic'"></app-layout>

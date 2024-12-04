@@ -1,0 +1,28 @@
+<app-header [headerClass]="'light_header'"></app-header>
+
+<app-breadcrumbs [type]="'cab'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child"></app-breadcrumbs>
+
+<div class="xs-section pb-0 bg-inner">
+  <div class="container-fluid">
+    <div class="flight-search shadow-cls">
+      <app-cab-search></app-cab-search>
+    </div>
+  </div>
+</div>
+
+<section class="xs-section pt-0 bg-inner">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-5 col-lg-4  map-section">
+        <app-details [type]="'googleMap'"></app-details>
+      </div>
+      <div class="col-xl-7 col-lg-8 ratio3_2">
+        <app-details [type]="'cab-list'" [marginClass]="true" [responsiveLatestFilter]="false"></app-details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout [loaderType]="'skeleton'" [skeletonType]="'cab-list'" [map]="true" [mapSide]="'left'"></app-layout>

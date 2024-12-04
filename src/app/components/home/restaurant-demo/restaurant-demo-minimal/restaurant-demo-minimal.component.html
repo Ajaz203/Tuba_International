@@ -1,0 +1,19 @@
+<app-header [headerClass]="'light_header'" [userClass]="'user-light rounded5'"></app-header>
+
+<app-restaurant-minimal-home-section></app-restaurant-minimal-home-section>
+
+@if(restaurantMinimal){
+  <app-restaurant-minimal-category [category]="restaurantMinimal.category"></app-restaurant-minimal-category>
+
+  <app-restaurant-minimal-banner [banner]="restaurantMinimal.banner"></app-restaurant-minimal-banner>
+
+  <app-restaurant-minimal-booking [booking]="restaurantMinimal.booking"></app-restaurant-minimal-booking>
+
+  <app-restaurant-minimal-popular-restaurant [id]="restaurantMinimal.restaurant"></app-restaurant-minimal-popular-restaurant>
+}
+
+<app-restaurant-minimal-application></app-restaurant-minimal-application>
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout [loaderType]="'simple'"></app-layout>

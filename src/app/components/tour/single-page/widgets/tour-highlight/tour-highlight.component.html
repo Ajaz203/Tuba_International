@@ -1,0 +1,39 @@
+@for(details of highlights; track details){
+<div class="about-sec">
+    @if(details.highLightPosition == "top"){
+      <p class="{{ details.textClass }}">{{ details.description }}</p>
+    }
+  </div>
+
+  @if(details.data){
+    <div class="row">
+      @for(items of details.data; track items){
+        <div class="col-md-6">
+          <div class="about-sec">
+            <h4>{{ items.title }}</h4>
+            <ul>
+              @for(list of items.details; track list){
+                <li>{{ list.data }}</li>
+              }
+            </ul>
+          </div>
+        </div>
+      }
+    </div>
+  }
+
+  @if(details.image && image){
+    <div class="detail-img">
+      <img src="assets/images/tour/spain.jpg" class="img-fluid blur-up lazyload" alt="destination-image">
+    </div>
+  }
+
+  @if(details.highLightPosition == "bottom" && bottomDetails){
+    <div class="about-sec ">
+      <h6>{{ details.title }}</h6>
+      <p class="{{ details.textClass }}">{{ details.description }}
+      </p>
+    </div>
+  }
+
+}

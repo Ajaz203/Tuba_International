@@ -1,0 +1,45 @@
+<app-header [headerClass]="'light_header fixed-header'" [userClass]="'user-light'" [containerFluid]="true"></app-header>
+
+<app-flight-left-sidebar-home-section [displayClass]="'d-block d-xl-none'"></app-flight-left-sidebar-home-section>
+
+<section class="cab-full pt-xl-cls">
+  <div class="left-bar fixed-cls">
+    <div class="flight-search">
+      <div class="flight-search-detail">
+        <div class="location-option d-flex">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked (change)="changeValue($event)">
+            <label class="text-dark form-check-label" for="exampleRadios1">
+              round trip
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" (change)="changeValue($event)">
+            <label class="text-dark form-check-label" for="exampleRadios2">
+              one way
+            </label>
+          </div>
+        </div>
+        <app-flight-left-sidebar [selectedValue]="selectedValue"></app-flight-left-sidebar>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="scroll-body">
+
+  <app-flight-left-sidebar-home-section [displayClass]="'d-none d-xl-block'"></app-flight-left-sidebar-home-section>
+
+  @if(flightLeftSidebar){
+    <app-flight-left-sidebar-airline-details [airlines]="flightLeftSidebar.airlines"></app-flight-left-sidebar-airline-details>
+
+    <app-flight-left-sidebar-airline-destination [destination]="flightLeftSidebar.destination"></app-flight-left-sidebar-airline-destination>
+
+    <app-flight-left-sidebar-airline-deals [deals]="flightLeftSidebar.deals"></app-flight-left-sidebar-airline-deals>
+  }
+
+  <app-footer [location]="true" [footerClass]="true"></app-footer>
+
+</div>
+<app-layout [loaderType]="'basic'"></app-layout>
+

@@ -1,0 +1,106 @@
+@if(responsiveLatestFilter == true){
+  <a href="javascript:void(0)" class="mobile-filter mt-3"  (click)="openResponsiveFilter()">
+    <h5>latest filter</h5>
+    <img src="assets/images/icon/adjust.png" class="img-fluid blur-up lazyload" alt="filter-icon">
+  </a>
+}
+<!-- Tags  -->
+<ul class="product-filter-tags">
+  <li class="me-1">
+    @if(tags.length){
+      @for(tag of tags; track tag){
+        @if(tag){
+          <a href="javascript:void(0)" class="filter_tag">
+            {{ tag }}
+            <button type="button" class="btn-close" aria-label="Close" (click)="removeTag(tag)"></button>
+          </a>
+        }
+      }
+    }
+    @if(minPrice && maxPrice != 0){
+      <a href="javascript:void(0)" class="filter_tag">
+        Price : {{ minPrice | currencyPipe: hotelService.currency }} - {{ maxPrice | currencyPipe: hotelService.currency }}
+      </a>
+    }
+  </li>
+</ul>
+
+<div class="container">
+  <div class="list-view row content grid">
+    @for(details of hotelDetails; track details){
+      <div class="list-box col-12 popular grid-item wow fadeInUp">
+        <div class="list-img">
+          @if(imageSlider || thumbnailImages || thumbnailVideo){
+            <app-hotel-list-images [images]="details" [imageSlider]="imageSlider" [thumbnailImages]="thumbnailImages" [thumbnailVideo]="thumbnailVideo"></app-hotel-list-images>
+          }@else {
+            <a href="javascript:void(0)" [routerLink]="['/hotel/single-page/image-box']">
+              <img [src]="details.img" class="img-fluid blur-up lazyload" alt="hotel-image">
+            </a>
+          }
+        </div>
+        <div class="list-content">
+          <div>
+            <a href="javascript:void(0)" [routerLink]="['/hotel/single-page/image-box']">
+              <h5>{{ details.hotelName }}</h5>
+            </a>
+            <p>{{ details.location }}, 2km from center</p>
+            <div class="rating">
+              <ngb-rating [rate]="details.rating"></ngb-rating>
+              <span>{{ details.review }} review</span>
+            </div>
+            @if(description){
+              <p class="hotel-info">{{ details.description }}</p>
+            }
+            <div class="facility-icon">
+              @if(details.hotelFacility.includes('bar')){
+                <div class="facility-box">
+                  <img src="assets/images/icon/hotel/beer.png" class="img-fluid blur-up lazyload" alt="beer-icon">
+                  <span>bar</span>
+                </div>
+              }
+              @if(details.hotelFacility.includes('wifi')){
+                <div class="facility-box">
+                  <img src="assets/images/icon/hotel/wifi.png" class="img-fluid blur-up lazyload" alt="wifi-icon">
+                  <span>wifi</span>
+                </div>
+              }
+              @if(details.hotelFacility.includes('restaurant')){
+                <div class="facility-box">
+                  <img src="assets/images/icon/tour/fork.png" class="img-fluid blur-up lazyload" alt="fork-icon">
+                  <span>restaurant</span>
+                </div>
+              }
+              @if(details.hotelFacility.includes('beach')){
+                <div class="facility-box">
+                  <img src="assets/images/icon/hotel/sunset.png" class="img-fluid blur-up lazyload" alt="sunset-icon">
+                  <span>beach</span>
+                </div>
+              }
+              @if(details.hotelFacility.includes('swimming')){
+                <div class="facility-box">
+                  <img src="assets/images/icon/hotel/pool.png" class="img-fluid blur-up lazyload" alt="pool-icon">
+                  <span>swimming</span>
+                </div>
+              }
+            </div>
+            <div class="price">
+              <del>{{ details.price | currencyPipe: hotelService.currency }}</del>
+              {{ details.discountPrice | currencyPipe: hotelService.currency }} <span>/ per night</span>
+              <p class="mb-0">login & unlock a secret deal</p>
+            </div>
+            @if(details.deal){
+            <div class="offer-box">
+              <i class="fas fa-fire"></i> {{ details.dealText }}
+            </div>
+            }
+            <a href="javascript:void(0)" class="btn btn-solid color1 book-now" [routerLink]="['/hotel/booking/hotel-booking']">book now</a>
+          </div>
+        </div>
+      </div>
+    }@empty {
+      <app-no-data [icon]="icon" [title]="title" [description]="descriptionData"></app-no-data>
+    }
+  </div>
+</div>
+
+<app-pagination [products]="hotelDetails" [paginate]="paginate" (setPage)="setPage($event)"></app-pagination>

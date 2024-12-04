@@ -1,0 +1,14 @@
+<section class="section-b-space dark-cls animated-section bg-size" [style.background-image]="'url(assets/images/cab/grey-bg.jpg)'">
+  <img src="assets/images/cab/grey-bg.jpg" alt="background-image" class="img-fluid blur-up lazyload bg-img" style="display: none;">
+  <app-animations [type]="'dots'"></app-animations>
+  <div class="container">
+    <app-title [type]="'simple'" [title]="'new'" [subTitle]="'awesome service'"></app-title>
+    <div class="row service-section">
+      @for(service of services; track service){
+        <div class="col-lg-4">
+          <app-services [type]="'classic'" [service]="service"></app-services>
+        </div>
+      }
+    </div>
+  </div>
+</section>

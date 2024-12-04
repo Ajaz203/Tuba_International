@@ -1,0 +1,75 @@
+<div class="filter-panel" [class.right-filter]="mapFilter" [class.filter-map]="mapModal || onClickMap">
+  @if(mapFilter){
+    <a href="javascript:void(0)" class="popup-btn" (click)="openMapFilter()">
+      <h5>latest filter</h5>
+      <img src="assets/images/icon/adjust.png" class="img-fluid blur-up lazyload" alt="filter-icon">
+    </a>
+    <app-filter [type]="'restaurant'" [mapFilter]="mapFilter"></app-filter>
+  }
+  <div class="left-filter" [class.ms-auto]="mapFilter">
+    <div class="respon-filter-btn" (click)="openResponsiveTab()">
+      <h6> filter <i class="fas fa-sort-down"></i></h6>
+      <span class="according-menu"></span>
+    </div>
+    <div class="filters respon-filter-content filter-button-group" [class.show]="isOpenTab">
+      <ul>
+        <li [class.active]="activeTab == 'all'" (click)="changedValue('all')">All</li>
+        <li [class.active]="activeTab == 'popular'" (click)="changedValue('popular')">popular</li>
+        <li [class.active]="activeTab == 'latest'" (click)="changedValue('latest')">latest</li>
+        <li [class.active]="activeTab == 'trend'" (click)="changedValue('trend')">trend</li>
+      </ul>
+    </div>
+  </div>
+  @if(!mapFilter){
+    <div class="right-panel">
+
+      @if(mapModal){
+        <a href="javascript:void(0)" class="view-map" (click)="openMapModal(mapType)">view on map <span class="arrow">click to view</span></a>
+      }
+
+      @if(onClickMap == true){
+      <a href="javascript:void(0)" class="view-map" (click)="openMap()">view on map <span class="arrow">click to view</span></a>
+      }
+      @if(horizontalFilter){
+        <a href="javascript:void(0)" class="filter_button filter-bottom-title" (click)="openHorizontalFilter()">
+          <img src="assets/images/icon/adjust.png" class="img-fluid blur-up lazyload" alt="filter-icon">
+          <h5>latest filter</h5>
+        </a>
+        <app-filter [type]="'restaurant'" [horizontalFilter]="horizontalFilter"></app-filter>
+      }
+      @if(grid){
+        <div class="collection-grid-view">
+          <ul>
+            <li>
+              <a href="javascript:void(0)" class="product-2-layout-view" (click)="grid2()">
+                <ul class="filter-select">
+                  <li></li>
+                  <li></li>
+                </ul>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" class="product-3-layout-view" (click)="grid3()">
+                <ul class="filter-select">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" class="product-4-layout-view" (click)="grid4()">
+                <ul class="filter-select">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </a>
+            </li>
+          </ul>
+        </div>
+      }
+    </div>
+  }
+</div>

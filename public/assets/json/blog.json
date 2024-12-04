@@ -1,0 +1,157 @@
+{
+  "blog": [
+    {
+      "id": 1,
+      "blogTitle": "Twice profit than before you",
+      "description": "This beachfront resort offers luxurious rooms with stunning ocean views and a range of amenities, including a spa and water sports center",
+      "location": "phonics, new york",
+      "url": "assets/images/portfolio/4.jpg",
+      "date": "05",
+      "month": "nov"
+    },
+    {
+      "id": 2,
+      "blogTitle": "A Slice of Paradise: Exploring Bali's Hidden Gems",
+      "description": "Discover the serene water temples, lush rice terraces, and secluded beaches that make Bali a tropical paradise like no other",
+      "location": "Bali, Indonesia",
+      "url": "assets/images/portfolio/2.jpg",
+      "date": "25",
+      "month": "jan"
+    },
+    {
+      "id": 3,
+      "blogTitle": "Cultural Odyssey: Unraveling the Charms of Kyoto",
+      "description": "Immerse yourself in the rich history, exquisite temples, and traditional tea ceremonies that define the cultural tapestry of Kyoto",
+      "location": "Kyoto, Japan",
+      "url": "assets/images/portfolio/10.jpg",
+      "date": "10",
+      "month": "aug"
+    },
+    {
+      "id": 4,
+      "blogTitle": "Rustic Retreat: Exploring the Countryside of Tuscany",
+      "description": "Journey through rolling vineyards, charming medieval towns, and savor the finest wines and cuisine in the heart of Tuscany",
+      "location": "Tuscany, Italy",
+      "url": "assets/images/portfolio/9.jpg",
+      "date": 12,
+      "month": "june"
+    },
+    {
+      "id": 5,
+      "blogTitle": "Hiking the Redwood Forest Majesty",
+      "description": "Towering trees, nature's ancient giants.",
+      "posted_by": "Emily Explorer",
+      "url": "assets/images/tour/blog/1.jpg",
+      "date": 12,
+      "month": "jan"
+    },
+    {
+      "id": 6,
+      "blogTitle": "Chasing Waterfalls: An Adventure Diary",
+      "description": "Mystical cascades, tales of wanderlust.",
+      "posted_by": "Jake Journeys",
+      "url": "assets/images/tour/blog/2.jpg",
+      "date": 24,
+      "month": "feb"
+    },
+    {
+      "id": 7,
+      "blogTitle": "Into the Wild: Exploring Yellowstone",
+      "description": "Geysers, wildlife, and wilderness wonders.",
+      "posted_by": "Sarah Wilderness",
+      "url": "assets/images/tour/blog/3.jpg",
+      "date": 27,
+      "month": "aug"
+    },
+    {
+      "id": 8,
+      "blogTitle": "The Ultimate Guide to Ridesharing",
+      "description": "Explore rideshare trends and tips.",
+      "posted_by": "Emily Explorer",
+      "url": "assets/images/cab/blog/1.jpg",
+      "date": 12,
+      "month": "jan"
+    },
+    {
+      "id": 9,
+      "blogTitle": "Navigating the City: Cab Chronicles",
+      "description": "Ride-sharing trends in 2024",
+      "posted_by": "Jake Journeys",
+      "url": "assets/images/cab/blog/2.jpg",
+      "date": 24,
+      "month": "feb"
+    },
+    {
+      "id": 10,
+      "blogTitle": "Navigating the City Streets",
+      "description": "Discover urban transport insights and tips.",
+      "posted_by": "Sarah Wilderness",
+      "url": "assets/images/cab/blog/1.jpg",
+      "date": 27,
+      "month": "aug"
+    },
+    {
+      "id": 11,
+      "blogTitle": "Twice profit than before you",
+      "description": "This beachfront resort offers luxurious rooms with stunning ocean views and a range of amenities, including a spa and water sports center",
+      "location": "phonics, new york",
+      "url": "assets/images/flights/blog/1.jpg",
+      "date": "05",
+      "month": "nov"
+    },
+    {
+      "id": 12,
+      "blogTitle": "A Slice of Paradise: Exploring Bali's Hidden Gems",
+      "description": "Discover the serene water temples, lush rice terraces, and secluded beaches that make Bali a tropical paradise like no other",
+      "location": "Bali, Indonesia",
+      "url": "assets/images/flights/blog/2.jpg",
+      "date": "25",
+      "month": "jan"
+    },
+    {
+      "id": 13,
+      "blogTitle": "Cultural Odyssey: Unraveling the Charms of Kyoto",
+      "description": "Immerse yourself in the rich history, exquisite temples, and traditional tea ceremonies that define the cultural tapestry of Kyoto",
+      "location": "Kyoto, Japan",
+      "url": "assets/images/flights/blog/3.jpg",
+      "date": "10",
+      "month": "aug"
+    },
+    {
+      "id": 14,
+      "blogTitle": "Rustic Retreat: Exploring the Countryside of Tuscany",
+      "description": "Journey through rolling vineyards, charming medieval towns, and savor the finest wines and cuisine in the heart of Tuscany",
+      "location": "Tuscany, Italy",
+      "url": "assets/images/flights/blog/4.jpg",
+      "date": 12,
+      "month": "june"
+    },
+    {
+      "id": 15,
+      "blogTitle": "Skybound Escapades: Soaring Adventures Await",
+      "description": "Unlock the skies, explore limitless horizons",
+      "posted_date": "january 9, 2019",
+      "url": "assets/images/flights/blog/5.jpg",
+      "date": "24",
+      "month": "feb"
+    },
+    {
+      "id": 16,
+      "blogTitle": "Skyward Sojourns: Navigating Horizons",
+      "description": "Elevate your adventures with soaring flights",
+      "posted_date": "january 12, 2020",
+      "url": "assets/images/flights/blog/6.jpg",
+      "date": "25",
+      "month": "jan"
+    },
+    {
+      "id": 17,
+      "blogTitle": "Soaring Horizons: Skyward Journeys Unveiled",
+      "description": "Explore limitless adventures through air",
+      "posted_date": "01 july, 2022",
+      "url": "assets/images/flights/blog/4.jpg",
+      "date": "10",
+      "month": "aug"
+    }
+  ]
+}

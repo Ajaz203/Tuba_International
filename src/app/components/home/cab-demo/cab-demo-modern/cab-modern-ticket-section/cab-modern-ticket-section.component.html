@@ -1,0 +1,10 @@
+<section class="section-b-space ticket-section animated-section bg-size" [style.background-image]="'url(assets/images/cab/app-bg.jpg)'">
+  <img src="assets/images/cab/app-bg.jpg" class="img-fluid blur-up lazyload bg-img" alt="background-image" style="display: none;">
+  <app-animations [type]="'dots'"></app-animations>
+  <div class="container">
+    <app-title [type]="'simple'" [title]="'new'" [subTitle]="'latest video'" [textWhite]="true"></app-title>
+    <div class="slide-1">
+      <app-ticket-section [cabDetails]="cab"></app-ticket-section>
+    </div>
+  </div>
+</section>

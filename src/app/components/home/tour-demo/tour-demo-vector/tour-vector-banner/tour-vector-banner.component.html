@@ -1,0 +1,40 @@
+<section class="banner-section full-banner overlay-banner b-top bg-size" [style.background-image]="'url(assets/images/tour/background/16.jpg)'">
+  <img src="assets/images/tour/background/16.jpg" alt="background-image" class="bg-img bg-top" style="display: none;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="place-image">
+          <img src="assets/images/flights/place.png " alt="place-image" class="img-fluid blur-up lazyload wow zoomIn">
+          <div class="animation-place">
+            <div class=" plane-l">
+              <img src="assets/images/flights/banner/1.png" alt="plane" class="zoomIn wow img-fluid blur-up lazyload ">
+            </div>
+            <div class="cloud-l">
+              <img src="assets/images/flights/banner/2.png" alt="cloud" class="img-fluid blur-up lazyload wow zoomIn">
+            </div>
+            <div class="cloud-r">
+              <img src="assets/images/flights/banner/3.png" alt="cloud" class="img-fluid blur-up lazyload wow zoomIn">
+            </div>
+            <div class=" plane-r">
+              <img src="assets/images/flights/banner/4.png" alt="plane" class="img-fluid blur-up lazyload zoomIn wow">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 offset-lg-1">
+        <div class="banner-content">
+          <div>
+            <h5>special nature tour offer</h5>
+            <h2>discount <span>20-30%</span></h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and type setti ng industry. Lorem Ipsum
+              has been the of industry standard dum my text ever since the 1500s,</p>
+            <h2 class="price">{{ 420 | currencyPipe: hotelService.currency }}</h2>
+            <div class="bottom-section">
+              <a href="javascript:void(0)" class="btn btn-rounded btn-sm color1" [routerLink]="['/tour/booking/booking']">buy now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

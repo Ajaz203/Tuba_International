@@ -1,0 +1,20 @@
+<app-header [headerClass]="'light_header'"></app-header>
+
+<app-breadcrumbs [type]="'restaurant'" [sectionClass]="'not-found'"></app-breadcrumbs>
+
+<section class="small-section success-section">
+  <div class="container">
+    <div class="row success-detail mt-0">
+      <div class="col">
+        <img src="assets/images/restaurant/serving-dish.png" class="img-fluid blur-up lazyload" alt="restaurant-not-found-image">
+        <h2>oops ! no food or restaurant found</h2>
+        <p>We can’t find anything related to your search. Try a different search.</p>
+        <button type="submit" class="btn  btn-solid color1">search again</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout [loaderType]="'simple'"></app-layout>

@@ -1,0 +1,28 @@
+<section class="pt-0">
+  <div class="container-fluid ratio_square instgram-slider">
+    <div class="row">
+      <div class="col p-0">
+        <div class="slide-6 no-arrow">
+          @if(socialGallery){
+            <owl-carousel-o [options]="Options">
+              @for(images of socialGallery; track images){
+                <ng-template carouselSlide>
+                  <div>
+                    <a href="javascript:void(0)" [routerLink]="['/page/portfolio/2-grid']">
+                      <div class="instagram-box">
+                        <img [src]="images.url" alt="hotel-image" class="img-fluid blur-up lazyload bg-img">
+                        <div class="overlay">
+                          <i class="fab fa-instagram"></i>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </ng-template>
+              }
+            </owl-carousel-o>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

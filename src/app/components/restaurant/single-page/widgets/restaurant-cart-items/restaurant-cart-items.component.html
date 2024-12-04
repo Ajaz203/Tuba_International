@@ -1,0 +1,78 @@
+<div class="single-sidebar order-cart-right" [ngStyle]=" { 'right' : restaurantService.isOpenCart ? '-1px' : ''}">
+  @if(backButton){
+    <div class="back-btn" (click)="closeCart()">
+      back
+    </div>
+  }
+  <div class="order-cart">
+    <h4 class="title">cart items:</h4>
+    @if(emptyCart){
+      <div class="empty-cart">
+        <h5>cart is empty!!</h5>
+        <img src="assets/images/icon/empty-cart.png" class="img-fluid blur-up lazyload" alt="empty-cart-image">
+        <p>looks like you have not order something. Go ahead, order some yummy food from
+          menu.. </p>
+      </div>
+    }@else {
+      <div class="cart-items">
+        @for(items of restaurantOrders; track items){
+          @for(menu of items.items; track menu){
+            @if(menu.cartItem){
+              <div class="items" [ngClass]="{ 'veg' : menu.mealType == 'veg', 'non-veg' : menu.mealType == 'non-veg'}">
+                <h6>{{ menu.title }}</h6>
+                <h5>{{ menu.price | currencyPipe: hotelService.currency }}</h5>
+                <div class="qty-box cart_qty">
+                  <div class="input-group">
+                    <button type="button" class="btn qty-left-minus" (click)="setValue(menu, -1)">
+                      <i class="fa fa-minus" aria-hidden="true"></i>
+                    </button>
+                    <input type="text" name="quantity" class="form-control input-number qty-input" value="{{ menu.itemsValue }}" tabindex="0">
+                    <button type="button" class="btn qty-right-plus" (click)="setValue(menu, 1)">
+                      <i class="fa fa-plus" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="price">
+                  <span>{{ menu.price | currencyPipe: hotelService.currency }}</span>
+                </div>
+              </div>
+            }
+          }
+        }
+      </div>
+      <div class="cart-bottom">
+        <h6 class="sub-total">subtotal
+          <span>{{ 200 | currencyPipe: hotelService.currency }}</span>
+        </h6>
+        @if(!backButton){
+          <h6 class="sub-total">delivery charge
+            <span>{{ 5 | currencyPipe: hotelService.currency }}</span>
+          </h6>
+          <h6 class="grand-total sub-total">total
+            <span>{{ 205 | currencyPipe: hotelService.currency }}</span>
+          </h6>
+        }@else {
+          <p>delivery charges may apply to your order</p>
+          <div class="checkout">
+            <a href="javascript:void(0)" class="btn btn-solid w-100">place order</a>
+          </div>
+        }
+      </div>
+    }
+  </div>
+</div>
+<div class="single-sidebar p-0">
+  <div class="newsletter-sec">
+    <div>
+      <h4 class="title">always first</h4>
+      <p>Be the first to find out latest deals and exclusive offers and get 15% off your
+        first order.</p>
+      <form>
+        <input type="email" id="email1" class="form-control" placeholder="Enter your email">
+        <div class="button">
+          <a href="javascript:void(0)" class="btn btn-solid ">be the first</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

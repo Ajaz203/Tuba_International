@@ -1,0 +1,24 @@
+<section class="about-section" [ngClass]="{ 'section-b-space animated-section' : sectionClass }">
+  @if(animation){
+    <app-animations [type]="'dots'"></app-animations>
+  }
+  <div class="container">
+    <app-title [type]="titleType" [title]="'best'" [subTitle]="'emergency call'" [background_text]="'emergency'"></app-title>
+    <div class="row">
+      <div class="col-lg-7">
+        <app-animated-images [images]="images"></app-animated-images>
+      </div>
+      <div class="col-lg-5">
+        <div class="about-text">
+          <div>
+            <h5><span>new</span> offer...</h5>
+            <h3>call us to Book a taxi</h3>
+            <h2>(964) 444-9000</h2>
+            <p>The operator will call back immediately and report the cost of travel.. </p>
+            <a href="javascript:void(0)" class="btn btn-curve btn-lower" [routerLink]="['/page/other-pages/contact-us-2']">discover</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

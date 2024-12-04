@@ -1,0 +1,26 @@
+<app-header [headerClass]="'light_header'"></app-header>
+
+<app-breadcrumbs [type]="'pages'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child"></app-breadcrumbs>
+
+<section class="section-b-space bg-white sticky-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 order-lg-1">
+        @if(blogDetails){
+          <app-blog-details-page [blogDetails]="blogDetails.blogDetail" [blogComments]="blogDetails.blogComments"></app-blog-details-page>
+        }
+      </div>
+      <div class="col-lg-3">
+        <div class="sticky-cls-top">
+          @if(blogFilter){
+            <app-blog-filter [blogFilter]="blogFilter"></app-blog-filter>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer [places]="true" [sticky]="true"></app-footer>
+
+<app-layout [loaderType]="'blog-detail-skeleton'" [filterType]="'left'"></app-layout>

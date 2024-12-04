@@ -1,0 +1,32 @@
+<section class="blog_section destination-section section-b-space ratio_55">
+  <div class="container">
+    <app-title [type]="'standard'" [title]="'featured...'" [subTitle]="'destination'" [description]="description"></app-title>
+    <div class="slide-3 no-arrow">
+      @if(destination){
+        <owl-carousel-o [options]="options">
+          @for(details of destination; track details){
+            <ng-template carouselSlide>
+              <div>
+                <div class="blog-wrap">
+                  <div class="blog-image">
+                    <div class="bg-size" [style.background-image]="'url('+ details.image +')'">
+                      <img src="assets/images/flights/destination/1.jpg" class="img-fluid blur-up lazyload bg-img" alt="destination-image" style="display: none;">
+                    </div>
+                  </div>
+                  <div class="destination-details">
+                    <div>
+                      <h5>{{ details.country }}</h5>
+                      <h2>{{ details.city }}</h2>
+                      <h6>{{ details.description }}</h6>
+                      <a href="javascript:void(0)" class="btn btn-rounded color2" style="font-size: 16px;" [routerLink]="['/flight/listing/left-sidebar']">from {{ details.price | currencyPipe: hotelService.currency }}*</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          }
+        </owl-carousel-o>
+      }
+    </div>
+  </div>
+</section>

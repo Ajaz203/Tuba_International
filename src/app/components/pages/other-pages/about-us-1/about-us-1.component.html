@@ -1,0 +1,66 @@
+<app-header [headerClass]="'inner-page'"></app-header>
+
+<app-breadcrumbs [type]="'pages'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child" [paddingClass]="false"></app-breadcrumbs>
+
+@if(aboutDetail){
+  @for(details of aboutDetail.about; track details){
+    @if(details.gallery){
+      <section class="about-section three-image about_page animated-section section-b-space">
+        <app-animations [type]="'dots'"></app-animations>
+        <div class="container">
+          <app-title [type]="'simple'" [title]="'rica'" [subTitle]="'about us'"></app-title>
+          <app-introduction [gallery]="details.gallery"></app-introduction>
+        </div>
+      </section>
+    }
+    @if(details.team){
+      <section class="team-section animated-section section-b-space bg-size" [style.background-image]="'url(assets/images/cab/grey-bg.jpg)'">
+        <img [src]="'assets/images/cab/grey-bg.jpg'" alt="background-image" class="img-fluid blur-up lazyload bg-img" style="display: none;">
+        <app-animations [type]="'dots'"></app-animations>
+        <div class="container">
+          <app-title [type]="'simple'" [title]="'rica'" [subTitle]="'our team'"></app-title>
+          <app-team [team]="details.team"></app-team>
+        </div>
+      </section>
+    }
+    @if(details.testimonial){
+      <section class="testimonial_section section-b-space">
+        <div class="container">
+          <app-title [type]="'simple'" [title]="'rica'" [subTitle]="'our guests love us'"></app-title>
+          <div class="row">
+            <div class="offset-lg-1 col-lg-10">
+              <div class="slide-1 arrow-classic">
+                <app-testimonial [type]="'simple'" [testimonial]="testimonial"></app-testimonial>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    }
+    @if(details.fact){
+      <section class="facts-section animated-section section-b-space bg-size" [style.background-image]="'url(assets/images/cab/grey-bg.jpg)'">
+        <img [src]="'assets/images/cab/grey-bg.jpg'" alt="background-image" class="img-fluid blur-up lazyload bg-img" style="display: none;">
+        <app-animations [type]="'dots'"></app-animations>
+        <div class="container">
+            <app-title [type]="'simple'" [title]="'rica'" [subTitle]="'no stories, facts only'"></app-title>
+            <app-fact [fact]="details.fact"></app-fact>
+        </div>
+    </section>
+    }
+    @if(details.blog){
+      <section class="blog_section inner-blog animated-section section-b-space ratio_55">
+        <app-animations [type]="'dots'"></app-animations>
+        <div class="container">
+          <app-title [type]="'simple'" [title]="'rica'" [subTitle]="'latest blog'"></app-title>
+          <div class="slide-3 no-arrow">
+            <app-blog [blogs]="blog" [type]="'basic'" [border]="false" [colorClass]="''"></app-blog>
+          </div>
+        </div>
+      </section>
+    }
+  }
+}
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout [loaderType]="'basic'"></app-layout>

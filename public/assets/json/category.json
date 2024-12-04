@@ -1,0 +1,440 @@
+{
+  "category": [
+    {
+      "id": 1,
+      "categoryTitle": "hot air balloon",
+      "categoryDescription": "Experience the thrill of a hot air balloon ride with breathtaking views",
+      "categoryImage": "assets/images/tour/tour/1.jpg",
+      "price": 320,
+      "discountPrice": 210,
+      "days": 5,
+      "night": 6,
+      "person": 2
+    },
+    {
+      "id": 2,
+      "categoryTitle": "Cool water ride",
+      "categoryDescription": "Experience a thrilling aquatic adventure on the Cool Water Ride",
+      "categoryImage": "assets/images/tour/tour/2.jpg",
+      "price": 300,
+      "discountPrice": 200,
+      "days": 4,
+      "night": 3,
+      "person": 2
+    },
+    {
+      "id": 3,
+      "categoryTitle": "Water fall",
+      "categoryDescription": "Waterfall is a cascade of water flowing from a height in a natural or man-made setting",
+      "categoryImage": "assets/images/tour/tour/3.jpg",
+      "price": 280,
+      "discountPrice": 210,
+      "days": 5,
+      "night": 6,
+      "person": 2
+    },
+    {
+      "id": 4,
+      "categoryTitle": "Speed Boat",
+      "categoryDescription": "High-speed boat with sleek design and powerful engine for thrilling water adventures",
+      "categoryImage": "assets/images/tour/tour/2.jpg",
+      "price": 350,
+      "discountPrice": 345,
+      "days": 5,
+      "night": 6,
+      "person": 2
+    },
+    {
+      "id": 5,
+      "categoryTitle": "tour of shimala",
+      "categoryDescription": "Explore the picturesque hills of Shimla on a guided tour, and immerse yourself in the natural beauty and colonial charm of this enchanting hill station",
+      "categoryImage": "assets/images/tour/tour/5.jpg",
+      "price": 240,
+      "discountPrice": 200,
+      "coupon_code": "EDR45"
+    },
+    {
+      "id": 6,
+      "categoryTitle": "tour of nepal",
+      "categoryDescription": "Embark on an unforgettable journey through Nepal's breathtaking landscapes, from the towering Himalayas to serene temples and cultural wonders",
+      "categoryImage": "assets/images/tour/tour/6.jpg",
+      "price": 200,
+      "discountPrice": 180,
+      "coupon_code": "NEP12",
+      "like": true
+    },
+    {
+      "id": 7,
+      "categoryTitle": "tour of bhutan",
+      "categoryDescription": "Experience the enchanting beauty of Bhutan's pristine landscapes and immerse yourself in its rich cultural heritage on this unforgettable tour",
+      "categoryImage": "assets/images/tour/tour/7.jpg",
+      "price": 320,
+      "discountPrice": 315,
+      "coupon_code": "BHU80"
+    },
+    {
+      "id": 8,
+      "categoryTitle": "classic",
+      "categoryDescription": "book and instant 10% discount",
+      "categoryImage": "assets/images/cab/car/1.png",
+      "price": 45,
+      "startFrom": 25,
+      "rating": 4,
+      "car": "marseille"
+    },
+    {
+      "id": 9,
+      "categoryTitle": "business",
+      "categoryDescription": "book and instant 20% discount",
+      "categoryImage": "assets/images/cab/car/2.png",
+      "price": 56,
+      "startFrom": 20,
+      "rating": 3,
+      "car": "Toyota Camry"
+    },
+    {
+      "id": 10,
+      "categoryTitle": "VIP",
+      "categoryDescription": "book and instant 15% discount",
+      "categoryImage": "assets/images/cab/car/3.png",
+      "price": 78,
+      "startFrom": 15,
+      "rating": 4,
+      "car": "Ford Mustang"
+    },
+    {
+      "id": 11,
+      "categoryTitle": "van",
+      "categoryDescription": "book and instant 5% discount",
+      "categoryImage": "assets/images/cab/car/4.png",
+      "price": 18,
+      "startFrom": 10,
+      "rating": 3
+    },
+    {
+      "id": 12,
+      "categoryTitle": "business",
+      "categoryDescription": "book and instant 25% discount",
+      "categoryImage": "assets/images/cab/car/2.png",
+      "price": 25,
+      "startFrom": 25,
+      "rating": 3
+    },
+    {
+      "id": 13,
+      "categoryTitle": "london to moscow",
+      "categoryImage": "assets/images/flights/destination/4.jpg",
+      "price": 500,
+      "discountPrice": 420,
+      "arrivalTime": "20:30",
+      "departureTime": "14:20",
+      "tag": true,
+      "tagTitle": "-30%",
+      "rating": 4
+    },
+    {
+      "id": 14,
+      "categoryTitle": "milan to stockholm",
+      "categoryImage": "assets/images/flights/destination/5.jpg",
+      "price": 400,
+      "discountPrice": 380,
+      "arrivalTime": "22:00",
+      "departureTime": "15:00",
+      "tag": true,
+      "tagTitle": "limited time",
+      "rating": 3
+    },
+    {
+      "id": 15,
+      "categoryTitle": "marid to prague",
+      "categoryImage": "assets/images/flights/destination/6.jpg",
+      "price": 520,
+      "discountPrice": 450,
+      "arrivalTime": "00:00",
+      "departureTime": "21:30",
+      "tag": true,
+      "tagTitle": "-30%",
+      "rating": 4
+    },
+    {
+      "id": 16,
+      "categoryTitle": "humburg to paris",
+      "categoryImage": "assets/images/flights/destination/7.jpg",
+      "price": 350,
+      "discountPrice": 300,
+      "arrivalTime": "04:00",
+      "departureTime": "06:00",
+      "tag": true,
+      "tagTitle": "sunday",
+      "rating": 3
+    },
+    {
+      "id": 17,
+      "categoryTitle": "london",
+      "categoryImage": "assets/images/flights/destination/8.jpg",
+      "rating": 4,
+      "tag": true,
+      "tagTitle": "new",
+      "flightDetails": [
+        {
+          "city": "paris",
+          "price": 200
+        },
+        {
+          "city": "rome",
+          "price": 453
+        },
+        {
+          "city": "berlin",
+          "price": 342
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "categoryTitle": "budva",
+      "categoryImage": "assets/images/flights/destination/9.jpg",
+      "rating": 4,
+      "tag": true,
+      "tagTitle": "new",
+      "flightDetails": [
+        {
+          "city": "atlanta",
+          "price": 200
+        },
+        {
+          "city": "miami",
+          "price": 453
+        },
+        {
+          "city": "ottawa",
+          "price": 342
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "categoryTitle": "venice",
+      "categoryImage": "assets/images/flights/destination/10.jpg",
+      "rating": 4,
+      "tag": true,
+      "tagTitle": "new",
+      "flightDetails": [
+        {
+          "city": "vienna",
+          "price": 200
+        },
+        {
+          "city": "madrid",
+          "price": 453
+        },
+        {
+          "city": "dallas",
+          "price": 342
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "categoryTitle": "budva",
+      "categoryImage": "assets/images/flights/destination/9.jpg",
+      "rating": 4,
+      "tag": true,
+      "tagTitle": "new",
+      "flightDetails": [
+        {
+          "city": "atlanta",
+          "price": 200
+        },
+        {
+          "city": "miami",
+          "price": 453
+        },
+        {
+          "city": "ottawa",
+          "price": 342
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "categoryTitle": "10% cashback",
+      "categoryDescription": "Fly high with excitement! Enjoy a seamless travel experience with a 10% cashback on flights, making your journey even more rewarding",
+      "categoryImage": "assets/images/flights/offer/1.jpg",
+      "discountOn": "HDFC bank",
+      "price": 240,
+      "discountPrice": 200,
+      "coupon_code": "EDR45"
+    },
+    {
+      "id": 22,
+      "categoryTitle": "250 discount",
+      "categoryDescription": "Unlock the skies with a $250 discount on your next flight, making your travel dreams more affordable and your journey even more enjoyable",
+      "categoryImage": "assets/images/flights/offer/2.jpg",
+      "discountOn": "paypal",
+      "price": 240,
+      "discountPrice": 200,
+      "coupon_code": "EDR45"
+    },
+    {
+      "id": 23,
+      "categoryTitle": "new year offer",
+      "categoryDescription": "Celebrate the New Year in style with our exclusive flight offer, featuring unbeatable discounts and special perks for a memorable start to your travels in the upcoming year",
+      "categoryImage": "assets/images/flights/offer/1.jpg",
+      "discountOn": "world bank",
+      "price": 240,
+      "discountPrice": 200,
+      "coupon_code": "EDR45"
+    },
+    {
+      "id": 24,
+      "categoryTitle": "shrimp lo",
+      "categoryDescription": "Succulent shrimp",
+      "categoryImage": "assets/images/restaurant/cat/1.jpg",
+      "price": 240,
+      "discountPrice": 200,
+      "rating": 4,
+      "tag": true,
+      "tagTitle": "new"
+    },
+    {
+      "id": 25,
+      "categoryTitle": "fast hot",
+      "categoryDescription": "Quick, Spicy, Sizzling",
+      "categoryImage": "assets/images/restaurant/cat/2.jpg",
+      "price": 250,
+      "discountPrice": 230,
+      "rating": 3.5,
+      "tag": false
+    },
+    {
+      "id": 26,
+      "categoryTitle": "ching's dan",
+      "categoryDescription": "Savory, Spicy, Authentic",
+      "categoryImage": "assets/images/restaurant/cat/3.jpg",
+      "price": 200,
+      "discountPrice": 195,
+      "rating": 5,
+      "tag": false
+    },
+    {
+      "id": 27,
+      "categoryTitle": "dali fish",
+      "categoryDescription": "Surreal flavors dance on plate",
+      "categoryImage": "assets/images/restaurant/cat/4.jpg",
+      "price": 240,
+      "discountPrice": 200,
+      "rating": 4,
+      "tag": false
+    },
+    {
+      "id": 28,
+      "categoryTitle": "fast hot",
+      "categoryDescription": "Quick, Spicy, Sizzling",
+      "categoryImage": "assets/images/restaurant/cat/2.jpg",
+      "price": 235,
+      "discountPrice": 230,
+      "rating": 3,
+      "tag": false
+    },
+    {
+      "id": 29,
+      "categoryTitle": "bread with chicken",
+      "categoryDescription": "Golden-crusted bread complements savory chicken",
+      "categoryImage": "assets/images/restaurant/dishes/1.jpg",
+      "price": 22,
+      "discountPrice": 20,
+      "rating": 4,
+      "tag": true,
+      "tagTitle": "offer",
+      "time": "30 minutes"
+    },
+    {
+      "id": 30,
+      "categoryTitle": "bread with chicken",
+      "categoryDescription": "Golden-crusted bread complements savory chicken",
+      "categoryImage": "assets/images/restaurant/dishes/2.jpg",
+      "price": 20,
+      "discountPrice": 18,
+      "rating": 3,
+      "tag": true,
+      "tagTitle": "offer",
+      "time": "25 minutes"
+    },
+    {
+      "id": 31,
+      "categoryTitle": "paneer vegetable",
+      "categoryDescription": "Savory paneer-filled bread delight",
+      "categoryImage": "assets/images/restaurant/dishes/3.jpg",
+      "price": 25,
+      "discountPrice": 20,
+      "rating": 5,
+      "tag": true,
+      "tagTitle": "offer",
+      "time": "35 minutes"
+    },
+    {
+      "id": 32,
+      "categoryTitle": "lasagna noodles",
+      "categoryDescription": "Savory fusion: bread meets lasagna",
+      "categoryImage": "assets/images/restaurant/dishes/2.jpg",
+      "price": 15,
+      "discountPrice": 14,
+      "rating": 3,
+      "tag": true,
+      "tagTitle": "offer",
+      "time": "20 minutes"
+    },
+    {
+      "id": 33,
+      "categoryTitle": "Serenity Springs",
+      "categoryDescription": "Nestled by peaceful azure lakes",
+      "categoryImage": "assets/images/mix/cat/1.jpg",
+      "price": 240,
+      "discountPrice": 200,
+      "rating": 4,
+      "tag": true,
+      "tagTitle": "new"
+    },
+    {
+      "id": 34,
+      "categoryTitle": "Graceful Guardian",
+      "categoryDescription": "Majestic deer embody nature's",
+      "categoryImage": "assets/images/mix/cat/2.jpg",
+      "price": 250,
+      "discountPrice": 230,
+      "rating": 3.5,
+      "tag": false
+    },
+    {
+      "id": 35,
+      "categoryTitle": "Sky Serenity",
+      "categoryDescription": "Drift into tranquil horizons",
+      "categoryImage": "assets/images/mix/cat/3.jpg",
+      "price": 250,
+      "discountPrice": 230,
+      "rating": 3.5,
+      "tag": false
+    },
+    {
+      "id": 36,
+      "categoryTitle": "Azure Horizon",
+      "categoryDescription": "Endless blue expanses",
+      "categoryImage": "assets/images/mix/cat/4.jpg",
+      "price": 250,
+      "discountPrice": 230,
+      "rating": 3.5,
+      "tag": false
+    },
+    {
+      "id": 37,
+      "categoryTitle": "Silent Guardian",
+      "categoryDescription": "Majestic deer embody nature's",
+      "categoryImage": "assets/images/mix/cat/2.jpg",
+      "price": 250,
+      "discountPrice": 230,
+      "rating": 3.5,
+      "tag": false
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+<div class="service-box">
+  <div>
+    <div class="service-icon">
+      @if(service.url){
+        <svg-icon [src]="service.url"></svg-icon>
+      }
+    </div>
+    <h3>{{ service.title }}</h3>
+    <p>{{ service.description }}</p>
+    <div class="lower-section">
+      <div class="rating">
+        @if(service.rating){
+          <ngb-rating [rate]="service.rating"></ngb-rating>
+        }
+      </div>
+      <h6>{{ service.additionalData }}</h6>
+    </div>
+    <a href="javascript:void(0)" class="btn btn-curve btn-lower color1" [routerLink]="['/page/element-pages/service']">learn more</a>
+  </div>
+</div>

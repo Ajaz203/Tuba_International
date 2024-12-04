@@ -1,0 +1,13 @@
+<div class="collection-collapse-block" [class.open]="isOpenCuisines">
+  <h6 class="collapse-block-title" (click)="openCuisines()">cuisines</h6>
+  <div class="collection-collapse-block-content" [ngStyle]="{ 'display' : isOpenCuisines == true ? 'block' : 'none'}">
+    <div class="collection-brand-filter">
+      @for(cuisines of restaurantCuisines; track cuisines){
+        <div class="form-check collection-filter-checkbox">
+          <input type="checkbox" class="form-check-input" id="{{ cuisines.checkId }}" [value]="cuisines.checkId" [checked]="checked(cuisines.checkId)" (change)="applyFilter($event)">
+          <label class="form-check-label" for="{{ cuisines.checkId }}">{{ cuisines.title }}</label>
+        </div>
+      }
+    </div>
+  </div>
+</div>

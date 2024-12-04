@@ -1,0 +1,82 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "title": "awesome food",
+      "description": "Indulge your senses in our Gourmet Dining Experience, where culinary excellence meets exceptional service to create unforgettable moments. Our dedicated team of chefs and hospitality experts are committed to delivering a dining adventure like no other.",
+      "url": "assets/images/hotel/icon/food.png"
+    },
+    {
+      "id": 2,
+      "title": "beauty & health",
+      "description": "At Tranquil Wellness Spa & Beauty Retreat, we're dedicated to enhancing your beauty and well-being, providing a haven of serenity and rejuvenation. Our range of services is designed to help you look and feel your absolute best, inside and out.",
+      "url": "assets/images/hotel/icon/make-up.png"
+    },
+    {
+      "id": 3,
+      "title": "conference room",
+      "description": "Stay connected seamlessly with high-speed Wi-Fi in our conference rooms. Your team and guests can easily access the internet to share documents, research, and communicate without interruption.",
+      "url": "assets/images/hotel/icon/fireplace.png"
+    },
+    {
+      "id": 4,
+      "title": "swimming pool",
+      "description": "At our hotel, we take your relaxation and recreation seriously, and our swimming pool services are designed to provide you with the ultimate aquatic experience. Our state-of-the-art swimming pool and its accompanying services are here to ensure your stay is as enjoyable as possible.",
+      "url": "assets/images/hotel/icon/flipper.png"
+    },
+    {
+      "id": 5,
+      "title": "play ground",
+      "description": "At our facility, we understand the importance of providing a safe and exciting environment for children to play, explore, and create lasting memories. Our playground services are designed to offer families a space where children can engage in fun and active outdoor activities while ensuring their safety and well-being.",
+      "url": "assets/images/hotel/icon/playground.png"
+    },
+    {
+      "id": 6,
+      "title": "beautiful garden",
+      "description": "Welcome to a world of natural beauty and tranquility with our Enchanted Garden Design and Maintenance Service. Our team of passionate and skilled horticulturists and landscape architects is dedicated to creating and maintaining stunning garden spaces that will captivate your senses and become a cherished retreat for you and your loved ones.",
+      "url": "assets/images/hotel/icon/tree.png"
+    },
+    {
+      "id": 7,
+      "title": "+120 Premium tours",
+      "subTitle": "120 premium tour",
+      "description": "Experience luxury like never before with our +120 Premium Tours. Indulge in top-tier destinations and curated experiences."
+    },
+    {
+      "id": 8,
+      "title": "+1000 Customers",
+      "subTitle": "1000 customers",
+      "description": "+1000 Customers is a service that helps businesses attract and retain over a thousand satisfied clients through effective marketing strategies and customer relationship management."
+    },
+    {
+      "id": 9,
+      "title": "H24 Support",
+      "subTitle": "h24 support",
+      "description": "H24 Support offers round-the-clock assistance for all your needs, ensuring help is available 24/7, whenever you require it."
+    },
+    {
+      "id": 10,
+      "title": "airport pick-drop",
+      "description": "Experience seamless airport pick-up and drop-off services with TAXI Cab, where reliability meets convenience for your travel needs.",
+      "url": "assets/images/svg/tour-modern/flight.svg",
+      "rating": 4,
+      "additionalData": "15% discount"
+    },
+    {
+      "id": 11,
+      "title": "fast transport",
+      "description": "Your ultimate solution for swift and efficient travel, offering quick and reliable transportation services for all your needs.",
+      "url": "assets/images/svg/tour-modern/transport.svg",
+      "rating": 3,
+      "additionalData": "free 1 ride"
+    },
+    {
+      "id": 12,
+      "title": "live booking on hotel",
+      "description": "Enjoy the ease of instant hotel booking, ensuring a smooth and stress-free travel experience.",
+      "url": "assets/images/svg/tour-modern/live-booking.svg",
+      "rating": 4,
+      "additionalData": "2% discount"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+<div class="collection-collapse-block" [class.open]="isOpenTravelType">
+  <h6 class="collapse-block-title" (click)="openTravelType()">travel type</h6>
+  <div class="collection-collapse-block-content" [ngStyle]="{ 'display' : isOpenTravelType == true ? 'block' : 'none'}">
+    <div class="collection-brand-filter">
+      @for(details of tourTravelType; track details){
+        <div class="form-check collection-filter-checkbox">
+          <input type="checkbox" class="form-check-input" id="{{ details.checkId }}" [value]="details.checkId" [checked]="checked(details.checkId)" (change)="applyFilter($event)">
+          <label class="form-check-label" for="{{ details.checkId }}">{{ details.title }}</label>
+        </div>
+      }
+    </div>
+  </div>
+</div>

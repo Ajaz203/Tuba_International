@@ -1,0 +1,34 @@
+<div class="search-panel">
+  @if(text){
+    <h2 class="title-top">hire cab for any kind of trip</h2>
+  }
+  <div class="search-section" [ngClass]="{ 'search-fixed' : searchFixed && searchFix }">
+    <div class="search-box" [class.rounded10]="borderClass" [ngClass]="{ 'container custom-container' : searchFixed }">
+      <div class="left-part">
+        <div class="search-body">
+          <h6>pick up</h6>
+          <input type="text" value="Paris, France" class="form-control open-select" id="exampleInputEmail1" placeholder="pick up">
+        </div>
+        <div class="search-body">
+          <h6>drop off</h6>
+          <input type="text" value="Toulouse, France" class="form-control open-select" placeholder="drop off">
+        </div>
+        <div class="search-body">
+          <h6>pickup time</h6>
+          <input class="form-control datetimepicker-input digits" placeholder="pickup date & time" type="text" [owlDateTimeTrigger]="pickup" [owlDateTime]="pickup">
+          <owl-date-time #pickup></owl-date-time>
+        </div>
+        <div class="search-body">
+          <h6>dropoff time</h6>
+          <input class="form-control datetimepicker-input digits" placeholder="drop off date & time" type="text" [owlDateTimeTrigger]="drop" [owlDateTime]="drop">
+          <owl-date-time #drop></owl-date-time>
+        </div>
+        <div class="search-body btn-search">
+          <div class="right-part">
+            <a href="javascript:void(0)" class="btn btn-solid color1">search</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

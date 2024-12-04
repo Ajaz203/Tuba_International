@@ -1,0 +1,13 @@
+<div class="collection-collapse-block" [class.open]="isOpenOption">
+  <h6 class="collapse-block-title" (click)="openOption()">car option</h6>
+  <div class="collection-collapse-block-content" [ngStyle]="{ 'display' : isOpenOption == true ? 'block' : 'none'}">
+    <div class="collection-brand-filter">
+      @for(option of cabOptions; track option){
+        <div class="form-check collection-filter-checkbox">
+          <input type="checkbox" class="form-check-input" id="{{ option.checkId }}" [value]="option.checkId" [checked]="checked(option.checkId)" (change)="applyFilter($event)">
+          <label class="form-check-label" for="{{ option.checkId }}">{{ option.title }}</label>
+        </div>
+      }
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<section class="p-0 banner-section full-banner zindex-1">
+  <div class="section-b-space section-t-space black-layer bg-size" [style.background-image]="'url(assets/images/flights/sky2.jpg)'">
+    <img src="assets/images/flights/sky2.jpg" alt="background-image" class="bg-img" style="display: none;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="place-image">
+            <img src="assets/images/flights/map.png " alt="map-image" class="img-fluid blur-up lazyload wow zoomIn">
+          </div>
+        </div>
+        <div class="col-lg-5 offset-lg-1">
+          <div class="banner-content">
+            <div>
+              <h5>special nature tour offer</h5>
+              <h2>discount <span>20-30%</span></h2>
+              <p>Lorem Ipsum is simply dummy text of the printing and type setti ng industry.
+                Lorem Ipsum has been the of industry standard dum my text ever since the 1500s,</p>
+              <h2 class="price">{{ 420 | currencyPipe: hotelService.currency }}</h2>
+              <div class="bottom-section">
+                <a href="javascript:void(0)" class="btn btn-rounded btn-sm color1" [routerLink]="['/tour/booking/booking']">buy now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

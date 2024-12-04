@@ -1,0 +1,28 @@
+<section class="home_section p-0">
+  <div class="home home-padding bg-size" [style.background-image]="'url(assets/images/flights/banner.jpg)'">
+    <img src="assets/images/flights/banner.jpg" class="bg-img img-fluid" alt="background-image" style="display: none;">
+    <div class="animation-bg">
+      <div class="container custom-container mix-layout-section">
+        <div class="row">
+          <div class="col-lg-10 m-auto">
+            <div class=" home-content mix-layout smaller-content">
+              <div class="bg-transparent">
+                <div class="tab-content" id="pills-tabContent">
+                  <div class="tab-pane fade active show" id="pills-hotel">
+                    @if(searchBoxType == 'basic'){
+                      <div class="search-panel">
+                        <app-search-box [type]="searchBoxType" [text]="true" [borderClass]="true" [searchFix]="true"></app-search-box>
+                      </div>
+                    }@else {
+                      <app-search-box [type]="searchBoxType" [text]="true" [borderClass]="true" [searchFix]="true"></app-search-box>
+                    }
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

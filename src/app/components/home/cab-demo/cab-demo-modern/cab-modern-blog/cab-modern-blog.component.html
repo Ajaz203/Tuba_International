@@ -1,0 +1,10 @@
+<section class="blog-section section-b-space dark-cls animated-section bg-size" [style.background-image]="'url(assets/images/cab/grey-bg.jpg)'">
+  <img src="assets/images/cab/grey-bg.jpg" alt="background-image" class="img-fluid blur-up lazyload bg-img" style="display: none;">
+  <app-animations [type]="'dots'"></app-animations>
+  <div class="container">
+    <app-title [type]="'simple'" [title]="'new'" [subTitle]="'our blog'"></app-title>
+    <div class="slide-2  no-arrow ">
+      <app-blog [blogs]="blog" [type]="'simple'" [buttonClass]="'btn-curve'" [postedBy]="true"></app-blog>
+    </div>
+  </div>
+</section>

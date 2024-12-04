@@ -1,0 +1,45 @@
+<section class="filter-section section-b-space">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="top-section">
+          <div class="title">
+            <h2>breakfast</h2>
+            <h6>Special customized your breakfast</h6>
+          </div>
+          <div class="coupon">
+            <h6>coupon code: FGR4568</h6>
+          </div>
+          <div class="filters filter-button-group">
+            <div class="filter-btn" [class.active]="isOpen" (click)="openFilter()">
+              <h6> filter <i class="fas fa-sort-down"></i></h6>
+            </div>
+            <ul class="filter-content" [ngStyle]="{ 'display' : isOpen ? 'block' : 'none'}">
+              <li class="active" (click)="filterItems('')">All</li>
+              <li (click)="filterItems('maxican')">maxican</li>
+              <li (click)="filterItems('indian')">indian</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row content grid">
+      @for(items of breakfastData; track items){
+        <div class="col-lg-2 col-md-4 col-6 grid-item">
+          <div class="img-part">
+            <img [src]="items.image" alt="dish-image">
+            <a href="javascript:void(0)" class="up-btn" (click)="tapToTop()">
+              <i class="fas fa-arrow-up"></i>
+            </a>
+          </div>
+          <div class="filter-detail">
+            <h6>{{ items.title }}</h6>
+            <div class="rating">
+              <ngb-rating [rate]="items.rating"></ngb-rating>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

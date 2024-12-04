@@ -1,0 +1,29 @@
+<app-header [headerClass]="''" [couponCode]="true" [setting]="false"></app-header>
+
+<app-cab-modern-home-section></app-cab-modern-home-section>
+
+@if(cabModern){
+  <app-cab-modern-category [id]="cabModern.category"></app-cab-modern-category>
+
+  @if(cab){
+    <app-cab-modern-ticket-section [id]="cabModern.ticketSection" [cab]="cab"></app-cab-modern-ticket-section>
+  }
+
+  <app-cab-modern-service [id]="cabModern.service"></app-cab-modern-service>
+
+  @if(cab){
+    <app-cab-modern-booking-deals [id]="cabModern.deals" [cab]="cab"></app-cab-modern-booking-deals>
+  }
+
+  <app-cab-modern-call [images]="cabModern.call"></app-cab-modern-call>
+
+  <app-cab-modern-application></app-cab-modern-application>
+
+  <app-cab-modern-blog [id]="cabModern.blog"></app-cab-modern-blog>
+
+  <app-cab-modern-brand [brand]="cabModern.brand"></app-cab-modern-brand>
+}
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout [loaderType]="'basic'"></app-layout>

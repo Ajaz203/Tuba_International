@@ -1,0 +1,56 @@
+<div class="left-sidebar" [class.sidebar-popup]="mapFilter" [class.open]="hotelService.isOpenMapFilter" [ngStyle]="{ 'left' : hotelService.isOpenResponsiveFilter == true ? '-1px' : '' }">
+  @if(!mapFilter){
+    <div class="back-btn" (click)="closeResponsiveFilter()">
+      back
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search here..">
+      <i class="fas fa-search"></i>
+    </div>
+  }
+  <div class="middle-part collection-collapse-block" [class.open]="isOpenFilter">
+    @if(!mapFilter){
+      <a href="javascript:void(0)" class="section-title collapse-block-title" (click)="openFilter()">
+        <h5>latest filter</h5>
+        <img src="assets/images/icon/adjust.png" class="img-fluid blur-up lazyload" alt="filter-icon">
+      </a>
+    }
+    <div class="collection-collapse-block-content " [ngStyle]="{ 'display' : isOpenFilter == true ? 'block' : 'none'}">
+      @if(district == true){
+        <div class="filter-block">
+          <app-hotel-district></app-hotel-district>
+        </div>
+      }
+      @if(facility == true){
+        <div class="filter-block">
+          <app-hotel-facility></app-hotel-facility>
+        </div>
+      }
+      @if(rating == true){
+        <div class="filter-block">
+          <app-hotel-rating></app-hotel-rating>
+        </div>
+      }
+      @if(price == true){
+        <div class="filter-block">
+          <app-hotel-price></app-hotel-price>
+        </div>
+      }
+      @if(language == true){
+        <div class="filter-block">
+          <app-hotel-language></app-hotel-language>
+        </div>
+      }
+      @if(hotels == true){
+        <div class="filter-block">
+          <app-hotels></app-hotels>
+        </div>
+      }
+    </div>
+  </div>
+  <div class="bottom-info">
+    <h5><span>i</span> need help</h5>
+    <h4>856 - 215 - 211</h4>
+    <h6>Monday to Friday 9.00am - 7.30pm</h6>
+  </div>
+</div>

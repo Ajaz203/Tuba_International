@@ -1,0 +1,43 @@
+<section class="routes-section ratio_landscape section-b-space">
+  <div class="container">
+    <app-title [type]="'standard'" [title]="'top flight routes...'" [subTitle]="'within usa'" [description]="description"></app-title>
+    <div class="row">
+      @for(details of category; track details){
+        <div class="col-lg-3 col-6">
+          <div class="routes-box">
+            <a href="javascript:void(0)" class="routes-img bg-size" [style.background-image]="'url('+ details.categoryImage +')'" [routerLink]="['/flight/listing/left-sidebar']">
+              <img [src]="details.categoryImage" alt="place-image" class="img-fluid blur-up lazyload bg-img" style="display: none;">
+              <div class="price-round">
+                <div>
+                  <h6><del>{{ details.price | currencyPipe: hotelService.currency }}</del></h6>
+                  <h3>{{ details.discountPrice | currencyPipe: hotelService.currency }}</h3>
+                </div>
+              </div>
+              @if(details.tag){
+                <div class="discount">
+                  <h6>{{ details.tagTitle }}</h6>
+                </div>
+              }
+            </a>
+            <div class="routes-content">
+              <div class="top-bar">
+                <a href="javascript:void(0)" [routerLink]="['/flight/listing/left-sidebar']">
+                  <h5>{{ details.categoryTitle }}</h5>
+                </a>
+                <h6>arrival : {{ details.arrivalTime }}</h6>
+              </div>
+              <div class="bottom-bar">
+                <h6>departure : {{ details.departureTime }}</h6>
+                <div class="rating">
+                  @if(details.rating){
+                    <ngb-rating [rate]="details.rating"></ngb-rating>
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

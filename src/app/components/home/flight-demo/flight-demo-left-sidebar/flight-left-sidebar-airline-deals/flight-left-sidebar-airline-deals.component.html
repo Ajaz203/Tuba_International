@@ -1,0 +1,36 @@
+<section class="pt-0 xs-section classic-section">
+  <div class="container-fluid">
+    <div class="title-basic">
+      <h2>never miss popular deals</h2>
+    </div>
+    <div class="flight-5 flight-arrow">
+      @if(deals){
+        <owl-carousel-o [options]="options">
+          @for(deal of deals; track deal){
+            <ng-template carouselSlide>
+              <div>
+                <div class="classic-box">
+                  <div class="top-part">
+                    <div class="top">
+                      <h6>{{ deal.from }}</h6>
+                      <span>{{ deal.date }}</span>
+                    </div>
+                    <div class="bottom">
+                      <h6>{{ deal.to }}</h6>
+                    </div>
+                    <div class="plane-updown">
+                      <img src="assets/images/icon/plane.png" class="img-fluid blur-up lazyload" alt="plane-icon">
+                    </div>
+                  </div>
+                  <div class="bottom-part">
+                    <h6>starting from {{ deal.price | currencyPipe: hotelService.currency }}</h6>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          }
+        </owl-carousel-o>
+      }
+    </div>
+  </div>
+</section>

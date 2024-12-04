@@ -1,0 +1,44 @@
+<div class="blog-single-detail">
+  <div class="top-image">
+    @if(imageSlider){
+      <div class="slide-1 arrow-dark">
+        <owl-carousel-o [options]="options">
+          @for(images of blogDetails.images; track images){
+            <ng-template carouselSlide>
+              <div>
+                <img [src]="images.url" alt="blog-image" class="img-fluid blur-up lazyload">
+              </div>
+            </ng-template>
+          }
+        </owl-carousel-o>
+      </div>
+    }@else {
+      <img [src]="blogDetails.image" alt="blog-image" class="img-fluid blur-up lazyload">
+      @if(video){
+        <a href="javascript:void(0)" class="video" (click)="openVideoModal()">
+          <i class="fas fa-play"></i>
+        </a>
+      }
+    }
+  </div>
+  <div class="title-part">
+    <ul class="post-detail">
+      <li>{{ blogDetails.date }}</li>
+      <li>Posted By : {{ blogDetails.posted_by }}</li>
+      <li><i class="fa fa-heart"></i> {{ blogDetails.hits }} Hits</li>
+      <li><i class="fa fa-comments"></i> {{ blogDetails.comments }} Comment</li>
+    </ul>
+    <h3>{{ blogDetails.title }}</h3>
+  </div>
+  <div class="detail-part">
+    @for(details of blogDetails.blogData; track details){
+      <p>{{ details.data}}</p>
+    }
+  </div>
+  <div class="comment-section">
+    <app-blog-details-comments [blogComments]="blogComments"></app-blog-details-comments>
+  </div>
+  <div class="leave-comment">
+    <app-blog-details-leave-comment></app-blog-details-leave-comment>
+  </div>
+</div>

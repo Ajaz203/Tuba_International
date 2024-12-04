@@ -1,0 +1,29 @@
+<app-header [headerClass]="'light_header'"></app-header>
+
+<section class="breadcrumb-section flight-sec pt-0 bg-size" [style.background-image]="'url(assets/images/flights/flight-breadcrumb.jpg)'">
+  <img src="assets/images/flights/flight-breadcrumb.jpg" class="bg-img img-fluid blur-up lazyload" alt="background-image" style="display: none;">
+  <div class="flight run"></div>
+</section>
+
+<div class="bg-inner small-section pb-0">
+  <div class="container">
+    <app-flight-search></app-flight-search>
+  </div>
+</div>
+
+<section class="pt-0 bg-inner small-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <app-filter [type]="'flight'"></app-filter>
+      </div>
+      <div class="col-lg-9 ratio3_2">
+        <app-details [type]="'flight-list'"></app-details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout [loaderType]="'skeleton'" [skeletonType]="'single-page'" [filterType]="'left'"  [flight]="true"></app-layout>

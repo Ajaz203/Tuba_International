@@ -1,0 +1,13 @@
+<div class="collection-collapse-block" [class.open]="isOpenType">
+  <h6 class="collapse-block-title" (click)="openType()">car type</h6>
+  <div class="collection-collapse-block-content" [ngStyle]="{ 'display' : isOpenType == true ? 'block' : 'none'}">
+    <div class="collection-brand-filter">
+      @for(type of carTypes; track type){
+        <div class="form-check collection-filter-checkbox">
+          <input type="checkbox" class="form-check-input" id="{{ type.checkId }}" [value]="type.checkId" [checked]="checked(type.checkId)" (change)="applyFilter($event)">
+          <label class="form-check-label" for="{{ type.checkId }}">{{ type.title }}</label>
+        </div>
+      }
+    </div>
+  </div>
+</div>

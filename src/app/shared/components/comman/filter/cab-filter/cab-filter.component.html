@@ -1,0 +1,49 @@
+<div class="left-sidebar" [class.shadow-cls]="shadowClass" [class.filter-bottom-content]="cabHorizontal" [class.d-block]="cabService.isOpenHorizontalFilter == true && cabHorizontal" [ngStyle]="{ 'left' : cabService.isOpenResponsiveFilter == true || cabService.isOpenHorizontalFilter == true  ? '-1px' : '' }">
+  @if(!cabHorizontal){
+    <div class="back-btn" (click)="closeResponsiveFilter()">
+      back
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search here..">
+      <i class="fas fa-search"></i>
+    </div>
+  }
+  <div class="middle-part collection-collapse-block" [class.open]="isOpenCab">
+    @if(!cabHorizontal){
+      <a href="javascript:void(0)" class="section-title collapse-block-title" (click)="openCab()">
+        <h5>latest filter</h5>
+        <img src="assets/images/icon/adjust.png" class="img-fluid blur-up lazyload" alt="filter-icon">
+      </a>
+    }
+    <div class="collection-collapse-block-content" [class.row]="cabHorizontal" [ngClass]="{ 'd-block' : isOpenCab == true && !cabHorizontal, 'd-none' : isOpenCab == false && !cabHorizontal}">
+      <div class="filter-block" [class.col]="cabHorizontal">
+        <app-cab-car-type></app-cab-car-type>
+      </div>
+      <div class="filter-block" [class.col]="cabHorizontal">
+        <app-cab-rating></app-cab-rating>
+      </div>
+        <div class="filter-block" [class.col]="cabHorizontal">
+          <app-cab-price></app-cab-price>
+        </div>
+      <div class="filter-block" [class.col]="cabHorizontal">
+        <app-cab-capacity></app-cab-capacity>
+      </div>
+      <div class="filter-block" [class.col]="cabHorizontal">
+        <app-cab-option></app-cab-option>
+      </div>
+      @if(cabHorizontal){
+        <div class="text-end button_bottom">
+          <a href="javascript:void(0)" class="btn btn-solid color1 me-2">apply</a>
+          <a href="javascript:void(0)" class="btn btn-solid color1 close-filter-bottom" (click)="closeResponsiveHorizontalFilter()">close filter</a>
+        </div>
+      }
+    </div>
+  </div>
+  @if(!cabHorizontal){
+    <div class="bottom-info">
+      <h5><span>i</span> need help</h5>
+      <h4>856 - 215 - 211</h4>
+      <h6>Monday to Friday 9.00am - 7.30pm</h6>
+    </div>
+  }
+</div>

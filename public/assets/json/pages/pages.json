@@ -1,0 +1,1300 @@
+{
+  "portfolio": [
+    {
+      "tab": [
+        {
+          "id": 1,
+          "title": "all",
+          "value": "all"
+        },
+        {
+          "id": 2,
+          "title": "popular",
+          "value": "popular"
+        },
+        {
+          "id": 3,
+          "title": "latest",
+          "value": "latest"
+        },
+        {
+          "id": 4,
+          "title": "trend",
+          "value": "trend"
+        }
+      ],
+      "gallery": [
+        {
+          "id": 1,
+          "image": "assets/images/tour/tour/7.jpg",
+          "title": "tour of bhutan",
+          "description": "Serene Himalayan Kingdom Experience",
+          "type": "popular"
+        },
+        {
+          "id": 2,
+          "image": "assets/images/tour/tour/8.jpg",
+          "title": "beautiful Bali",
+          "description": "Enchanting tropical paradise escape",
+          "type": "latest"
+        },
+        {
+          "id": 3,
+          "image": "assets/images/tour/tour/9.jpg",
+          "title": "dubai adventure",
+          "description": "Extravagant, Dynamic, Futuristic, Diverse",
+          "type": "popular"
+        },
+        {
+          "id": 4,
+          "image": "assets/images/tour/tour/10.jpg",
+          "title": "exploring sydney",
+          "description": "Vibrant, Iconic, Coastal, Diverse",
+          "type": "trend"
+        },
+        {
+          "id": 5,
+          "image": "assets/images/tour/tour/11.jpg",
+          "title": "splendid spain",
+          "description": "Vibrant, Cultural, Picturesque, Passionate",
+          "type": "latest"
+        },
+        {
+          "id": 6,
+          "image": "assets/images/tour/tour/12.jpg",
+          "title": "simply mauritius",
+          "description": "Tropical paradise island getaway",
+          "type": "trend"
+        }
+      ],
+      "masonryGallery": [
+        {
+          "id": 1,
+          "image": "assets/images/portfolio/1.jpg",
+          "type": "popular"
+        },
+        {
+          "id": 2,
+          "image": "assets/images/portfolio/2.jpg",
+          "type": "latest"
+        },
+        {
+          "id": 3,
+          "image": "assets/images/tour/tour/9.jpg",
+          "type": "popular"
+        },
+        {
+          "id": 4,
+          "image": "assets/images/portfolio/3.jpg",
+          "type": "trend"
+        },
+        {
+          "id": 5,
+          "image": "assets/images/tour/tour/11.jpg",
+          "type": "latest"
+        },
+        {
+          "id": 6,
+          "image": "assets/images/portfolio/4.jpg",
+          "type": "trend"
+        },
+        {
+          "id": 7,
+          "image": "assets/images/tour/tour/14.jpg",
+          "type": "trend"
+        }
+      ],
+      "parallaxImages": [
+        {
+          "id": 1,
+          "image": "assets/images/tour/slider/2.jpg"
+        },
+        {
+          "id": 2,
+          "image": "assets/images/tour/slider/1.jpg"
+        },
+        {
+          "id": 3,
+          "image": "assets/images/tour/slider/3.jpg"
+        },
+        {
+          "id": 4,
+          "image": "assets/images/tour/slider/4.jpg"
+        }
+      ],
+      "centerSlideImages": [
+        {
+          "id": 1,
+          "image": "assets/images/portfolio/12.jpg",
+          "title": "luxury gateway",
+          "description": "unmissable experience in vienna"
+        },
+        {
+          "id": 2,
+          "image": "assets/images/portfolio/9.jpg",
+          "title": "luxury gateway",
+          "description": "unmissable experience in vienna"
+        },
+        {
+          "id": 3,
+          "image": "assets/images/portfolio/11.jpg",
+          "title": "luxury gateway",
+          "description": "unmissable experience in vienna"
+        },
+        {
+          "id": 4,
+          "image": "assets/images/portfolio/10.jpg",
+          "title": "luxury gateway",
+          "description": "unmissable experience in vienna"
+        }
+      ],
+      "creativeSection": [
+        {
+          "id": 1,
+          "image": "assets/images/tour/tour/11.jpg",
+          "title": "splendid spain",
+          "description": "Vibrant, Cultural, Picturesque, Passionate"
+        },
+        {
+          "id": 2,
+          "image": "assets/images/tour/tour/9.jpg",
+          "title": "dubai adventure",
+          "description": "Extravagant, Dynamic, Futuristic, Diverse",
+          "right": true
+        },
+        {
+          "id": 3,
+          "image": "assets/images/tour/tour/8.jpg",
+          "title": "beautiful Bali",
+          "description": "Enchanting tropical paradise escape"
+        }
+      ],
+      "creativeSectionMasonry": [
+        {
+          "id": 1,
+          "image": "assets/images/portfolio/2.jpg",
+          "type": "popular",
+          "class": "col-lg-2"
+        },
+        {
+          "id": 2,
+          "image": "assets/images/portfolio/3.jpg",
+          "type": "latest",
+          "class": "col-lg-2"
+        },
+        {
+          "id": 3,
+          "image": "assets/images/portfolio/4.jpg",
+          "type": "popular",
+          "class": "col-lg-2"
+        },
+        {
+          "id": 4,
+          "image": "assets/images/portfolio/5.jpg",
+          "type": "trend",
+          "class": "col-lg-2"
+        },
+        {
+          "id": 5,
+          "image": "assets/images/portfolio/9.jpg",
+          "type": "latest",
+          "class": "col-lg-4"
+        },
+        {
+          "id": 6,
+          "image": "assets/images/portfolio/10.jpg",
+          "type": "trend",
+          "class": "col-lg-4"
+        },
+        {
+          "id": 7,
+          "image": "assets/images/portfolio/6.jpg",
+          "type": "trend",
+          "class": "col-lg-2"
+        },
+        {
+          "id": 8,
+          "image": "assets/images/portfolio/7.jpg",
+          "type": "latest",
+          "class": "col-lg-2"
+        },
+        {
+          "id": 9,
+          "image": "assets/images/portfolio/8.jpg",
+          "type": "trend",
+          "class": "col-lg-2"
+        },
+        {
+          "id": 10,
+          "image": "assets/images/portfolio/11.jpg",
+          "type": "latest",
+          "class": "col-lg-2"
+        },
+        {
+          "id": 11,
+          "image": "assets/images/portfolio/12.jpg",
+          "type": "trend",
+          "class": "col-lg-2"
+        },
+        {
+          "id": 12,
+          "image": "assets/images/portfolio/1.jpg",
+          "type": "latest",
+          "class": "col-lg-2"
+        }
+      ]
+    }
+  ],
+  "blogPage": [
+    {
+      "blog": [1,2,3,4],
+      "blogFilter": [
+        {
+          "blogCategory": [
+            {
+              "id": 1,
+              "title": "Lorem Ipsum Is Simple"
+            },
+            {
+              "id": 2,
+              "title": "Many Variations"
+            },
+            {
+              "id": 3,
+              "title": "random text"
+            },
+            {
+              "id": 4,
+              "title": "lorem ipsum."
+            },
+            {
+              "id": 5,
+              "title": "it's Random."
+            }
+          ],
+          "blogPopularPost": [
+            {
+              "id": 1,
+              "image": "assets/images/portfolio/6.jpg",
+              "date": "25 Dec 2018",
+              "hits": 100
+            },
+            {
+              "id": 2,
+              "image": "assets/images/portfolio/7.jpg",
+              "date": "12 Jan 2018",
+              "hits": 540
+            },
+            {
+              "id": 3,
+              "image": "assets/images/portfolio/8.jpg",
+              "date": "26 Dec 2018",
+              "hits": 250
+            },
+            {
+              "id": 4,
+              "image": "assets/images/portfolio/2.jpg",
+              "date": "25 Dec 2018",
+              "hits": 30
+            }
+          ],
+          "blogPopularTags": [
+            {
+              "id": 1,
+              "title": "adventure"
+            },
+            {
+              "id": 2,
+              "title": "luxury"
+            },
+            {
+              "id": 3,
+              "title": "romantic"
+            },
+            {
+              "id": 4,
+              "title": "foodie"
+            },
+            {
+              "id": 5,
+              "title": "villas"
+            },
+            {
+              "id": 6,
+              "title": "cruise"
+            },
+            {
+              "id": 7,
+              "title": "shopping"
+            },
+            {
+              "id": 8,
+              "title": "beach"
+            },
+            {
+              "id": 9,
+              "title": "family"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "blogDetailPage": [
+    {
+      "blogDetail": {
+          "id": 1,
+          "title": "Five tips to plan your travels for a long weekend",
+          "image": "assets/images/portfolio/13.jpg",
+          "images": [
+            {
+              "url": "assets/images/portfolio/13.jpg",
+              "fileType": "image"
+            },
+            {
+              "url": "assets/images/tour/spain.jpg",
+              "fileType": "image"
+            }
+          ],
+          "date": "25 January 2018",
+          "posted_by": "Admin Admin",
+          "hits": 5,
+          "comments": 10,
+          "blogData": [
+            {
+              "data": "Your first step in how to start planning a trip is to choose a travel destination that meets your interests and travel budget.Are you planning overseas travel or a domestic trip at home? Either way, the whole idea of taking a trip is to have a memorable time, to have fun and relax, and not to spend your whole vacation time worrying about money.If you only have 1-2 weeks of vacation time per year, don’t waste too much of that time traveling to and from your destination. Plan your trip accordingly.But if you have 2-4 weeks or over a month you can look at taking an overseas trip or traveling further within your home country."
+            },
+            {
+              "data": "Once you have chosen your destination, step two in planning a trip is to book your flights. And learning how to find cheap flights will help you to reduce one of your biggest travel expenses. As a traveling family, if it’s an overseas trip and a long haul flight I like to plan my trip so we get to our destination as quickly as possible, with the most amount of comfort and facilities our budget allows! If it’s your one-and-only dream vacation for the year, and you only have 1-2 weeks, I recommend you pay the little bit extra for a premium airline and fly direct too!"
+            },
+            {
+              "data": "Another thing to consider when planning a trip is to find out the transportation options in your chosen destination. Will you need to book a rental car or pre-purchase any transportation passes online? Is there a train or bus service? Are there taxis or Uber? Can you simply walk to most places?"
+            },
+            {
+              "data": "When you plan a trip you’ll want to know what are the must-visit tourist attractions and the best free things to do in your chosen destination. As much as we like to just show up, some trip planning is a good idea especially if you are visiting a popular destination in the peak travel season."
+            }
+          ]
+        },
+      "blogComments": [
+        {
+          "id": 1,
+          "name": "XYZ Corporation",
+          "image": "assets/images/avtar/1.jpg",
+          "comment": "Exceptional service and prompt communication. The team at ABC Solutions delivered a tailored solution that exceeded our expectations, contributing significantly to our project's success",
+          "date": "12 Jan 2018"
+        },
+        {
+          "id": 2,
+          "name": "ABC Industries",
+          "image": "assets/images/avtar/3.jpg",
+          "comment": "Working with DEF Consultancy has been a game-changer for us. Their expertise and commitment to quality resulted in a seamless collaboration, and we look forward to future projects together.",
+          "date": "26 Dec 2018"
+        },
+        {
+          "id": 3,
+          "name": "123 Tech Solutions",
+          "image": "assets/images/avtar/2.jpg",
+          "comment": "GHI Solutions demonstrated outstanding technical proficiency. Their attention to detail and proactive problem-solving were instrumental in resolving complex issues, ensuring our project's timely completion",
+          "date": "25 Jan 2018"
+        }
+      ]
+    }
+  ],
+  "otherPages":{
+      "about": [
+        {
+          "gallery": [
+            {
+              "id": 1,
+              "url": "assets/images/inner-pages/about/1.jpg",
+              "title": "Venezuela",
+              "subTitle": "water fall"
+            },
+            {
+              "id": 2,
+              "url": "assets/images/inner-pages/about/2.jpg",
+              "title": "Shillong",
+              "subTitle": "paragliding"
+            },
+            {
+              "id": 3,
+              "url": "assets/images/inner-pages/about/3.jpg",
+              "title": "Berlin",
+              "subTitle": "River Front"
+            }
+          ],
+          "team": [
+            {
+              "id": 1,
+              "name": "Julia Holmes",
+              "image": "assets/images/inner-pages/team/1.jpg",
+              "designation": "CEO"
+            },
+            {
+              "id": 2,
+              "name": "Lucas Smith",
+              "image": "assets/images/inner-pages/team/2.jpg",
+              "designation": "marketing"
+            },
+            {
+              "id": 3,
+              "name": "Pablo Himenez",
+              "image": "assets/images/inner-pages/team/3.jpg",
+              "designation": "customer service"
+            },
+            {
+              "id": 4,
+              "name": "Lucas Smith",
+              "image": "assets/images/inner-pages/team/2.jpg",
+              "designation": "marketing"
+            }
+          ],
+          "testimonial": [1,2],
+          "fact": [
+            {
+              "id": 1,
+              "image": "assets/images/icon/facts/1.png",
+              "title": "happy client",
+              "count": 2745
+            },
+            {
+              "id": 2,
+              "image": "assets/images/icon/facts/2.png",
+              "title": "complete tour",
+              "count": 953
+            },
+            {
+              "id": 3,
+              "image": "assets/images/icon/facts/3.png",
+              "title": "guiders",
+              "count": 450
+            },
+            {
+              "id": 4,
+              "image": "assets/images/icon/facts/4.png",
+              "title": "tour country",
+              "count": 180
+            }
+          ],
+          "blog": [11,12,13],
+          "services": [
+            {
+              "id": 1,
+              "title": "Guaranteed savings",
+              "subTitle": "15% discount",
+              "description": "Unlock peace of mind with Guaranteed Savings, your financial safety net for a secure and prosperous future",
+              "icon": "assets/images/svg/pages/saving.svg",
+              "rating": 4
+            },
+            {
+              "id": 2,
+              "title": "24 X 7 helpline",
+              "subTitle": "free 1 ride",
+              "description": "Accessible day and night, our 24/7 helpline offers round-the-clock support, providing a reassuring lifeline for any queries or concerns you may have",
+              "icon": "assets/images/svg/pages/telephone.svg",
+              "rating": 4
+            },
+            {
+              "id": 3,
+              "title": "live booking on hotel",
+              "subTitle": "2% discount",
+              "description": "Effortlessly secure your stay with our live booking feature",
+              "icon": "assets/images/svg/pages/booking.svg",
+              "rating": 4
+            }
+          ]
+        }
+      ],
+      "contact": [
+        {
+          "id": 1,
+          "title": "Address",
+          "icon": "map-marker-alt",
+          "details": [
+            {
+              "data": "549 Sulphur Springs Road"
+            },
+            {
+              "data": "Downers Grove, IL 60515"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "email address",
+          "icon": "envelope",
+          "details": [
+            {
+              "data": "Support@rica.com"
+            },
+            {
+              "data": "info@rica.com"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "phone",
+          "icon": "phone-alt",
+          "details": [
+            {
+              "data": "+91 123 - 456 - 7890"
+            },
+            {
+              "data": "+86 163 - 451 - 7894"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "title": "fax",
+          "icon": "fax",
+          "details": [
+            {
+              "data": "+1 212 999 8888"
+            },
+            {
+              "data": "+44 1-2222 8888"
+            }
+          ]
+        }
+      ],
+      "faq":{
+          "tabs": [
+            {
+              "id": 1,
+              "title": "general",
+              "value": "general"
+            },
+            {
+              "id": 2,
+              "title": "about",
+              "value": "about"
+            },
+            {
+              "id": 3,
+              "title": "pricing",
+              "value": "pricing"
+            },
+            {
+              "id": 4,
+              "title": "booking",
+              "value": "booking"
+            },
+            {
+              "id": 5,
+              "title": "payment",
+              "value": "payment"
+            },
+            {
+              "id": 6,
+              "title": "cancellation & refunds",
+              "value": "cancellation"
+            },
+            {
+              "id": 7,
+              "title": "visa & insurance",
+              "value": "visa"
+            },
+            {
+              "id": 8,
+              "title": "Foreign Exchange (FOREX)",
+              "value": "forex"
+            },
+            {
+              "id": 9,
+              "title": "hotels",
+              "value": "hotels"
+            },
+            {
+              "id": 10,
+              "title": "my account",
+              "value": "account"
+            },
+            {
+              "id": 11,
+              "title": "support",
+              "value": "support"
+            },
+            {
+              "id": 12,
+              "title": "contact",
+              "value": "contact"
+            }
+          ],
+          "details": [
+            {
+              "id": 1,
+              "title": "The standard Lorem Ipsum passage, used since the 1500s",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+            },
+            {
+              "id": 2,
+              "title": "Section 1.10.32 of 'de Finibus Bonorum et Malorum', written by Cicero in     45 BC",
+              "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+            },
+            {
+              "id": 3,
+              "title": "1914 translation by H. Rackham",
+              "description": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure."
+            },
+            {
+              "id": 4,
+              "title": "Section 1.10.33 of 'de Finibus Bonorum et Malorum', written by Cicero in     45 BC",
+              "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus,"
+            },
+            {
+              "id": 5,
+              "title": "Section 1.10.32 of 'de Finibus Bonorum et Malorum', written by Cicero in     45 BC",
+              "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+            },
+            {
+              "id": 5,
+              "title": "1914 translation by H. Rackham",
+              "description": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure."
+            }
+          ]
+      },
+      "userDashboard": {
+        "tabs": [
+          {
+            "id": 1,
+            "title": "dashboard",
+            "value": "dashboard"
+          },
+          {
+            "id": 2,
+            "title": "profile",
+            "value": "profile"
+          },
+          {
+            "id": 3,
+            "title": "bookings",
+            "value": "bookings"
+          },
+          {
+            "id": 4,
+            "title": "cards & payment",
+            "value": "added-card"
+          },
+          {
+            "id": 5,
+            "title": "bookmark",
+            "value": "bookmark"
+          },
+          {
+            "id": 6,
+            "title": "security",
+            "value": "security"
+          }
+        ],
+        "dashboardDetails":{
+            "verificationDetail": [
+              {
+                "id": 1,
+                "title": "verified email ID",
+                "verified": true
+              },
+              {
+                "id": 2,
+                "title": "verified phone number",
+                "verified": true
+              },
+              {
+                "id": 3,
+                "title": "complete basic info",
+                "verified": false
+              }
+            ],
+            "totalCount": [
+              {
+                "id": 1,
+                "title": "hotel booked",
+                "count": 25,
+                "image": "assets/images/icon/hotel.png"
+              },
+              {
+                "id": 2,
+                "title": "flight booked",
+                "count": 12,
+                "image": "assets/images/icon/flight.png"
+              },
+              {
+                "id": 3,
+                "title": "cab booked",
+                "count": 50,
+                "image": "assets/images/icon/taxi.png"
+              },
+              {
+                "id": 4,
+                "title": "food ordered",
+                "count": 40,
+                "image": "assets/images/icon/food.png"
+              }
+            ],
+            "recentActivity": [
+              {
+                "id": 1,
+                "title": "Paris to Dubai",
+                "date": "3 days ago",
+                "icon": "plane"
+              },
+              {
+                "id": 2,
+                "title": "Paris to Dubai",
+                "date": "23 june",
+                "icon": "plane"
+              },
+              {
+                "id": 3,
+                "title": "hotel sea view",
+                "date": "20 april",
+                "icon": "hotel",
+                "class": "blue-line"
+              },
+              {
+                "id": 4,
+                "title": "Paris To Toulouse",
+                "date": "12 feb",
+                "icon": "taxi",
+                "class": "yellow-line"
+              },
+              {
+                "id": 5,
+                "title": "Paris to Dubai",
+                "date": "14 jan",
+                "icon": "plane"
+              },
+              {
+                "id": 6,
+                "title": "hotel sea view",
+                "date": "12 jan",
+                "icon": "hotel",
+                "class": "blue-line"
+              }
+            ]
+        },
+        "userProfile": [
+          {
+            "title": "profile",
+            "modal": true,
+            "modalValue": "profile-edit",
+            "details": [
+              {
+                "title": "name",
+                "value": "Mark Enderess"
+              },
+              {
+                "title": "birthday",
+                "value": "25/12/1990"
+              },
+              {
+                "title": "gender",
+                "value": "female"
+              },
+              {
+                "title": "street address",
+                "value": "549 Sulphur Springs Road"
+              },
+              {
+                "title": "city/state",
+                "value": "Downers Grove, IL"
+              },
+              {
+                "title": "zip",
+                "value": "60515"
+              }
+            ]
+          },
+          {
+            "title": "login details",
+            "details": [
+              {
+                "title": "email address",
+                "value": "mark.enderess@mail.com",
+                "modal": true,
+                "modalValue": "edit-email"
+              },
+              {
+                "title": "phone no:",
+                "value": "+91 123 - 456 - 7890",
+                "modal": true,
+                "modalValue": "edit-phone"
+              },
+              {
+                "title": "password",
+                "value": "&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;",
+                "modal": true,
+                "modalValue": "edit-password"
+              }
+            ]
+          }
+        ],
+        "booking": [
+          {
+            "id": 1,
+            "title": "upcoming booking",
+            "details": [
+              {
+                "id": 1,
+                "title": "dubai to paris",
+                "amount": 2500,
+                "travelId": "aSdsadf5s1f5",
+                "travelDate": "20 oct, 2020",
+                "day": "tue",
+                "date": 14,
+                "month": "aug",
+                "travelDetail": "upcoming",
+                "icon": "plane"
+              },
+              {
+                "id": 2,
+                "title": "sea view hotel",
+                "amount": 2500,
+                "travelId": "aSdsadf5s1f5",
+                "travelDate": "20 oct, 2020",
+                "day": "tue",
+                "date": 14,
+                "month": "aug",
+                "travelDetail": "upcoming",
+                "icon": "hotel"
+              },
+              {
+                "id": 3,
+                "title": "paris to Toulouse",
+                "amount": 2500,
+                "travelId": "aSdsadf5s1f5",
+                "travelDate": "20 oct, 2020",
+                "day": "tue",
+                "date": 14,
+                "month": "aug",
+                "travelDetail": "upcoming",
+                "icon": "taxi"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "title": "past booking",
+            "details": [
+              {
+                "id": 1,
+                "title": "dubai to paris",
+                "amount": 2500,
+                "travelId": "aSdsadf5s1f5",
+                "travelDate": "20 oct, 2020",
+                "day": "tue",
+                "date": 14,
+                "month": "aug",
+                "travelDetail": "past",
+                "icon": "plane"
+              },
+              {
+                "id": 2,
+                "title": "sea view hotel",
+                "amount": 2500,
+                "travelId": "aSdsadf5s1f5",
+                "travelDate": "20 oct, 2020",
+                "day": "tue",
+                "date": 14,
+                "month": "aug",
+                "travelDetail": "past",
+                "icon": "hotel"
+              },
+              {
+                "id": 3,
+                "title": "paris to Toulouse",
+                "amount": 2500,
+                "travelId": "aSdsadf5s1f5",
+                "travelDate": "20 oct, 2020",
+                "day": "tue",
+                "date": 14,
+                "month": "aug",
+                "travelDetail": "past",
+                "icon": "taxi"
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "title": "cancelled booking",
+            "details": [
+              {
+                "id": 1,
+                "title": "dubai to paris",
+                "amount": 2500,
+                "travelId": "aSdsadf5s1f5",
+                "travelDate": "20 oct, 2020",
+                "day": "tue",
+                "date": 14,
+                "month": "aug",
+                "travelDetail": "cancelled",
+                "icon": "plane"
+              },
+              {
+                "id": 2,
+                "title": "sea view hotel",
+                "amount": 2500,
+                "travelId": "aSdsadf5s1f5",
+                "travelDate": "20 oct, 2020",
+                "day": "tue",
+                "date": 14,
+                "month": "aug",
+                "travelDetail": "cancelled",
+                "icon": "hotel"
+              },
+              {
+                "id": 3,
+                "title": "paris to Toulouse",
+                "amount": 2500,
+                "travelId": "aSdsadf5s1f5",
+                "travelDate": "20 oct, 2020",
+                "day": "tue",
+                "date": 14,
+                "month": "aug",
+                "travelDetail": "cancelled",
+                "icon": "taxi"
+              }
+            ]
+          }
+        ],
+        "cards": [
+          {
+            "id": 1,
+            "holderName": "mark jecno",
+            "cardNumber": "XXXX-XXXX-XXXX-2510",
+            "expDate": "12/23",
+            "cardIcon": "assets/images/icon/master.png",
+            "primary": true,
+            "class": "master"
+          },
+          {
+            "id": 2,
+            "holderName": "mark jecno",
+            "cardNumber": "XXXX-XXXX-XXXX-2510",
+            "expDate": "12/23",
+            "cardIcon": "assets/images/icon/visa.png",
+            "class": "visa"
+          },
+          {
+            "id": 3,
+            "holderName": "mark jecno",
+            "cardNumber": "XXXX-XXXX-XXXX-2510",
+            "expDate": "12/23",
+            "cardIcon": "assets/images/icon/american.jpg",
+            "class": "american-express"
+          }
+        ],
+        "bookmark": [
+          {
+            "id": 1,
+            "title": "Beautiful bali",
+            "subTitle": "6N 7D",
+            "image": "assets/images/tour/tour/7.jpg"
+          },
+          {
+            "id": 2,
+            "title": "best of europe",
+            "subTitle": "6N 7D",
+            "image": "assets/images/tour/tour/8.jpg"
+          },
+          {
+            "id": 3,
+            "title": "sea view hotel",
+            "subTitle": "$250/ night",
+            "image": "assets/images/hotel/room/13.jpg"
+          },
+          {
+            "id": 4,
+            "title": "italian restro",
+            "subTitle": "fast food | $25 for two",
+            "image": "assets/images/restaurant/environment/3.jpg"
+          },
+          {
+            "id": 5,
+            "title": "dubai to paris",
+            "subTitle": "egyptair | $2500",
+            "image": "assets/images/flights/flight-breadcrumb2.jpg"
+          },
+          {
+            "id": 6,
+            "title": "simply mauritius",
+            "subTitle": "6N 7D",
+            "image": "assets/images/tour/tour/12.jpg"
+          },
+          {
+            "id": 7,
+            "title": "canadian delight",
+            "subTitle": "6N 7D",
+            "image": "assets/images/tour/tour/13.jpg"
+          },
+          {
+            "id": 8,
+            "title": "Egyptian Wonders",
+            "subTitle": "6N 7D",
+            "image": "assets/images/tour/tour/14.jpg"
+          },
+          {
+            "id": 9,
+            "title": "South Africa",
+            "subTitle": "6N 7D",
+            "image": "assets/images/tour/tour/15.jpg"
+          }
+        ]
+      }
+  },
+  "elementPages": {
+    "imageRatio": {
+        "images": [
+          {
+            "url": "assets/images/tour/tour/7.jpg",
+            "fileType": "image"
+          },
+          {
+            "url": "assets/images/tour/tour/8.jpg",
+            "fileType": "image"
+          },
+          {
+            "url": "assets/images/tour/tour/9.jpg",
+            "fileType": "image"
+          },
+          {
+            "url": "assets/images/tour/tour/10.jpg",
+            "fileType": "image"
+          }
+        ],
+        "ratioDetails": [
+          {
+            "title": "image ratio",
+            "subTitle": "ratio - ''ratio2_3''",
+            "ratioClass": "ratio2_3"
+          },
+          {
+            "title": "image ratio",
+            "subTitle": "ratio - ''ratio_square''",
+            "ratioClass": "ratio_square"
+          },
+          {
+            "title": "image ratio",
+            "subTitle": "ratio - ''ratio_portrait''",
+            "ratioClass": "section-b-space ratio_portrait"
+          }
+        ]
+    },
+    "button": [
+      {
+        "id": 1,
+        "title": "Theme buttons",
+        "colClass": "col-lg-6",
+        "buttonData": [
+          {
+            "id": 1,
+            "title": "read more",
+            "buttonClass": "btn-solid"
+          },
+          {
+            "id": 2,
+            "title": "read more",
+            "buttonClass": "btn-solid"
+          },
+          {
+            "id": 3,
+            "title": "read more",
+            "buttonClass": "btn-curve"
+          },
+          {
+            "id": 4,
+            "title": "read more",
+            "buttonClass": "btn-curve btn-lower"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Rounded buttons",
+        "colClass": "col-lg-6",
+        "buttonData": [
+          {
+            "id": 1,
+            "title": "read more",
+            "buttonClass": "btn-rounded color1"
+          },
+          {
+            "id": 2,
+            "title": "read more",
+            "buttonClass": "btn-rounded color2"
+          },
+          {
+            "id": 3,
+            "title": "read more",
+            "buttonClass": "btn-rounded btn-sm color1"
+          },
+          {
+            "id": 4,
+            "title": "read more",
+            "buttonClass": "btn-rounded btn-sm color2"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "White & black buttons",
+        "colClass": "col-lg-6",
+        "buttonData": [
+          {
+            "id": 1,
+            "title": "white button",
+            "buttonClass": "btn-curve white-btn"
+          },
+          {
+            "id": 2,
+            "title": "black button",
+            "buttonClass": "btn-curve black-btn"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Button tags",
+        "colClass": "col-lg-6",
+        "input": true
+      },
+      {
+        "id": 5,
+        "title": "Button text Sizes",
+        "colClass": "col-sm-12",
+        "buttonData": [
+          {
+            "id": 1,
+            "title": "Large button",
+            "buttonClass": "btn-primary btn-lg"
+          },
+          {
+            "id": 2,
+            "title": "Large button",
+            "buttonClass": "btn-secondary btn-lg"
+          },
+          {
+            "id": 3,
+            "title": "Small button",
+            "buttonClass": "btn-primary btn-sm"
+          },
+          {
+            "id": 4,
+            "title": "Small button",
+            "buttonClass": "btn-secondary btn-sm"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Bootstrap button",
+        "colClass": "col-sm-12",
+        "buttonData": [
+          {
+            "id": 1,
+            "title": "Primary",
+            "buttonClass": "btn-primary"
+          },
+          {
+            "id": 2,
+            "title": "Secondary",
+            "buttonClass": "btn-secondary"
+          },
+          {
+            "id": 3,
+            "title": "Success",
+            "buttonClass": "btn-success"
+          },
+          {
+            "id": 4,
+            "title": "Danger",
+            "buttonClass": "btn-danger"
+          },
+          {
+            "id": 5,
+            "title": "Warning",
+            "buttonClass": "btn-warning"
+          },
+          {
+            "id": 6,
+            "title": "Info",
+            "buttonClass": "btn-info"
+          },
+          {
+            "id": 7,
+            "title": "Dark",
+            "buttonClass": "btn-dark"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Button Outline",
+        "colClass": "col-sm-12",
+        "buttonData": [
+          {
+            "id": 1,
+            "title": "Primary",
+            "buttonClass": "btn-outline-primary"
+          },
+          {
+            "id": 2,
+            "title": "Secondary",
+            "buttonClass": "btn-outline-secondary"
+          },
+          {
+            "id": 3,
+            "title": "Success",
+            "buttonClass": "btn-outline-success"
+          },
+          {
+            "id": 4,
+            "title": "Danger",
+            "buttonClass": "btn-outline-danger"
+          },
+          {
+            "id": 5,
+            "title": "Warning",
+            "buttonClass": "btn-outline-warning"
+          },
+          {
+            "id": 6,
+            "title": "Info",
+            "buttonClass": "btn-outline-info"
+          },
+          {
+            "id": 7,
+            "title": "Dark",
+            "buttonClass": "btn-outline-dark"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "title": "Button block",
+        "colClass": "col-lg-6",
+        "grid": true,
+        "buttonData": [
+          {
+            "id": 1,
+            "title": "Block level button",
+            "buttonClass": "btn-primary btn-lg btn-block"
+          },
+          {
+            "id": 2,
+            "title": "Block level button",
+            "buttonClass": "btn-secondary btn-lg btn-block ms-0"
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "title": "Button group",
+        "colClass": "col-lg-6",
+        "buttonGroup": true
+      }
+    ]
+  }
+
+}

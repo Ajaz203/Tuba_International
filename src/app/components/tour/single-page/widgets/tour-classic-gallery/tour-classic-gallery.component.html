@@ -1,0 +1,52 @@
+<div class="full-width-detail">
+  <ul class="place-detail">
+    @for(list of classicGallery; track list){
+      <li>{{ list.title }}</li>
+    }
+  </ul>
+  <div class="about-section three-image about_page">
+    <div class="row">
+      <div class="col-xl-7">
+        <div class="image-section">
+          @for(list of classicGallery; track list){
+            @if(list.image){
+              <div class="img-box">
+                <img [src]="list.image" data-tilt data-tilt-perspective="110" data-tilt-speed="400" data-tilt-max="1.2" class="img-fluid blur-up lazyload" alt="destination-image">
+                <div class="title-box">
+                  <h3>{{ list.title }}</h3>
+                  <h6>{{ list.subTitle }}</h6>
+                </div>
+              </div>
+            }
+          }
+        </div>
+      </div>
+      <div class="col-xl-5">
+        <div class="about-text about-text-gray">
+          <div>
+            <div class="right-detail">
+              <h4>at a glance</h4>
+              <div class="bottom-detail">
+                <p>
+                  Hola Espana! The vibrant country of Spain beckons for an
+                  adventure that lets us explore the sights 'n' sounds of this
+                  remarkable destination. Visit architechturally brilliant and
+                  culture-rich cities of Madrid, Seville, Barcelona, Cordoba,
+                  Valencia on this tour and have the experience of a lifetime!
+                </p>
+                <p>
+                  Andalusia is a land of fragrant orange blossom and majestic
+                  Moorish architecture and home to a population for whom a love of
+                  music and dance is in their DNA. This nine-night exploration
+                  takes you to southern Spain‘s most handsome cities, all with
+                  thriving cultural and foodie scenes and more than their fair
+                  share of castles, palaces and beautiful gardens.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

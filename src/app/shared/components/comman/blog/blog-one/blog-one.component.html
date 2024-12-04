@@ -1,0 +1,31 @@
+@if(blogs){
+  <owl-carousel-o [options]="Options">
+    @for(blog of blogs; track blog){
+      <ng-template carouselSlide>
+        <div>
+          <div class="blog-wrap" [class.rounded-0]="border">
+            <div class="blog-image">
+              <a href="javascript:void(0)" class="bg-size" [style.background-image]="'url(' + blog.url + ')'" [routerLink]="['/page/element-pages/blog']">
+                <img [src]="blog.url" class="img-fluid blur-up lazyload bg-img" alt="blog-image" style="display: none;">
+              </a>
+              <div class="blog-label" [class.rounded-0]="border">
+                <div>
+                  <h3>{{ blog.date }}</h3>
+                  <h6>{{ blog.month }}</h6>
+                </div>
+              </div>
+            </div>
+            <div class="blog-details">
+              <h6><i class="fas fa-map-marker-alt" [ngClass]="colorClass"></i>{{ blog.location }}</h6>
+              <a href="javascript:void(0)" [routerLink]="['/page/element-pages/blog']">
+                <h5>{{ blog.blogTitle }}</h5>
+              </a>
+              <p>{{ blog.description }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    }
+  </owl-carousel-o>
+}

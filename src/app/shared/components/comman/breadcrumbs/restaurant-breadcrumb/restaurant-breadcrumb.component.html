@@ -1,0 +1,29 @@
+<section class="order-food-section  pt-0 bg-size" [ngClass]="sectionClass" [style.background-image]="'url(assets/images/restaurant/background/1.jpg)'">
+  <img src="assets/images/restaurant/background/1.jpg" class="bg-img img-fluid blur-up lazyload" alt="background-image" style="display: none;">
+  <div class="order-food">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="book-table section-b-space p-0 single-table">
+            <h3>The food you love, delivered with care</h3>
+            <div class="table-form">
+              <form>
+                <div class="row w-100">
+                  <div class="form-group col-md-4">
+                    <input type="text" placeholder="enter your location" class="form-control">
+                  </div>
+                  <div class="form-group col-md-5">
+                    <input type="text" placeholder="what are you craving?" class="form-control">
+                  </div>
+                  <div class="search col-md-3">
+                    <a href="javascript:void(0)" class="btn btn-rounded color1" [routerLink]="['/restaurant/listing/grid-view/2-grid']">find food</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

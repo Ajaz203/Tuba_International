@@ -1,0 +1,16 @@
+@if(type == 'slider'){
+  <h4 class="content-title">review</h4>
+}
+<div class="menu-part review" id="reviews" [ngClass]="{ 'tab-pane' : type == 'tab', 'page-section': type == 'slider'}">
+  @for(review of hotelReview; track review){
+    <div class="review-box">
+      <div class="rating">
+        <bar-rating class="star" [(rate)]="review.rating" [max]="5" [readonly]="true"></bar-rating>
+        <span>{{ review.title }}</span>
+      </div>
+      <h6>by {{ review.by }}, {{ review.date }}</h6>
+      <p>{{ review.review }}
+      </p>
+    </div>
+  }
+</div>

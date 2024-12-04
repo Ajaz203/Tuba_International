@@ -1,0 +1,10 @@
+<div class="collection-collapse-block" [class.open]="isOpenBudget">
+  <h6 class="collapse-block-title" (click)="openBudget()">budget</h6>
+  <div class="collection-collapse-block-content" [ngStyle]="{ 'display' : isOpenBudget == true ? 'block' : 'none'}">
+    <div class="wrapper">
+      <div class="range-slider">
+        <ngx-slider [(value)]="priceMinValue" [(highValue)]="priceMaxValue" [options]="options" (userChangeEnd)="priceChange($event)"></ngx-slider>
+      </div>
+    </div>
+  </div>
+</div>

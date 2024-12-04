@@ -1,0 +1,71 @@
+@if(ticketSection || cabDetails){
+  <owl-carousel-o [options]="Options">
+    @if(ticketSection){
+      @for(details of ticketSection; track details){
+        <ng-template carouselSlide>
+          <div>
+            <div class="row">
+              <div class="col-lg-7 offset-lg-4 col-md-10 offset-md-1">
+                <div class="ticket-box">
+                  <div class="ticket-title">
+                    <h6>see rooms</h6>
+                    <span><i class="fas fa-key"></i></span>
+                  </div>
+                  <div class="image-box">
+                    <img [src]="details.url" class="img-fluid blur-up lazyload" alt="image">
+                  </div>
+                  <div class="content">
+                    <div class="detail">
+                      <h4><span>{{ details.price | currencyPipe: hotelService.currency }}</span> / per night</h4>
+                      <h2>{{ details.title }}</h2>
+                      <h6>{{ details.subTitle }} <span>{{ details.subTitle2 }}</span></h6>
+                      <p>{{ details.description }}</p>
+                      <a href="javascript:void(0)" class="btn btn-solid" [routerLink]="['/hotel/booking/hotel-booking']">book now</a>
+                    </div>
+                    <div class="barcode-design">
+                      <img [src]="details.barcode" alt="barcode" class="img-fluid blur-up lazyload">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      }
+    }@else {
+    @for(details of cabDetails; track details){
+    <ng-template carouselSlide>
+      <div>
+        <div class="row">
+          <div class="col-lg-7 offset-lg-4 col-md-10 offset-md-1">
+            <div class="ticket-box">
+              <div class="ticket-title">
+                <h6>driver details</h6>
+                <span><i class="fas fa-crown"></i></span>
+              </div>
+              <div class="image-box">
+                <img [src]="details.image" class="img-fluid blur-up lazyload" alt="cab-image">
+                <a href="javascript:void(0)" class="video-icon" (click)="openModal()">
+                  <span></span>
+                </a>
+              </div>
+              <div class="content">
+                <div class="detail">
+                  <h4><span>{{ details.price | currencyPipe: hotelService.currency }}</span> / per day</h4>
+                  <h3>{{ details.title }}</h3>
+                  <p>{{ details.description }}</p>
+                  <a href="javascript:void(0)" class="btn btn-curve" [routerLink]="['/page/other-pages/contact-us-1']">contact us</a>
+                </div>
+                <div class="barcode-design">
+                  <img [src]="details.barcode" alt="barcode" class="img-fluid blur-up lazyload">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    }
+    }
+  </owl-carousel-o>
+}

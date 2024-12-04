@@ -1,0 +1,33 @@
+<section class="effect-cls effect-cls-up padding-cls full-banner parallax-img bg-size" [style.background-image]="'url(assets/images/tour/background/3.jpg)'">
+  <img [src]="'assets/images/tour/background/3.jpg'" class="img-fluid blur-up lazyload bg-img" alt="background-image" style="display: none;">
+  <div class="tourSection ratio_90">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <app-title [type]="'basic'" [title]="'rica'" [subTitle]="'Explore through Themes'" [background_text]="'best'"></app-title>
+          <div class="slider-4 no-arrow">
+            @if(themes){
+              <owl-carousel-o [options]="options">
+                @for(details of themes; track details){
+                  <ng-template carouselSlide>
+                    <div>
+                      <div class="tourBox">
+                        <div class="tourImg bg-size" [style.background-image]="'url(' + details.image + ')'">
+                          <img [src]="details.image" class="img-fluid blur-up lazyload bg-img" alt="image" style="display: none;">
+                        </div>
+                        <div class="tourContent">
+                          <h3>{{ details.title }}</h3>
+                          <h6>starting from {{ details.price | currencyPipe: hotelService.currency }}</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </ng-template>
+                }
+              </owl-carousel-o>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,94 @@
+<app-header [headerClass]="'light_header'"></app-header>
+
+<app-breadcrumbs [type]="'tour-single-page'" [bg_image]="bg_image" [title]="title" [days]="7" [date]="date"></app-breadcrumbs>
+
+<section class="single-section small-section bg-inner">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 col-lg-8">
+        <div class="description-section tab-section">
+          <div class="menu-top menu-up" id="searchBar" [class.sticky]="tabFixed">
+            <app-tour-tabs (tabValue)="getTabValue($event)" [type]="'slider'"></app-tour-tabs>
+          </div>
+          <div class="description-details">
+            @if(tourDetail){
+              @for(details of tourDetail.tour; track details){
+                @if(details.highlight){
+                  <div class="desc-box">
+                    <div class="menu-part mt-0 about" id="highlight">
+                      <app-tour-highlight [highlights]="details.highlight"></app-tour-highlight>
+                    </div>
+                  </div>
+                }
+                @if(details.itinerary){
+                  <div class="desc-box">
+                    <h4 class="content-title">itinerary</h4>
+                    <div class="menu-part accordion" id="itinerary">
+                      <app-tour-itinerary [itinerary]="details.itinerary"></app-tour-itinerary>
+                    </div>
+                  </div>
+                }
+                @if(details.gallery){
+                  <div class="desc-box">
+                    <h4 class="content-title">gallery</h4>
+                    <div class="menu-part" id="gallery">
+                      <app-tour-gallery [gallery]="details.gallery"></app-tour-gallery>
+                    </div>
+                  </div>
+                }
+                @if(details.accommodation){
+                  <div class="desc-box">
+                    <h4 class="content-title">accommodations</h4>
+                    <div class="menu-part" id="accommodations">
+                      <app-tour-accommodation [accommodations]="details.accommodation"></app-tour-accommodation>
+                    </div>
+                  </div>
+                }
+                @if(details.location){
+                  <div class="desc-box">
+                    <h4 class="content-title">location</h4>
+                    <div class="menu-part map" id="location">
+                      <app-tour-location [location]="details.location"></app-tour-location>
+                    </div>
+                  </div>
+                }
+                @if(details.review){
+                  <div class="desc-box">
+                    <h4 class="content-title">review</h4>
+                    <div class="menu-part review" id="review">
+                      <app-tour-review [review]="details.review"></app-tour-review>
+                    </div>
+                  </div>
+                }
+                @if(details.policy){
+                  <div class="desc-box">
+                    <h4 class="content-title">policy</h4>
+                    <div class="about menu-part" id="policy">
+                      <app-tour-policy [policy]="details.policy"></app-tour-policy>
+                    </div>
+                  </div>
+                }
+              }
+            }
+          </div>
+        </div>
+        <div class="special-section related-box ratio3_2 grid-box">
+          <div class="slider-3 no-arrow">
+            <app-tour-gallery-slider></app-tour-gallery-slider>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-4 ">
+        <div class="sticky-cls">
+          <app-tour-single-page-filter></app-tour-single-page-filter>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-tour-single-page-modal></app-tour-single-page-modal>
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout [loaderType]="'skeleton'" [skeletonType]="'single-page'" [tour]="true"></app-layout>

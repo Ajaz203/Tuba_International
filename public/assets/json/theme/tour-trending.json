@@ -1,0 +1,62 @@
+{
+  "deals": [1,2,3],
+  "continents": [
+    {
+      "id": 1,
+      "tourName": "asian tour",
+      "image": "assets/images/tour/background/10.jpg",
+      "price": 5
+    },
+    {
+      "id": 2,
+      "tourName": "europe tour",
+      "image": "assets/images/tour/background/11.jpg",
+      "price": 15
+    },
+    {
+      "id": 3,
+      "tourName": "american tour",
+      "image": "assets/images/tour/background/9.jpg",
+      "price": 10
+    },
+    {
+      "id": 4,
+      "tourName": "australian tour",
+      "image": "assets/images/tour/background/12.jpg",
+      "price": 12
+    }
+  ],
+  "themes": [
+    {
+      "id": 1,
+      "title": "Adventure freaks",
+      "image": "assets/images/tour/background/4.jpg",
+      "price": 5000
+    },
+    {
+      "id": 2,
+      "title": "city tour",
+      "image": "assets/images/tour/background/8.jpg",
+      "price": 5000
+    },
+    {
+      "id": 3,
+      "title": "historical place",
+      "image": "assets/images/tour/background/6.jpg",
+      "price": 5000
+    },
+    {
+      "id": 4,
+      "title": "beach lover",
+      "image": "assets/images/tour/background/5.jpg",
+      "price": 5000
+    },
+    {
+      "id": 5,
+      "title": "desert all over",
+      "image": "assets/images/tour/background/7.jpg",
+      "price": 5000
+    }
+  ],
+  "testimonial": [1,2,3]
+}

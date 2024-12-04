@@ -1,0 +1,64 @@
+<div class="dashboard-main">
+  @if(dashboardDetails){
+  <div class="dashboard-intro">
+    <h5>welcome! <span>Mark Enderess</span></h5>
+    <p>you have completed 70% of your profile. add basic info to complete profile.
+    </p>
+    <div class="complete-profile">
+      <div class="row">
+          @for(verification of dashboardDetails.verificationDetail; track verification){
+            <div class="col-xl-4">
+              <div class="complete-box" [class.not-complete]="!verification.verified">
+                <i class="far fa-{{ verification.verified ? 'check-square' : 'window-close' }}"></i>
+                <h6>{{ verification.title }}</h6>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+    <div class="counter-section">
+      <div class="row">
+        @for(details of dashboardDetails.totalCount; track details){
+          <div class="col-xl-3 col-sm-6">
+            <div class="counter-box">
+              <img [src]="details.image" class="img-fluid blur-up lazyload" alt="icon">
+              <h3>{{ details.count }}</h3>
+              <h5>{{ details.title }}</h5>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+    <div class="dashboard-info">
+      <div class="row">
+        <div class="col-md-6">
+          <div id="chart">
+            <div class="detail-left">
+              <ul>
+                <li><span class="completed"></span> Completed</li>
+                <li><span class="upcoming"></span> Upcoming</li>
+                <li><span class="cancelled"></span> Cancelled</li>
+              </ul>
+            </div>
+            <apx-chart [series]="activityChart.series" [chart]="activityChart.chart" [plotOptions]="activityChart.plotOptions" [labels]="activityChart.labels" [colors]="activityChart.colors" [stroke]="activityChart.stroke"></apx-chart>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="activity-box">
+            <h6>recent activity</h6>
+            <ul>
+              @for(activity of dashboardDetails.recentActivity; track activity){
+                <li [ngClass]="activity.class">
+                  <i class="fas fa-{{ activity.icon }}"></i>
+                  {{ activity.title }}
+                  <span>{{ activity.date }}</span>
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</div>

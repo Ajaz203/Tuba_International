@@ -1,0 +1,31 @@
+<section class="section-b-space">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="filter-panel filter-title-bar">
+          <h4 class="">popular restaurant</h4>
+          <div class="left-filter ms-auto">
+            <div class="filters respon-filter-content d-block filter-button-group">
+              <ul>
+                @for(menu of restaurantGridMenu; track menu){
+                  <li [class.active]="activeMenu == menu.value" (click)="getRestaurantDetails(menu.value)">{{ menu.title }}</li>
+                }
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12 ratio3_2">
+        <div class="product-wrapper-grid special-section grid-box">
+          <div class="row content grid mb-down">
+            @for(details of restaurantDetails; track details){
+              <div class="col-xl-3 col-lg-4 col-sm-6 popular grid-item">
+                <app-restaurant-details [restaurantDetails]="details"></app-restaurant-details>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

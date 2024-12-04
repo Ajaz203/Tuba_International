@@ -1,0 +1,51 @@
+<section class="bg-white pt-0 search-panel">
+  <app-hotel-skeleton-search-box></app-hotel-skeleton-search-box>
+</section>
+
+<section class="xs-section bg-inner">
+  <div [ngClass]="{'container-fluid' : mapFilter,' container' : !mapFilter }">
+    <div class="row">
+      @if(grid){
+        <div class="col-12">
+          <app-grid-skeleton [mapFilter]="mapFilter"></app-grid-skeleton>
+        </div>
+      }
+
+      @if(filterType == 'left'){
+        <div class="col-lg-3">
+          <app-hotel-skeleton-filter [filter]="filter"></app-hotel-skeleton-filter>
+        </div>
+      }
+
+      @if(mapSide == 'left'){
+        <div class="map-section" [ngClass]="list == true ? 'col-lg-5' : 'col-lg-6'">
+          <div class="map"></div>
+        </div>
+      }
+
+      @if(list){
+        <div class="ratio3_2" [class.col-lg-7]="mapFilter" [class.col-lg-9]="!mapFilter">
+          <app-hotel-list-skeleton></app-hotel-list-skeleton>
+        </div>
+      }
+
+      @if(!list){
+        <div class="ratio3_2" [class.col-lg-6]="mapFilter && gridType == '2-grid'" [class.col-lg-12]="gridType == '3-grid' && !filter || gridType == '4-grid'" [class.col-lg-9]="filter && gridType == '3-grid' || (gridType == '2-grid' && !mapFilter)">
+          <app-hotel-skeleton-details [gridType]="gridType" [filter]="filter"></app-hotel-skeleton-details>
+        </div>
+      }
+
+      @if(mapSide == 'right'){
+        <div class="map-section" [ngClass]="list == true ? 'col-lg-5' : 'col-lg-6'">
+          <div class="map"></div>
+        </div>
+      }
+
+      @if(filterType == 'right'){
+        <div class="col-lg-3">
+          <app-hotel-skeleton-filter [filter]="filter"></app-hotel-skeleton-filter>
+        </div>
+      }
+    </div>
+  </div>
+</section>

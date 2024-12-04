@@ -1,0 +1,28 @@
+<section class="small-section process-steps icon-large bg-size" [style.background-image]="'url(assets/images/tour/background/15.jpg)'" style="z-index: 0;">
+  <img src="assets/images/tour/background/15.jpg" class="bg-img img-fluid blur-up lazyload" alt="background-image" style="display: none;">
+  <div class="container">
+    <div class="title-1 detail-title">
+      <h2 class="pt-0">super easy booking</h2>
+      <p class="text-dark">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aperiam
+        at, aut commodi corporis dolorum ducimus labore magnam mollitia natus porro possimus quae sit
+        tenetur veniam veritatis voluptate voluptatem!</p>
+    </div>
+    <div class="step-bg">
+      <div class="row">
+        @for(details of booking; track details){
+          <div class="col-md-3">
+            <div class="step-box">
+              <div>
+                <img [src]="details.image" class="img-fluid blur-up lazyload filter-none" alt="icon">
+                <h4>{{ details.title }}</h4>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+  <div class="bird-animation">
+    <app-animations [type]="'bird'"></app-animations>
+  </div>
+</section>

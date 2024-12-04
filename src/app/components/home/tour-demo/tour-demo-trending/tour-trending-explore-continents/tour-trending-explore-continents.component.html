@@ -1,0 +1,30 @@
+<section class="small-section">
+  <app-title [type]="'basic'" [title]="'rica'" [subTitle]="'Explore through Continents'" [background_text]="'tours'"></app-title>
+  <div class="container ratio_59">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="cab-slider center-slider-cab arrow-classic topTour mt-0">
+          @if(continents){
+            <owl-carousel-o [options]="options">
+              @for(details of continents; track details){
+                <ng-template carouselSlide>
+                  <div>
+                    <div class="topTour_box mt-0">
+                      <div class="image-section bg-size" [style.background-image]="'url(' + details.image + ')'">
+                        <img [src]="details.image" class="img-fluid blur-up lazyload bg-img" alt="image" style="display: none;">
+                      </div>
+                      <div class="content">
+                        <h5>{{ details.tourName }}</h5>
+                        <h6>start {{ details.price | currencyPipe: hotelService.currency }} / per km</h6>
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
+              }
+            </owl-carousel-o>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

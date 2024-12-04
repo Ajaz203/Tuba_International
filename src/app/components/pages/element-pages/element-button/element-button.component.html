@@ -1,0 +1,44 @@
+<app-header [headerClass]="'inner-page'"></app-header>
+
+<app-breadcrumbs [type]="'pages'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child"></app-breadcrumbs>
+
+<section class="container section-b-space">
+  <div class="container btn-cards">
+    <div class="row">
+      @for(details of button; track details){
+        <div [ngClass]="details.colClass">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="font-weight-bold">{{ details.title }}</h3>
+            </div>
+            <div class="card-body">
+              <div class="btn-group-showcase" [class.d-grid]="details.grid">
+                @if(details.buttonData){
+                  @for(data of details.buttonData; track data){
+                    <a href="javascript:void(0)" class="btn" [ngClass]="data.buttonClass">{{ data.title }}</a>
+                  }
+                }
+                @if(details.input){
+                  <a class="btn btn-primary" href="javascript:void(0)" role="button">Link</a>
+                  <button class="btn btn-primary" type="submit">Button</button>
+                  <input class="btn btn-primary" type="button" value="Input">
+                  <input class="btn btn-primary" type="submit" value="Submit">
+                  <input class="btn btn-primary" type="reset" value="Reset">
+                }
+                @if(details.buttonGroup){
+                  <a href="javascript:void(0)" class="btn btn-primary active" aria-current="page">Active link</a>
+                  <a href="javascript:void(0)" class="btn btn-primary">Link</a>
+                  <a href="javascript:void(0)" class="btn btn-primary">Link</a>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout></app-layout>

@@ -1,0 +1,21 @@
+<section class="pt-0 detail-section zig-zag-effect">
+  <div class="cloud section-b-space section-t-space bg-size" [style.background-image]="'url(assets/images/flights/cloud.png)'">
+    <img src="assets/images/flights/cloud.png" alt="cloud-image" class="bg-img" style="display: none;">
+    <div class="container">
+      <div class="row">
+        @for(details of airlines; track details){
+          <div class="col-md-4">
+            <div class="detail-box">
+              <div class="upper-part">
+                <h6>{{ details.airlineName }}</h6>
+                <h2>{{ details.title }}</h2>
+                <h5>{{ details.subTitle }}</h5>
+              </div>
+              <a href="javascript:void(0)" class="btn btn-rounded btn-sm color1" [routerLink]="['/page/other-pages/contact-us-1']">read more</a>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,26 @@
+@if(category){
+  <owl-carousel-o [options]="options">
+    @for(category of category; track category){
+      <ng-template carouselSlide>
+        <div>
+          <div class="category-block">
+            <div class="category-img">
+              <img [src]="category.categoryImage" alt="category-image" class="img-fluid blur-up lazyload ">
+            </div>
+            <div class="rating">
+              @if(category.rating){
+                <ngb-rating [rate]="category.rating"></ngb-rating>
+              }
+            </div>
+            @if(category.startFrom){
+              <h6>start from <span>{{ category.startFrom | currencyPipe: hotelService.currency }} / day</span></h6>
+            }
+            <h4>{{ category.categoryTitle }}</h4>
+            <h5>{{ category.categoryDescription }}</h5>
+            <a href="javascript:void(0)" class="btn btn-lower btn-curve" [routerLink]="['/cab/booking/booking']">book {{ category.price | currencyPipe: hotelService.currency }}</a>
+          </div>
+        </div>
+      </ng-template>
+    }
+  </owl-carousel-o>
+}

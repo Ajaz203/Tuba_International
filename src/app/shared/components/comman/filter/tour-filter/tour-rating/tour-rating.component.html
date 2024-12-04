@@ -1,0 +1,16 @@
+<div class="collection-collapse-block" [class.open]="isOpenRating">
+  <h6 class="collapse-block-title" (click)="openRating()">star category</h6>
+  <div class="collection-collapse-block-content" [ngStyle]="{ 'display' : isOpenRating == true ? 'block' : 'none'}">
+    <div class="collection-brand-filter">
+      @for(rating of tourRating; track rating){
+        <div class="form-check collection-filter-checkbox">
+          <input type="checkbox" class="form-check-input" id="{{ rating.value }}" [value]="rating.checkID" [checked]="checked(rating.checkID)" (change)="applyFilter($event)">
+          <label class="form-check-label rating" for="{{ rating.value }}">
+            <ngb-rating [rate]="rating.value"></ngb-rating>
+            <span class="ms-1">({{ rating.title }})</span>
+          </label>
+        </div>
+      }
+    </div>
+  </div>
+</div>

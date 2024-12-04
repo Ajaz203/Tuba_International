@@ -1,0 +1,76 @@
+@if(responsiveLatestFilter){
+  <a href="javascript:void(0)" class="mobile-filter border-top-0" (click)="openResponsiveFilter()">
+    <h5>latest filter</h5>
+    <img src="assets/images/icon/adjust.png" class="img-fluid blur-up lazyload" alt="filter-icon">
+  </a>
+}
+
+<!-- Tags  -->
+<ul class="product-filter-tags">
+  <li class="me-1">
+    @if(tags.length){
+      @for(tag of tags; track tag){
+        @if(tag){
+          <a href="javascript:void(0)" class="filter_tag">
+            {{ tag }}
+            <button type="button" class="btn-close" aria-label="Close" (click)="removeTag(tag)"></button>
+          </a>
+        }
+      }
+    }
+    @if(minPrice && maxPrice != 0){
+      <a href="javascript:void(0)" class="filter_tag">
+        Price : {{ minPrice | currencyPipe: hotelService.currency }} - {{ maxPrice | currencyPipe: hotelService.currency }}
+      </a>
+    }
+  </li>
+</ul>
+
+<div class="product-wrapper-grid special-section grid-box">
+  <div class="row  content grid">
+    @for(details of restaurant; track details){
+      <div class="popular grid-item wow fadeInUp" [class.col-sm-6]="col_sm_6" [class.col-xl-4]="col_xl_4" [class.col-xl-3]="col_xl_3" [class.col-lg-4]="col_lg_4" data-class="popular">
+        <div class="special-box p-0">
+          <div class="special-img">
+            @if(imageSlider){
+              <div class="slide-1">
+                <owl-carousel-o [options]="options">
+                  @for(images of details.images; track images){
+                    <ng-template carouselSlide>
+                      <div class="bg-size" [style.background-image]="'url('+ images.url +')'">
+                        <img [src]="images.url" class="img-fluid blur-up lazyload bg-img" alt="restaurant-image" style="display: none;">
+                      </div>
+                    </ng-template>
+                  }
+                </owl-carousel-o>
+              </div>
+            }@else {
+              <a href="javascript:void(0)" class="bg-size" [style.background-image]="'url('+ details.image +')'">
+                <img [src]="details.image" class="img-fluid blur-up lazyload bg-img" alt="restaurant-image" style="display: none;">
+              </a>
+            }
+          </div>
+          <div class="special-content restaurant-detail">
+            <a href="javascript:void(0)" [routerLink]="['/restaurant/single-page/classic']">
+              <h5>{{ details.restaurantName }}
+                <span [ngClass]="details.rating < 3 ? 'nagative' : 'positive' ">{{ details.rating }} <i class="fas fa-star"></i></span>
+              </h5>
+            </a>
+            <ul>
+              <li>{{ details.foodList }}</li>
+              <li>{{ details.time }}</li>
+              <li>cost {{ details.price | currencyPipe: hotelService.currency }} for two</li>
+            </ul>
+          </div>
+          @if(details.tag){
+            <div class="label-offer">{{ details.tagTitle }}</div>
+          }
+        </div>
+      </div>
+    }@empty {
+      <app-no-data [icon]="icon" [title]="title" [description]="description"></app-no-data>
+    }
+  </div>
+</div>
+
+<app-pagination [restaurantDetails]="restaurant" [paginate]="paginate" (setPage)="setPage($event)"></app-pagination>

@@ -1,0 +1,6 @@
+@for(fare of flightFare; track fare){
+  <div class="form-check collection-filter-checkbox">
+    <input type="checkbox" class="form-check-input" id="{{ fare.checkId }}" [value]="fare.checkId" [checked]="checked(fare.checkId)" (change)="applyFilter($event)">
+    <label class="form-check-label" for="{{ fare.checkId }}">{{ fare.title }}</label>
+  </div>
+}

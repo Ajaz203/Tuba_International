@@ -1,0 +1,12 @@
+<section class="section-b-space">
+  <div class="container">
+    <app-title [type]="'classic'" [titleClass]="'title-5'" [title]="'new'" [subTitle]="'some good reason'" [description]="description"></app-title>
+    <div class="row service-part">
+      @for(service of services; track service){
+        <div class="col-lg-4">
+          <app-services [service]="service" [type]="'simple'"></app-services>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,13 @@
+<div class="collection-collapse-block" [class.open]="isOpenTag">
+  <h6 class="collapse-block-title" (click)="openTag()">popular</h6>
+  <div class="collection-collapse-block-content" [ngStyle]="{ 'display' : isOpenTag == true ? 'block' : 'none'}">
+    <div class="collection-brand-filter">
+      @for(tag of restaurantPopularTags; track tag){
+        <div class="form-check collection-filter-checkbox">
+          <input type="checkbox" class="form-check-input" id="{{ tag.checkId }}" [value]="tag.checkId" [checked]="checked(tag.checkId)" (change)="applyFilter($event)">
+          <label class="form-check-label" for="{{ tag.checkId }}">{{ tag.title }}</label>
+        </div>
+      }
+    </div>
+  </div>
+</div>

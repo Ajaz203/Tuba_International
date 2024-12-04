@@ -1,0 +1,6 @@
+<div class="about menu-part" id="about" [ngClass]="{ 'tab-pane' : type == 'tab', 'page-section': type == 'slider'}">
+  @for(details of hotelAbout; track details){
+    <h6>{{ details.title }}</h6>
+    <p>{{ details.description }}</p>
+  }
+</div>

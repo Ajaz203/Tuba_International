@@ -1,0 +1,19 @@
+@if(type == 'slider'){
+  <ul class="nav">
+    @for(tab of tabs; track tab){
+      <li [class.active]="activeTab == tab.value">
+        <a class="" href="javascript:void(0)" (click)="setPage(tab.value)">{{ tab.title }}</a>
+      </li>
+    }
+  </ul>
+}
+
+@if(type == 'tab'){
+  <ul class="nav nav-tabs" id="top-tab" role="tablist">
+    @for(tab of tabs; track tab){
+      <li class="nav-item">
+        <a class="nav-link" [class.active]="activeTab == tab.value"  (click)="changeTab(tab.value)" href="javascript:void(0)">{{ tab.title }}</a>
+      </li>
+    }
+  </ul>
+}

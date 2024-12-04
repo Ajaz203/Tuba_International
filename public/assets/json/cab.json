@@ -1,0 +1,52 @@
+{
+  "cab": [
+    {
+      "id": 1,
+      "title": "Rica Cab is great taxi servicing agency !",
+      "description": "Rica Cab provides top-notch taxi services, offering convenience and reliability to passengers.",
+      "image": "assets/images/cab/video-image.jpg",
+      "price": 102,
+      "barcode": "assets/images/barcode.png"
+    },
+    {
+      "id": 2,
+      "title": "TAXI Cab is great taxi servicing agency !",
+      "description": "TAXI Cab is a top-notch taxi service, known for its punctuality and excellent customer care, ensuring a hassle-free and comfortable transportation experience.",
+      "image": "assets/images/cab/video-image1.jpg",
+      "price": 110,
+      "barcode": "assets/images/barcode.png"
+    },
+    {
+      "id": 3,
+      "title": "marseille",
+      "image": "assets/images/cab/video-image.jpg",
+      "price": 102,
+      "barcode": "assets/images/barcode.png",
+      "type": "classic"
+    },
+    {
+      "id": 4,
+      "title": "Toyota Camry",
+      "image": "assets/images/cab/1.jpg",
+      "price": 110,
+      "barcode": "assets/images/barcode.png",
+      "type": "business"
+    },
+    {
+      "id": 5,
+      "title": "Ford Mustang",
+      "image": "assets/images/cab/2.jpg",
+      "price": 120,
+      "barcode": "assets/images/barcode.png",
+      "type": "vip"
+    },
+    {
+      "id": 6,
+      "title": "Honda Civic",
+      "image": "assets/images/cab/1.jpg",
+      "price": 100,
+      "barcode": "assets/images/barcode.png",
+      "type": "classic"
+    }
+  ]
+}

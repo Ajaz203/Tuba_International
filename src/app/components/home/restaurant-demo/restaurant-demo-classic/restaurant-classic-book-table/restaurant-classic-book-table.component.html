@@ -1,0 +1,28 @@
+<section class="book-table section-b-space">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+          <app-title [type]="'basic'" [title]="'table'" [subTitle]="'book table'" [background_text]="'booked'" [rounded]="true" [textWhite]="true"></app-title>
+        <div class="table-form">
+          <form>
+            <div class="row w-100">
+              <div class="form-group col p-0">
+                <input type="text" class="form-control" placeholder="Table no.">
+                <img src="assets/images/icon/table-no.png" class="img-fluid blur-up lazyload" alt="no.icon">
+              </div>
+              <div class="col p-0">
+                <input class="form-control" placeholder="date" name="dp" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" />
+              </div>
+              <div class="form-group col p-0">
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Person">
+                <img src="assets/images/icon/user.png" class="img-fluid blur-up lazyload" alt="user-icon">
+              </div>
+            </div>
+            <a href="javascript:void(0)" class="btn btn-rounded color1" [routerLink]="['/restaurant/booking/checkout']">book table</a>
+          </form>
+        </div>
+        <h3 class="detail">Don't wait for tasty food !!</h3>
+      </div>
+    </div>
+  </div>
+</section>

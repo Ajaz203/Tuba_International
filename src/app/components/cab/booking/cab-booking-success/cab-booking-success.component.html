@@ -1,0 +1,21 @@
+<app-header [headerClass]="'light_header'"></app-header>
+
+<app-breadcrumbs [type]="'cab'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child"></app-breadcrumbs>
+
+<section class="section-b-space success-section">
+  <div class="container">
+    <div class="row success-detail mt-0">
+      <div class="col">
+        <img src="assets/images/cab/car/2.png" class="img-fluid blur-up lazyload" alt="cab-success">
+        <h2>Payment Successful ! get ready to ride</h2>
+        <p>thank you for you payment. we have received your payment successfully. your transaction ID is
+          "SHJG12155215", you will get an email invoice soon!</p>
+        <button type="submit" class="btn btn-solid color1">download invoice</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout [loaderType]="'basic'"></app-layout>

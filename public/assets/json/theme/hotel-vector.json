@@ -1,0 +1,95 @@
+{
+  "topOffers": [
+    {
+      "id": 1,
+      "title": "hotel booking",
+      "description": "Avail Hot Deals On Hotel Booking To Any Place",
+      "image": "assets/images/offer/1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "upto $400",
+      "description": "instant discount on domestic hotels",
+      "image": "assets/images/offer/2.jpg"
+    },
+    {
+      "id": 3,
+      "title": "holiday booking",
+      "description": "weekend sale for holiday bookings",
+      "image": "assets/images/offer/3.jpg"
+    },
+    {
+      "id": 4,
+      "title": "food order",
+      "description": "complimentary breakfast. use code RICAFOOD",
+      "image": "assets/images/offer/4.jpg"
+    },
+    {
+      "id": 5,
+      "title": "50% cashback",
+      "description": "50% cashback on every cab bookings",
+      "image": "assets/images/offer/5.jpg"
+    }
+  ],
+  "popularDestination": [
+    {
+      "id": 1,
+      "countryName": "south africa",
+      "image": "assets/images/tour/vector/8.jpg",
+      "price": 5000
+    },
+    {
+      "id": 2,
+      "countryName": "india",
+      "image": "assets/images/tour/vector/7.jpg",
+      "price": 10000
+    },
+    {
+      "id": 3,
+      "countryName": "australia",
+      "image": "assets/images/tour/vector/9.jpg",
+      "price": 5000
+    },
+    {
+      "id": 4,
+      "countryName": "europe",
+      "image": "assets/images/tour/vector/10.jpg",
+      "price": 15000
+    },
+    {
+      "id": 5,
+      "countryName": "america",
+      "image": "assets/images/tour/vector/11.jpg",
+      "price": 5000
+    },
+    {
+      "id": 6,
+      "countryName": "japan",
+      "image": "assets/images/tour/vector/12.jpg",
+      "price": 10000
+    }
+  ],
+  "booking": [
+    {
+      "id": 1,
+      "title": "explore",
+      "image": "assets/images/tour/vector/13.png"
+    },
+    {
+      "id": 2,
+      "title": "Get Quotes",
+      "image": "assets/images/tour/vector/14.png"
+    },
+    {
+      "id": 3,
+      "title": "customize",
+      "image": "assets/images/tour/vector/15.png"
+    },
+    {
+      "id": 4,
+      "title": "book & enjoy",
+      "image": "assets/images/tour/vector/16.png"
+    }
+  ],
+  "blog": [5,6,7]
+}

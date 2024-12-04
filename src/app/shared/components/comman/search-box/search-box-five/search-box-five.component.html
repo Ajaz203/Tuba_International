@@ -1,0 +1,33 @@
+<form>
+  <div class="form-group">
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="from">
+    <img src="assets/images/icon/from.png" class="img-fluid blur-up lazyload" alt="from-icon">
+  </div>
+  <div class="form-group">
+    <input type="email" class="form-control" id="exampleInputEmail" placeholder="to">
+    <img src="assets/images/icon/location.png" class="img-fluid blur-up lazyload" alt="location-icon">
+  </div>
+  <div class="form-group row">
+    <div class="col">
+      <input class="form-control" placeholder="Date" name="dp" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" />
+    </div>
+    <div class="col">
+      <input class="form-control" placeholder="Time" type="text" [owlDateTime]="dt3" [owlDateTimeTrigger]="dt3">
+      <owl-date-time [pickerType]="'timer'" #dt3></owl-date-time>
+    </div>
+  </div>
+</form>
+<form class="radio-form">
+  <input id="radio-1" type="radio" name="gender" value="in city" checked>
+  <label for="radio-1" class="radio-label">in city</label>
+  <input id="radio-2" type="radio" name="gender" value="out of city">
+  <label for="radio-2" class="radio-label">out of city</label>
+</form>
+<div class="car-select">
+  <ul>
+    <li (click)="active('classic')" [class.active]="activeValue == 'classic'">classic</li>
+    <li (click)="active('suv')" [class.active]="activeValue == 'suv'">suv</li>
+    <li (click)="active('luxury')" [class.active]="activeValue == 'luxury'">luxury</li>
+  </ul>
+  <a href="javascript:void(0)" class="btn btn-solid" [routerLink]="['/cab/booking/booking']">book now</a>
+</div>

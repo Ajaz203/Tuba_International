@@ -1,0 +1,63 @@
+<app-header [headerClass]="'light_header'"></app-header>
+
+<section class="not-found order-food-section pt-0 bg-size" [style.background-image]="'url(assets/images/restaurant/background/1.jpg)'">
+  <img src="assets/images/restaurant/background/1.jpg" class="bg-img img-fluid blur-up lazyload" alt="background-image" style="display: none;">
+</section>
+
+<section class="single-section small-section bg-inner">
+  <div class="container" data-sticky_parent>
+    <div class="row">
+      <div class="col-xl-9 col-lg-8">
+        <div class="checkout-process">
+          <div class="checkout-box">
+            <h4 class="title">delivery address:</h4>
+            <div class="sub-title">
+              <h5>saved address</h5>
+              <a href="javascript:void(0)" class="add-new" (click)="openModal(0,'add')">+ add new address</a>
+            </div>
+            <div class="row address-sec">
+              @for(items of RestaurantAddress; track items){
+                <div class="select-box col-xl-4 col-md-6" [class.active]="items.active">
+                  <div class="address-box">
+                    <div class="top">
+                      <h6>{{ items.name }} <span>{{ items.tag }}</span></h6>
+                    </div>
+                    <div class="middle">
+                      <div class="address">
+                        @for(address of items.address; track address){
+                          <p>{{ address.data }}</p>
+                        }
+                      </div>
+                      <div class="number">
+                        <p>mobile: <span>{{ items.mobile }}</span></p>
+                      </div>
+                    </div>
+                    <div class="bottom">
+                      <a href="javascript:void(0)" class="bottom_btn" (click)="openModal(items.id,'edit')">edit</a>
+                      <a href="javascript:void(0)" class="bottom_btn">remove</a>
+                    </div>
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+          <div class="checkout-box">
+            <h4 class="title">payment:</h4>
+            <app-booking></app-booking>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-4 checkout-cart">
+        <div class="sticky-cls-top">
+          @if(restaurantDetails){
+            <app-restaurant-cart-items [restaurantOrders]="restaurantDetails.restaurantOrders" [backButton]="false"></app-restaurant-cart-items>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout [loaderType]="'simple'"></app-layout>

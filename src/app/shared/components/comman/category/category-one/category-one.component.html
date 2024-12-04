@@ -1,0 +1,39 @@
+@if(category){
+  <owl-carousel-o [options]="options">
+    @for(category of category; track category){
+      <ng-template carouselSlide>
+        <a href="javascript:void(0)" [routerLink]="['/home/tour/treading']">
+          <div class="category-box">
+            <div class="img-category">
+              <div class="side-effect"></div>
+              <div class="bg-size" [style.background-image]="'url(' + category.categoryImage + ')'">
+                <img [src]="category.categoryImage" alt="category-image" class="img-fluid blur-up lazyload bg-img" style="display: none;">
+              </div>
+              <div class="top-bar">
+                <span class="offer">offer</span>
+                <h5><del>{{ category.price | currencyPipe: hotelService.currency }}</del> {{ category.discountPrice | currencyPipe: hotelService.currency }}</h5>
+              </div>
+              <div class="like-cls">
+                <i class="fas fa-heart"><span class="effect"></span></i>
+              </div>
+            </div>
+            <div class="content-category">
+              <div class="top">
+                <h3>{{ category.categoryTitle }}</h3>
+                <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+              </div>
+              <p>{{ category.categoryDescription }}</p>
+              <h6>{{ category.days }} days | {{ category.night }} nights <span> {{ category.person }} person</span></h6>
+            </div>
+          </div>
+        </a>
+      </ng-template>
+    }
+  </owl-carousel-o>
+}

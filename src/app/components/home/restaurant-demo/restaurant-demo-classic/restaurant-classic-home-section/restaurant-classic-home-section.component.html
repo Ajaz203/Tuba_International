@@ -1,0 +1,40 @@
+<section class="home_section restaurant-home-section p-0">
+  <div class="home bg-size" [style.background-image]="'url(assets/images/restaurant-bg.png)'">
+    <img src="assets/images/restaurant-bg.png" class="img-fluid blur-up lazyload bg-img" alt="bg-image" style="display: none;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 ">
+          <div class="smoke-effect">
+            <div class="vapour">
+              <span style="--i:1"></span>
+              <span style="--i:3"></span>
+              <span style="--i:16"></span>
+              <canvas style="display:none" width="1862" height="948"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="home-content food_content">
+            <div class="shadow-none">
+              <h4>2024 Special</h4>
+              <h1>bite me !</h1>
+              <div class="book-table section-b-space p-0 single-table">
+                <div class="table-form">
+                  <form>
+                    <div class="row w-100">
+                      <div class="form-group col p-0">
+                        <input type="text" class="form-control" placeholder="Person">
+                        <img src="assets/images/icon/user.png" class="img-fluid blur-up lazyload" alt="user-icon">
+                      </div>
+                    </div>
+                    <a href="javascript:void(0)" class="btn btn-rounded color1" [routerLink]="['/restaurant/booking/checkout']">book table</a>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

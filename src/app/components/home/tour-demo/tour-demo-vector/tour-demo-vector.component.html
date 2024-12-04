@@ -1,0 +1,21 @@
+<app-header [headerClass]="''" [couponCode]="true" [setting]="false"></app-header>
+
+<app-tour-vector-home-section  r-vector-home-section></app-tour-vector-home-section>
+
+@if(tourVector){
+  <app-tour-vector-explore-themes [themes]="tourVector.exploreThemes"></app-tour-vector-explore-themes>
+
+  <app-tour-vector-booking [booking]="tourVector.booking"></app-tour-vector-booking>
+
+  <app-tour-vector-popular-destination [popularDestination]="tourVector.popularDestination"></app-tour-vector-popular-destination>
+
+  <app-tour-vector-banner></app-tour-vector-banner>
+
+  <app-tour-vector-blog [blogs]="tourVector.blog"></app-tour-vector-blog>
+}
+
+<app-tour-vector-subscribe></app-tour-vector-subscribe>
+
+<app-footer [places]="true"></app-footer>
+
+<app-layout [loaderType]="'basic'"></app-layout>

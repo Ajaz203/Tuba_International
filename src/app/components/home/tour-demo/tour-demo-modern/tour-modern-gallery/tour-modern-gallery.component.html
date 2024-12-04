@@ -1,0 +1,17 @@
+<section class="gallery-section" [class.pt-0]="sectionClass">
+  @if(title){
+    <div class="title-3">
+      <span class="title-label">our</span>
+      <h2>gallary<span>gallary</span></h2>
+    </div>
+  }
+  <div class="container-fluid p-0">
+    <div class="row zoom-gallery m-0">
+      @for(image of gallery; track image){
+        <div class="{{ image.colClass }}">
+          <app-gallery [type]="'simple'" [images]="image.images"></app-gallery>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,74 @@
+@if(responsiveLatestFilter == true){
+  <a href="javascript:void(0)" class="mobile-filter border-top-0" (click)="openResponsiveFilter()">
+    <h5>latest filter</h5>
+    <img src="assets/images/icon/adjust.png" class="img-fluid blur-up lazyload" alt="filter-icon">
+  </a>
+}
+
+<!-- Tags  -->
+<ul class="product-filter-tags">
+  <li class="me-1">
+    @if(paramsTag.length){
+      @for(tag of paramsTag; track tag){
+        @if(tag){
+          <a href="javascript:void(0)" class="filter_tag">
+            {{ tag }}
+            <button type="button" class="btn-close" aria-label="Close" (click)="removeTag(tag)"></button>
+          </a>
+        }
+      }
+    }
+    @if(minPrice && maxPrice != 0){
+      <a href="javascript:void(0)" class="filter_tag">
+        Price : {{ minPrice | currencyPipe: hotelService.currency }} - {{ maxPrice | currencyPipe: hotelService.currency }}
+      </a>
+    }
+  </li>
+</ul>
+
+<div class="flight-detail-sec cab-detail-sec" [ngClass]="{ 'product-wrapper-grid special-section grid-box' : marginClass}">
+  <div class="detail-bar">
+    @for(details of cabDetails; track details){
+      <div class="detail-wrap wow fadeInUp">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="logo-sec">
+              <img [src]="details.carImage" class="img-fluid blur-up lazyload" alt="cab-image">
+              <span class="title">{{ details.carName }}</span>
+              <label>({{ details.carType }})</label>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="car-details">
+              <ul>
+                <li><img src="assets/images/cab/icon/seat.png" class="img-fluid blur-up lazyload" alt="seat-icon"> {{ details.passenger }} seater</li>
+                <li><img src="assets/images/cab/icon/luggage.png" class="img-fluid blur-up lazyload" alt="luggage-icon"> {{ details.luggage }} luggage</li>
+              </ul>
+              <ul>
+                <li><img src="assets/images/cab/icon/snowflake.png" class="img-fluid blur-up lazyload" alt="snowflake-icon"> AC</li>
+                <li><img src="assets/images/cab/icon/settings.png" class="img-fluid blur-up lazyload" alt="setting-icon"> {{ details.gearbox }}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="price">
+              <div>
+                <h4>{{ details.price | currencyPipe: hotelService.currency }}</h4>
+                <h6>fare/km : <span>{{ details.fare | currencyPipe: hotelService.currency }}</span></h6>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="book-flight">
+              <a href="javascript:void(0)" class="btn btn-solid color1 " [routerLink]="['/cab/booking/booking']">book now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    }@empty {
+      <app-no-data [icon]="icon" [title]="title" [description]="description"></app-no-data>
+    }
+  </div>
+</div>
+
+<app-pagination [cabDetails]="cabDetails" [paginate]="paginate" (setPage)="setPage($event)"></app-pagination>

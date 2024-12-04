@@ -1,0 +1,29 @@
+@for(details of userProfile; track details){
+  <div class="dashboard-box">
+    <div class="dashboard-title">
+      <h4>{{ details.title }}</h4>
+      @if(details.modal && details.modalValue){
+        <span (click)="openModal(details.modalValue)">edit</span>
+      }
+    </div>
+    <div class="dashboard-detail">
+      <ul>
+        @for(profileData of details.details; track profileData){
+          <li>
+            <div class="details">
+              <div class="left">
+                <h6>{{ profileData.title }}</h6>
+              </div>
+              <div class="right">
+                <h6 [innerHTML]="profileData.value"></h6>
+                @if(profileData.modal && profileData.modalValue){
+                  <span (click)="openModal(profileData.modalValue)">edit</span>
+                }
+              </div>
+            </div>
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+}

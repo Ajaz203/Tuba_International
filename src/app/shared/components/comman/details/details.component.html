@@ -1,0 +1,39 @@
+@if(type == 'hotel'){
+  <app-hotel-details [selectedTabValue]="selectedTabValue" [gridType]="gridType" [responsiveLatestFilter]="responsiveLatestFilter" [mapFilter]="mapFilter" [imageSlider]="imageSlider" [noSidebar]="noSidebar"></app-hotel-details>
+}
+
+@if(type == 'hotel-list'){
+  <app-hotel-list-details [selectedTabValue]="selectedTabValue" [responsiveLatestFilter]="responsiveLatestFilter" [imageSlider]="imageSlider" [thumbnailImages]="thumbnailImages" [description]="description" [thumbnailVideo]="thumbnailVideo"></app-hotel-list-details>
+}
+
+@if(type == 'googleMap'){
+  <app-google-map></app-google-map>
+}
+
+@if(type == 'leafletMap'){
+  <app-leaflet-map></app-leaflet-map>
+}
+
+@if(type == 'tour'){
+  <app-tour-details [selectedTabValue]="selectedTabValue" [gridType]="gridType" [responsiveLatestFilter]="responsiveLatestFilter" [includeText]="includeText" [imageSlider]="imageSlider" [noSidebar]="noSidebar"></app-tour-details>
+}
+
+@if(type == 'tour-list'){
+  <app-tour-list-details [selectedTabValue]="selectedTabValue" [responsiveLatestFilter]="responsiveLatestFilter" [imageSlider]="imageSlider" [thumbnailImages]="thumbnailImages" [description]="description" [thumbnailVideo]="thumbnailVideo"></app-tour-list-details>
+}
+
+@if(type == 'flight-list'){
+  <app-flight-list-details [calender]="calender" [flightClass]="flightClass" [roundTrip]="roundTrip"></app-flight-list-details>
+}
+
+@if(type == 'cab-list'){
+  <app-cab-list-details [marginClass]="marginClass" [responsiveLatestFilter]="responsiveLatestFilter" [noSidebar]="noSidebar"></app-cab-list-details>
+}
+
+@if(type == 'cab'){
+  <app-cab-details [selectedTabValue]="selectedTabValue" [gridType]="gridType" [responsiveLatestFilter]="responsiveLatestFilter" [imageSlider]="imageSlider" [noSidebar]="noSidebar"></app-cab-details>
+}
+
+@if(type == 'restaurant'){
+  <app-restaurant-detail [selectedTabValue]="selectedTabValue" [gridType]="gridType" [responsiveLatestFilter]="responsiveLatestFilter" [imageSlider]="imageSlider"></app-restaurant-detail>
+}

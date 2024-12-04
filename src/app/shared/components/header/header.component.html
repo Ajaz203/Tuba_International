@@ -1,0 +1,53 @@
+<header [ngClass]="headerClass">
+  <div [ngClass]="containerFluid ? 'container-fluid' : 'container'">
+    <div class="row">
+      <div class="col">
+        <div class="menu">
+          <div class="brand-logo">
+            <a href="javascript:void(0)">
+              <img [src]="logo" alt="logo" class="img-fluid blur-up lazyload">
+              <!-- <img src="/assets/imges2/tuba-high-logo.png" alt=""> -->
+            </a>
+          </div>
+          <nav>
+            <app-menu></app-menu>
+          </nav>
+          @if(couponCode){
+          <div class="coupon-box">
+            <h6>Coupen Code :- DX4512</h6>
+          </div>
+          }
+          @if(setting){
+          <ul class="header-right">
+            <li class="front-setting">
+              <!-- <app-currency></app-currency> -->
+            </li>
+            <li class="front-setting">
+              <!-- <app-language></app-language> -->
+            </li>
+            <li class="user" [ngClass]="userClass">
+              <app-profile></app-profile>
+            </li>
+            <li class="setting">
+              <a href="javascript:void(0)" (click)="openMenu()">
+                <i class="fas fa-cog"></i>
+              </a>
+              <ul class="setting-open" [class.show]="isOpen">
+                <li class="front-setting">
+                  <!-- <app-currency></app-currency> -->
+                </li>
+                <li class="front-setting">
+                  <!-- <app-language></app-language> -->
+                </li>
+              </ul>
+            </li>
+          </ul>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+  @if(searchTab){
+    <app-search-tab (searchBox)="getValue($event)"></app-search-tab>
+  }
+</header>

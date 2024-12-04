@@ -1,0 +1,98 @@
+{
+  "hotelRooms": [
+    {
+      "id": 1,
+      "title": "Deluxe Suite",
+      "description": "Experience luxury in our Deluxe Suite, featuring spacious accommodations, a private balcony, and stunning city views.",
+      "url": "assets/images/hotel/room/1.jpg",
+      "price": 40,
+      "discountPrice": 35,
+      "days": 5,
+      "night": 4,
+      "subTitle": "family",
+      "subTitle2": "room",
+      "barcode": "assets/images/barcode.png"
+    },
+    {
+      "id": 2,
+      "title": "Standard Double Room",
+      "description": "Cozy and inviting, our Standard Room offers a comfortable retreat with modern amenities for a relaxing stay.",
+      "url": "assets/images/hotel/room/2.jpg",
+      "price": 30,
+      "discountPrice": 25,
+      "days": 5,
+      "night": 4,
+      "subTitle": "family",
+      "subTitle2": "room",
+      "barcode": "assets/images/barcode.png"
+    },
+    {
+      "id": 3,
+      "title": "Executive Business Suite",
+      "description": "Unwind in our Superior Room, designed for both comfort and style, with a plush bed and elegant decor.",
+      "url": "assets/images/hotel/room/3.jpg",
+      "price": 25,
+      "discountPrice": 20,
+      "days": 5,
+      "night": 4,
+      "subTitle": "family",
+      "subTitle2": "room",
+      "barcode": "assets/images/barcode.png"
+    },
+    {
+      "id": 4,
+      "title": "Family-friendly Suite",
+      "description": "Elevate your stay in our Executive Suite, boasting a separate living area, premium furnishings, and personalized service.",
+      "url": "assets/images/hotel/room/2.jpg",
+      "price": 24,
+      "discountPrice": 20,
+      "days": 5,
+      "night": 4,
+      "subTitle": "family",
+      "subTitle2": "room",
+      "barcode": "assets/images/barcode.png"
+    }
+  ],
+  "hotel": [
+    {
+      "id": 1,
+      "hotelName": "the venetian",
+      "location": "New York",
+      "imageURL": "assets/images/hotel/room/16.jpg",
+      "price": 1300,
+      "discountPrice": 1245,
+      "totalReview": 26412,
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "hotelName": "Starlight Grand Hotel",
+      "location": "New York",
+      "imageURL": "assets/images/hotel/room/17.jpg",
+      "price": 1350,
+      "discountPrice": 1250,
+      "totalReview": 25000,
+      "rating": 4
+    },
+    {
+      "id": 3,
+      "hotelName": "Ocean Breeze Resort",
+      "location": "Hawaii",
+      "imageURL": "assets/images/hotel/room/18.jpg",
+      "price": 1200,
+      "discountPrice": 1175,
+      "totalReview": 20000,
+      "rating": 3
+    },
+    {
+      "id": 4,
+      "hotelName": "Mountain View Lodge",
+      "location": "Colorado",
+      "imageURL": "assets/images/hotel/room/19.jpg",
+      "price": 1375,
+      "discountPrice": 1325,
+      "totalReview": 21750,
+      "rating": 4
+    }
+  ]
+}

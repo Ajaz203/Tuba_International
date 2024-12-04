@@ -1,0 +1,23 @@
+<form class="wallet-section">
+  <h6>select popular banks</h6>
+  <div class="row">
+    @for(details of netBankingDetails; track details){
+      <div class="form-check col-md-6">
+        <input class="form-check-input radio_animated" type="radio" name="exampleRadios1" id="{{ details.radioId }}" value="{{ details.radioValue }}" [checked]="details.checked">
+        <label class="form-check-label" for="{{ details.radioId }}">
+          {{ details.title }}
+        </label>
+      </div>
+    }
+  </div>
+  <div class="form-group mt-3">
+    <label for="net-b">select bank</label>
+    <select id="net-b" class="form-control">
+      <option selected>Choose Bank...</option>
+      <option>...</option>
+    </select>
+  </div>
+  <div class="payment-btn">
+    <button type="button" class="btn btn-solid color1">make payment</button>
+  </div>
+</form>

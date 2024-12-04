@@ -1,0 +1,52 @@
+<div class="modal-content single-section enquiry-modal">
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Book this tour</h5>
+    <button type="button" class="btn-close" (click)="closeModal()"></button>
+  </div>
+  <div class="modal-body single-sidebar mt-0">
+    <div class="book-btn-section pt-0 border-top-0">
+      <div class="detail-top">
+        <input type="text" id="first-Name" class="form-control" placeholder="First name">
+        <input type="email" class="form-control" placeholder="Enter your email">
+        <input type="number" class="form-control" placeholder="Phone Number">
+      </div>
+      <div class="rooms-section" (clickOutside)="clickOutside()">
+        <input type="text" class="form-control open-select" placeholder="rooms & guests" (click)="open()">
+        <div class="selector-box" [class.show]="isShow">
+          <div class="room-cls">
+            <label class="title_room">room 1</label>
+            <div class="qty-box">
+              <label>adult</label>
+              <div class="input-group">
+                <button type="button" class="btn quantity-left-minus" (click)="changeValue('adult',-1)"> - </button>
+                <input type="text" name="quantity" class="form-control qty-input input-number" [value]="adults">
+                <button type="button" class="btn quantity-right-plus" (click)="changeValue('adult',1)">+</button>
+              </div>
+            </div>
+            <div class="qty-box">
+              <label>children</label>
+              <div class="input-group">
+                <button type="button" class="btn quantity-left-minus" (click)="changeValue('children',-1)"> - </button>
+                <input type="text" name="quantity" class="form-control qty-input input-number" [value]="child">
+                <button type="button" class="btn quantity-right-plus" (click)="changeValue('children',1)"> + </button>
+              </div>
+            </div>
+          </div>
+          <div class="bottom-part">
+            <a href="javascript:void(0)" class="add-room">add room +</a>
+            <a href="javascript:void(0)" class="btn">apply</a>
+          </div>
+        </div>
+      </div>
+      <div class="selector">
+        <select class="mt-0">
+          <option value="" disabled selected>Select your date</option>
+          <option value="saab">15 march, 2019</option>
+          <option value="saab">27 August, 2019</option>
+          <option value="audi">20 December, 2019</option>
+        </select>
+      </div>
+      <a href="javascript:void(0)" class="btn btn-rounded btn-sm color1">book this now</a>
+    </div>
+  </div>
+</div>

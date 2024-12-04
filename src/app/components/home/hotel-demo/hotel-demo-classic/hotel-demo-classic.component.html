@@ -1,0 +1,31 @@
+<app-header [headerClass]="'overlay-black'"></app-header>
+
+@if(homeSectionData){
+  <app-hotel-classic-home-section [homeSection]="homeSectionData.homeSection"></app-hotel-classic-home-section>
+
+  <app-hotel-classic-about-hotel [hotelImages]="homeSectionData.hotelImages"></app-hotel-classic-about-hotel>
+
+  @if(specialRooms){
+    <app-hotel-classic-ticket-section [id]="homeSectionData.ticketSection" [ticketSection]="specialRooms"></app-hotel-classic-ticket-section>
+  }
+
+  <app-hotel-classic-gallery [gallery]="homeSectionData.gallery"></app-hotel-classic-gallery>
+
+  @if(specialRooms){
+    <app-hotel-classic-special-rooms [id]="homeSectionData.specialRooms" [specialRooms]="specialRooms"></app-hotel-classic-special-rooms>
+  }
+
+  <app-hotel-classic-video></app-hotel-classic-video>
+
+  <app-hotel-classic-service [id]="homeSectionData.service"></app-hotel-classic-service>
+
+  <app-hotel-classic-subscribe></app-hotel-classic-subscribe>
+
+  <app-hotel-classic-testimonial [id]="homeSectionData.testimonial"></app-hotel-classic-testimonial>
+
+  <app-hotel-classic-social-gallery [socialGallery]="homeSectionData.socialGallery"></app-hotel-classic-social-gallery>
+}
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout [loaderType]="'basic'"></app-layout>

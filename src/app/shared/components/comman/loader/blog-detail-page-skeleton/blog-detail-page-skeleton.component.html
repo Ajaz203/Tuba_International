@@ -1,0 +1,26 @@
+<div class="skeleton_loader" [class.loader-hide]="loaderHide">
+ <app-menu-skeleton [skeletonType]="skeletonType"></app-menu-skeleton>
+
+  <section class="breadcrumb-section pt-0">
+  </section>
+
+  <section class="section-b-space bg-white">
+    <div class="container">
+      <div class="row">
+        @if(filterType == 'left'){
+          <div class="col-lg-3">
+            <app-blog-filter-skeleton></app-blog-filter-skeleton>
+          </div>
+        }
+        <div [class.col-lg-12]="!filterType" [class.col-lg-9]="filterType">
+          <app-blog-detail-page-data-skeleton></app-blog-detail-page-data-skeleton>
+        </div>
+        @if(filterType == 'right'){
+          <div class="col-lg-3">
+            <app-blog-filter-skeleton></app-blog-filter-skeleton>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+</div>

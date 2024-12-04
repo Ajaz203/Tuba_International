@@ -1,0 +1,50 @@
+<section class="pt-0 flight-detail  zig-zag-effect">
+  <div class="cloud section-b-space section-t-space bg-size" [style.background-image]="'url(assets/images/flights/cloud.png)'">
+    <img src="assets/images/flights/cloud.png" alt="cloud-image" class="bg-img" style="display: none;">
+    <div class="container">
+    <app-title [type]="'standard'" [title]="'top destination...'" [subTitle]="'around the world'" [description]="description"></app-title>
+      <div class="row">
+        <div class="col-12">
+          @for(details of topDestination; track details){
+            <div class="flight-box">
+              <div class="logo-section">
+                <img [src]="details.image" class="img-fluid blur-up lazyload" alt="destination-image">
+              </div>
+              <div class="middle-section">
+                <div class="flight-5 no-arrow">
+                  @if(details.flights){
+                    <owl-carousel-o [options]="options">
+                      @for(flight of details.flights; track flight){
+                        <ng-template carouselSlide>
+                          <div>
+                            <a href="javascript:void(0)" [routerLink]="['/flight/listing/top-filter']">
+                              <div class="flight-info">
+                                <div>
+                                  <h4>{{ flight.country }}</h4>
+                                  <h5>from {{ flight.price | currencyPipe: hotelService.currency }}</h5>
+                                  <i class="fas fa-plane"></i>
+                                  <h6>{{ flight.airlines }} airlines</h6>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </ng-template>
+                      }
+                    </owl-carousel-o>
+                  }
+                </div>
+              </div>
+              <div class="name-section">
+                <div>
+                  <h5>{{ details.title }}</h5>
+                  <h6>flights</h6>
+                  <a href="javascript:void(0)" class="btn btn-rounded btn-sm color1"  [routerLink]="['/flight/listing/top-filter']">check all</a>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

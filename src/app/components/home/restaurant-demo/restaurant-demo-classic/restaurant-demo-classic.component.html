@@ -1,0 +1,35 @@
+<app-header [headerClass]="'overlay-black'"></app-header>
+
+<app-restaurant-classic-home-section></app-restaurant-classic-home-section>
+
+@if(restaurantClassic){
+  @if(category){
+    <app-restaurant-classic-category [id]="restaurantClassic.category" [category]="category"></app-restaurant-classic-category>
+  }
+
+  <app-restaurant-classic-our-restaurant></app-restaurant-classic-our-restaurant>
+
+  <app-restaurant-classic-breakfast [breakfast]="restaurantClassic.breakfast"></app-restaurant-classic-breakfast>
+
+  <app-restaurant-classic-service [id]="restaurantClassic.service"></app-restaurant-classic-service>
+
+  <app-restaurant-classic-happy-hours></app-restaurant-classic-happy-hours>
+
+  @if(category){
+    <app-restaurant-classic-special-dishes [id]="restaurantClassic.dishes" [dishes]="category"></app-restaurant-classic-special-dishes>
+  }
+
+  <app-restaurant-classic-banner></app-restaurant-classic-banner>
+
+  <app-restaurant-classic-meal [id]="restaurantClassic.meal"></app-restaurant-classic-meal>
+
+  <app-restaurant-classic-book-table></app-restaurant-classic-book-table>
+
+  <app-restaurant-classic-testimonial [id]="restaurantClassic.testimonial"></app-restaurant-classic-testimonial>
+
+  <app-restaurant-classic-social-gallery [socialGallery]="restaurantClassic.socialGallery"></app-restaurant-classic-social-gallery>
+}
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout [loaderType]="'simple'"></app-layout>

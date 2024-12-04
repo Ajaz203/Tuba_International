@@ -1,0 +1,100 @@
+{
+  "homeSection": [
+    {
+      "id": 1,
+      "title": "Tuba",
+      "subTitle": "Tuba International Travel",
+      "url": "assets/images/hotel-bg.jpg"
+    },
+    {
+      "id": 2,
+      "title": "rica",
+      "subTitle": "rica hotel",
+      "url": "assets/images/hotel-bg.jpg"
+    },
+    {
+      "id": 3,
+      "title": "rica",
+      "subTitle": "rica hotel",
+      "url": "assets/images/hotel-bg.jpg"
+    }
+  ],
+  "hotelImages": [
+    {
+      "id": 1,
+      "url": "assets/images/mix/emergency/3.jpg",
+      "title": "01"
+    },
+    {
+      "id": 2,
+      "url": "assets/images/mix/emergency/4.jpg",
+      "title": "02"
+    },
+    {
+      "id": 3,
+      "url": "assets/images/mix/emergency/5.jpg",
+      "title": "03"
+    }
+   ],
+  "ticketSection": [1,2],
+  "gallery": [
+    {
+      "id": 1,
+      "title": "2 nights gateway promotion package",
+      "url": "assets/images/hotel/gallery/1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "1 nights beach promotion package",
+      "url": "assets/images/hotel/gallery/2.jpg"
+    },
+    {
+      "id": 3,
+      "title": "free lunch for 3 days package",
+      "url": "assets/images/hotel/gallery/3.jpg"
+    },
+    {
+      "id": 4,
+      "title": "2 nights gateway promotion package",
+      "url": "assets/images/hotel/gallery/4.jpg"
+    },
+    {
+      "id": 5,
+      "title": "2 nights gateway promotion package",
+      "url": "assets/images/hotel/gallery/5.jpg"
+    }
+  ],
+  "specialRooms": [1,2,3,4],
+  "service": [1,2,3,4,5,6],
+  "testimonial": [1,2,3],
+  "socialGallery": [
+    {
+      "id": 1,
+      "url": "assets/images/instagram/7.jpg"
+    },
+    {
+      "id": 2,
+      "url": "assets/images/instagram/8.jpg"
+    },
+    {
+      "id": 3,
+      "url": "assets/images/instagram/9.jpg"
+    },
+    {
+      "id": 4,
+      "url": "assets/images/instagram/10.jpg"
+    },
+    {
+      "id": 5,
+      "url": "assets/images/instagram/11.jpg"
+    },
+    {
+      "id": 6,
+      "url": "assets/images/instagram/12.jpg"
+    },
+    {
+      "id": 7,
+      "url": "assets/images/instagram/9.jpg"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title">change email address</h5>
+    <button type="button" class="btn-close" (click)="closeModal()"> </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="row">
+        <div class="form-group col-12">
+          <label for="old">old email</label>
+          <input type="email" class="form-control" id="old">
+        </div>
+        <div class="form-group col-12">
+          <label for="new">enter new email</label>
+          <input type="email" class="form-control" id="new">
+        </div>
+        <div class="form-group col-12">
+          <label for="comfirm">confirm your email</label>
+          <input type="email" class="form-control" id="comfirm">
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+    <button type="button" class="btn btn-solid">Save changes</button>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<section class="home_section  p-0">
+  <div class="classic-slider no-arrow">
+    <owl-carousel-o [options]="options">
+      @for(sliderData of sliderData; track sliderData){
+        <ng-template carouselSlide [dotContent]="sliderData.value">
+          <div class="slide">
+            <div class="home ripple-effect" [style.background-image]="'url('+sliderData.image+')'">
+              <img [src]="sliderData.image" class="img-fluid blur-up lazyload bg-img" alt="background-image" style="display: none;">
+            </div>
+          </div>
+        </ng-template>
+      }
+    </owl-carousel-o>
+  </div>
+  <div class="offer-text">
+    <h6>
+      <span>s</span>
+      <span>t</span>
+      <span>a</span>
+      <span>r</span>
+      <span>t</span>
+      <span></span>
+      <span>y</span>
+      <span>o</span>
+      <span>u</span>
+      <span>r</span>
+      <span></span>
+      <span>j</span>
+      <span>o</span>
+      <span>u</span>
+      <span>n</span>
+      <span>e</span>
+      <span>y</span>
+    </h6>
+  </div>
+</section>

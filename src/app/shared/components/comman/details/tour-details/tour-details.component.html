@@ -1,0 +1,94 @@
+@if(responsiveLatestFilter){
+  <a href="javascript:void(0)" class="mobile-filter border-top-0" (click)="openResponsiveFilter()">
+    <h5>latest filter</h5>
+    <img src="assets/images/icon/adjust.png" class="img-fluid blur-up lazyload" alt="filter-icon">
+  </a>
+}
+<!-- Tags  -->
+<ul class="product-filter-tags">
+  <li class="me-1">
+    @if(tags.length){
+      @for(tag of tags; track tag){
+        @if(tag){
+          <a href="javascript:void(0)" class="filter_tag">
+            {{ tag }}
+            <button type="button" class="btn-close" aria-label="Close" (click)="removeTag(tag)"></button>
+          </a>
+        }
+      }
+    }
+    @if(minPrice && maxPrice != 0){
+      <a href="javascript:void(0)" class="filter_tag">
+        Price : {{ minPrice | currencyPipe: hotelService.currency }} - {{ maxPrice | currencyPipe: hotelService.currency }}
+      </a>
+    }
+  </li>
+</ul>
+
+<div class="product-wrapper-grid special-section grid-box" >
+  <div class="row  content grid">
+    @for(details of tour; track details){
+      <div class="popular grid-item wow fadeInUp" [class.col-sm-6]="col_sm_6" [class.col-xl-4]="col_xl_4" [class.col-xl-3]="col_xl_3" [class.col-lg-4]="col_lg_4">
+        <div class="special-box p-0">
+          <div class="special-img">
+            @if(imageSlider){
+              <div class="slide-1">
+                <owl-carousel-o [options]="options">
+                  @for(image of details.images; track image){
+                    @if(image.fileType == 'image'){
+                      <ng-template carouselSlide>
+                        <div class="bg-size" [style.background-image]="'url('+ image.url +')'">
+                          <img [src]="image.url" class="img-fluid blur-up lazyload" alt="destination-image" style="display: none;">
+                        </div>
+                      </ng-template>
+                    }
+                  }
+                </owl-carousel-o>
+              </div>
+            }@else {
+              <a href="javascript:void(0)" class="bg-size" [style.background-image]="'url('+ details.img +')'" [routerLink]="['/tour/single-page/classic-design']">
+                <img [src]="details.img" class="img-fluid blur-up lazyload bg-img" alt="destination-image" style="display: none;">
+              </a>
+            }
+            <div class="top-icon">
+              <a href="javascript:void(0)" class="" [routerLink]="['/tour/single-page/classic-design']">
+                <i class="far fa-heart"></i>
+              </a>
+            </div>
+          </div>
+          <div class="special-content">
+            <a href="javascript:void(0)" [routerLink]="['/tour/single-page/classic-design']">
+              <h5>{{ details.title }}<span>({{details.days}}D {{details.night}}N)</span></h5>
+            </a>
+            <div class="tour-detail">
+              <h6><i class="fas fa-plane-departure me-3"></i> {{ details.tripDetails }} <i class="fas fa-plane-arrival ms-3"></i></h6>
+              <div class="include-sec">
+                <span>{{ details.include }}</span>
+                <ul class="include">
+                  @for(facility of details.includesDetails; track facility){
+                    <li [class.not-include]="!facility.includes">
+                      <img [src]="facility.icon" class="img-fluid blur-up lazyload" alt="icon" data-bs-toggle="tooltip" data-placement="top" title="Hotel">
+                    </li>
+                  }
+                </ul>
+              </div>
+              <div class="bottom-section">
+                <div class="price">
+                  <h6><del>{{ details.price | currencyPipe: hotelService.currency }}</del>{{ details.discountPrice | currencyPipe: hotelService.currency }}</h6>
+                  <span>price per person</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          @if(details.tag){
+            <div class="label-offer">{{ details.tagTitle }}</div>
+          }
+        </div>
+      </div>
+    }@empty {
+      <app-no-data [icon]="icon" [title]="title" [description]="description" [ImageClass]="true"></app-no-data>
+    }
+  </div>
+</div>
+
+<app-pagination [productsTour]="tour" [paginate]="paginate" (setPage)="setPage($event)"></app-pagination>
