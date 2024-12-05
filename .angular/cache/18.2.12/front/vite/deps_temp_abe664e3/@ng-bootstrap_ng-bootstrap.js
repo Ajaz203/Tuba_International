@@ -3794,8 +3794,13 @@ var NgbAlert = class _NgbAlert {
       consts: () => {
         let i18n_0;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_0 = goog.getMsg("Close");
           i18n_0 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_0;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_0 = goog.getMsg("Close");
+          i18n_0 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_0;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_0 = $localize`:@@ngb.alert.close:Close`;
         }
@@ -4345,7 +4350,11 @@ var NgbCarousel = class _NgbCarousel {
       consts: () => {
         let i18n_1;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_1 = goog.getMsg(" Slide {$interpolation} of {$interpolation_1} ", {
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_1 = goog.getMsg(" Slide {$interpolation} of {$interpolation_1} ", {
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
             "interpolation": "�0�",
             "interpolation_1": "�1�"
           }, {
@@ -4354,21 +4363,35 @@ var NgbCarousel = class _NgbCarousel {
               "interpolation_1": "{{ c }}"
             }
           });
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           i18n_1 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_1;
+=======
+          i18n_1 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_1;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_1 = $localize`:Currently selected slide number read by screen reader@@ngb.carousel.slide-number: Slide ${"�0�"}:INTERPOLATION: of ${"�1�"}:INTERPOLATION_1: `;
         }
         let i18n_2;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_2 = goog.getMsg("Previous");
           i18n_2 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_2;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_2 = goog.getMsg("Previous");
+          i18n_2 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_2;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_2 = $localize`:@@ngb.carousel.previous:Previous`;
         }
         let i18n_3;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_3 = goog.getMsg("Next");
           i18n_3 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_3;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_3 = goog.getMsg("Next");
+          i18n_3 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_3;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_3 = $localize`:@@ngb.carousel.next:Next`;
         }
@@ -5672,29 +5695,49 @@ var NgbDatepickerNavigationSelect = class _NgbDatepickerNavigationSelect {
       consts: () => {
         let i18n_4;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_4 = goog.getMsg("Select month");
           i18n_4 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_4;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_4 = goog.getMsg("Select month");
+          i18n_4 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_4;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_4 = $localize`:@@ngb.datepicker.select-month:Select month`;
         }
         let i18n_5;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_5 = goog.getMsg("Select month");
           i18n_5 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_5;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_5 = goog.getMsg("Select month");
+          i18n_5 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_5;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_5 = $localize`:@@ngb.datepicker.select-month:Select month`;
         }
         let i18n_6;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_6 = goog.getMsg("Select year");
           i18n_6 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_6;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_6 = goog.getMsg("Select year");
+          i18n_6 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_6;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_6 = $localize`:@@ngb.datepicker.select-year:Select year`;
         }
         let i18n_7;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_7 = goog.getMsg("Select year");
           i18n_7 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_7;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_7 = goog.getMsg("Select year");
+          i18n_7 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_7;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_7 = $localize`:@@ngb.datepicker.select-year:Select year`;
         }
@@ -5852,29 +5895,49 @@ var NgbDatepickerNavigation = class _NgbDatepickerNavigation {
       consts: () => {
         let i18n_8;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_8 = goog.getMsg("Previous month");
           i18n_8 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_8;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_8 = goog.getMsg("Previous month");
+          i18n_8 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_8;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_8 = $localize`:@@ngb.datepicker.previous-month:Previous month`;
         }
         let i18n_9;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_9 = goog.getMsg("Previous month");
           i18n_9 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_9;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_9 = goog.getMsg("Previous month");
+          i18n_9 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_9;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_9 = $localize`:@@ngb.datepicker.previous-month:Previous month`;
         }
         let i18n_10;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_10 = goog.getMsg("Next month");
           i18n_10 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_10;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_10 = goog.getMsg("Next month");
+          i18n_10 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_10;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_10 = $localize`:@@ngb.datepicker.next-month:Next month`;
         }
         let i18n_11;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_11 = goog.getMsg("Next month");
           i18n_11 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_11;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_11 = goog.getMsg("Next month");
+          i18n_11 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_11;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_11 = $localize`:@@ngb.datepicker.next-month:Next month`;
         }
@@ -12079,57 +12142,97 @@ var NgbPagination = class _NgbPagination {
       consts: () => {
         let i18n_12;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_12 = goog.getMsg("««");
           i18n_12 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_12;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_12 = goog.getMsg("««");
+          i18n_12 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_12;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_12 = $localize`:@@ngb.pagination.first:««`;
         }
         let i18n_13;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_13 = goog.getMsg("«");
           i18n_13 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_13;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_13 = goog.getMsg("«");
+          i18n_13 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_13;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_13 = $localize`:@@ngb.pagination.previous:«`;
         }
         let i18n_14;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_14 = goog.getMsg("»");
           i18n_14 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_14;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_14 = goog.getMsg("»");
+          i18n_14 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_14;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_14 = $localize`:@@ngb.pagination.next:»`;
         }
         let i18n_15;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_15 = goog.getMsg("»»");
           i18n_15 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_15;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_15 = goog.getMsg("»»");
+          i18n_15 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_15;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_15 = $localize`:@@ngb.pagination.last:»»`;
         }
         let i18n_16;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_16 = goog.getMsg("First");
           i18n_16 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_16;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_16 = goog.getMsg("First");
+          i18n_16 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_16;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_16 = $localize`:@@ngb.pagination.first-aria:First`;
         }
         let i18n_17;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_17 = goog.getMsg("Previous");
           i18n_17 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_17;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_17 = goog.getMsg("Previous");
+          i18n_17 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_17;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_17 = $localize`:@@ngb.pagination.previous-aria:Previous`;
         }
         let i18n_18;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_18 = goog.getMsg("Next");
           i18n_18 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_18;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_18 = goog.getMsg("Next");
+          i18n_18 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_18;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_18 = $localize`:@@ngb.pagination.next-aria:Next`;
         }
         let i18n_19;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_19 = goog.getMsg("Last");
           i18n_19 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_19;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_19 = goog.getMsg("Last");
+          i18n_19 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_19;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_19 = $localize`:@@ngb.pagination.last-aria:Last`;
         }
@@ -12952,14 +13055,22 @@ var NgbProgressbar = class _NgbProgressbar {
       consts: () => {
         let i18n_20;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_20 = goog.getMsg("{$interpolation}", {
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_20 = goog.getMsg("{$interpolation}", {
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
             "interpolation": "�0�"
           }, {
             original_code: {
               "interpolation": "{{ getValue() / max | percent }}"
             }
           });
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           i18n_20 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_20;
+=======
+          i18n_20 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_20;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_20 = $localize`:@@ngb.progressbar.value:${"�0�"}:INTERPOLATION:`;
         }
@@ -14550,98 +14661,166 @@ var NgbTimepicker = class _NgbTimepicker {
       consts: () => {
         let i18n_21;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_21 = goog.getMsg("HH");
           i18n_21 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_21;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_21 = goog.getMsg("HH");
+          i18n_21 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_21;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_21 = $localize`:@@ngb.timepicker.HH:HH`;
         }
         let i18n_22;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_22 = goog.getMsg("Hours");
           i18n_22 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_22;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_22 = goog.getMsg("Hours");
+          i18n_22 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_22;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_22 = $localize`:@@ngb.timepicker.hours:Hours`;
         }
         let i18n_23;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_23 = goog.getMsg("MM");
           i18n_23 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_23;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_23 = goog.getMsg("MM");
+          i18n_23 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_23;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_23 = $localize`:@@ngb.timepicker.MM:MM`;
         }
         let i18n_24;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_24 = goog.getMsg("Minutes");
           i18n_24 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_24;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_24 = goog.getMsg("Minutes");
+          i18n_24 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_24;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_24 = $localize`:@@ngb.timepicker.minutes:Minutes`;
         }
         let i18n_25;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_25 = goog.getMsg("Increment hours");
           i18n_25 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_25;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_25 = goog.getMsg("Increment hours");
+          i18n_25 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_25;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_25 = $localize`:@@ngb.timepicker.increment-hours:Increment hours`;
         }
         let i18n_26;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_26 = goog.getMsg("Decrement hours");
           i18n_26 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_26;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_26 = goog.getMsg("Decrement hours");
+          i18n_26 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_26;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_26 = $localize`:@@ngb.timepicker.decrement-hours:Decrement hours`;
         }
         let i18n_27;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_27 = goog.getMsg("Increment minutes");
           i18n_27 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_27;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_27 = goog.getMsg("Increment minutes");
+          i18n_27 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_27;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_27 = $localize`:@@ngb.timepicker.increment-minutes:Increment minutes`;
         }
         let i18n_28;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_28 = goog.getMsg("Decrement minutes");
           i18n_28 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_28;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_28 = goog.getMsg("Decrement minutes");
+          i18n_28 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_28;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_28 = $localize`:@@ngb.timepicker.decrement-minutes:Decrement minutes`;
         }
         let i18n_29;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_29 = goog.getMsg("SS");
           i18n_29 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_29;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_29 = goog.getMsg("SS");
+          i18n_29 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_29;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_29 = $localize`:@@ngb.timepicker.SS:SS`;
         }
         let i18n_30;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_30 = goog.getMsg("Seconds");
           i18n_30 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_30;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_30 = goog.getMsg("Seconds");
+          i18n_30 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_30;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_30 = $localize`:@@ngb.timepicker.seconds:Seconds`;
         }
         let i18n_31;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_31 = goog.getMsg("Increment seconds");
           i18n_31 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_31;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_31 = goog.getMsg("Increment seconds");
+          i18n_31 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_31;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_31 = $localize`:@@ngb.timepicker.increment-seconds:Increment seconds`;
         }
         let i18n_32;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_32 = goog.getMsg("Decrement seconds");
           i18n_32 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_32;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_32 = goog.getMsg("Decrement seconds");
+          i18n_32 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_32;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_32 = $localize`:@@ngb.timepicker.decrement-seconds:Decrement seconds`;
         }
         let i18n_33;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_33 = goog.getMsg("{$interpolation}", {
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_33 = goog.getMsg("{$interpolation}", {
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
             "interpolation": "�0�"
           }, {
             original_code: {
               "interpolation": "{{ i18n.getAfternoonPeriod() }}"
             }
           });
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           i18n_33 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_33;
+=======
+          i18n_33 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_33;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_33 = $localize`:@@ngb.timepicker.PM:${"�0�"}:INTERPOLATION:`;
         }
@@ -15191,8 +15370,13 @@ var NgbToast = class _NgbToast {
       consts: () => {
         let i18n_34;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+<<<<<<< HEAD:.angular/cache/18.2.12/front/vite/deps/@ng-bootstrap_ng-bootstrap.js
           const MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_34 = goog.getMsg("Close");
           i18n_34 = MSG_C__USERS_AJAZ_DESKTOP_DUMMY_rica_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_34;
+=======
+          const MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_34 = goog.getMsg("Close");
+          i18n_34 = MSG_C__USERS_JISAN_DESKTOP_UP_HARMONY_LEARNING_CODE_TUBA_INTERNATIONAL_TUBA_INTERNATIONAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_34;
+>>>>>>> 74645e16187020d48c29ea84141c1f8f1206ffc9:.angular/cache/18.2.12/front/vite/deps_temp_abe664e3/@ng-bootstrap_ng-bootstrap.js
         } else {
           i18n_34 = $localize`:@@ngb.toast.close-aria:Close`;
         }
