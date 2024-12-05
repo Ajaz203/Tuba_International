@@ -112,14 +112,14 @@ export const footerNewTopic = [
   {
     id: 1,
     title: "recent news",
-    image: "assets/images/cab/blog-footer/1.jpg",
+    image: "/assets/imges2/footer-logo1.jpg",
     description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
     path: "/page/blog-page/creative-left-sidebar"
   },
   {
     id: 2,
     title: "recent news",
-    image: "assets/images/cab/blog-footer/2.jpg",
+    image: "/assets/imges2/footer-logo2.jpg",
     description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
     path: "/page/blog-page/creative-left-sidebar"
   }

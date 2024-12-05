@@ -2,37 +2,37 @@
   "cabGallery": [
     {
       "id": 1,
-      "image": "assets/images/cab/car/25.jpg",
+      "image": "/assets/imges2/car1.jpg",
       "type": "main"
     },
     {
       "id": 2,
-      "image": "assets/images/cab/car/22.jpg",
+      "image": "/assets/imges2/car2.jpg",
       "type": "main"
     },
     {
       "id": 3,
-      "image": "assets/images/cab/car/24.jpg",
+      "image": "/assets/imges2/car5.jpg",
       "type": "main"
     },
     {
       "id": 4,
-      "image": "assets/images/cab/car/22.jpg",
+      "image": "/assets/imges2/car2.jpg",
       "type": "interior"
     },
     {
       "id": 5,
-      "image": "assets/images/cab/car/21.jpg",
+      "image": "/assets/imges2/car3.jpg",
       "type": "interior"
     },
     {
       "id": 6,
-      "image": "assets/images/cab/car/23.jpg",
+      "image": "/assets/imges2/car4.jpg",
       "type": "exterior"
     },
     {
       "id": 7,
-      "image": "assets/images/cab/car/24.jpg",
+      "image": "/assets/imges2/car5.jpg",
       "type": "exterior"
     }
   ],
