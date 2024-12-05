@@ -5,7 +5,7 @@
       "country": "france country",
       "city": "paris",
       "description": "Embark on a luxurious Paris tour in style with premium flight class, where you'll experience unparalleled comfort and service throughout your journey",
-      "image": "assets/images/flights/destination/1.jpg",
+      "image": "/assets/imges2/1.jpg",
       "price": 581
     },
     {
@@ -13,7 +13,7 @@
       "country": "united kingdom",
       "city": "london",
       "description": "Embark on a luxurious London tour in style with our first-class flight experience, where comfort meets elegance",
-      "image": "assets/images/flights/destination/2.jpg",
+      "image": "/assets/imges2/2.jpg",
       "price": 500
     },
     {
@@ -21,7 +21,7 @@
       "country": "switzerland",
       "city": "zurich",
       "description": "Experience Zurich in style with our premium flight class, where luxury meets travel for an unforgettable journey",
-      "image": "assets/images/flights/destination/3.jpg",
+      "image": "/assets/imges2/3.jpg",
       "price": 600
     },
     {
@@ -29,14 +29,14 @@
       "country": "australia",
       "city": "sydney",
       "description": "Embark on a luxurious Sydney tour with premium flight class, ensuring a first-class travel experience to this stunning destination",
-      "image": "assets/images/flights/destination/4.jpg",
+      "image": "/assets/imges2/4.jpg",
       "price": 550
     }
   ],
   "airlines": [
     {
       "id": 1,
-      "airlineName": "rica airlines",
+      "airlineName": "Tuba International airlines",
       "title": "student offer",
       "subTitle": "enjoy extra baggage allowance"
     },
@@ -48,7 +48,7 @@
     },
     {
       "id": 3,
-      "airlineName": "rica airlines",
+      "airlineName": "Tuba International airlines",
       "title": "New offer",
       "subTitle": "enjoy extra baggage allowance"
     }

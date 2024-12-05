@@ -171,7 +171,7 @@
     {
       "id": 17,
       "categoryTitle": "london",
-      "categoryImage": "assets/images/flights/destination/8.jpg",
+      "categoryImage": "/assets/imges2/london.jpg",
       "rating": 4,
       "tag": true,
       "tagTitle": "new",
@@ -193,7 +193,7 @@
     {
       "id": 18,
       "categoryTitle": "budva",
-      "categoryImage": "assets/images/flights/destination/9.jpg",
+      "categoryImage": "/assets/imges2/budva.jpg",
       "rating": 4,
       "tag": true,
       "tagTitle": "new",
@@ -215,7 +215,7 @@
     {
       "id": 19,
       "categoryTitle": "venice",
-      "categoryImage": "assets/images/flights/destination/10.jpg",
+      "categoryImage": "/assets/imges2/venice.jpg",
       "rating": 4,
       "tag": true,
       "tagTitle": "new",
@@ -237,7 +237,7 @@
     {
       "id": 20,
       "categoryTitle": "budva",
-      "categoryImage": "assets/images/flights/destination/9.jpg",
+      "categoryImage": "/assets/imges2/budva.jpg",
       "rating": 4,
       "tag": true,
       "tagTitle": "new",

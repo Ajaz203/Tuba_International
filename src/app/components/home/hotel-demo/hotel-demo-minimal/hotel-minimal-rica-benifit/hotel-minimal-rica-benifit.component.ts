@@ -9,7 +9,7 @@ import { SvgIconComponent } from 'angular-svg-icon';
     standalone: true,
     imports: [SvgIconComponent]
 })
-export class HotelMinimalRicaBenifitComponent {
+export class HotelMinimalricaBenifitComponent {
 
   @Input() benefits: ricaBenefit[];
   @Input() sticky:boolean;

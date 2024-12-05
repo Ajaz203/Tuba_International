@@ -5,7 +5,7 @@ import { CabService } from '../../../../shared/services/cab.service';
 import { HotelService } from '../../../../shared/services/hotel.service';
 import { LayoutComponent } from '../../../../shared/components/ui/layout/layout.component';
 import { FooterComponent } from '../../../../shared/components/footer/footer.component';
-import { CabClassicRicaBenefitsComponent } from '../../../home/cab-demo/cab-demo-classic/cab-classic-rica-benefits/cab-classic-rica-benefits.component';
+import { CabClassicricaBenefitsComponent } from '../../../home/cab-demo/cab-demo-classic/cab-classic-rica-benefits/cab-classic-rica-benefits.component';
 import { ServicesComponent } from '../../../../shared/components/comman/services/services.component';
 import { TitleComponent } from '../../../../shared/components/comman/title/title.component';
 import { AnimationComponent } from '../../../../shared/components/comman/animation/animation.component';
@@ -17,7 +17,7 @@ import { HeaderComponent } from '../../../../shared/components/header/header.com
     templateUrl: './element-service.component.html',
     styleUrl: './element-service.component.scss',
     standalone: true,
-    imports: [HeaderComponent, BreadcrumbsComponent, AnimationComponent, TitleComponent, ServicesComponent, CabClassicRicaBenefitsComponent, FooterComponent, LayoutComponent]
+    imports: [HeaderComponent, BreadcrumbsComponent, AnimationComponent, TitleComponent, ServicesComponent, CabClassicricaBenefitsComponent, FooterComponent, LayoutComponent]
 })
 export class ElementServiceComponent {
   

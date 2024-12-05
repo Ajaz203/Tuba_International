@@ -525,10 +525,10 @@
           "icon": "envelope",
           "details": [
             {
-              "data": "Support@rica.com"
+              "data": "Support@Tuba.com"
             },
             {
-              "data": "info@rica.com"
+              "data": "info@Tuba.com"
             }
           ]
         },
@@ -981,8 +981,8 @@
             "holderName": "mark jecno",
             "cardNumber": "XXXX-XXXX-XXXX-2510",
             "expDate": "12/23",
-            "cardIcon": "assets/images/icon/american.jpg",
-            "class": "american-express"
+            "cardIcon": "assets/images/icon/ameTuban.jpg",
+            "class": "ameTuban-express"
           }
         ],
         "bookmark": [
@@ -1036,7 +1036,7 @@
           },
           {
             "id": 9,
-            "title": "South Africa",
+            "title": "South AfTuba",
             "subTitle": "6N 7D",
             "image": "assets/images/tour/tour/15.jpg"
           }

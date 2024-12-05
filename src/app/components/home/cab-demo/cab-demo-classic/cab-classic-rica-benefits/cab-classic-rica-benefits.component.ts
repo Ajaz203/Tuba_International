@@ -10,7 +10,7 @@ import { TitleComponent } from '../../../../../shared/components/comman/title/ti
     standalone: true,
     imports: [TitleComponent, SvgIconComponent]
 })
-export class CabClassicRicaBenefitsComponent {
+export class CabClassicricaBenefitsComponent {
 
   @Input() benefits: ricaBenefit[];
 

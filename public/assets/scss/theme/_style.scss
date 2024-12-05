@@ -1,6 +1,6 @@
 /*-----------------------------------------------------------------------------------
 
-Template Name:Rica
+Template Name:rica
 Template URI: themes.pixelstrap.com/rica
 Description: This is booking website
 Author: Pixelstrap
@@ -1946,7 +1946,7 @@ header {
     }
 
     &.flight-section {
-        background-image: url("../../images/bg-flight.png");
+        background-image: url("/assets/imges2/home-banner.png");
 
         .cloud {
             height: 100%;
@@ -8154,7 +8154,7 @@ section {
     }
 
     &.banner-section {
-        background-image: url(../../images/flights/bg-2.jpg);
+        background-image: url(/assets/imges2/bg2.jpg);
         background-size: cover;
         background-position: center center;
 
@@ -8620,7 +8620,7 @@ section {
 }
 
 .detail-section {
-    background-image: url(../../images/flights/bg.jpg);
+    background-image: url(/assets/imges2/bg2.jpg);
     background-size: cover;
     background-position: center center;
 
@@ -9005,7 +9005,7 @@ section {
 }
 
 .flight-detail {
-    background-image: url(../../images/flights/bg.jpg);
+    background-image: url(/assets/imges2/bg2.jpg);
     background-size: cover;
     background-position: center center;
 

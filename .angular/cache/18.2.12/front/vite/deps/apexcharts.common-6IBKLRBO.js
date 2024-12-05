@@ -5126,7 +5126,7 @@ var require_apexcharts_common = __commonJS({
             var c2 = [n2, o2, l2, h2];
             l2 = c2[0], h2 = c2[1], n2 = c2[2], o2 = c2[3];
           }
-          var d2 = s2.left - a2.left - n2, u2 = s2.top - a2.top - l2, g2 = this.annoCtx.graphics.drawRect(d2 - i2.globals.barPadForNumericAxis, u2, s2.width + n2 + o2, s2.height + l2 + h2, e2.label.borderRadius, e2.label.style.background, 1, e2.label.borderWidth, e2.label.borderColor, 0);
+          var d2 = s2.left - a2.left - n2, u2 = s2.top - a2.top - l2, g2 = this.annoCtx.graphics.drawRect(d2 - i2.globals.barPadForNumericaxis, u2, s2.width + n2 + o2, s2.height + l2 + h2, e2.label.borderRadius, e2.label.style.background, 1, e2.label.borderWidth, e2.label.borderColor, 0);
           return e2.id && g2.node.classList.add(e2.id), g2;
         }
       }, {
@@ -8048,7 +8048,7 @@ var require_apexcharts_common = __commonJS({
       return s(t2, [{
         key: "initGlobalVars",
         value: function(t3) {
-          t3.series = [], t3.seriesCandleO = [], t3.seriesCandleH = [], t3.seriesCandleM = [], t3.seriesCandleL = [], t3.seriesCandleC = [], t3.seriesRangeStart = [], t3.seriesRangeEnd = [], t3.seriesRange = [], t3.seriesPercent = [], t3.seriesGoals = [], t3.seriesX = [], t3.seriesZ = [], t3.seriesNames = [], t3.seriesTotals = [], t3.seriesLog = [], t3.seriesColors = [], t3.stackedSeriesTotals = [], t3.seriesXvalues = [], t3.seriesYvalues = [], t3.labels = [], t3.hasXaxisGroups = false, t3.groups = [], t3.barGroups = [], t3.lineGroups = [], t3.areaGroups = [], t3.hasSeriesGroups = false, t3.seriesGroups = [], t3.categoryLabels = [], t3.timescaleLabels = [], t3.noLabelsProvided = false, t3.resizeTimer = null, t3.selectionResizeTimer = null, t3.lastWheelExecution = 0, t3.delayedElements = [], t3.pointsArray = [], t3.dataLabelsRects = [], t3.isXNumeric = false, t3.skipLastTimelinelabel = false, t3.skipFirstTimelinelabel = false, t3.isDataXYZ = false, t3.isMultiLineX = false, t3.isMultipleYAxis = false, t3.maxY = -Number.MAX_VALUE, t3.minY = Number.MIN_VALUE, t3.minYArr = [], t3.maxYArr = [], t3.maxX = -Number.MAX_VALUE, t3.minX = Number.MAX_VALUE, t3.initialMaxX = -Number.MAX_VALUE, t3.initialMinX = Number.MAX_VALUE, t3.maxDate = 0, t3.minDate = Number.MAX_VALUE, t3.minZ = Number.MAX_VALUE, t3.maxZ = -Number.MAX_VALUE, t3.minXDiff = Number.MAX_VALUE, t3.yAxisScale = [], t3.xAxisScale = null, t3.xAxisTicksPositions = [], t3.yLabelsCoords = [], t3.yTitleCoords = [], t3.barPadForNumericAxis = 0, t3.padHorizontal = 0, t3.xRange = 0, t3.yRange = [], t3.zRange = 0, t3.dataPoints = 0, t3.xTickAmount = 0, t3.multiAxisTickAmount = 0;
+          t3.series = [], t3.seriesCandleO = [], t3.seriesCandleH = [], t3.seriesCandleM = [], t3.seriesCandleL = [], t3.seriesCandleC = [], t3.seriesRangeStart = [], t3.seriesRangeEnd = [], t3.seriesRange = [], t3.seriesPercent = [], t3.seriesGoals = [], t3.seriesX = [], t3.seriesZ = [], t3.seriesNames = [], t3.seriesTotals = [], t3.seriesLog = [], t3.seriesColors = [], t3.stackedSeriesTotals = [], t3.seriesXvalues = [], t3.seriesYvalues = [], t3.labels = [], t3.hasXaxisGroups = false, t3.groups = [], t3.barGroups = [], t3.lineGroups = [], t3.areaGroups = [], t3.hasSeriesGroups = false, t3.seriesGroups = [], t3.categoryLabels = [], t3.timescaleLabels = [], t3.noLabelsProvided = false, t3.resizeTimer = null, t3.selectionResizeTimer = null, t3.lastWheelExecution = 0, t3.delayedElements = [], t3.pointsArray = [], t3.dataLabelsRects = [], t3.isXNumeric = false, t3.skipLastTimelinelabel = false, t3.skipFirstTimelinelabel = false, t3.isDataXYZ = false, t3.isMultiLineX = false, t3.isMultipleYAxis = false, t3.maxY = -Number.MAX_VALUE, t3.minY = Number.MIN_VALUE, t3.minYArr = [], t3.maxYArr = [], t3.maxX = -Number.MAX_VALUE, t3.minX = Number.MAX_VALUE, t3.initialMaxX = -Number.MAX_VALUE, t3.initialMinX = Number.MAX_VALUE, t3.maxDate = 0, t3.minDate = Number.MAX_VALUE, t3.minZ = Number.MAX_VALUE, t3.maxZ = -Number.MAX_VALUE, t3.minXDiff = Number.MAX_VALUE, t3.yAxisScale = [], t3.xAxisScale = null, t3.xAxisTicksPositions = [], t3.yLabelsCoords = [], t3.yTitleCoords = [], t3.barPadForNumericaxis = 0, t3.padHorizontal = 0, t3.xRange = 0, t3.yRange = [], t3.zRange = 0, t3.dataPoints = 0, t3.xTickAmount = 0, t3.multiAxisTickAmount = 0;
         }
       }, {
         key: "globalVars",
@@ -9343,7 +9343,7 @@ var require_apexcharts_common = __commonJS({
             h2.add(c2), i2.add(h2);
           }
           if (t3.config.xaxis.axisBorder.show) {
-            var d2 = t3.globals.barPadForNumericAxis, u2 = e2.drawLine(t3.globals.padHorizontal + t3.config.xaxis.axisBorder.offsetX - d2, this.offY, this.xaxisBorderWidth + d2, this.offY, t3.config.xaxis.axisBorder.color, 0, this.xaxisBorderHeight);
+            var d2 = t3.globals.barPadForNumericaxis, u2 = e2.drawLine(t3.globals.padHorizontal + t3.config.xaxis.axisBorder.offsetX - d2, this.offY, this.xaxisBorderWidth + d2, this.offY, t3.config.xaxis.axisBorder.color, 0, this.xaxisBorderHeight);
             this.elgrid && this.elgrid.elGridBorders && t3.config.grid.show ? this.elgrid.elGridBorders.add(u2) : i2.add(u2);
           }
           return i2;
@@ -9555,7 +9555,7 @@ var require_apexcharts_common = __commonJS({
           };
           e2.dom.elGridRectMask = s2("gridRectMask".concat(e2.cuid)), e2.dom.elGridRectBarMask = s2("gridRectBarMask".concat(e2.cuid)), e2.dom.elGridRectMarkerMask = s2("gridRectMarkerMask".concat(e2.cuid)), e2.dom.elForecastMask = s2("forecastMask".concat(e2.cuid)), e2.dom.elNonForecastMask = s2("nonForecastMask".concat(e2.cuid));
           var r2 = 0, n2 = 0;
-          (["bar", "rangeBar", "candlestick", "boxPlot"].includes(t3.config.chart.type) || t3.globals.comboBarCount > 0) && t3.globals.isXNumeric && !t3.globals.isBarHorizontal && (r2 = Math.max(t3.config.grid.padding.left, e2.barPadForNumericAxis), n2 = Math.max(t3.config.grid.padding.right, e2.barPadForNumericAxis)), e2.dom.elGridRect = i2.drawRect(0, 0, e2.gridWidth, e2.gridHeight, 0, "#fff"), e2.dom.elGridRectBar = i2.drawRect(-a2 / 2 - r2 - 2, -a2 / 2 - 2, e2.gridWidth + a2 + n2 + r2 + 4, e2.gridHeight + a2 + 4, 0, "#fff");
+          (["bar", "rangeBar", "candlestick", "boxPlot"].includes(t3.config.chart.type) || t3.globals.comboBarCount > 0) && t3.globals.isXNumeric && !t3.globals.isBarHorizontal && (r2 = Math.max(t3.config.grid.padding.left, e2.barPadForNumericaxis), n2 = Math.max(t3.config.grid.padding.right, e2.barPadForNumericaxis)), e2.dom.elGridRect = i2.drawRect(0, 0, e2.gridWidth, e2.gridHeight, 0, "#fff"), e2.dom.elGridRectBar = i2.drawRect(-a2 / 2 - r2 - 2, -a2 / 2 - 2, e2.gridWidth + a2 + n2 + r2 + 4, e2.gridHeight + a2 + 4, 0, "#fff");
           var o2 = t3.globals.markers.largestSize;
           e2.dom.elGridRectMarker = i2.drawRect(-o2, -o2, e2.gridWidth + 2 * o2, e2.gridHeight + 2 * o2, 0, "#fff"), e2.dom.elGridRectMask.appendChild(e2.dom.elGridRect.node), e2.dom.elGridRectBarMask.appendChild(e2.dom.elGridRectBar.node), e2.dom.elGridRectMarkerMask.appendChild(e2.dom.elGridRectMarker.node);
           var l2 = e2.dom.baseEl.querySelector("defs");
@@ -9589,13 +9589,13 @@ var require_apexcharts_common = __commonJS({
       }, {
         key: "_drawGridLine",
         value: function(t3) {
-          var e2 = t3.i, i2 = t3.x1, a2 = t3.y1, s2 = t3.x2, r2 = t3.y2, n2 = t3.xCount, o2 = t3.parent, l2 = this.w, h2 = o2.node.classList.contains("apexcharts-gridlines-horizontal"), c2 = l2.globals.barPadForNumericAxis, d2 = 0 === a2 && 0 === r2 || 0 === i2 && 0 === s2 || a2 === l2.globals.gridHeight && r2 === l2.globals.gridHeight || l2.globals.isBarHorizontal && (0 === e2 || e2 === n2 - 1), u2 = new Mi(this).drawLine(i2 - (h2 ? c2 : 0), a2, s2 + (h2 ? c2 : 0), r2, l2.config.grid.borderColor, l2.config.grid.strokeDashArray);
+          var e2 = t3.i, i2 = t3.x1, a2 = t3.y1, s2 = t3.x2, r2 = t3.y2, n2 = t3.xCount, o2 = t3.parent, l2 = this.w, h2 = o2.node.classList.contains("apexcharts-gridlines-horizontal"), c2 = l2.globals.barPadForNumericaxis, d2 = 0 === a2 && 0 === r2 || 0 === i2 && 0 === s2 || a2 === l2.globals.gridHeight && r2 === l2.globals.gridHeight || l2.globals.isBarHorizontal && (0 === e2 || e2 === n2 - 1), u2 = new Mi(this).drawLine(i2 - (h2 ? c2 : 0), a2, s2 + (h2 ? c2 : 0), r2, l2.config.grid.borderColor, l2.config.grid.strokeDashArray);
           u2.node.classList.add("apexcharts-gridline"), d2 && l2.config.grid.show ? this.elGridBorders.add(u2) : o2.add(u2);
         }
       }, {
         key: "_drawGridBandRect",
         value: function(t3) {
-          var e2 = t3.c, i2 = t3.x1, a2 = t3.y1, s2 = t3.x2, r2 = t3.y2, n2 = t3.type, o2 = this.w, l2 = new Mi(this.ctx), h2 = o2.globals.barPadForNumericAxis, c2 = o2.config.grid[n2].colors[e2], d2 = l2.drawRect(i2 - ("row" === n2 ? h2 : 0), a2, s2 + ("row" === n2 ? 2 * h2 : 0), r2, 0, c2, o2.config.grid[n2].opacity);
+          var e2 = t3.c, i2 = t3.x1, a2 = t3.y1, s2 = t3.x2, r2 = t3.y2, n2 = t3.type, o2 = this.w, l2 = new Mi(this.ctx), h2 = o2.globals.barPadForNumericaxis, c2 = o2.config.grid[n2].colors[e2], d2 = l2.drawRect(i2 - ("row" === n2 ? h2 : 0), a2, s2 + ("row" === n2 ? 2 * h2 : 0), r2, 0, c2, o2.config.grid[n2].opacity);
           this.elg.add(d2), d2.attr("clip-path", "url(#gridRectMask".concat(o2.globals.cuid, ")")), d2.node.classList.add("apexcharts-grid-".concat(n2));
         }
       }, {
@@ -10497,7 +10497,7 @@ var require_apexcharts_common = __commonJS({
       }, {
         key: "drawYCrosshairs",
         value: function() {
-          var t3 = this.w, e2 = new Mi(this.ctx), i2 = t3.config.yaxis[0].crosshairs, a2 = t3.globals.barPadForNumericAxis;
+          var t3 = this.w, e2 = new Mi(this.ctx), i2 = t3.config.yaxis[0].crosshairs, a2 = t3.globals.barPadForNumericaxis;
           if (t3.config.yaxis[0].crosshairs.show) {
             var s2 = e2.drawLine(-a2, 0, t3.globals.gridWidth + a2, 0, i2.stroke.color, i2.stroke.dashArray, i2.stroke.width);
             s2.attr({
@@ -10969,7 +10969,7 @@ var require_apexcharts_common = __commonJS({
         i(this, t2), this.w = e2.w, this.dCtx = e2;
       }
       return s(t2, [{
-        key: "gridPadForColumnsInNumericAxis",
+        key: "gridPadForColumnsInNumericaxis",
         value: function(t3) {
           var e2 = this.w, i2 = e2.config, a2 = e2.globals;
           if (a2.noData || a2.collapsedSeries.length + a2.ancillaryCollapsedSeries.length === i2.series.length) return 0;
@@ -10983,7 +10983,7 @@ var require_apexcharts_common = __commonJS({
           if (l2 && a2.isXNumeric && !a2.isBarHorizontal && o2 > 0 && 0 !== h2) {
             h2 <= 3 && (h2 = a2.dataPoints);
             var c2 = h2 / t3, d2 = a2.minXDiff && a2.minXDiff / c2 > 0 ? a2.minXDiff / c2 : 0;
-            d2 > t3 / 2 && (d2 /= 2), (n2 = d2 * parseInt(i2.plotOptions.bar.columnWidth, 10) / 100) < 1 && (n2 = 1), a2.barPadForNumericAxis = n2;
+            d2 > t3 / 2 && (d2 /= 2), (n2 = d2 * parseInt(i2.plotOptions.bar.columnWidth, 10) / 100) < 1 && (n2 = 1), a2.barPadForNumericaxis = n2;
           }
           return n2;
         }
@@ -11024,7 +11024,7 @@ var require_apexcharts_common = __commonJS({
             var i3 = p(e3, 2), a3 = i3[0], s3 = i3[1];
             t3.gridPad[a3] = Math.max(s3, t3.w.globals.markers.largestSize / 1.5);
           }), this.gridPad.top = Math.max(a2 / 2, this.gridPad.top), this.gridPad.bottom = Math.max(a2 / 2, this.gridPad.bottom)), i2.axisCharts ? this.setDimensionsForAxisCharts() : this.setDimensionsForNonAxisCharts(), this.dimGrid.gridPadFortitleSubtitle(), i2.gridHeight = i2.gridHeight - this.gridPad.top - this.gridPad.bottom, i2.gridWidth = i2.gridWidth - this.gridPad.left - this.gridPad.right - this.xPadRight - this.xPadLeft;
-          var s2 = this.dimGrid.gridPadForColumnsInNumericAxis(i2.gridWidth);
+          var s2 = this.dimGrid.gridPadForColumnsInNumericaxis(i2.gridWidth);
           i2.gridWidth = i2.gridWidth - 2 * s2, i2.translateX = i2.translateX + this.gridPad.left + this.xPadLeft + (s2 > 0 ? s2 : 0), i2.translateY = i2.translateY + this.gridPad.top;
         }
       }, {
@@ -11954,7 +11954,7 @@ var require_apexcharts_common = __commonJS({
         value: function(t3) {
           var e2 = t3.hoverArea, i2 = t3.elGrid, a2 = t3.clientX, s2 = t3.clientY, r2 = this.w, n2 = i2.getBoundingClientRect(), o2 = n2.width, l2 = n2.height, h2 = o2 / (r2.globals.dataPoints - 1), c2 = l2 / r2.globals.dataPoints, d2 = this.hasBars();
           !r2.globals.comboCharts && !d2 || r2.config.xaxis.convertedCatToNumeric || (h2 = o2 / r2.globals.dataPoints);
-          var u2 = a2 - n2.left - r2.globals.barPadForNumericAxis, g2 = s2 - n2.top;
+          var u2 = a2 - n2.left - r2.globals.barPadForNumericaxis, g2 = s2 - n2.top;
           u2 < 0 || g2 < 0 || u2 > o2 || g2 > l2 ? (e2.classList.remove("hovering-zoom"), e2.classList.remove("hovering-pan")) : r2.globals.zoomEnabled ? (e2.classList.remove("hovering-pan"), e2.classList.add("hovering-zoom")) : r2.globals.panEnabled && (e2.classList.remove("hovering-zoom"), e2.classList.add("hovering-pan"));
           var p2 = Math.round(u2 / h2), f2 = Math.floor(g2 / c2);
           d2 && !r2.config.xaxis.convertedCatToNumeric && (p2 = Math.ceil(u2 / h2), p2 -= 1);

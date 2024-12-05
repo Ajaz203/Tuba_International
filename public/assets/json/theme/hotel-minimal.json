@@ -55,25 +55,25 @@
     {
       "id": 1,
       "title": "4500 + Exclusive Hotels",
-      "description": "4500 + Exclusive Hotels Are Included In Rica Hotel.",
+      "description": "4500 + Exclusive Hotels Are Included In rica Hotel.",
       "icon": "assets/images/svg/hotel-minimal/hotel.svg"
     },
     {
       "id": 2,
       "title": "3,00,000 Happy Client",
-      "description": "Rica Cab Has More Than 3 Lakhs Happy Customer",
+      "description": "rica Cab Has More Than 3 Lakhs Happy Customer",
       "icon": "assets/images/svg/hotel-minimal/client.svg"
     },
     {
       "id": 3,
       "title": "45,000 + Location",
-      "description": "Rica Cab Has More Than 45k Location At Different Countries",
+      "description": "rica Cab Has More Than 45k Location At Different Countries",
       "icon": "assets/images/svg/hotel-minimal/location.svg"
     },
     {
       "id": 4,
       "title": "1.5m Bookings",
-      "description": "Rica Hotels Has More Than 1.5 Hotel Bookings.",
+      "description": "rica Hotels Has More Than 1.5 Hotel Bookings.",
       "icon": "assets/images/svg/hotel-minimal/booking.svg"
     }
   ]

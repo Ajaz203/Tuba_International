@@ -8,7 +8,7 @@ import { CabClassicTestimonialComponent } from './cab-classic-testimonial/cab-cl
 import { CabClassicBannerComponent } from './cab-classic-banner/cab-classic-banner.component';
 import { CabClassicCarTypeComponent } from './cab-classic-car-type/cab-classic-car-type.component';
 import { CabClassicBookingComponent } from './cab-classic-booking/cab-classic-booking.component';
-import { CabClassicRicaBenefitsComponent } from './cab-classic-rica-benefits/cab-classic-rica-benefits.component';
+import { CabClassicricaBenefitsComponent } from './cab-classic-rica-benefits/cab-classic-rica-benefits.component';
 import { CabClassicHomeSectionComponent } from './cab-classic-home-section/cab-classic-home-section.component';
 import { HeaderComponent } from '../../../../shared/components/header/header.component';
 
@@ -17,7 +17,7 @@ import { HeaderComponent } from '../../../../shared/components/header/header.com
     templateUrl: './cab-demo-classic.component.html',
     styleUrls: ['./cab-demo-classic.component.scss'],
     standalone: true,
-    imports: [HeaderComponent, CabClassicHomeSectionComponent, CabClassicRicaBenefitsComponent, CabClassicBookingComponent, CabClassicCarTypeComponent, CabClassicBannerComponent, CabClassicTestimonialComponent, CabClassicBrandComponent, FooterComponent, LayoutComponent]
+    imports: [HeaderComponent, CabClassicHomeSectionComponent, CabClassicricaBenefitsComponent, CabClassicBookingComponent, CabClassicCarTypeComponent, CabClassicBannerComponent, CabClassicTestimonialComponent, CabClassicBrandComponent, FooterComponent, LayoutComponent]
 })
 export class CabDemoClassicComponent {
   

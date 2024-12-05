@@ -5,7 +5,7 @@
       "blogTitle": "Twice profit than before you",
       "description": "This beachfront resort offers luxurious rooms with stunning ocean views and a range of amenities, including a spa and water sports center",
       "location": "phonics, new york",
-      "url": "assets/images/portfolio/4.jpg",
+      "url": "/assets/imges2/bali.jpg",
       "date": "05",
       "month": "nov"
     },
@@ -14,7 +14,7 @@
       "blogTitle": "A Slice of Paradise: Exploring Bali's Hidden Gems",
       "description": "Discover the serene water temples, lush rice terraces, and secluded beaches that make Bali a tropical paradise like no other",
       "location": "Bali, Indonesia",
-      "url": "assets/images/portfolio/2.jpg",
+      "url": "/assets/imges2/bali2.jpg",
       "date": "25",
       "month": "jan"
     },
@@ -23,7 +23,7 @@
       "blogTitle": "Cultural Odyssey: Unraveling the Charms of Kyoto",
       "description": "Immerse yourself in the rich history, exquisite temples, and traditional tea ceremonies that define the cultural tapestry of Kyoto",
       "location": "Kyoto, Japan",
-      "url": "assets/images/portfolio/10.jpg",
+      "url": "/assets/imges2/japan.jpg",
       "date": "10",
       "month": "aug"
     },
@@ -95,7 +95,7 @@
       "blogTitle": "Twice profit than before you",
       "description": "This beachfront resort offers luxurious rooms with stunning ocean views and a range of amenities, including a spa and water sports center",
       "location": "phonics, new york",
-      "url": "assets/images/flights/blog/1.jpg",
+      "url": "/assets/imges2/bali.jpg",
       "date": "05",
       "month": "nov"
     },
@@ -104,7 +104,7 @@
       "blogTitle": "A Slice of Paradise: Exploring Bali's Hidden Gems",
       "description": "Discover the serene water temples, lush rice terraces, and secluded beaches that make Bali a tropical paradise like no other",
       "location": "Bali, Indonesia",
-      "url": "assets/images/flights/blog/2.jpg",
+      "url": "/assets/imges2/bali2.jpg",
       "date": "25",
       "month": "jan"
     },
@@ -113,7 +113,7 @@
       "blogTitle": "Cultural Odyssey: Unraveling the Charms of Kyoto",
       "description": "Immerse yourself in the rich history, exquisite temples, and traditional tea ceremonies that define the cultural tapestry of Kyoto",
       "location": "Kyoto, Japan",
-      "url": "assets/images/flights/blog/3.jpg",
+      "url": "/assets/imges2/japan.jpg",
       "date": "10",
       "month": "aug"
     },
