@@ -2,32 +2,32 @@ export const topPlacesData = [
   {
     id: 1,
     title: "japan",
-    image: "assets/images/tour/footer/1.jpg",
+    image: "assets/imges2/f1.jpg",
   },
   {
     id: 2,
     title: "beach",
-    image: "assets/images/tour/footer/2.jpg",
+    image: "assets/imges2/f2.jpg",
   },
   {
     id: 3,
     title: "newyork",
-    image: "assets/images/tour/footer/3.jpg",
+    image: "assets/imges2/f3.jpg",
   },
   {
     id: 4,
     title: "city",
-    image: "assets/images/tour/footer/4.jpg",
+    image: "assets/imges2/f4.jpg",
   },
   {
     id: 5,
     title: "mountain",
-    image: "assets/images/tour/footer/5.jpg",
+    image: "assets/imges2/f5.jpg",
   },
   {
     id: 6,
     title: "wild",
-    image: "assets/images/tour/footer/6.jpg",
+    image: "assets/imges2/f6.jpg",
   },
 ]
 
