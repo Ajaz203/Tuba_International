@@ -4,13 +4,13 @@
     {
       "id": 1,
       "tourName": "asian tour",
-      "image": "assets/images/tour/background/10.jpg",
+      "image": "assets/images/tour/tour10.jpg",
       "price": 5
     },
     {
       "id": 2,
       "tourName": "europe tour",
-      "image": "assets/images/tour/background/11.jpg",
+      "image": "assets/images/tour/tour11.jpg",
       "price": 15
     },
     {
@@ -22,7 +22,7 @@
     {
       "id": 4,
       "tourName": "australian tour",
-      "image": "assets/images/tour/background/12.jpg",
+      "image": "assets/images/tour/tour12.jpg",
       "price": 12
     }
   ],
@@ -30,25 +30,25 @@
     {
       "id": 1,
       "title": "Adventure freaks",
-      "image": "assets/images/tour/background/4.jpg",
+      "image": "assets/images/tour/thme-4.jpg",
       "price": 5000
     },
     {
       "id": 2,
       "title": "city tour",
-      "image": "assets/images/tour/background/8.jpg",
+      "image": "assets/images/tour/thme-8.jpg",
       "price": 5000
     },
     {
       "id": 3,
       "title": "historical place",
-      "image": "assets/images/tour/background/6.jpg",
+      "image": "assets/images/tour/thme-6.jpg",
       "price": 5000
     },
     {
       "id": 4,
       "title": "beach lover",
-      "image": "assets/images/tour/background/5.jpg",
+      "image": "assets/images/tour/thme-5.jpg",
       "price": 5000
     },
     {
