@@ -3,13 +3,13 @@
     {
       "id": 1,
       "title": "asia",
-      "bg_image": "assets/images/tour/category/3.jpg",
+      "bg_image": "assets/images/tour/3.jpg",
       "details": [
         {
           "id": 1,
           "title": "bali & singapore",
           "subTitle": "Hawaii Oahu",
-          "image": "assets/images/flights/offer/6.jpg",
+          "image": "assets/images/tour/6.jpg",
           "price": 250,
           "discountPrice": 200
         },
@@ -17,7 +17,7 @@
           "id": 2,
           "title": "hong kong",
           "subTitle": "Hawaii Oahu",
-          "image": "assets/images/flights/offer/7.jpg",
+          "image": "assets/images/tour/7.jpg",
           "price": 300,
           "discountPrice": 250
         },
@@ -25,7 +25,7 @@
           "id": 3,
           "title": "hawaii",
           "subTitle": "Hawaii Oahu",
-          "image": "assets/images/flights/offer/8.jpg",
+          "image": "assets/images/tour/8.jpg",
           "price": 280,
           "discountPrice": 260
         }
@@ -34,13 +34,13 @@
     {
       "id": 2,
       "title": "america",
-      "bg_image": "assets/images/tour/category/4.jpg",
+      "bg_image": "assets/images/tour/4.jpg",
       "details": [
         {
           "id": 1,
           "title": "Eastern USA",
           "subTitle": "USA, Canada",
-          "image": "assets/images/flights/offer/9.jpg",
+          "image": "assets/images/tour/9.jpg",
           "price": 260,
           "discountPrice": 250
         },
@@ -48,7 +48,7 @@
           "id": 2,
           "title": "canada escape",
           "subTitle": "USA, Canada",
-          "image": "assets/images/flights/offer/10.jpg",
+          "image": "assets/images/tour/10.jpg",
           "price": 250,
           "discountPrice": 200
         },
@@ -56,7 +56,7 @@
           "id": 3,
           "title": "Canadian Rockies",
           "subTitle": "USA, Canada",
-          "image": "assets/images/flights/offer/6.jpg",
+          "image": "assets/images/tour/6.jpg",
           "price": 245,
           "discountPrice": 240
         }
@@ -65,13 +65,13 @@
     {
       "id": 3,
       "title": "europe",
-      "bg_image": "assets/images/tour/category/5.jpg",
+      "bg_image": "assets/images/tour/5.jpg",
       "details": [
         {
           "id": 1,
           "title": "europe escape",
           "subTitle": "Prague Paris Barcelona",
-          "image": "assets/images/flights/offer/8.jpg",
+          "image": "assets/images/tour/6.jpg",
           "price": 250,
           "discountPrice": 200
         },
@@ -79,7 +79,7 @@
           "id": 2,
           "title": "europe dream",
           "subTitle": "Prague Paris Barcelona",
-          "image": "assets/images/flights/offer/6.jpg",
+          "image": "assets/images/tour/7.jpg",
           "price": 250,
           "discountPrice": 200
         },
@@ -87,7 +87,7 @@
           "id": 3,
           "title": "Europe Wonder",
           "subTitle": "Prague Paris Barcelona",
-          "image": "assets/images/flights/offer/10.jpg",
+          "image": "assets/images/tour/10.jpg",
           "price": 250,
           "discountPrice": 200
         }
