@@ -19,7 +19,7 @@ import { HeaderComponent } from '../../../../shared/components/header/header.com
 })
 export class FlightBookingComponent {
   
-  public bg_image = "assets/images/flights/flight-breadcrumb2.jpg";
+  public bg_image = "/assets/imges2/flight-breadcrumb2.jpg";
   public parent = "Home";
   public subParent = "flights";
   public child = "review";

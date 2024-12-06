@@ -19,7 +19,7 @@ import { HeaderComponent } from '../../../../shared/components/header/header.com
 })
 export class CabBookingComponent {
 
-  public bg_image = 'assets/images/cab/breadcrumb.jpg';
+  public bg_image = '/assets/imges2/car-banner.jpg';
   public title = 'cab booking';
   public parent = 'Home';
   public child = 'cab booking';

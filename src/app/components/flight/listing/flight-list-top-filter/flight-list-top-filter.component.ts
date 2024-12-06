@@ -16,7 +16,7 @@ import { HeaderComponent } from '../../../../shared/components/header/header.com
 })
 export class FlightListTopFilterComponent {
   
-  public bg_image: string = 'assets/images/flights/flight-breadcrumb2.jpg';
+  public bg_image: string = "/assets/imges2/flight-breadcrumb2.jpg";
   public title: string = 'about';
   public parent: string = 'elements';
   public child: string = 'Flight top Filter';
