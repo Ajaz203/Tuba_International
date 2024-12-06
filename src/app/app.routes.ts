@@ -4,7 +4,7 @@ import { router } from './shared/routes/routes';
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: '/home/flight/modern',
+        redirectTo: '/home/mix-demo/classic',
         pathMatch: 'full'
       },
       {

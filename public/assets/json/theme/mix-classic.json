@@ -3,17 +3,17 @@
   "hotelImages": [
     {
       "id": 1,
-      "url": "assets/images/mix/emergency/3.jpg",
+      "url": "assets/home/5.jpg",
       "title": "01"
     },
     {
       "id": 2,
-      "url": "assets/images/mix/emergency/4.jpg",
+      "url": "assets/home/6.jpg",
       "title": "02"
     },
     {
       "id": 3,
-      "url": "assets/images/mix/emergency/5.jpg",
+      "url": "assets/home/7.jpg",
       "title": "03"
     }
    ]

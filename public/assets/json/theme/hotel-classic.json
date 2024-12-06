@@ -22,17 +22,17 @@
   "hotelImages": [
     {
       "id": 1,
-      "url": "assets/images/mix/emergency/3.jpg",
+      "url": "/assets/home/4.jpg",
       "title": "01"
     },
     {
       "id": 2,
-      "url": "assets/images/mix/emergency/4.jpg",
+      "url": "/assets/home/5.jpg",
       "title": "02"
     },
     {
       "id": 3,
-      "url": "assets/images/mix/emergency/5.jpg",
+      "url": "/assets/home/6.jpg",
       "title": "03"
     }
    ],
@@ -41,22 +41,22 @@
     {
       "id": 1,
       "title": "2 nights gateway promotion package",
-      "url": "assets/images/hotel/gallery/1.jpg"
+      "url": "assets/home/11.jpg"
     },
     {
       "id": 2,
       "title": "1 nights beach promotion package",
-      "url": "assets/images/hotel/gallery/2.jpg"
+      "url": "assets/home/12.jpg"
     },
     {
       "id": 3,
       "title": "free lunch for 3 days package",
-      "url": "assets/images/hotel/gallery/3.jpg"
+      "url": "assets/home/13.jpg"
     },
     {
       "id": 4,
       "title": "2 nights gateway promotion package",
-      "url": "assets/images/hotel/gallery/4.jpg"
+      "url": "assets/home/14.jpg"
     },
     {
       "id": 5,
