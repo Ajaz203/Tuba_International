@@ -170,6 +170,17 @@ export class NavService {
       active: false,
       level: 1,
       children: [
+        {
+          title: 'Search Flights',
+          path: '/home/flight/modern',
+          type: 'link'
+        },
+        {
+          title: 'book now',
+          path: '/flight/booking/book-now',
+          type: 'link',
+          level: 3,
+        },
         // {
         //   title: "search",
         //   type: "sub",
@@ -209,50 +220,41 @@ export class NavService {
         //     },
         //   ]
         // },
-        {
-          title: 'Search Flights',
-          path: '/home/flight/modern',
-          type: 'link'
-        },
-        {
-          title: "booking",
-          type: "sub",
-          active: false,
-          level: 2,
-          children: [
-            {
-              title: 'book now',
-              path: '/flight/booking/book-now',
-              type: 'link',
-              level: 3,
-            },
+       
+        // {
+        //   title: "booking",
+        //   type: "sub",
+        //   active: false,
+        //   level: 2,
+        //   children: [
            
-            // {
-            //   title: 'booking add-ons',
-            //   path: '/flight/booking/book-add-ons',
-            //   type: 'link',
-            //   level: 3,
-            // },
-            // {
-            //   title: 'booking payment',
-            //   path: '/flight/booking/booking-payment',
-            //   type: 'link',
-            //   level: 3,
-            // },
-            // {
-            //   title: 'booking success',
-            //   path: '/flight/booking/flight-booking-success',
-            //   type: 'link',
-            //   level: 3,
-            // },
-            // {
-            //   title: 'booking failed',
-            //   path: '/flight/booking/flight-booking-failed',
-            //   type: 'link',
-            //   level: 3,
-            // },
-          ]
-        }
+           
+        //     {
+        //       title: 'booking add-ons',
+        //       path: '/flight/booking/book-add-ons',
+        //       type: 'link',
+        //       level: 3,
+        //     },
+        //     {
+        //       title: 'booking payment',
+        //       path: '/flight/booking/booking-payment',
+        //       type: 'link',
+        //       level: 3,
+        //     },
+        //     {
+        //       title: 'booking success',
+        //       path: '/flight/booking/flight-booking-success',
+        //       type: 'link',
+        //       level: 3,
+        //     },
+        //     {
+        //       title: 'booking failed',
+        //       path: '/flight/booking/flight-booking-failed',
+        //       type: 'link',
+        //       level: 3,
+        //     },
+        //   ]
+        // }
       ]
     },
     {
@@ -261,6 +263,23 @@ export class NavService {
       active: false,
       level: 1,
       children: [
+        {
+          title: 'Cab Details',
+          path: '/home/cab/classic',
+          type: 'link'
+        },
+        {
+          title: 'Cab Rentals',
+          path: '/cab/single-details',
+          type: 'link',
+          level: 2,
+        },
+        {
+          title: 'book Now',
+          path: '/cab/booking/booking',
+          type: 'link',
+          level: 3,
+        },
         // {
         //   title: "Listing",
         //   type: "sub",
@@ -367,44 +386,33 @@ export class NavService {
         //     },
         //   ]
         // },
-        {
-          title: 'Cab details',
-          path: '/cab/single-details',
-          type: 'link',
-          level: 2,
-        },
-        {
-          title: "booking",
-          type: "sub",
-          active: false,
-          level: 2,
-          children: [
-            {
-              title: 'booking',
-              path: '/cab/booking/booking',
-              type: 'link',
-              level: 3,
-            },
-            // {
-            //   title: 'booking payment',
-            //   path: '/cab/booking/booking-payment',
-            //   type: 'link',
-            //   level: 3,
-            // },
-            // {
-            //   title: 'booking success',
-            //   path: '/cab/booking/booking-success',
-            //   type: 'link',
-            //   level: 3,
-            // },
-            // {
-            //   title: 'booking failed',
-            //   path: '/cab/booking/booking-failed',
-            //   type: 'link',
-            //   level: 3,
-            // },
-          ]
-        },
+        
+        // {
+        //   title: "booking",
+        //   type: "sub",
+        //   active: false,
+        //   level: 2,
+        //   children: [
+        //     {
+        //       title: 'booking payment',
+        //       path: '/cab/booking/booking-payment',
+        //       type: 'link',
+        //       level: 3,
+        //     },
+        //     {
+        //       title: 'booking success',
+        //       path: '/cab/booking/booking-success',
+        //       type: 'link',
+        //       level: 3,
+        //     },
+        //     {
+        //       title: 'booking failed',
+        //       path: '/cab/booking/booking-failed',
+        //       type: 'link',
+        //       level: 3,
+        //     },
+        //   ]
+        // },
       ]
     },
     {
@@ -413,6 +421,17 @@ export class NavService {
       active: false,
       level: 1,
       children: [
+        {
+          title: 'Stays',
+          path: '/home/hotel/minimal',
+          type: 'link'
+        },
+        {
+          title: 'book Now',
+          path: '/hotel/booking/hotel-booking',
+          type: 'link',
+          level: 3,
+        },
         // {
         //   title: "Listing",
         //   type: "sub",
@@ -667,44 +686,34 @@ export class NavService {
         //     },
         //   ]
         // },
-        {
-          title: 'Search Hotels',
-          path: '/home/hotel/minimal',
-          type: 'link'
-        },
-        {
-          title: "booking",
-          type: "sub",
-          active: false,
-          level: 2,
-          children: [
+        
+        // {
+        //   title: "booking",
+        //   type: "sub",
+        //   active: false,
+        //   level: 2,
+        //   children: [
             
-            {
-              title: 'booking page',
-              path: '/hotel/booking/hotel-booking',
-              type: 'link',
-              level: 3,
-            },
-            // {
-            //   title: 'checkout',
-            //   path: '/hotel/booking/checkout',
-            //   type: 'link',
-            //   level: 3,
-            // },
-            // {
-            //   title: 'booking failed',
-            //   path: '/hotel/booking/hotel-booking-failed',
-            //   type: 'link',
-            //   level: 3,
-            // },
-            // {
-            //   title: 'booking success',
-            //   path: '/hotel/booking/hotel-booking-success',
-            //   type: 'link',
-            //   level: 3,
-            // },
-          ]
-        }
+        //     {
+        //       title: 'checkout',
+        //       path: '/hotel/booking/checkout',
+        //       type: 'link',
+        //       level: 3,
+        //     },
+        //     {
+        //       title: 'booking failed',
+        //       path: '/hotel/booking/hotel-booking-failed',
+        //       type: 'link',
+        //       level: 3,
+        //     },
+        //     {
+        //       title: 'booking success',
+        //       path: '/hotel/booking/hotel-booking-success',
+        //       type: 'link',
+        //       level: 3,
+        //     },
+        //   ]
+        // }
       ]
     },
     {
@@ -713,6 +722,17 @@ export class NavService {
       active: false,
       level: 1,
       children: [
+        {
+          title: 'Destinations ',
+          path: '/home/tour/trending',
+          type: 'link'
+        },
+        {
+          title: 'book Now',
+          path: '/tour/booking/tour-booking',
+          type: 'link',
+          level: 3,
+        },
         // {
         //   title: "Listing",
         //   type: "sub",
@@ -874,43 +894,33 @@ export class NavService {
         //     },
         //   ]
         // },
-        {
-          title: 'Tour',
-          path: '/home/tour/trending',
-          type: 'link'
-        },
-        {
-          title: "booking",
-          type: "sub",
-          active: false,
-          level: 2,
-          children: [
-            {
-              title: 'booking',
-              path: '/tour/booking/tour-booking',
-              type: 'link',
-              level: 3,
-            },
-            // {
-            //   title: 'checkout',
-            //   path: '/tour/booking/checkout',
-            //   type: 'link',
-            //   level: 3,
-            // },
-            // {
-            //   title: 'booking failed',
-            //   path: '/tour/booking/tour-booking-failed',
-            //   type: 'link',
-            //   level: 3,
-            // },
-            // {
-            //   title: 'booking success',
-            //   path: '/tour/booking/tour-booking-success',
-            //   type: 'link',
-            //   level: 3,
-            // },
-          ]
-        }
+          
+        // {
+        //   title: "booking",
+        //   type: "sub",
+        //   active: false,
+        //   level: 2,
+        //   children: [
+        //     {
+        //       title: 'checkout',
+        //       path: '/tour/booking/checkout',
+        //       type: 'link',
+        //       level: 3,
+        //     },
+        //     {
+        //       title: 'booking failed',
+        //       path: '/tour/booking/tour-booking-failed',
+        //       type: 'link',
+        //       level: 3,
+        //     },
+        //     {
+        //       title: 'booking success',
+        //       path: '/tour/booking/tour-booking-success',
+        //       type: 'link',
+        //       level: 3,
+        //     },
+        //   ]
+        // }
       ]
     },
     
@@ -1133,6 +1143,26 @@ export class NavService {
     //     }
     //   ]
     // },
+
+    {
+      title: "Visa",
+      type: "sub",
+      active: false,
+      level: 1,
+      children: [
+        {
+          title: 'Instant Visa',
+          path: '',
+          type: 'link',
+        },
+        {
+          title: 'Apply Visa',
+          path: '',
+          type: 'link',
+        },
+      ]
+      },
+
     {
       title: 'pages',
       type: 'sub',

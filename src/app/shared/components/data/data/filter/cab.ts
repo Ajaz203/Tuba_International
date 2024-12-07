@@ -75,8 +75,8 @@ export const cabOptions = [
 export const cabPromoCode = [
   {
     id: 1,
-    title: "rica500",
-    description: "Use rica50, and get $50 off on first booking",
+    title: "Tuba500",
+    description: "Use Tuba50, and get $50 off on first booking",
     radioId: "exampleRadios3",
     radioValue: "option1",
     checked: true

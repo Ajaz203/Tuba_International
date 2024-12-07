@@ -14,6 +14,13 @@ export class CurrencyComponent {
 
   public currencies = [
     {
+      name: 'Rupees',
+      currency: 'INR',
+      value: "inr",
+      symbol: "₹",
+      price: 83.22 // price of inr
+    },
+    {
       name: 'Dollar',
       currency: 'USD',
       value: "usd",
@@ -26,13 +33,6 @@ export class CurrencyComponent {
       value: "eur",
       symbol: "€",
       price: 0.95 // price of euro
-    },
-    {
-      name: 'Rupees',
-      currency: 'INR',
-      value: "inr",
-      symbol: "₹",
-      price: 83.22 // price of inr
     },
     {
       name: 'Australian Dollar',
