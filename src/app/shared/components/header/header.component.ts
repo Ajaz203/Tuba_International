@@ -5,13 +5,14 @@ import { LanguageComponent } from './widgets/language/language.component';
 import { CurrencyComponent } from './widgets/currency/currency.component';
 import { MenuComponent } from '../menu/menu.component';
 import { NgClass } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-header',
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss'],
     standalone: true,
-    imports: [NgClass, MenuComponent, ProfileComponent, SearchTabComponent, CurrencyComponent, LanguageComponent]
+    imports: [NgClass, MenuComponent, ProfileComponent, SearchTabComponent, CurrencyComponent, LanguageComponent, RouterModule]
 })
 export class HeaderComponent {
 
