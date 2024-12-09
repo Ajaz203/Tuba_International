@@ -68,5 +68,7 @@ export const router: Routes = [
   {
     path: 'page',
     loadChildren: () => import('../../components/pages/pages.routes')
-  }
+  },
+
+ 
 ]

@@ -22,8 +22,8 @@ export class MixClassicHomeSectionComponent {
       this.searchBoxType = 'flight-two'
     }else if(this.activeTab == 'cab'){
       this.searchBoxType = 'cab-two'
-    }else if(this.activeTab == 'food'){
-      this.searchBoxType = 'food'
+    }else if(this.activeTab == 'visa'){
+      this.searchBoxType = 'visa'
     }
   }
 
@@ -38,7 +38,7 @@ export class MixClassicHomeSectionComponent {
       this.searchBoxType = 'flight-two'
     }else if(value == 'cab'){
       this.searchBoxType = 'cab-two'
-    }else if(value == 'food'){
+    }else if(value == 'visa'){
       this.searchBoxType = 'food'
     }
   }
