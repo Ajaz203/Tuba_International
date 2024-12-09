@@ -17,6 +17,7 @@ export interface Menu {
   level?: number;
   section?: Menu[]
   right?: boolean;
+  url?: string
 }
 
 
@@ -28,141 +29,142 @@ export class NavService {
   constructor() { }
 
   public MENUITEMS: Menu[] = [
+    
     {
       title: "Home",
       type: 'sub',
       active: false,
       level: 1,
-      children: [
-        {
-          title: 'Hotel Demo',
-          type: 'sub',
-          active: false,
-          level: 2,
-          children: [
-            {
-              title: 'classic',
-              path: '/home/hotel/classic',
-              type: 'link'
-            },
-            {
-              title: 'minimal',
-              path: '/home/hotel/minimal',
-              type: 'link'
-            },
-            {
-              title: 'vector',
-              path: '/home/hotel/vector',
-              type: 'link'
-            }
-          ]
-        },
-        {
-          title: 'Tour Demo',
-          type: 'sub',
-          active: false,
-          level: 2,
-          children: [
-            {
-              title: 'modern',
-              path: '/home/tour/modern',
-              type: 'link'
-            },
-            {
-              title: 'trending',
-              path: '/home/tour/trending',
-              type: 'link'
-            },
-            {
-              title: 'Vector demo',
-              path: '/home/tour/vector',
-              type: 'link'
-            }
-          ]
-        },
-        {
-          title: 'Cab Demo',
-          type: 'sub',
-          active: false,
-          level: 2,
-          children: [
-            {
-              title: 'modern',
-              path: '/home/cab/modern',
-              type: 'link'
-            },
-            {
-              title: 'classic',
-              path: '/home/cab/classic',
-              type: 'link'
-            },
-            {
-              title: 'Map demo',
-              path: '/home/cab/map-demo',
-              type: 'link'
-            }
-          ]
-        },
-        {
-          title: 'Flight Demo',
-          type: 'sub',
-          active: false,
-          level: 2,
-          children: [
-            {
-              title: 'modern',
-              path: '/home/flight/modern',
-              type: 'link'
-            },
-            {
-              title: 'minimal',
-              path: '/home/flight/minimal',
-              type: 'link'
-            },
-            {
-              title: 'left sidebar',
-              path: '/home/flight/left-sidebar',
-              type: 'link'
-            }
-          ]
-        },
-        // {
-        //   title: 'Restaurant Demo',
-        //   type: 'sub',
-        //   active: false,
-        //   level: 2,
-        //   children: [
-        //     {
-        //       title: 'classic',
-        //       path: '/home/restaurant/classic',
-        //       type: 'link'
-        //     },
-        //     {
-        //       title: 'minimal',
-        //       path: '/home/restaurant/minimal',
-        //       type: 'link'
-        //     },
-        //   ]
-        // },
-        {
-          title: 'Mix Demo',
-          type: 'sub',
-          active: false,
-          level: 2,
-          children: [
-            {
-              title: 'classic',
-              path: '/home/mix-demo/classic',
-              type: 'link'
-            },
-            // {
-            //   title: 'minimal',
-            //   path: '/home/mix-demo/minimal',
-            //   type: 'link'
-            // },
-          ]
-        },
-      ]
+      // children: [
+      //   {
+      //     title: 'Hotel Demo',
+      //     type: 'sub',
+      //     active: false,
+      //     level: 2,
+      //     children: [
+      //       {
+      //         title: 'classic',
+      //         path: '/home/hotel/classic',
+      //         type: 'link'
+      //       },
+      //       {
+      //         title: 'minimal',
+      //         path: '/home/hotel/minimal',
+      //         type: 'link'
+      //       },
+      //       {
+      //         title: 'vector',
+      //         path: '/home/hotel/vector',
+      //         type: 'link'
+      //       }
+      //     ]
+      //   },
+      //   {
+      //     title: 'Tour Demo',
+      //     type: 'sub',
+      //     active: false,
+      //     level: 2,
+      //     children: [
+      //       {
+      //         title: 'modern',
+      //         path: '/home/tour/modern',
+      //         type: 'link'
+      //       },
+      //       {
+      //         title: 'trending',
+      //         path: '/home/tour/trending',
+      //         type: 'link'
+      //       },
+      //       {
+      //         title: 'Vector demo',
+      //         path: '/home/tour/vector',
+      //         type: 'link'
+      //       }
+      //     ]
+      //   },
+      //   {
+      //     title: 'Cab Demo',
+      //     type: 'sub',
+      //     active: false,
+      //     level: 2,
+      //     children: [
+      //       {
+      //         title: 'modern',
+      //         path: '/home/cab/modern',
+      //         type: 'link'
+      //       },
+      //       {
+      //         title: 'classic',
+      //         path: '/home/cab/classic',
+      //         type: 'link'
+      //       },
+      //       {
+      //         title: 'Map demo',
+      //         path: '/home/cab/map-demo',
+      //         type: 'link'
+      //       }
+      //     ]
+      //   },
+      //   {
+      //     title: 'Flight Demo',
+      //     type: 'sub',
+      //     active: false,
+      //     level: 2,
+      //     children: [
+      //       {
+      //         title: 'modern',
+      //         path: '/home/flight/modern',
+      //         type: 'link'
+      //       },
+      //       {
+      //         title: 'minimal',
+      //         path: '/home/flight/minimal',
+      //         type: 'link'
+      //       },
+      //       {
+      //         title: 'left sidebar',
+      //         path: '/home/flight/left-sidebar',
+      //         type: 'link'
+      //       }
+      //     ]
+      //   },
+      //   {
+      //     title: 'Restaurant Demo',
+      //     type: 'sub',
+      //     active: false,
+      //     level: 2,
+      //     children: [
+      //       {
+      //         title: 'classic',
+      //         path: '/home/restaurant/classic',
+      //         type: 'link'
+      //       },
+      //       {
+      //         title: 'minimal',
+      //         path: '/home/restaurant/minimal',
+      //         type: 'link'
+      //       },
+      //     ]
+      //   },
+      //   {
+      //     title: 'Mix Demo',
+      //     type: 'sub',
+      //     active: false,
+      //     level: 2,
+      //     children: [
+      //       {
+      //         title: 'classic',
+      //         path: '/home/mix-demo/classic',
+      //         type: 'link'
+      //       },
+      //       {
+      //         title: 'minimal',
+      //         path: '/home/mix-demo/minimal',
+      //         type: 'link'
+      //       },
+      //     ]
+      //   },
+      // ]
     },
     {
       title: "flight",
@@ -176,6 +178,12 @@ export class NavService {
           type: 'link'
         },
         {
+          title: 'Flights Fair',
+          path: '/flight/listing/left-sidebar',
+          type: 'link',
+          level: 3,
+        },
+        {
           title: 'book now',
           path: '/flight/booking/book-now',
           type: 'link',
@@ -187,7 +195,7 @@ export class NavService {
         //   active: false,
         //   level: 2,
         //   children: [
-            
+
         //     {
         //       title: 'left sidebar',
         //       path: '/flight/listing/left-sidebar',
@@ -220,15 +228,15 @@ export class NavService {
         //     },
         //   ]
         // },
-       
+
         // {
         //   title: "booking",
         //   type: "sub",
         //   active: false,
         //   level: 2,
         //   children: [
-           
-           
+
+
         //     {
         //       title: 'booking add-ons',
         //       path: '/flight/booking/book-add-ons',
@@ -386,7 +394,7 @@ export class NavService {
         //     },
         //   ]
         // },
-        
+
         // {
         //   title: "booking",
         //   type: "sub",
@@ -425,6 +433,7 @@ export class NavService {
           title: 'Stays',
           path: '/home/hotel/minimal',
           type: 'link'
+          
         },
         {
           title: 'book Now',
@@ -686,14 +695,14 @@ export class NavService {
         //     },
         //   ]
         // },
-        
+
         // {
         //   title: "booking",
         //   type: "sub",
         //   active: false,
         //   level: 2,
         //   children: [
-            
+
         //     {
         //       title: 'checkout',
         //       path: '/hotel/booking/checkout',
@@ -894,7 +903,7 @@ export class NavService {
         //     },
         //   ]
         // },
-          
+
         // {
         //   title: "booking",
         //   type: "sub",
@@ -923,8 +932,8 @@ export class NavService {
         // }
       ]
     },
-    
-    
+
+
     // {
     //   title: "restaurant",
     //   type: "sub",
@@ -1152,16 +1161,17 @@ export class NavService {
       children: [
         {
           title: 'Instant Visa',
-          path: '',
+          path: '/instant-visa',
           type: 'link',
+          
         },
         {
           title: 'Apply Visa',
-          path: '',
+          path: '/apply-visa',
           type: 'link',
         },
       ]
-      },
+    },
 
     {
       title: 'pages',
