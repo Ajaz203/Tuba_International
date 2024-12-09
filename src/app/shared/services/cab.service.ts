@@ -11,11 +11,20 @@ import { cabDetailsModern, cabModern } from '../interface/cab-modern';
   providedIn: 'root'
 })
 export class CabService {
+  apiUrl = 'https://tuba-mongo-backend.onrender.com/';
+  header: any = {
+    "Access-Control-Allow-Origin": "true",
+    
+  };
 
   public isOpenResponsiveFilter: boolean = false;
   public isOpenHorizontalFilter: boolean = false;
 
   constructor(private http: HttpClient) { }
+  cabBooking(data: any) {
+    console.log("cab service data ",data);
+    return this.http.post(this.apiUrl + `bookMyCab`, data );
+  }
 
   // Cab Modern
   cabModern(): Observable<cabModern> {
