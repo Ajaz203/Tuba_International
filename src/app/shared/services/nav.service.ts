@@ -28,14 +28,17 @@ export class NavService {
 
   constructor() { }
 
+  
   public MENUITEMS: Menu[] = [
+    
     
     {
       title: "Home",
       type: 'link',
-      path: '/home/mix-demo/classic',
-      icon: 'home',
-      level: 3
+      path: '/home', 
+      icon: 'home', 
+      level: 1  
+  },
       
       // children: [
       //   {
@@ -167,7 +170,7 @@ export class NavService {
       //     ]
       //   },
       // ]
-    },
+    
     {
       title: "flight",
       type: "sub",
