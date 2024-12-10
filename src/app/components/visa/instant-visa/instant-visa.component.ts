@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { PagesService } from '../../../shared/services/pages.service';
 import { LayoutComponent } from '../../../shared/components/ui/layout/layout.component';
 import { FooterComponent } from '../../../shared/components/footer/footer.component';

@@ -32,9 +32,11 @@ export class NavService {
     
     {
       title: "Home",
-      // type: 'sub',
-      // active: false,
-      // level: 1,
+      type: 'link',
+      path: '/home/mix-demo/classic',
+      icon: 'home',
+      level: 3
+      
       // children: [
       //   {
       //     title: 'Hotel Demo',
