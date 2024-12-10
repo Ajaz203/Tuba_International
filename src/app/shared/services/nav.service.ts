@@ -32,9 +32,9 @@ export class NavService {
     
     {
       title: "Home",
-      type: 'sub',
-      active: false,
-      level: 1,
+      // type: 'sub',
+      // active: false,
+      // level: 1,
       // children: [
       //   {
       //     title: 'Hotel Demo',
