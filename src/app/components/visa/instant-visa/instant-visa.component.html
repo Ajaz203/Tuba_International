@@ -2637,33 +2637,231 @@
 
 
 
+<div class="vsfl_cont">
 
-    
-    
-    
-  <div class="tourist-card">
-    <img [src]="image" alt="{{location}}" class="card-image" />
-    <div class="card-content">
-      <h3>{{location}}</h3>
-      <p>Get on <span>{{date}}, {{time}}</span></p>
-    </div>
+  <div class="gurnt_vmain">
+
+      <div class="mid_cnt">
+          <div class="tlesbvs">
+              <div class="sbhedng f20 wt500">Enjoy Visa Services</div>
+              <div class="hedmainv f40 wt700">On Trending Tourist Attractions </div>
+          </div>
+
+          
+
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3 mt-5" *ngFor="let visa of visas">
+                <a class=" crdv_destn hover15">
+                  <div class="imge_tsctn">
+                    <figure>
+                      <img [src]="visa.imageUrl" [alt]="visa.country" class="img-fluid">
+                    </figure>
+                  </div>
+                  <div class="dtlabtvsa p-3">
+                    <div class="loctnme wt600">
+                      <i class="fa fa-map-marker" aria-hidden="true"></i>
+                      {{ visa.country }}
+                    </div>
+                    <div class="gtdtym f14">Get on <span>{{ visa.dateTime }}</span></div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+
+      </div>
+
+  </div>
+
+  <div class="mid_cnt">
+      <div class="vis_stpsfll">
+          <div class="tlesbvs">
+              <div class="sbhedng f20 wt500">How It Works ?</div>
+              <div class="hedmainv f40 wt700">Get Your Visa in 4 Easy to Follow Steps</div>
+          </div>
+
+          <div class="stp_scnt vflx vjsb">
+
+              <div class="echstpdv">
+                  <div class="img-top"><img src="/visa-booking/content/visa/img/appylicn.svg" alt="Apply Icon"></div>
+                  <div class="stpvlue f14 wt500">Step 1</div>
+                  <h4>Apply Online</h4>
+                  <p>
+                      Visit our exclusive platform and fill in the required details hassle-free to meet criteria.
+                  </p>
+              </div>
+
+              <div class="echstpdv">
+                  <div class="img-top"><img src="/visa-booking/content/visa/img/apontmnt.svg" alt="Appointment Icon"></div>
+                  <div class="stpvlue f14 wt500">Step 2</div>
+                  <h4>Get An Appointment</h4>
+                  <p>
+                      Effortlessly receive an appointment schedule &amp; meet our professionals for expert guidance.
+                  </p>
+              </div>
+
+              <div class="echstpdv">
+                  <div class="img-top"><img src="/visa-booking/content/visa/img/docmnticn.svg" alt="Documents Icon"></div>
+                  <div class="stpvlue f14 wt500">Step 3</div>
+                  <h4>Submit Documents</h4>
+                  <p>Send us all the relevant documents to verify and process your visa application.</p>
+              </div>
+
+              <div class="echstpdv">
+                  <div class="img-top"><img src="/visa-booking/content/visa/img/recveicn.svg" alt="Receive Icon"></div>
+                  <div class="stpvlue f14 wt500">Step 4</div>
+                  <h4>Receive Your Visas </h4>
+                  <p>Once approved, you’ll receive your visas instantly with our hassle-free procedure. </p>
+              </div>
+
+          </div>
+
+      </div>
+      
+      <div class="why_plebx">
+          <div class="tlesbvs">
+              <div class="sbhedng f20 wt500">We Are Different</div>
+              <div class="hedmainv f40 wt700">What Are We Known For?</div>
+          </div>
+          <div class="vflx vjsb">
+              <div class="sglchose">
+                  <div class="img-top"><img src="/visa-booking/content/visa/img/visastpm.svg" alt="Apply Icon"></div>
+                  <p>Special Visa Services for Diverse Countries </p>
+              </div>
+              <div class="sglchose">
+                  <div class="img-top"><img src="/visa-booking/content/visa/img/expricn.svg" alt="Experience Icon"></div>
+                  <p>Years of Unrivaled Expertise in Visa Processing</p>
+              </div>
+              <div class="sglchose">
+                  <div class="img-top"><img src="/visa-booking/content/visa/img/custmrsup.svg" alt="Assistance Icon"></div>
+                  <p>Dedicated End-to-End Visa Assistance </p>
+              </div>
+              <div class="sglchose">
+                  <div class="img-top"><img src="/visa-booking/content/visa/img/safeicn.svg" alt="Safety Icon"></div>
+                  <p>Optimal Level of Safety &amp; Confidentiality</p>
+              </div>
+          </div>
+      </div>
+      <div class="fl_faqs">
+          <div class="tlesbvs">
+              <div class="sbhedng f20 wt500">Frequently</div>
+              <div class="hedmainv f40 wt700">Asked Questions</div>
+          </div>
+          <div class="accordion mgt15">
+              <div class="accordion__item">
+                  <div class="accordion__item__header">
+                      What documents are required to apply for a tourist visa?
+                  </div>
+                  <div class="accordion__item__content" style="overflow: hidden; display: none;">
+                      <p>Here’s the extensive list of crucial documents that every individual needs to submit for tourist visa application processing. </p>
+                      <ul>
+                          <li>Tourist Application Form </li>
+                          <li>Passport photocopies with minimum validity of 3 to 6 months and 2 blank pages</li>
+                          <li>Travel insurance </li>
+                          <li>Valid evidence for finances </li>
+                          <li>Accommodation proof </li>
+                          <li>Return flight ticket proof </li>
+                          <li>Essential civil documents </li>
+                          <li>Other supporting documents </li>
+                      </ul>
+
+                  </div>
+              </div>
+              <div class="accordion__item">
+                  <div class="accordion__item__header">
+                      How many steps are usually involved in visa processing?
+                  </div>
+                  <div class="accordion__item__content" style="overflow: hidden; display: none;">
+                      <p>When it comes to visa processing, then only 4 simple steps are involved. These steps include: -</p>
+                      <ul>
+                          <li>Applying online for Visa </li>
+                          <li>Get an appointment for consultation </li>
+                          <li>Submitting of essential documents for verification</li>
+                          <li>Pay the amount, visit for an interview and on approval receive your Visa. </li>
+                      </ul>
+
+                  </div>
+              </div>
+              <div class="accordion__item">
+                  <div class="accordion__item__header">
+                      How long does it take to approve the tourist visa application?
+                  </div>
+                  <div class="accordion__item__content" style="overflow: hidden; display: none;">
+                      <p>Presently, visa processing takes around 21 workdays from the date on which the embassy received your application. It may exceed up to 30 days in certain cases. We further advise you to avoid making travel plans until you receive your passport and the application process is completed. </p>
+                  </div>
+              </div>
+              <div class="accordion__item">
+                  <div class="accordion__item__header">
+                      Will I get the visa on an estimated date as mentioned on the platform?
+                  </div>
+                  <div class="accordion__item__content" style="overflow: hidden; display: none;">
+                      <p>
+                          You will likely receive your visa on the estimated date mentioned on the platform. However, please note that visa processing times can be subject to change due to internal or external factors such as additional documentation requirements, security checks and change of policy (If any).
+                      </p>
+
+                  </div>
+              </div>
+
+              <div class="accordion__item">
+                  <div class="accordion__item__header">
+                      Why do Visa applications get rejected?
+                  </div>
+                  <div class="accordion__item__content" style="overflow: hidden; display: none;">
+                      <p>
+                          There are multiple reasons that can lead to visa rejections. Some of them include:-
+                      </p>
+                      <ul>
+                          <li>Incomplete Application </li>
+                          <li>Violation of Embassy Rules </li>
+                          <li>Issues in Passport </li>
+                          <li>Not Meeting the Criteria </li>
+                          <li>Submission of Incomplete Travel Details </li>
+                          <li>Insufficient Travel Insurance</li>
+                          <li>Inadequate Amount of Funds </li>
+                          <li>Issues in Visa in Interview </li>
+
+                      </ul>
+
+                      <p>These are the common reasons that can cause visa rejections. Therefore, we highly recommend you to be very careful and precise while filling your visa applications.</p>
+                  </div>
+              </div>
+
+
+              <div class="accordion__item">
+                  <div class="accordion__item__header">
+                      Can I reapply for a visa after it has been rejected?
+
+                  </div>
+                  <div class="accordion__item__content" style="overflow: hidden; display: none;">
+                      <p> Absolutely yes, you can further reapply for a visa if it was rejected previously.</p>
+                  </div>
+              </div>
+
+
+
+
+          </div>
+      </div>
+  </div>
+
 </div>
-    
-    
-    
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <!-- <app-footer [location]="true"></app-footer>
-    
-    <app-layout></app-layout> -->
-    <!-- <app-layout [loaderType]="'basic'"></app-layout> -->
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout></app-layout>
+<app-layout [loaderType]="'basic'"></app-layout>
