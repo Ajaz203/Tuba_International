@@ -35,7 +35,7 @@ export class NavService {
     {
       title: "Home",
       type: 'link',
-      path: '/home', 
+      path: '/home/mix-demo/classic', 
       icon: 'home', 
       level: 1  
   },
@@ -178,7 +178,7 @@ export class NavService {
       level: 1,
       children: [
         {
-          title: 'Search Flights',
+          title: 'Flight Details',
           path: '/home/flight/modern',
           type: 'link'
         },
@@ -1165,7 +1165,7 @@ export class NavService {
       level: 1,
       children: [
         {
-          title: 'Instant Visa',
+          title: 'Visa Details',
           path: '/instant-visa',
           type: 'link',
           
