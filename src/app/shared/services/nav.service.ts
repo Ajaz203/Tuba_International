@@ -28,14 +28,17 @@ export class NavService {
 
   constructor() { }
 
+  
   public MENUITEMS: Menu[] = [
+    
     
     {
       title: "Home",
       type: 'link',
-      path: '/home/mix-demo/classic',
-      icon: 'home',
-      level: 3
+      path: '/home/mix-demo/classic', 
+      icon: 'home', 
+      level: 1  
+  },
       
       // children: [
       //   {
@@ -167,7 +170,7 @@ export class NavService {
       //     ]
       //   },
       // ]
-    },
+    
     {
       title: "flight",
       type: "sub",
@@ -175,7 +178,7 @@ export class NavService {
       level: 1,
       children: [
         {
-          title: 'Search Flights',
+          title: 'Flight Details',
           path: '/home/flight/modern',
           type: 'link'
         },
@@ -1162,7 +1165,7 @@ export class NavService {
       level: 1,
       children: [
         {
-          title: 'Instant Visa',
+          title: 'Visa Details',
           path: '/instant-visa',
           type: 'link',
           

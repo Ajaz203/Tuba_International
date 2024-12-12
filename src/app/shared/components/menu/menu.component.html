@@ -15,31 +15,39 @@
         @if(!menuItem.megaMenu){
           <li class="dropdown">
             @if(menuItem.title){
-              <a href="javascript:void(0)" class="nav-link menu-title" [ngClass]="menuItem.active && isOpen ? 'active' : ''" (click)="toggleMenu(menuItem)">{{ menuItem.title | translate }}
-                @if(isOpen){
-                  <span class="according-menu">{{ menuItem.active && isOpen ? '-' : '+'}}</span>
-                }
-              </a>
+              @if(menuItem.children && menuItem.type == 'sub') {
+                <a href="javascript:void(0)" class="nav-link menu-title" [ngClass]="menuItem.active && isOpen ? 'active' : ''" (click)="toggleMenu(menuItem)">{{ menuItem.title | translate }}
+                  @if(isOpen){
+                    <span class="according-menu">{{ menuItem.active && isOpen ? '-' : '+'}}</span>
+                  }
+                </a>
+              } @else if(!menuItem.children && menuItem.type == 'link' && menuItem.path){
+                <a href="javascript:void(0)" class="nav-link menu-title" [ngClass]="menuItem.active ? 'active' : ''" [routerLink]="menuItem.path" (click)="toggleMenu(menuItem)">{{ menuItem.title | translate }}
+                </a>
+              }
             }
-            <ul class="nav-submenu menu-content" [ngClass]="{ 'd-block' : menuItem.active == true && isOpen , 'd-none d-md-block' : menuItem.active == false && !isOpen}">
-              <div *ngTemplateOutlet="recursiveMenu; context: { $implicit: menuItem.children }"></div>
-              <ng-template #recursiveMenu let-menuItem>
-                @for(item of menuItem; track item){
-                  <li>
-                    <a href="javascript:void(0)" [class.menu-title]="item.children" [ngClass]="item.active && isOpen ? 'active' : ''" (click)="toggleMenu(item)" [routerLink]="item.path">{{ item.title }}
-                      @if(isOpen && item.children){
-                        <span class="according-menu">{{ item.active && isOpen ? '-' : '+'}}</span>
+
+            @if(menuItem.children && menuItem.type == 'sub') {
+              <ul class="nav-submenu menu-content" [ngClass]="{ 'd-block' : menuItem.active == true && isOpen , 'd-none d-md-block' : menuItem.active == false && !isOpen}">
+                <div *ngTemplateOutlet="recursiveMenu; context: { $implicit: menuItem.children }"></div>
+                <ng-template #recursiveMenu let-menuItem>
+                  @for(item of menuItem; track item){
+                    <li>
+                      <a href="javascript:void(0)" [class.menu-title]="item.children" [ngClass]="item.active && isOpen ? 'active' : ''" (click)="toggleMenu(item)" [routerLink]="item.path">{{ item.title }}
+                        @if(isOpen && item.children){
+                          <span class="according-menu">{{ item.active && isOpen ? '-' : '+'}}</span>
+                        }
+                      </a>
+                      @if(item.children){
+                        <ul [class.nav-sub-childmenu]="item.children" [ngClass]="{ 'level1' : item.level === 2,  'submenu-content level3' : item.level === 4 && item.children,'submenu-content level2' : item.level === 3 && item.type == 'sub','d-block' : item.active == true && isOpen }">
+                          <div *ngTemplateOutlet="recursiveMenu; context: { $implicit: item.children }"></div>
+                        </ul>
                       }
-                    </a>
-                    @if(item.children){
-                      <ul [class.nav-sub-childmenu]="item.children" [ngClass]="{ 'level1' : item.level === 2,  'submenu-content level3' : item.level === 4 && item.children,'submenu-content level2' : item.level === 3 && item.type == 'sub','d-block' : item.active == true && isOpen }">
-                        <div *ngTemplateOutlet="recursiveMenu; context: { $implicit: item.children }"></div>
-                      </ul>
-                    }
-                  </li>
-                }
-              </ng-template>
-            </ul>
+                    </li>
+                  }
+                </ng-template>
+              </ul>
+            }
           </li>
         }@else{
           <li class="mega-menu">
@@ -128,4 +136,3 @@
     </ul>
   </div>
 </div>
-
