@@ -1,32 +1,72 @@
-<form>
-  @if(type == 'register'){
-    <div class="form-group">
-      <label for="name">Full name</label>
-      <input type="email" class="form-control" id="name" placeholder="Enter your name">
-    </div>
-  }
-  <div class="form-group">
-    <label for="exampleInputEmail1">{{ type == 'register' ? 'Email address' : 'user name or Email address'}}</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    @if(type == 'login'){
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-    }
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div *ngIf="type === 'register'" class="form-group">
+    <label for="name">Full name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      formControlName="fullName"
+      placeholder="Enter your name"
+    />
+    <small *ngIf="loginForm.get('fullName')?.invalid && loginForm.get('fullName')?.touched" class="text-danger">
+      Name is required
+    </small>
   </div>
+
   <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <label for="email">
+      {{ type === 'register' ? 'Email address' : 'Email address' }}
+    </label>
+    <input
+      type="text"
+      class="form-control"
+      id="email"
+      formControlName="emailOrUsername"
+      placeholder="Enter {{ type === 'register' ? 'email' : 'username or email' }}"
+    />
+    <small *ngIf="loginForm.get('emailOrUsername')?.invalid && loginForm.get('emailOrUsername')?.touched" class="text-danger">
+      {{ type === 'register' ? 'Valid email is required' : 'Email is required' }}
+    </small>
   </div>
-  @if(type == 'login'){
-    <div class="form-group form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">remember me</label>
-    </div>
-  }
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      formControlName="password"
+      placeholder="Password"
+    />
+    <small *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-danger">
+      Password is required (minimum 6 characters)
+    </small>
+  </div>
+
+  <div *ngIf="type === 'login'" class="form-group form-check">
+    <input
+      type="checkbox"
+      class="form-check-input"
+      id="rememberMe"
+      formControlName="rememberMe"
+    />
+    <label class="form-check-label" for="rememberMe">Remember me</label>
+  </div>
+
   <div class="button-bottom">
-    <button type="submit" class="w-100 btn btn-solid">{{ type == 'register' ? 'create account' : 'login' }}</button>
+    <button type="submit" class="w-100 btn btn-solid" > 
+      {{ type === 'register' ? 'Create Account' : 'Login' }}
+    </button>
+    <div *ngIf="type === 'login'" class="mt-3 text-center ">
+      <button type="button" class="btn  w-100 btn-solid" (click)="goToForgotPassword()">Forgot Password?</button>
+    </div>
     <div class="divider">
       <h6>or</h6>
     </div>
-    <button type="submit" class="w-100 btn btn-solid btn-outline">{{ type == 'register' ? 'login' : 'create account' }}</button>
+    <button type="button" class="w-100 btn btn-solid btn-outline" (click)="toggleType()">
+      {{ type === 'register' ? 'Login' : 'Create Account' }}
+    </button>
   </div>
+
+ 
 </form>
