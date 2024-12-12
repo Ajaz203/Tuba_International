@@ -1,0 +1,89 @@
+.visa-application {
+  padding: 40px 0;
+  background: #f8f9fa;
+  min-height: 100vh;
+
+  .visa-form-card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .subtitle {
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .form-section {
+      margin-bottom: 30px;
+      
+      h4 {
+        color: #2c3e50;
+        font-size: 18px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+      }
+    }
+
+    label {
+      color: #495057;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .form-control {
+      height: 45px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
+
+      &:focus {
+        border-color: #3498db;
+        box-shadow: none;
+      }
+    }
+
+    .form-actions {
+      text-align: center;
+      margin-top: 30px;
+
+      .btn-primary {
+        padding: 12px 40px;
+        font-size: 16px;
+        border-radius: 6px;
+        background: #3498db;
+        border: none;
+        font-weight: 500;
+        transition: all 0.3s;
+
+        &:hover {
+          background: #2980b9;
+          transform: translateY(-1px);
+        }
+
+        &:disabled {
+          background: #95a5a6;
+          cursor: not-allowed;
+          transform: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .visa-application {
+    padding: 20px 0;
+    
+    .visa-form-card {
+      padding: 20px;
+    }
+  }
+}

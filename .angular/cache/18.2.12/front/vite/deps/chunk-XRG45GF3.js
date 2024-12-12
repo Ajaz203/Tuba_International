@@ -1,6 +1,6 @@
 import {
   isPlatformBrowser
-} from "./chunk-JDU4VVT4.js";
+} from "./chunk-7GQXPES3.js";
 import {
   ElementRef,
   Inject,
@@ -12,7 +12,7 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵinject
-} from "./chunk-XBOXCF77.js";
+} from "./chunk-JF7D33DB.js";
 
 // node_modules/@angular/cdk/fesm2022/platform.mjs
 var hasV8BreakIterator;
@@ -238,4 +238,4 @@ export {
   coerceCssPixelValue,
   coerceElement
 };
-//# sourceMappingURL=chunk-6I7QKTVD.js.map
+//# sourceMappingURL=chunk-XRG45GF3.js.map

@@ -1,40 +1,207 @@
-.dtlabtvsa {
-    width: 90%;
-    max-width: 150px;
-    max-height: 150px;
-    margin: -30px auto;
-    background: #fff;
-    border-radius: 15px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-    padding: 10px;
+
+.hotel-card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .hotel-image-wrapper {
     position: relative;
-}
-.imge_tsctn img {
-    width: 100%;
-    height: 100%;
-    
-    object-fit: cover;
-    border-radius: 20px;
+    height: 200px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hotel-rating {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 4px 8px;
+      border-radius: 20px;
+      font-size: 14px;
+
+      i {
+        color: #ffc107;
+        margin-right: 4px;
+      }
+    }
+  }
+
+  .card-body {
+    padding: 1.25rem;
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .hotel-details {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .price-section {
+        display: flex;
+        flex-direction: column;
+
+        .price {
+          font-size: 1.25rem;
+          font-weight: 700;
+          color: #2c3e50;
+        }
+
+        .per-night {
+          font-size: 0.8rem;
+          color: #666;
+        }
+      }
+
+      .book-now {
+        padding: 10px 24px;
+        border-radius: 30px;
+        background: linear-gradient(135deg, #1a73e8, #0d47a1);
+        color: white;
+        font-weight: 600;
+        border: none;
+        transition: all 0.3s ease;
+        min-width: 120px;
+        text-align: center;
+
+        &:hover {
+          background: linear-gradient(135deg, #0d47a1, #1a73e8);
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
 }
 
-/* HTML: <div class="loader"></div> */
+.pagination-wrapper {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  .pagination {
+    .page-item {
+      .page-link {
+        border: none;
+        padding: 10px 15px;
+        color: #007bff;
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        margin: 0 5px;
+        border-radius: 5px;
+
+        &:hover {
+          background: #f8f9fa;
+        }
+      }
+
+      &.disabled {
+        .page-link {
+          background: #f8f9fa;
+          color: #6c757d;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}
+
+// Loading spinner
 .loader {
-position: absolute;
-margin-top: 20px;
-left: 50%;
-  width: 50px;
-  --b: 8px; 
-  aspect-ratio: 1;
+  width: 48px;
+  height: 48px;
+  border: 5px solid #f3f3f3;
   border-radius: 50%;
-  padding: 1px;
-  background: conic-gradient(#0000 10%,#ff002f) content-box;
-  -webkit-mask:
-    repeating-conic-gradient(#0000 0deg,#000 1deg 20deg,#0000 21deg 36deg),
-    radial-gradient(farthest-side,#0000 calc(100% - var(--b) - 1px),#000 calc(100% - var(--b)));
-  -webkit-mask-composite: destination-in;
-          mask-composite: intersect;
-  animation:l4 1s infinite steps(10);
+  border-top: 5px solid #007bff;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
 }
-@keyframes l4 {to{transform: rotate(1turn)}}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
 
+
+
+.hotel-card {
+  // ... existing styles ...
+
+  .card-body {
+    .hotel-details {
+      .price-section {
+        .price {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: #2c3e50;
+          display: block;
+        }
+
+        .per-night {
+          font-size: 0.8rem;
+          color: #666;
+          display: block;
+          margin-top: -2px;
+        }
+
+        .original-price {
+          font-size: 0.9rem;
+          color: #999;
+          text-decoration: line-through;
+          display: block;
+          margin-top: 2px;
+        }
+      }
+    }
+  }
+}
+.search-box {
+  // padding: 20px;
+  width: 100%;
+}
+
+.left-part form {
+  // gap: 10px;
+  width: 100%;
+}
+
+.search-body {
+  flex: 1;
+  min-width: 0;
+  padding: 0 5px;
+}
+
+.search-body:last-child {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+.form-control {
+  width: 100%;
+}
+
+.btn-solid {
+  height: 38px;
+  padding: 0 20px;
+}
+
+.qty-box {
+  width: 100%;
+}
+
+.input-group {
+  width: 100%;
+}

@@ -2,16 +2,16 @@ import {
   Platform,
   coerceElement,
   getRtlScrollAxisType
-} from "./chunk-6I7QKTVD.js";
+} from "./chunk-XRG45GF3.js";
 import {
   animate,
   style,
   transition,
   trigger
-} from "./chunk-OVQEIHGV.js";
+} from "./chunk-FSHXAD4A.js";
 import {
   DomSanitizer
-} from "./chunk-M46E32VU.js";
+} from "./chunk-TFT2PVC2.js";
 import {
   AsyncPipe,
   CommonModule,
@@ -22,7 +22,7 @@ import {
   NgSwitchCase,
   NgSwitchDefault,
   NgTemplateOutlet
-} from "./chunk-JDU4VVT4.js";
+} from "./chunk-7GQXPES3.js";
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -87,14 +87,18 @@ import {
   ɵɵtext,
   ɵɵtextInterpolate,
   ɵɵviewQuery
-} from "./chunk-XBOXCF77.js";
+} from "./chunk-JF7D33DB.js";
+import {
+  animationFrameScheduler,
+  fromEvent,
+  merge
+} from "./chunk-YL2SEEQC.js";
 import {
   BehaviorSubject,
   EMPTY,
   Observable,
   Subject,
   Subscription,
-  animationFrameScheduler,
   debounceTime,
   delay,
   distinctUntilChanged,
@@ -102,8 +106,6 @@ import {
   filter,
   finalize,
   from,
-  fromEvent,
-  merge,
   mergeMap,
   of,
   startWith,
@@ -112,7 +114,7 @@ import {
   takeUntil,
   takeWhile,
   tap
-} from "./chunk-KOIB4TPY.js";
+} from "./chunk-POVIULHW.js";
 import {
   __spreadProps,
   __spreadValues
@@ -4126,4 +4128,4 @@ export {
   GalleryComponent,
   GalleryModule
 };
-//# sourceMappingURL=chunk-3MQTFPOF.js.map
+//# sourceMappingURL=chunk-2HHWN2EQ.js.map
