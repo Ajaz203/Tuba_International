@@ -1,0 +1,40 @@
+.dtlabtvsa {
+    width: 90%;
+    max-width: 150px;
+    max-height: 150px;
+    margin: -30px auto;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    padding: 10px;
+    position: relative;
+}
+.imge_tsctn img {
+    width: 100%;
+    height: 100%;
+    
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+position: absolute;
+margin-top: 20px;
+left: 50%;
+  width: 50px;
+  --b: 8px; 
+  aspect-ratio: 1;
+  border-radius: 50%;
+  padding: 1px;
+  background: conic-gradient(#0000 10%,#ff002f) content-box;
+  -webkit-mask:
+    repeating-conic-gradient(#0000 0deg,#000 1deg 20deg,#0000 21deg 36deg),
+    radial-gradient(farthest-side,#0000 calc(100% - var(--b) - 1px),#000 calc(100% - var(--b)));
+  -webkit-mask-composite: destination-in;
+          mask-composite: intersect;
+  animation:l4 1s infinite steps(10);
+}
+@keyframes l4 {to{transform: rotate(1turn)}}
+
+

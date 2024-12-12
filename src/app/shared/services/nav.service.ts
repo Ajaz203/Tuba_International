@@ -433,7 +433,7 @@ export class NavService {
       children: [
         {
           title: 'Stays',
-          path: '/home/hotel/minimal',
+          path: '/home/hotel/classic',
           type: 'link'
           
         },

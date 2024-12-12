@@ -14,6 +14,9 @@ import { hotels } from '../interface/hotel';
 })
 export class HotelService {
 
+  apiUrl = 'https://tuba-mongo-backend.onrender.com/';
+
+
   public isOpenResponsiveFilter: boolean = false;
   public isOpenHorizontalFilter: boolean = false;
   public isOpenResponsiveHorizontal: boolean = false;
@@ -34,7 +37,18 @@ export class HotelService {
       }
     }
   }
+ 
+  hotelSearch(data: any) {
+    console.log("hotel service data ",data);
+    return this.http.post(this.apiUrl + `getHotelData`, data );
+  }
 
+  hotelBooking(data: any) {
+    console.log("hotel service data ",data);
+    return this.http.post(this.apiUrl + `bookMyHotel`, data );
+  }
+
+  
   // Home Classic Data
   hotelClassic(): Observable<homeSectionModel> {
     return this.http.get<homeSectionModel>('assets/json/theme/hotel-classic.json');
