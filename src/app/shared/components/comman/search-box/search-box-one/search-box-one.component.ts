@@ -26,6 +26,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 	`,
 })
 export class SearchBoxOneComponent {
+  private exchangeRateUSDToINR: number = 83;
   hotels: any[] = []; 
   pagedHotels: any[] = [];
   currentPage = 0;
@@ -92,42 +93,48 @@ bookingForm: FormGroup<any>;
     }
   }
   // search hotels function
-  onSubmit() {
-    this.isLoading = true;
-    if (this.hotelSearchForm.valid) {
-      console.log(this.hotelSearchForm.value);
-  
-      this.hotelService.hotelSearch(this.hotelSearchForm.value).subscribe(
-        (res) => {
-          const response = res as any;
-  
-          if (response && response.data && response.data.properties) {
-            // Process the hotel data
-            this.hotels = response.data.properties.map((property: any) => ({
+ // ... existing imports ...
+
+onSubmit() {
+  this.isLoading = true;
+  if (this.hotelSearchForm.valid) {
+    this.hotelService.hotelSearch(this.hotelSearchForm.value).subscribe(
+      (res) => {
+        const response = res as any;
+        if (response?.data?.properties) {
+          this.hotels = response.data.properties.map((property: any) => {
+            const originalPrice = property.rate_per_night?.extracted_lowest;
+            const inrPrice = originalPrice ? this.convertToINR(originalPrice) : 'N/A';
+            
+            return {
               name: property.name,
               rating: property.overall_rating,
-              image: property.images?.[0]?.thumbnail || 'default-image-url.jpg', 
-              price: property.rate_per_night?.extracted_lowest || 'N/A', // Extract lowest price
-            }));
-            this.isLoading = false;
-            // Update paginated data
-            this.updatePage();
-          } else {
-            console.error('Invalid response format', res);
-            this.hotels = [];
-            this.updatePage();
-          }
-        },
-        (error) => {
-          console.error('Error fetching hotels:', error);
-          this.hotels = [];
+              image: property.images?.[0]?.thumbnail || 'default-image-url.jpg',
+              price: inrPrice,
+              originalPrice: originalPrice,
+              displayPrice: inrPrice !== 'N/A' ? `₹${Math.round(inrPrice)}` : 'N/A'
+            };
+          });
+          
+          this.isLoading = false;
           this.updatePage();
         }
-      );
-    } else {
-      console.log('Form is not valid');
-    }
+      },
+      error => {
+        console.error('Search error:', error);
+        this.isLoading = false;
+      }
+    );
   }
+}
+
+private convertToINR(usdPrice: number | string): number {
+  if (!usdPrice || isNaN(Number(usdPrice))) return 0;
+  const cleanPrice = typeof usdPrice === 'string' 
+    ? parseFloat(usdPrice.replace(/[^0-9.]/g, ''))
+    : usdPrice;
+  return Math.round(cleanPrice * this.exchangeRateUSDToINR);
+}
   
   
 
