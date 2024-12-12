@@ -33,11 +33,6 @@ import {
   coerceNumberProperty
 } from "./chunk-6I7QKTVD.js";
 import {
-  NG_VALIDATORS,
-  NG_VALUE_ACCESSOR,
-  Validators
-} from "./chunk-OD6F6NKF.js";
-import {
   animate,
   animateChild,
   group,
@@ -48,6 +43,11 @@ import {
   transition,
   trigger
 } from "./chunk-OVQEIHGV.js";
+import {
+  NG_VALIDATORS,
+  NG_VALUE_ACCESSOR,
+  Validators
+} from "./chunk-OD6F6NKF.js";
 import {
   CommonModule,
   DOCUMENT,
