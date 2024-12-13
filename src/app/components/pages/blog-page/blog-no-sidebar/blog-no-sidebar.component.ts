@@ -16,7 +16,7 @@ import { HeaderComponent } from '../../../../shared/components/header/header.com
 })
 export class BlogNoSidebarComponent {
   
-  public bg_image = 'assets/images/tour/inner-page/breadcrumb.jpg';
+  public bg_image = 'assets/home/port-bg.jpg';
   public title = 'blog';
   public parent = 'Home';
   public child = 'blog';

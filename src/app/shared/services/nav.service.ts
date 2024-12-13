@@ -194,6 +194,11 @@ export class NavService {
           type: 'link',
           level: 3,
         },
+        {
+                title: 'vector',
+                 path: '/home/hotel/vector',
+                 type: 'link'
+               }
         // {
         //   title: "search",
         //   type: "sub",

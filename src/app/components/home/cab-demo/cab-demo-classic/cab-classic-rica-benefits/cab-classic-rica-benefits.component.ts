@@ -14,6 +14,6 @@ export class CabClassicricaBenefitsComponent {
 
   @Input() benefits: ricaBenefit[];
 
-  public description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aperiam at, aut commodi corporis dolorum ducimus labore magnam mollitia natus porro possimus quae sit tenetur veniam veritatis voluptate voluptatem!";
+  public description = "At Tuba International Cabs, we are committed to delivering a seamless travel experience tailored to your needs. With a fleet of modern vehicles, professional drivers, and 24/7 availability, we ensure safety, comfort, and reliability every step of the way. Whether for business or leisure, choose Tuba for journeys that matter.";
 
 }
