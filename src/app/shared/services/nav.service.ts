@@ -194,11 +194,7 @@ export class NavService {
           type: 'link',
           level: 3,
         },
-        {
-                title: 'vector',
-                 path: '/home/hotel/vector',
-                 type: 'link'
-               }
+       
         // {
         //   title: "search",
         //   type: "sub",
@@ -286,12 +282,12 @@ export class NavService {
           path: '/home/cab/classic',
           type: 'link'
         },
-        {
-          title: 'Cab Rentals',
-          path: '/cab/single-details',
-          type: 'link',
-          level: 2,
-        },
+        // {
+        //   title: 'Cab Rentals',
+        //   path: '/cab/single-details',
+        //   type: 'link',
+        //   level: 2,
+        // },
         {
           title: 'book Now',
           path: '/cab/booking/booking',
