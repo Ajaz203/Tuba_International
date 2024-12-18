@@ -6,25 +6,24 @@
   <app-animations [type]="'dots'"></app-animations>
   <div class="container">
     <div class="row">
-      <div class ="col-lg-3"></div>
-      <div class="col-lg-6">
-        <div class="guest-detail">
-          <h2>Traveller Information</h2>
-          <form>
-            <div class="form-group">
-              <div class="row">
-                <div class="col">
-                  <label>Full Name</label>
-                  <input type="text" formControlName="name" class="form-control" placeholder="Full Name" />
-                </div>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label>Contact Info</label>
-              <input type="tel" formControlName="contact_no" class="form-control" placeholder="Mobile Number" />
-            </div>
-
+        <div class="col-lg-6">
+            <div class="guest-detail">
+                <h2>Traveller Information</h2>
+                <form>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col">
+                                <label>Full Name</label>
+                                <input type="text" formControlName="name" class="form-control" placeholder="Full Name" />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Contact Info</label>
+                        <input type="tel" formControlName="contact_no" class="form-control" placeholder="Mobile Number" />
+                    </div>
+                    
             <div class="form-group">
               <label>Email Address</label>
               <input type="email" formControlName="email" class="form-control" placeholder="Enter Email" />
@@ -45,14 +44,52 @@
             </div>
 
             <div class="submit-btn">
-              <button type="submit" class="btn btn-solid" style="margin-right: 10px;">Book Now</button>
+                <button type="submit" class="btn btn-solid" style="margin-right: 10px;">Book Now</button>
             </div>
           </form>
         </div>
       </div>
-      <!-- <div class="col-lg-5 booking-order">
-        <app-tour-booking-details></app-tour-booking-details>
-      </div> -->
+
+
+
+      <div class ="col-lg-6">
+        <section class="whtbx mt-40">
+            <div class="f20 wt600 cs_heading mb-10">
+                Application Process
+            </div>
+            <p class="mb-10 cs_s_heading">Check-out all the steps that are involved in visa application processing. </p>
+    
+    
+            <div class="vflx app_srv_box_prnt mt-20">
+                <div class="app_srv_box app_srv_box_01">
+                    <img src="/visa-booking/content/visa/img/registration.svg" class="app_srv_icon">
+                    <span class="steps">Step 01</span>
+                    <h4>Apply Online</h4>
+                    <p>Visit our exclusive platform and fill in the required details hassle-free to meet criteria.</p>
+                </div>
+                <div class="app_srv_box app_srv_box_02">
+                    <img src="/visa-booking/content/visa/img/appntIcon.svg" class="app_srv_icon">
+                    <span class="steps">Step 02</span>
+                    <h4>Get An Appointment</h4>
+                    <p>Receive an appointment schedule &amp; meet our professionals for guidance.</p>
+                </div>
+                <div class="app_srv_box app_srv_box_03">
+                    <img src="/visa-booking/content/visa/img/upload.svg" class="app_srv_icon">
+                    <span class="steps">Step 03</span>
+                    <h4>Submit Document </h4>
+                    <p>Send us all the relevant documents to verify and process your visa application</p>
+                </div>
+                <div class="app_srv_box app_srv_box_04">
+                    <img src="/visa-booking/content/visa/img/Union_3.svg" class="app_srv_icon">
+                    <span class="steps">Step 04</span>
+                    <h4>Receive Your Visa</h4>
+                    <p>Once approved, you’ll receive your visas instantly with our efficient procedure. </p>
+                </div>
+            </div>
+    
+        </section>
+      </div>
+    
     </div>
   </div>
 
