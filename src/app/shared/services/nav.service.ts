@@ -441,12 +441,12 @@ export class NavService {
           type: 'link'
           
         },
-        {
-          title: 'book Now',
-          path: '/hotel/booking/hotel-booking',
-          type: 'link',
-          level: 3,
-        },
+        // {
+        //   title: 'book Now',
+        //   path: '/hotel/booking/hotel-booking',
+        //   type: 'link',
+        //   level: 3,
+        // },
         // {
         //   title: "Listing",
         //   type: "sub",

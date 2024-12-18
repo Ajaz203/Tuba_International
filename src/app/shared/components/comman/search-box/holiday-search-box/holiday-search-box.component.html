@@ -1,6 +1,6 @@
 <div class="search-panel">
   @if(text){
-    <h2 class="title-top">search for your perfect holiday</h2>
+  <h2 class="title-top">search for your perfect holiday</h2>
   }
   <div class="search-section" [ngClass]="{ 'search-fixed' : searchFixed && searchFix }">
     <div class="search-box" [class.rounded10]="borderClass" [ngClass]="{ 'container custom-container' : searchFixed }">
@@ -15,11 +15,12 @@
         </div>
         <div class="search-body">
           <h6>check out</h6>
-          <input class="form-control" placeholder="During Date" name="dp" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" />
+          <input class="form-control" placeholder="During Date" name="dp" ngbDatepicker #d="ngbDatepicker"
+            (click)="d.toggle()" />
         </div>
         <div class="search-body btn-search">
           <div class="right-part">
-            <a href="javascript:void(0)" class="btn btn-solid color1">search</a>
+            <button (click)="navigateToTourBooking()" class="btn btn-solid color1">search</button>
           </div>
         </div>
       </div>

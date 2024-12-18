@@ -1,6 +1,6 @@
 import { Component, HostListener, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
-
+import { Router } from '@angular/router';
 @Component({
     selector: 'app-food-search-box',
     templateUrl: './food-search-box.component.html',
@@ -16,6 +16,8 @@ export class FoodSearchBoxComponent {
 
   public searchFixed: boolean = false;
 
+  constructor(private router: Router) {}
+
   @HostListener('window:scroll', [])
   onWindowScroll() {
     let number = window.pageYOffset || 0;
@@ -24,5 +26,8 @@ export class FoodSearchBoxComponent {
     } else {
       this.searchFixed = false;
     }
+  }
+  navigateToVisaBooking() {
+    this.router.navigate(['/apply-visa']);
   }
 }

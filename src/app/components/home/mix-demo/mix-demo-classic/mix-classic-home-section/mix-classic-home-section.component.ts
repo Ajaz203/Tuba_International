@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { SearchBoxComponent } from '../../../../../shared/components/comman/search-box/search-box.component';
 
 @Component({
@@ -6,7 +7,7 @@ import { SearchBoxComponent } from '../../../../../shared/components/comman/sear
     templateUrl: './mix-classic-home-section.component.html',
     styleUrls: ['./mix-classic-home-section.component.scss'],
     standalone: true,
-    imports: [SearchBoxComponent]
+    imports: [SearchBoxComponent, CommonModule]
 })
 export class MixClassicHomeSectionComponent {
 
