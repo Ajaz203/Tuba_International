@@ -52,20 +52,20 @@ export const footerAbout = [
     title: "register",
     path: "/page/other-pages/register",
   },
+  // {
+  //   id: 5,
+  //   title: "terms & co.",
+  //   path: "/page/other-pages/user-dashboard",
+  // },
+  // {
+  //   id: 6,
+  //   title: "privacy",
+  //   path: "/page/other-pages/user-dashboard",
+  // },
   {
-    id: 5,
-    title: "terms & co.",
-    path: "/page/other-pages/user-dashboard",
-  },
-  {
-    id: 6,
-    title: "privacy",
-    path: "/page/other-pages/user-dashboard",
-  },
-  {
-    id: 7,
-    title: "support",
-    path: "https://support.pixelstrap.com/portal",
+    // id: 7,
+    // title: "support",
+    // path: "https://support.pixelstrap.com/portal",
     externalTab: true
   }
 ]
@@ -79,7 +79,7 @@ export const footerUsefulLink = [
   {
     id: 2,
     title: "our vehicle",
-    path: "/home/cab/modern",
+    path: "/home/cab/classic",
   },
   {
     id: 3,
@@ -91,21 +91,21 @@ export const footerUsefulLink = [
     title: "services",
     path: "/page/element-pages/service",
   },
-  {
-    id: 5,
-    title: "booking deal",
-    path: "/tour/booking/booking",
-  },
+  // {
+  //   id: 5,
+  //   title: "booking deal",
+  //   path: "/tour/booking/booking",
+  // },
   {
     id: 6,
     title: "emergency call",
     path: "/page/other-pages/contact-us-1",
   },
-  {
-    id: 7,
-    title: "mobile app",
-    path: "/page/element-pages/application",
-  }
+  // {
+  //   id: 7,
+  //   title: "mobile app",
+  //   path: "/page/element-pages/application",
+  // }
 ]
 
 export const footerNewTopic = [
