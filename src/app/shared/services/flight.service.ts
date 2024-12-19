@@ -10,10 +10,19 @@ import { flightModern } from '../interface/flight-modern';
   providedIn: 'root'
 })
 export class FlightService {
+  apiUrl = 'https://tuba-mongo-backend.onrender.com/';
 
   public isOpenResponsiveFilter: boolean = false;
 
   constructor(private http: HttpClient) { }
+  autoSuggest(payload: { query: string }): Observable<any[]> {
+    return this.http.post<any[]>(`${this.apiUrl}autosuggest`, payload);
+  }
+
+
+getflight(data: any) {
+  return this.http.post(this.apiUrl + `getFlightData`, data );
+}
 
   // Flight Modern
   flightModern(): Observable<flightModern> {

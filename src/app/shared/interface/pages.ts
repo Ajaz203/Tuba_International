@@ -151,6 +151,7 @@ export interface faqDetails{
 }
 
 export interface userDashboard{
+data: any;
   tabs: tabs[];
   dashboardDetails: dashboardDetails;
   userProfile: userProfile[];
