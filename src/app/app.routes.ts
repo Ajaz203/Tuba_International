@@ -5,6 +5,7 @@ import { InstantVisaComponent } from './components/visa/instant-visa/instant-vis
 import { ForgotPasswordComponent } from './components/pages/other-pages/forgot-password/forgot-password.component';
 import { LogInComponent } from './components/pages/other-pages/log-in/log-in.component';
 import { UserDashboardComponent } from './components/pages/other-pages/user-dashboard/user-dashboard.component';
+// import { CabBookingComponent } from './components/pages/other-pages/cab-booking/cab-booking.component';
 
 export const routes: Routes = [
     {
@@ -35,6 +36,8 @@ export const routes: Routes = [
       {
         path:'user-dashboard',
         component:UserDashboardComponent
-      }
+      },
+     
+     
 
 ];

@@ -56,126 +56,128 @@
   </div>
 </div>
 
+<div *ngIf="isLoading" class="loader-overlay">
+  <div class="loader">
+    <div class="spinner"></div>
+    <p>Searching hotels...</p>
+  </div>
+</div>
 
-<div *ngIf="isLoading" class="loader"></div>
-<div *ngIf="!isLoading">
-  <!-- Updated hotel cards section -->
-  <div *ngIf="!isLoading">
-    <div *ngIf="!isLoading">
-      <div class="container" *ngIf="pagedHotels.length">
-        <div class="row">
-          <div class="col-md-4 mb-4" *ngFor="let hotel of pagedHotels">
-            <div class="card hotel-card shadow">
-              <div class="hotel-image-wrapper">
-                <img [src]="hotel.image" alt="{{ hotel.name }}" class="card-img-top">
-                <div class="hotel-rating" *ngIf="hotel.rating">
-                  <i class="fas fa-star"></i>
-                  {{ hotel.rating | number:'1.1-1' }}
-                </div>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title text-truncate" title="{{ hotel.name }}">{{ hotel.name }}</h5>
-                <div class="hotel-details">
-                  <div class="price-section">
-                    <span class="price">₹{{ hotel.price | number:'1.0-0' }}</span>
-                    <span class="per-night">per night</span>
-                    <span class="original-price" *ngIf="hotel.originalPrice !== 'N/A'">
-                      ${{ hotel.originalPrice | number:'1.0-0' }}
-                    </span>
-                  </div>
-                  <button class="btn btn-primary book-now" (click)="openModel(content, hotel)">
-                    Book Now
-                  </button>
-                </div>
-              </div>
+<ng-template #searchResultsModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Search Results</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+  </div>
+  <div class="modal-body">
+    <!-- Hotel results -->
+    <div class="row">
+      <div class="col-md-3 mb-3" *ngFor="let hotel of pagedHotels">
+        <div class="card hotel-card">
+          <div class="hotel-image-wrapper">
+            <img [src]="hotel.image" [alt]="hotel.name">
+            <div class="hotel-rating" *ngIf="hotel.rating">
+              <i class="fas fa-star"></i>
+              {{ hotel.rating }}
             </div>
           </div>
-        </div>
-
-        <!-- Pagination -->
-        <div class="pagination-wrapper">
-          <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center">
-              <li class="page-item" [class.disabled]="currentPage === 0">
-                <button class="page-link" (click)="previousPage()">
-                  <i class="fas fa-chevron-left"></i>
-                </button>
-              </li>
-              <li class="page-item" [class.disabled]="currentPage >= totalPages - 1">
-                <button class="page-link" (click)="nextPage()">
-                  <i class="fas fa-chevron-right"></i>
-                </button>
-              </li>
-            </ul>
-          </nav>
+          <div class="card-body">
+            <h5 class="card-title">{{ hotel.name }}</h5>
+            <div class="hotel-details">
+              <div class="price-section">
+                <span class="price">₹{{ hotel.price }}</span>
+                <span class="per-night">per night</span>
+                <span class="original-price" *ngIf="hotel.originalPrice">
+                  ${{ hotel.originalPrice }}
+                </span>
+              </div>
+              <button class="btn book-now" (click)="openModel(content, hotel)">
+                Book Now
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <ng-template #content let-modal>
-    <div class="modal-header">
-      <h4 class="modal-title" style="font-weight: 600;">{{ selectedHotelName }}</h4>
-      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    <!-- Pagination -->
+    <div class="pagination-wrapper" *ngIf="totalPages > 1">
+      <nav>
+        <ul class="pagination justify-content-center">
+          <li class="page-item" [class.disabled]="currentPage === 0">
+            <button class="page-link" (click)="previousPage()">Previous</button>
+          </li>
+          <li class="page-item" [class.disabled]="currentPage >= totalPages - 1">
+            <button class="page-link" (click)="nextPage()">Next</button>
+          </li>
+        </ul>
+      </nav>
     </div>
-    <div class="modal-body">
-      <form [formGroup]="bookingForm" (ngSubmit)="submitForm()">
-        <div class="mb-3">
-          <!-- <label for="email" class="form-label">Email-ID</label> -->
-          <input type="email" id="email" placeholder="Enter Email" class="form-control" formControlName="email">
-          <div *ngIf="bookingForm.get('email')?.invalid && bookingForm.get('email')?.touched" class="text-danger">
-            Email is required and must be valid.
-          </div>
+  </div>
+</ng-template>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" style="font-weight: 600;">{{ selectedHotelName }}</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="bookingForm" (ngSubmit)="submitForm()">
+      <div class="mb-3">
+        <!-- <label for="email" class="form-label">Email-ID</label> -->
+        <input type="email" id="email" placeholder="Enter Email" class="form-control" formControlName="email">
+        <div *ngIf="bookingForm.get('email')?.invalid && bookingForm.get('email')?.touched" class="text-danger">
+          Email is required and must be valid.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <!-- <label for="contact"  class="form-label">Contact No</label> -->
+        <input type="text" id="contact" placeholder="Enter Contact Number" class="form-control"
+          formControlName="contact">
+        <div *ngIf="bookingForm.get('contact')?.invalid && bookingForm.get('contact')?.touched" class="text-danger">
+          Contact number is required.
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <div class="col">
+          <label for="checkIn" class="form-label">Check In Date:</label>
+          <input type="date" id="checkIn" class="form-control" formControlName="checkIn">
+        </div>
+        <div class="col">
+          <label for="checkOut" class="form-label">Check Out Date:</label>
+          <input type="date" id="checkOut" class="form-control" formControlName="checkOut">
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <div class="d-flex align-items-center mb-2">
+          <label for="travellers" class="form-label">Travellers:</label>&nbsp;&nbsp;
+          <button type="button" class="btn btn-outline-secondary " (click)="decreaseTraveller()"><i
+              class="fa fa-minus" aria-hidden="true"></i>
+          </button>
+          <span class="mx-2">{{ travellers.length }}</span>
+          <button type="button" class="btn btn-outline-secondary" (click)="increaseTraveller()"><i class="fa fa-plus"
+              aria-hidden="true"></i>
+          </button>
         </div>
 
-        <div class="mb-3">
-          <!-- <label for="contact"  class="form-label">Contact No</label> -->
-          <input type="text" id="contact" placeholder="Enter Contact Number" class="form-control"
-            formControlName="contact">
-          <div *ngIf="bookingForm.get('contact')?.invalid && bookingForm.get('contact')?.touched" class="text-danger">
-            Contact number is required.
-          </div>
-        </div>
-
-        <div class="mb-3 row">
-          <div class="col">
-            <label for="checkIn" class="form-label">Check In Date:</label>
-            <input type="date" id="checkIn" class="form-control" formControlName="checkIn">
-          </div>
-          <div class="col">
-            <label for="checkOut" class="form-label">Check Out Date:</label>
-            <input type="date" id="checkOut" class="form-control" formControlName="checkOut">
-          </div>
-        </div>
-
-        <div class="mb-3">
-          <div class="d-flex align-items-center mb-2">
-            <label for="travellers" class="form-label">Travellers:</label>&nbsp;&nbsp;
-            <button type="button" class="btn btn-outline-secondary " (click)="decreaseTraveller()"><i
-                class="fa fa-minus" aria-hidden="true"></i>
-            </button>
-            <span class="mx-2">{{ travellers.length }}</span>
-            <button type="button" class="btn btn-outline-secondary" (click)="increaseTraveller()"><i class="fa fa-plus"
-                aria-hidden="true"></i>
-            </button>
-          </div>
-
-          <div formArrayName="travellers">
-            <div *ngFor="let traveller of travellers.controls; let i = index" [formGroupName]="i" class="mb-2">
-              <div class="row">
-                <span>{{ i + 1 }}:</span>
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="Name" formControlName="name">
-                </div>
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="ID No" formControlName="id">
-                </div>
+        <div formArrayName="travellers">
+          <div *ngFor="let traveller of travellers.controls; let i = index" [formGroupName]="i" class="mb-2">
+            <div class="row">
+              <span>{{ i + 1 }}:</span>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Name" formControlName="name">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="ID No" formControlName="id">
               </div>
             </div>
           </div>
         </div>
-        <button type="submit" class="btn  btn-solid color1" style="float: right;">Book Now</button>
-      </form>
-    </div>
+      </div>
+      <button type="submit" class="btn  btn-solid color1" style="float: right;">Book Now</button>
+    </form>
+  </div>
 
-  </ng-template>
+</ng-template>

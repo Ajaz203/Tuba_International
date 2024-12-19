@@ -14,7 +14,7 @@ import { HeaderComponent } from '../../../../shared/components/header/header.com
 })
 export class PortfolioMasonry3Component {
   
-  public bg_image = 'assets/images/tour/inner-page/breadcrumb.jpg';
+  public bg_image = 'assets/home/port-bg.jpg';
   public title = 'portfolio';
   public parent = 'Home';
   public child = 'portfolio';

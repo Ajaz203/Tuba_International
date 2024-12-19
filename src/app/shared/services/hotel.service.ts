@@ -27,6 +27,8 @@ export class HotelService {
 
   public currency: string = 'usd';
 
+  private searchResults: any = null;
+
   constructor(private http: HttpClient) {
     if(!localStorage.getItem('currency')?.length){
       this.currency = 'usd';
@@ -39,8 +41,8 @@ export class HotelService {
   }
  
   hotelSearch(data: any) {
-    console.log("hotel service data ",data);
-    return this.http.post(this.apiUrl + `getHotelData`, data );
+    console.log("Sending search request:", data);
+    return this.http.post(`${this.apiUrl}getHotelData`, data);
   }
 
   hotelBooking(data: any) {
@@ -116,4 +118,17 @@ export class HotelService {
    return this.hotel().pipe(map((hotel) =>
       Math.max(...hotel.hotels.map((price) => price.price))));
     }
+
+  searchHotels(searchParams: any): Observable<any> {
+    // Replace with your actual API endpoint
+    return this.http.get<any>(`/api/hotels/search`, { params: searchParams });
+  }
+
+  setSearchResults(data: any) {
+    this.searchResults = data;
+  }
+
+  getSearchResults() {
+    return this.searchResults;
+  }
 }

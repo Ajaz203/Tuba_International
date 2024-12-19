@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HotelService } from '../../../../shared/services/hotel.service';
 import { CurrencySymbolPipe } from '../../../../shared/pipe/currency.pipe';
 import { LayoutComponent } from '../../../../shared/components/ui/layout/layout.component';
@@ -9,15 +9,18 @@ import { CabInformationComponent } from '../widgets/cab-information/cab-informat
 import { BookingFormComponent } from '../../../../shared/components/comman/booking/booking-form/booking-form.component';
 import { BreadcrumbsComponent } from '../../../../shared/components/comman/breadcrumbs/breadcrumbs.component';
 import { HeaderComponent } from '../../../../shared/components/header/header.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-cab-booking',
     templateUrl: './cab-booking.component.html',
     styleUrl: './cab-booking.component.scss',
     standalone: true,
-    imports: [HeaderComponent, BreadcrumbsComponent, BookingFormComponent, CabInformationComponent, CabBookingSummaryComponent, CabPromoCodeComponent, FooterComponent, LayoutComponent, CurrencySymbolPipe]
+    imports: [CommonModule, HeaderComponent, BreadcrumbsComponent, BookingFormComponent, CabInformationComponent, CabBookingSummaryComponent, CabPromoCodeComponent, FooterComponent, LayoutComponent, CurrencySymbolPipe]
 })
-export class CabBookingComponent {
+export class CabBookingComponent implements OnInit {
+
+  public showBookingForm = true;
 
   public bg_image = '/assets/imges2/car-banner.jpg';
   public title = 'cab booking';
@@ -27,6 +30,7 @@ export class CabBookingComponent {
   constructor(public hotelService: HotelService) {}
 
   ngOnInit(){
+    this.showBookingForm = true;
     document.documentElement.style.setProperty('--theme-color1','233, 179, 14');
     document.documentElement.style.setProperty('--theme-color2','233, 179, 14');
   }
@@ -34,5 +38,8 @@ export class CabBookingComponent {
   ngOnDestroy(){
     document.documentElement.style.removeProperty('--theme-color1');
     document.documentElement.style.removeProperty('--theme-color2');
+  }
+  showBookingFormHandler() {
+    this.showBookingForm = true;
   }
 }

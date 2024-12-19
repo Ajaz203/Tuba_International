@@ -1,6 +1,7 @@
 import { Component, HostListener, Input } from '@angular/core';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from '@danielmoncada/angular-datetime-picker';
 import { NgClass } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-cab-search-box',
@@ -25,5 +26,11 @@ export class CabSearchBoxComponent {
     } else {
       this.searchFixed = false;
     }
+  }
+
+  constructor(private router: Router) {}
+
+  navigateToCabBooking() {
+    this.router.navigate(['/cab/booking/booking']);
   }
 }

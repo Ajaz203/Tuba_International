@@ -7,11 +7,11 @@
     <div class="row">
       <div class="col-lg-8">
         <div class="review-section">
-          <div class="review_box">
+          <div class="review_box" *ngIf="showBookingForm">
             <div class="title-top">
               <h5>contact details</h5>
             </div>
-            <div class="guest-detail">
+            <div class="guest-detail" >
               <app-booking-form></app-booking-form>
             </div>
           </div>

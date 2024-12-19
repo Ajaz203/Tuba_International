@@ -1,28 +1,28 @@
 {
   "homeSection": [
     {
-      "id": 1,
-      "title": "Tuba International",
-      "subTitle": "Tuba International Travel",
-      "url": "assets/images/hotel-bg.jpg"
-    },
-    {
       "id": 2,
       "title": "Tuba International",
       "subTitle": "Tuba International hotel",
-      "url": "assets/images/hotel-bg.jpg"
+      "url": "/assets/home/subscribe-bg.jpg"
+    },
+    {
+      "id": 1,
+      "title": "Tuba International",
+      "subTitle": "Tuba International Travel",
+      "url": "/assets/home/hotel-bg.jpg"
     },
     {
       "id": 3,
       "title": "Tuba International",
       "subTitle": "Tuba International hotel",
-      "url": "assets/images/hotel-bg.jpg"
+      "url": "/assets/home/background-1.jpg"
     }
   ],
   "hotelImages": [
     {
       "id": 1,
-      "url": "/assets/home/4.jpg",
+      "url": "/assets/home/7.jpg",
       "title": "01"
     },
     {
@@ -70,23 +70,23 @@
   "socialGallery": [
     {
       "id": 1,
-      "url": "assets/images/instagram/7.jpg"
+      "url": "/assets/home/insta5.jpg"
     },
     {
       "id": 2,
-      "url": "assets/images/instagram/8.jpg"
+      "url": "/assets/home/insta4.jpg"
     },
     {
       "id": 3,
-      "url": "assets/images/instagram/9.jpg"
+      "url": "/assets/home/insta3.jpg"
     },
     {
       "id": 4,
-      "url": "assets/images/instagram/10.jpg"
+      "url": "/assets/home/insta2.jpg"
     },
     {
       "id": 5,
-      "url": "assets/images/instagram/11.jpg"
+      "url": "/assets/home/insta1.jpg"
     },
     {
       "id": 6,

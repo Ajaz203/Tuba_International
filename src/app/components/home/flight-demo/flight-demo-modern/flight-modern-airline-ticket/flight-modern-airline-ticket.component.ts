@@ -19,7 +19,9 @@ export class FlightModernAirlineTicketComponent {
   @Input() id: number[];
   @Input() flightDetails: category[];
 
-  public description = "Lorem Ipsum is simply dummy text of the printing and Lorem Ipsum has been standard.......";
+  public description = "Fly for less with our cheap airline tickets—unbeatable prices for your next adventure!";
+
+;
 
   public options = {
     loop: true,

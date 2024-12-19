@@ -17,7 +17,7 @@ export class FlightModernDestinationComponent {
 
   @Input() destination: destination[];
 
-  public description = 'Lorem Ipsum is simply dummy text of the printing and Lorem Ipsum has been standard.......';
+  public description = "Your journey to romance begins here—our special couple's dinner offer transforms moments into memories at the featured destination for luxury and hospitality.";
 
   public options = {
     loop: true,

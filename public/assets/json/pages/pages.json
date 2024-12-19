@@ -26,42 +26,42 @@
       "gallery": [
         {
           "id": 1,
-          "image": "assets/images/tour/tour/7.jpg",
+          "image": "assets/home/port1.jpg",
           "title": "tour of bhutan",
           "description": "Serene Himalayan Kingdom Experience",
           "type": "popular"
         },
         {
           "id": 2,
-          "image": "assets/images/tour/tour/8.jpg",
+          "image": "assets/home/port2.jpg",
           "title": "beautiful Bali",
           "description": "Enchanting tropical paradise escape",
           "type": "latest"
         },
         {
           "id": 3,
-          "image": "assets/images/tour/tour/9.jpg",
+          "image": "assets/home/port3.jpg",
           "title": "dubai adventure",
           "description": "Extravagant, Dynamic, Futuristic, Diverse",
           "type": "popular"
         },
         {
           "id": 4,
-          "image": "assets/images/tour/tour/10.jpg",
+          "image": "assets/home/port4.jpg",
           "title": "exploring sydney",
           "description": "Vibrant, Iconic, Coastal, Diverse",
           "type": "trend"
         },
         {
           "id": 5,
-          "image": "assets/images/tour/tour/11.jpg",
+          "image": "assets/home/port5.jpg",
           "title": "splendid spain",
           "description": "Vibrant, Cultural, Picturesque, Passionate",
           "type": "latest"
         },
         {
           "id": 6,
-          "image": "assets/images/tour/tour/12.jpg",
+          "image": "assets/home/port6.jpg",
           "title": "simply mauritius",
           "description": "Tropical paradise island getaway",
           "type": "trend"

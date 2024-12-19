@@ -1,4 +1,4 @@
-import { Component, HostListener, inject, Input, TemplateRef } from '@angular/core';
+import { Component, HostListener, inject, Input, TemplateRef, ViewChild } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule, NgClass } from '@angular/common';
 import { FormBuilder, FormGroup, Validators,ReactiveFormsModule ,FormArray} from '@angular/forms';
@@ -50,6 +50,9 @@ export class SearchBoxOneComponent {
 bookingForm: FormGroup<any>;
 // hotels: any;
 
+  @ViewChild('searchResultsModal') searchResultsModal!: TemplateRef<any>;
+  @ViewChild('content') bookingModal!: TemplateRef<any>;
+
   constructor(private fb: FormBuilder, private hotelService: HotelService) {
 
     
@@ -96,35 +99,34 @@ bookingForm: FormGroup<any>;
  // ... existing imports ...
 
 onSubmit() {
-  this.isLoading = true;
   if (this.hotelSearchForm.valid) {
-    this.hotelService.hotelSearch(this.hotelSearchForm.value).subscribe(
-      (res) => {
-        const response = res as any;
-        if (response?.data?.properties) {
-          this.hotels = response.data.properties.map((property: any) => {
-            const originalPrice = property.rate_per_night?.extracted_lowest;
-            const inrPrice = originalPrice ? this.convertToINR(originalPrice) : 'N/A';
-            
-            return {
-              name: property.name,
-              rating: property.overall_rating,
-              image: property.images?.[0]?.thumbnail || 'default-image-url.jpg',
-              price: inrPrice,
-              originalPrice: originalPrice,
-              displayPrice: inrPrice !== 'N/A' ? `₹${Math.round(inrPrice)}` : 'N/A'
-            };
-          });
+    this.isLoading = true;
+    this.hotelService.hotelSearch(this.hotelSearchForm.value).subscribe({
+      next: (res: any) => {
+        if (res?.data?.properties) {
+          this.hotels = res.data.properties.map((property: any) => ({
+            name: property.name,
+            rating: property.overall_rating,
+            image: property.images?.[0]?.thumbnail || 'default-image-url.jpg',
+            price: this.convertToINR(property.rate_per_night?.extracted_lowest),
+            originalPrice: property.rate_per_night?.extracted_lowest
+          }));
           
-          this.isLoading = false;
           this.updatePage();
+          // Open modal with results
+          this.modalService.open(this.searchResultsModal, {
+            size: 'xl',
+            scrollable: true,
+            centered: true
+          });
         }
+        this.isLoading = false;
       },
-      error => {
+      error: (error) => {
         console.error('Search error:', error);
         this.isLoading = false;
       }
-    );
+    });
   }
 }
 

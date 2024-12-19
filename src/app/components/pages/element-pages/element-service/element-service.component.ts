@@ -21,7 +21,7 @@ import { HeaderComponent } from '../../../../shared/components/header/header.com
 })
 export class ElementServiceComponent {
   
-  public bg_image = 'assets/images/inner-bg.jpg';
+  public bg_image = 'assets/imges2/inner-bg.jpg';
   public title = 'service';
   public parent = 'elements';
   public child = 'service';

@@ -15,7 +15,9 @@ export class FlightModernBlogComponent {
 
   @Input() blogs: number[];
 
-  public description = 'Lorem Ipsum is simply dummy text of the printing and Lorem Ipsum has been standard.......';
+  public description = "Stay updated with our latest news and blog—your source for insights, stories, and updates!"
+
+;
 
   public blog: blogs[];
 

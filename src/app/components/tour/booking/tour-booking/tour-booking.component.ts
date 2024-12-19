@@ -16,7 +16,7 @@ import { HeaderComponent } from '../../../../shared/components/header/header.com
 })
 export class TourBookingComponent {
   
-  public bg_image = 'assets/images/tour/spain4.jpg';
+  public bg_image = 'assets/imges2/spain4.jpg';
   public title = 'review';
   public parent = 'Home';
   public subParent = "holidays"
