@@ -6,67 +6,152 @@
 <section class="section-b-space bg-inner animated-section">
   <app-animations [type]="'dots'"></app-animations>
   <div class="container">
+    <div class="booking-intro">
+      <h1>Book Your Dream Tour</h1>
+      <p class="lead">Experience the journey of a lifetime with our carefully curated tour packages. Fill out the form
+        below to start your adventure.</p>
+      <div class="booking-highlights">
+        <div class="highlight-item">
+          <i class="fa fa-check-circle"></i>
+          <span>Instant Confirmation</span>
+        </div>
+        <div class="highlight-item">
+          <i class="fa fa-lock"></i>
+          <span>Secure Booking</span>
+        </div>
+        <div class="highlight-item">
+          <i class="fa fa-headset"></i>
+          <span>24/7 Support</span>
+        </div>
+      </div>
+    </div>
+
     <div class="row">
-      <div class ="col-lg-3"></div>
-      <div class="col-lg-6">
+      <!-- Left Column: Form -->
+      <div class="col-lg-7">
         <div class="guest-detail">
-          <h2>Traveller Information</h2>
-          <form>
-            <div class="form-group">
-              <div class="row">
-                <div class="col">
-                  <label>Full Name</label>
-                  <input type="text" formControlName="name" class="form-control" placeholder="Full Name" />
+          <div class="section-info">
+            <h2>Booking Information</h2>
+            <p>Please provide your details for tour booking.</p>
+          </div>
+
+          <form [formGroup]="tourForm" (ngSubmit)="onSubmit()">
+            <div class="form-section">
+              <div class="row g-3">
+                <!-- Personal Information -->
+                <div class="col-md-6">
+                  <label>Full Name <span class="required">*</span></label>
+                  <input type="text" formControlName="name" class="form-control" placeholder="As per passport"
+                    [ngClass]="{
+                      'is-invalid': nameControl?.invalid && nameControl?.touched,
+                      'is-valid': nameControl?.valid && nameControl?.touched
+                    }">
+                </div>
+                <div class="col-md-6">
+                  <label>Email <span class="required">*</span></label>
+                  <input type="email" formControlName="email" class="form-control" placeholder="Enter email" [ngClass]="{
+                      'is-invalid': emailControl?.invalid && emailControl?.touched,
+                      'is-valid': emailControl?.valid && emailControl?.touched
+                    }">
+                </div>
+                <div class="col-md-6">
+                  <label>Phone <span class="required">*</span></label>
+                  <input type="tel" formControlName="phone" class="form-control" placeholder="Mobile number"
+                    [class.is-invalid]="phoneControl?.invalid && phoneControl?.touched"
+                    [class.is-valid]="phoneControl?.valid && phoneControl?.touched">
+                </div>
+                <div class="col-md-6">
+                  <label>Destination <span class="required">*</span></label>
+                  <select formControlName="destination" class="form-control"
+                    [class.is-invalid]="destinationControl?.invalid && destinationControl?.touched"
+                    [class.is-valid]="destinationControl?.valid && destinationControl?.touched">
+                    <option value="">Select Destination</option>
+                    <option *ngFor="let package of tourPackages" [value]="package.id">{{ package.name }}</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label>Travel Date <span class="required">*</span></label>
+                  <input type="date" formControlName="travel_date" class="form-control"
+                    [class.is-invalid]="travelDateControl?.invalid && travelDateControl?.touched"
+                    [class.is-valid]="travelDateControl?.valid && travelDateControl?.touched">
+                </div>
+                <div class="col-md-6">
+                  <label>Tour Duration <span class="required">*</span></label>
+                  <select formControlName="duration" class="form-control"
+                    [class.is-invalid]="durationControl?.invalid && durationControl?.touched"
+                    [class.is-valid]="durationControl?.valid && durationControl?.touched">
+                    <option value="">Select Duration</option>
+                    <option *ngFor="let duration of tourDurations" [value]="duration.value">
+                      {{ duration.label }}
+                    </option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label>Number of Members</label>
+                  <input type="number" formControlName="members" class="form-control"
+                    placeholder="Enter number of members" min="1" max="20" [ngClass]="{
+                      'is-invalid': membersControl?.invalid && membersControl?.touched,
+                      'is-valid': membersControl?.valid && membersControl?.touched
+                    }">
+                </div>
+                <div class="col-md-6">
+                  <label>Meal Preference</label>
+                  <select formControlName="meal_preference" class="form-control" [ngClass]="{
+                      'is-invalid': mealPreferenceControl?.invalid && mealPreferenceControl?.touched,
+                      'is-valid': mealPreferenceControl?.valid && mealPreferenceControl?.touched
+                    }">
+                    <option value="">Select Meal Preference (Optional)</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="non-vegetarian">Non-Vegetarian</option>
+                    <option value="vegan">Vegan</option>
+                  </select>
+                </div>
+
+                <!-- Additional Services -->
+                <div class="col-md-12">
+                  <div class="travel-services">
+                    <div class="service-title">Additional Services & Requirements</div>
+                    <div class="service-grid single-row">
+                      <div class="visa-checkbox-container" *ngFor="let service of additionalServices">
+                        <label>{{ service.label }}</label>
+                        <input type="checkbox" [formControlName]="service.id">
+                      </div>
+                    </div>
+                    
+                    <div *ngIf="hasAnySpecialRequirement()">
+                      <p class="note">Please provide any specific requirements or preferences below:</p>
+                      <textarea formControlName="requirements_details" class="form-control" rows="3"
+                        placeholder="Please provide additional details about your requirements..."></textarea>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div class="form-group">
-              <label>Contact Info</label>
-              <input type="tel" formControlName="contact_no" class="form-control" placeholder="Mobile Number" />
-            </div>
-
-            <div class="form-group">
-              <label>Email Address</label>
-              <input type="email" formControlName="email" class="form-control" placeholder="Enter Email" />
-              <small class="form-text text-muted">
-                Booking confirmation will be sent to this email ID.
-              </small>
-            </div>
-
-
-
-
-
-
-            <div class="form-group">
-              <label>Remarks</label>
-              <textarea formControlName="remarks" class="form-control" rows="3"
-                placeholder="Enter your remarks"></textarea>
-            </div>
-
             <div class="submit-btn">
-              <button type="submit" class="btn btn-solid" style="margin-right: 10px;">Book Now</button>
+              <button type="submit" class="btn btn-solid" [disabled]="!isFormFilled || isSubmitting"
+                [ngClass]="{'disabled': !isFormFilled || isSubmitting}">
+                <i class="fa fa-paper-plane"></i>
+                {{ isSubmitting ? 'Processing...' : 'Book' }}
+              </button>
             </div>
           </form>
         </div>
       </div>
-      <!-- <div class="col-lg-5 booking-order">
+
+      <!-- Right Column: Details -->
+      <div class="col-lg-5">
         <app-tour-booking-details></app-tour-booking-details>
-      </div> -->
+      </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
 </section>
 
 <app-footer [location]="true"></app-footer>
-
 <app-layout [loaderType]="'basic'"></app-layout>
+
+<app-tour-confirmation-modal
+  [show]="showConfirmationModal"
+  [bookingDetails]="currentBooking"
+  (close)="onModalClose()">
+</app-tour-confirmation-modal>

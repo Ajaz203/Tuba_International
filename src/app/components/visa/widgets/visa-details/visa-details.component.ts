@@ -2,90 +2,102 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-    selector: 'app-cab-booking-summary',
-    standalone: true,
+  selector: 'app-visa-details',
+  standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="booking-summary">
-      <!-- Cab Type Banner -->
-      <div class="cab-banner">
-        <img src="assets/imges2/car-banner.jpg" alt="Cab Service">
-        <div class="cab-type">Premium Sedan</div>
+    <div class="visa-summary">
+      <!-- Visa Type Banner -->
+      <div class="visa-banner">
+        <img src="assets/imges2/breadcrumb1.jpg" alt="Visa Application">
+        <div class="visa-type">Tourist Visa</div>
       </div>
 
-      <!-- Quick Info -->
+      <!-- Processing Time -->
       <div class="quick-info">
         <div class="info-item">
-          <i class="fa fa-car"></i>
+          <i class="fa fa-clock"></i>
           <div>
-            <span>Vehicle Type</span>
-            <strong>AC Sedan</strong>
+            <span>Processing Time</span>
+            <strong>5-7 Working Days</strong>
           </div>
         </div>
         <div class="info-item">
-          <i class="fa fa-users"></i>
+          <i class="fa fa-calendar"></i>
           <div>
-            <span>Capacity</span>
-            <strong>4 Passengers</strong>
+            <span>Visa Validity</span>
+            <strong>6 Months</strong>
           </div>
         </div>
         <div class="info-item">
-          <i class="fa fa-suitcase"></i>
+          <i class="fa fa-file-alt"></i>
           <div>
-            <span>Luggage</span>
-            <strong>2 Bags</strong>
+            <span>Entry Type</span>
+            <strong>Multiple Entry</strong>
           </div>
         </div>
       </div>
 
-      <!-- Price Details -->
+      <!-- Visa Fees -->
       <div class="price-details">
         <div class="price-row">
-          <span>Base Fare</span>
-          <span>₹1,500</span>
+          <span>Visa Fee</span>
+          <span>₹8,500</span>
         </div>
         <div class="price-row">
-          <span>Taxes & Fees</span>
-          <span>₹150</span>
+          <span>Processing Fee</span>
+          <span>₹1,500</span>
         </div>
         <div class="price-row total">
           <span>Total Amount</span>
-          <span>₹1,650</span>
+          <span>₹10,000</span>
         </div>
       </div>
 
-      <!-- Features -->
-      <div class="cab-features">
-        <h4>Included Services</h4>
+      <!-- Required Documents -->
+      <div class="document-section">
+        <h4>Required Documents</h4>
         <ul>
-          <li><i class="fa fa-check"></i> Air Conditioning</li>
-          <li><i class="fa fa-check"></i> Professional Driver</li>
-          <li><i class="fa fa-check"></i> Bottled Water</li>
-          <li><i class="fa fa-check"></i> Mobile Charger</li>
-          <li><i class="fa fa-check"></i> Clean Interior</li>
-          <li><i class="fa fa-check"></i> 24/7 Support</li>
+          <li><i class="fa fa-passport"></i> Valid Passport (min. 6 months)</li>
+          <li><i class="fa fa-image"></i> Passport Size Photos</li>
+          <li><i class="fa fa-building"></i> Bank Statements (3 months)</li>
+          <li><i class="fa fa-plane"></i> Flight Reservations</li>
+          <li><i class="fa fa-hotel"></i> Hotel Bookings</li>
+          <li><i class="fa fa-file-invoice"></i> Income Tax Returns</li>
         </ul>
       </div>
 
-      <!-- Cab Highlights -->
-      <div class="cab-highlights">
-        <h4>Service Highlights</h4>
-        <div class="highlight-grid">
-          <div class="highlight-item">
-            <i class="fa fa-clock"></i>
-            <span>On-Time Pickup</span>
+      <!-- Visa Process Steps -->
+      <div class="process-steps">
+        <h4>Visa Process</h4>
+        <div class="steps-grid">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h5>Submit Application</h5>
+              <p>Fill the form with required details</p>
+            </div>
           </div>
-          <div class="highlight-item">
-            <i class="fa fa-shield-alt"></i>
-            <span>Safe Journey</span>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h5>Document Verification</h5>
+              <p>We verify your submitted documents</p>
+            </div>
           </div>
-          <div class="highlight-item">
-            <i class="fa fa-route"></i>
-            <span>Flexible Routes</span>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h5>Visa Processing</h5>
+              <p>Application processing at embassy</p>
+            </div>
           </div>
-          <div class="highlight-item">
-            <i class="fa fa-map-marked-alt"></i>
-            <span>GPS Tracking</span>
+          <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h5>Visa Delivery</h5>
+              <p>Receive your approved visa</p>
+            </div>
           </div>
         </div>
       </div>
@@ -96,42 +108,42 @@ import { CommonModule } from '@angular/common';
         <div class="notes-content">
           <div class="note-item">
             <i class="fa fa-info-circle"></i>
-            <p>Waiting charges applicable after 15 minutes</p>
+            <p>Original passport required during processing</p>
           </div>
           <div class="note-item">
             <i class="fa fa-info-circle"></i>
-            <p>Toll & parking charges extra</p>
+            <p>All documents must be in English</p>
           </div>
           <div class="note-item">
             <i class="fa fa-info-circle"></i>
-            <p>Night charges applicable (10 PM - 6 AM)</p>
+            <p>Processing time may vary based on embassy</p>
           </div>
         </div>
       </div>
 
       <!-- Support Section -->
       <div class="support-section">
-        <h4>Need Help?</h4>
+        <h4>Visa Support</h4>
         <div class="support-content">
           <i class="fa fa-headset"></i>
           <div>
-            <p>24/7 Cab Support</p>
+            <p>Need assistance with your visa application?</p>
             <a href="tel:+919876543210">+91 98765 43210</a>
-            <small>Available 24/7 for assistance</small>
+            <small>Available Mon-Sat (9 AM - 6 PM)</small>
           </div>
         </div>
       </div>
     </div>
   `,
   styles: [`
-    .booking-summary {
+    .visa-summary {
       background: #fff;
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
       overflow: hidden;
     }
 
-    .cab-banner {
+    .visa-banner {
       position: relative;
       height: 200px;
       overflow: hidden;
@@ -142,7 +154,7 @@ import { CommonModule } from '@angular/common';
         object-fit: cover;
       }
 
-      .cab-type {
+      .visa-type {
         position: absolute;
         top: 20px;
         right: 20px;
@@ -210,7 +222,7 @@ import { CommonModule } from '@angular/common';
       }
     }
 
-    .cab-features {
+    .document-section {
       padding: 20px;
       border-bottom: 1px solid #eee;
 
@@ -237,14 +249,14 @@ import { CommonModule } from '@angular/common';
           color: #2c3e50;
 
           i {
-            color: #28a745;
-            font-size: 12px;
+            color: #0d6efd;
+            font-size: 16px;
           }
         }
       }
     }
 
-    .cab-highlights {
+    .process-steps {
       padding: 20px;
       border-bottom: 1px solid #eee;
 
@@ -252,21 +264,21 @@ import { CommonModule } from '@angular/common';
         font-size: 16px;
         font-weight: 600;
         color: #2c3e50;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
       }
 
-      .highlight-grid {
+      .steps-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+        gap: 20px;
 
-        .highlight-item {
+        .step {
           display: flex;
-          align-items: center;
-          gap: 10px;
-          padding: 12px;
+          gap: 15px;
+          align-items: flex-start;
+          padding: 15px;
           background: #f8f9fa;
-          border-radius: 8px;
+          border-radius: 12px;
           transition: all 0.3s ease;
 
           &:hover {
@@ -274,14 +286,32 @@ import { CommonModule } from '@angular/common';
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
           }
 
-          i {
-            font-size: 18px;
-            color: #0d6efd;
+          .step-number {
+            width: 30px;
+            height: 30px;
+            background: #0d6efd;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
           }
 
-          span {
-            font-size: 13px;
-            color: #2c3e50;
+          .step-content {
+            h5 {
+              font-size: 14px;
+              font-weight: 600;
+              color: #2c3e50;
+              margin: 0 0 5px;
+            }
+
+            p {
+              font-size: 13px;
+              color: #6c757d;
+              margin: 0;
+            }
           }
         }
       }
@@ -380,14 +410,16 @@ import { CommonModule } from '@angular/common';
         gap: 15px;
       }
 
-      .cab-features ul {
+      .document-section ul {
         grid-template-columns: 1fr;
       }
 
-      .cab-highlights .highlight-grid {
-        grid-template-columns: 1fr;
+      .process-steps {
+        .steps-grid {
+          grid-template-columns: 1fr;
+        }
       }
     }
   `]
 })
-export class CabBookingSummaryComponent {}
+export class VisaDetailsComponent {} 

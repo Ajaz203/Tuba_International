@@ -1,0 +1,208 @@
+.booking-details {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 25px;
+
+  .detail-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    h3 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+  }
+
+  // Price Summary Styles
+  .price-summary {
+    .price-breakdown {
+      .price-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        font-size: 15px;
+        color: #2c3e50;
+
+        &.total {
+          border-top: 2px solid #f8f9fa;
+          margin-top: 10px;
+          padding-top: 15px;
+          font-weight: 600;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  // Tour Highlights Styles
+  .highlights {
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+
+      .highlight-item {
+        display: flex;
+        align-items: center;
+        padding: 12px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        i {
+          font-size: 20px;
+          color: #0091FF;
+          margin-right: 12px;
+        }
+
+        span {
+          font-size: 14px;
+          color: #2c3e50;
+        }
+      }
+    }
+  }
+
+  // Important Information Tabs
+  .info-tabs {
+    .tab-header {
+      display: flex;
+      border-bottom: 2px solid #f8f9fa;
+      margin-bottom: 20px;
+
+      div {
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 14px;
+        color: #6c757d;
+        border-bottom: 2px solid transparent;
+        margin-bottom: -2px;
+
+        &.active {
+          color: #0091FF;
+          border-bottom-color: #0091FF;
+        }
+      }
+    }
+
+    .tab-content {
+      .content-item {
+        display: none;
+
+        &.active {
+          display: block;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #2c3e50;
+
+            &:before {
+              content: '•';
+              position: absolute;
+              left: 0;
+              color: #0091FF;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Support Section Styles
+  .support {
+    .support-content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+
+      .support-item {
+        display: flex;
+        align-items: flex-start;
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        i {
+          font-size: 24px;
+          color: #0091FF;
+          margin-right: 15px;
+          margin-top: 3px;
+        }
+
+        div {
+          h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0 0 5px;
+            color: #2c3e50;
+          }
+
+          p {
+            font-size: 14px;
+            color: #0091FF;
+            margin: 0 0 3px;
+          }
+
+          small {
+            font-size: 12px;
+            color: #6c757d;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .booking-details {
+    margin-top: 30px;
+    padding: 20px;
+
+    .highlights .highlight-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .support .support-content {
+      grid-template-columns: 1fr;
+    }
+
+    .info-tabs .tab-header {
+      overflow-x: auto;
+      white-space: nowrap;
+      
+      div {
+        padding: 10px 15px;
+      }
+    }
+  }
+}

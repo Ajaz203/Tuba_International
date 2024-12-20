@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { LayoutComponent } from '../../../../shared/components/ui/layout/layout.component';
 import { FooterComponent } from '../../../../shared/components/footer/footer.component';
 import { BreadcrumbsComponent } from '../../../../shared/components/comman/breadcrumbs/breadcrumbs.component';
@@ -17,6 +17,8 @@ export class CabBookingSuccessComponent {
   public title = 'booking success';
   public parent = 'Home';
   public child = 'booking success';
+  @Input() bookingDetails: any;
+  @Output() close = new EventEmitter<void>();
 
   constructor() {}
 
@@ -28,5 +30,9 @@ export class CabBookingSuccessComponent {
   ngOnDestroy(){
     document.documentElement.style.removeProperty('--theme-color1');
     document.documentElement.style.removeProperty('--theme-color2');
+  }
+
+  onClose() {
+    this.close.emit();
   }
 }

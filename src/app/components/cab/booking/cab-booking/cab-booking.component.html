@@ -2,46 +2,222 @@
 
 <app-breadcrumbs [type]="'cab'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child"></app-breadcrumbs>
 
-<section class="small-section">
+<section class="section-b-space bg-inner animated-section">
+  <app-animations [type]="'dots'"></app-animations>
   <div class="container">
-    <div class="row">
-      <div class="col-lg-8">
-        <div class="review-section">
-          <div class="review_box" *ngIf="showBookingForm">
-            <div class="title-top">
-              <h5>contact details</h5>
-            </div>
-            <div class="guest-detail" >
-              <app-booking-form></app-booking-form>
-            </div>
-          </div>
-          <div class="review_box">
-            <app-cab-information></app-cab-information>
-          </div>
+    <div class="booking-intro">
+      <h1>Book Your Cab</h1>
+      <p class="lead">Safe, reliable and comfortable cab service for your journey</p>
+      <div class="booking-highlights">
+        <div class="highlight-item">
+          <i class="fa fa-check-circle"></i>
+          <span>Instant Booking</span>
+        </div>
+        <div class="highlight-item">
+          <i class="fa fa-shield-alt"></i>
+          <span>Verified Drivers</span>
+        </div>
+        <div class="highlight-item">
+          <i class="fa fa-clock"></i>
+          <span>24/7 Service</span>
         </div>
       </div>
-      <div class="col-lg-4 booking-order res-margin">
-        <div class="review-section">
-          <div class="review_box">
-            <app-cab-booking-summary></app-cab-booking-summary>
+    </div>
+
+    <div class="row">
+      <!-- Left Column: Form -->
+      <div class="col-lg-7">
+        <div class="guest-detail">
+          <div class="section-info">
+            <h2>Booking Information</h2>
+            <p>Please provide your details for cab booking.</p>
           </div>
-          <div class="review_box">
-            <app-cab-promo-code></app-cab-promo-code>
-          </div>
-          <div class="review_box">
-            <img src="/assets/imges2/car8.jpg" class="img-fluid blur-up lazyload" alt="cab-advertise">
-          </div>
+
+          <form [formGroup]="cabForm" (ngSubmit)="onSubmit()">
+            <!-- Combined Personal & Journey Information -->
+            <div class="form-section">
+              <!-- <div class="section-info">
+                <h2>Booking Details</h2>
+                <p>Please provide your personal and journey information</p>
+              </div> -->
+
+              <div class="row g-3">
+                <!-- Personal Information -->
+                <div class="col-md-6">
+                  <label>Full Name <span class="required">*</span></label>
+                  <input type="text" 
+                         formControlName="name" 
+                         class="form-control" 
+                         placeholder="Enter your name"
+                         [ngClass]="{'is-invalid': nameControl?.invalid && nameControl?.touched}">
+                  <div class="invalid-feedback" *ngIf="nameError">{{ nameError }}</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label>Pickup Location <span class="required">*</span></label>
+                  <input type="text" 
+                         formControlName="pickup" 
+                         class="form-control" 
+                         placeholder="Enter pickup location"
+                         [ngClass]="{'is-invalid': pickupControl?.invalid && pickupControl?.touched}">
+                </div>
+
+                <div class="col-md-6">
+                  <label>Email <span class="required">*</span></label>
+                  <input type="email" 
+                         formControlName="email" 
+                         class="form-control" 
+                         placeholder="Enter email"
+                         [ngClass]="{'is-invalid': emailControl?.invalid && emailControl?.touched}">
+                  <div class="invalid-feedback" *ngIf="emailError">{{ emailError }}</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label>Drop Location <span class="required">*</span></label>
+                  <input type="text" 
+                         formControlName="dropoff" 
+                         class="form-control" 
+                         placeholder="Enter drop location"
+                         [ngClass]="{'is-invalid': dropoffControl?.invalid && dropoffControl?.touched}">
+                </div>
+
+                <div class="col-md-6">
+                  <label>Contact Number <span class="required">*</span></label>
+                  <input type="tel" 
+                         formControlName="contact_no" 
+                         class="form-control" 
+                         placeholder="Mobile number"
+                         [ngClass]="{'is-invalid': contactNoControl?.invalid && contactNoControl?.touched}">
+                  <div class="invalid-feedback" *ngIf="contactNoError">{{ contactNoError }}</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label>Pickup Date <span class="required">*</span></label>
+                  <input type="date" 
+                         formControlName="pickupDate" 
+                         class="form-control"
+                         [ngClass]="{'is-invalid': pickupDateControl?.invalid && pickupDateControl?.touched}">
+                </div>
+
+                <div class="col-md-6">
+                  <label>Number of Passengers <span class="required">*</span></label>
+                  <input type="number" 
+                         formControlName="passengers" 
+                         class="form-control" 
+                         min="1" 
+                         max="6"
+                         placeholder="Enter number of passengers"
+                         [ngClass]="{'is-invalid': passengersControl?.invalid && passengersControl?.touched}">
+                </div>
+
+                <div class="col-md-6">
+                  <label>Vehicle Type <span class="required">*</span></label>
+                  <select formControlName="vehicleType" 
+                          class="form-control"
+                          [ngClass]="{'is-invalid': vehicleTypeControl?.invalid && vehicleTypeControl?.touched}">
+                    <option value="">Select Vehicle Type</option>
+                    <option value="sedan">Sedan (4 Seater)</option>
+                    <option value="suv">SUV (6 Seater)</option>
+                    <option value="luxury">Luxury Sedan</option>
+                    <option value="premium">Premium SUV</option>
+                  </select>
+                  <div class="invalid-feedback" *ngIf="vehicleTypeError">{{ vehicleTypeError }}</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label>Pickup Time <span class="required">*</span></label>
+                  <input type="time" 
+                         formControlName="pickupTime" 
+                         class="form-control"
+                         [ngClass]="{'is-invalid': pickupTimeControl?.invalid && pickupTimeControl?.touched}">
+                </div>
+
+                <!-- Additional Services Section - Moved Here -->
+                <div class="col-md-12">
+                  <div class="travel-services">
+                    <div class="service-title">Additional Services & Requirements</div>
+                    <div class="service-grid single-row">
+                      <div class="visa-checkbox-container" *ngFor="let service of additionalServices">
+                        <label>{{ service.label }}</label>
+                        <input type="checkbox" [formControlName]="service.id">
+                      </div>
+                    </div>
+                    
+                    <div *ngIf="hasSpecialRequirements()">
+                      <textarea formControlName="specialRequirements" 
+                                class="form-control" 
+                                rows="3"
+                                placeholder="Please provide additional details about your requirements..."></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="submit-btn">
+              <button type="submit" 
+                      class="btn btn-solid" 
+                      [disabled]="!isFormValid() || isSubmitting"
+                      [ngClass]="{'disabled': !isFormValid() || isSubmitting}">
+                <i class="fas fa-paper-plane"></i>
+                {{ isSubmitting ? 'Processing...' : 'Book' }}
+              </button>
+            </div>
+          </form>
+
+          <!-- Additional Info Section -->
         </div>
+          <div class="additional-info">
+            <!-- Why Choose Us Section -->
+            <div class="why-choose-us">
+              <h3>Why Choose Our Cab Services?</h3>
+              <div class="features-grid">
+                <div class="feature-item">
+                  <i class="fa fa-car-side"></i>
+                  <div class="feature-content">
+                    <h4>Premium Fleet</h4>
+                    <p>Well-maintained, comfortable vehicles for your journey</p>
+                  </div>
+                </div>
+                <div class="feature-item">
+                  <i class="fa fa-user-tie"></i>
+                  <div class="feature-content">
+                    <h4>Professional Drivers</h4>
+                    <p>Experienced, verified, and courteous chauffeurs</p>
+                  </div>
+                </div>
+                <div class="feature-item">
+                  <i class="fa fa-shield-alt"></i>
+                  <div class="feature-content">
+                    <h4>Safe Travel</h4>
+                    <p>Regular sanitization and safety protocols followed</p>
+                  </div>
+                </div>
+                <div class="feature-item">
+                  <i class="fa fa-headset"></i>
+                  <div class="feature-content">
+                    <h4>24/7 Support</h4>
+                    <p>Round-the-clock assistance for all your queries</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+
+      <div class="col-lg-5">
+        <app-cab-booking-summary></app-cab-booking-summary>
       </div>
     </div>
   </div>
 </section>
 
-<div class="book-panel">
-  <h6 class="mb-0 text">grand total : <span>{{ 1250 | currencyPipe: hotelService.currency }} </span></h6>
-  <button type="button" class="btn bottom-btn theme-color">continue</button>
-</div>
-
 <app-footer [location]="true"></app-footer>
+<app-layout [loaderType]="'basic'"></app-layout>
 
-<app-layout></app-layout>
+<app-booking-confirmation-modal
+  [show]="showConfirmationModal"
+  [bookingDetails]="currentBooking"
+  (close)="onModalClose()">
+</app-booking-confirmation-modal>
