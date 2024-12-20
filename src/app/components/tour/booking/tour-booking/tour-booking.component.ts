@@ -36,7 +36,7 @@ export class TourBookingComponent implements OnInit {
   public bg_image = 'assets/imges2/spain4.jpg';
   public title = 'Tour Booking';
   public parent = 'Home';
-  public subParent = "holidays";
+  public subParent = "";
   public child = 'Booking';
 
   tourPackages: TourPackage[] = [

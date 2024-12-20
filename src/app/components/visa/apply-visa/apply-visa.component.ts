@@ -8,6 +8,7 @@ import { BreadcrumbsComponent } from '../../../shared/components/comman/breadcru
 import { AnimationComponent } from '../../../shared/components/comman/animation/animation.component';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { VisaDetailsComponent } from '../widgets/visa-details/visa-details.component';
 
 // Move interface outside the class
 interface FamilyMember {
@@ -30,7 +31,8 @@ interface FamilyMember {
     FooterComponent,
     LayoutComponent,
     BreadcrumbsComponent,
-    AnimationComponent
+    AnimationComponent,
+    VisaDetailsComponent
   ]
 })
 export class ApplyVisaComponent implements OnInit {
