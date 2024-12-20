@@ -6,67 +6,58 @@
 <section class="section-b-space bg-inner animated-section">
   <app-animations [type]="'dots'"></app-animations>
   <div class="container">
+    <div class="booking-intro">
+      <h1>Book Your Dream Tour</h1>
+      <p class="lead">Experience the journey of a lifetime with our carefully curated tour packages. Fill out the form below to start your adventure.</p>
+      <div class="booking-highlights">
+        <div class="highlight-item">
+          <i class="fa fa-check-circle"></i>
+          <span>Instant Confirmation</span>
+        </div>
+        <div class="highlight-item">
+          <i class="fa fa-lock"></i>
+          <span>Secure Booking</span>
+        </div>
+        <div class="highlight-item">
+          <i class="fa fa-headset"></i>
+          <span>24/7 Support</span>
+        </div>
+      </div>
+    </div>
+
     <div class="row">
-      <div class="col-lg-6">
+      <!-- Left Column: Form -->
+      <div class="col-lg-7">
         <div class="guest-detail">
-          <h2>Tour Booking</h2>
+          <div class="section-info">
+            <h2>Personal Information</h2>
+            <p>Please provide your details as per official documents.</p>
+          </div>
+          
           <form [formGroup]="tourForm" (ngSubmit)="onSubmit()">
-            <!-- Personal Information -->
             <div class="form-section">
               <div class="row g-3">
                 <div class="col-md-6">
                   <label>Full Name <span class="required">*</span></label>
-                  <input type="text" 
-                         formControlName="name" 
-                         class="form-control" 
-                         placeholder="As per passport"
-                         [class.is-invalid]="nameControl?.invalid && nameControl?.touched"
-                         [class.is-valid]="nameControl?.valid && nameControl?.touched">
-                  <div class="invalid-feedback" *ngIf="nameError">
-                    {{ nameError }}
-                  </div>
+                  <input type="text" formControlName="name" class="form-control" placeholder="As per passport"
+                    [ngClass]="{
+                      'is-invalid': nameControl?.invalid && nameControl?.touched,
+                      'is-valid': nameControl?.valid && nameControl?.touched
+                    }">
                 </div>
                 <div class="col-md-6">
                   <label>Email <span class="required">*</span></label>
-                  <input type="email" 
-                         formControlName="email" 
-                         class="form-control" 
-                         placeholder="Enter email"
-                         [class.is-invalid]="emailControl?.invalid && emailControl?.touched"
-                         [class.is-valid]="emailControl?.valid && emailControl?.touched">
-                  <div class="invalid-feedback" *ngIf="emailError">
-                    {{ emailError }}
-                  </div>
+                  <input type="email" formControlName="email" class="form-control" placeholder="Enter email"
+                    [ngClass]="{
+                      'is-invalid': emailControl?.invalid && emailControl?.touched,
+                      'is-valid': emailControl?.valid && emailControl?.touched
+                    }">
                 </div>
                 <div class="col-md-6">
                   <label>Phone <span class="required">*</span></label>
-                  <input type="tel" 
-                         formControlName="phone" 
-                         class="form-control" 
-                         placeholder="Mobile number"
-                         [class.is-invalid]="phoneControl?.invalid && phoneControl?.touched"
-                         [class.is-valid]="phoneControl?.valid && phoneControl?.touched">
-                  <div class="invalid-feedback" *ngIf="phoneError">
-                    {{ phoneError }}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Tour Details -->
-            <div class="form-section">
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <label>Tour Type <span class="required">*</span></label>
-                  <select formControlName="tour_type" class="form-control"
-                    [class.is-invalid]="tourTypeControl?.invalid && tourTypeControl?.touched"
-                    [class.is-valid]="tourTypeControl?.valid && tourTypeControl?.touched">
-                    <option value="">Select Tour Type</option>
-                    <option *ngFor="let type of tourTypes" [value]="type.id">{{ type.name }}</option>
-                  </select>
-                  <div class="invalid-feedback" *ngIf="tourTypeError">
-                    {{ tourTypeError }}
-                  </div>
+                  <input type="tel" formControlName="phone" class="form-control" placeholder="Mobile number"
+                    [class.is-invalid]="phoneControl?.invalid && phoneControl?.touched"
+                    [class.is-valid]="phoneControl?.valid && phoneControl?.touched">
                 </div>
                 <div class="col-md-6">
                   <label>Destination <span class="required">*</span></label>
@@ -74,22 +65,14 @@
                     [class.is-invalid]="destinationControl?.invalid && destinationControl?.touched"
                     [class.is-valid]="destinationControl?.valid && destinationControl?.touched">
                     <option value="">Select Destination</option>
-                    <option *ngFor="let package of tourPackages" [value]="package.id">
-                      {{ package.name }}
-                    </option>
+                    <option *ngFor="let package of tourPackages" [value]="package.id">{{ package.name }}</option>
                   </select>
-                  <div class="invalid-feedback" *ngIf="destinationError">
-                    {{ destinationError }}
-                  </div>
                 </div>
                 <div class="col-md-6">
                   <label>Travel Date <span class="required">*</span></label>
                   <input type="date" formControlName="travel_date" class="form-control"
                     [class.is-invalid]="travelDateControl?.invalid && travelDateControl?.touched"
                     [class.is-valid]="travelDateControl?.valid && travelDateControl?.touched">
-                  <div class="invalid-feedback" *ngIf="travelDateError">
-                    {{ travelDateError }}
-                  </div>
                 </div>
                 <div class="col-md-6">
                   <label>Tour Duration <span class="required">*</span></label>
@@ -97,69 +80,81 @@
                     [class.is-invalid]="durationControl?.invalid && durationControl?.touched"
                     [class.is-valid]="durationControl?.valid && durationControl?.touched">
                     <option value="">Select Duration</option>
-                    <option value="7">7 Days</option>
-                    <option value="10">10 Days</option>
-                    <option value="14">14 Days</option>
-                    <option value="21">21 Days</option>
+                    <option *ngFor="let duration of tourDurations" [value]="duration.value">
+                      {{ duration.label }}
+                    </option>
                   </select>
-                  <div class="invalid-feedback" *ngIf="durationError">
-                    {{ durationError }}
-                  </div>
                 </div>
-              </div>
-            </div>
-
-            <!-- Preferences -->
-            <div class="form-section">
-              <div class="row g-3">
                 <div class="col-md-6">
-                  <label>Meal Preference <span class="required">*</span></label>
-                  <select formControlName="meal_preference" class="form-control"
-                    [class.is-invalid]="mealPreferenceControl?.invalid && mealPreferenceControl?.touched"
-                    [class.is-valid]="mealPreferenceControl?.valid && mealPreferenceControl?.touched">
-                    <option value="">Select Meal Preference</option>
+                  <label>Number of Members <span class="required">*</span></label>
+                  <input type="number" 
+                         formControlName="members" 
+                         class="form-control" 
+                         placeholder="Enter number of members"
+                         min="1"
+                         max="20"
+                         [ngClass]="{
+                           'is-invalid': membersControl?.invalid && membersControl?.touched,
+                           'is-valid': membersControl?.valid && membersControl?.touched
+                         }">
+                </div>
+                <div class="col-md-6">
+                  <label>Meal Preference</label>
+                  <select formControlName="meal_preference" 
+                          class="form-control"
+                          [ngClass]="{
+                            'is-invalid': mealPreferenceControl?.invalid && mealPreferenceControl?.touched,
+                            'is-valid': mealPreferenceControl?.valid && mealPreferenceControl?.touched
+                          }">
+                    <option value="">Select Meal Preference (Optional)</option>
                     <option value="vegetarian">Vegetarian</option>
                     <option value="non-vegetarian">Non-Vegetarian</option>
                     <option value="vegan">Vegan</option>
                   </select>
-                  <div class="invalid-feedback" *ngIf="mealPreferenceError">
-                    {{ mealPreferenceError }}
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <label>Special Requirements</label>
-                  <textarea formControlName="special_requirements" class="form-control" rows="3" 
-                    placeholder="Any special requirements or requests?"></textarea>
                 </div>
               </div>
             </div>
 
-            <!-- Additional Services -->
-            <div class="form-section">
-              <div class="visa-checkbox-container">
-                <label for="airport_pickup">Need Airport Pickup?</label>
-                <input type="checkbox" id="airport_pickup" formControlName="airport_pickup">
+           
+
+            <div class="section-info">
+              <h3>Additional Services</h3>
+              <p>Enhance your journey with these optional services.</p>
+            </div>
+
+            <div class="travel-services">
+              <div class="service-grid single-row">
+                <div class="visa-checkbox-container" *ngFor="let service of additionalServices">
+                  <label>{{ service.label }}</label>
+                  <input type="checkbox" [formControlName]="service.id">
+                </div>
               </div>
-              <div class="visa-checkbox-container">
-                <label for="travel_insurance">Want Travel Insurance?</label>
-                <input type="checkbox" id="travel_insurance" formControlName="travel_insurance">
-              </div>
-              <div class="visa-checkbox-container">
-                <label for="guided_tours">Include Guided Tours?</label>
-                <input type="checkbox" id="guided_tours" formControlName="guided_tours">
+              
+              <div *ngIf="hasAnySpecialRequirement()">
+                <p class="note">Please provide any specific requirements or preferences below:</p>
+                <textarea formControlName="requirements_details" 
+                          class="form-control" 
+                          rows="3"
+                          placeholder="Please provide additional details about your requirements..."></textarea>
               </div>
             </div>
+
 
             <div class="submit-btn">
-              <button type="submit" class="btn btn-solid" [disabled]="!isFormValid() || isSubmitting">
-                <i class="fas fa-paper-plane"></i>
-                {{ isSubmitting ? 'Booking...' : 'Book' }}
+              <button type="submit" 
+                      class="btn btn-solid" 
+                      [disabled]="!isFormFilled || isSubmitting"
+                      [ngClass]="{'disabled': !isFormFilled || isSubmitting}">
+                <i class="fa fa-paper-plane"></i>
+                {{ isSubmitting ? 'Processing...' : 'Book Now' }}
               </button>
             </div>
           </form>
         </div>
       </div>
-      <div class="col-lg-6">
+
+      <!-- Right Column: Details -->
+      <div class="col-lg-5">
         <app-tour-booking-details></app-tour-booking-details>
       </div>
     </div>
