@@ -8,6 +8,10 @@ import { LayoutComponent } from '../../../../shared/components/ui/layout/layout.
 import { BreadcrumbsComponent } from '../../../../shared/components/comman/breadcrumbs/breadcrumbs.component';
 import { TourBookingDetailsComponent } from '../widgets/tour-booking-details/tour-booking-details.component';
 import { AnimationComponent } from '../../../../shared/components/comman/animation/animation.component';
+import { TourConfirmationModalComponent } from '../widgets/tour-confirmation-modal/tour-confirmation-modal.component';
+import { TourService } from '../../../../shared/services/tour.service';
+import { Router } from '@angular/router';
+
 interface TourPackage {
   id: string;
   name: string;
@@ -24,7 +28,8 @@ interface TourPackage {
     FooterComponent,
     LayoutComponent,
     BreadcrumbsComponent,
-    TourBookingDetailsComponent,AnimationComponent
+    TourBookingDetailsComponent,AnimationComponent,
+    TourConfirmationModalComponent
   ],
   templateUrl: './tour-booking.component.html',
   styleUrls: ['./tour-booking.component.scss']
@@ -32,6 +37,8 @@ interface TourPackage {
 export class TourBookingComponent implements OnInit {
   tourForm: FormGroup;
   isSubmitting = false;
+  showConfirmationModal = false;
+  currentBooking: any;
 
   public bg_image = 'assets/imges2/spain4.jpg';
   public title = 'Tour Booking';
@@ -67,14 +74,13 @@ export class TourBookingComponent implements OnInit {
 
   additionalServices = [
     { id: 'airport_pickup', label: 'Airport Pickup & Drop' },
-    { id: 'travel_insurance', label: 'Travel Insurance' },
     { id: 'local_guide', label: 'Local Guide' },
    
  
     
   ];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private tourService: TourService, private router: Router) {
     this.initForm();
   }
 
@@ -90,7 +96,7 @@ export class TourBookingComponent implements OnInit {
       destination: ['', Validators.required],
       travel_date: ['', [Validators.required, this.validateTravelDate.bind(this)]],
       duration: ['', Validators.required],
-      members: ['', [Validators.required, Validators.min(1), Validators.max(20)]],
+      members: ['', [Validators.min(1), Validators.max(20)]],
       meal_preference: [''],
       requirements_details: ['']
     };
@@ -106,26 +112,38 @@ export class TourBookingComponent implements OnInit {
   onSubmit() {
     if (this.tourForm.valid) {
       this.isSubmitting = true;
-      
-      setTimeout(() => {
-        console.log('Form submitted:', this.tourForm.value);
-        
-        // Reset form with initial values
-        this.tourForm.reset({
-          name: '',
-          email: '',
-          phone: '',
-          destination: '',
-          travel_date: '',
-          duration: '',
-          members: '',
-          meal_preference: '',
-          requirements_details: ''
-        });
-        
-        this.isSubmitting = false;
-        alert('Tour booking submitted successfully!');
-      }, 1500);
+
+      const bookingData = {
+        ...this.tourForm.value,
+        booking_type: 'tour',
+        status: 'pending',
+        created_at: new Date().toISOString()
+      };
+
+      this.tourService.bookTour(bookingData).subscribe({
+        next: (response: any) => {
+          console.log('Tour booking successful:', response);
+          
+          this.currentBooking = {
+            ...bookingData,
+            booking_id: response?.booking_id || `TOUR${Date.now()}`,
+            status: response?.status || 'confirmed'
+          };
+          
+          // Store booking data
+          this.tourService.setBookingData(this.currentBooking);
+          
+          // Reset form and show confirmation
+          this.tourForm.reset();
+          this.isSubmitting = false;
+          this.showConfirmationModal = true;
+        },
+        error: (error) => {
+          console.error('Booking failed:', error);
+          this.isSubmitting = false;
+          alert(error?.error?.message || 'Booking failed. Please try again.');
+        }
+      });
     } else {
       Object.keys(this.tourForm.controls).forEach(key => {
         const control = this.tourForm.get(key);
@@ -141,18 +159,13 @@ export class TourBookingComponent implements OnInit {
       'phone',
       'destination',
       'travel_date',
-      'duration',
-      'members'
+      'duration'
     ];
 
-    // Check if all required fields have values and are valid
-    const allFieldsValid = requiredFields.every(field => {
+    return requiredFields.every(field => {
       const control = this.tourForm.get(field);
       return control && control.valid && control.value;
     });
-
-    // Return true only if all required fields are valid
-    return allFieldsValid;
   }
 
   // Getter methods for template
@@ -269,6 +282,11 @@ export class TourBookingComponent implements OnInit {
   // Add this getter for template use
   get isFormFilled(): boolean {
     return this.isFormValid();
+  }
+
+  onModalClose() {
+    this.showConfirmationModal = false;
+    this.router.navigate(['/']);
   }
 }
 

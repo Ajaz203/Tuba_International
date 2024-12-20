@@ -11,11 +11,14 @@ import { tourVector } from '../interface/tour-vector';
 })
 export class TourService {
 
+  apiUrl = 'https://tuba-mongo-backend.onrender.com/';
 
   public isOpenResponsiveFilter: boolean = false;
   public isOpenFindTours: boolean = false;
   public isOpenHorizontalFilter: boolean = false;
   public isOpenResponsiveHorizontal: boolean = false;
+
+  private bookingData: any = null;
 
   constructor(private http: HttpClient) {}
 
@@ -77,4 +80,16 @@ export class TourService {
    return this.tour().pipe(map((tour) =>
       Math.max(...tour.tour.map((price) => price.price))));
     }
+    
+  bookTour(data: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}bookTour`, data);
+  }
+
+  setBookingData(data: any) {
+    this.bookingData = data;
+  }
+
+  getBookingData() {
+    return this.bookingData;
+  }
 }

@@ -9,6 +9,9 @@ import { AnimationComponent } from '../../../shared/components/comman/animation/
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { VisaDetailsComponent } from '../widgets/visa-details/visa-details.component';
+import { Router } from '@angular/router';
+import { HotelService } from '../../../shared/services/hotel.service';
+import { VisaConfirmationModalComponent } from './widgets/visa-confirmation-modal/visa-confirmation-modal.component';
 
 // Move interface outside the class
 interface FamilyMember {
@@ -21,7 +24,7 @@ interface FamilyMember {
 @Component({
   selector: 'app-apply-visa',
   standalone: true,
-  providers: [PagesService],
+  providers: [PagesService, HotelService],
   templateUrl: './apply-visa.component.html',
   styleUrl: './apply-visa.component.scss',
   imports: [
@@ -32,13 +35,16 @@ interface FamilyMember {
     LayoutComponent,
     BreadcrumbsComponent,
     AnimationComponent,
-    VisaDetailsComponent
+    VisaDetailsComponent,
+    VisaConfirmationModalComponent
   ]
 })
 export class ApplyVisaComponent implements OnInit {
   visaForm: FormGroup;
   isSubmitting = false;
   familyMembers: FormArray;
+  showConfirmationModal = false;
+  currentBooking: any;
 
   public bg_image = 'assets/imges2/breadcrumb1.jpg';
   public title = 'Visa';
@@ -70,7 +76,12 @@ export class ApplyVisaComponent implements OnInit {
     // Add more countries as needed
   ];
 
-  constructor(private fb: FormBuilder, private pagesService: PagesService) {
+  constructor(
+    private fb: FormBuilder, 
+    private pagesService: PagesService,
+    private router: Router,
+    private hotelService: HotelService
+  ) {
     this.initForm();
   }
 
@@ -124,20 +135,38 @@ export class ApplyVisaComponent implements OnInit {
   onSubmit() {
     if (this.visaForm.valid) {
       this.isSubmitting = true;
-      console.log('Form Values:', this.visaForm.value);
-      
-      // Mark all fields as touched to trigger validation
-      Object.keys(this.visaForm.controls).forEach(key => {
-        const control = this.visaForm.get(key);
-        control?.markAsTouched();
-      });
 
-      // Simulate API call
-      setTimeout(() => {
-        console.log('Application submitted successfully');
-        this.isSubmitting = false;
-        this.visaForm.reset();  // Reset form after submission
-      }, 1500);
+      const bookingData = {
+        ...this.visaForm.value,
+        booking_type: 'visa',
+        status: 'pending',
+        created_at: new Date().toISOString()
+      };
+
+      this.hotelService.bookVisa(bookingData).subscribe({
+        next: (response: any) => {
+          console.log('Visa application successful:', response);
+          
+          this.currentBooking = {
+            ...bookingData,
+            booking_id: response?.booking_id || `VISA${Date.now()}`,
+            status: response?.status || 'confirmed'
+          };
+          
+          // Store booking data
+          this.hotelService.setBookingData(this.currentBooking);
+          
+          // Reset form and show confirmation
+          this.visaForm.reset();
+          this.isSubmitting = false;
+          this.showConfirmationModal = true;
+        },
+        error: (error) => {
+          console.error('Application failed:', error);
+          this.isSubmitting = false;
+          alert(error?.error?.message || 'Application failed. Please try again.');
+        }
+      });
     } else {
       // If form is invalid, mark all fields as touched to show errors
       this.markFormGroupTouched(this.visaForm);
@@ -225,5 +254,11 @@ export class ApplyVisaComponent implements OnInit {
     this.visaForm.patchValue({
       passport_number: value.toUpperCase()
     }, { emitEvent: false });
+  }
+
+  // Add method to handle modal close
+  onModalClose() {
+    this.showConfirmationModal = false;
+    this.router.navigate(['/']);
   }
 }

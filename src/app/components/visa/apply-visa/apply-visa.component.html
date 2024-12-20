@@ -149,7 +149,7 @@
             <div class="submit-btn">
               <button type="submit" class="btn btn-solid" [disabled]="!isFormValid() || isSubmitting">
                 <i class="fas fa-paper-plane"></i>
-                {{ isSubmitting ? 'Submitting...' : 'Submit' }}
+                {{ isSubmitting ? 'Applying...' : 'Apply' }}
               </button>
             </div>
           </form>
@@ -290,3 +290,9 @@
 <app-footer [location]="true"></app-footer>
 
 <app-layout [loaderType]="'basic'"></app-layout>
+
+<app-visa-confirmation-modal
+  [show]="showConfirmationModal"
+  [bookingDetails]="currentBooking"
+  (close)="onModalClose()">
+</app-visa-confirmation-modal>

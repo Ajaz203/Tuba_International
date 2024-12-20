@@ -29,6 +29,8 @@ export class HotelService {
 
   private searchResults: any = null;
 
+  private bookingData: any = null;
+
   constructor(private http: HttpClient) {
     if(!localStorage.getItem('currency')?.length){
       this.currency = 'usd';
@@ -131,4 +133,22 @@ export class HotelService {
   getSearchResults() {
     return this.searchResults;
   }
+
+  bookCab(bookingData: any) {
+    return this.http.post(`${this.apiUrl}bookMyCab`, bookingData);
+  }
+
+  setBookingData(data: any) {
+    this.bookingData = data;
+  }
+
+  getBookingData() {
+    return this.bookingData;
+  }
+
+  bookVisa(data: any) {
+    return this.http.post(`${this.apiUrl}applyVisa`, data);
+  }
+
+ 
 }

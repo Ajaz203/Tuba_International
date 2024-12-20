@@ -8,7 +8,8 @@
   <div class="container">
     <div class="booking-intro">
       <h1>Book Your Dream Tour</h1>
-      <p class="lead">Experience the journey of a lifetime with our carefully curated tour packages. Fill out the form below to start your adventure.</p>
+      <p class="lead">Experience the journey of a lifetime with our carefully curated tour packages. Fill out the form
+        below to start your adventure.</p>
       <div class="booking-highlights">
         <div class="highlight-item">
           <i class="fa fa-check-circle"></i>
@@ -30,13 +31,14 @@
       <div class="col-lg-7">
         <div class="guest-detail">
           <div class="section-info">
-            <h2>Personal Information</h2>
-            <p>Please provide your details as per official documents.</p>
+            <h2>Booking Information</h2>
+            <p>Please provide your details for tour booking.</p>
           </div>
-          
+
           <form [formGroup]="tourForm" (ngSubmit)="onSubmit()">
             <div class="form-section">
               <div class="row g-3">
+                <!-- Personal Information -->
                 <div class="col-md-6">
                   <label>Full Name <span class="required">*</span></label>
                   <input type="text" formControlName="name" class="form-control" placeholder="As per passport"
@@ -47,8 +49,7 @@
                 </div>
                 <div class="col-md-6">
                   <label>Email <span class="required">*</span></label>
-                  <input type="email" formControlName="email" class="form-control" placeholder="Enter email"
-                    [ngClass]="{
+                  <input type="email" formControlName="email" class="form-control" placeholder="Enter email" [ngClass]="{
                       'is-invalid': emailControl?.invalid && emailControl?.touched,
                       'is-valid': emailControl?.valid && emailControl?.touched
                     }">
@@ -86,65 +87,50 @@
                   </select>
                 </div>
                 <div class="col-md-6">
-                  <label>Number of Members <span class="required">*</span></label>
-                  <input type="number" 
-                         formControlName="members" 
-                         class="form-control" 
-                         placeholder="Enter number of members"
-                         min="1"
-                         max="20"
-                         [ngClass]="{
-                           'is-invalid': membersControl?.invalid && membersControl?.touched,
-                           'is-valid': membersControl?.valid && membersControl?.touched
-                         }">
+                  <label>Number of Members</label>
+                  <input type="number" formControlName="members" class="form-control"
+                    placeholder="Enter number of members" min="1" max="20" [ngClass]="{
+                      'is-invalid': membersControl?.invalid && membersControl?.touched,
+                      'is-valid': membersControl?.valid && membersControl?.touched
+                    }">
                 </div>
                 <div class="col-md-6">
                   <label>Meal Preference</label>
-                  <select formControlName="meal_preference" 
-                          class="form-control"
-                          [ngClass]="{
-                            'is-invalid': mealPreferenceControl?.invalid && mealPreferenceControl?.touched,
-                            'is-valid': mealPreferenceControl?.valid && mealPreferenceControl?.touched
-                          }">
+                  <select formControlName="meal_preference" class="form-control" [ngClass]="{
+                      'is-invalid': mealPreferenceControl?.invalid && mealPreferenceControl?.touched,
+                      'is-valid': mealPreferenceControl?.valid && mealPreferenceControl?.touched
+                    }">
                     <option value="">Select Meal Preference (Optional)</option>
                     <option value="vegetarian">Vegetarian</option>
                     <option value="non-vegetarian">Non-Vegetarian</option>
                     <option value="vegan">Vegan</option>
                   </select>
                 </div>
-              </div>
-            </div>
 
-           
-
-            <div class="section-info">
-              <h3>Additional Services</h3>
-              <p>Enhance your journey with these optional services.</p>
-            </div>
-
-            <div class="travel-services">
-              <div class="service-grid single-row">
-                <div class="visa-checkbox-container" *ngFor="let service of additionalServices">
-                  <label>{{ service.label }}</label>
-                  <input type="checkbox" [formControlName]="service.id">
+                <!-- Additional Services -->
+                <div class="col-md-12">
+                  <div class="travel-services">
+                    <div class="service-title">Additional Services & Requirements</div>
+                    <div class="service-grid single-row">
+                      <div class="visa-checkbox-container" *ngFor="let service of additionalServices">
+                        <label>{{ service.label }}</label>
+                        <input type="checkbox" [formControlName]="service.id">
+                      </div>
+                    </div>
+                    
+                    <div *ngIf="hasAnySpecialRequirement()">
+                      <p class="note">Please provide any specific requirements or preferences below:</p>
+                      <textarea formControlName="requirements_details" class="form-control" rows="3"
+                        placeholder="Please provide additional details about your requirements..."></textarea>
+                    </div>
+                  </div>
                 </div>
               </div>
-              
-              <div *ngIf="hasAnySpecialRequirement()">
-                <p class="note">Please provide any specific requirements or preferences below:</p>
-                <textarea formControlName="requirements_details" 
-                          class="form-control" 
-                          rows="3"
-                          placeholder="Please provide additional details about your requirements..."></textarea>
-              </div>
             </div>
 
-
             <div class="submit-btn">
-              <button type="submit" 
-                      class="btn btn-solid" 
-                      [disabled]="!isFormFilled || isSubmitting"
-                      [ngClass]="{'disabled': !isFormFilled || isSubmitting}">
+              <button type="submit" class="btn btn-solid" [disabled]="!isFormFilled || isSubmitting"
+                [ngClass]="{'disabled': !isFormFilled || isSubmitting}">
                 <i class="fa fa-paper-plane"></i>
                 {{ isSubmitting ? 'Processing...' : 'Book' }}
               </button>
@@ -163,3 +149,9 @@
 
 <app-footer [location]="true"></app-footer>
 <app-layout [loaderType]="'basic'"></app-layout>
+
+<app-tour-confirmation-modal
+  [show]="showConfirmationModal"
+  [bookingDetails]="currentBooking"
+  (close)="onModalClose()">
+</app-tour-confirmation-modal>

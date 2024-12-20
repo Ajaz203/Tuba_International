@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-tour-booking-details',
-  standalone: true,
+    selector: 'app-tour-booking-details',
+    standalone: true,
   imports: [CommonModule],
   template: `
     <div class="tour-summary">
