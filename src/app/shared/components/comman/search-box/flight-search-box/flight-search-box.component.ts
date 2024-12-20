@@ -1,14 +1,46 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlightService } from '../../../../services/flight.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
+interface AdultPassenger {
+  name: string;
+  email: string;
+  phone: string;
+}
+
+interface ChildPassenger {
+  name: string;
+  age: number;
+}
 
 @Component({
   selector: 'app-flight-search-box',
   templateUrl: './flight-search-box.component.html',
   styleUrls: ['./flight-search-box.component.scss'],
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule,ReactiveFormsModule],
+
+  styles: `
+  .dark-modal .modal-content {
+    background-color: #292b2c;
+    color: white;
+  }
+  .dark-modal .close {
+    color: white;
+  }
+  .light-blue-backdrop {
+    background-color: #5cb3fd;
+  }
+  .modal-dialog-scrollable {
+    max-height: 90vh;
+  }
+  .modal-dialog-scrollable .modal-content {
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+`,
 })
 export class FlightSearchBoxComponent {
   @Input() selectedValue: string = '';
@@ -20,6 +52,10 @@ export class FlightSearchBoxComponent {
   public toSuggestions: any[] = [];
   public showFromSuggestions: boolean = false;
   public showToSuggestions: boolean = false;
+  public isLoading : boolean = false;
+  flightResults: any[] = [];
+
+
 
   public payload = {
     departure_id: '',
@@ -33,7 +69,11 @@ export class FlightSearchBoxComponent {
     children: 0,
   };
 
-  constructor(private flightService: FlightService) {}
+  @ViewChild('successModal') successModal: any;
+  @ViewChild('bookingModal') bookingModal: any;
+  selectedFlight: any;
+
+  constructor(private flightService: FlightService, public modalService: NgbModal) {}
 
   toggleReturnDate(): void {
     if (this.payload.type === 2) {
@@ -100,10 +140,103 @@ export class FlightSearchBoxComponent {
       console.error('Please fill in all mandatory fields.');
       return;
     }
-
+  
+    this.isLoading = true;
     this.flightService.getflight(this.payload).subscribe({
-      next: (response) => console.log('Flight details:', response),
-      error: (err) => console.error('Error fetching flight details:', err),
+      next: (response: any) => {
+        console.log('Flight Response:', response);
+        this.flightResults = response.flights || [];
+        this.openSuccessModal();
+        this.isLoading = false;
+      },
+      error: (error) => {
+        console.error('Error fetching flight details:', error);
+        this.isLoading = false;
+      },
     });
+  }
+  
+  resetForm(): void {
+    this.payload = {
+      departure_id: '',
+      arrival_id: '',
+      outbound_date: '',
+      return_date: '',
+      currency: 'INR',
+      type: 2, // Default is One Way (2)
+      travel_class: 1,
+      adults: 1,
+      children: 0,
+    };
+    this.fromInputValue = '';
+    this.toInputValue = '';
+    this.fromSuggestions = [];
+    this.toSuggestions = [];
+    this.showFromSuggestions = false;
+    this.showToSuggestions = false;
+    this.isTraveler = false;
+  }
+  
+  openSuccessModal(): void {
+    const modalRef = this.modalService.open(this.successModal, {
+      centered: true,
+      backdrop: 'static',
+      size: 'xl',
+      windowClass: 'flight-search-modal wide-modal',
+      scrollable: true,
+      modalDialogClass: 'modal-dialog-scrollable'
+    });
+  }
+
+  openBookingModal(flight: any): void {
+    this.modalService.dismissAll();
+    this.selectedFlight = flight;
+    const modalRef = this.modalService.open(this.bookingModal, {
+      centered: true,
+      size: 'xl',
+      windowClass: 'booking-modal',
+      scrollable: true,
+      backdrop: 'static',
+      fullscreen: false
+    });
+  }
+
+  confirmBooking(form: any): void {
+    if (form.valid) {
+      const bookingData: {
+        flight: any;
+        adults: AdultPassenger[];
+        children: ChildPassenger[];
+      } = {
+        flight: this.selectedFlight,
+        adults: [],
+        children: []
+      };
+
+      // Process adult passengers
+      for (let i = 0; i < this.payload.adults; i++) {
+        bookingData.adults.push({
+          name: form.value[`adult_name_${i}`],
+          email: form.value[`adult_email_${i}`],
+          phone: form.value[`adult_phone_${i}`]
+        });
+      }
+
+      // Process child passengers
+      for (let i = 0; i < this.payload.children; i++) {
+        bookingData.children.push({
+          name: form.value[`child_name_${i}`],
+          age: form.value[`child_age_${i}`]
+        });
+      }
+
+      console.log('Booking confirmed:', bookingData);
+      this.modalService.dismissAll();
+      // Here you can add API call to save booking
+    }
+  }
+
+  getRange(count: number): number[] {
+    return Array(count).fill(0).map((_, i) => i);
   }
 }

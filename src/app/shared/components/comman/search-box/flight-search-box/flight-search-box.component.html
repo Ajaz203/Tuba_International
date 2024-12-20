@@ -153,6 +153,148 @@
     class="btn btn-rounded color1"
     [disabled]="!payload.departure_id || !payload.arrival_id || !payload.outbound_date"
   >
-    Book Now
+    Search Flights
   </button>
 </form>
+
+
+
+<div *ngIf="isLoading" class="loader-overlay">
+  <div class="loader">
+    <div class="spinner"></div>
+    <p>Searching Flights...</p>
+  </div>
+</div>
+
+
+<ng-template #successModal>
+  <div class="modal-header">
+    <h4 class="modal-title">Available Flights</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modalService.dismissAll()"></button>
+  </div>
+  <div class="modal-body">
+    <div class="flight-results">
+      <div class="flight-card" *ngFor="let flight of flightResults">
+        <div class="flight-info">
+          <div class="airline">
+            <img [src]="flight.image_link" [alt]="flight.airline" class="airline-logo">
+            <span>{{flight.airline}}</span>
+          </div>
+          <div class="route-info">
+            <div class="departure">
+              <h5>{{flight.departure_time | date:'shortTime'}}</h5>
+              <p>{{flight.departure_airport}}</p>
+            </div>
+            <div class="duration">
+              <div class="flight-line">
+                <span class="plane-icon">✈</span>
+              </div>
+              <p>{{flight.duration}}</p>
+            </div>
+            <div class="arrival">
+              <h5>{{flight.arrival_time | date:'shortTime'}}</h5>
+              <p>{{flight.arrival_airport}}</p>
+            </div>
+          </div>
+          <div class="price-section">
+            <h4>₹{{flight.fare}}</h4>
+            <button class="btn btn-primary book-btn" (click)="openBookingModal(flight)">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #bookingModal let-modal>
+  <div class="modal-header booking-header">
+    <h4 class="modal-title">Flight Booking Details</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+  </div>
+  <div class="modal-body booking-body">
+    <form #bookingForm="ngForm" (ngSubmit)="confirmBooking(bookingForm)">
+      <div class="flight-summary">
+        <div class="journey-details">
+          <div class="flight-row">
+            <div class="airline-info">
+              <img [src]="selectedFlight.image_link" [alt]="selectedFlight.airline">
+              <span>{{selectedFlight.airline}}</span>
+            </div>
+            
+            <div class="flight-path">
+              <div class="time-location">
+                <span class="time">{{selectedFlight.departure_time | date:'shortTime'}}</span>
+                <span class="location">{{selectedFlight.departure_airport}}</span>
+              </div>
+              
+              <div class="duration">
+                <div class="line"></div>
+                <span class="plane-icon">✈</span>
+                <div class="time">{{selectedFlight.duration}}</div>
+              </div>
+              
+              <div class="time-location">
+                <span class="time">{{selectedFlight.arrival_time | date:'shortTime'}}</span>
+                <span class="location">{{selectedFlight.arrival_airport}}</span>
+              </div>
+            </div>
+
+            <div class="price">
+              <div class="amount">₹{{selectedFlight.fare}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="passenger-details">
+        <h5>Passenger Information</h5>
+        
+        <!-- Adult Passengers -->
+        <div *ngFor="let i of getRange(payload.adults); let index = index" class="passenger-section">
+          <h6 class="passenger-title">Adult Passenger {{index + 1}}</h6>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" class="form-control" [name]="'adult_name_' + index" ngModel required>
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" class="form-control" [name]="'adult_email_' + index" ngModel required email>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" class="form-control" [name]="'adult_phone_' + index" ngModel required>
+            </div>
+            <div class="form-group">
+              <!-- Empty for alignment or add another field if needed -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Child Passengers -->
+        <div *ngFor="let i of getRange(payload.children); let index = index" class="passenger-section">
+          <h6 class="passenger-title">Child Passenger {{index + 1}}</h6>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" class="form-control" [name]="'child_name_' + index" ngModel required>
+            </div>
+            <div class="form-group">
+              <label>Age</label>
+              <input type="number" class="form-control" [name]="'child_age_' + index" ngModel required min="2" max="12">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Cancel</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!bookingForm.valid">
+          Confirm Booking
+        </button>
+      </div>
+    </form>
+  </div>
+</ng-template>
