@@ -1,199 +1,235 @@
 <app-header [headerClass]="'light_header'"></app-header>
 
-<app-flight-booking-breadcrumb [bg_image]="bg_image" [parent]="parent" [subParent]="subParent" [child]="child"></app-flight-booking-breadcrumb>
-
-<section class="section-b-space bg-inner animated-section">
-    <app-animations [type]="'dots'"></app-animations>
-    <div class="container">
-        <div class="booking-intro">
-            <h1>Book Your Flight</h1>
-            <p class="lead">Experience seamless air travel with our easy booking process. Fill out the form below to secure your journey.</p>
-            <div class="booking-highlights">
-                <div class="highlight-item">
-                    <i class="fa fa-check-circle"></i>
-                    <span>Instant Confirmation</span>
-                </div>
-                <div class="highlight-item">
-                    <i class="fa fa-lock"></i>
-                    <span>Secure Booking</span>
-                </div>
-                <div class="highlight-item">
-                    <i class="fa fa-headset"></i>
-                    <span>24/7 Support</span>
+<!-- Futuristic Hero Section -->
+<div class="hero-container">
+    <div class="hero-content">
+        <div class="hero-animation">
+            <div class="orbit">
+                <div class="planet"></div>
+                <div class="plane-orbit">
+                    <i class="fas fa-plane"></i>
                 </div>
             </div>
         </div>
+        <h1 class="glitch-text" data-text="Future of Travel">Tuba International Flight</h1>
+        <p class="neon-text">Experience seamless flight booking with AI-powered recommendations</p>
+    </div>
+    <div class="hero-overlay"></div>
+</div>
 
-        <div class="row">
-            <!-- Left Column: Form -->
+<!-- Main Booking Section -->
+<section class="booking-container">
+    <div class="glass-container">
+        <div class="row g-4">
+            <!-- Left Column: Booking Form -->
             <div class="col-lg-7">
-                <div class="guest-detail">
-                    <div class="section-info">
-                        <h2>Passenger Information</h2>
-                        <p>Please provide your details for flight booking.</p>
+                <div class="neo-card">
+                    <!-- Interactive Progress -->
+                    <div class="progress-tracker">
+                        <div class="progress-line" [style.width.%]="(currentStep/3)*100"></div>
+                        <div class="progress-steps">
+                            <div class="step" [class.active]="currentStep >= 1" [class.completed]="currentStep > 1">
+                                <div class="step-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <span>Route</span>
+                            </div>
+                            <div class="step" [class.active]="currentStep >= 2" [class.completed]="currentStep > 2">
+                                <div class="step-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span>Details</span>
+                            </div>
+                            <div class="step" [class.active]="currentStep >= 3">
+                                <div class="step-icon">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <span>Confirm</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <form [formGroup]="flightForm" (ngSubmit)="onSubmit()">
-                        <div class="form-section">
-                            <div class="row g-3">
-                                <!-- Personal Information -->
-                                <div class="col-md-12">
-                                    <label>Full Name <span class="required">*</span></label>
-                                    <input type="text" 
-                                           formControlName="name" 
-                                           class="form-control" 
-                                           placeholder="Enter your full name"
-                                           [ngClass]="{'is-invalid': nameControl?.invalid && nameControl?.touched}">
-                                    <div class="invalid-feedback" *ngIf="nameError">{{ nameError }}</div>
-                                </div>
+                    <!-- Add this after the progress-tracker -->
+                    <div class="error-toast" *ngIf="errorMessage">
+                        <i class="fas fa-exclamation-circle"></i>
+                        {{ errorMessage }}
+                    </div>
 
-                                <div class="col-md-6">
-                                    <label>Email <span class="required">*</span></label>
-                                    <input type="email" 
-                                           formControlName="email" 
-                                           class="form-control" 
-                                           placeholder="Enter your email"
-                                           [ngClass]="{'is-invalid': emailControl?.invalid && emailControl?.touched}">
-                                    <div class="invalid-feedback" *ngIf="emailError">{{ emailError }}</div>
+                    <!-- Futuristic Form -->
+                    <form [formGroup]="flightForm" (ngSubmit)="onSubmit()" class="neo-form">
+                        <!-- Flight Route Fields (Step 1) -->
+                        <div class="form-fields" [class.active]="currentStep === 1">
+                            <div class="floating-input">
+                                <div class="input-wrapper">
+                                    <i class="fas fa-plane-departure"></i>
+                                    <input type="text" formControlName="fromLocation" 
+                                        placeholder="From"
+                                        [class.is-invalid]="fromLocationControl?.invalid && fromLocationControl?.touched">
+                                    <div class="input-glow"></div>
                                 </div>
+                                <div class="error-message" *ngIf="fromLocationError">{{ fromLocationError }}</div>
+                            </div>
 
-                                <div class="col-md-6">
-                                    <label>Phone Number <span class="required">*</span></label>
-                                    <input type="tel" 
-                                           formControlName="phone" 
-                                           class="form-control"
-                                           placeholder="Enter phone number"
-                                           (input)="onPhoneInput($event)"
-                                           [ngClass]="{'is-invalid': phoneControl?.invalid && phoneControl?.touched}">
-                                    <div class="invalid-feedback" *ngIf="phoneError">{{ phoneError }}</div>
+                            <div class="floating-input">
+                                <div class="input-wrapper">
+                                    <i class="fas fa-plane-arrival"></i>
+                                    <input type="text" formControlName="toLocation" 
+                                        placeholder="To"
+                                        [class.is-invalid]="toLocationControl?.invalid && toLocationControl?.touched">
+                                    <div class="input-glow"></div>
                                 </div>
+                                <div class="error-message" *ngIf="toLocationError">{{ toLocationError }}</div>
+                            </div>
 
-                                <!-- Passport Details -->
-                                <div class="col-md-6">
-                                    <label>Passport Number <span class="required">*</span></label>
-                                    <input type="text" 
-                                           formControlName="passport_number" 
-                                           class="form-control"
-                                           placeholder="Enter passport number"
-                                           (input)="onPassportInput($event)"
-                                           style="text-transform: uppercase;"
-                                           [ngClass]="{'is-invalid': passportControl?.invalid && passportControl?.touched}">
-                                    <div class="invalid-feedback" *ngIf="passportError">{{ passportError }}</div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label>Passport Expiry Date <span class="required">*</span></label>
-                                    <input type="date" 
-                                           formControlName="passport_expiry" 
-                                           class="form-control"
-                                           [ngClass]="{'is-invalid': passportExpiryControl?.invalid && passportExpiryControl?.touched}">
-                                    <div class="invalid-feedback" *ngIf="passportExpiryControl?.errors?.['pastDate']">
-                                        Passport must not be expired
+                            <div class="form-grid">
+                                <div class="floating-input">
+                                    <div class="input-wrapper">
+                                        <i class="fas fa-calendar"></i>
+                                        <input type="date" formControlName="departureDate" 
+                                            [min]="minDate"
+                                            [class.is-invalid]="departureDateControl?.invalid && departureDateControl?.touched">
+                                        <div class="input-glow"></div>
                                     </div>
+                                    <div class="error-message" *ngIf="departureDateError">{{ departureDateError }}</div>
                                 </div>
 
-                                <!-- Preferences -->
-                                <div class="col-md-6">
-                                    <label>Meal Preference</label>
-                                    <select formControlName="meal_preference" class="form-control">
-                                        <option value="">Select Meal Preference</option>
-                                        <option value="vegetarian">Vegetarian</option>
-                                        <option value="non-vegetarian">Non-Vegetarian</option>
-                                        <option value="vegan">Vegan</option>
-                                        <option value="halal">Halal</option>
-                                    </select>
+                                <div class="floating-input">
+                                    <div class="input-wrapper">
+                                        <i class="fas fa-users"></i>
+                                        <input type="number" formControlName="passengers" 
+                                            placeholder="Passengers"
+                                            min="1" max="9"
+                                            [class.is-invalid]="passengersControl?.invalid && passengersControl?.touched">
+                                        <div class="input-glow"></div>
+                                    </div>
+                                    <div class="error-message" *ngIf="passengersError">{{ passengersError }}</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Passenger Details Fields (Step 2) -->
+                        <div class="form-fields" [class.active]="currentStep === 2">
+                            <h3 class="section-title">Passenger Details</h3>
+                            
+                            <div class="floating-input">
+                                <div class="input-wrapper">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" formControlName="name" 
+                                        placeholder="Full Name"
+                                        [class.is-invalid]="nameControl?.invalid && nameControl?.touched">
+                                    <div class="input-glow"></div>
+                                </div>
+                                <div class="error-message" *ngIf="nameError">{{ nameError }}</div>
+                            </div>
+
+                            <div class="form-grid">
+                                <div class="floating-input">
+                                    <div class="input-wrapper">
+                                        <i class="fas fa-envelope"></i>
+                                        <input type="email" formControlName="email" 
+                                            placeholder="Email Address"
+                                            [class.is-invalid]="emailControl?.invalid && emailControl?.touched">
+                                        <div class="input-glow"></div>
+                                    </div>
+                                    <div class="error-message" *ngIf="emailError">{{ emailError }}</div>
                                 </div>
 
-                                <div class="col-md-6">
-                                    <label>Seat Preference</label>
-                                    <select formControlName="seat_preference" class="form-control">
-                                        <option value="">Select Seat Preference</option>
-                                        <option value="window">Window</option>
-                                        <option value="aisle">Aisle</option>
-                                        <option value="middle">Middle</option>
-                                    </select>
+                                <div class="floating-input">
+                                    <div class="input-wrapper">
+                                        <i class="fas fa-phone"></i>
+                                        <input type="tel" formControlName="phone" 
+                                            placeholder="Phone Number"
+                                            (input)="onPhoneInput($event)"
+                                            [class.is-invalid]="phoneControl?.invalid && phoneControl?.touched">
+                                        <div class="input-glow"></div>
+                                    </div>
+                                    <div class="error-message" *ngIf="phoneError">{{ phoneError }}</div>
                                 </div>
+                            </div>
 
-                                <!-- Special Requests -->
-                                <div class="col-md-12">
-                                    <label>Special Requests</label>
-                                    <textarea formControlName="special_requests" 
-                                              class="form-control" 
-                                              rows="3"
-                                              placeholder="Enter any special requests or requirements"></textarea>
+                            <!-- Additional Services -->
+                            <div class="additional-services">
+                                <h3 class="section-title">Additional Services</h3>
+                                <div class="service-options">
+                                    <label class="neo-checkbox">
+                                        <input type="checkbox" formControlName="travel_insurance">
+                                        <span class="checkbox-label">
+                                            <i class="fas fa-shield-alt"></i>
+                                            Travel Insurance
+                                        </span>
+                                    </label>
+                                    <label class="neo-checkbox">
+                                        <input type="checkbox" formControlName="airport_pickup">
+                                        <span class="checkbox-label">
+                                            <i class="fas fa-car"></i>
+                                            Airport Pickup
+                                        </span>
+                                    </label>
                                 </div>
+                            </div>
+                        </div>
 
-                                <!-- Terms -->
-                                <div class="col-md-12">
-                                    <div class="form-check">
-                                        <input type="checkbox" 
-                                               formControlName="terms_accepted" 
-                                               class="form-check-input" 
-                                               id="termsCheck">
-                                        <label class="form-check-label" for="termsCheck">
-                                            I accept the terms and conditions
-                                        </label>
+                        <!-- Confirmation Fields (Step 3) -->
+                        <div class="form-fields" [class.active]="currentStep === 3">
+                            <div class="confirmation-summary">
+                                <h3 class="section-title">Review Your Booking</h3>
+                                <div class="summary-grid">
+                                    <div class="summary-item">
+                                        <span class="label">From</span>
+                                        <span class="value">{{ flightForm.get('fromLocation')?.value }}</span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <span class="label">To</span>
+                                        <span class="value">{{ flightForm.get('toLocation')?.value }}</span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <span class="label">Date</span>
+                                        <span class="value">{{ flightForm.get('departureDate')?.value | date }}</span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <span class="label">Passengers</span>
+                                        <span class="value">{{ flightForm.get('passengers')?.value }}</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="submit-btn">
-                            <button type="submit" 
-                                    class="btn btn-solid" 
+                        <!-- Form Navigation -->
+                        <div class="form-actions">
+                            <button type="button" class="neo-button" 
+                                    *ngIf="currentStep > 1"
+                                    (click)="previousStep()">
+                                <i class="fas fa-arrow-left"></i>
+                                <span>Back</span>
+                            </button>
+                            <button type="button" class="neo-button primary" 
+                                    *ngIf="currentStep < 3"
+                                    (click)="nextStep()"
+                                    [class.disabled]="!isFormValid">
+                                <span>{{ isFormValid ? 'Next' : 'Complete Required Fields' }}</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                            <button type="submit" class="neo-button primary" 
+                                    *ngIf="currentStep === 3"
                                     [disabled]="!flightForm.valid || isSubmitting">
-                                <i class="fa fa-paper-plane"></i>
-                                {{ isSubmitting ? 'Processing...' : 'Book Flight' }}
+                                <span>{{ isSubmitting ? 'Processing...' : 'Book Now' }}</span>
+                                <div class="button-glow"></div>
                             </button>
                         </div>
                     </form>
-                </div>
-
-                <!-- Why Choose Us Section -->
-                <div class="additional-info">
-                    <div class="why-choose-us">
-                        <h3>Why Choose Our Flight Services?</h3>
-                        <div class="features-grid">
-                            <div class="feature-item">
-                                <i class="fa fa-plane"></i>
-                                <div class="feature-content">
-                                    <h4>Best Prices</h4>
-                                    <p>Competitive fares with no hidden charges</p>
-                                </div>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fa fa-shield-alt"></i>
-                                <div class="feature-content">
-                                    <h4>Safe Travel</h4>
-                                    <p>Your safety is our top priority</p>
-                                </div>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fa fa-clock"></i>
-                                <div class="feature-content">
-                                    <h4>Quick Process</h4>
-                                    <p>Fast and efficient booking system</p>
-                                </div>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fa fa-headset"></i>
-                                <div class="feature-content">
-                                    <h4>24/7 Support</h4>
-                                    <p>Round-the-clock customer assistance</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
             <!-- Right Column: Summary -->
             <div class="col-lg-5">
-                <app-flight-booking-summary></app-flight-booking-summary>
+                <app-flight-booking-summary 
+                    [flightDetails]="currentBooking"
+                    [isLoading]="isLoadingSummary">
+                </app-flight-booking-summary>
             </div>
         </div>
     </div>
 </section>
 
 <app-footer [location]="true"></app-footer>
-<app-layout [loaderType]="'basic'"></app-layout>
+<app-layout></app-layout>
