@@ -41,6 +41,36 @@ interface ChildPassenger {
     overflow-y: auto;
   }
 `,
+  template: `
+    <!-- Success Modal Template -->
+    <ng-template #bookingSuccessModal>
+      <div class="modal-content success-modal">
+        <div class="modal-header border-0">
+          <button type="button" class="btn-close" (click)="modalService.dismissAll()"></button>
+        </div>
+        <div class="modal-body text-center pt-0">
+          <div class="success-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h2 class="mt-4">Booking Successful!</h2>
+          <p class="mb-4">Your flight has been booked successfully.</p>
+          <div class="booking-details">
+            <h4>Booking Details</h4>
+            <div class="flight-info">
+              <p><strong>Airline:</strong> {{selectedFlight?.airline}}</p>
+              <p><strong>Flight:</strong> {{selectedFlight?.flight_number}}</p>
+              <p><strong>From:</strong> {{selectedFlight?.departure_airport}}</p>
+              <p><strong>To:</strong> {{selectedFlight?.arrival_airport}}</p>
+              <p><strong>Date:</strong> {{selectedFlight?.departure_time | date}}</p>
+            </div>
+          </div>
+          <button class="btn btn-primary mt-4" (click)="modalService.dismissAll()">
+            Done
+          </button>
+        </div>
+      </div>
+    </ng-template>
+  `
 })
 export class FlightSearchBoxComponent {
   @Input() selectedValue: string = '';
@@ -71,6 +101,7 @@ export class FlightSearchBoxComponent {
 
   @ViewChild('successModal') successModal: any;
   @ViewChild('bookingModal') bookingModal: any;
+  @ViewChild('bookingSuccessModal') bookingSuccessModal: any;
   selectedFlight: any;
 
   constructor(private flightService: FlightService, public modalService: NgbModal) {}
@@ -203,40 +234,53 @@ export class FlightSearchBoxComponent {
 
   confirmBooking(form: any): void {
     if (form.valid) {
-      const bookingData: {
-        flight: any;
-        adults: AdultPassenger[];
-        children: ChildPassenger[];
-      } = {
-        flight: this.selectedFlight,
-        adults: [],
-        children: []
-      };
+        const bookingData: {
+            flight: any;
+            adults: AdultPassenger[];
+            children: ChildPassenger[];
+        } = {
+            flight: this.selectedFlight,
+            adults: [],
+            children: []
+        };
 
-      // Process adult passengers
-      for (let i = 0; i < this.payload.adults; i++) {
-        bookingData.adults.push({
-          name: form.value[`adult_name_${i}`],
-          email: form.value[`adult_email_${i}`],
-          phone: form.value[`adult_phone_${i}`]
+        // Process adult passengers
+        for (let i = 0; i < this.payload.adults; i++) {
+            bookingData.adults.push({
+                name: form.value[`adult_name_${i}`],
+                email: form.value[`adult_email_${i}`],
+                phone: form.value[`adult_phone_${i}`]
+            });
+        }
+
+        // Process child passengers
+        for (let i = 0; i < this.payload.children; i++) {
+            bookingData.children.push({
+                name: form.value[`child_name_${i}`],
+                age: form.value[`child_age_${i}`]
+            });
+        }
+
+        console.log('Booking confirmed:', bookingData);
+        this.modalService.dismissAll();
+        
+        // Show success modal
+        const modalRef = this.modalService.open(this.bookingSuccessModal, {
+            centered: true,
+            backdrop: 'static',
+            size: 'md',
+            windowClass: 'booking-success-modal'
         });
-      }
-
-      // Process child passengers
-      for (let i = 0; i < this.payload.children; i++) {
-        bookingData.children.push({
-          name: form.value[`child_name_${i}`],
-          age: form.value[`child_age_${i}`]
-        });
-      }
-
-      console.log('Booking confirmed:', bookingData);
-      this.modalService.dismissAll();
-      // Here you can add API call to save booking
     }
   }
 
   getRange(count: number): number[] {
     return Array(count).fill(0).map((_, i) => i);
+  }
+
+  downloadTicket(): void {
+    // Implement ticket download functionality
+    console.log('Downloading ticket for flight:', this.selectedFlight);
+    // You can implement PDF generation here
   }
 }

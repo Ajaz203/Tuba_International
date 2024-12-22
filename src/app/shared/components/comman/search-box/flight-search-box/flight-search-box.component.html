@@ -298,3 +298,61 @@
     </form>
   </div>
 </ng-template>
+
+<ng-template #bookingSuccessModal>
+    <div class="modal-content neo-modal">
+        <div class="modal-header">
+            <h4 class="modal-title">Booking Confirmation</h4>
+            <button type="button" class="btn-close" (click)="modalService.dismissAll()"></button>
+        </div>
+        <div class="modal-body">
+            <div class="success-content">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Booking Successful!</h2>
+                <p class="success-message">Your flight has been booked successfully.</p>
+                
+                <div class="booking-details">
+                    <div class="flight-card">
+                        <div class="airline-info">
+                            <img [src]="selectedFlight?.image_link" [alt]="selectedFlight?.airline" class="airline-logo">
+                            <div class="airline-name">{{selectedFlight?.airline}}</div>
+                        </div>
+                        
+                        <div class="flight-route">
+                            <div class="departure">
+                                <h5>{{selectedFlight?.departure_time | date:'shortTime'}}</h5>
+                                <p>{{selectedFlight?.departure_airport}}</p>
+                            </div>
+                            <div class="flight-path">
+                                <div class="duration">{{selectedFlight?.duration}}</div>
+                                <div class="path-line">
+                                    <i class="fas fa-plane"></i>
+                                </div>
+                            </div>
+                            <div class="arrival">
+                                <h5>{{selectedFlight?.arrival_time | date:'shortTime'}}</h5>
+                                <p>{{selectedFlight?.arrival_airport}}</p>
+                            </div>
+                        </div>
+
+                        <div class="price-info">
+                            <h4>Total Amount</h4>
+                            <div class="amount">₹{{selectedFlight?.total_price}}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-primary" (click)="modalService.dismissAll()">
+                        Done
+                    </button>
+                    <button class="btn btn-outline" (click)="downloadTicket()">
+                        <i class="fas fa-download"></i> Download Ticket
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

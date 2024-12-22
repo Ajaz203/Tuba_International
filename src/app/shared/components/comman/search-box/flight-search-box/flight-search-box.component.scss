@@ -605,3 +605,157 @@
     }
   }
 }
+
+// Add these variables at the top if not already present
+$neon-blue: #00f3ff;
+$neon-purple: #9d00ff;
+$dark-bg: #0a0a1f;
+$glass-bg: rgba(255, 255, 255, 0.1);
+
+.success-content {
+    text-align: center;
+    padding: 2rem;
+
+    .success-icon {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 2rem;
+        background: rgba($neon-blue, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i {
+            font-size: 50px;
+            color: $neon-blue;
+        }
+    }
+
+    h2 {
+        color: white;
+        margin-bottom: 1rem;
+    }
+
+    .success-message {
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 2rem;
+    }
+
+    .booking-details {
+        background: rgba($neon-blue, 0.05);
+        border-radius: 15px;
+        padding: 1.5rem;
+        margin: 2rem 0;
+
+        .flight-card {
+            .airline-info {
+                display: flex;
+                align-items: center;
+                margin-bottom: 1.5rem;
+
+                .airline-logo {
+                    width: 50px;
+                    height: 50px;
+                    object-fit: contain;
+                    margin-right: 1rem;
+                }
+
+                .airline-name {
+                    color: white;
+                    font-size: 1.2rem;
+                }
+            }
+
+            .flight-route {
+                display: grid;
+                grid-template-columns: 1fr auto 1fr;
+                gap: 20px;
+                align-items: center;
+                margin-bottom: 1.5rem;
+
+                .departure, .arrival {
+                    h5 {
+                        color: $neon-blue;
+                        margin: 0;
+                    }
+                    p {
+                        color: rgba(255, 255, 255, 0.7);
+                        margin: 0;
+                    }
+                }
+
+                .flight-path {
+                    text-align: center;
+
+                    .duration {
+                        color: rgba(255, 255, 255, 0.7);
+                        font-size: 0.9rem;
+                    }
+
+                    .path-line {
+                        position: relative;
+                        height: 2px;
+                        background: rgba($neon-blue, 0.3);
+                        margin: 10px 0;
+
+                        i {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            color: $neon-blue;
+                        }
+                    }
+                }
+            }
+
+            .price-info {
+                text-align: right;
+                
+                h4 {
+                    color: rgba(255, 255, 255, 0.7);
+                    font-size: 1rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                .amount {
+                    color: $neon-blue;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    .action-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+
+        .btn {
+            padding: 0.75rem 2rem;
+            border-radius: 25px;
+            
+            &.btn-primary {
+                background: $neon-blue;
+                border: none;
+                color: $dark-bg;
+                
+                &:hover {
+                    background: darken($neon-blue, 10%);
+                }
+            }
+            
+            &.btn-outline {
+                background: transparent;
+                border: 1px solid $neon-blue;
+                color: $neon-blue;
+                
+                &:hover {
+                    background: rgba($neon-blue, 0.1);
+                }
+            }
+        }
+    }
+}

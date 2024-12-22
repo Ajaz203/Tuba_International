@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -14,10 +14,9 @@ import { CommonModule } from '@angular/common';
                 <div class="flights-grid">
                     <div *ngFor="let flight of flights" class="flight-card" (click)="selectFlight(flight)">
                         <div class="airline-info">
-                        <div class="airline">
-                          <img [src]="flight.image_link" [alt]="flight.airline" class="airline-logo">
-                            
-                        </div>
+                            <div class="airline">
+                                <img [src]="flight.image_link" [alt]="flight.airline" class="airline-logo">
+                            </div>
                             <div class="airline-details">
                                 <span class="airline-name">{{flight?.airline || 'Airline'}}</span>
                                 <span class="flight-number">{{flight?.flight_number || 'Flight No.'}}</span>
@@ -69,14 +68,13 @@ import { CommonModule } from '@angular/common';
 })
 export class FlightSelectionModalComponent implements OnInit {
     @Input() flights: any[] = [];
+    selectedFlight: any;
 
-    constructor(public activeModal: NgbActiveModal) { }
+    constructor(public activeModal: NgbActiveModal) {}
 
     ngOnInit(): void {
         console.log('Flights data:', this.flights);
     }
-
-
 
     formatTime(time: string): string {
         if (!time) return 'N/A';
@@ -101,11 +99,9 @@ export class FlightSelectionModalComponent implements OnInit {
             ...flight,
             total_price: this.calculateTotalPrice(flight),
             currency: 'INR',
-            type: 2, // One Way
+            type: 2,
             travel_class: 1
         };
         this.activeModal.close(selectedFlight);
     }
-
-
 } 

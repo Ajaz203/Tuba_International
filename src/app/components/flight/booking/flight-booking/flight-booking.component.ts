@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors, FormControl } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -18,6 +18,21 @@ import { BreadcrumbsComponent } from '../../../../shared/components/comman/bread
 import { FlightService } from '../../../../shared/services/flight.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FlightSelectionModalComponent } from '../widgets/flight-selection-modal/flight-selection-modal.component';
+
+interface BookingData {
+    flight: any;
+    passenger: {
+        name: string;
+        email: string;
+        phone: string;
+        totalPassengers: number;
+    };
+    journey: {
+        from: string;
+        to: string;
+        date: string;
+    };
+}
 
 @Component({
     selector: 'app-flight-booking',
@@ -51,6 +66,9 @@ export class FlightBookingComponent implements OnInit {
     currentStep = 1;
     errorMessage: string = '';
     isFormValid: boolean = false;
+    @ViewChild('bookingSuccessModal') bookingSuccessModal: any;
+    selectedFlight: any;
+    bookingData: BookingData | null = null;
 
     public title = "Flight Booking";
   public bg_image = "/assets/imges2/flight-breadcrumb2.jpg";
@@ -134,7 +152,7 @@ export class FlightBookingComponent implements OnInit {
     constructor(
         private fb: FormBuilder,
         private flightService: FlightService,
-        private modalService: NgbModal
+        public modalService: NgbModal
     ) {
         this.initForm();
     this.minDate = new Date().toISOString().split('T')[0];
@@ -309,22 +327,29 @@ export class FlightBookingComponent implements OnInit {
   onSubmit() {
         if (this.flightForm.valid) {
             this.isSubmitting = true;
-            this.currentBooking = {
-                from: this.flightForm.value.fromLocation,
-                to: this.flightForm.value.toLocation,
-                departureTime: '10:00 AM',
-                arrivalTime: '12:00 PM',
-                // Add other details
-            };
             
-            // Simulate API call
-            setTimeout(() => {
-                this.showSuccessMessage();
-                this.flightForm.reset();
-                this.isSubmitting = false;
-                this.currentBooking = null;
-                this.currentStep = 1;
-            }, 1500);
+            // Store the form data
+            this.bookingData = {
+                flight: this.currentBooking,
+                passenger: {
+                    name: this.flightForm.get('name')?.value,
+                    email: this.flightForm.get('email')?.value,
+                    phone: this.flightForm.get('phone')?.value,
+                    totalPassengers: this.flightForm.get('passengers')?.value
+                },
+                journey: {
+                    from: this.flightForm.get('fromLocation')?.value,
+                    to: this.flightForm.get('toLocation')?.value,
+                    date: this.flightForm.get('departureDate')?.value,
+                }
+            };
+
+            // Open modal with specific class
+            this.modalService.open(this.bookingSuccessModal, {
+                centered: true,
+                backdrop: 'static',
+                windowClass: 'booking-success-modal'
+            });
         } else {
             this.showFormErrors();
         }
@@ -535,5 +560,23 @@ export class FlightBookingComponent implements OnInit {
         }, (dismissReason) => {
             // Modal dismissed
         });
+  }
+
+  confirmBooking(bookingData: any): void {
+    this.selectedFlight = bookingData.flight;
+    // Process booking...
+    
+    // Show success modal
+    const modalRef = this.modalService.open(this.bookingSuccessModal, {
+        centered: true,
+        backdrop: 'static',
+        size: 'md',
+        windowClass: 'booking-success-modal'
+    });
+  }
+
+  downloadTicket(): void {
+    console.log('Downloading ticket for flight:', this.selectedFlight);
+    // Implement ticket download
   }
 }

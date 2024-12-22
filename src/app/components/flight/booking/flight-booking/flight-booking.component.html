@@ -470,5 +470,63 @@
     </div>
 </div>
 
+<!-- Simplified Success Modal Template -->
+<ng-template #bookingSuccessModal>
+    <div class="modal-content neo-card modal-success">
+        <div class="modal-body">
+            <!-- Success Animation -->
+            <div class="success-animation">
+                <div class="success-icon">
+                    <i class="fas fa-check"></i>
+                </div>
+            </div>
+            
+            <h2 class="glow-text">Booking Confirmed!</h2>
+
+            <!-- Flight Route Visualization -->
+            <div class="flight-route-visual">
+                <div class="departure-point">
+                    <div class="location-details">
+                        <h4>{{bookingData?.journey?.from}}</h4>
+                        <p>{{bookingData?.journey?.date | date}}</p>
+                    </div>
+                </div>
+                <div class="route-line">
+                    <i class="fas fa-plane"></i>
+                </div>
+                <div class="arrival-point">
+                    <div class="location-details">
+                        <h4>{{bookingData?.journey?.to}}</h4>
+                        <p>{{bookingData?.flight?.duration || '2h 00m'}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Essential Details -->
+            <div class="essential-details">
+                <div class="detail-row">
+                    <span><i class="fas fa-ticket-alt"></i> {{bookingData?.flight?.flightNumber || 'TI-123'}}</span>
+                    <span><i class="fas fa-users"></i> {{bookingData?.passenger?.totalPassengers}} Passengers</span>
+                </div>
+                <div class="price-total">
+                    <span>Total Amount</span>
+                    <span class="amount">₹{{bookingData?.flight?.total_price || 5000}}</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="btn-download neo-button primary" (click)="downloadTicket()">
+                    <i class="fas fa-download"></i>
+                    <span>Download Ticket</span>
+                </button>
+                <button class="btn-done neo-button" (click)="modalService.dismissAll()">
+                    <span>Close</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
 <app-footer [location]="true"></app-footer>
 <app-layout></app-layout>
