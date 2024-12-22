@@ -37,4 +37,8 @@ export class FlightDemoModernComponent {
       return this.category = response;
     })
   }
+
+  getAirlineImage(imgPath: string): string {
+    return imgPath ? `assets/images/airlines/${imgPath}` : 'assets/images/airlines/default-airline.png';
+  }
 }

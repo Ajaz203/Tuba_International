@@ -1,0 +1,4 @@
+<img [src]="getAirlineImage(flight.img)" 
+     [alt]="flight.airline + ' logo'"
+     class="airline-logo"
+     (error)="$event.target.src='assets/images/airlines/default-airline.png'"> 

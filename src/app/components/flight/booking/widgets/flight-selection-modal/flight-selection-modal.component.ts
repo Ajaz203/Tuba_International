@@ -14,9 +14,10 @@ import { CommonModule } from '@angular/common';
                 <div class="flights-grid">
                     <div *ngFor="let flight of flights" class="flight-card" (click)="selectFlight(flight)">
                         <div class="airline-info">
-                            <img [src]="getAirlineImage(flight.airline_code)" 
-                                 [alt]="flight.airline" 
-                                 class="airline-logo">
+                        <div class="airline">
+                          <img [src]="flight.image_link" [alt]="flight.airline" class="airline-logo">
+                            
+                        </div>
                             <div class="airline-details">
                                 <span class="airline-name">{{flight?.airline || 'Airline'}}</span>
                                 <span class="flight-number">{{flight?.flight_number || 'Flight No.'}}</span>
@@ -68,23 +69,14 @@ import { CommonModule } from '@angular/common';
 })
 export class FlightSelectionModalComponent implements OnInit {
     @Input() flights: any[] = [];
-    
-    constructor(public activeModal: NgbActiveModal) {}
+
+    constructor(public activeModal: NgbActiveModal) { }
 
     ngOnInit(): void {
         console.log('Flights data:', this.flights);
     }
 
-    getAirlineImage(code: string): string {
-        const airlineImages: { [key: string]: string } = {
-            'AI': '/assets/images/airlines/air-india.png',
-            'UK': '/assets/images/airlines/vistara.png',
-            '6E': '/assets/images/airlines/indigo.png',
-            'SG': '/assets/images/airlines/spicejet.png',
-            'I5': '/assets/images/airlines/airasia.png',
-        };
-        return airlineImages[code] || '/assets/images/airlines/default.png';
-    }
+
 
     formatTime(time: string): string {
         if (!time) return 'N/A';
@@ -114,4 +106,6 @@ export class FlightSelectionModalComponent implements OnInit {
         };
         this.activeModal.close(selectedFlight);
     }
+
+
 } 

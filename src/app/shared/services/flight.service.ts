@@ -67,5 +67,21 @@ getflight(data: any) {
   getMaxPrice(): Observable<number> {
     return this.flight().pipe(map((flight) => Math.max(...flight.flight.map((price) => price.price))));
   }
+
+  private formatFlightData(flight: flight): flight {
+    return {
+      ...flight,
+      img: flight.img || `${flight.airline.toLowerCase().replace(/\s+/g, '-')}.png`
+    };
+  }
+
+  getFlights(): Observable<flights> {
+    return this.http.get<flights>(this.apiUrl).pipe(
+      map(response => ({
+        ...response,
+        flight: response.flight.map(f => this.formatFlightData(f))
+      }))
+    );
+  }
 }
 
