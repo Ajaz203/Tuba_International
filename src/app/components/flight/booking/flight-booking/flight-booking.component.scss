@@ -540,3 +540,149 @@ $card-bg: rgba(16, 16, 41, 0.8);
         color: $neon-purple;
     }
 }
+
+// Add these styles to your existing SCSS
+
+.info-sections {
+    padding: 60px 0;
+    background: linear-gradient(135deg, darken($dark-bg, 5%), $dark-bg);
+
+    .neo-info-card {
+        background: $card-bg;
+        border-radius: 20px;
+        padding: 30px;
+        height: 100%;
+        border: 1px solid rgba($neon-blue, 0.1);
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba($neon-blue, 0.1);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba($neon-blue, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+
+            i {
+                font-size: 24px;
+                color: $neon-blue;
+                text-shadow: 0 0 10px rgba($neon-blue, 0.5);
+            }
+        }
+
+        h3 {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .policy-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                color: rgba(255, 255, 255, 0.8);
+                margin-bottom: 15px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                i {
+                    color: $neon-blue;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+.why-choose-us {
+    margin-top: 60px;
+    text-align: center;
+
+    .section-title {
+        color: white;
+        font-size: 32px;
+        margin-bottom: 40px;
+        text-shadow: 0 0 10px rgba($neon-blue, 0.3);
+    }
+
+    .feature-card {
+        background: $card-bg;
+        border-radius: 20px;
+        padding: 30px;
+        height: 100%;
+        border: 1px solid rgba($neon-blue, 0.1);
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba($neon-blue, 0.1);
+
+            .feature-icon {
+                background: $neon-blue;
+                
+                i {
+                    color: white;
+                }
+            }
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba($neon-blue, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            transition: all 0.3s ease;
+
+            i {
+                font-size: 28px;
+                color: $neon-blue;
+            }
+        }
+
+        h4 {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0;
+        }
+    }
+}
+
+// Add responsive styles
+@media (max-width: 768px) {
+    .info-sections {
+        padding: 40px 0;
+    }
+
+    .why-choose-us {
+        margin-top: 40px;
+
+        .section-title {
+            font-size: 24px;
+        }
+    }
+
+    .feature-card {
+        margin-bottom: 20px;
+    }
+}

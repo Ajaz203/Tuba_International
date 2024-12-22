@@ -52,6 +52,59 @@ export class FlightBookingComponent implements OnInit {
     public subParent = "flights";
     public child = "review";
 
+    features = [
+        {
+            icon: 'tag',
+            title: 'Best Price Guarantee',
+            description: 'Get the best deals and competitive prices on all flights'
+        },
+        {
+            icon: 'headset',
+            title: '24/7 Support',
+            description: 'Round-the-clock assistance for all your travel needs'
+        },
+        {
+            icon: 'shield-alt',
+            title: 'Secure Booking',
+            description: 'Safe and encrypted transactions for worry-free booking'
+        },
+        {
+            icon: 'gift',
+            title: 'Reward Points',
+            description: 'Earn points on every booking for future discounts'
+        }
+    ];
+
+    policies = [
+        {
+            icon: 'shield-alt',
+            title: 'Cancellation Policy',
+            items: [
+                'Free cancellation within 24 hours',
+                'Refund up to 75% before 72 hours',
+                'Reschedule option available'
+            ]
+        },
+        {
+            icon: 'plane-departure',
+            title: 'Travel Guidelines',
+            items: [
+                'Check-in 2 hours before departure',
+                'Valid ID proof required',
+                'Baggage restrictions apply'
+            ]
+        },
+        {
+            icon: 'heart',
+            title: 'Safety Measures',
+            items: [
+                'Regular sanitization',
+                'Mask mandatory',
+                'Temperature screening'
+            ]
+        }
+    ];
+
     constructor(private fb: FormBuilder) {
         this.initForm();
         this.minDate = new Date().toISOString().split('T')[0];
