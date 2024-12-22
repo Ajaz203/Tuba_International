@@ -38,22 +38,175 @@ $glass-bg: rgba(255, 255, 255, 0.1);
     margin-bottom: 30px;
 
     .airline-brand {
+        position: relative;
+        height: 150px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #0a0a1a, #1a1a2e);
+        border-radius: 15px;
+        padding: 15px;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
 
-        img {
-            height: 40px;
-            filter: drop-shadow(0 0 10px rgba($neon-blue, 0.3));
+        // Robotic Frame
+        .robotic-frame {
+            position: absolute;
+            inset: 0;
+            
+            // Target Box
+            .target-box {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 100px;
+                height: 100px;
+                transform: translate(-50%, -50%);
+                border: 2px dashed rgba($neon-blue, 0.3);
+                animation: rotateBox 4s linear infinite;
+                
+                &::before {
+                    content: '';
+                    position: absolute;
+                    inset: -10px;
+                    border: 1px solid rgba($neon-blue, 0.2);
+                    animation: pulseBox 2s ease-in-out infinite;
+                }
+            }
+
+            // Scanning Lines
+            .scan-lines {
+                position: absolute;
+                inset: 0;
+                background: repeating-linear-gradient(
+                    0deg,
+                    rgba($neon-blue, 0.1) 0px,
+                    rgba($neon-blue, 0.1) 1px,
+                    transparent 1px,
+                    transparent 4px
+                );
+                animation: scanEffect 8s linear infinite;
+                opacity: 0.5;
+            }
+
+            // Corner Marks
+            .corner-marks {
+                position: absolute;
+                inset: 0;
+                
+                span {
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    border: 2px solid $neon-blue;
+                    opacity: 0.8;
+                    
+                    &:nth-child(1) {
+                        top: 10px;
+                        left: 10px;
+                        border-right: 0;
+                        border-bottom: 0;
+                    }
+                    &:nth-child(2) {
+                        top: 10px;
+                        right: 10px;
+                        border-left: 0;
+                        border-bottom: 0;
+                    }
+                    &:nth-child(3) {
+                        bottom: 10px;
+                        left: 10px;
+                        border-right: 0;
+                        border-top: 0;
+                    }
+                    &:nth-child(4) {
+                        bottom: 10px;
+                        right: 10px;
+                        border-left: 0;
+                        border-top: 0;
+                    }
+                }
+            }
+
+            // Data Readout
+            .data-readout {
+                position: absolute;
+                left: 10px;
+                bottom: 10px;
+                font-family: monospace;
+                font-size: 10px;
+                color: $neon-blue;
+                
+                .data-line {
+                    margin: 3px 0;
+                    opacity: 0;
+                    animation: typeData 4s linear infinite;
+                    
+                    @for $i from 1 through 3 {
+                        &:nth-child(#{$i}) {
+                            animation-delay: $i * 0.3s;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Plane Container with Mechanical Parts
+        .plane-container {
+            position: relative;
+            z-index: 2;
+            
+            .mechanical-part {
+                position: absolute;
+                width: 30px;
+                height: 2px;
+                background: $neon-blue;
+                top: 50%;
+                opacity: 0.6;
+                
+                &.left {
+                    left: -35px;
+                    transform-origin: right;
+                    animation: mechanicalMove 3s ease-in-out infinite;
+                }
+                
+                &.right {
+                    right: -35px;
+                    transform-origin: left;
+                    animation: mechanicalMove 3s ease-in-out infinite reverse;
+                }
+            }
+
+            .flying-plane {
+                width: 60px;
+                height: auto;
+                filter: drop-shadow(0 0 10px rgba($neon-blue, 0.5));
+                animation: roboticHover 4s ease-in-out infinite;
+            }
+
+            .targeting-dot {
+                position: absolute;
+                width: 4px;
+                height: 4px;
+                background: $neon-blue;
+                border-radius: 50%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                box-shadow: 0 0 10px $neon-blue;
+                animation: targetPulse 1s ease-in-out infinite;
+            }
         }
 
         .price-badge {
+            position: absolute;
+            right: 15px;
             background: linear-gradient(135deg, $neon-blue, $neon-purple);
             padding: 8px 15px;
             border-radius: 20px;
             font-size: 14px;
             font-weight: 600;
-            box-shadow: 0 0 15px rgba($neon-blue, 0.2);
+            z-index: 3;
+            animation: badgeScan 3s ease-in-out infinite;
         }
     }
 }
@@ -280,4 +433,306 @@ $glass-bg: rgba(255, 255, 255, 0.1);
     .features-grid {
         grid-template-columns: repeat(2, 1fr) !important;
     }
+}
+
+// Animation Keyframes
+@keyframes orbitPlane {
+    0% {
+        transform: rotate(0deg) translateX(50px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(50px) rotate(-360deg);
+    }
+}
+
+@keyframes rotatePath {
+    0% {
+        transform: rotate(0deg);
+        border-color: rgba($neon-blue, 0.3);
+    }
+    50% {
+        border-color: rgba($neon-purple, 0.3);
+    }
+    100% {
+        transform: rotate(360deg);
+        border-color: rgba($neon-blue, 0.3);
+    }
+}
+
+@keyframes rotatePathReverse {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes floatAround {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    25% {
+        transform: translate(50%, -20%) rotate(90deg);
+    }
+    50% {
+        transform: translate(20%, 50%) rotate(180deg);
+    }
+    75% {
+        transform: translate(-20%, 20%) rotate(270deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+@keyframes pulseTail {
+    0%, 100% {
+        opacity: 0.3;
+        width: 20px;
+    }
+    50% {
+        opacity: 0.7;
+        width: 30px;
+    }
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba($neon-blue, 0.2);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba($neon-blue, 0.4);
+        transform: scale(1.05);
+    }
+}
+
+// Hover effects
+.airline-brand:hover {
+    .flying-plane {
+        animation-play-state: paused;
+        filter: drop-shadow(0 0 20px rgba($neon-blue, 0.8));
+    }
+    
+    &::before, &::after {
+        animation-play-state: paused;
+    }
+    
+    .mini-plane {
+        animation-play-state: paused;
+    }
+    
+    .stars .star {
+        animation-play-state: paused;
+    }
+}
+
+// New Animations
+@keyframes pulsePortal {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 1;
+    }
+}
+
+@keyframes rotatePortal {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes particleFlow {
+    0%, 100% {
+        opacity: 0;
+        transform: rotate(var(--angle)) translateX(40px);
+    }
+    50% {
+        opacity: 1;
+        transform: rotate(var(--angle)) translateX(70px);
+    }
+}
+
+@keyframes planePortalTravel {
+    0% {
+        transform: translate(-100%, 0) scale(0.8);
+        opacity: 0;
+    }
+    20% {
+        transform: translate(-20%, 0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(0, 0) scale(1.2);
+        opacity: 1;
+    }
+    80% {
+        transform: translate(20%, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(100%, 0) scale(0.8);
+        opacity: 0;
+    }
+}
+
+@keyframes trailPulse {
+    0%, 100% {
+        width: 30px;
+        opacity: 0.5;
+    }
+    50% {
+        width: 50px;
+        opacity: 1;
+    }
+}
+
+@keyframes badgeFloat {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        box-shadow: 
+            0 0 20px rgba($neon-blue, 0.4),
+            0 0 40px rgba($neon-blue, 0.2);
+    }
+    50% {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 
+            0 0 30px rgba($neon-blue, 0.6),
+            0 0 60px rgba($neon-blue, 0.3);
+    }
+}
+
+@keyframes scanMove {
+    0%, 100% {
+        top: 0;
+        opacity: 0;
+    }
+    25%, 75% {
+        opacity: 1;
+    }
+    50% {
+        top: 100%;
+    }
+}
+
+@keyframes gridPulse {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+@keyframes planeHover {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        filter: brightness(1) drop-shadow(0 0 10px rgba($neon-blue, 0.5));
+    }
+    50% {
+        transform: translateY(-5px) scale(1.05);
+        filter: brightness(1.2) drop-shadow(0 0 20px rgba($neon-blue, 0.8));
+    }
+}
+
+@keyframes dataPointAppear {
+    0%, 100% {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    25%, 75% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes badgeScan {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba($neon-blue, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba($neon-blue, 0.6);
+    }
+}
+
+// Hover effects
+.airline-brand:hover {
+    .scan-line {
+        animation-play-state: paused;
+    }
+    .grid-overlay {
+        animation-play-state: paused;
+    }
+    .flying-plane {
+        animation-play-state: paused;
+    }
+    .data-point {
+        animation-play-state: paused;
+    }
+}
+
+// New Animation Keyframes
+@keyframes rotateBox {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes pulseBox {
+    0%, 100% { transform: scale(1); opacity: 0.2; }
+    50% { transform: scale(1.1); opacity: 0.4; }
+}
+
+@keyframes scanEffect {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 100px; }
+}
+
+@keyframes typeData {
+    0% { opacity: 0; transform: translateX(-10px); }
+    10% { opacity: 1; transform: translateX(0); }
+    90% { opacity: 1; transform: translateX(0); }
+    100% { opacity: 0; transform: translateX(10px); }
+}
+
+@keyframes mechanicalMove {
+    0%, 100% { transform: scaleX(1) rotate(0deg); }
+    50% { transform: scaleX(0.7) rotate(45deg); }
+}
+
+@keyframes roboticHover {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+        filter: brightness(1) drop-shadow(0 0 10px rgba($neon-blue, 0.5));
+    }
+    25% {
+        transform: translateY(-3px) rotate(-2deg);
+        filter: brightness(1.2) drop-shadow(0 0 15px rgba($neon-blue, 0.7));
+    }
+    75% {
+        transform: translateY(3px) rotate(2deg);
+        filter: brightness(1.1) drop-shadow(0 0 12px rgba($neon-blue, 0.6));
+    }
+}
+
+@keyframes targetPulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    50% { transform: translate(-50%, -50%) scale(1.5); opacity: 0.5; }
 }

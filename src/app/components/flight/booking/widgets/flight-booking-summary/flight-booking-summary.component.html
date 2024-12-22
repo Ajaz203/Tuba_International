@@ -11,9 +11,30 @@
 <div class="neo-summary" *ngIf="!isLoading">
     <!-- Flight Header -->
     <div class="summary-header">
-        <div class="airline-brand">
-            <img src="assets/imges2/airliner-DFA4YMAT.png" alt="Airline">
-            <div class="price-badge">Best Price</div>
+      <div class="airline-brand">
+        <!-- Robotic Frame -->
+        <div class="robotic-frame">
+            <div class="target-box"></div>
+            <div class="scan-lines"></div>
+            <div class="corner-marks">
+                <span></span><span></span><span></span><span></span>
+            </div>
+            <div class="data-readout">
+                <div class="data-line">STATUS: ANALYZING</div>
+                <div class="data-line">FLIGHT: {{flightDetails?.flightNumber || 'TI-123'}}</div>
+                <div class="data-line">SYSTEM: ACTIVE</div>
+            </div>
+        </div>
+        
+        <!-- Main plane with mechanical parts -->
+        <div class="plane-container">
+            <div class="mechanical-part left"></div>
+            <div class="mechanical-part right"></div>
+            <img src="assets/imges2/airliner-DFA4YMAT.png" alt="Airline" class="flying-plane">
+            <div class="targeting-dot"></div>
+        </div>
+        
+        <div class="price-badge">Best Price</div>
         </div>
     </div>
 
