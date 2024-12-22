@@ -40,7 +40,7 @@ export class TourBookingComponent implements OnInit {
   showConfirmationModal = false;
   currentBooking: any;
 
-  public bg_image = 'assets/imges2/spain4.jpg';
+  public bg_image = 'assets/imges2/tour-bg2.jpg';
   public title = 'Tour Booking';
   public parent = 'Home';
   public subParent = "";
