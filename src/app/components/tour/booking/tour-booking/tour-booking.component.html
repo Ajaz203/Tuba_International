@@ -117,7 +117,7 @@
                         <input type="checkbox" [formControlName]="service.id">
                       </div>
                     </div>
-                    
+
                     <div *ngIf="hasAnySpecialRequirement()">
                       <p class="note">Please provide any specific requirements or preferences below:</p>
                       <textarea formControlName="requirements_details" class="form-control" rows="3"
@@ -137,8 +137,44 @@
             </div>
           </form>
         </div>
-      </div>
 
+        
+        <div class="additional-info">
+          <div class="why-choose-us">
+            <h3>Why Choose Our Tour Services?</h3>
+            <div class="features-grid">
+              <div class="feature-item">
+                <i class="fa fa-map-marked-alt"></i>
+                <div class="feature-content">
+                  <h4>Curated Experiences</h4>
+                  <p>Carefully planned itineraries with handpicked destinations</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <i class="fa fa-shield-alt"></i>
+                <div class="feature-content">
+                  <h4>Safe Travel</h4>
+                  <p>Your safety and comfort are our top priorities</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <i class="fa fa-star"></i>
+                <div class="feature-content">
+                  <h4>Best Value</h4>
+                  <p>Competitive prices with no compromise on quality</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <i class="fa fa-headset"></i>
+                <div class="feature-content">
+                  <h4>24/7 Support</h4>
+                  <p>Round-the-clock assistance throughout your journey</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- Right Column: Details -->
       <div class="col-lg-5">
         <app-tour-booking-details></app-tour-booking-details>
@@ -150,8 +186,5 @@
 <app-footer [location]="true"></app-footer>
 <app-layout [loaderType]="'basic'"></app-layout>
 
-<app-tour-confirmation-modal
-  [show]="showConfirmationModal"
-  [bookingDetails]="currentBooking"
-  (close)="onModalClose()">
+<app-tour-confirmation-modal [show]="showConfirmationModal" [bookingDetails]="currentBooking" (close)="onModalClose()">
 </app-tour-confirmation-modal>
