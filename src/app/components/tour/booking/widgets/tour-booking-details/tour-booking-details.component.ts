@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
     <div class="tour-summary">
       <!-- Tour Image -->
       <div class="tour-image">
-        <img src="assets/imges2/spain4.jpg" alt="Tour Destination">
+        <img src="assets/imges2/1.jpg" alt="Tour Destination">
         <div class="tour-badge">Best Seller</div>
       </div>
 

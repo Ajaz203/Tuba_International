@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
     <div class="booking-summary">
       <!-- Cab Type Banner -->
       <div class="cab-banner">
-        <img src="assets/imges2/car-banner.jpg" alt="Cab Service">
+        <img src="assets/cab/1.jpg" alt="Cab Service">
         <div class="cab-type">Premium Sedan</div>
       </div>
 

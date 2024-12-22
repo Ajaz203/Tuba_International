@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
     <div class="visa-summary">
       <!-- Visa Type Banner -->
       <div class="visa-banner">
-        <img src="assets/imges2/breadcrumb1.jpg" alt="Visa Application">
+        <img src="assets/imges2/bali2.jpg" alt="Visa Application">
         <div class="visa-type">Tourist Visa</div>
       </div>
 
