@@ -219,8 +219,14 @@ export class FlightBookingComponent implements OnInit {
     }
 
     // Form Control Getters
-    get fromLocationControl() { return this.flightForm.get('fromLocation') as FormControl; }
-    get toLocationControl() { return this.flightForm.get('toLocation') as FormControl; }
+    get fromLocationControl(): FormControl {
+        return this.flightForm.get('fromLocation') as FormControl;
+    }
+
+    get toLocationControl(): FormControl {
+        return this.flightForm.get('toLocation') as FormControl;
+    }
+
     get departureDateControl() { return this.flightForm.get('departureDate'); }
     get passengersControl() { return this.flightForm.get('passengers'); }
     get nameControl() { return this.flightForm.get('name'); }

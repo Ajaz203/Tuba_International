@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 
@@ -14,31 +14,43 @@ import { CommonModule } from '@angular/common';
                 <div class="flights-grid">
                     <div *ngFor="let flight of flights" class="flight-card" (click)="selectFlight(flight)">
                         <div class="airline-info">
-                            <i class="fas fa-plane"></i>
-                            <span class="airline-name">{{flight.airline}}</span>
-                            <span class="flight-number">{{flight.flightNumber}}</span>
+                            <img [src]="getAirlineImage(flight.airline_code)" 
+                                 [alt]="flight.airline" 
+                                 class="airline-logo">
+                            <div class="airline-details">
+                                <span class="airline-name">{{flight?.airline || 'Airline'}}</span>
+                                <span class="flight-number">{{flight?.flight_number || 'Flight No.'}}</span>
+                            </div>
                         </div>
                         <div class="flight-route">
                             <div class="departure">
-                                <h5>{{flight.departureTime}}</h5>
-                                <p>{{flight.origin}}</p>
+                                <h5>{{formatTime(flight?.departure_time) || 'N/A'}}</h5>
+                                <p>{{flight?.departure_id || 'Origin'}}</p>
+                                <small>{{flight?.departure_airport || ''}}</small>
                             </div>
                             <div class="flight-path">
-                                <div class="duration">{{flight.duration}}</div>
+                                <div class="duration">{{formatDuration(flight?.duration) || 'Duration'}}</div>
                                 <div class="path-line">
                                     <i class="fas fa-plane"></i>
                                 </div>
-                                <div class="stops">{{flight.stops}} stop(s)</div>
+                                <div class="stops">{{flight?.stops || '0'}} stop(s)</div>
                             </div>
                             <div class="arrival">
-                                <h5>{{flight.arrivalTime}}</h5>
-                                <p>{{flight.destination}}</p>
+                                <h5>{{formatTime(flight?.arrival_time) || 'N/A'}}</h5>
+                                <p>{{flight?.arrival_id || 'Destination'}}</p>
+                                <small>{{flight?.arrival_airport || ''}}</small>
                             </div>
                         </div>
                         <div class="flight-info">
-                            <div class="price">
-                                <h4>₹{{flight.price}}</h4>
-                                <span>per person</span>
+                            <div class="price-details">
+                                <div class="base-price">
+                                    <h4>₹{{flight?.fare || 0}}</h4>
+                                    <span>Base fare</span>
+                                </div>
+                                <div class="total-price">
+                                    <h3>₹{{calculateTotalPrice(flight)}}</h3>
+                                    <span>Total incl. taxes</span>
+                                </div>
                             </div>
                             <button class="neo-button select-btn">
                                 <span>Select</span>
@@ -54,12 +66,52 @@ import { CommonModule } from '@angular/common';
     standalone: true,
     imports: [CommonModule]
 })
-export class FlightSelectionModalComponent {
+export class FlightSelectionModalComponent implements OnInit {
     @Input() flights: any[] = [];
     
     constructor(public activeModal: NgbActiveModal) {}
 
-    selectFlight(flight: any) {
-        this.activeModal.close(flight);
+    ngOnInit(): void {
+        console.log('Flights data:', this.flights);
+    }
+
+    getAirlineImage(code: string): string {
+        const airlineImages: { [key: string]: string } = {
+            'AI': '/assets/images/airlines/air-india.png',
+            'UK': '/assets/images/airlines/vistara.png',
+            '6E': '/assets/images/airlines/indigo.png',
+            'SG': '/assets/images/airlines/spicejet.png',
+            'I5': '/assets/images/airlines/airasia.png',
+        };
+        return airlineImages[code] || '/assets/images/airlines/default.png';
+    }
+
+    formatTime(time: string): string {
+        if (!time) return 'N/A';
+        return time;
+    }
+
+    formatDuration(duration: number): string {
+        if (!duration) return 'N/A';
+        const hours = Math.floor(duration / 60);
+        const minutes = duration % 60;
+        return `${hours}h ${minutes}m`;
+    }
+
+    calculateTotalPrice(flight: any): number {
+        const baseFare = flight?.fare || 0;
+        const taxes = baseFare * 0.18; // 18% tax
+        return Math.round(baseFare + taxes);
+    }
+
+    selectFlight(flight: any): void {
+        const selectedFlight = {
+            ...flight,
+            total_price: this.calculateTotalPrice(flight),
+            currency: 'INR',
+            type: 2, // One Way
+            travel_class: 1
+        };
+        this.activeModal.close(selectedFlight);
     }
 } 

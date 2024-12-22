@@ -93,8 +93,15 @@ $card-bg: rgba(16, 16, 41, 0.8);
                 }
 
                 p {
-                    color: rgba(255,255,255,0.7);
-                    margin: 0;
+                    color: rgba(255,255,255,0.9);
+                    margin: 0 0 2px;
+                    font-size: 14px;
+                }
+
+                small {
+                    color: rgba(255,255,255,0.6);
+                    font-size: 12px;
+                    display: block;
                 }
             }
 
@@ -187,5 +194,67 @@ $card-bg: rgba(16, 16, 41, 0.8);
 
     &:hover {
         background: rgba($neon-blue, 0.5);
+    }
+} 
+
+// Add to existing styles
+.airline-info {
+    .airline-logo {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        margin-right: 15px;
+    }
+
+    .airline-details {
+        display: flex;
+        flex-direction: column;
+
+        .airline-name {
+            font-weight: 500;
+            color: white;
+        }
+
+        .flight-number {
+            font-size: 12px;
+            color: rgba(255,255,255,0.6);
+        }
+    }
+}
+
+.price-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .base-price {
+        text-align: right;
+        
+        h4 {
+            color: rgba($neon-blue, 0.8);
+            margin: 0;
+            font-size: 16px;
+        }
+
+        span {
+            font-size: 11px;
+            color: rgba(255,255,255,0.5);
+        }
+    }
+
+    .total-price {
+        text-align: right;
+
+        h3 {
+            color: $neon-blue;
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        span {
+            font-size: 12px;
+            color: rgba(255,255,255,0.6);
+        }
     }
 } 

@@ -75,7 +75,7 @@
                                            [(ngModel)]="fromInputValue"
                                            (input)="onInput('from', $event)"
                                            placeholder="From"
-                                           [class.is-invalid]="fromLocationControl?.invalid && fromLocationControl?.touched">
+                                           [class.is-invalid]="fromLocationControl.invalid && fromLocationControl.touched">
                                     <div class="input-glow"></div>
                                 </div>
                                 <!-- Location Suggestions -->
@@ -101,7 +101,7 @@
                                            [(ngModel)]="toInputValue"
                                            (input)="onInput('to', $event)"
                                            placeholder="To"
-                                           [class.is-invalid]="toLocationControl?.invalid && toLocationControl?.touched">
+                                           [class.is-invalid]="toLocationControl.invalid && toLocationControl.touched">
                                     <div class="input-glow"></div>
                                 </div>
                                 <!-- Location Suggestions -->
