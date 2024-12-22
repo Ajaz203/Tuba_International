@@ -1,6 +1,7 @@
 <app-header [headerClass]="'light_header'"></app-header>
 
-<app-breadcrumbs [type]="'tour'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child"></app-breadcrumbs>
+<app-breadcrumbs [type]="'tour'" [bg_image]="bg_image" [title]="title" [parent]="parent"
+  [child]="child"></app-breadcrumbs>
 
 <section class="section-b-space bg-inner animated-section">
   <app-animations [type]="'dots'"></app-animations>
@@ -16,19 +17,17 @@
               <div class="row g-3">
                 <div class="col-md-6">
                   <label>Full Name <span class="required">*</span></label>
-                  <input type="text" formControlName="name" class="form-control" placeholder="As per passport">
+                  <input type="text" formControlName="name" class="form-control" placeholder="Enter your name"
+                    [ngClass]="{'is-invalid': nameControl?.invalid && nameControl?.touched}">
+                  <div class="invalid-feedback" *ngIf="nameError">{{ nameError }}</div>
                 </div>
                 <div class="col-md-6">
                   <label>Passport Number <span class="required">*</span></label>
-                  <input 
-                    type="text" 
-                    formControlName="passport_number" 
-                    class="form-control" 
+                  <input type="text" formControlName="passport_number" class="form-control"
                     placeholder="Enter passport number"
                     [class.is-invalid]="passportControl?.invalid && passportControl?.touched"
                     [class.is-valid]="passportControl?.valid && passportControl?.touched"
-                    (input)="onPassportInput($event)"
-                    style="text-transform: uppercase;">
+                    (input)="onPassportInput($event)" style="text-transform: uppercase;">
                   <div class="invalid-feedback" *ngIf="passportError">
                     {{ passportError }}
                   </div>
@@ -45,7 +44,10 @@
                 </div>
                 <div class="col-md-6">
                   <label>Phone <span class="required">*</span></label>
-                  <input type="tel" formControlName="contact_no" class="form-control" placeholder="Mobile number">
+                  <input type="tel" formControlName="contact_no" class="form-control" placeholder="Mobile number"
+                    maxlength="10" (input)="onPhoneInput($event)"
+                    [ngClass]="{'is-invalid': phoneControl?.invalid && phoneControl?.touched}">
+                  <div class="invalid-feedback" *ngIf="phoneError">{{ phoneError }}</div>
                 </div>
               </div>
             </div>
@@ -92,9 +94,9 @@
                 <label for="previousVisa">Have you had a visa before?</label>
                 <input type="checkbox" id="previousVisa" formControlName="have_previous_visa">
               </div>
-              
+
               <div *ngIf="visaForm.get('have_previous_visa')?.value">
-                <textarea formControlName="previous_visa_details" class="form-control" rows="2" 
+                <textarea formControlName="previous_visa_details" class="form-control" rows="2"
                   placeholder="Please provide details of your previous visa"></textarea>
               </div>
             </div>
@@ -109,14 +111,15 @@
               </div>
 
               <div formArrayName="family_members">
-                <div *ngFor="let member of getFamilyMembers.controls; let i=index" [formGroupName]="i" class="family-member-card">
+                <div *ngFor="let member of getFamilyMembers.controls; let i=index" [formGroupName]="i"
+                  class="family-member-card">
                   <div class="card-header d-flex justify-content-between align-items-center">
                     <h6>Family Member #{{i + 1}}</h6>
                     <button type="button" class="btn btn-outline-danger btn-sm" (click)="removeFamilyMember(i)">
                       <i class="fas fa-times"></i>
                     </button>
                   </div>
-                  
+
                   <div class="card-body">
                     <div class="row g-3">
                       <div class="col-md-6">
@@ -125,7 +128,8 @@
                       </div>
                       <div class="col-md-6">
                         <label>Passport Number <span class="required">*</span></label>
-                        <input type="text" formControlName="passport_number" class="form-control" placeholder="Enter passport number">
+                        <input type="text" formControlName="passport_number" class="form-control"
+                          placeholder="Enter passport number">
                       </div>
                       <div class="col-md-6">
                         <label>Relationship <span class="required">*</span></label>
@@ -153,7 +157,7 @@
               </button>
             </div>
           </form>
-          
+
         </div>
 
         <!-- New Content Below Form -->
@@ -202,7 +206,8 @@
                   <i class="fa fa-question-circle"></i>
                   <h4>How long does the visa process take?</h4>
                 </div>
-                <p>The typical processing time is 5-7 working days, but it may vary depending on the embassy and visa type.</p>
+                <p>The typical processing time is 5-7 working days, but it may vary depending on the embassy and visa
+                  type.</p>
               </div>
               <div class="faq-item">
                 <div class="faq-question">
@@ -291,8 +296,5 @@
 
 <app-layout [loaderType]="'basic'"></app-layout>
 
-<app-visa-confirmation-modal
-  [show]="showConfirmationModal"
-  [bookingDetails]="currentBooking"
-  (close)="onModalClose()">
+<app-visa-confirmation-modal [show]="showConfirmationModal" [bookingDetails]="currentBooking" (close)="onModalClose()">
 </app-visa-confirmation-modal>

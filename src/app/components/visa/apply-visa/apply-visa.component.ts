@@ -92,7 +92,7 @@ export class ApplyVisaComponent implements OnInit {
   private initForm() {
     this.visaForm = this.fb.group({
       // Required fields
-      name: ['', [Validators.required]],
+      name: ['', [Validators.required, Validators.minLength(3)]],
       passport_number: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       contact_no: ['', [Validators.required]],
@@ -261,4 +261,44 @@ export class ApplyVisaComponent implements OnInit {
     this.showConfirmationModal = false;
     this.router.navigate(['/']);
   }
+  get nameError() {
+    const control = this.nameControl;
+    if (control?.touched) {
+      if (control.hasError('required')) {
+        return 'Name is required';
+      }
+      if (control.hasError('minlength')) {
+        return 'Name must be at least 3 characters';
+      }
+    }
+    return null;
+  }
+
+  get phoneControl() {
+    return this.visaForm.get('contact_no');
+  }
+   get phoneError(): string {
+    if (this.phoneControl?.errors) {
+      if (this.phoneControl.errors['required']) {
+        return '';
+      }
+      if (this.phoneControl.errors['pattern']) {
+        return 'Please enter a valid 10-digit phone number';
+      }
+      if (this.phoneControl.errors['minlength']) {
+        return 'Phone number must be 10 digits';
+      }
+    }
+    return '';
+  }
+  onPhoneInput(event: Event) {
+   const input = event.target as HTMLInputElement;
+   input.value = input.value.replace(/[^0-9]/g, '');
+   if (input.value.length > 10) {
+     input.value = input.value.slice(0, 10);
+   }
+   this.phoneControl?.setValue(input.value);
+ }
+
+
 }

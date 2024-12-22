@@ -41,11 +41,12 @@
                 <!-- Personal Information -->
                 <div class="col-md-6">
                   <label>Full Name <span class="required">*</span></label>
-                  <input type="text" formControlName="name" class="form-control" placeholder="As per passport"
-                    [ngClass]="{
-                      'is-invalid': nameControl?.invalid && nameControl?.touched,
-                      'is-valid': nameControl?.valid && nameControl?.touched
-                    }">
+                  <input type="text" 
+                         formControlName="name" 
+                         class="form-control" 
+                         placeholder="Enter your name"
+                         [ngClass]="{'is-invalid': nameControl?.invalid && nameControl?.touched}">
+                  <div class="invalid-feedback" *ngIf="nameError">{{ nameError }}</div>
                 </div>
                 <div class="col-md-6">
                   <label>Email <span class="required">*</span></label>
@@ -138,7 +139,7 @@
           </form>
         </div>
 
-        
+
         <div class="additional-info">
           <div class="why-choose-us">
             <h3>Why Choose Our Tour Services?</h3>
