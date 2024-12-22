@@ -179,13 +179,13 @@ export class TourBookingComponent implements OnInit {
   get membersControl() { return this.tourForm.get('members'); }
 
   get nameError() {
-    const control = this.tourForm.get('name');
+    const control = this.nameControl;
     if (control?.touched) {
       if (control.hasError('required')) {
-        return 'Full name is required';
+        return 'Name is required';
       }
       if (control.hasError('minlength')) {
-        return 'Full name must be at least 3 characters';
+        return 'Name must be at least 3 characters';
       }
     }
     return null;

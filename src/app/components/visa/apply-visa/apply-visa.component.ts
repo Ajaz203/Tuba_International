@@ -91,8 +91,11 @@ export class ApplyVisaComponent implements OnInit {
 
   private initForm() {
     this.visaForm = this.fb.group({
-      // Required fields
-      name: ['', [Validators.required, Validators.minLength(3)]],
+      name: ['', [
+        Validators.required, 
+        Validators.minLength(3),
+        Validators.pattern(/^[a-zA-Z\s]*$/)
+      ]],
       passport_number: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       contact_no: ['', [Validators.required]],
@@ -261,18 +264,7 @@ export class ApplyVisaComponent implements OnInit {
     this.showConfirmationModal = false;
     this.router.navigate(['/']);
   }
-  get nameError() {
-    const control = this.nameControl;
-    if (control?.touched) {
-      if (control.hasError('required')) {
-        return 'Name is required';
-      }
-      if (control.hasError('minlength')) {
-        return 'Name must be at least 3 characters';
-      }
-    }
-    return null;
-  }
+ 
 
   get phoneControl() {
     return this.visaForm.get('contact_no');
@@ -300,5 +292,16 @@ export class ApplyVisaComponent implements OnInit {
    this.phoneControl?.setValue(input.value);
  }
 
-
+ get nameError() {
+  const control = this.nameControl;
+  if (control?.touched) {
+    if (control.hasError('required')) {
+      return 'Name is required';
+    }
+    if (control.hasError('minlength')) {
+      return 'Name must be at least 3 characters';
+    }
+  }
+  return null;
+}
 }

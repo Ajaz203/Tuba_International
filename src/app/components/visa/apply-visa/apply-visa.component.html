@@ -6,6 +6,24 @@
 <section class="section-b-space bg-inner animated-section">
   <app-animations [type]="'dots'"></app-animations>
   <div class="container">
+    <div class="booking-intro">
+      <h1>Apply for Your Visa</h1>
+      <p class="lead">Start your international journey with our hassle-free visa services. Let us handle your visa process while you plan your trip.</p>
+      <div class="booking-highlights">
+          <div class="highlight-item">
+              <i class="fa fa-check-circle"></i>
+              <span>Fast Processing</span>
+          </div>
+          <div class="highlight-item">
+              <i class="fa fa-lock"></i>
+              <span>Secure Application</span>
+          </div>
+          <div class="highlight-item">
+              <i class="fa fa-headset"></i>
+              <span>24/7 Support</span>
+          </div>
+      </div>
+  </div>
     <div class="row">
       <!-- Left Column: Form + Additional Content -->
       <div class="col-lg-7">
@@ -18,7 +36,8 @@
                 <div class="col-md-6">
                   <label>Full Name <span class="required">*</span></label>
                   <input type="text" formControlName="name" class="form-control" placeholder="Enter your name"
-                    [ngClass]="{'is-invalid': nameControl?.invalid && nameControl?.touched}">
+                    [class.is-invalid]="nameControl?.invalid && (nameControl?.dirty || nameControl?.touched)"
+                    [class.is-valid]="nameControl?.valid && (nameControl?.dirty || nameControl?.touched)">
                   <div class="invalid-feedback" *ngIf="nameError">{{ nameError }}</div>
                 </div>
                 <div class="col-md-6">

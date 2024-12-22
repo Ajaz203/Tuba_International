@@ -1,0 +1,142 @@
+.review_box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+
+  .title-top {
+    margin-bottom: 25px;
+    
+    h5 {
+      font-size: 22px;
+      font-weight: 600;
+      color: #333;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+
+    label {
+      font-weight: 500;
+      color: #444;
+      margin-bottom: 8px;
+
+      .required {
+        color: #dc3545;
+      }
+    }
+
+    .form-control {
+      height: 45px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      padding: 8px 15px;
+      font-size: 14px;
+
+      &:focus {
+        border-color: var(--theme-color);
+        box-shadow: 0 0 0 0.2rem rgba(var(--theme-color-rgb), 0.25);
+      }
+    }
+
+    textarea.form-control {
+      height: auto;
+    }
+  }
+
+  .custom-control {
+    margin-bottom: 20px;
+
+    .custom-control-label {
+      font-size: 14px;
+      color: #666;
+    }
+  }
+
+  .submit-btn {
+    margin-top: 30px;
+    text-align: center;
+
+    .btn-solid {
+      padding: 12px 35px;
+      font-size: 16px;
+      font-weight: 500;
+      text-transform: uppercase;
+      border-radius: 4px;
+    }
+  }
+}
+
+.invalid-feedback {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .review_box {
+    padding: 20px;
+
+    .title-top h5 {
+      font-size: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .submit-btn .btn-solid {
+      width: 100%;
+      padding: 10px 20px;
+    }
+  }
+}
+
+// Add these additional styles
+.form-control.is-invalid {
+  background-image: none;
+  padding-right: 0.75rem;
+}
+
+.invalid-feedback {
+  display: block;
+  font-size: 12px;
+  margin-top: 5px;
+  color: #dc3545;
+}
+
+input[type="date"].form-control {
+  padding: 0.375rem 0.75rem;
+}
+
+.custom-control-input.is-invalid ~ .custom-control-label {
+  color: #dc3545;
+}
+
+.custom-checkbox {
+  padding-left: 2.5rem;
+  
+  .custom-control-label::before,
+  .custom-control-label::after {
+    left: -2.5rem;
+  }
+}
+
+// Fix responsive issues
+@media (max-width: 576px) {
+  .form-row {
+    margin-right: -5px;
+    margin-left: -5px;
+    
+    > [class*="col-"] {
+      padding-right: 5px;
+      padding-left: 5px;
+    }
+  }
+  
+  .review_box {
+    padding: 15px;
+  }
+}
