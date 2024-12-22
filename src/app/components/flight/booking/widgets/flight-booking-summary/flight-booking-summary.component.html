@@ -1,7 +1,6 @@
 <!-- Loading State -->
-<div class="flight-summary loading" *ngIf="isLoading">
+<div class="neo-summary loading" *ngIf="isLoading">
     <div class="skeleton-loader">
-        <div class="skeleton-line"></div>
         <div class="skeleton-line"></div>
         <div class="skeleton-line"></div>
         <div class="skeleton-line"></div>
@@ -9,111 +8,102 @@
 </div>
 
 <!-- Actual Summary -->
-<div class="flight-summary" *ngIf="!isLoading">
-    <!-- Airline Info -->
-    <div class="airline-info">
-        <img src="assets/imges2/airliner-DFA4YMAT.png" alt="Airline">
-        <div class="flight-badge">Best Price</div>
+<div class="neo-summary" *ngIf="!isLoading">
+    <!-- Flight Header -->
+    <div class="summary-header">
+        <div class="airline-brand">
+            <img src="assets/imges2/airliner-DFA4YMAT.png" alt="Airline">
+            <div class="price-badge">Best Price</div>
+        </div>
     </div>
 
     <!-- Flight Route -->
     <div class="flight-route">
-        <div class="departure">
-            <h4>{{flightDetails?.from || 'Delhi (DEL)'}}</h4>
-            <p>{{flightDetails?.departureTime || '10:00 AM'}}</p>
+        <div class="route-point departure">
+            <div class="time">{{flightDetails?.departureTime || '10:00 AM'}}</div>
+            <div class="city">{{flightDetails?.from || 'Delhi (DEL)'}}</div>
         </div>
         <div class="route-line">
             <div class="line"></div>
-            <i class="fa fa-plane"></i>
+            <i class="fas fa-plane"></i>
         </div>
-        <div class="arrival">
-            <h4>{{flightDetails?.to || 'Mumbai (BOM)'}}</h4>
-            <p>{{flightDetails?.arrivalTime || '12:00 PM'}}</p>
-        </div>
-    </div>
-
-    <!-- Quick Info -->
-    <div class="quick-info">
-        <div class="info-item">
-            <i class="fa fa-clock"></i>
-            <div>
-                <span>Duration</span>
-                <strong>2h 00m</strong>
-            </div>
-        </div>
-        <div class="info-item">
-            <i class="fa fa-suitcase"></i>
-            <div>
-                <span>Baggage</span>
-                <strong>15 KG</strong>
-            </div>
-        </div>
-        <div class="info-item">
-            <i class="fa fa-plane-arrival"></i>
-            <div>
-                <span>Class</span>
-                <strong>Economy</strong>
-            </div>
+        <div class="route-point arrival">
+            <div class="time">{{flightDetails?.arrivalTime || '12:00 PM'}}</div>
+            <div class="city">{{flightDetails?.to || 'Mumbai (BOM)'}}</div>
         </div>
     </div>
 
-    <!-- Price Details -->
-    <div class="price-details">
-        <div class="price-row">
+    <!-- Flight Info -->
+    <div class="flight-info">
+        <div class="info-item">
+            <i class="fas fa-clock"></i>
+            <div class="info-content">
+                <span class="label">Duration</span>
+                <span class="value">2h 00m</span>
+            </div>
+        </div>
+        <div class="info-item">
+            <i class="fas fa-suitcase"></i>
+            <div class="info-content">
+                <span class="label">Baggage</span>
+                <span class="value">15 KG</span>
+            </div>
+        </div>
+        <div class="info-item">
+            <i class="fas fa-couch"></i>
+            <div class="info-content">
+                <span class="label">Class</span>
+                <span class="value">Economy</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Price Breakdown -->
+    <div class="price-breakdown">
+        <h3>Price Details</h3>
+        <div class="price-item">
             <span>Base Fare</span>
-            <span>₹4,500</span>
+            <span class="amount">₹4,500</span>
         </div>
-        <div class="price-row">
+        <div class="price-item">
             <span>Taxes & Fees</span>
-            <span>₹500</span>
+            <span class="amount">₹500</span>
         </div>
-        <div class="price-row total">
+        <div class="price-item total">
             <span>Total Amount</span>
-            <span>₹5,000</span>
+            <span class="amount">₹5,000</span>
         </div>
     </div>
 
-    <!-- Flight Features -->
-    <div class="flight-features">
-        <h4>What's Included</h4>
-        <ul>
-            <li><i class="fa fa-check"></i> Complimentary Meals</li>
-            <li><i class="fa fa-check"></i> Free Seat Selection</li>
-            <li><i class="fa fa-check"></i> Web Check-in</li>
-            <li><i class="fa fa-check"></i> Cabin Baggage</li>
-        </ul>
-    </div>
-
-    <!-- Baggage Info -->
-    <div class="baggage-info">
-        <h4>Baggage Information</h4>
-        <div class="baggage-grid">
-            <div class="baggage-item">
-                <i class="fa fa-suitcase"></i>
-                <div>
-                    <span>Check-in</span>
-                    <strong>15 KG</strong>
-                </div>
+    <!-- Features -->
+    <div class="features-section">
+        <h3>What's Included</h3>
+        <div class="features-grid">
+            <div class="feature-item">
+                <i class="fas fa-utensils"></i>
+                <span>Meals</span>
             </div>
-            <div class="baggage-item">
-                <i class="fa fa-briefcase"></i>
-                <div>
-                    <span>Cabin</span>
-                    <strong>7 KG</strong>
-                </div>
+            <div class="feature-item">
+                <i class="fas fa-chair"></i>
+                <span>Seat Choice</span>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-laptop"></i>
+                <span>Web Check-in</span>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-suitcase-rolling"></i>
+                <span>Cabin Bag</span>
             </div>
         </div>
     </div>
 
     <!-- Support Section -->
     <div class="support-section">
-        <h4>Need Help?</h4>
+        <i class="fas fa-headset"></i>
         <div class="support-content">
-            <i class="fa fa-headset"></i>
-            <div>
-                <p>24/7 Flight Support</p>
-                <a href="tel:+919876543210">+91 98765 43210</a>
-            </div>
+            <h4>24/7 Support</h4>
+            <a href="tel:+919876543210" class="support-phone">+91 98765 43210</a>
         </div>
     </div>
 </div>
