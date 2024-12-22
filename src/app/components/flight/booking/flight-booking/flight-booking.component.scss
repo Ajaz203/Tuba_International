@@ -1386,7 +1386,7 @@ $card-bg: rgba(16, 16, 41, 0.8);
 
 // Update the info item styling
 .info-item {
-    padding: 20px;
+    // padding: 20px;
 
     .info-content {
         flex: 1;
@@ -2218,6 +2218,54 @@ $card-bg: rgba(16, 16, 41, 0.8);
         
         .action-buttons {
             flex-direction: column;
+        }
+    }
+}
+
+.user-details {
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+    .user-info {
+        display: flex;
+        flex-direction: column;
+        // gap: 0.8rem;
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: rgba(255,255,255,0.9);
+
+            i {
+                width: 60px;
+                color: #00f3ff;
+                font-size: 1rem;
+            }
+
+            span {
+                font-size: 0.95rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}
+
+// Update media query for responsiveness
+@media (max-width: 480px) {
+    .modal-success {
+        .user-details {
+            .user-info {
+                .info-item {
+                    span {
+                        font-size: 0.85rem;
+                    }
+                }
+            }
         }
     }
 }

@@ -502,6 +502,20 @@
                 </div>
             </div>
 
+            <!-- User Details -->
+            <div class="user-details">
+                <div class="user-info">
+                    <div class="info-item">
+                        <i class="fas fa-user"></i>
+                        <span>{{bookingData?.passenger?.name}}</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>{{bookingData?.passenger?.email}}</span>
+                    </div>
+                </div>
+            </div>
+
             <!-- Essential Details -->
             <div class="essential-details">
                 <div class="detail-row">
@@ -520,7 +534,7 @@
                     <i class="fas fa-download"></i>
                     <span>Download Ticket</span>
                 </button>
-                <button class="btn-done neo-button" (click)="modalService.dismissAll()">
+                <button class="btn-done neo-button" (click)="closeModal()">
                     <span>Close</span>
                 </button>
             </div>

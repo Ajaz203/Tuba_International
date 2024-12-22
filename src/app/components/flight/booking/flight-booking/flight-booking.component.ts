@@ -149,6 +149,11 @@ export class FlightBookingComponent implements OnInit {
         children: 0,
     };
 
+    // Add these properties to store error messages
+    private _fromLocationErrorMsg: string = '';
+    private _toLocationErrorMsg: string = '';
+    private _errorMessage: string = '';
+
     constructor(
         private fb: FormBuilder,
         private flightService: FlightService,
@@ -252,24 +257,32 @@ export class FlightBookingComponent implements OnInit {
     get phoneControl() { return this.flightForm.get('phone'); }
 
     // Error Getters
-    get fromLocationError() {
+    get fromLocationError(): string {
+        if (this._fromLocationErrorMsg) {
+            return this._fromLocationErrorMsg;
+        }
+        
         const control = this.fromLocationControl;
         if (control?.touched && control?.errors) {
             if (control.errors['required']) return 'Departure city is required';
             if (control.errors['minlength']) return 'City name must be at least 3 characters';
             if (control.errors['pattern']) return 'Please enter a valid city name';
         }
-        return null;
+        return '';
     }
 
-    get toLocationError() {
+    get toLocationError(): string {
+        if (this._toLocationErrorMsg) {
+            return this._toLocationErrorMsg;
+        }
+
         const control = this.toLocationControl;
         if (control?.touched && control?.errors) {
             if (control.errors['required']) return 'Destination city is required';
             if (control.errors['minlength']) return 'City name must be at least 3 characters';
             if (control.errors['pattern']) return 'Please enter a valid city name';
         }
-        return null;
+        return '';
     }
 
     get departureDateError() {
@@ -431,10 +444,9 @@ export class FlightBookingComponent implements OnInit {
     }
 
     private showErrorMessage(message: string) {
-        // Add this to your HTML template
-        this.errorMessage = message;
+        this._errorMessage = message;
         setTimeout(() => {
-            this.errorMessage = '';
+            this._errorMessage = '';
         }, 3000);
     }
 
@@ -578,5 +590,38 @@ export class FlightBookingComponent implements OnInit {
   downloadTicket(): void {
     console.log('Downloading ticket for flight:', this.selectedFlight);
     // Implement ticket download
+  }
+
+  resetAndCloseModal(): void {
+    // Reset the form
+    this.flightForm.reset();
+    
+    // Reset all form-related variables
+    this.currentStep = 1;
+    this.fromInputValue = '';
+    this.toInputValue = '';
+    this.showFromSuggestions = false;
+    this.showToSuggestions = false;
+    this.fromSuggestions = [];
+    this.toSuggestions = [];
+    this._fromLocationErrorMsg = '';
+    this._toLocationErrorMsg = '';
+    this._errorMessage = '';
+    this.isLoading = false;
+    this.isSubmitting = false;
+    
+    // Set default values if needed
+    this.flightForm.patchValue({
+        passengers: 1,
+        travel_insurance: false,
+        airport_pickup: false
+    });
+
+    // Close the modal
+    this.modalService.dismissAll();
+  }
+
+  closeModal(): void {
+    this.resetAndCloseModal();
   }
 }
