@@ -55,6 +55,14 @@
                         {{ errorMessage }}
                     </div>
 
+                    <!-- Add this near the top of your form -->
+                    <div class="loading-overlay" *ngIf="isLoading">
+                        <div class="loader">
+                            <i class="fas fa-plane"></i>
+                            <span>Searching flights...</span>
+                        </div>
+                    </div>
+
                     <!-- Futuristic Form -->
                     <form [formGroup]="flightForm" (ngSubmit)="onSubmit()" class="neo-form">
                         <!-- Flight Route Fields (Step 1) -->
@@ -62,10 +70,25 @@
                             <div class="floating-input">
                                 <div class="input-wrapper">
                                     <i class="fas fa-plane-departure"></i>
-                                    <input type="text" formControlName="fromLocation" 
-                                        placeholder="From"
-                                        [class.is-invalid]="fromLocationControl?.invalid && fromLocationControl?.touched">
+                                    <input type="text" 
+                                           formControlName="fromLocation"
+                                           [(ngModel)]="fromInputValue"
+                                           (input)="onInput('from', $event)"
+                                           placeholder="From"
+                                           [class.is-invalid]="fromLocationControl?.invalid && fromLocationControl?.touched">
                                     <div class="input-glow"></div>
+                                </div>
+                                <!-- Location Suggestions -->
+                                <div class="location-suggestions" *ngIf="showFromSuggestions">
+                                    <div class="suggestion-item" 
+                                         *ngFor="let suggestion of fromSuggestions"
+                                         (click)="selectFromSuggestion(suggestion)">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <div class="suggestion-content">
+                                            <div class="city">{{suggestion.name}}</div>
+                                            <div class="airport">{{suggestion.code}}</div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="error-message" *ngIf="fromLocationError">{{ fromLocationError }}</div>
                             </div>
@@ -73,10 +96,25 @@
                             <div class="floating-input">
                                 <div class="input-wrapper">
                                     <i class="fas fa-plane-arrival"></i>
-                                    <input type="text" formControlName="toLocation" 
-                                        placeholder="To"
-                                        [class.is-invalid]="toLocationControl?.invalid && toLocationControl?.touched">
+                                    <input type="text" 
+                                           formControlName="toLocation"
+                                           [(ngModel)]="toInputValue"
+                                           (input)="onInput('to', $event)"
+                                           placeholder="To"
+                                           [class.is-invalid]="toLocationControl?.invalid && toLocationControl?.touched">
                                     <div class="input-glow"></div>
+                                </div>
+                                <!-- Location Suggestions -->
+                                <div class="location-suggestions" *ngIf="showToSuggestions">
+                                    <div class="suggestion-item" 
+                                         *ngFor="let suggestion of toSuggestions"
+                                         (click)="selectToSuggestion(suggestion)">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <div class="suggestion-content">
+                                            <div class="city">{{suggestion.name}}</div>
+                                            <div class="airport">{{suggestion.code}}</div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="error-message" *ngIf="toLocationError">{{ toLocationError }}</div>
                             </div>
@@ -261,8 +299,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
+                      </div>
+                     
                 <!-- Important Information Section -->
                 <div class="booking-info">
                     <h3 class="info-title">Essential Travel Information</h3>
@@ -294,10 +332,10 @@
                                 <h4>Restricted Items</h4>
                                 <p>View complete list of prohibited items</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                  </div>
+              </div>
+          </div>
+      </div>
 
             <!-- Right Column: Summary -->
             <div class="col-lg-5">
@@ -306,8 +344,8 @@
                     [isLoading]="isLoadingSummary">
                 </app-flight-booking-summary>
             </div>
-        </div>
-    </div>
+      </div>
+  </div>
 </section>
 
 <!-- Add this after your existing booking section -->

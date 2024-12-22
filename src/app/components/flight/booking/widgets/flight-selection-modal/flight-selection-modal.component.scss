@@ -1,0 +1,191 @@
+// Add these variables at the top
+$neon-blue: #00f3ff;
+$neon-purple: #9d00ff;
+$dark-bg: #0a0a1f;
+$glass-bg: rgba(255, 255, 255, 0.1);
+$card-bg: rgba(16, 16, 41, 0.8);
+
+.neo-modal {
+    background: $dark-bg;
+    border: 1px solid rgba($neon-blue, 0.1);
+    border-radius: 20px;
+
+    .modal-header {
+        border-bottom: 1px solid rgba($neon-blue, 0.1);
+        padding: 20px;
+
+        .modal-title {
+            color: white;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .btn-close {
+            filter: invert(1);
+        }
+    }
+
+    .modal-body {
+        padding: 20px;
+    }
+}
+
+.flights-grid {
+    display: grid;
+    gap: 20px;
+    max-height: 70vh;
+    overflow-y: auto;
+    padding-right: 10px;
+
+    .flight-card {
+        background: rgba($neon-blue, 0.05);
+        border-radius: 15px;
+        padding: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 1px solid rgba($neon-blue, 0.1);
+
+        &:hover {
+            transform: translateY(-3px);
+            background: rgba($neon-blue, 0.1);
+            box-shadow: 0 5px 15px rgba($neon-blue, 0.2);
+
+            .select-btn {
+                background: $neon-blue;
+                color: $dark-bg;
+            }
+        }
+
+        .airline-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+
+            i {
+                color: $neon-blue;
+                font-size: 20px;
+            }
+
+            .airline-name {
+                color: white;
+                font-weight: 500;
+            }
+
+            .flight-number {
+                color: rgba(255,255,255,0.6);
+                font-size: 14px;
+            }
+        }
+
+        .flight-route {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 20px;
+
+            .departure, .arrival {
+                h5 {
+                    color: white;
+                    font-size: 18px;
+                    margin: 0 0 5px;
+                }
+
+                p {
+                    color: rgba(255,255,255,0.7);
+                    margin: 0;
+                }
+            }
+
+            .arrival {
+                text-align: right;
+            }
+
+            .flight-path {
+                text-align: center;
+
+                .duration {
+                    color: $neon-blue;
+                    font-size: 14px;
+                    margin-bottom: 5px;
+                }
+
+                .path-line {
+                    position: relative;
+                    height: 2px;
+                    background: rgba($neon-blue, 0.3);
+                    margin: 10px 0;
+
+                    i {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        color: $neon-blue;
+                        font-size: 16px;
+                    }
+                }
+
+                .stops {
+                    color: rgba(255,255,255,0.6);
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .flight-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .price {
+                h4 {
+                    color: $neon-blue;
+                    margin: 0;
+                    font-size: 24px;
+                }
+
+                span {
+                    color: rgba(255,255,255,0.6);
+                    font-size: 12px;
+                }
+            }
+
+            .select-btn {
+                padding: 10px 20px;
+                border-radius: 10px;
+                background: rgba($neon-blue, 0.1);
+                color: white;
+                border: none;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                transition: all 0.3s ease;
+
+                i {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+// Scrollbar styling
+.flights-grid::-webkit-scrollbar {
+    width: 8px;
+}
+
+.flights-grid::-webkit-scrollbar-track {
+    background: rgba($neon-blue, 0.1);
+    border-radius: 4px;
+}
+
+.flights-grid::-webkit-scrollbar-thumb {
+    background: rgba($neon-blue, 0.3);
+    border-radius: 4px;
+
+    &:hover {
+        background: rgba($neon-blue, 0.5);
+    }
+} 

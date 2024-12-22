@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors, FormControl } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { LayoutComponent } from '../../../../shared/components/ui/layout/layout.component';
 import { FooterComponent } from '../../../../shared/components/footer/footer.component';
 import { FlightPromoCodeComponent } from '../widgets/flight-promo-code/flight-promo-code.component';
@@ -14,6 +15,10 @@ import { FlightBookingBreadcrumbComponent } from '../widgets/flight-booking-brea
 import { HeaderComponent } from '../../../../shared/components/header/header.component';
 import { AnimationComponent } from '../../../../shared/components/comman/animation/animation.component';
 import { BreadcrumbsComponent } from '../../../../shared/components/comman/breadcrumbs/breadcrumbs.component';
+import { FlightService } from '../../../../shared/services/flight.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { FlightSelectionModalComponent } from '../widgets/flight-selection-modal/flight-selection-modal.component';
+
 @Component({
     selector: 'app-flight-booking',
     templateUrl: './flight-booking.component.html',
@@ -22,6 +27,7 @@ import { BreadcrumbsComponent } from '../../../../shared/components/comman/bread
     imports: [
         CommonModule,
         ReactiveFormsModule,
+        FormsModule,
         HeaderComponent,
         BreadcrumbsComponent,
         FlightBookingBreadcrumbComponent,
@@ -47,10 +53,10 @@ export class FlightBookingComponent implements OnInit {
     isFormValid: boolean = false;
 
     public title = "Flight Booking";
-    public bg_image = "/assets/imges2/flight-breadcrumb2.jpg";
-    public parent = "Home";
-    public subParent = "flights";
-    public child = "review";
+  public bg_image = "/assets/imges2/flight-breadcrumb2.jpg";
+  public parent = "Home";
+  public subParent = "flights";
+  public child = "review";
 
     features = [
         {
@@ -105,12 +111,36 @@ export class FlightBookingComponent implements OnInit {
         }
     ];
 
-    constructor(private fb: FormBuilder) {
-        this.initForm();
-        this.minDate = new Date().toISOString().split('T')[0];
-    }
+    public fromSuggestions: any[] = [];
+    public toSuggestions: any[] = [];
+    public showFromSuggestions: boolean = false;
+    public showToSuggestions: boolean = false;
+    public isLoading: boolean = false;
+    public fromInputValue: string = '';
+    public toInputValue: string = '';
 
-    ngOnInit() {
+    public searchPayload = {
+        departure_id: '',
+        arrival_id: '',
+        outbound_date: '',
+        return_date: '',
+        currency: 'INR',
+        type: 2, // One Way
+        travel_class: 1,
+        adults: 1,
+        children: 0,
+    };
+
+    constructor(
+        private fb: FormBuilder,
+        private flightService: FlightService,
+        private modalService: NgbModal
+    ) {
+        this.initForm();
+    this.minDate = new Date().toISOString().split('T')[0];
+  }
+
+  ngOnInit() {
         document.documentElement.style.setProperty('--theme-color1','66, 145, 184');
         document.documentElement.style.setProperty('--theme-color2','66, 145, 184');
         
@@ -123,16 +153,39 @@ export class FlightBookingComponent implements OnInit {
         this.flightForm.valueChanges.subscribe(() => {
             this.checkFormValidity();
         });
+
+        // Sync form date with search payload
+        this.flightForm.get('departureDate')?.valueChanges.subscribe(value => {
+            this.searchPayload.outbound_date = value;
+        });
+
+        // Sync passengers
+        this.flightForm.get('passengers')?.valueChanges.subscribe(value => {
+            this.searchPayload.adults = value;
+        });
+
+        // Handle form value updates
+        this.fromLocationControl?.valueChanges.subscribe(value => {
+            if (value !== this.fromInputValue) {
+                this.fromInputValue = value;
+            }
+        });
+
+        this.toLocationControl?.valueChanges.subscribe(value => {
+            if (value !== this.toInputValue) {
+                this.toInputValue = value;
+            }
+        });
     }
 
     private initForm() {
         this.flightForm = this.fb.group({
-            fromLocation: ['', [
+            fromLocation: [this.fromInputValue, [
                 Validators.required,
                 Validators.minLength(3),
                 Validators.pattern(/^[a-zA-Z\s\-()]+$/)
             ]],
-            toLocation: ['', [
+            toLocation: [this.toInputValue, [
                 Validators.required,
                 Validators.minLength(3),
                 Validators.pattern(/^[a-zA-Z\s\-()]+$/)
@@ -156,8 +209,8 @@ export class FlightBookingComponent implements OnInit {
                 Validators.email,
                 Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)
             ]],
-            phone: ['', [
-                Validators.required,
+      phone: ['', [
+        Validators.required,
                 Validators.pattern(/^[0-9]{10}$/)
             ]],
             travel_insurance: [false],
@@ -166,8 +219,8 @@ export class FlightBookingComponent implements OnInit {
     }
 
     // Form Control Getters
-    get fromLocationControl() { return this.flightForm.get('fromLocation'); }
-    get toLocationControl() { return this.flightForm.get('toLocation'); }
+    get fromLocationControl() { return this.flightForm.get('fromLocation') as FormControl; }
+    get toLocationControl() { return this.flightForm.get('toLocation') as FormControl; }
     get departureDateControl() { return this.flightForm.get('departureDate'); }
     get passengersControl() { return this.flightForm.get('passengers'); }
     get nameControl() { return this.flightForm.get('name'); }
@@ -239,15 +292,15 @@ export class FlightBookingComponent implements OnInit {
             if (control.hasError('pattern')) return 'Please enter a valid 10-digit number';
         }
         return null;
-    }
+      }
 
     onPhoneInput(event: Event) {
         const input = event.target as HTMLInputElement;
         input.value = input.value.replace(/\D/g, '').substring(0, 10);
         this.phoneControl?.setValue(input.value);
-    }
+  }
 
-    onSubmit() {
+  onSubmit() {
         if (this.flightForm.valid) {
             this.isSubmitting = true;
             this.currentBooking = {
@@ -279,10 +332,10 @@ export class FlightBookingComponent implements OnInit {
     private showFormErrors() {
         Object.keys(this.flightForm.controls).forEach(key => {
             const control = this.flightForm.get(key);
-            if (control?.invalid) {
-                control.markAsTouched();
-            }
-        });
+        if (control?.invalid) {
+          control.markAsTouched();
+        }
+      });
     }
 
     ngOnDestroy() {
@@ -292,9 +345,7 @@ export class FlightBookingComponent implements OnInit {
 
     nextStep() {
         if (this.currentStep === 1) {
-            if (this.validateRouteDetails()) {
-                this.currentStep++;
-            }
+            this.searchFlights();
         } else if (this.currentStep === 2) {
             if (this.validatePassengerDetails()) {
                 this.currentStep++;
@@ -390,4 +441,93 @@ export class FlightBookingComponent implements OnInit {
             );
         }
     }
+
+    onInput(field: 'from' | 'to', event: any): void {
+        const query = event.target.value.trim();
+        if (!query) {
+            if (field === 'from') {
+                this.fromSuggestions = [];
+                this.showFromSuggestions = false;
+            } else {
+                this.toSuggestions = [];
+                this.showToSuggestions = false;
+            }
+      return;
+    }
+
+        this.flightService.autoSuggest({ query }).subscribe({
+            next: (response: any) => {
+                if (response.success) {
+                    const suggestions = response.mainAirports;
+                    if (field === 'from') {
+                        this.fromSuggestions = suggestions;
+                        this.showFromSuggestions = true;
+                    } else {
+                        this.toSuggestions = suggestions;
+                        this.showToSuggestions = true;
+                    }
+                }
+            },
+            error: (err) => console.error(`Error fetching suggestions:`, err),
+        });
+    }
+
+    selectFromSuggestion(suggestion: any): void {
+        this.searchPayload.departure_id = suggestion.code;
+        this.fromInputValue = suggestion.name;
+        this.showFromSuggestions = false;
+        this.flightForm.get('fromLocation')?.setValue(suggestion.name, { emitEvent: false });
+    }
+
+    selectToSuggestion(suggestion: any): void {
+        this.searchPayload.arrival_id = suggestion.code;
+        this.toInputValue = suggestion.name;
+        this.showToSuggestions = false;
+        this.flightForm.get('toLocation')?.setValue(suggestion.name, { emitEvent: false });
+    }
+
+    searchFlights(): void {
+        if (!this.searchPayload.departure_id || !this.searchPayload.arrival_id || !this.searchPayload.outbound_date) {
+            this.showErrorMessage('Please fill in all mandatory fields.');
+            return;
+        }
+
+        this.isLoading = true;
+        this.flightService.getflight(this.searchPayload).subscribe({
+            next: (response: any) => {
+                this.isLoading = false;
+                if (response.flights?.length) {
+                    this.showFlightSelectionModal(response.flights);
+                } else {
+                    this.showErrorMessage('No flights found for selected criteria.');
+                }
+            },
+            error: (error) => {
+                this.isLoading = false;
+                this.showErrorMessage('Error fetching flight details. Please try again.');
+                console.error('Error:', error);
+            },
+        });
+    }
+
+    private showFlightSelectionModal(flights: any[]): void {
+        const modalRef = this.modalService.open(FlightSelectionModalComponent, {
+            size: 'xl',
+            centered: true,
+            backdrop: 'static',
+            windowClass: 'flight-selection-modal',
+            modalDialogClass: 'flight-modal-dialog'
+        });
+        
+        modalRef.componentInstance.flights = flights;
+
+        modalRef.result.then((selectedFlight) => {
+            if (selectedFlight) {
+                this.currentBooking = selectedFlight;
+                this.currentStep++; // Move to passenger details
+            }
+        }, (dismissReason) => {
+            // Modal dismissed
+        });
+  }
 }
