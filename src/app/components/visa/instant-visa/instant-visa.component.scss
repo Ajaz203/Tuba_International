@@ -394,3 +394,14 @@
     }
   }
 }
+@media (min-width: 576px) {
+    .card {
+      flex: 1 1 calc(50% - 20px); /* Half width for small screens */
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .card {
+      flex: 1 1 calc(33.333% - 20px); /* Third width for larger screens */
+    }
+  }
