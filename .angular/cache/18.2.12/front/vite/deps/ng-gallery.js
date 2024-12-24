@@ -25,9 +25,9 @@ import {
   ThumbnailsView,
   VideoItem,
   YoutubeItem
-} from "./chunk-3MQTFPOF.js";
+} from "./chunk-VK43BB5A.js";
 import "./chunk-6I7QKTVD.js";
-import "./chunk-OVQEIHGV.js";
+import "./chunk-IDVYFN6Z.js";
 import "./chunk-M46E32VU.js";
 import "./chunk-KD24XWPB.js";
 import "./chunk-JDU4VVT4.js";

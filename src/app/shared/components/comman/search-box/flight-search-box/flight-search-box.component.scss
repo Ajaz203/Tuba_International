@@ -1,36 +1,32 @@
-/* Style for the suggestions list */
 .suggestions-list {
     list-style-type: none;
     padding: 0;
     margin: 0;
     position: absolute;
-    top: 100%; /* Align the list directly below the input field */
+    top: 100%; 
     left: 0;
     right: 0;
     background-color: white;
     border: 1px solid #ddd;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     max-height: 200px;
-    overflow-y: auto; /* Add scrolling if suggestions are many */
+    overflow-y: auto; 
     z-index: 9999;
     font-size: 14px;
-    width: 100%; /* Ensures the suggestions list matches the input width */
+    width: 100%; 
   }
   
-  /* Style for each list item (suggestion) */
   .suggestions-list li {
-    display: block; /* Ensures each suggestion is on a new line */
+    display: block; 
     padding: 8px 12px;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
   
-  /* Highlighting the suggestion when hovering */
   .suggestions-list li:hover {
     background-color: #f0f0f0;
   }
   
-  /* Style for empty suggestion list or no results */
   .suggestions-list li.no-results {
     color: #999;
     font-style: italic;
@@ -38,9 +34,8 @@
     text-align: center;
   }
   
-  /* Optional: style for input field to give space for suggestions */
   .open-select {
-    position: relative; /* Ensure suggestions are placed correctly */
+    position: relative; 
   }
   
   .col {
@@ -218,7 +213,6 @@
   }
 }
 
-// Modal specific styles
 :host ::ng-deep .modal-content {
   border-radius: 12px;
   
@@ -264,27 +258,27 @@
 
 .booking-body {
   .flight-summary {
-    position: sticky;    // Keep flight summary visible
-    top: 0;             // Stick to top
-    z-index: 1;         // Ensure it stays above other content
-    background: #f8f9fa;  // Light background
-    margin: -15px -15px 15px -15px;  // Decreased margins
-    padding: 10px;  // Further decreased
+    position: sticky;    
+    top: 0;             
+    z-index: 1;         
+    background: #f8f9fa;  
+    margin: -15px -15px 15px -15px;  
+    padding: 10px;  
     border-bottom: 2px solid #e9ecef;
     
     .airline-details {
       display: flex;
       align-items: center;
-      gap: 8px;  // Decreased gap
-      margin-bottom: 0;  // Removed bottom margin
+      gap: 8px;   
+      margin-bottom: 0;     
       
       img {
-        width: 30px;  // Further decreased
+        width: 30px; 
         height: 30px;
       }
       
       h5 {
-        font-size: 14px;  // Decreased font size
+        font-size: 14px;    
       }
     }
 
@@ -292,13 +286,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 8px;  // Further decreased
-      margin: 0;  // Removed margin
-      background: white;  // White background for contrast
+      padding: 8px;   
+      margin: 0;   
+      background: white;     
       border-radius: 8px;
       padding: 12px 20px;
       margin: 0;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);  // Subtle shadow
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);   
       display: flex;
       align-items: center;
       gap: 15px;
@@ -307,12 +301,12 @@
         text-align: center;
         
         .time {
-          font-size: 14px;  // Decreased font size
+          font-size: 14px;  
         }
         
         .airport {
-          font-size: 11px;  // Decreased font size
-          margin: 2px 0 0;  // Decreased margin
+          font-size: 11px;    
+          margin: 2px 0 0; 
         }
       }
 
@@ -321,29 +315,29 @@
         
         .plane-icon {
           color: #2196F3;
-          font-size: 14px;  // Decreased font size
+          font-size: 14px;  
         }
         
         p {
-          font-size: 11px;  // Decreased font size
-          margin: 2px 0 0;  // Decreased margin
+          font-size: 11px; 
+          margin: 2px 0 0;          
         }
       }
     }
 
     .price-details {
       text-align: right;
-      margin-top: 0;  // Removed top margin
+      margin-top: 0;        
       
       h5 {
-        font-size: 12px;  // Decreased font size
+        font-size: 12px;   
       }
       
       .fare {
-        font-size: 16px;  // Decreased font size
+        font-size: 16px;  
         font-weight: bold;
         color: #2196F3;
-        margin: 2px 0 0;  // Decreased margin
+        margin: 2px 0 0;   
       }
     }
   }
@@ -446,7 +440,6 @@
   }
 }
 
-// Update the booking modal styles
 :host ::ng-deep .booking-modal {
   .modal-dialog {
     max-width: 800px !important;
@@ -466,14 +459,13 @@
   }
 }
 
-// Add max height and scrolling to modal body
 :host ::ng-deep .booking-modal {
   .modal-dialog {
     .modal-content {
       max-height: 90vh;
       
       .modal-body {
-        max-height: calc(90vh - 180px); // Adjust based on header/footer height
+        max-height: calc(90vh - 180px); 
         overflow-y: auto;
         
         &::-webkit-scrollbar {
@@ -499,36 +491,36 @@
 
 .flight-summary {
   background: #f8f9fa;
-  padding: 15px;  // Increased padding
+  padding: 15px; 
   margin: -15px -15px 15px -15px;
 
   .journey-details {
     background: white;
-    border-radius: 12px;  // Increased radius
-    padding: 20px;  // Increased padding
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);  // Enhanced shadow
+    border-radius: 12px;   
+    padding: 20px;  
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
 
     .flight-row {
       display: flex;
       align-items: center;
-      gap: 25px;  // Increased gap
+      gap: 25px;  
 
       .airline-info {
         display: flex;
         align-items: center;
-        gap: 12px;  // Increased gap
-        min-width: 150px;  // Increased width
-        padding-right: 20px;  // Increased padding
-        border-right: 2px solid #eee;  // Thicker border
+        gap: 12px; 
+        min-width: 150px;  
+        padding-right: 20px;  
+        border-right: 2px solid #eee;  
 
         img {
-          width: 35px;  // Increased size
+          width: 35px;  
           height: 35px;
           object-fit: contain;
         }
 
         span {
-          font-size: 15px;  // Increased font size
+          font-size: 15px;  
           font-weight: 500;
           color: #2c3e50;
         }
@@ -538,25 +530,25 @@
         display: flex;
         align-items: center;
         flex: 1;
-        gap: 25px;  // Increased gap
+        gap: 25px; 
 
         .time-location {
           display: flex;
           align-items: center;
-          gap: 10px;  // Increased gap
+          gap: 10px;  
 
           .time {
-            font-size: 18px;  // Increased font size
+            font-size: 18px;  
             font-weight: 600;
             color: #2c3e50;
           }
 
           .location {
-            font-size: 14px;  // Increased font size
+            font-size: 14px; 
             color: #666;
             &:before {
               content: '•';
-              margin: 0 8px;  // Increased margin
+              margin: 0 8px;
             }
           }
         }
@@ -566,38 +558,38 @@
           display: flex;
           flex-direction: column;
           align-items: center;
-          padding: 0 25px;  // Increased padding
+          padding: 0 25px; 
 
           .line {
-            width: 100px;  // Increased width
+            width: 100px;  
             height: 2px;
             background: #ddd;
             position: relative;
           }
 
           .plane-icon {
-            font-size: 16px;  // Increased font size
+            font-size: 16px;  
             color: #2196F3;
-            margin: -8px 0;  // Adjusted margin
+            margin: -8px 0;  
           }
 
           .time {
-            font-size: 14px;  // Increased font size
+            font-size: 14px;  
             color: #666;
             font-weight: 500;
-            margin-top: 8px;  // Added margin
+            margin-top: 8px; 
           }
         }
       }
 
       .price {
-        padding-left: 20px;  // Increased padding
-        border-left: 2px solid #eee;  // Thicker border
-        min-width: 120px;  // Increased width
+        padding-left: 20px;  
+        border-left: 2px solid #eee;  
+        min-width: 120px;  
         text-align: right;
 
         .amount {
-          font-size: 20px;  // Increased font size
+          font-size: 20px;  
           font-weight: 600;
           color: #2196F3;
         }
@@ -606,7 +598,6 @@
   }
 }
 
-// Add these variables at the top if not already present
 $neon-blue: #00f3ff;
 $neon-purple: #9d00ff;
 $dark-bg: #0a0a1f;
@@ -758,4 +749,72 @@ $glass-bg: rgba(255, 255, 255, 0.1);
             }
         }
     }
+}
+
+
+form{
+    .form-group{
+        margin-bottom: 20px !important;
+        label{
+            display: block !important;
+            margin-bottom: 8px !important;
+            font-weight: 500 !important;
+        }
+        input{
+            width: 100% !important;
+            padding: 10px !important;
+            border: 1px solid #dee2e6;
+            border-radius: 4px !important;
+            &:focus{
+                border-color: #2196F3 !important;
+                box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.1) !important;
+                outline: none !important;
+            }
+        }
+    }
+    label{
+        display: block !important;
+        margin-bottom: 8px !important;
+        font-weight: 500 !important;
+    }
+    input{
+        width: 100% !important;
+        padding: 10px !important;
+        border: 1px solid #dee2e6;
+        border-radius: 4px !important;
+        &:focus{
+            border-color: #2196F3 !important;
+            box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.1) !important;
+            outline: none !important;
+        }
+    }
+    button{
+        padding: 10px 24px !important;
+        border-radius: 25px !important;
+        &.btn-secondary{
+            background: #e9ecef !important;
+            border: none !important;
+            color: #495057 !important;
+            &:hover{
+                background: #dee2e6 !important;
+            }
+        }
+        &.btn-primary{
+            background: linear-gradient(45deg, #2196F3, #1976D2) !important;
+            border: none !important;
+            &:hover{
+                background: linear-gradient(45deg, #1976D2, #1565C0) !important;
+            }
+            &:disabled{
+                background: #ccc !important;
+            }
+            &:active{
+                background: linear-gradient(45deg, #1565C0, #1976D2) !important;
+            }
+            &:not(:disabled):active{
+                box-shadow: 0 2px 10px rgba(33, 150, 243, 0.3) !important;
+            }
+        }
+    }
+
 }

@@ -2,7 +2,7 @@ import {
   AnimationBuilder,
   animate,
   style
-} from "./chunk-OVQEIHGV.js";
+} from "./chunk-IDVYFN6Z.js";
 import {
   isPlatformBrowser
 } from "./chunk-JDU4VVT4.js";

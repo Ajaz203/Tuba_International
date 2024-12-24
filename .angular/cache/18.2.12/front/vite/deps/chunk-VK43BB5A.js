@@ -8,7 +8,7 @@ import {
   style,
   transition,
   trigger
-} from "./chunk-OVQEIHGV.js";
+} from "./chunk-IDVYFN6Z.js";
 import {
   DomSanitizer
 } from "./chunk-M46E32VU.js";
@@ -4126,4 +4126,4 @@ export {
   GalleryComponent,
   GalleryModule
 };
-//# sourceMappingURL=chunk-3MQTFPOF.js.map
+//# sourceMappingURL=chunk-VK43BB5A.js.map
