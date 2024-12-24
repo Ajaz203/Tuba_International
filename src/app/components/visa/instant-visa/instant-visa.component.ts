@@ -104,6 +104,7 @@ export class InstantVisaComponent {
 
 
   activeIndex: number | null = null;
+  activeTab: string = 'hajj';
 
   toggleAccordion(index: number): void {
     this.activeIndex = this.activeIndex === index ? null : index;
@@ -160,4 +161,7 @@ export class InstantVisaComponent {
 
   
   
+  setActiveTab(tab: string) {
+    this.activeTab = tab;
+  }
 }

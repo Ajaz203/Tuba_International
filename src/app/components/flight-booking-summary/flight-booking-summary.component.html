@@ -1,0 +1,117 @@
+<div class="booking-summary neo-card">
+    <div class="loading-overlay" *ngIf="isLoading">
+        <div class="loader">
+            <i class="fas fa-plane"></i>
+            <span>Loading summary..</span>
+        </div>
+    </div>
+
+    <div class="summary-content" *ngIf="!isLoading">
+        <!-- Flight Route Visualization -->
+        <div class="flight-route">
+            <div class="route-points">
+                <div class="departure">
+                    <span class="city">{{flightDetails?.fromLocation}}</span>
+                    <span class="time">{{flightDetails?.departureTime || '10:00'}}</span>
+                </div>
+                <div class="route-line">
+                    <div class="plane-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                </div>
+                <div class="arrival">
+                    <span class="city">{{flightDetails?.toLocation}}</span>
+                    <span class="time">{{flightDetails?.arrivalTime || '12:00'}}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flight Details -->
+        <div class="flight-details">
+            <div class="detail-item">
+                <i class="fas fa-calendar"></i>
+                <div class="detail-content">
+                    <span class="label">Date</span>
+                    <span class="value">{{flightDetails?.departureDate | date}}</span>
+                </div>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-users"></i>
+                <div class="detail-content">
+                    <span class="label">Passengers</span>
+                    <span class="value">{{flightDetails?.passengers}} Person(s)</span>
+                </div>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-clock"></i>
+                <div class="detail-content">
+                    <span class="label">Duration</span>
+                    <span class="value">{{flightDetails?.duration || '2h 00m'}}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Price Breakdown -->
+        <div class="price-breakdown">
+            <h4>Price Details</h4>
+            <div class="price-item">
+                <span>Base Fare</span>
+                <span>₹{{flightDetails?.baseFare || 4000}}</span>
+            </div>
+            <div class="price-item">
+                <span>Taxes & Fees</span>
+                <span>₹{{flightDetails?.taxes || 1000}}</span>
+            </div>
+            <div class="price-item" *ngIf="flightDetails?.travel_insurance">
+                <span>Travel Insurance</span>
+                <span>₹{{flightDetails?.insuranceAmount || 500}}</span>
+            </div>
+            <div class="price-item" *ngIf="flightDetails?.airport_pickup">
+                <span>Airport Pickup</span>
+                <span>₹{{flightDetails?.pickupAmount || 800}}</span>
+            </div>
+            <div class="total-price">
+                <span>Total Amount</span>
+                <span>₹{{flightDetails?.totalAmount || 5000}}</span>
+            </div>
+        </div>
+
+        <!-- Fare Rules -->
+        <div class="fare-rules">
+            <h4>Fare Rules</h4>
+            <div class="rule-item">
+                <i class="fas fa-exchange-alt"></i>
+                <div class="rule-content">
+                    <span class="label">Date Change</span>
+                    <span class="value">₹1500 + fare difference</span>
+                </div>
+            </div>
+            <div class="rule-item">
+                <i class="fas fa-ban"></i>
+                <div class="rule-content">
+                    <span class="label">Cancellation</span>
+                    <span class="value">₹2000 or 75% of fare</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Baggage Information -->
+        <div class="baggage-info">
+            <h4>Baggage Allowance</h4>
+            <div class="baggage-item">
+                <i class="fas fa-suitcase"></i>
+                <div class="baggage-content">
+                    <span class="label">Check-in</span>
+                    <span class="value">23 KG</span>
+                </div>
+            </div>
+            <div class="baggage-item">
+                <i class="fas fa-briefcase"></i>
+                <div class="baggage-content">
+                    <span class="label">Cabin</span>
+                    <span class="value">7 KG</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
