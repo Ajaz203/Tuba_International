@@ -2810,12 +2810,12 @@
 
     <div class="mid_cnt mt-5 sacred-journeys-section">
       <div class="vis_stpsfll">
-        <div class="tlesbvs">
-          <h4>Sacred Journeys</h4>
+        <div class="tlesbvs text-center">
+          <h4 class="text-uppercase text-muted">Sacred Journeys</h4>
           <div class="hedmainv f40 wt700">Hajj & Umrah Services</div>
         </div>
-
-        <ul class="nav nav-tabs" id="hajjUmrahTabs" role="tablist">
+    
+        <ul class="nav nav-tabs justify-content-center" id="hajjUmrahTabs" role="tablist">
           <li class="nav-item">
             <a class="nav-link" [class.active]="activeTab === 'hajj'" (click)="setActiveTab('hajj')" id="hajj-tab"
               role="tab" aria-controls="hajj" aria-selected="activeTab === 'hajj'">
@@ -2835,176 +2835,247 @@
             </a>
           </li>
         </ul>
-
-        <div class="tab-content" id="hajjUmrahTabContent">
+    
+        <div class="tab-content py-4" id="hajjUmrahTabContent">
+          <!-- Hajj Tab -->
           <div class="tab-pane fade" [class.show]="activeTab === 'hajj'" [class.active]="activeTab === 'hajj'" id="hajj"
             role="tabpanel" aria-labelledby="hajj-tab">
-            <div class="card-container">
-              <!-- Hajj Packages -->
-              <div class="card">
-                <div class="card-header">
-                  <i class="fas fa-kaaba fa-3x" style="color: #EF6614;"></i>
-                  <h4>3-Star Hotel Package</h4>
-                </div>
-                <div class="card-body">
-                  <ul class="package-features">
-                    <li><i class="fas fa-passport"></i> Visa processing assistance</li>
-                    <li><i class="fas fa-hotel"></i> 3-star accommodation</li>
-                    <li><i class="fas fa-bus"></i> Shared transportation</li>
-                    <li><i class="fas fa-praying-hands"></i> Group religious guidance</li>
-                    <li><i class="fas fa-utensils"></i> Basic meals included</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  <i class="fas fa-kaaba fa-3x" style="color: #EF6614;"></i>
-                  <h4>3-Star Hotel Package</h4>
-                </div>
-                <div class="card-body">
-                  <ul class="package-features">
-                    <li><i class="fas fa-passport"></i> Visa processing assistance</li>
-                    <li><i class="fas fa-hotel"></i> 3-star accommodation</li>
-                    <li><i class="fas fa-bus"></i> Shared transportation</li>
-                    <li><i class="fas fa-praying-hands"></i> Group religious guidance</li>
-                    <li><i class="fas fa-utensils"></i> Basic meals included</li>
-                  </ul>
+            <div class="row">
+              <!-- Example Card -->
+              <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow border-0">
+                  <div class="card-header text-center bg-light border-0">
+                    <i class="fas fa-kaaba fa-3x" style="color: #EF6614;"></i>
+                    <h4 class="mt-2 text-primary">3-Star Hotel Package</h4>
+                  </div>
+                  <div class="card-body">
+                    <ul class="list-unstyled package-features">
+                      <li class="mb-2"><i class="fas fa-passport text-warning"></i> Visa processing assistance</li>
+                      <li class="mb-2"><i class="fas fa-hotel text-warning"></i> 3-star accommodation</li>
+                      <li class="mb-2"><i class="fas fa-bus text-warning"></i> Shared transportation</li>
+                      <li class="mb-2"><i class="fas fa-praying-hands text-warning"></i> Group religious guidance</li>
+                      <li class="mb-2"><i class="fas fa-utensils text-warning"></i> Basic meals included</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
-              <div class="card">
-                <div class="card-header">
-                  <i class="fas fa-kaaba fa-3x" style="color: #EF6614;"></i>
-                  <h4>3-Star Hotel Package</h4>
-                </div>
-                <div class="card-body">
-                  <ul class="package-features">
-                    <li><i class="fas fa-passport"></i> Visa processing assistance</li>
-                    <li><i class="fas fa-hotel"></i> 3-star accommodation</li>
-                    <li><i class="fas fa-bus"></i> Shared transportation</li>
-                    <li><i class="fas fa-praying-hands"></i> Group religious guidance</li>
-                    <li><i class="fas fa-utensils"></i> Basic meals included</li>
-                  </ul>
+              <!-- Add More Cards -->
+              <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow border-0">
+                  <div class="card-header text-center bg-light border-0">
+                    <i class="fas fa-kaaba fa-3x" style="color: #EF6614;"></i>
+                    <h4 class="mt-2 text-primary">4-Star Hotel Package</h4>
+                  </div>
+                  <div class="card-body">
+                    <ul class="list-unstyled package-features">
+                      <li class="mb-2"><i class="fas fa-passport text-warning"></i> Visa processing assistance</li>
+                      <li class="mb-2"><i class="fas fa-hotel text-warning"></i> 4-star accommodation</li>
+                      <li class="mb-2"><i class="fas fa-car text-warning"></i> Private transportation</li>
+                      <li class="mb-2"><i class="fas fa-praying-hands text-warning"></i> Group religious guidance</li>
+                      <li class="mb-2"><i class="fas fa-utensils text-warning"></i> All-inclusive meals</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
-              <!-- Repeat for 4-Star and 5-Star Packages -->
+              <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow border-0">
+                  <div class="card-header text-center bg-light border-0">
+                    <i class="fas fa-kaaba fa-3x" style="color: #EF6614;"></i>
+                    <h4 class="mt-2 text-primary">5-Star Hotel Package</h4>
+                  </div>
+                  <div class="card-body">
+                    <ul class="list-unstyled package-features">
+                      <li class="mb-2"><i class="fas fa-passport text-warning"></i> Visa processing assistance</li>
+                      <li class="mb-2"><i class="fas fa-hotel text-warning"></i> 5-star luxury accommodation</li>
+                      <li class="mb-2"><i class="fas fa-limo text-warning"></i> VIP transportation</li>
+                      <li class="mb-2"><i class="fas fa-praying-hands text-warning"></i> Personalized religious guidance</li>
+                      <li class="mb-2"><i class="fas fa-utensils text-warning"></i> Gourmet meals included</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
-            <button class="btn btn-primary mt-3">Learn More</button>
+            <div class="text-center">
+              <button class="btn btn-primary btn-lg mt-3 px-5 shadow">Learn More</button>
+            </div>
           </div>
+    
+          <!-- Umrah Tab -->
+          <div class="tab-pane fade" [class.show]="activeTab === 'umrah'" [class.active]="activeTab === 'umrah'" id="umrah"
+            role="tabpanel" aria-labelledby="umrah-tab">
+            <div class="row">
+              <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow border-0">
+                  <div class="card-header text-center bg-light border-0">
+                    <i class="fas fa-mosque fa-3x" style="color: #EF6614;"></i>
+                    <h4 class="mt-2 text-primary">3-Star Hotel Package</h4>
+                  </div>
+                  <div class="card-body">
+                    <ul class="list-unstyled package-features">
+                      <li class="mb-2"><i class="fas fa-passport text-warning"></i> Swift visa processing</li>
+                      <li class="mb-2"><i class="fas fa-hotel text-warning"></i> 3-star accommodation</li>
+                      <li class="mb-2"><i class="fas fa-bus text-warning"></i> Shared transportation</li>
+                      <li class="mb-2"><i class="fas fa-map-marked-alt text-warning"></i> Group ziyarat arrangements</li>
+                      <li class="mb-2"><i class="fas fa-utensils text-warning"></i> Basic meals included</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow border-0">
+                  <div class="card-header text-center bg-light border-0">
+                    <i class="fas fa-mosque fa-3x" style="color: #EF6614;"></i>
+                    <h4 class="mt-2 text-primary">4-Star Hotel Package</h4>
+                  </div>
+                  <div class="card-body">
+                    <ul class="list-unstyled package-features">
+                      <li class="mb-2"><i class="fas fa-passport text-warning"></i> Swift visa processing</li>
+                      <li class="mb-2"><i class="fas fa-hotel text-warning"></i> 4-star accommodation</li>
+                      <li class="mb-2"><i class="fas fa-car text-warning"></i> Private transportation</li>
+                      <li class="mb-2"><i class="fas fa-map text-warning"></i> Personalized ziyarat arrangements</li>
+                      <li class="mb-2"><i class="fas fa-utensils text-warning"></i> All-inclusive meals</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow border-0">
+                  <div class="card-header text-center bg-light border-0">
+                    <i class="fas fa-mosque fa-3x" style="color: #EF6614;"></i>
+                    <h4 class="mt-2 text-primary">5-Star Hotel Package</h4>
+                  </div>
+                  <div class="card-body">
+                    <ul class="list-unstyled package-features">
+                      <li class="mb-2"><i class="fas fa-passport text-warning"></i> Swift visa processing</li>
+                      <li class="mb-2"><i class="fas fa-hotel text-warning"></i> 5-star luxury accommodation</li>
+                      <li class="mb-2"><i class="fas fa-limo text-warning"></i> VIP transportation</li>
+                      <li class="mb-2"><i class="fas fa-user-shield text-warning"></i> Dedicated ziyarat guide</li>
+                      <li class="mb-2"><i class="fas fa-utensils text-warning"></i> Gourmet meals included</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <button class="btn btn-primary btn-lg mt-3 px-5 shadow">Explore Now</button>
+            </div>
+          </div>
+    
+          <!-- Features Tab -->
+         
+          <div class="tab-pane fade" [class.show]="activeTab === 'features'" [class.active]="activeTab === 'features'" id="features" role="tabpanel" aria-labelledby="features-tab">
+            <div class="row">
+              <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-lg border-0">
+                  <div class="card-header text-center bg-light border-0">
+                    <i class="fas fa-star-and-crescent fa-3x text-primary"></i>
+                    <h4 class="mt-3 text-primary">Spiritual Guidance</h4>
+                  </div>
+                  <div class="card-body">
+                    <p>Receive comprehensive religious guidance to ensure a deeply fulfilling spiritual journey.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-lg border-0">
+                  <div class="card-header text-center bg-light border-0">
+                    <i class="fas fa-user-shield fa-3x text-success"></i>
+                    <h4 class="mt-3 text-primary">Safety & Security</h4>
+                  </div>
+                  <div class="card-body">
+                    <p>Travel with confidence knowing you are backed by high standards of safety and dedicated support teams.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-lg border-0">
+                  <div class="card-header text-center bg-light border-0">
+                    <i class="fas fa-handshake fa-3x text-warning"></i>
+                    <h4 class="mt-3 text-primary">Reliable Services</h4>
+                  </div>
+                  <div class="card-body">
+                    <p>Benefit from seamless arrangements and exceptional service tailored to your needs.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-lg border-0">
+                  <div class="card-header text-center bg-light border-0">
+                    <i class="fas fa-plane-departure fa-3x text-info"></i>
+                    <h4 class="mt-3 text-primary">Travel Ease</h4>
+                  </div>
+                  <div class="card-body">
+                    <p>Enjoy hassle-free travel with convenient options and pre-departure briefings to prepare you for your journey.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-lg border-0">
+                  <div class="card-header text-center bg-light border-0">
+                    <i class="fas fa-hotel fa-3x text-danger"></i>
+                    <h4 class="mt-3 text-primary">Luxury Accommodations</h4>
+                  </div>
+                  <div class="card-body">
+                    <p>Experience premium accommodations that cater to diverse preferences and budgets.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-lg border-0">
+                  <div class="card-header text-center bg-light border-0">
+                    <i class="fas fa-heart fa-3x text-secondary"></i>
+                    <h4 class="mt-3 text-primary">Customer Care</h4>
+                  </div>
+                  <div class="card-body">
+                    <p>Count on our 24/7 customer support to assist you every step of the way.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
 
-          <div class="tab-pane fade" [class.show]="activeTab === 'umrah'" [class.active]="activeTab === 'umrah'"
-            id="umrah" role="tabpanel" aria-labelledby="umrah-tab">
-            <div class="card-container">
-              <!-- Umrah Packages -->
-              <div class="card">
-                <div class="card-header">
-                  <i class="fas fa-mosque fa-3x" style="color: #EF6614;"></i>
-                  <h4>3-Star Hotel Package</h4>
-                </div>
-                <div class="card-body">
-                  <ul class="package-features">
-                    <li><i class="fas fa-passport"></i> Swift visa processing</li>
-                    <li><i class="fas fa-hotel"></i> 3-star accommodation</li>
-                    <li><i class="fas fa-bus"></i> Shared transportation</li>
-                    <li><i class="fas fa-map-marked-alt"></i> Group ziyarat arrangements</li>
-                    <li><i class="fas fa-utensils"></i> Basic meals included</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  <i class="fas fa-mosque fa-3x" style="color: #EF6614;"></i>
-                  <h4>4-Star Hotel Package</h4>
-                </div>
-                <div class="card-body">
-                  <ul class="package-features">
-                    <li><i class="fas fa-passport"></i> Swift visa processing</li>
-                    <li><i class="fas fa-hotel"></i> 4-star accommodation</li>
-                    <li><i class="fas fa-car"></i> Private transportation</li>
-                    <li><i class="fas fa-map"></i> Personal ziyarat arrangements</li>
-                    <li><i class="fas fa-utensils"></i> All-inclusive meals</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  <i class="fas fa-mosque fa-3x" style="color: #EF6614;"></i>
-                  <h4>5-Star Hotel Package</h4>
-                </div>
-                <div class="card-body">
-                  <ul class="package-features">
-                    <li><i class="fas fa-passport"></i> Swift visa processing</li>
-                    <li><i class="fas fa-hotel"></i> 5-star luxury accommodation</li>
-                    <li><i class="fas fa-limo"></i> VIP transportation</li>
-                    <li><i class="fas fa-user-shield"></i> Dedicated ziyarat guide</li>
-                    <li><i class="fas fa-utensils"></i> Gourmet meals included</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <button class="btn btn-primary mt-3">Explore Now</button>
-          </div>
-
-          <div class="tab-pane fade" [class.show]="activeTab === 'features'" [class.active]="activeTab === 'features'"
-            id="features" role="tabpanel" aria-labelledby="features-tab">
-            <div class="card-container">
-              <!-- Features -->
-              <div class="card">
-                <div class="card-header">
-                  <i class="fas fa-star-and-crescent fa-3x" style="color: #EF6614;"></i>
-                  <h4>Premium Benefits</h4>
-                </div>
-                <div class="card-body">
-                  <ul class="package-features">
-                    <li><i class="fas fa-check-circle"></i> Ministry approved</li>
-                    <li><i class="fas fa-history"></i> 15+ years experience</li>
-                    <li><i class="fas fa-headset"></i> Dedicated support</li>
-                    <li><i class="fas fa-car-side"></i> Luxury transport</li>
-                    <li><i class="fas fa-bed"></i> Quality accommodation</li>
-                    <li><i class="fas fa-user-graduate"></i> Expert guidance</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <button class="btn btn-primary mt-3">Contact Us</button>
-          </div>
         </div>
       </div>
     </div>
 
-    
+
     <div class="mid_cnt mt-5">
       <div class="vis_stpsfll">
         <div class="tlesbvs">
           <h4>how it works?</h4>
-            <div class="hedmainv f40 wt700">Get Your Visa in 4 Easy to Follow Steps</div>
+          <div class="hedmainv f40 wt700">Get Your Visa in 4 Easy to Follow Steps</div>
         </div>
         <div class="stp_scnt vflx vjsb">
-            <div class="echstpdv">
-                <div class="img-top"><img src="assets/visa/appylicn.svg" alt="Apply Icon"></div>
-                <div class="stpvlue f14 wt500">Step 1</div>
-                <h4>Apply Online</h4>
-                <p>Visit our exclusive platform and fill in the required details hassle-free to meet criteria.</p>
-            </div>
-            <div class="echstpdv">
-                <div class="img-top"><img src="assets/visa/apontmnt.svg" alt="Appointment Icon"></div>
-                <div class="stpvlue f14 wt500">Step 2</div>
-                <h4>Get An Appointment</h4>
-                <p>Effortlessly receive an appointment schedule & meet our professionals for guidance.</p>
-            </div>
-            <div class="echstpdv">
-                <div class="img-top"><img src="assets/visa/docmnticn.svg" alt="Documents Icon"></div>
-                <div class="stpvlue f14 wt500">Step 3</div>
-                <h4>Submit Documents</h4>
-                <p>Send us all the relevant documents to verify and process your visa application.</p>
-            </div>
-            <div class="echstpdv">
-                <div class="img-top"><img src="assets/visa/recveicn.svg" alt="Receive Icon"></div>
-                <div class="stpvlue f14 wt500">Step 4</div>
-                <h4>Receive Your Visas</h4>
-                <p>Once approved, you’ll receive your visas instantly with our hassle-free procedure.</p>
-            </div>
+          <div class="echstpdv">
+            <div class="img-top"><img src="assets/visa/appylicn.svg" alt="Apply Icon"></div>
+            <div class="stpvlue f14 wt500">Step 1</div>
+            <h4>Apply Online</h4>
+            <p>Visit our exclusive platform and fill in the required details hassle-free to meet criteria.</p>
+          </div>
+          <div class="echstpdv">
+            <div class="img-top"><img src="assets/visa/apontmnt.svg" alt="Appointment Icon"></div>
+            <div class="stpvlue f14 wt500">Step 2</div>
+            <h4>Get An Appointment</h4>
+            <p>Effortlessly receive an appointment schedule & meet our professionals for guidance.</p>
+          </div>
+          <div class="echstpdv">
+            <div class="img-top"><img src="assets/visa/docmnticn.svg" alt="Documents Icon"></div>
+            <div class="stpvlue f14 wt500">Step 3</div>
+            <h4>Submit Documents</h4>
+            <p>Send us all the relevant documents to verify and process your visa application.</p>
+          </div>
+          <div class="echstpdv">
+            <div class="img-top"><img src="assets/visa/recveicn.svg" alt="Receive Icon"></div>
+            <div class="stpvlue f14 wt500">Step 4</div>
+            <h4>Receive Your Visas</h4>
+            <p>Once approved, you’ll receive your visas instantly with our hassle-free procedure.</p>
+          </div>
         </div>
-    </div>
+      </div>
       <div class="why_plebx ">
         <div class="tlesbvs">
           <h4>We Are Different</h4>
@@ -3036,18 +3107,11 @@
       <div class="fl_faqs mb-5">
         <div class="accordion">
           <div class="accordion__item" *ngFor="let item of faqItems; let i = index">
-            <div
-              class="accordion__item__header"
-              [class.active]="activeIndex === i"
-              (click)="toggleAccordion(i)"
-            >
+            <div class="accordion__item__header" [class.active]="activeIndex === i" (click)="toggleAccordion(i)">
               {{ item.question }}
             </div>
-            <div
-              class="accordion__item__content"
-              [style.display]="activeIndex === i ? 'block' : 'none'"
-              [innerHTML]="getAnswerWithLineBreaks(item.answer)"
-            >
+            <div class="accordion__item__content" [style.display]="activeIndex === i ? 'block' : 'none'"
+              [innerHTML]="getAnswerWithLineBreaks(item.answer)">
             </div>
           </div>
         </div>
@@ -3055,11 +3119,11 @@
     </div>
 
   </div>
-  </div>
+</div>
 
 
 
-  <app-footer [location]="true"></app-footer>
+<app-footer [location]="true"></app-footer>
 
-  <app-layout></app-layout>
-  <!-- <app-layout [loaderType]="'basic'"></app-layout> -->
+<app-layout></app-layout>
+<!-- <app-layout [loaderType]="'basic'"></app-layout> -->
