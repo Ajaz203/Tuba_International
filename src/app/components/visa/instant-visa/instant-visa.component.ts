@@ -5,6 +5,7 @@ import { FooterComponent } from '../../../shared/components/footer/footer.compon
 import { BreadcrumbsComponent } from '../../../shared/components/comman/breadcrumbs/breadcrumbs.component';
 import { HeaderComponent } from '../../../shared/components/header/header.component';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-instant-visa',
@@ -15,6 +16,7 @@ import { CommonModule } from '@angular/common';
   imports: [LayoutComponent, CommonModule, FooterComponent, BreadcrumbsComponent, HeaderComponent]
 })
 export class InstantVisaComponent {
+  constructor(private router: Router) {}
   visas = [
     {
       country: 'Turkey',
@@ -163,5 +165,9 @@ export class InstantVisaComponent {
   
   setActiveTab(tab: string) {
     this.activeTab = tab;
+  }
+
+  navigateToFormSection() {
+    this.router.navigate(['/apply-visa']);
   }
 }

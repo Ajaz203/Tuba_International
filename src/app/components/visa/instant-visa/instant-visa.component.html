@@ -1,4 +1,5 @@
 <app-header [headerClass]="'overlay-black'"></app-header>
+
 <div class="coming-soon travel">
   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
     y="0px" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve">
@@ -2811,11 +2812,11 @@
     <div class="mid_cnt mt-5 sacred-journeys-section">
       <div class="vis_stpsfll">
         <div class="tlesbvs text-center">
-          <h4 class="text-uppercase text-muted">Sacred Journeys</h4>
+          <h4 class="tlesbvs">Sacred Journeys</h4>
           <div class="hedmainv f40 wt700">Hajj & Umrah Services</div>
         </div>
     
-        <ul class="nav nav-tabs justify-content-center" id="hajjUmrahTabs" role="tablist">
+        <ul class="nav nav-pills justify-content-center" id="hajjUmrahTabs" role="tablist">
           <li class="nav-item">
             <a class="nav-link" [class.active]="activeTab === 'hajj'" (click)="setActiveTab('hajj')" id="hajj-tab"
               role="tab" aria-controls="hajj" aria-selected="activeTab === 'hajj'">
@@ -2841,125 +2842,142 @@
           <div class="tab-pane fade" [class.show]="activeTab === 'hajj'" [class.active]="activeTab === 'hajj'" id="hajj"
             role="tabpanel" aria-labelledby="hajj-tab">
             <div class="row">
-              <!-- Example Card -->
+              <div class="col-md-12 mb-4">
+                <h5 class="text-center simple-header">About Hajj</h5>
+                <p class="text-center">Hajj is one of the five pillars of Islam and is a mandatory religious duty for Muslims. Every year, millions of Muslims from around the world gather in Mecca to perform this sacred pilgrimage. It is a time for spiritual reflection, prayer, and community.</p>
+                <p class="text-center">The pilgrimage occurs during the Islamic month of Dhu al-Hijjah and includes a series of rituals performed over several days. It is a unique opportunity to seek forgiveness, purify the soul, and strengthen one's faith.</p>
+              </div>
+            </div>
+            <div class="row">
               <div class="col-md-4 mb-4">
                 <div class="card h-100 shadow border-0">
+                  <img src="assets/hajj&umrah/01.jpg" class="card-img-top" alt="3-Star Hotel Package">
                   <div class="card-header text-center bg-light border-0">
-                    <i class="fas fa-kaaba fa-3x" style="color: #EF6614;"></i>
                     <h4 class="mt-2 text-primary">3-Star Hotel Package</h4>
                   </div>
                   <div class="card-body">
                     <ul class="list-unstyled package-features">
-                      <li class="mb-2"><i class="fas fa-passport text-warning"></i> Visa processing assistance</li>
-                      <li class="mb-2"><i class="fas fa-hotel text-warning"></i> 3-star accommodation</li>
-                      <li class="mb-2"><i class="fas fa-bus text-warning"></i> Shared transportation</li>
-                      <li class="mb-2"><i class="fas fa-praying-hands text-warning"></i> Group religious guidance</li>
-                      <li class="mb-2"><i class="fas fa-utensils text-warning"></i> Basic meals included</li>
+                      <li><i class="fas fa-passport text-warning"></i> Visa processing assistance</li>
+                      <li><i class="fas fa-hotel text-warning"></i> 3-star accommodation</li>
+                      <li><i class="fas fa-bus text-warning"></i> Shared transportation</li>
+                      <li><i class="fas fa-praying-hands text-warning"></i> Group religious guidance</li>
+                      <li><i class="fas fa-utensils text-warning"></i> Basic meals included</li>
                     </ul>
+              
                   </div>
                 </div>
               </div>
-              <!-- Add More Cards -->
               <div class="col-md-4 mb-4">
                 <div class="card h-100 shadow border-0">
+                  <img src="assets/hajj&umrah/07.webp" class="card-img-top" alt="4-Star Hotel Package">
                   <div class="card-header text-center bg-light border-0">
-                    <i class="fas fa-kaaba fa-3x" style="color: #EF6614;"></i>
                     <h4 class="mt-2 text-primary">4-Star Hotel Package</h4>
                   </div>
                   <div class="card-body">
                     <ul class="list-unstyled package-features">
-                      <li class="mb-2"><i class="fas fa-passport text-warning"></i> Visa processing assistance</li>
-                      <li class="mb-2"><i class="fas fa-hotel text-warning"></i> 4-star accommodation</li>
-                      <li class="mb-2"><i class="fas fa-car text-warning"></i> Private transportation</li>
-                      <li class="mb-2"><i class="fas fa-praying-hands text-warning"></i> Group religious guidance</li>
-                      <li class="mb-2"><i class="fas fa-utensils text-warning"></i> All-inclusive meals</li>
+                      <li><i class="fas fa-passport text-warning"></i> Visa processing assistance</li>
+                      <li><i class="fas fa-hotel text-warning"></i> 4-star accommodation</li>
+                      <li><i class="fas fa-car text-warning"></i> Private transportation</li>
+                      <li><i class="fas fa-praying-hands text-warning"></i> Group religious guidance</li>
+                      <li><i class="fas fa-utensils text-warning"></i> All-inclusive meals</li>
                     </ul>
+
                   </div>
                 </div>
               </div>
               <div class="col-md-4 mb-4">
                 <div class="card h-100 shadow border-0">
+                  <img src="assets/hajj&umrah/08.webp" class="card-img-top" alt="5-Star Hotel Package">
                   <div class="card-header text-center bg-light border-0">
-                    <i class="fas fa-kaaba fa-3x" style="color: #EF6614;"></i>
                     <h4 class="mt-2 text-primary">5-Star Hotel Package</h4>
                   </div>
                   <div class="card-body">
                     <ul class="list-unstyled package-features">
-                      <li class="mb-2"><i class="fas fa-passport text-warning"></i> Visa processing assistance</li>
-                      <li class="mb-2"><i class="fas fa-hotel text-warning"></i> 5-star luxury accommodation</li>
-                      <li class="mb-2"><i class="fas fa-rocket text-warning"></i> VIP transportation</li>
-
-                      <li class="mb-2"><i class="fas fa-praying-hands text-warning"></i> Personalized religious guidance</li>
-                      <li class="mb-2"><i class="fas fa-utensils text-warning"></i> Gourmet meals included</li>
+                      <li><i class="fas fa-passport text-warning"></i> Visa processing assistance</li>
+                      <li><i class="fas fa-hotel text-warning"></i> 5-star luxury accommodation</li>
+                      <li><i class="fas fa-rocket text-warning"></i> VIP transportation</li>
+                      <li><i class="fas fa-praying-hands text-warning"></i> Personalized religious guidance</li>
+                      <li><i class="fas fa-utensils text-warning"></i> Gourmet meals included</li>
                     </ul>
+ 
                   </div>
                 </div>
               </div>
             </div>
             <div class="text-center">
-              <button class="btn btn-primary btn-lg mt-3 px-5 shadow">Learn More</button>
-            </div>
+              <button class="btn btn-primary btn-lg mt-3 px-5 shadow" (click)="navigateToFormSection()">Learn More</button>
+          </div>
           </div>
     
           <!-- Umrah Tab -->
           <div class="tab-pane fade" [class.show]="activeTab === 'umrah'" [class.active]="activeTab === 'umrah'" id="umrah"
             role="tabpanel" aria-labelledby="umrah-tab">
             <div class="row">
+              <div class="col-md-12 mb-4">
+                <h5 class="text-center simple-header">About Umrah</h5>
+                <p class="text-center">Umrah is a pilgrimage to Mecca that can be undertaken at any time of the year. While it is not obligatory like Hajj, it holds great spiritual significance for Muslims. Performing Umrah is a way to seek forgiveness and spiritual renewal.</p>
+                <p class="text-center">The rituals of Umrah include Tawaf (circumambulating the Kaaba) and Sa'i (walking between the hills of Safa and Marwah). It is a time for reflection, prayer, and connection with fellow Muslims from around the world.</p>
+              </div>
+            </div>
+            <div class="row">
               <div class="col-md-4 mb-4">
                 <div class="card h-100 shadow border-0">
+                  <img src="assets/hajj&umrah/09.webp" class="card-img-top" alt="3-Star Hotel Package">
                   <div class="card-header text-center bg-light border-0">
-                    <i class="fas fa-mosque fa-3x" style="color: #EF6614;"></i>
                     <h4 class="mt-2 text-primary">3-Star Hotel Package</h4>
                   </div>
                   <div class="card-body">
                     <ul class="list-unstyled package-features">
-                      <li class="mb-2"><i class="fas fa-passport text-warning"></i> Swift visa processing</li>
-                      <li class="mb-2"><i class="fas fa-hotel text-warning"></i> 3-star accommodation</li>
-                      <li class="mb-2"><i class="fas fa-bus text-warning"></i> Shared transportation</li>
-                      <li class="mb-2"><i class="fas fa-map-marked-alt text-warning"></i> Group ziyarat arrangements</li>
-                      <li class="mb-2"><i class="fas fa-utensils text-warning"></i> Basic meals included</li>
+                      <li><i class="fas fa-passport text-warning"></i> Swift visa processing</li>
+                      <li><i class="fas fa-hotel text-warning"></i> 3-star accommodation</li>
+                      <li><i class="fas fa-bus text-warning"></i> Shared transportation</li>
+                      <li><i class="fas fa-map-marked-alt text-warning"></i> Group ziyarat arrangements</li>
+                      <li><i class="fas fa-utensils text-warning"></i> Basic meals included</li>
                     </ul>
+
                   </div>
                 </div>
               </div>
               <div class="col-md-4 mb-4">
                 <div class="card h-100 shadow border-0">
+                  <img src="assets/hajj&umrah/03.jpg" class="card-img-top" alt="4-Star Hotel Package">
                   <div class="card-header text-center bg-light border-0">
-                    <i class="fas fa-mosque fa-3x" style="color: #EF6614;"></i>
                     <h4 class="mt-2 text-primary">4-Star Hotel Package</h4>
                   </div>
                   <div class="card-body">
                     <ul class="list-unstyled package-features">
-                      <li class="mb-2"><i class="fas fa-passport text-warning"></i> Swift visa processing</li>
-                      <li class="mb-2"><i class="fas fa-hotel text-warning"></i> 4-star accommodation</li>
-                      <li class="mb-2"><i class="fas fa-car text-warning"></i> Private transportation</li>
-                      <li class="mb-2"><i class="fas fa-map text-warning"></i> Personalized ziyarat arrangements</li>
-                      <li class="mb-2"><i class="fas fa-utensils text-warning"></i> All-inclusive meals</li>
+                      <li><i class="fas fa-passport text-warning"></i> Swift visa processing</li>
+                      <li><i class="fas fa-hotel text-warning"></i> 4-star accommodation</li>
+                      <li><i class="fas fa-car text-warning"></i> Private transportation</li>
+                      <li><i class="fas fa-map-marked-alt text-warning"></i> Group ziyarat arrangements</li>
+                      <li><i class="fas fa-utensils text-warning"></i> All-inclusive meals</li>
                     </ul>
+
                   </div>
                 </div>
               </div>
               <div class="col-md-4 mb-4">
                 <div class="card h-100 shadow border-0">
+                  <img src="assets/hajj&umrah/08.webp" class="card-img-top" alt="5-Star Hotel Package">
                   <div class="card-header text-center bg-light border-0">
-                    <i class="fas fa-mosque fa-3x" style="color: #EF6614;"></i>
                     <h4 class="mt-2 text-primary">5-Star Hotel Package</h4>
                   </div>
                   <div class="card-body">
                     <ul class="list-unstyled package-features">
-                      <li class="mb-2"><i class="fas fa-passport text-warning"></i> Swift visa processing</li>
-                      <li class="mb-2"><i class="fas fa-hotel text-warning"></i> 5-star luxury accommodation</li>
-                      <li class="mb-2"><i class="fas fa-rocket text-warning"></i> VIP transportation</li>
-                      <li class="mb-2"><i class="fas fa-user-shield text-warning"></i> Dedicated ziyarat guide</li>
-                      <li class="mb-2"><i class="fas fa-utensils text-warning"></i> Gourmet meals included</li>
+                      <li><i class="fas fa-passport text-warning"></i> Swift visa processing</li>
+                      <li><i class="fas fa-hotel text-warning"></i> 5-star luxury accommodation</li>
+                      <li><i class="fas fa-rocket text-warning"></i> VIP transportation</li>
+                      <li><i class="fas fa-map-marked-alt text-warning"></i> Personalized ziyarat arrangements</li>
+                      <li><i class="fas fa-utensils text-warning"></i> Gourmet meals included</li>
                     </ul>
+
                   </div>
                 </div>
               </div>
             </div>
             <div class="text-center">
-              <button class="btn btn-primary btn-lg mt-3 px-5 shadow">Explore Now</button>
-            </div>
+              <button class="btn btn-primary btn-lg mt-3 px-5 shadow" (click)="navigateToFormSection()">Explore More</button>
+          </div>
           </div>
     
           <!-- Features Tab -->
@@ -3032,6 +3050,52 @@
                   <div class="card-body">
                     <p>Count on our 24/7 customer support to assist you every step of the way.</p>
                   </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col-md-12">
+                <h5 class="text-center">What Our Clients Say</h5>
+                <div class="testimonial mt-4">
+                  <blockquote class="blockquote text-center">
+                    <p class="mb-0">"The best experience of my life! The guidance and support were exceptional. Highly recommend!"</p>
+                    <footer class="blockquote-footer">Aisha M.</footer>
+                  </blockquote>
+                </div>
+                <div class="testimonial mt-4">
+                  <blockquote class="blockquote text-center">
+                    <p class="mb-0">"Everything was well organized, and the accommodations were top-notch. Thank you for a wonderful journey!"</p>
+                    <footer class="blockquote-footer">Mohammed S.</footer>
+                  </blockquote>
+                </div>
+                <div class="testimonial mt-4">
+                  <blockquote class="blockquote text-center">
+                    <p class="mb-0">"I felt safe and well taken care of throughout my trip. The team was always available to help!"</p>
+                    <footer class="blockquote-footer">Fatima R.</footer>
+                  </blockquote>
+                </div>
+                <div class="testimonial mt-4">
+                  <blockquote class="blockquote text-center">
+                    <p class="mb-0">"A truly spiritual experience! The guidance provided made all the difference." </p>
+                    <footer class="blockquote-footer">Omar K.</footer>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col-md-12">
+                <h5 class="text-center">Frequently Asked Questions</h5>
+                <div class="faq mt-4">
+                  <h6>1. What is included in the packages?</h6>
+                  <p>Each package includes visa processing assistance, accommodation, transportation, meals, and religious guidance.</p>
+                  <h6>2. How do I book a package?</h6>
+                  <p>You can book a package through our website or by contacting our customer service team for assistance.</p>
+                  <h6>3. Can I customize my package?</h6>
+                  <p>Yes, we offer customizable packages to meet your specific needs and preferences.</p>
+                  <h6>4. What if I have special dietary requirements?</h6>
+                  <p>Please inform us of any dietary restrictions at the time of booking, and we will accommodate your needs.</p>
+                  <h6>5. Is travel insurance included?</h6>
+                  <p>Travel insurance is not included in the package but is highly recommended. We can assist you in obtaining it.</p>
                 </div>
               </div>
             </div>
@@ -3127,4 +3191,4 @@
 <app-footer [location]="true"></app-footer>
 
 <app-layout></app-layout>
-<!-- <app-layout [loaderType]="'basic'"></app-layout> -->
+<app-layout [loaderType]="'basic'"></app-layout>
