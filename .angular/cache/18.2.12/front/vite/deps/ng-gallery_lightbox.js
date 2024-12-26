@@ -3,7 +3,7 @@ import {
   GalleryComponent,
   GalleryModule,
   ImageItem
-} from "./chunk-3MQTFPOF.js";
+} from "./chunk-VK43BB5A.js";
 import {
   ComponentPortal,
   ConfigurableFocusTrapFactory,
@@ -19,7 +19,7 @@ import {
   style,
   transition,
   trigger
-} from "./chunk-OVQEIHGV.js";
+} from "./chunk-IDVYFN6Z.js";
 import {
   DomSanitizer
 } from "./chunk-M46E32VU.js";
