@@ -24,4 +24,13 @@ export class AuthService {
   resetPassword(data: any) {
     return this.http.post(`${this.apiUrl}forget-password/verify-otp`, data);
   }
+ getAllUserData () {  
+    return this.http.get(`${this.apiUrl}users`);
+  }
+
+  getUserByEmail(email: string) {
+    const payload = { emailOrUsername: email };
+    return this.http.post(`${this.apiUrl}user-dashboard`, payload);
+  }
+
 }
