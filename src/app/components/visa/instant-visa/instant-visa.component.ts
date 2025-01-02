@@ -170,4 +170,7 @@ export class InstantVisaComponent {
   navigateToFormSection() {
     this.router.navigate(['/apply-visa']);
   }
+
+
+  
 }

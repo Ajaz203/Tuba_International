@@ -365,7 +365,7 @@ export class UserDashboardComponent {
     this.filteredHotels = [...this.hotelBookings];
     this.filteredCabs = [...this.cabBookings];
 
-    // Subscribe to query params to get the email and fetch user data
+    // Subscribe to query params to get the email and fetch user data by email
     this.route.queryParams.subscribe(params => {
       if (params['email']) {
         this.email = params['email'];
