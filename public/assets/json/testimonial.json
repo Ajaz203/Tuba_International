@@ -4,19 +4,19 @@
       "id": 1,
       "name": "Ajaz Ahamad",
       "description": "When you innovate, you make mistakes.It is best to admit them quickly, & get on with improving your other innovations.",
-      "profileURL": "assets/images/tour/testi-1.jpg"
+      "profileURL": ""
     },
     {
       "id": 2,
       "name": "Mohd Hasan",
       "description": "I had a fantastic stay at this hotel! The service was exceptional, and the room was so comfortable. Will definitely be back!",
-      "profileURL": "assets/images/tour/testi-2.jpg"
+      "profileURL": ""
     },
     {
       "id": 3,
       "name": "Mohd Zishan",
       "description": " A wonderful stay at this hotel! Exceptional service and a stunning view from my room. Will definitely return!",
-      "profileURL": "assets/images/tour/testi-3.jpg"
+      "profileURL": ""
     }
   ]
 }
