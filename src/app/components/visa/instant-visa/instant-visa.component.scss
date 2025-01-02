@@ -260,7 +260,7 @@
 
 
 .mid_cnt {
-    padding: 60px 0;
+    // padding: 60px 0;
     background-color: #f4f4f4;
 }
 
@@ -290,6 +290,7 @@
     background-color: #e7e7e7;
     color: #333;
     transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
     
 }
 
@@ -450,3 +451,285 @@ blockquote footer {
     margin-bottom: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  /* Main Title */
+.e-visa-title {
+    text-align: center;
+    color: #ff6d00;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+  
+  /* Introduction Section */
+  .e-visa-description {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    text-align: justify;
+  }
+  
+  /* Section Styling */
+  .e-visa-section {
+    background-color: #ffffff;
+    padding: 30px;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Subtitle Styling */
+  .e-visa-subtitle {
+    font-size: 2.2rem;
+    color: #ff6d00;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  /* Paragraph Text */
+  .e-visa-text {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+  
+  /* List Items */
+  .e-visa-list,
+  .e-visa-tips {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.8;
+    margin-left: 20px;
+  }
+  
+  /* Benefits Container Styling */
+  .e-visa-benefits {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .e-visa-benefit {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #e1e1e1;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    width: calc(33.333% - 20px);
+    box-sizing: border-box;
+  }
+  
+  .e-visa-benefit p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    margin-top: 10px;
+  }
+  
+  .e-visa-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #ff6d00;
+  }
+  
+  .e-visa-benefit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Entry Points Container */
+  .e-visa-entry-points {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .e-visa-entry-point {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #e1e1e1;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    width: calc(33.333% - 20px);
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  .e-visa-entry-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .e-visa-entry-description {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+  }
+  
+  .e-visa-entry-point:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Steps Container Styling */
+  .e-visa-steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .e-visa-steps {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .e-visa-step {
+    display: flex;
+    align-items: flex-start;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .e-visa-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  .e-visa-step-icon {
+    font-size: 2rem;
+    color: #ff6d00;
+    margin-right: 20px;
+    flex-shrink: 0;
+  }
+  
+  .e-visa-step-content {
+    max-width: 80%;
+  }
+  
+  .e-visa-step-content strong {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .e-visa-step-content p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+  
+  .e-visa-step:last-child {
+    box-shadow: none;
+  }
+  
+  /* Tips Container Styling */
+  .e-visa-tips {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .e-visa-tip {
+    display: flex;
+    align-items: flex-start;
+    background-color: #f9f9f9;
+    padding: 12px 15px;
+    border-radius: 6px;
+    border: 1px solid #e1e1e1;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    width: calc(25% - 20px);
+    box-sizing: border-box;
+  }
+  
+  .e-visa-tip:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  .e-visa-tip-icon {
+    font-size: 2rem;
+    color: #ff6d00;
+    margin-right: 15px;
+    flex-shrink: 0;
+  }
+  
+  .e-visa-tip-content {
+    max-width: 85%;
+  }
+  
+  .e-visa-tip-content strong {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .e-visa-tip-content p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: 0;
+  }
+  
+  /* Responsive Design for Smaller Screens */
+  @media (max-width: 1024px) {
+    .e-visa-entry-point,
+    .e-visa-benefit,
+    .e-visa-tip {
+      width: calc(50% - 20px);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .e-visa-entry-point,
+    .e-visa-benefit,
+    .e-visa-tip {
+      width: 100%;
+    }
+  }
+  .e-visa-footer {
+    // background-color: #ff6d00;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 40px;
+  }
+  
+  .e-visa-footer-text {
+    color: #333;
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+    
