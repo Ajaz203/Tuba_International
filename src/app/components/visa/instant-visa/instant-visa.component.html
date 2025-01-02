@@ -2815,7 +2815,7 @@
           <h4 class="tlesbvs">Sacred Journeys</h4>
           <div class="hedmainv f40 wt700">Hajj & Umrah Services</div>
         </div>
-    
+
         <ul class="nav nav-pills justify-content-center" id="hajjUmrahTabs" role="tablist">
           <li class="nav-item">
             <a class="nav-link" [class.active]="activeTab === 'hajj'" (click)="setActiveTab('hajj')" id="hajj-tab"
@@ -2830,13 +2830,19 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" [class.active]="activeTab === 'E-visa'" (click)="setActiveTab('E-visa')"
+              id="features-tab" role="tab" aria-controls="features" aria-selected="activeTab === 'E-visa'">
+              <i class="fas fa-stamp"></i> E-visa Stamp
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" [class.active]="activeTab === 'features'" (click)="setActiveTab('features')"
               id="features-tab" role="tab" aria-controls="features" aria-selected="activeTab === 'features'">
               <i class="fas fa-star-and-crescent"></i> Features
             </a>
           </li>
         </ul>
-    
+
         <div class="tab-content py-5" id="hajjUmrahTabContent">
           <!-- Hajj Tab -->
           <div class="tab-pane fade" [class.show]="activeTab === 'hajj'" [class.active]="activeTab === 'hajj'" id="hajj"
@@ -2844,8 +2850,12 @@
             <div class="row">
               <div class="col-md-12 mb-4">
                 <h5 class="text-center simple-header">About Hajj</h5>
-                <p class="text-center">Hajj is one of the five pillars of Islam and is a mandatory religious duty for Muslims. Every year, millions of Muslims from around the world gather in Mecca to perform this sacred pilgrimage. It is a time for spiritual reflection, prayer, and community.</p>
-                <p class="text-center">The pilgrimage occurs during the Islamic month of Dhu al-Hijjah and includes a series of rituals performed over several days. It is a unique opportunity to seek forgiveness, purify the soul, and strengthen one's faith.</p>
+                <p class="text-center">Hajj is one of the five pillars of Islam and is a mandatory religious duty for
+                  Muslims. Every year, millions of Muslims from around the world gather in Mecca to perform this sacred
+                  pilgrimage. It is a time for spiritual reflection, prayer, and community.</p>
+                <p class="text-center">The pilgrimage occurs during the Islamic month of Dhu al-Hijjah and includes a
+                  series of rituals performed over several days. It is a unique opportunity to seek forgiveness, purify
+                  the soul, and strengthen one's faith.</p>
               </div>
             </div>
             <div class="row">
@@ -2863,7 +2873,7 @@
                       <li><i class="fas fa-praying-hands text-warning"></i> Group religious guidance</li>
                       <li><i class="fas fa-utensils text-warning"></i> Basic meals included</li>
                     </ul>
-              
+
                   </div>
                 </div>
               </div>
@@ -2899,24 +2909,29 @@
                       <li><i class="fas fa-praying-hands text-warning"></i> Personalized religious guidance</li>
                       <li><i class="fas fa-utensils text-warning"></i> Gourmet meals included</li>
                     </ul>
- 
+
                   </div>
                 </div>
               </div>
             </div>
             <div class="text-center">
-              <button class="btn btn-primary btn-lg mt-3 px-5 shadow" (click)="navigateToFormSection()">Learn More</button>
+              <button class="btn btn-primary btn-lg mt-3 px-5 shadow" (click)="navigateToFormSection()">Learn
+                More</button>
+            </div>
           </div>
-          </div>
-    
+
           <!-- Umrah Tab -->
-          <div class="tab-pane fade" [class.show]="activeTab === 'umrah'" [class.active]="activeTab === 'umrah'" id="umrah"
-            role="tabpanel" aria-labelledby="umrah-tab">
+          <div class="tab-pane fade" [class.show]="activeTab === 'umrah'" [class.active]="activeTab === 'umrah'"
+            id="umrah" role="tabpanel" aria-labelledby="umrah-tab">
             <div class="row">
               <div class="col-md-12 mb-4">
                 <h5 class="text-center simple-header">About Umrah</h5>
-                <p class="text-center">Umrah is a pilgrimage to Mecca that can be undertaken at any time of the year. While it is not obligatory like Hajj, it holds great spiritual significance for Muslims. Performing Umrah is a way to seek forgiveness and spiritual renewal.</p>
-                <p class="text-center">The rituals of Umrah include Tawaf (circumambulating the Kaaba) and Sa'i (walking between the hills of Safa and Marwah). It is a time for reflection, prayer, and connection with fellow Muslims from around the world.</p>
+                <p class="text-center">Umrah is a pilgrimage to Mecca that can be undertaken at any time of the year.
+                  While it is not obligatory like Hajj, it holds great spiritual significance for Muslims. Performing
+                  Umrah is a way to seek forgiveness and spiritual renewal.</p>
+                <p class="text-center">The rituals of Umrah include Tawaf (circumambulating the Kaaba) and Sa'i (walking
+                  between the hills of Safa and Marwah). It is a time for reflection, prayer, and connection with fellow
+                  Muslims from around the world.</p>
               </div>
             </div>
             <div class="row">
@@ -2976,13 +2991,220 @@
               </div>
             </div>
             <div class="text-center">
-              <button class="btn btn-primary btn-lg mt-3 px-5 shadow" (click)="navigateToFormSection()">Explore More</button>
+              <button class="btn btn-primary btn-lg mt-3 px-5 shadow" (click)="navigateToFormSection()">Explore
+                More</button>
+            </div>
           </div>
+          <!-- E-visa stamping  -->
+
+          <div class="tab-pane fade" [class.show]="activeTab === 'E-visa'" [class.active]="activeTab === 'E-visa'"
+            id="E-visa" role="tabpanel" aria-labelledby="E-visa-tab">
+            <div class="e-visa-container mt-5">
+
+              <h1 class="e-visa-title" style="color:black;">E-Visa Stamping: A Complete Guide</h1>
+              <div class="info-btn mb-5 " style="text-align: center;">
+                <button class="btn btn-primary btn-lg mt-3 px-5 shadow" (click)="navigateToFormSection()">Know
+                  More</button>
+              </div>
+              <div class="e-visa-introduction">
+                <p class="e-visa-description">
+                  E-visa stamping has become a crucial step for travelers entering many countries. This process verifies
+                  your
+                  entry and provides a seamless transition from online approval to physical entry at borders. Learn how
+                  e-visa
+                  stamping works, the common entry points, and key tips for a smooth experience.
+                </p>
+
+              </div>
+
+              <section class="e-visa-section">
+                <h2 class="e-visa-subtitle">What is an E-Visa?</h2>
+                <p class="e-visa-text">
+                  An <strong>e-visa</strong> is an official document that permits entry into a country, applied for
+                  online and
+                  usually received via email. Many countries, including India, Turkey, and Kenya, offer e-visas for
+                  various
+                  travel purposes such as tourism, business, or medical reasons.
+                </p>
+              </section>
+
+              <section class="e-visa-section">
+                <h2 class="e-visa-subtitle">What is E-Visa Stamping?</h2>
+                <p class="e-visa-text">
+                  E-visa stamping is the process where immigration officers validate your online visa by physically
+                  stamping
+                  your passport upon arrival. This stamp ensures that your entry is authorized and confirms the terms of
+                  your
+                  stay.
+                </p>
+              </section>
+
+              <section class="e-visa-section">
+                <h2 class="e-visa-subtitle">Why is E-Visa Stamping Important?</h2>
+                <div class="e-visa-benefits">
+                  <div class="e-visa-benefit">
+                    <i class="fas fa-check-circle e-visa-icon"></i>
+                    <p><strong>Official Validation</strong>: The stamp ensures your entry is officially authorized,
+                      confirming
+                      your visa status.</p>
+                  </div>
+                  <div class="e-visa-benefit">
+                    <i class="fas fa-calendar-check e-visa-icon"></i>
+                    <p><strong>Entry Authorization</strong>: The stamp gives you permission to stay within the country
+                      for the
+                      duration specified in your e-visa.</p>
+                  </div>
+                  <div class="e-visa-benefit">
+                    <i class="fas fa-search e-visa-icon"></i>
+                    <p><strong>Trackable Information</strong>: The stamp contains critical details about your entry,
+                      which may
+                      be needed for future reference.</p>
+                  </div>
+                </div>
+              </section>
+
+
+              <section class="e-visa-section">
+                <h2 class="e-visa-subtitle">How E-Visa Stamping Works</h2>
+                <div class="e-visa-steps">
+                  <div class="e-visa-step">
+                    <div class="e-visa-step-icon">
+                      <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="e-visa-step-content">
+                      <strong>1. Apply for an E-Visa</strong>
+                      <p>Complete the online application and wait for approval. Ensure all details are accurate.</p>
+                    </div>
+                  </div>
+                  <div class="e-visa-step">
+                    <div class="e-visa-step-icon">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="e-visa-step-content">
+                      <strong>2. Arrive at the Border</strong>
+                      <p>Present your e-visa approval letter and passport at the immigration counter.</p>
+                    </div>
+                  </div>
+                  <div class="e-visa-step">
+                    <div class="e-visa-step-icon">
+                      <i class="fas fa-search"></i>
+                    </div>
+                    <div class="e-visa-step-content">
+                      <strong>3. Verification</strong>
+                      <p>The immigration officer verifies your details and may request additional documents.</p>
+                    </div>
+                  </div>
+                  <div class="e-visa-step">
+                    <div class="e-visa-step-icon">
+                      <i class="fas fa-stamp"></i>
+                    </div>
+                    <div class="e-visa-step-content">
+                      <strong>4. Stamp Your Passport</strong>
+                      <p>Once cleared, the officer stamps your passport, granting you entry into the country.</p>
+                    </div>
+                  </div>
+                  <div class="e-visa-step">
+                    <div class="e-visa-step-icon">
+                      <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="e-visa-step-content">
+                      <strong>5. Check Your Stamp</strong>
+                      <p>Ensure the dates and details on your stamp are correct to avoid any issues.</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+
+              <section class="e-visa-section">
+                <h2 class="e-visa-subtitle">Common Entry Points for E-Visa Stamping</h2>
+                <p class="e-visa-text">E-visa stamping commonly occurs at these entry points:</p>
+                <div class="e-visa-entry-points">
+                  <div class="e-visa-entry-point">
+                    <h3 class="e-visa-entry-title"><i class="fas fa-plane e-visa-icon"></i> Airports</h3>
+                    <p class="e-visa-entry-description">
+                      Most international airports feature dedicated counters for travelers with e-visas. This speeds up
+                      the
+                      entry process.
+                    </p>
+                  </div>
+                  <div class="e-visa-entry-point">
+                    <h3 class="e-visa-entry-title"><i class="fas fa-car e-visa-icon"></i> Land Borders</h3>
+                    <p class="e-visa-entry-description">
+                      E-visas can be validated at border crossings in some countries, enabling quick entry by road.
+                    </p>
+                  </div>
+                  <div class="e-visa-entry-point">
+                    <h3 class="e-visa-entry-title"><i class="fas fa-ship e-visa-icon"></i> Seaports</h3>
+                    <p class="e-visa-entry-description">
+                      If arriving by sea, travelers may need to have their e-visa stamped at designated immigration
+                      counters at
+                      seaports.
+                    </p>
+                  </div>
+                </div>
+              </section>
+
+
+              <section class="e-visa-section">
+                <h2 class="e-visa-subtitle">Tips for a Smooth E-Visa Stamping Process</h2>
+                <div class="e-visa-tips">
+                  <div class="e-visa-tip">
+                    <div class="e-visa-tip-icon">
+                      <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="e-visa-tip-content">
+                      <strong>1. Verify Approval</strong>
+                      <p>Ensure your e-visa is approved before traveling. Carry a printed copy for easy reference.</p>
+                    </div>
+                  </div>
+                  <div class="e-visa-tip">
+                    <div class="e-visa-tip-icon">
+                      <i class="fas fa-info-circle"></i>
+                    </div>
+                    <div class="e-visa-tip-content">
+                      <strong>2. Understand Entry Requirements</strong>
+                      <p>Research the specific entry requirements for the country you are visiting.</p>
+                    </div>
+                  </div>
+                  <div class="e-visa-tip">
+                    <div class="e-visa-tip-icon">
+                      <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="e-visa-tip-content">
+                      <strong>3. Allow Extra Time</strong>
+                      <p>Arrive early to account for potential wait times at immigration.</p>
+                    </div>
+                  </div>
+                  <div class="e-visa-tip">
+                    <div class="e-visa-tip-icon">
+                      <i class="fas fa-search"></i>
+                    </div>
+                    <div class="e-visa-tip-content">
+                      <strong>4. Check Your Stamp</strong>
+                      <p>Double-check the validity and details of the stamp to avoid complications during your stay.</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+
+              <footer class="e-visa-footer">
+                <p class="e-visa-footer-text">
+                  E-visa stamping is a crucial part of the entry process. Stay informed and prepared to ensure a smooth
+                  travel
+                  experience every time you enter a country with an e-visa.
+                </p>
+                <button class="btn btn-primary btn-lg mt-3 px-5 shadow" (click)="navigateToFormSection()">Know
+                  More</button>
+              </footer>
+            </div>
           </div>
-    
+
           <!-- Features Tab -->
-         
-          <div class="tab-pane fade" [class.show]="activeTab === 'features'" [class.active]="activeTab === 'features'" id="features" role="tabpanel" aria-labelledby="features-tab">
+
+          <div class="tab-pane fade" [class.show]="activeTab === 'features'" [class.active]="activeTab === 'features'"
+            id="features" role="tabpanel" aria-labelledby="features-tab">
             <div class="row">
               <div class="col-md-4 mb-4">
                 <div class="card h-100 shadow-lg border-0">
@@ -3002,7 +3224,8 @@
                     <h4 class="mt-3 text-primary">Safety & Security</h4>
                   </div>
                   <div class="card-body">
-                    <p>Travel with confidence knowing you are backed by high standards of safety and dedicated support teams.</p>
+                    <p>Travel with confidence knowing you are backed by high standards of safety and dedicated support
+                      teams.</p>
                   </div>
                 </div>
               </div>
@@ -3026,7 +3249,8 @@
                     <h4 class="mt-3 text-primary">Travel Ease</h4>
                   </div>
                   <div class="card-body">
-                    <p>Enjoy hassle-free travel with convenient options and pre-departure briefings to prepare you for your journey.</p>
+                    <p>Enjoy hassle-free travel with convenient options and pre-departure briefings to prepare you for
+                      your journey.</p>
                   </div>
                 </div>
               </div>
@@ -3058,19 +3282,22 @@
                 <h5 class="text-center">What Our Clients Say</h5>
                 <div class="testimonial mt-4">
                   <blockquote class="blockquote text-center">
-                    <p class="mb-0">"The best experience of my life! The guidance and support were exceptional. Highly recommend!"</p>
+                    <p class="mb-0">"The best experience of my life! The guidance and support were exceptional. Highly
+                      recommend!"</p>
                     <footer class="blockquote-footer">Aisha M.</footer>
                   </blockquote>
                 </div>
                 <div class="testimonial mt-4">
                   <blockquote class="blockquote text-center">
-                    <p class="mb-0">"Everything was well organized, and the accommodations were top-notch. Thank you for a wonderful journey!"</p>
+                    <p class="mb-0">"Everything was well organized, and the accommodations were top-notch. Thank you for
+                      a wonderful journey!"</p>
                     <footer class="blockquote-footer">Mohammed S.</footer>
                   </blockquote>
                 </div>
                 <div class="testimonial mt-4">
                   <blockquote class="blockquote text-center">
-                    <p class="mb-0">"I felt safe and well taken care of throughout my trip. The team was always available to help!"</p>
+                    <p class="mb-0">"I felt safe and well taken care of throughout my trip. The team was always
+                      available to help!"</p>
                     <footer class="blockquote-footer">Fatima R.</footer>
                   </blockquote>
                 </div>
@@ -3082,204 +3309,39 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="row mt-4">
               <div class="col-md-12">
                 <h5 class="text-center">Frequently Asked Questions</h5>
                 <div class="faq mt-4">
                   <h6>1. What is included in the packages?</h6>
-                  <p>Each package includes visa processing assistance, accommodation, transportation, meals, and religious guidance.</p>
+                  <p>Each package includes visa processing assistance, accommodation, transportation, meals, and
+                    religious guidance.</p>
                   <h6>2. How do I book a package?</h6>
-                  <p>You can book a package through our website or by contacting our customer service team for assistance.</p>
+                  <p>You can book a package through our website or by contacting our customer service team for
+                    assistance.</p>
                   <h6>3. Can I customize my package?</h6>
                   <p>Yes, we offer customizable packages to meet your specific needs and preferences.</p>
                   <h6>4. What if I have special dietary requirements?</h6>
-                  <p>Please inform us of any dietary restrictions at the time of booking, and we will accommodate your needs.</p>
+                  <p>Please inform us of any dietary restrictions at the time of booking, and we will accommodate your
+                    needs.</p>
                   <h6>5. Is travel insurance included?</h6>
-                  <p>Travel insurance is not included in the package but is highly recommended. We can assist you in obtaining it.</p>
+                  <p>Travel insurance is not included in the package but is highly recommended. We can assist you in
+                    obtaining it.</p>
                 </div>
               </div>
             </div>
           </div>
-          
-          
+
+
 
         </div>
       </div>
     </div>
 
-    <div class="e-visa-container mt-5">
-      <h1 class="e-visa-title">E-Visa Stamping: A Complete Guide</h1>
-    
-      <div class="e-visa-introduction">
-        <p class="e-visa-description">
-          E-visa stamping has become a crucial step for travelers entering many countries. This process verifies your entry and provides a seamless transition from online approval to physical entry at borders. Learn how e-visa stamping works, the common entry points, and key tips for a smooth experience.
-        </p>
-      </div>
-    
-      <section class="e-visa-section">
-        <h2 class="e-visa-subtitle">What is an E-Visa?</h2>
-        <p class="e-visa-text">
-          An <strong>e-visa</strong> is an official document that permits entry into a country, applied for online and usually received via email. Many countries, including India, Turkey, and Kenya, offer e-visas for various travel purposes such as tourism, business, or medical reasons.
-        </p>
-      </section>
-    
-      <section class="e-visa-section">
-        <h2 class="e-visa-subtitle">What is E-Visa Stamping?</h2>
-        <p class="e-visa-text">
-          E-visa stamping is the process where immigration officers validate your online visa by physically stamping your passport upon arrival. This stamp ensures that your entry is authorized and confirms the terms of your stay.
-        </p>
-      </section>
-    
-      <section class="e-visa-section">
-        <h2 class="e-visa-subtitle">Why is E-Visa Stamping Important?</h2>
-        <div class="e-visa-benefits">
-          <div class="e-visa-benefit">
-            <i class="fas fa-check-circle e-visa-icon"></i>
-            <p><strong>Official Validation</strong>: The stamp ensures your entry is officially authorized, confirming your visa status.</p>
-          </div>
-          <div class="e-visa-benefit">
-            <i class="fas fa-calendar-check e-visa-icon"></i>
-            <p><strong>Entry Authorization</strong>: The stamp gives you permission to stay within the country for the duration specified in your e-visa.</p>
-          </div>
-          <div class="e-visa-benefit">
-            <i class="fas fa-search e-visa-icon"></i>
-            <p><strong>Trackable Information</strong>: The stamp contains critical details about your entry, which may be needed for future reference.</p>
-          </div>
-        </div>
-      </section>
-      
-    
-      <section class="e-visa-section">
-        <h2 class="e-visa-subtitle">How E-Visa Stamping Works</h2>
-        <div class="e-visa-steps">
-          <div class="e-visa-step">
-            <div class="e-visa-step-icon">
-              <i class="fas fa-file-alt"></i>
-            </div>
-            <div class="e-visa-step-content">
-              <strong>1. Apply for an E-Visa</strong>
-              <p>Complete the online application and wait for approval. Ensure all details are accurate.</p>
-            </div>
-          </div>
-          <div class="e-visa-step">
-            <div class="e-visa-step-icon">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <div class="e-visa-step-content">
-              <strong>2. Arrive at the Border</strong>
-              <p>Present your e-visa approval letter and passport at the immigration counter.</p>
-            </div>
-          </div>
-          <div class="e-visa-step">
-            <div class="e-visa-step-icon">
-              <i class="fas fa-search"></i>
-            </div>
-            <div class="e-visa-step-content">
-              <strong>3. Verification</strong>
-              <p>The immigration officer verifies your details and may request additional documents.</p>
-            </div>
-          </div>
-          <div class="e-visa-step">
-            <div class="e-visa-step-icon">
-              <i class="fas fa-stamp"></i>
-            </div>
-            <div class="e-visa-step-content">
-              <strong>4. Stamp Your Passport</strong>
-              <p>Once cleared, the officer stamps your passport, granting you entry into the country.</p>
-            </div>
-          </div>
-          <div class="e-visa-step">
-            <div class="e-visa-step-icon">
-              <i class="fas fa-check-circle"></i>
-            </div>
-            <div class="e-visa-step-content">
-              <strong>5. Check Your Stamp</strong>
-              <p>Ensure the dates and details on your stamp are correct to avoid any issues.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-    
-      <section class="e-visa-section">
-        <h2 class="e-visa-subtitle">Common Entry Points for E-Visa Stamping</h2>
-        <p class="e-visa-text">E-visa stamping commonly occurs at these entry points:</p>
-        <div class="e-visa-entry-points">
-          <div class="e-visa-entry-point">
-            <h3 class="e-visa-entry-title"><i class="fas fa-plane e-visa-icon"></i> Airports</h3>
-            <p class="e-visa-entry-description">
-              Most international airports feature dedicated counters for travelers with e-visas. This speeds up the entry process.
-            </p>
-          </div>
-          <div class="e-visa-entry-point">
-            <h3 class="e-visa-entry-title"><i class="fas fa-car e-visa-icon"></i> Land Borders</h3>
-            <p class="e-visa-entry-description">
-              E-visas can be validated at border crossings in some countries, enabling quick entry by road.
-            </p>
-          </div>
-          <div class="e-visa-entry-point">
-            <h3 class="e-visa-entry-title"><i class="fas fa-ship e-visa-icon"></i> Seaports</h3>
-            <p class="e-visa-entry-description">
-              If arriving by sea, travelers may need to have their e-visa stamped at designated immigration counters at seaports.
-            </p>
-          </div>
-        </div>
-      </section>
-      
-    
-      <section class="e-visa-section">
-        <h2 class="e-visa-subtitle">Tips for a Smooth E-Visa Stamping Process</h2>
-        <div class="e-visa-tips">
-          <div class="e-visa-tip">
-            <div class="e-visa-tip-icon">
-              <i class="fas fa-check-circle"></i>
-            </div>
-            <div class="e-visa-tip-content">
-              <strong>1. Verify Approval</strong>
-              <p>Ensure your e-visa is approved before traveling. Carry a printed copy for easy reference.</p>
-            </div>
-          </div>
-          <div class="e-visa-tip">
-            <div class="e-visa-tip-icon">
-              <i class="fas fa-info-circle"></i>
-            </div>
-            <div class="e-visa-tip-content">
-              <strong>2. Understand Entry Requirements</strong>
-              <p>Research the specific entry requirements for the country you are visiting.</p>
-            </div>
-          </div>
-          <div class="e-visa-tip">
-            <div class="e-visa-tip-icon">
-              <i class="fas fa-clock"></i>
-            </div>
-            <div class="e-visa-tip-content">
-              <strong>3. Allow Extra Time</strong>
-              <p>Arrive early to account for potential wait times at immigration.</p>
-            </div>
-          </div>
-          <div class="e-visa-tip">
-            <div class="e-visa-tip-icon">
-              <i class="fas fa-search"></i>
-            </div>
-            <div class="e-visa-tip-content">
-              <strong>4. Check Your Stamp</strong>
-              <p>Double-check the validity and details of the stamp to avoid complications during your stay.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-    
-      <footer class="e-visa-footer">
-        <p class="e-visa-footer-text">
-          E-visa stamping is a crucial part of the entry process. Stay informed and prepared to ensure a smooth travel experience every time you enter a country with an e-visa.
-        </p>
-        <button class="btn btn-primary btn-lg mt-3 px-5 shadow" (click)="navigateToFormSection()">Know More</button>
-      </footer>
-    </div>
-    
-    
+
+
+
     <div class="mid_cnt mt-5">
       <div class="vis_stpsfll">
         <div class="tlesbvs">
