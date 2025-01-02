@@ -49,7 +49,7 @@ export class CommanLoginFormComponent implements OnInit {
       this.authService.register(formData).subscribe(
         (response) => {
           console.log('Register Successful:', response);
-          // this.router.navigate(['login']);
+          this.router.navigate(['login']);
 
         },
         (error) => {
@@ -60,7 +60,9 @@ export class CommanLoginFormComponent implements OnInit {
       this.authService.login(formData).subscribe(
         (response) => {
           console.log('Login Successful:', response);
-          this.router.navigate(['user-dashboard']);
+          this.router.navigate(['user-dashboard'], {
+            queryParams: { email: formData.emailOrUsername }
+          });
 
         },
         (error) => {

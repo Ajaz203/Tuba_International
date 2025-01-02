@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { ActivatedRoute } from '@angular/router';
+import { AuthService } from '../../../../shared/services/auth.service';
+
 
 interface FlightBooking {
   from: string;
@@ -18,6 +21,7 @@ interface FlightBooking {
 
 interface HotelBooking {
   name: string;
+  
   location: string;
   checkIn: Date;
   checkOut: Date;
@@ -355,11 +359,43 @@ export class UserDashboardComponent {
     });
   }
 
-  constructor() {
+  constructor(private route: ActivatedRoute, private authService: AuthService) {
     this.calculateTotalBookings();
     this.filteredFlights = [...this.flightBookings];
     this.filteredHotels = [...this.hotelBookings];
     this.filteredCabs = [...this.cabBookings];
+
+    // Subscribe to query params to get the email and fetch user data
+    this.route.queryParams.subscribe(params => {
+      if (params['email']) {
+        this.email = params['email'];
+        console.log('User email:', this.email);
+        
+        // Fetch user data by email
+        this.authService.getUserByEmail(this.email).subscribe(
+          (response: any) => {
+            if (response) {
+              console.log('User data fetched successfully:', response);
+              // Update component properties with user data
+              this.userName = response.username || response.name || 'Admin';
+              this.email = response.email;
+              this.phoneNumber = response.phone || '+1 234 567 8900';
+            } else {
+              console.log('No user data found for email:', this.email);
+            }
+          },
+          (error) => {
+            console.error('Error fetching user data:', error);
+            if (error.status) {
+              console.error('Status code:', error.status);
+            }
+            if (error.message) {
+              console.error('Error message:', error.message);
+            }
+          }
+        );
+      }
+    });
   }
 
   setActiveTab(tab: string): void {
