@@ -18,7 +18,7 @@
                       <h5>{{ details.country }}</h5>
                       <h2>{{ details.city }}</h2>
                       <h6>{{ details.description }}</h6>
-                      <a href="javascript:void(0)" class="btn btn-rounded color2" style="font-size: 16px;" [routerLink]="['/flight/listing/left-sidebar']">from {{ details.price | currencyPipe: hotelService.currency }}*</a>
+                      <a href="javascript:void(0)" class="btn btn-rounded color2" style="font-size: 16px;" [routerLink]="['/flight/booking/book-now']">from {{ details.price | currencyPipe: hotelService.currency }}*</a>
                     </div>
                   </div>
                 </div>

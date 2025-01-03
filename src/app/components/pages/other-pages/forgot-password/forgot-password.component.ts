@@ -17,7 +17,7 @@ import { FooterComponent } from '../../../../shared/components/footer/footer.com
   styleUrl: './forgot-password.component.scss',
 })
 export class ForgotPasswordComponent implements OnInit {
-  public bg_image = 'assets/images/inner-bg.jpg';
+  // public bg_image = 'assets/images/inner-bg.jpg';
   public title = 'log in';
   public parent = 'Home';
   public child = 'log in';
