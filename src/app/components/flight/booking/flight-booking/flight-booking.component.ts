@@ -18,6 +18,7 @@ import { BreadcrumbsComponent } from '../../../../shared/components/comman/bread
 import { FlightService } from '../../../../shared/services/flight.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FlightSelectionModalComponent } from '../widgets/flight-selection-modal/flight-selection-modal.component';
+import { HttpClient ,HttpResponse } from '@angular/common/http';
 
 interface BookingData {
     flight: any;
@@ -60,6 +61,7 @@ interface BookingData {
 export class FlightBookingComponent implements OnInit {
     flightForm: FormGroup;
     isSubmitting = false;
+    flights: any[] = [];
     minDate: string;
     isLoadingSummary = true;
     currentBooking: any = null;
@@ -71,10 +73,10 @@ export class FlightBookingComponent implements OnInit {
     bookingData: BookingData | null = null;
 
     public title = "Flight Booking";
-  public bg_image = "/assets/imges2/flight-breadcrumb2.jpg";
-  public parent = "Home";
-  public subParent = "flights";
-  public child = "review";
+    public bg_image = "/assets/imges2/flight-breadcrumb2.jpg";
+    public parent = "Home";
+    public subParent = "flights";
+    public child = "review";
 
     features = [
         {
@@ -147,6 +149,10 @@ export class FlightBookingComponent implements OnInit {
         travel_class: 1,
         adults: 1,
         children: 0,
+        name: '',
+        email: '',
+        phone: '',
+
     };
 
     // Add these properties to store error messages
@@ -157,16 +163,18 @@ export class FlightBookingComponent implements OnInit {
     constructor(
         private fb: FormBuilder,
         private flightService: FlightService,
-        public modalService: NgbModal
+        public modalService: NgbModal,
+        private http: HttpClient
     ) {
         this.initForm();
-    this.minDate = new Date().toISOString().split('T')[0];
-  }
+        this.minDate = new Date().toISOString().split('T')[0];
+    }
 
-  ngOnInit() {
-        document.documentElement.style.setProperty('--theme-color1','66, 145, 184');
-        document.documentElement.style.setProperty('--theme-color2','66, 145, 184');
-        
+    ngOnInit() {
+        document.documentElement.style.setProperty('--theme-color1', '66, 145, 184');
+        document.documentElement.style.setProperty('--theme-color2', '66, 145, 184');
+        this.fetchFlights(); 
+
         // Simulate loading delay
         setTimeout(() => {
             this.isLoadingSummary = false;
@@ -232,8 +240,8 @@ export class FlightBookingComponent implements OnInit {
                 Validators.email,
                 Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)
             ]],
-      phone: ['', [
-        Validators.required,
+            phone: ['', [
+                Validators.required,
                 Validators.pattern(/^[0-9]{10}$/)
             ]],
             travel_insurance: [false],
@@ -261,7 +269,7 @@ export class FlightBookingComponent implements OnInit {
         if (this._fromLocationErrorMsg) {
             return this._fromLocationErrorMsg;
         }
-        
+
         const control = this.fromLocationControl;
         if (control?.touched && control?.errors) {
             if (control.errors['required']) return 'Departure city is required';
@@ -329,18 +337,18 @@ export class FlightBookingComponent implements OnInit {
             if (control.hasError('pattern')) return 'Please enter a valid 10-digit number';
         }
         return null;
-      }
+    }
 
     onPhoneInput(event: Event) {
         const input = event.target as HTMLInputElement;
         input.value = input.value.replace(/\D/g, '').substring(0, 10);
         this.phoneControl?.setValue(input.value);
-  }
+    }
 
-  onSubmit() {
+    onSubmit() {
         if (this.flightForm.valid) {
             this.isSubmitting = true;
-            
+
             // Store the form data
             this.bookingData = {
                 flight: this.currentBooking,
@@ -358,16 +366,66 @@ export class FlightBookingComponent implements OnInit {
             };
 
             // Open modal with specific class
-            this.modalService.open(this.bookingSuccessModal, {
-                centered: true,
-                backdrop: 'static',
-                windowClass: 'booking-success-modal'
-            });
+            // this.modalService.open(this.bookingSuccessModal, {
+            //     centered: true,
+            //     backdrop: 'static',
+            //     windowClass: 'booking-success-modal'
+            // });
+
+            this.sendBookingData(this.bookingData);
+
         } else {
             this.showFormErrors();
         }
     }
 
+    private sendBookingData(bookingData: any) {
+        this.http.post('https://tuba-mongo-backend.onrender.com/bookFlight', bookingData, { observe: 'response' }).subscribe(
+            (response: HttpResponse<any>) => { // Specify the response type
+                // Check if the response status is 200
+                if (response.status === 201) {
+                    console.log('Booking data sent successfully:', response);
+                    this.openSuccessModal(); // Open success modal
+                } else {
+                    this.showErrorMessage('Unexpected response from the server.'); // Handle unexpected response
+                }
+                this.isSubmitting = false; // Reset submitting state
+            },
+            error => {
+                console.error('Error sending booking data:', error);
+                this.isSubmitting = false; // Reset submitting state
+                this.showErrorMessage('Failed to send booking data. Please try again.'); // Show error message
+            }
+        );
+    }  
+
+
+
+    private fetchFlights() {
+        this.http.get('https://tuba-mongo-backend.onrender.com/getBookingData', { observe: 'response' }).subscribe(
+            (response: HttpResponse<any>) => { // Specify the response type
+                if (response.status === 200) {
+                    this.flights = response.body; // Assuming the flight data is in the response body
+                    console.log('Fetched flights successfully:', this.flights);
+                } else {
+                    this.showErrorMessage('Unexpected response from the server while fetching flights.'); // Handle unexpected response
+                }
+            },
+            error => {
+                console.error('Error fetching flights:', error);
+                this.showErrorMessage('Failed to fetch flights. Please try again.'); // Show error message
+            }
+        );
+    }
+    private openSuccessModal() {
+        // Open the success modal
+        const modalRef = this.modalService.open(this.bookingSuccessModal, {
+            centered: true,
+            backdrop: 'static',
+            size: 'md',
+            windowClass: 'booking-success-modal'
+        });
+    }
     private showSuccessMessage() {
         // Add your success message logic here
         alert('Booking successful! Confirmation sent to your email.');
@@ -376,10 +434,10 @@ export class FlightBookingComponent implements OnInit {
     private showFormErrors() {
         Object.keys(this.flightForm.controls).forEach(key => {
             const control = this.flightForm.get(key);
-        if (control?.invalid) {
-          control.markAsTouched();
-        }
-      });
+            if (control?.invalid) {
+                control.markAsTouched();
+            }
+        });
     }
 
     ngOnDestroy() {
@@ -474,12 +532,12 @@ export class FlightBookingComponent implements OnInit {
     checkFormValidity() {
         if (this.currentStep === 1) {
             const routeControls = ['fromLocation', 'toLocation', 'departureDate', 'passengers'];
-            this.isFormValid = routeControls.every(control => 
+            this.isFormValid = routeControls.every(control =>
                 this.flightForm.get(control)?.valid
             );
         } else if (this.currentStep === 2) {
             const passengerControls = ['name', 'email', 'phone'];
-            this.isFormValid = passengerControls.every(control => 
+            this.isFormValid = passengerControls.every(control =>
                 this.flightForm.get(control)?.valid
             );
         }
@@ -495,8 +553,8 @@ export class FlightBookingComponent implements OnInit {
                 this.toSuggestions = [];
                 this.showToSuggestions = false;
             }
-      return;
-    }
+            return;
+        }
 
         this.flightService.autoSuggest({ query }).subscribe({
             next: (response: any) => {
@@ -561,7 +619,7 @@ export class FlightBookingComponent implements OnInit {
             windowClass: 'flight-selection-modal',
             modalDialogClass: 'flight-modal-dialog'
         });
-        
+
         modalRef.componentInstance.flights = flights;
 
         modalRef.result.then((selectedFlight) => {
@@ -572,56 +630,76 @@ export class FlightBookingComponent implements OnInit {
         }, (dismissReason) => {
             // Modal dismissed
         });
-  }
+    }
 
-  confirmBooking(bookingData: any): void {
-    this.selectedFlight = bookingData.flight;
-    // Process booking...
-    
-    // Show success modal
-    const modalRef = this.modalService.open(this.bookingSuccessModal, {
-        centered: true,
-        backdrop: 'static',
-        size: 'md',
-        windowClass: 'booking-success-modal'
-    });
-  }
+    confirmBooking(bookingData: any): void {
+        this.selectedFlight = bookingData.flight;
+        // Process booking...
 
-  downloadTicket(): void {
-    console.log('Downloading ticket for flight:', this.selectedFlight);
-    // Implement ticket download
-  }
+        // Show success modal
+        const modalRef = this.modalService.open(this.bookingSuccessModal, {
+            centered: true,
+            backdrop: 'static',
+            size: 'md',
+            windowClass: 'booking-success-modal'
+        });
+    }
 
-  resetAndCloseModal(): void {
-    // Reset the form
-    this.flightForm.reset();
-    
-    // Reset all form-related variables
-    this.currentStep = 1;
-    this.fromInputValue = '';
-    this.toInputValue = '';
-    this.showFromSuggestions = false;
-    this.showToSuggestions = false;
-    this.fromSuggestions = [];
-    this.toSuggestions = [];
-    this._fromLocationErrorMsg = '';
-    this._toLocationErrorMsg = '';
-    this._errorMessage = '';
-    this.isLoading = false;
-    this.isSubmitting = false;
-    
-    // Set default values if needed
-    this.flightForm.patchValue({
-        passengers: 1,
-        travel_insurance: false,
-        airport_pickup: false
-    });
+    public downloadTicket() {
+        const ticketId = this.selectedFlight?.id; // Assuming you have a way to identify the ticket
+        if (ticketId) {
+            this.http.get(`'https://tuba-mongo-backend.onrender.com/bookFlight'/downloadTicket/${ticketId}`, { responseType: 'blob' }).subscribe(
+                (response: Blob) => {
+                    const blob = new Blob([response], { type: 'application/pdf' });
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'ticket.pdf'; // Specify the name of the downloaded file
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    window.URL.revokeObjectURL(url); // Clean up
+                },
+                error => {
+                    console.error('Error downloading ticket:', error);
+                    this.showErrorMessage('Failed to download the ticket. Please try again.'); // Show error message
+                }
+            );
+        } else {
+            this.showErrorMessage('No ticket selected for download.'); // Handle case where no ticket is selected
+        }
+    }
 
-    // Close the modal
-    this.modalService.dismissAll();
-  }
+    resetAndCloseModal(): void {
+        // Reset the form
+        this.flightForm.reset();
 
-  closeModal(): void {
-    this.resetAndCloseModal();
-  }
+        // Reset all form-related variables
+        this.currentStep = 1;
+        this.fromInputValue = '';
+        this.toInputValue = '';
+        this.showFromSuggestions = false;
+        this.showToSuggestions = false;
+        this.fromSuggestions = [];
+        this.toSuggestions = [];
+        this._fromLocationErrorMsg = '';
+        this._toLocationErrorMsg = '';
+        this._errorMessage = '';
+        this.isLoading = false;
+        this.isSubmitting = false;
+
+        // Set default values if needed
+        this.flightForm.patchValue({
+            passengers: 1,
+            travel_insurance: false,
+            airport_pickup: false
+        });
+
+        // Close the modal
+        this.modalService.dismissAll();
+    }
+
+    closeModal(): void {
+        this.resetAndCloseModal();
+    }
 }
