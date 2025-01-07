@@ -49,11 +49,6 @@
                         </div>
                     </div>
 
-                    <!-- Add this after the progress-tracker -->
-                    <div class="error-toast" *ngIf="errorMessage">
-                        <i class="fas fa-exclamation-circle"></i>
-                        {{ errorMessage }}
-                    </div>
 
                     <!-- Add this near the top of your form -->
                     <div class="loading-overlay" *ngIf="isLoading">
@@ -70,19 +65,15 @@
                             <div class="floating-input">
                                 <div class="input-wrapper">
                                     <i class="fas fa-plane-departure"></i>
-                                    <input type="text" 
-                                           formControlName="fromLocation"
-                                           [(ngModel)]="fromInputValue"
-                                           (input)="onInput('from', $event)"
-                                           placeholder="From"
-                                           [class.is-invalid]="fromLocationControl.invalid && fromLocationControl.touched">
+                                    <input type="text" formControlName="fromLocation" [(ngModel)]="fromInputValue"
+                                        (input)="onInput('from', $event)" placeholder="From"
+                                        [class.is-invalid]="fromLocationControl.invalid && fromLocationControl.touched">
                                     <div class="input-glow"></div>
                                 </div>
                                 <!-- Location Suggestions -->
                                 <div class="location-suggestions" *ngIf="showFromSuggestions">
-                                    <div class="suggestion-item" 
-                                         *ngFor="let suggestion of fromSuggestions"
-                                         (click)="selectFromSuggestion(suggestion)">
+                                    <div class="suggestion-item" *ngFor="let suggestion of fromSuggestions"
+                                        (click)="selectFromSuggestion(suggestion)">
                                         <i class="fas fa-map-marker-alt"></i>
                                         <div class="suggestion-content">
                                             <div class="city">{{suggestion.name}}</div>
@@ -96,19 +87,15 @@
                             <div class="floating-input">
                                 <div class="input-wrapper">
                                     <i class="fas fa-plane-arrival"></i>
-                                    <input type="text" 
-                                           formControlName="toLocation"
-                                           [(ngModel)]="toInputValue"
-                                           (input)="onInput('to', $event)"
-                                           placeholder="To"
-                                           [class.is-invalid]="toLocationControl.invalid && toLocationControl.touched">
+                                    <input type="text" formControlName="toLocation" [(ngModel)]="toInputValue"
+                                        (input)="onInput('to', $event)" placeholder="To"
+                                        [class.is-invalid]="toLocationControl.invalid && toLocationControl.touched">
                                     <div class="input-glow"></div>
                                 </div>
                                 <!-- Location Suggestions -->
                                 <div class="location-suggestions" *ngIf="showToSuggestions">
-                                    <div class="suggestion-item" 
-                                         *ngFor="let suggestion of toSuggestions"
-                                         (click)="selectToSuggestion(suggestion)">
+                                    <div class="suggestion-item" *ngFor="let suggestion of toSuggestions"
+                                        (click)="selectToSuggestion(suggestion)">
                                         <i class="fas fa-map-marker-alt"></i>
                                         <div class="suggestion-content">
                                             <div class="city">{{suggestion.name}}</div>
@@ -123,8 +110,7 @@
                                 <div class="floating-input">
                                     <div class="input-wrapper">
                                         <i class="fas fa-calendar"></i>
-                                        <input type="date" formControlName="departureDate" 
-                                            [min]="minDate"
+                                        <input type="date" formControlName="departureDate" [min]="minDate"
                                             [class.is-invalid]="departureDateControl?.invalid && departureDateControl?.touched">
                                         <div class="input-glow"></div>
                                     </div>
@@ -134,8 +120,7 @@
                                 <div class="floating-input">
                                     <div class="input-wrapper">
                                         <i class="fas fa-users"></i>
-                                        <input type="number" formControlName="passengers" 
-                                            placeholder="Passengers"
+                                        <input type="number" formControlName="passengers" placeholder="Passengers"
                                             min="1" max="9"
                                             [class.is-invalid]="passengersControl?.invalid && passengersControl?.touched">
                                         <div class="input-glow"></div>
@@ -148,12 +133,11 @@
                         <!-- Passenger Details Fields (Step 2) -->
                         <div class="form-fields" [class.active]="currentStep === 2">
                             <h3 class="section-title">Passenger Details</h3>
-                            
+
                             <div class="floating-input">
                                 <div class="input-wrapper">
                                     <i class="fas fa-user"></i>
-                                    <input type="text" formControlName="name" 
-                                        placeholder="Full Name"
+                                    <input type="text" formControlName="name" placeholder="Full Name"
                                         [class.is-invalid]="nameControl?.invalid && nameControl?.touched">
                                     <div class="input-glow"></div>
                                 </div>
@@ -164,8 +148,7 @@
                                 <div class="floating-input">
                                     <div class="input-wrapper">
                                         <i class="fas fa-envelope"></i>
-                                        <input type="email" formControlName="email" 
-                                            placeholder="Email Address"
+                                        <input type="email" formControlName="email" placeholder="Email Address"
                                             [class.is-invalid]="emailControl?.invalid && emailControl?.touched">
                                         <div class="input-glow"></div>
                                     </div>
@@ -175,8 +158,7 @@
                                 <div class="floating-input">
                                     <div class="input-wrapper">
                                         <i class="fas fa-phone"></i>
-                                        <input type="tel" formControlName="phone" 
-                                            placeholder="Phone Number"
+                                        <input type="tel" formControlName="phone" placeholder="Phone Number"
                                             (input)="onPhoneInput($event)"
                                             [class.is-invalid]="phoneControl?.invalid && phoneControl?.touched">
                                         <div class="input-glow"></div>
@@ -234,22 +216,17 @@
 
                         <!-- Form Navigation -->
                         <div class="form-actions">
-                            <button type="button" class="neo-button" 
-                                    *ngIf="currentStep > 1"
-                                    (click)="previousStep()">
+                            <button type="button" class="neo-button" *ngIf="currentStep > 1" (click)="previousStep()">
                                 <i class="fas fa-arrow-left"></i>
                                 <span>Back</span>
                             </button>
-                            <button type="button" class="neo-button primary" 
-                                    *ngIf="currentStep < 3"
-                                    (click)="nextStep()"
-                                    [class.disabled]="!isFormValid">
+                            <button type="button" class="neo-button primary" *ngIf="currentStep < 3"
+                                (click)="nextStep()" [class.disabled]="!isFormValid">
                                 <span>{{ isFormValid ? 'Next' : 'Complete Required Fields' }}</span>
                                 <i class="fas fa-arrow-right"></i>
                             </button>
-                            <button type="submit" class="neo-button primary" 
-                                    *ngIf="currentStep === 3"
-                                    [disabled]="!flightForm.valid || isSubmitting">
+                            <button type="submit" class="neo-button primary" *ngIf="currentStep === 3"
+                                [disabled]="!flightForm.valid || isSubmitting">
                                 <span>{{ isSubmitting ? 'Processing...' : 'Book Now' }}</span>
                                 <div class="button-glow"></div>
                             </button>
@@ -299,8 +276,8 @@
                             </div>
                         </div>
                     </div>
-                      </div>
-                     
+                </div>
+
                 <!-- Important Information Section -->
                 <div class="booking-info">
                     <h3 class="info-title">Essential Travel Information</h3>
@@ -332,20 +309,18 @@
                                 <h4>Restricted Items</h4>
                                 <p>View complete list of prohibited items</p>
                             </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Right Column: Summary -->
             <div class="col-lg-5">
-                <app-flight-booking-summary 
-                    [flightDetails]="currentBooking"
-                    [isLoading]="isLoadingSummary">
+                <app-flight-booking-summary [flightDetails]="currentBooking" [isLoading]="isLoadingSummary">
                 </app-flight-booking-summary>
             </div>
-      </div>
-  </div>
+        </div>
+    </div>
 </section>
 
 <!-- Add this after your existing booking section -->
@@ -470,6 +445,8 @@
     </div>
 </div>
 
+
+
 <!-- Simplified Success Modal Template -->
 <ng-template #bookingSuccessModal>
     <div class="modal-content neo-card modal-success">
@@ -480,7 +457,7 @@
                     <i class="fas fa-check"></i>
                 </div>
             </div>
-            
+
             <h2 class="glow-text">Booking Confirmed!</h2>
 
             <!-- Flight Route Visualization -->
@@ -530,14 +507,55 @@
 
             <!-- Action Buttons -->
             <div class="action-buttons">
-                <button class="btn-download neo-button primary" (click)="downloadTicket()">
+                <!-- <button class="btn-download neo-button primary" (click)="downloadTicket()">
                     <i class="fas fa-download"></i>
                     <span>Download Ticket</span>
-                </button>
+                </button> -->
                 <button class="btn-done neo-button" (click)="closeModal()">
                     <span>Close</span>
                 </button>
             </div>
+        </div>
+    </div>
+</ng-template>
+
+
+<!-- Existing HTML content -->
+
+<!-- Error Modal -->
+<ng-template #errorModal let-modal>
+    <div class="modal-content neo-card modal-success">
+        <div class="modal-body">
+       
+            <div class="flight-route-visual">
+                <div class="departure-point">
+                    <div class="location-details">
+                        <h4>{{bookingData?.journey?.from}}</h4>
+                        <p>{{bookingData?.journey?.date | date}}</p>
+                    </div>
+                </div>
+                <div class="route-line">
+                    <i class="fas fa-plane"></i>
+                </div>
+                <div class="arrival-point">
+                    <div class="location-details">
+                        <h4>{{bookingData?.journey?.to}}</h4>
+                        <p>{{bookingData?.flight?.duration }}</p>
+                    </div>
+                </div>
+            </div>
+
+
+        <div class="modal-body">
+            <p >{{ errorMessage }}</p>
+        </div>
+       
+        <div class="action-buttons">
+           
+            <button class="btn-done neo-button" (click)="closeModal()">
+                <span>Close</span>
+            </button>
+        </div>
         </div>
     </div>
 </ng-template>
