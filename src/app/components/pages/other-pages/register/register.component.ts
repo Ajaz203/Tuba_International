@@ -15,7 +15,7 @@ import { HeaderComponent } from '../../../../shared/components/header/header.com
 })
 export class RegisterComponent {
   
-  public bg_image = 'assets/images/inner-bg.jpg';
+  public bg_image = 'assets/images/inner-pages/coming-soon2.jpg';
   public title = 'sign up';
   public parent = 'Home';
   public child = 'sign up';

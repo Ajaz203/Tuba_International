@@ -426,7 +426,7 @@
           "team": [
             {
               "id": 1,
-              "name": "Julia Holmes",
+              "name": "Qari Mohd Intezar",
               "image": "assets/images/inner-pages/team/1.jpg",
               "designation": "CEO"
             },
@@ -512,10 +512,10 @@
           "icon": "map-marker-alt",
           "details": [
             {
-              "data": "549 Sulphur Springs Road"
+              "data": "Gazala Manzil, Near Jama Masjid, Rajpur Nawada"
             },
             {
-              "data": "Downers Grove, IL 60515"
+              "data": "Distt. Bijnor(U.P.) Pin-246732"
             }
           ]
         },
@@ -538,23 +538,10 @@
           "icon": "phone-alt",
           "details": [
             {
-              "data": "+91 123 - 456 - 7890"
+              "data": "+91 9643306786"
             },
             {
-              "data": "+86 163 - 451 - 7894"
-            }
-          ]
-        },
-        {
-          "id": 4,
-          "title": "fax",
-          "icon": "fax",
-          "details": [
-            {
-              "data": "+1 212 999 8888"
-            },
-            {
-              "data": "+44 1-2222 8888"
+              "data": "+91 9643406786"
             }
           ]
         }

@@ -177,7 +177,7 @@ export class FlightSearchBoxComponent {
       next: (response: any) => {
         console.log('Flight Response:', response);
         this.flightResults = response.flights || [];
-        this.openSuccessModal();
+        // this.openSuccessModal();
         this.isLoading = false;
       },
       error: (error) => {
@@ -208,16 +208,16 @@ export class FlightSearchBoxComponent {
     this.isTraveler = false;
   }
   
-  openSuccessModal(): void {
-    const modalRef = this.modalService.open(this.successModal, {
-      centered: true,
-      backdrop: 'static',
-      size: 'xl',
-      windowClass: 'flight-search-modal wide-modal',
-      scrollable: true,
-      modalDialogClass: 'modal-dialog-scrollable'
-    });
-  }
+  // openSuccessModal(): void {
+  //   const modalRef = this.modalService.open(this.successModal, {
+  //     centered: true,
+  //     backdrop: 'static',
+  //     size: 'xl',
+  //     windowClass: 'flight-search-modal wide-modal',
+  //     scrollable: true,
+  //     modalDialogClass: 'modal-dialog-scrollable'
+  //   });
+  // }
 
   openBookingModal(flight: any): void {
     this.modalService.dismissAll();

@@ -73,10 +73,12 @@ export class CommanLoginFormComponent implements OnInit {
   }
 
   toggleType(): void {
-    this.type = this.type === 'register' ? 'login' : 'register';
-    this.ngOnInit(); // Reset form based on new type
+    // this.type = this.type === 'register' ? 'login' : 'register';
+    this.router.navigate(['/page/other-pages/register']);
+    this.ngOnInit(); 
   }
   goToForgotPassword(): void {
     this.router.navigate(['forgot-password']);
   }
+ 
 }

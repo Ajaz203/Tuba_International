@@ -28,149 +28,149 @@ export class NavService {
 
   constructor() { }
 
-  
+
   public MENUITEMS: Menu[] = [
-    
-    
+
+
     {
       title: "Home",
       type: 'link',
-      path: '/home/mix-demo/classic', 
-      icon: 'home', 
-      level: 1  
-  },
-      
-      // children: [
-      //   {
-      //     title: 'Hotel Demo',
-      //     type: 'sub',
-      //     active: false,
-      //     level: 2,
-      //     children: [
-      //       {
-      //         title: 'classic',
-      //         path: '/home/hotel/classic',
-      //         type: 'link'
-      //       },
-      //       {
-      //         title: 'minimal',
-      //         path: '/home/hotel/minimal',
-      //         type: 'link'
-      //       },
-      //       {
-      //         title: 'vector',
-      //         path: '/home/hotel/vector',
-      //         type: 'link'
-      //       }
-      //     ]
-      //   },
-      //   {
-      //     title: 'Tour Demo',
-      //     type: 'sub',
-      //     active: false,
-      //     level: 2,
-      //     children: [
-      //       {
-      //         title: 'modern',
-      //         path: '/home/tour/modern',
-      //         type: 'link'
-      //       },
-      //       {
-      //         title: 'trending',
-      //         path: '/home/tour/trending',
-      //         type: 'link'
-      //       },
-      //       {
-      //         title: 'Vector demo',
-      //         path: '/home/tour/vector',
-      //         type: 'link'
-      //       }
-      //     ]
-      //   },
-      //   {
-      //     title: 'Cab Demo',
-      //     type: 'sub',
-      //     active: false,
-      //     level: 2,
-      //     children: [
-      //       {
-      //         title: 'modern',
-      //         path: '/home/cab/modern',
-      //         type: 'link'
-      //       },
-      //       {
-      //         title: 'classic',
-      //         path: '/home/cab/classic',
-      //         type: 'link'
-      //       },
-      //       {
-      //         title: 'Map demo',
-      //         path: '/home/cab/map-demo',
-      //         type: 'link'
-      //       }
-      //     ]
-      //   },
-      //   {
-      //     title: 'Flight Demo',
-      //     type: 'sub',
-      //     active: false,
-      //     level: 2,
-      //     children: [
-      //       {
-      //         title: 'modern',
-      //         path: '/home/flight/modern',
-      //         type: 'link'
-      //       },
-      //       {
-      //         title: 'minimal',
-      //         path: '/home/flight/minimal',
-      //         type: 'link'
-      //       },
-      //       {
-      //         title: 'left sidebar',
-      //         path: '/home/flight/left-sidebar',
-      //         type: 'link'
-      //       }
-      //     ]
-      //   },
-      //   {
-      //     title: 'Restaurant Demo',
-      //     type: 'sub',
-      //     active: false,
-      //     level: 2,
-      //     children: [
-      //       {
-      //         title: 'classic',
-      //         path: '/home/restaurant/classic',
-      //         type: 'link'
-      //       },
-      //       {
-      //         title: 'minimal',
-      //         path: '/home/restaurant/minimal',
-      //         type: 'link'
-      //       },
-      //     ]
-      //   },
-      //   {
-      //     title: 'Mix Demo',
-      //     type: 'sub',
-      //     active: false,
-      //     level: 2,
-      //     children: [
-      //       {
-      //         title: 'classic',
-      //         path: '/home/mix-demo/classic',
-      //         type: 'link'
-      //       },
-      //       {
-      //         title: 'minimal',
-      //         path: '/home/mix-demo/minimal',
-      //         type: 'link'
-      //       },
-      //     ]
-      //   },
-      // ]
-    
+      path: '/home/mix-demo/classic',
+      icon: 'home',
+      level: 1
+    },
+
+    // children: [
+    //   {
+    //     title: 'Hotel Demo',
+    //     type: 'sub',
+    //     active: false,
+    //     level: 2,
+    //     children: [
+    //       {
+    //         title: 'classic',
+    //         path: '/home/hotel/classic',
+    //         type: 'link'
+    //       },
+    //       {
+    //         title: 'minimal',
+    //         path: '/home/hotel/minimal',
+    //         type: 'link'
+    //       },
+    //       {
+    //         title: 'vector',
+    //         path: '/home/hotel/vector',
+    //         type: 'link'
+    //       }
+    //     ]
+    //   },
+    //   {
+    //     title: 'Tour Demo',
+    //     type: 'sub',
+    //     active: false,
+    //     level: 2,
+    //     children: [
+    //       {
+    //         title: 'modern',
+    //         path: '/home/tour/modern',
+    //         type: 'link'
+    //       },
+    //       {
+    //         title: 'trending',
+    //         path: '/home/tour/trending',
+    //         type: 'link'
+    //       },
+    //       {
+    //         title: 'Vector demo',
+    //         path: '/home/tour/vector',
+    //         type: 'link'
+    //       }
+    //     ]
+    //   },
+    //   {
+    //     title: 'Cab Demo',
+    //     type: 'sub',
+    //     active: false,
+    //     level: 2,
+    //     children: [
+    //       {
+    //         title: 'modern',
+    //         path: '/home/cab/modern',
+    //         type: 'link'
+    //       },
+    //       {
+    //         title: 'classic',
+    //         path: '/home/cab/classic',
+    //         type: 'link'
+    //       },
+    //       {
+    //         title: 'Map demo',
+    //         path: '/home/cab/map-demo',
+    //         type: 'link'
+    //       }
+    //     ]
+    //   },
+    //   {
+    //     title: 'Flight Demo',
+    //     type: 'sub',
+    //     active: false,
+    //     level: 2,
+    //     children: [
+    //       {
+    //         title: 'modern',
+    //         path: '/home/flight/modern',
+    //         type: 'link'
+    //       },
+    //       {
+    //         title: 'minimal',
+    //         path: '/home/flight/minimal',
+    //         type: 'link'
+    //       },
+    //       {
+    //         title: 'left sidebar',
+    //         path: '/home/flight/left-sidebar',
+    //         type: 'link'
+    //       }
+    //     ]
+    //   },
+    //   {
+    //     title: 'Restaurant Demo',
+    //     type: 'sub',
+    //     active: false,
+    //     level: 2,
+    //     children: [
+    //       {
+    //         title: 'classic',
+    //         path: '/home/restaurant/classic',
+    //         type: 'link'
+    //       },
+    //       {
+    //         title: 'minimal',
+    //         path: '/home/restaurant/minimal',
+    //         type: 'link'
+    //       },
+    //     ]
+    //   },
+    //   {
+    //     title: 'Mix Demo',
+    //     type: 'sub',
+    //     active: false,
+    //     level: 2,
+    //     children: [
+    //       {
+    //         title: 'classic',
+    //         path: '/home/mix-demo/classic',
+    //         type: 'link'
+    //       },
+    //       {
+    //         title: 'minimal',
+    //         path: '/home/mix-demo/minimal',
+    //         type: 'link'
+    //       },
+    //     ]
+    //   },
+    // ]
+
     {
       title: "flight",
       type: "sub",
@@ -194,7 +194,7 @@ export class NavService {
           type: 'link',
           level: 3,
         },
-       
+
         // {
         //   title: "search",
         //   type: "sub",
@@ -439,7 +439,7 @@ export class NavService {
           title: 'Stays',
           path: '/home/hotel/classic',
           type: 'link'
-          
+
         },
         // {
         //   title: 'book Now',
@@ -1169,7 +1169,7 @@ export class NavService {
           title: 'Visa Details',
           path: '/instant-visa',
           type: 'link',
-          
+
         },
         {
           title: 'Apply Visa',
@@ -1178,454 +1178,497 @@ export class NavService {
         },
       ]
     },
-
     {
-      title: 'pages',
-      type: 'sub',
-      level: 1,
+      title: "Pages",
+      type: "sub",
       active: false,
-      megaMenu: true,
+      level: 1,
       children: [
         {
-          title: 'portfolio',
-          active: false,
-          children: [
-            {
-              title: '2 grid',
-              path: '/page/portfolio/2-grid',
-              type: 'link',
-            },
-            {
-              title: '3 grid',
-              path: '/page/portfolio/3-grid',
-              type: 'link',
-            },
-            {
-              title: '4 grid',
-              path: '/page/portfolio/4-grid',
-              type: 'link',
-            },
-            {
-              title: '2 grid title',
-              path: '/page/portfolio/2-grid-title',
-              type: 'link',
-            },
-            {
-              title: '3 grid title',
-              path: '/page/portfolio/3-grid-title',
-              type: 'link',
-            },
-            {
-              title: '4 grid title',
-              path: '/page/portfolio/4-grid-title',
-              type: 'link',
-            },
-            {
-              title: '3 masonry',
-              path: '/page/portfolio/3-masonry',
-              type: 'link',
-            },
-            {
-              title: '4 masonry',
-              path: '/page/portfolio/4-masonry',
-              type: 'link',
-            },
-            {
-              title: 'parallax',
-              path: '/page/portfolio/parallax',
-              type: 'link',
-            },
-            {
-              title: 'center slides',
-              path: '/page/portfolio/center-slide',
-              type: 'link',
-            },
-            {
-              title: 'creative 1',
-              path: '/page/portfolio/creative-1',
-              type: 'link',
-            },
-            {
-              title: 'creative 2',
-              path: '/page/portfolio/creative-2',
-              type: 'link',
-            },
-            {
-              title: 'creative 3',
-              path: '/page/portfolio/creative-3',
-              type: 'link',
-              badgeIcon: true,
-            },
-            {
-              title: 'creative 4',
-              path: '/page/portfolio/creative-4',
-              type: 'link',
-            }
-          ],
+          title: 'About us',
+          path: '/page/other-pages/about-us-2',
+          type: 'link',
         },
         {
-          title: 'blog page',
-          active: false,
-          children: [
-            {
-              title: 'left sidebar',
-              path: '/page/blog-page/left-sidebar',
-              type: 'link',
-            },
-            {
-              title: 'right sidebar',
-              path: '/page/blog-page/right-sidebar',
-              type: 'link',
-            },
-            {
-              title: 'no sidebar',
-              path: '/page/blog-page/no-sidebar',
-              type: 'link',
-            },
-            {
-              title: 'creative left sidebar',
-              path: '/page/blog-page/creative-left-sidebar',
-              type: 'link',
-            },
-            {
-              title: 'creative right sidebar',
-              path: '/page/blog-page/creative-right-sidebar',
-              type: 'link',
-            },
-            {
-              title: 'creative  no sidebar',
-              path: '/page/blog-page/creative-no-sidebar',
-              type: 'link',
-            },
-            {
-              title: 'list left sidebar',
-              path: '/page/blog-page/list-left-sidebar',
-              type: 'link',
-            },
-            {
-              title: 'list right sidebar',
-              path: '/page/blog-page/list-right-sidebar',
-              type: 'link',
-            },
-            {
-              title: 'list no sidebar',
-              path: '/page/blog-page/list-no-sidebar',
-              type: 'link',
-            },
-            {
-              title: 'masonry left sidebar',
-              path: '/page/blog-page/masonry-left-sidebar',
-              type: 'link',
-            },
-            {
-              title: 'masonry right sidebar',
-              path: '/page/blog-page/masonry-right-sidebar',
-              type: 'link',
-            },
-            {
-              title: 'masonry no sidebar',
-              path: '/page/blog-page/masonry-no-sidebar',
-              type: 'link',
-            },
-            {
-              title: 'mix list left sidebar',
-              path: '/page/blog-page/mix-list-left-sidebar',
-              type: 'link',
-            },
-            {
-              title: 'mix list right sidebar',
-              path: '/page/blog-page/mix-list-right-sidebar',
-              type: 'link',
-            },
-            {
-              title: 'mix grid left sidebar',
-              path: '/page/blog-page/mix-grid-left-sidebar',
-              type: 'link',
-            },
-            {
-              title: 'mix grid right sidebar',
-              path: '/page/blog-page/mix-grid-right-sidebar',
-              type: 'link',
-            },
-          ],
+          title: 'contact us',
+          path: '/page/other-pages/contact-us-1',
+          type: 'link',
         },
         {
-          section: [
-            {
-              title: 'blog detail pages',
-              active: false,
-              children: [
-                {
-                  title: 'left sidebar',
-                  path: '/page/blog-detail/left-sidebar',
-                  type: 'link',
-                },
-                {
-                  title: 'right sidebar',
-                  path: '/page/blog-detail/right-sidebar',
-                  type: 'link',
-                },
-                {
-                  title: 'no sidebar',
-                  path: '/page/blog-detail/no-sidebar',
-                  type: 'link',
-                },
-                {
-                  title: 'detail with gallery',
-                  path: '/page/blog-detail/detail-with-gallery',
-                  type: 'link',
-                },
-                {
-                  title: 'detail with video',
-                  path: '/page/blog-detail/detail-with-video',
-                  type: 'link',
-                },
-              ],
-            },
-            {
-              title: 'elements - filter',
-              active: false,
-              children: [
-                {
-                  title: 'sidebar',
-                  path: '/page/element-filter/sidebar',
-                  type: 'link',
-                },
-                {
-                  title: 'popup',
-                  path: '/page/element-filter/popup',
-                  type: 'link',
-                },
-                {
-                  title: 'slide down',
-                  path: '/page/element-filter/slide-down',
-                  type: 'link',
-                },
-                {
-                  title: 'top filter',
-                  path: '/page/element-filter/top-filter',
-                  type: 'link',
-                },
-              ],
-            },
-            {
-              title: 'elements - breadcrumb',
-              active: false,
-              children: [
-                {
-                  title: 'basic',
-                  path: '/page/element-breadcrumb/basic',
-                  type: 'link',
-                },
-                {
-                  title: 'image with effect',
-                  path: '/page/element-breadcrumb/image-with-effect',
-                  type: 'link',
-                },
-                {
-                  title: 'right content',
-                  path: '/page/element-breadcrumb/right-content',
-                  type: 'link',
-                },
-                {
-                  title: 'only image',
-                  path: '/page/element-breadcrumb/only-image',
-                  type: 'link',
-                },
-                {
-                  title: 'with searchbar',
-                  path: '/page/element-breadcrumb/with-searchbar',
-                  type: 'link',
-                },
-                {
-                  title: 'bird flying',
-                  path: '/page/element-breadcrumb/bird-flying',
-                  type: 'link',
-                },
-              ],
-            },
-          ],
+          title: 'log in',
+          path: '/page/other-pages/log-in',
+          type: 'link',
         },
         {
-          section: [
-            {
-              title: 'other pages',
-              active: false,
-              children: [
-                {
-                  title: 'About us 1',
-                  path: '/page/other-pages/about-us-1',
-                  type: 'link',
-                },
-                {
-                  title: 'About us 2',
-                  path: '/page/other-pages/about-us-2',
-                  type: 'link',
-                },
-                {
-                  title: 'contact us 1',
-                  path: '/page/other-pages/contact-us-1',
-                  type: 'link',
-                },
-                {
-                  title: 'contact us 2',
-                  path: '/page/other-pages/contact-us-2',
-                  type: 'link',
-                },
-                {
-                  title: 'contact us 3',
-                  path: '/page/other-pages/contact-us-3',
-                  type: 'link',
-                },
-                {
-                  title: 'coming soon 1',
-                  path: '/page/other-pages/coming-soon-1',
-                  type: 'link',
-                },
-                {
-                  title: 'coming soon 2',
-                  path: '/page/other-pages/coming-soon-2',
-                  type: 'link',
-                },
-                {
-                  title: 'coming soon 3',
-                  path: '/page/other-pages/coming-soon-3',
-                  type: 'link',
-                },
-                {
-                  title: '404',
-                  path: '/page/other-pages/404',
-                  type: 'link',
-                },
-                {
-                  title: 'FAQ',
-                  path: '/page/other-pages/faq',
-                  type: 'link',
-                },
-                {
-                  title: 'log in',
-                  path: '/page/other-pages/log-in',
-                  type: 'link',
-                },
-                {
-                  title: 'register',
-                  path: '/page/other-pages/register',
-                  type: 'link',
-                },
-                {
-                  title: 'user dashboard',
-                  path: '/page/other-pages/user-dashboard',
-                  type: 'link',
-                  badgeIcon: true,
-                },
-              ],
-            },
-            {
-              title: 'Email template',
-              active: false,
-              children: [
-                {
-                  title: 'offer',
-                  path: 'https://themes.pixelstrap.com/rica/email-template/offer.html',
-                  type: 'extTabLink',
-                },
-                {
-                  title: 'confirmation',
-                  path: 'https://themes.pixelstrap.com/rica/email-template/confirmation.html',
-                  type: 'extTabLink',
-                },
-                {
-                  title: 'thank you',
-                  path: 'https://themes.pixelstrap.com/rica/email-template/thankyou.html',
-                  type: 'extTabLink',
-                },
-              ],
-            },
-          ],
+          title: 'register',
+          path: '/page/other-pages/register',
+          type: 'link',
         },
         {
-          title: 'element pages',
-          active: false,
-          children: [
-            {
-              title: 'image ratio',
-              path: '/page/element-pages/image-ratio',
-              type: 'link',
-              badgeIcon: true,
-            },
-            {
-              title: 'about',
-              path: '/page/element-pages/about',
-              type: 'link',
-            },
-            {
-              title: 'application',
-              path: '/page/element-pages/application',
-              type: 'link',
-            },
-            {
-              title: 'blog',
-              path: '/page/element-pages/blog',
-              type: 'link',
-            },
-            {
-              title: 'button',
-              path: '/page/element-pages/button',
-              type: 'link',
-            },
-            {
-              title: 'category',
-              path: '/page/element-pages/category',
-              type: 'link',
-            },
-            {
-              title: 'date & time picker',
-              path: '/page/element-pages/date-time-picker',
-              type: 'link',
-            },
-            {
-              title: 'full banner',
-              path: '/page/element-pages/full-banner',
-              type: 'link',
-            },
-            {
-              title: 'gallery',
-              path: '/page/element-pages/gallery',
-              type: 'link',
-            },
-            {
-              title: 'other element',
-              path: '/page/element-pages/other-element',
-              type: 'link',
-            },
-            {
-              title: 'service',
-              path: '/page/element-pages/service',
-              type: 'link',
-            },
-            {
-              title: 'subscribe',
-              path: '/page/element-pages/subscribe',
-              type: 'link',
-            },
-            {
-              title: 'testimonial',
-              path: '/page/element-pages/testimonial',
-              type: 'link',
-            },
-            {
-              title: 'title',
-              path: '/page/element-pages/title',
-              type: 'link',
-            },
-            {
-              title: 'video',
-              path: '/page/element-pages/video',
-              type: 'link',
-            },
-          ],
+          title: 'user dashboard',
+          path: '/page/other-pages/user-dashboard',
+          type: 'link',
+          badgeIcon: true,
         },
       ],
     },
+
+
+
+
+
+
+    // {
+    //   title: 'pages',
+    //   type: 'sub',
+    //   level: 1,
+    //   active: false,
+    //   megaMenu: true,
+    //   children: [
+    //     {
+    //       title: 'portfolio',
+    //       active: false,
+    //       children: [
+    //         {
+    //           title: '2 grid',
+    //           path: '/page/portfolio/2-grid',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: '3 grid',
+    //           path: '/page/portfolio/3-grid',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: '4 grid',
+    //           path: '/page/portfolio/4-grid',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: '2 grid title',
+    //           path: '/page/portfolio/2-grid-title',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: '3 grid title',
+    //           path: '/page/portfolio/3-grid-title',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: '4 grid title',
+    //           path: '/page/portfolio/4-grid-title',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: '3 masonry',
+    //           path: '/page/portfolio/3-masonry',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: '4 masonry',
+    //           path: '/page/portfolio/4-masonry',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'parallax',
+    //           path: '/page/portfolio/parallax',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'center slides',
+    //           path: '/page/portfolio/center-slide',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'creative 1',
+    //           path: '/page/portfolio/creative-1',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'creative 2',
+    //           path: '/page/portfolio/creative-2',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'creative 3',
+    //           path: '/page/portfolio/creative-3',
+    //           type: 'link',
+    //           badgeIcon: true,
+    //         },
+    //         {
+    //           title: 'creative 4',
+    //           path: '/page/portfolio/creative-4',
+    //           type: 'link',
+    //         }
+    //       ],
+    //     },
+    //     {
+    //       title: 'blog page',
+    //       active: false,
+    //       children: [
+    //         {
+    //           title: 'left sidebar',
+    //           path: '/page/blog-page/left-sidebar',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'right sidebar',
+    //           path: '/page/blog-page/right-sidebar',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'no sidebar',
+    //           path: '/page/blog-page/no-sidebar',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'creative left sidebar',
+    //           path: '/page/blog-page/creative-left-sidebar',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'creative right sidebar',
+    //           path: '/page/blog-page/creative-right-sidebar',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'creative  no sidebar',
+    //           path: '/page/blog-page/creative-no-sidebar',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'list left sidebar',
+    //           path: '/page/blog-page/list-left-sidebar',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'list right sidebar',
+    //           path: '/page/blog-page/list-right-sidebar',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'list no sidebar',
+    //           path: '/page/blog-page/list-no-sidebar',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'masonry left sidebar',
+    //           path: '/page/blog-page/masonry-left-sidebar',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'masonry right sidebar',
+    //           path: '/page/blog-page/masonry-right-sidebar',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'masonry no sidebar',
+    //           path: '/page/blog-page/masonry-no-sidebar',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'mix list left sidebar',
+    //           path: '/page/blog-page/mix-list-left-sidebar',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'mix list right sidebar',
+    //           path: '/page/blog-page/mix-list-right-sidebar',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'mix grid left sidebar',
+    //           path: '/page/blog-page/mix-grid-left-sidebar',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'mix grid right sidebar',
+    //           path: '/page/blog-page/mix-grid-right-sidebar',
+    //           type: 'link',
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       section: [
+    //         {
+    //           title: 'blog detail pages',
+    //           active: false,
+    //           children: [
+    //             {
+    //               title: 'left sidebar',
+    //               path: '/page/blog-detail/left-sidebar',
+    //               type: 'link',
+    //             },
+    //             {
+    //               title: 'right sidebar',
+    //               path: '/page/blog-detail/right-sidebar',
+    //               type: 'link',
+    //             },
+    //             {
+    //               title: 'no sidebar',
+    //               path: '/page/blog-detail/no-sidebar',
+    //               type: 'link',
+    //             },
+    //             {
+    //               title: 'detail with gallery',
+    //               path: '/page/blog-detail/detail-with-gallery',
+    //               type: 'link',
+    //             },
+    //             {
+    //               title: 'detail with video',
+    //               path: '/page/blog-detail/detail-with-video',
+    //               type: 'link',
+    //             },
+    //           ],
+    //         },
+    //         {
+    //           title: 'elements - filter',
+    //           active: false,
+    //           children: [
+    //             {
+    //               title: 'sidebar',
+    //               path: '/page/element-filter/sidebar',
+    //               type: 'link',
+    //             },
+    //             {
+    //               title: 'popup',
+    //               path: '/page/element-filter/popup',
+    //               type: 'link',
+    //             },
+    //             {
+    //               title: 'slide down',
+    //               path: '/page/element-filter/slide-down',
+    //               type: 'link',
+    //             },
+    //             {
+    //               title: 'top filter',
+    //               path: '/page/element-filter/top-filter',
+    //               type: 'link',
+    //             },
+    //           ],
+    //         },
+    //         {
+    //           title: 'elements - breadcrumb',
+    //           active: false,
+    //           children: [
+    //             {
+    //               title: 'basic',
+    //               path: '/page/element-breadcrumb/basic',
+    //               type: 'link',
+    //             },
+    //             {
+    //               title: 'image with effect',
+    //               path: '/page/element-breadcrumb/image-with-effect',
+    //               type: 'link',
+    //             },
+    //             {
+    //               title: 'right content',
+    //               path: '/page/element-breadcrumb/right-content',
+    //               type: 'link',
+    //             },
+    //             {
+    //               title: 'only image',
+    //               path: '/page/element-breadcrumb/only-image',
+    //               type: 'link',
+    //             },
+    //             {
+    //               title: 'with searchbar',
+    //               path: '/page/element-breadcrumb/with-searchbar',
+    //               type: 'link',
+    //             },
+    //             {
+    //               title: 'bird flying',
+    //               path: '/page/element-breadcrumb/bird-flying',
+    //               type: 'link',
+    //             },
+    //           ],
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       section: [
+    //         {
+    //           title: 'other pages',
+    //           active: false,
+    //           children: [
+    //             {
+    //               title: 'About us 1',
+    //               path: '/page/other-pages/about-us-1',
+    //               type: 'link',
+    //             },
+    //             {
+    //               title: 'About us',
+    //               path: '/page/other-pages/about-us-2',
+    //               type: 'link',
+    //             },
+    //             {
+    //               title: 'contact us',
+    //               path: '/page/other-pages/contact-us-1',
+    //               type: 'link',
+    //             },
+    //             {
+    //               title: 'contact us 2',
+    //               path: '/page/other-pages/contact-us-2',
+    //               type: 'link',
+    //             },
+    //             {
+    //               title: 'contact us 3',
+    //               path: '/page/other-pages/contact-us-3',
+    //               type: 'link',
+    //             },
+    //             {
+    //               title: 'coming soon 1',
+    //               path: '/page/other-pages/coming-soon-1',
+    //               type: 'link',
+    //             },
+    //             {
+    //               title: 'coming soon 2',
+    //               path: '/page/other-pages/coming-soon-2',
+    //               type: 'link',
+    //             },
+    //             {
+    //               title: 'coming soon 3',
+    //               path: '/page/other-pages/coming-soon-3',
+    //               type: 'link',
+    //             },
+    //             {
+    //               title: '404',
+    //               path: '/page/other-pages/404',
+    //               type: 'link',
+    //             },
+    //             {
+    //               title: 'FAQ',
+    //               path: '/page/other-pages/faq',
+    //               type: 'link',
+    //             },
+    //             {
+    //               title: 'log in',
+    //               path: '/page/other-pages/log-in',
+    //               type: 'link',
+    //             },
+    //             {
+    //               title: 'register',
+    //               path: '/page/other-pages/register',
+    //               type: 'link',
+    //             },
+    //             {
+    //               title: 'user dashboard',
+    //               path: '/page/other-pages/user-dashboard',
+    //               type: 'link',
+    //               badgeIcon: true,
+    //             },
+    //           ],
+    //         },
+    //         {
+    //           title: 'Email template',
+    //           active: false,
+    //           children: [
+    //             {
+    //               title: 'offer',
+    //               path: 'https://themes.pixelstrap.com/rica/email-template/offer.html',
+    //               type: 'extTabLink',
+    //             },
+    //             {
+    //               title: 'confirmation',
+    //               path: 'https://themes.pixelstrap.com/rica/email-template/confirmation.html',
+    //               type: 'extTabLink',
+    //             },
+    //             {
+    //               title: 'thank you',
+    //               path: 'https://themes.pixelstrap.com/rica/email-template/thankyou.html',
+    //               type: 'extTabLink',
+    //             },
+    //           ],
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       title: 'element pages',
+    //       active: false,
+    //       children: [
+    //         {
+    //           title: 'image ratio',
+    //           path: '/page/element-pages/image-ratio',
+    //           type: 'link',
+    //           badgeIcon: true,
+    //         },
+    //         {
+    //           title: 'about',
+    //           path: '/page/element-pages/about',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'application',
+    //           path: '/page/element-pages/application',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'blog',
+    //           path: '/page/element-pages/blog',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'button',
+    //           path: '/page/element-pages/button',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'category',
+    //           path: '/page/element-pages/category',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'date & time picker',
+    //           path: '/page/element-pages/date-time-picker',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'full banner',
+    //           path: '/page/element-pages/full-banner',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'gallery',
+    //           path: '/page/element-pages/gallery',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'other element',
+    //           path: '/page/element-pages/other-element',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'service',
+    //           path: '/page/element-pages/service',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'subscribe',
+    //           path: '/page/element-pages/subscribe',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'testimonial',
+    //           path: '/page/element-pages/testimonial',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'title',
+    //           path: '/page/element-pages/title',
+    //           type: 'link',
+    //         },
+    //         {
+    //           title: 'video',
+    //           path: '/page/element-pages/video',
+    //           type: 'link',
+    //         },
+    //       ],
+    //     },
+    //   ],
+    // },
+
+
+
+    
   ]
 }

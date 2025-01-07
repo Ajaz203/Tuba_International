@@ -15,7 +15,7 @@ import { HeaderComponent } from '../../../../shared/components/header/header.com
 })
 export class LogInComponent {
   
-  public bg_image = 'assets/images/inner-bg.jpg';
+  public bg_image = 'assets/images/inner-pages/coming-soon2.jpg';
   public title = 'log in';
   public parent = 'Home';
   public child = 'log in';
