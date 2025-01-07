@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild ,TemplateRef} from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors, FormControl } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -58,7 +58,7 @@ interface BookingData {
         AnimationComponent
     ]
 })
-export class FlightBookingComponent implements OnInit {
+export class FlightBookingComponent implements OnInit { @ViewChild('errorModal') errorModal!: TemplateRef<any>;
     flightForm: FormGroup;
     isSubmitting = false;
     flights: any[] = [];
@@ -164,7 +164,8 @@ export class FlightBookingComponent implements OnInit {
         private fb: FormBuilder,
         private flightService: FlightService,
         public modalService: NgbModal,
-        private http: HttpClient
+        private http: HttpClient,
+ 
     ) {
         this.initForm();
         this.minDate = new Date().toISOString().split('T')[0];
@@ -351,7 +352,7 @@ export class FlightBookingComponent implements OnInit {
 
             // Store the form data
             this.bookingData = {
-                flight: this.currentBooking,
+                flight: this.selectedFlight,
                 passenger: {
                     name: this.flightForm.get('name')?.value,
                     email: this.flightForm.get('email')?.value,
@@ -365,25 +366,19 @@ export class FlightBookingComponent implements OnInit {
                 }
             };
 
-            // Open modal with specific class
-            // this.modalService.open(this.bookingSuccessModal, {
-            //     centered: true,
-            //     backdrop: 'static',
-            //     windowClass: 'booking-success-modal'
-            // });
+            console.log('Booking Data:', this.bookingData);
 
             this.sendBookingData(this.bookingData);
-
         } else {
             this.showFormErrors();
         }
     }
 
     private sendBookingData(bookingData: any) {
+        console.log('Booking Data:', bookingData);
         this.http.post('https://tuba-mongo-backend.onrender.com/bookFlight', bookingData, { observe: 'response' }).subscribe(
-            (response: HttpResponse<any>) => { // Specify the response type
-                // Check if the response status is 200
-                if (response.status === 201) {
+            (response: HttpResponse<any>) => {
+                if (response.status === 200 || response.status === 201) {
                     console.log('Booking data sent successfully:', response);
                     this.openSuccessModal(); // Open success modal
                 } else {
@@ -397,9 +392,11 @@ export class FlightBookingComponent implements OnInit {
                 this.showErrorMessage('Failed to send booking data. Please try again.'); // Show error message
             }
         );
-    }  
+    } 
 
-
+    private showErrorMessage(message: string) {
+        alert(message); 
+    }
 
     private fetchFlights() {
         this.http.get('https://tuba-mongo-backend.onrender.com/getBookingData', { observe: 'response' }).subscribe(
@@ -500,13 +497,8 @@ export class FlightBookingComponent implements OnInit {
 
         return isValid;
     }
-
-    private showErrorMessage(message: string) {
-        this._errorMessage = message;
-        setTimeout(() => {
-            this._errorMessage = '';
-        }, 3000);
-    }
+   
+    
 
     // Custom validator for future date
     private futureDateValidator() {
@@ -587,29 +579,35 @@ export class FlightBookingComponent implements OnInit {
         this.flightForm.get('toLocation')?.setValue(suggestion.name, { emitEvent: false });
     }
 
-    searchFlights(): void {
-        if (!this.searchPayload.departure_id || !this.searchPayload.arrival_id || !this.searchPayload.outbound_date) {
-            this.showErrorMessage('Please fill in all mandatory fields.');
-            return;
-        }
+     searchFlights(): void {
+           if (!this.searchPayload.departure_id || !this.searchPayload.arrival_id || !this.searchPayload.outbound_date) {
+               this.openErrorModal('Please fill in all mandatory fields.');
+               return;
+           }
 
-        this.isLoading = true;
-        this.flightService.getflight(this.searchPayload).subscribe({
-            next: (response: any) => {
-                this.isLoading = false;
-                if (response.flights?.length) {
-                    this.showFlightSelectionModal(response.flights);
-                } else {
-                    this.showErrorMessage('No flights found for selected criteria.');
-                }
-            },
-            error: (error) => {
-                this.isLoading = false;
-                this.showErrorMessage('Error fetching flight details. Please try again.');
-                console.error('Error:', error);
-            },
-        });
-    }
+           this.isLoading = true;
+           this.flightService.getflight(this.searchPayload).subscribe({
+               next: (response: any) => {
+                   this.isLoading = false;
+                   if (response.flights?.length) {
+                       this.showFlightSelectionModal(response.flights);
+                   } else {
+                       this.openErrorModal('No flights found for selected criteria.'); // Open modal for no flights found
+                   }
+               },
+               error: (error) => {
+                   this.isLoading = false;
+                   this.openErrorModal('Error fetching flight details. Please try again.'); // Open modal for error
+                   console.error('Error:', error);
+               },
+           });
+       }
+        
+       private openErrorModal(message: string) {
+           this.errorMessage = message; // Set the error message
+           this.modalService.open(this.errorModal, { centered: true }); // Open the modal
+       }
+   
 
     private showFlightSelectionModal(flights: any[]): void {
         const modalRef = this.modalService.open(FlightSelectionModalComponent, {
@@ -624,7 +622,8 @@ export class FlightBookingComponent implements OnInit {
 
         modalRef.result.then((selectedFlight) => {
             if (selectedFlight) {
-                this.currentBooking = selectedFlight;
+                this.selectedFlight = selectedFlight; // Ensure this is set correctly
+                console.log('Selected Flight:', this.selectedFlight); // Log the selected flight
                 this.currentStep++; // Move to passenger details
             }
         }, (dismissReason) => {
@@ -645,30 +644,32 @@ export class FlightBookingComponent implements OnInit {
         });
     }
 
-    public downloadTicket() {
-        const ticketId = this.selectedFlight?.id; // Assuming you have a way to identify the ticket
-        if (ticketId) {
-            this.http.get(`'https://tuba-mongo-backend.onrender.com/bookFlight'/downloadTicket/${ticketId}`, { responseType: 'blob' }).subscribe(
-                (response: Blob) => {
-                    const blob = new Blob([response], { type: 'application/pdf' });
-                    const url = window.URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.href = url;
-                    a.download = 'ticket.pdf'; // Specify the name of the downloaded file
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                    window.URL.revokeObjectURL(url); // Clean up
-                },
-                error => {
-                    console.error('Error downloading ticket:', error);
-                    this.showErrorMessage('Failed to download the ticket. Please try again.'); // Show error message
-                }
-            );
-        } else {
-            this.showErrorMessage('No ticket selected for download.'); // Handle case where no ticket is selected
-        }
-    }
+    // public downloadTicket() {
+    //     const ticketId = this.selectedFlight?.id; 
+    //     console.log('Ticket ID:', ticketId); 
+    //     if (ticketId) {
+    //         this.http.get(`https://tuba-mongo-backend.onrender.com/downloadTicket/${ticketId}`, { responseType: 'blob' }).subscribe(
+    //             (response: Blob) => {
+    //                 console.log('Response:', response);
+    //                 const blob = new Blob([response], { type: 'application/pdf' });
+    //                 const url = window.URL.createObjectURL(blob);
+    //                 const a = document.createElement('a');
+    //                 a.href = url;
+    //                 a.download = 'ticket.pdf'; 
+    //                 document.body.appendChild(a);
+    //                 a.click();
+    //                 document.body.removeChild(a);
+    //                 window.URL.revokeObjectURL(url);
+    //             },
+    //             error => {
+    //                 console.error('Error downloading ticket:', error);
+    //                 this.showErrorMessage('Failed to download the ticket. Please try again.'); 
+    //             }
+    //         );
+    //     } else {
+    //         this.showErrorMessage('No ticket selected for download.'); 
+    //     }
+    // }
 
     resetAndCloseModal(): void {
         // Reset the form
