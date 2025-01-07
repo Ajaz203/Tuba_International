@@ -579,34 +579,34 @@ export class FlightBookingComponent implements OnInit { @ViewChild('errorModal')
         this.flightForm.get('toLocation')?.setValue(suggestion.name, { emitEvent: false });
     }
 
-     searchFlights(): void {
-           if (!this.searchPayload.departure_id || !this.searchPayload.arrival_id || !this.searchPayload.outbound_date) {
-               this.openErrorModal('Please fill in all mandatory fields.');
-               return;
-           }
+    searchFlights(): void {
+        if (!this.searchPayload.departure_id || !this.searchPayload.arrival_id || !this.searchPayload.outbound_date) {
+            this.openErrorModal('Please fill in all mandatory fields.');
+            return;
+        }
 
-           this.isLoading = true;
-           this.flightService.getflight(this.searchPayload).subscribe({
-               next: (response: any) => {
-                   this.isLoading = false;
-                   if (response.flights?.length) {
-                       this.showFlightSelectionModal(response.flights);
-                   } else {
-                       this.openErrorModal('No flights found for selected criteria.'); // Open modal for no flights found
-                   }
-               },
-               error: (error) => {
-                   this.isLoading = false;
-                   this.openErrorModal('Error fetching flight details. Please try again.'); // Open modal for error
-                   console.error('Error:', error);
-               },
-           });
-       }
-        
-       private openErrorModal(message: string) {
-           this.errorMessage = message; // Set the error message
-           this.modalService.open(this.errorModal, { centered: true }); // Open the modal
-       }
+        this.isLoading = true;
+        this.flightService.getflight(this.searchPayload).subscribe({
+            next: (response: any) => {
+                this.isLoading = false;
+                if (response.flights?.length) {
+                    this.showFlightSelectionModal(response.flights);
+                } else {
+                    this.openErrorModal('No flights found for selected criteria.'); // Open modal for no flights found
+                }
+            },
+            error: (error) => {
+                this.isLoading = false;
+                this.openErrorModal('Error fetching flight details. Please try again.'); // Open modal for error
+                console.error('Error:', error);
+            },
+        });
+    }
+
+    private openErrorModal(message: string) {
+        this.errorMessage = message; // Set the error message
+        this.modalService.open(this.errorModal, { centered: true }); // Open the modal
+    }
    
 
     private showFlightSelectionModal(flights: any[]): void {
