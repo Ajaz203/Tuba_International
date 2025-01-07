@@ -182,12 +182,12 @@ export class NavService {
           path: '/home/flight/modern',
           type: 'link'
         },
-        {
-          title: 'Flights Fair',
-          path: '/flight/listing/left-sidebar',
-          type: 'link',
-          level: 3,
-        },
+        // {
+        //   title: 'Flights Fair',
+        //   path: '/flight/listing/left-sidebar',
+        //   type: 'link',
+        //   level: 3,
+        // },
         {
           title: 'book now',
           path: '/flight/booking/book-now',
