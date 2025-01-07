@@ -262,6 +262,7 @@ export class FlightSearchBoxComponent {
         }
 
         console.log('Booking confirmed:', bookingData);
+        
         this.modalService.dismissAll();
         
         // Show success modal

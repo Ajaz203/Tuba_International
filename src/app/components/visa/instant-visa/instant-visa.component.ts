@@ -6,6 +6,8 @@ import { BreadcrumbsComponent } from '../../../shared/components/comman/breadcru
 import { HeaderComponent } from '../../../shared/components/header/header.component';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../shared/services/auth.service';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-instant-visa',
@@ -13,10 +15,34 @@ import { Router } from '@angular/router';
   providers: [PagesService],
   templateUrl: './instant-visa.component.html',
   styleUrl: './instant-visa.component.scss',
-  imports: [LayoutComponent, CommonModule, FooterComponent, BreadcrumbsComponent, HeaderComponent]
+  imports: [LayoutComponent, CommonModule, FooterComponent, BreadcrumbsComponent, HeaderComponent, ReactiveFormsModule]
 })
 export class InstantVisaComponent {
-  constructor(private router: Router) {}
+  visaForm: FormGroup;
+  evisaForm: FormGroup;
+  showModal = false;
+  showEvisaModal = false;
+
+  constructor(private router: Router, private authService: AuthService, private fb: FormBuilder) {
+    this.visaForm = this.fb.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      contactNo: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
+      passengers: ['', [Validators.required, Validators.min(1)]],
+      visaType: ['', Validators.required]
+    });
+
+    // E-visa form
+    this.evisaForm = this.fb.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      contactNo: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
+      passengers: ['', [Validators.required, Validators.min(1)]],
+      country: ['', Validators.required],
+      visaType: ['', Validators.required]
+    });
+  }
+
   visas = [
     {
       country: 'Turkey',
@@ -168,9 +194,40 @@ export class InstantVisaComponent {
   }
 
   navigateToFormSection() {
-    this.router.navigate(['/apply-visa']);
+    this.showModal = true;
   }
 
+  closeModal() {
+    this.showModal = false;
+  }
 
+  hajjSubmit() {
+    if (this.visaForm.valid) {
+      console.log(this.visaForm.value);
+      this.authService.hajjVisa(this.visaForm.value).subscribe((response: any) => {
+        console.log(response);
+        this.closeModal();
+      });
+    }
+  }
   
+  EvisaFormSection() {
+    this.showEvisaModal = true;
+  }
+  
+
+  closeEvisaModal() {
+    this.showEvisaModal = false;
+    this.visaForm.reset();
+  }
+
+  onEvisaSubmit() {
+    if (this.evisaForm.valid) {
+      console.log(this.evisaForm.value);
+      this.authService.Evisa(this.evisaForm.value).subscribe((response: any) => {
+        console.log(response);
+        this.closeEvisaModal();
+      });
+    }
+  }
 }

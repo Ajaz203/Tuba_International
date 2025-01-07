@@ -32,6 +32,12 @@ export class AuthService {
     const payload = { emailOrUsername: email };
     return this.http.post(`${this.apiUrl}user-dashboard`, payload);
   }
-  
+  hajjVisa(data: any) {
+    return this.http.post(`${this.apiUrl}applyHajj`, data);
+  }
+
+  Evisa(data: any) {
+    return this.http.post(`${this.apiUrl}applyEVisa`, data);
+  }
 
 }
