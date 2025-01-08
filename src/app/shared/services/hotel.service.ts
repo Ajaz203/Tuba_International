@@ -25,7 +25,7 @@ export class HotelService {
   // Get Currency
   public currencyItem = localStorage.getItem("currency");
 
-  public currency: string = 'usd';
+  public currency: string = 'INR';
 
   private searchResults: any = null;
 
@@ -33,8 +33,8 @@ export class HotelService {
 
   constructor(private http: HttpClient) {
     if(!localStorage.getItem('currency')?.length){
-      this.currency = 'usd';
-      localStorage.setItem('currency', 'usd')
+      this.currency = 'INR';
+      localStorage.setItem('currency', 'INR')
     }else {
       if(this.currencyItem !== null){
         this.currency = this.currencyItem;
