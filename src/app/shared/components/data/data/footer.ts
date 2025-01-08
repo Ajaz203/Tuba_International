@@ -32,15 +32,21 @@ export const topPlacesData = [
 ]
 
 export const footerAbout = [
+ 
+  // {
+  //   id: 2,
+  //   title: "FAQ",
+  //   path: "/page/other-pages/faq",
+  // },
   {
     id: 1,
-    title: "about us",
-    path: "/page/other-pages/about-us-1",
+    title: "home",
+    path: "/home/mix-demo/classic",
   },
   {
     id: 2,
-    title: "FAQ",
-    path: "/page/other-pages/faq",
+    title: "about us",
+    path: "/page/other-pages/about-us-1",
   },
   {
     id: 3,
@@ -71,11 +77,7 @@ export const footerAbout = [
 ]
 
 export const footerUsefulLink = [
-  {
-    id: 1,
-    title: "home",
-    path: "/home/mix-demo/classic",
-  },
+  
   {
     id: 2,
     title: "our vehicle",
