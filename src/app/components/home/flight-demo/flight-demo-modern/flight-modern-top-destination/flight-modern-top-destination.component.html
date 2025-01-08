@@ -17,7 +17,7 @@
                       @for(flight of details.flights; track flight){
                         <ng-template carouselSlide>
                           <div>
-                            <a href="javascript:void(0)" [routerLink]="['/flight/listing/top-filter']">
+                            <a href="javascript:void(0)" [routerLink]="['/flight/booking/book-now']">
                               <div class="flight-info">
                                 <div>
                                   <h4>{{ flight.country }}</h4>
@@ -38,7 +38,7 @@
                 <div>
                   <h5>{{ details.title }}</h5>
                   <h6>flights</h6>
-                  <a href="javascript:void(0)" class="btn btn-rounded btn-sm color1"  [routerLink]="['/flight/listing/top-filter']">check all</a>
+                  <a href="javascript:void(0)" class="btn btn-rounded btn-sm color1"  [routerLink]="['/flight/booking/book-now']">check all</a>
                 </div>
               </div>
             </div>
