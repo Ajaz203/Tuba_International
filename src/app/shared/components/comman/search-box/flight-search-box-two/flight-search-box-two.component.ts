@@ -3,6 +3,7 @@ import { seatType } from '../../../data/data/flight';
 import { NgbInputDatepicker } from '@ng-bootstrap/ng-bootstrap';
 import { NgClass } from '@angular/common';
 import { ClickOutsideDirective } from '../../../../directives/outside.directive';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-flight-search-box-two',
@@ -26,6 +27,8 @@ export class FlightSearchBoxTwoComponent {
       this.searchFixed = false;
     }
   }
+
+constructor(private router:Router){}
 
   public seatType = seatType;
   public isFrom: boolean = false;
@@ -71,5 +74,8 @@ export class FlightSearchBoxTwoComponent {
     this.isFrom = false;
     this.isTo = false;
     this.isTraveler = false;
+  }
+  onsearchbutton():void{
+    this.router.navigate(['/flight/booking/book-now'])
   }
 }

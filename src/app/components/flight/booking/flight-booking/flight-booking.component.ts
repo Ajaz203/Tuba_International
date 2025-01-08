@@ -169,6 +169,8 @@ export class FlightBookingComponent implements OnInit { @ViewChild('errorModal')
     ) {
         this.initForm();
         this.minDate = new Date().toISOString().split('T')[0];
+
+        
     }
 
     ngOnInit() {

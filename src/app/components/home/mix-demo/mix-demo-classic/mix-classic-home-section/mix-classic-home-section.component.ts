@@ -11,7 +11,7 @@ import { SearchBoxComponent } from '../../../../../shared/components/comman/sear
 })
 export class MixClassicHomeSectionComponent {
 
-  public activeTab: string = 'flight';
+  public activeTab: string = 'hotel';
   public searchBoxType: string;
 
   constructor(){
