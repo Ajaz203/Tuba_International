@@ -74,7 +74,7 @@ export const footerUsefulLink = [
   {
     id: 1,
     title: "home",
-    path: "/home/hotel/classic",
+    path: "/home/mix-demo/classic",
   },
   {
     id: 2,
