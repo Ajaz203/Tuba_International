@@ -9,7 +9,7 @@
               <div>
                 <div class="price-box ">
                   <div class="price-img">
-                    <a href="javascript:void(0)" class="bg-size" [style.background-image]="'url('+ details.categoryImage  +')'"  [routerLink]="['/flight/listing/left-sidebar']">
+                    <a href="javascript:void(0)" class="bg-size" [style.background-image]="'url('+ details.categoryImage  +')'"  [routerLink]="['/flight/booking/book-now']">
                       <img [src]="details.categoryImage" alt="place-image" class=" img-fluid blur-up lazyload bg-img" style="display: none;">
                     </a>
                     @if(details.tag){
@@ -34,7 +34,7 @@
                     </div>
                     @for(flights of details.flightDetails; track flights){
                       <div class="price">
-                        <a href="javascript:void(0)"  [routerLink]="['/flight/listing/left-sidebar']">
+                        <a href="javascript:void(0)"  [routerLink]="['/flight/booking/book-now']">
                           <h6>{{ flights.city }}</h6>
                         </a>
                         <h5><span>from</span>{{ flights.price | currencyPipe: hotelService.currency }}</h5>

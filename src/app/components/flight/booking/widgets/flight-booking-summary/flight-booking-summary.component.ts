@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FlightService } from '../../../../../shared/services/flight.service';
+
 @Component({
     selector: 'app-flight-booking-summary',
     templateUrl: './flight-booking-summary.component.html',
@@ -8,6 +10,8 @@ import { CommonModule } from '@angular/common';
     imports: [CommonModule]
 })
 export class FlightBookingSummaryComponent {
-    @Input() flightDetails: any;
-    @Input() isLoading: boolean = true;
+    @Input() flightDetails: any; // Define the input property
+    @Input() isLoading: boolean = false; // If you have this input as well
+
+ 
 }

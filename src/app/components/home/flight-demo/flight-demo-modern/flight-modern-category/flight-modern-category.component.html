@@ -5,7 +5,7 @@
       @for(details of category; track details){
         <div class="col-lg-3 col-6">
           <div class="routes-box">
-            <a href="javascript:void(0)" class="routes-img bg-size" [style.background-image]="'url('+ details.categoryImage +')'" [routerLink]="['/flight/listing/left-sidebar']">
+            <a href="javascript:void(0)" class="routes-img bg-size" [style.background-image]="'url('+ details.categoryImage +')'" [routerLink]="['/flight/booking/book-now']">
               <img [src]="details.categoryImage" alt="place-image" class="img-fluid blur-up lazyload bg-img" style="display: none;">
               <div class="price-round">
                 <div>
@@ -21,7 +21,7 @@
             </a>
             <div class="routes-content">
               <div class="top-bar">
-                <a href="javascript:void(0)" [routerLink]="['/flight/listing/left-sidebar']">
+                <a href="javascript:void(0)" [routerLink]="['/flight/booking/book-now']">
                   <h5>{{ details.categoryTitle }}</h5>
                 </a>
                 <h6>arrival : {{ details.arrivalTime }}</h6>
