@@ -33,7 +33,7 @@ import { CommonModule } from '@angular/common';
         <div class="support-info">
           <p>For any assistance, contact our support:</p>
           <p class="support-contact">
-            <i class="fas fa-phone"></i> +91 98765 43210
+            <i class="fas fa-phone"></i> +91 9643306786
           </p>
         </div>
         <button class="btn-close" (click)="onClose()">

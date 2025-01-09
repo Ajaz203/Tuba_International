@@ -97,7 +97,7 @@ import { CommonModule } from '@angular/common';
           <i class="fa fa-headset"></i>
           <div>
             <p>24/7 Customer Support</p>
-            <a href="tel:+919876543210">+91 98765 43210</a>
+            <a href="tel:+919876543210">+91 9643306786</a>
           </div>
         </div>
       </div>
