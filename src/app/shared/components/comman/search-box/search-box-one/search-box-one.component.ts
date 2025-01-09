@@ -213,7 +213,10 @@ private convertToINR(usdPrice: number | string): number {
       const bookingData = {
         ...this.bookingForm.value,
         numberOfDays,
-        hotelPrice
+        hotelPrice,
+        selectedHotelName: this.selectedHotelName, 
+        selectedHotelImage: this.hotels.find(hotel => hotel.name === this.selectedHotelName)?.image,     
+        selectedHotelRating: this.hotels.find(hotel => hotel.name === this.selectedHotelName)?.rating
       };
   
       console.log('Booking Form Data:', bookingData); // Log the complete form data
@@ -221,6 +224,7 @@ private convertToINR(usdPrice: number | string): number {
       this.hotelService.hotelBooking(bookingData).subscribe(
         (res) => {
           console.log('Booking successful', res);
+          this.modalService.dismissAll();
         },
         (error) => {
           console.error('Booking failed', error);

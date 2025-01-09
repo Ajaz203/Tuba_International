@@ -9,29 +9,22 @@
             <div class="status-badge online"></div>
           </div>
           <div class="user-details">
-            <h2>{{userName}}</h2>
-            <p class="member-info">Member since {{memberSince | date:'MMMM yyyy'}}</p>
+            <h2>{{ userData.fullName }}</h2>
+            <p class="member-info">Member since {{ userData.memberSince | date:'MMMM yyyy' }}</p>
             <div class="contact-info">
-              <span><i class="fas fa-envelope"></i> {{email}}</span>
-              <span><i class="fas fa-phone"></i> {{phoneNumber}}</span>
+              <span><i class="fas fa-envelope"></i> {{ userData.emailOrUsername }}</span>
+              <span><i class="fas fa-phone"></i> {{ userData.phoneNumber || 'N/A' }}</span>
             </div>
           </div>
           <div class="stats-container">
             <div class="stat-card">
-              <div class="stat-value">{{totalBookings}}</div>
+              <!-- <div class="stat-value">{{ totalBookings }}</div> -->
               <div class="stat-label">Total Bookings</div>
             </div>
           </div>
         </div>
-
-        <!-- Add this new logout section -->
-        <div class="logout-section">
-          <button class="logout-btn">
-            <span>Logout</span>
-            <i class="fas fa-sign-out-alt"></i>
-          </button>
-        </div>
       </div>
+      
     </div>
 
     <!-- Main Content Area - Right Side -->
@@ -73,12 +66,11 @@
               <input 
                 type="text" 
                 placeholder="Search by flight number, destination..." 
-                [(ngModel)]="searchTerm"
-                (input)="filterFlights()"
+              
               >
             </div>
             <div class="filter-options">
-              <select [(ngModel)]="filterStatus" (change)="filterFlights()">
+              <select>
                 <option value="all">All Status</option>
                 <option value="confirmed">Confirmed</option>
                 <option value="pending">Pending</option>
@@ -86,50 +78,45 @@
               </select>
               <input 
                 type="date" 
-                [(ngModel)]="filterDate"
-                (change)="filterFlights()"
+              
               >
             </div>
           </div>
           <div class="booking-cards">
-            <div class="booking-card" *ngFor="let flight of paginatedFlights">
+            <div class="booking-card" *ngFor="let booking of flightBookings">
               <div class="card-header">
                 <div class="airline-info">
                   <i class="fas fa-plane"></i>
-                  <span>{{flight.airline}}</span>
+                  <span>{{ booking.flight.airline }}</span>
                 </div>
-                <div class="status-badge" [class]="getStatusClass(flight.status)">
-                  {{flight.status}}
-                </div>
+                <div class="status-badge">Confirmed</div> <!-- Update status if dynamic -->
               </div>
-              
               <div class="flight-route">
                 <div class="route-point">
-                  <div class="time">{{flight.departureTime}}</div>
-                  <div class="city">{{flight.from}}</div>
+                  <div class="time">{{ booking.flight.departure_time | date: 'hh:mm a' }}</div>
+                  <div class="city">{{ booking.journey.from }}</div>
                 </div>
                 <div class="route-line">
                   <div class="plane-icon">✈</div>
                 </div>
                 <div class="route-point">
-                  <div class="time">{{flight.arrivalTime}}</div>
-                  <div class="city">{{flight.to}}</div>
+                  <div class="time">{{ booking.flight.arrival_time | date: 'hh:mm a' }}</div>
+                  <div class="city">{{ booking.journey.to }}</div>
                 </div>
               </div>
-              
               <div class="card-footer">
                 <div class="details">
-                  <span><i class="fas fa-calendar"></i> {{flight.date | date}}</span>
-                  <span><i class="fas fa-users"></i> {{flight.passengers}} Passengers</span>
-                  <span class="price">{{formatPrice(flight.price)}}</span>
+                  <span><i class="fas fa-calendar"></i> {{ booking.journey.date | date }}</span>
+                  <span><i class="fas fa-users"></i> {{ booking.passenger.totalPassengers }} passengers</span>
+                  <span class="price">{{ booking.flight.total_price | currency: booking.flight.currency }}</span>
                 </div>
                 <button class="action-btn">View Details</button>
               </div>
             </div>
           </div>
+          
 
-          <!-- Pagination -->
-          <div class="pagination" *ngIf="totalPages > 1">
+          <!-- <div class="pagination" *ngIf="totalPages > 1">
             <button 
               class="page-btn" 
               [disabled]="currentPage === 1"
@@ -151,251 +138,166 @@
               (click)="changePage(currentPage + 1)">
               Next
             </button>
-          </div>
+          </div> -->
         </div>
 
         <!-- Hotels Tab Content -->
-        <div *ngSwitchCase="'hotels'" class="content-section animate-fade">
-          <!-- Search and Filter Section -->
-          <div class="search-filter-section">
-            <div class="search-box">
-              <i class="fas fa-search"></i>
-              <input 
-                type="text" 
-                placeholder="Search hotels by name, location..." 
-                [(ngModel)]="hotelSearchTerm"
-                (input)="filterHotels()"
-              >
-            </div>
-            <div class="filter-options">
-              <select [(ngModel)]="hotelFilterStatus" (change)="filterHotels()">
-                <option value="all">All Status</option>
-                <option value="confirmed">Confirmed</option>
-                <option value="pending">Pending</option>
-                <option value="cancelled">Cancelled</option>
-              </select>
-              <input 
-                type="date" 
-                [(ngModel)]="hotelFilterDate"
-                (change)="filterHotels()"
-              >
-            </div>
-          </div>
+<div *ngSwitchCase="'hotels'" class="content-section animate-fade">
+  <!-- Search and Filter Section -->
+  <div class="search-filter-section">
+    <div class="search-box">
+      <i class="fas fa-search"></i>
+      <input 
+        type="text" 
+        placeholder="Search hotels by name, location..." 
+      >
+    </div>
+    <div class="filter-options">
+      <select>
+        <option value="all">All Status</option>
+        <option value="confirmed">Confirmed</option>
+        <option value="pending">Pending</option>
+        <option value="cancelled">Cancelled</option>
+      </select>
+      <input type="date">
+    </div>
+  </div>
 
-          <!-- Hotel Cards -->
-          <div class="booking-cards hotel-cards">
-            <div class="booking-card hotel-card" *ngFor="let hotel of paginatedHotels">
-              <div class="hotel-image">
-                <img [src]="hotel.image" [alt]="hotel.name">
-                <span class="status-badge" [class]="getStatusClass(hotel.status)">
-                  {{hotel.status}}
-                </span>
-              </div>
+  <!-- Hotel Cards -->
+  <div class="booking-cards hotel-cards">
+    <!-- Loop through hotelBookings -->
+    <div *ngFor="let hotel of hotelBookings" class="booking-card hotel-card">
+      <div class="hotel-image">
+        <img [src]="hotel.selectedHotelImage" [alt]="hotel.selectedHotelName">
+        <span class="status-badge">Confirmed</span> <!-- Assuming status is always confirmed -->
+      </div>
 
-              <div class="hotel-info">
-                <div class="hotel-header">
-                  <h3>{{hotel.name}}</h3>
-                  <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <span>{{hotel.rating}}</span>
-                  </div>
-                </div>
-
-                <div class="hotel-location">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <span>{{hotel.location}}</span>
-                </div>
-
-                <div class="hotel-details">
-                  <div class="detail-item">
-                    <i class="fas fa-bed"></i>
-                    <span>{{hotel.roomType}}</span>
-                  </div>
-                  <div class="detail-item">
-                    <i class="fas fa-users"></i>
-                    <span>{{hotel.guests}} Guests</span>
-                  </div>
-                  <div class="detail-item">
-                    <i class="fas fa-moon"></i>
-                    <span>{{hotel.nights}} Nights</span>
-                  </div>
-                </div>
-
-                <div class="amenities">
-                  <span *ngFor="let amenity of hotel.amenities">
-                    <i class="fas fa-check"></i> {{amenity}}
-                  </span>
-                </div>
-              </div>
-
-              <div class="hotel-footer">
-                <div class="stay-dates">
-                  <div class="date-group">
-                    <small>Check In</small>
-                    <span>{{hotel.checkIn | date}}</span>
-                  </div>
-                  <i class="fas fa-arrow-right"></i>
-                  <div class="date-group">
-                    <small>Check Out</small>
-                    <span>{{hotel.checkOut | date}}</span>
-                  </div>
-                </div>
-
-                <div class="price-action">
-                  <div class="price">
-                    <small>Total Price</small>
-                    <span>{{formatPrice(hotel.price)}}</span>
-                  </div>
-                  <button class="action-btn">
-                    <span>View Details</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Pagination -->
-          <div class="pagination" *ngIf="totalHotelPages > 1">
-            <button 
-              class="page-btn" 
-              [disabled]="currentHotelPage === 1"
-              (click)="changeHotelPage(currentHotelPage - 1)">
-              Previous
-            </button>
-
-            <button 
-              class="page-btn" 
-              *ngFor="let page of hotelPageNumbers"
-              [class.active]="page === currentHotelPage"
-              (click)="changeHotelPage(page)">
-              {{page}}
-            </button>
-
-            <button 
-              class="page-btn" 
-              [disabled]="currentHotelPage === totalHotelPages"
-              (click)="changeHotelPage(currentHotelPage + 1)">
-              Next
-            </button>
+      <div class="hotel-info">
+        <div class="hotel-header">
+          <h3>{{ hotel.selectedHotelName }}</h3>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <span>{{ hotel.selectedHotelRating }}</span>
           </div>
         </div>
+
+        <div class="hotel-location">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Location Not Provided</span> <!-- Placeholder for location -->
+        </div>
+
+        <div class="hotel-details">
+          <div class="detail-item">
+            <i class="fas fa-bed"></i>
+            <span>Standard Room</span> <!-- Placeholder for room type -->
+          </div>
+          <div class="detail-item">
+            <i class="fas fa-users"></i>
+            <span>{{ hotel.travellers.length }} Guests</span>
+          </div>
+          <div class="detail-item">
+            <i class="fas fa-moon"></i>
+            <span>{{ calculateNights(hotel.checkIn, hotel.checkOut) }} Nights</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hotel-footer">
+        <div class="stay-dates">
+          <div class="date-group">
+            <small>Check In</small>
+            <span>{{ hotel.checkIn | date }}</span>
+          </div>
+          <i class="fas fa-arrow-right"></i>
+          <div class="date-group">
+            <small>Check Out</small>
+            <span>{{ hotel.checkOut | date }}</span>
+          </div>
+        </div>
+
+        <div class="price-action">
+          <div class="price">
+            <small>Total Price</small>
+            <span>{{ hotel.rent | currency:'INR' }}</span>
+          </div>
+          <button class="action-btn">
+            <span>View Details</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
         <!-- Cabs Tab Content -->
-        <div *ngSwitchCase="'cabs'" class="content-section animate-fade">
-          <!-- Search and Filter Section -->
-          <div class="search-filter-section">
-            <div class="search-box">
-              <i class="fas fa-search"></i>
-              <input 
-                type="text" 
-                placeholder="Search by location, driver..." 
-                [(ngModel)]="cabSearchTerm"
-                (input)="filterCabs()"
-              >
-            </div>
-            <div class="filter-options">
-              <select [(ngModel)]="cabFilterStatus" (change)="filterCabs()">
-                <option value="all">All Status</option>
-                <option value="confirmed">Confirmed</option>
-                <option value="pending">Pending</option>
-                <option value="cancelled">Cancelled</option>
-              </select>
-              <input 
-                type="date" 
-                [(ngModel)]="cabFilterDate"
-                (change)="filterCabs()"
-              >
-            </div>
-          </div>
+<div *ngSwitchCase="'cabs'" class="content-section animate-fade">
+  <!-- Search and Filter Section -->
+  <div class="search-filter-section">
+    <div class="search-box">
+      <i class="fas fa-search"></i>
+      <input 
+        type="text" 
+        placeholder="Search by location, driver..." 
+      >
+    </div>
+    <div class="filter-options">
+      <select>
+        <option value="all">All Status</option>
+        <option value="confirmed">Confirmed</option>
+        <option value="pending">Pending</option>
+        <option value="cancelled">Cancelled</option>
+      </select>
+      <input 
+        type="date" 
+      >
+    </div>
+  </div>
 
-          <!-- Cab Cards -->
-          <div class="booking-cards cab-cards">
-            <div class="booking-card cab-card" *ngFor="let cab of paginatedCabs">
-              <div class="cab-info">
-                <div class="vehicle-type">
-                  <i class="fas fa-car"></i>
-                  <span>{{cab.vehicleType}}</span>
-                </div>
-                <div class="status-badge" [class]="getStatusClass(cab.status)">
-                  {{cab.status}}
-                </div>
-              </div>
+  <!-- Cab Cards -->
+  <div class="booking-cards cab-cards">
+    <div 
+      class="booking-card cab-card" 
+      *ngFor="let cab of cabBookings"
+    >
+      <div class="cab-info">
+        <div class="vehicle-type">
+          <i class="fas fa-car"></i>
+          <span>{{ cab.vehicleType }}</span>
+        </div>
+        <div class="status-badge">
+          Confirmed
+        </div>
+      </div>
 
-              <div class="journey-details">
-                <div class="location-point">
-                  <i class="fas fa-map-marker-alt pickup"></i>
-                  <div class="location-info">
-                    <small>Pickup</small>
-                    <span>{{cab.pickupLocation}}</span>
-                  </div>
-                </div>
-                <div class="journey-line">
-                  <div class="journey-stats">
-                    <span class="distance">{{cab.distance}}</span>
-                    <span class="duration">{{cab.duration}}</span>
-                  </div>
-                </div>
-                <div class="location-point">
-                  <i class="fas fa-map-marker-alt dropoff"></i>
-                  <div class="location-info">
-                    <small>Drop-off</small>
-                    <span>{{cab.dropLocation}}</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="driver-info">
-                <div class="driver-details">
-                  <i class="fas fa-user-circle"></i>
-                  <div class="info">
-                    <span class="name">{{cab.driver.name}}</span>
-                    <div class="rating">
-                      <i class="fas fa-star"></i>
-                      <span>{{cab.driver.rating}}</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="vehicle-number">{{cab.driver.vehicleNumber}}</div>
-              </div>
-
-              <div class="card-footer">
-                <div class="details">
-                  <span><i class="fas fa-calendar"></i> {{cab.date | date}}</span>
-                  <span><i class="fas fa-clock"></i> {{cab.time}}</span>
-                  <span class="price">{{formatPrice(cab.price)}}</span>
-                </div>
-                <button class="action-btn">
-                  <span>View Details</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Pagination -->
-          <div class="pagination" *ngIf="totalCabPages > 1">
-            <button 
-              class="page-btn" 
-              [disabled]="currentCabPage === 1"
-              (click)="changeCabPage(currentCabPage - 1)">
-              Previous
-            </button>
-
-            <button 
-              class="page-btn" 
-              *ngFor="let page of cabPageNumbers"
-              [class.active]="page === currentCabPage"
-              (click)="changeCabPage(page)">
-              {{page}}
-            </button>
-
-            <button 
-              class="page-btn" 
-              [disabled]="currentCabPage === totalCabPages"
-              (click)="changeCabPage(currentCabPage + 1)">
-              Next
-            </button>
+      <div class="journey-details">
+        <div class="location-point">
+          <i class="fas fa-map-marker-alt pickup"></i>
+          <div class="location-info">
+            <small>Pickup</small>
+            <span>{{ cab.pickupLocation || 'Location not specified' }}</span>
           </div>
         </div>
+        <div class="journey-line">
+          <div class="journey-stats">
+            <span class="duration">{{ cab.pickupTime }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <div class="details">
+          <span><i class="fas fa-calendar"></i> {{ cab.date | date:'mediumDate' }}</span>
+          <span><i class="fas fa-clock"></i> {{ cab.pickupTime }}</span>
+        </div>
+        <button class="action-btn">
+          <span>View Details</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
         <!-- Similar structure for other tabs -->
       </div>
