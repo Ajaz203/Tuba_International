@@ -32,6 +32,7 @@ throw new Error('Method not implemented.');
   cabBookings: any[] = []; // Cab bookings
   tourBookings: any[] = []; // Tour bookings
   visaRequests: any[] = []; // Visa requests
+  totalBookingCount: number = 0; // Total number of bookings
   public email: string = ''; // User email for query parameters
 
   // Active Tab Management
@@ -61,6 +62,7 @@ throw new Error('Method not implemented.');
               this.cabBookings = response.data.cabBookings; // Cab bookings
               this.tourBookings = response.data.TourData; // Tour bookings (correct mapping)
               this.visaRequests = response.data.eVisaStampings;
+              this.totalBookingCount = response.totalBookings; // Set total bookings count
             } else {
               console.log('No user data found for email:', this.email);
             }
