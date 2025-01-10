@@ -1,23 +1,102 @@
 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
   <div class="row">
+    <!-- First Name Field -->
     <div class="form-group col-md-6">
-      <input type="text" class="form-control" formControlName="firstName" placeholder="First Name" />
+      <input 
+        type="text" 
+        class="form-control" 
+        formControlName="firstName" 
+        placeholder="First Name" 
+        [ngClass]="{'is-invalid': contactForm.get('firstName')?.invalid && contactForm.get('firstName')?.touched}"
+      />
+      <div *ngIf="contactForm.get('firstName')?.invalid && contactForm.get('firstName')?.touched" class="invalid-feedback">
+        First name is required.
+      </div>
     </div>
+
+    <!-- Last Name Field -->
     <div class="form-group col-md-6">
-      <input type="text" class="form-control" formControlName="lastName" placeholder="Last Name" />
+      <input 
+        type="text" 
+        class="form-control" 
+        formControlName="lastName" 
+        placeholder="Last Name" 
+        [ngClass]="{'is-invalid': contactForm.get('lastName')?.invalid && contactForm.get('lastName')?.touched}"
+      />
+      <div *ngIf="contactForm.get('lastName')?.invalid && contactForm.get('lastName')?.touched" class="invalid-feedback">
+        Last name is required.
+      </div>
     </div>
+
+    <!-- Phone Number Field -->
     <div class="form-group col-lg-6">
-      <input type="text" class="form-control" formControlName="phoneNumber" placeholder="Phone Number" />
+      <input 
+        type="text" 
+        class="form-control" 
+        formControlName="phoneNumber" 
+        placeholder="Phone Number" 
+        [ngClass]="{'is-invalid': contactForm.get('phoneNumber')?.invalid && contactForm.get('phoneNumber')?.touched}" 
+        maxlength="10" 
+        (input)="validatePhoneNumber($event)"
+      />
+      <div *ngIf="contactForm.get('phoneNumber')?.invalid && contactForm.get('phoneNumber')?.touched" class="invalid-feedback">
+        Please enter a valid 10-digit phone number.
+      </div>
     </div>
+    
+    
+
+    <!-- Email Address Field -->
     <div class="form-group col-lg-6">
-      <input type="email" class="form-control" formControlName="email" placeholder="Email Address" />
+      <input 
+        type="email" 
+        class="form-control" 
+        formControlName="email" 
+        placeholder="Email Address" 
+        [ngClass]="{'is-invalid': contactForm.get('email')?.invalid && contactForm.get('email')?.touched}" 
+      />
+      <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="invalid-feedback">
+        Please enter a valid email address.
+      </div>
     </div>
+    
+    
+    
+
+    <!-- Message Field -->
     <div class="form-group col-md-12">
-      <textarea class="form-control" formControlName="message" placeholder="Write Your Message"></textarea>
+      <textarea 
+        class="form-control" 
+        formControlName="message" 
+        placeholder="Write Your Message" 
+        [ngClass]="{'is-invalid': contactForm.get('message')?.invalid && contactForm.get('message')?.touched}"
+      ></textarea>
+      <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" class="invalid-feedback">
+        Message is required.
+      </div>
     </div>
+
+    <!-- Submit Button -->
     <div class="col-md-12 submit-btn">
-      <button type="submit" class="btn btn-solid" [disabled]="contactForm.invalid">Send Your Message</button>
+      <button type="submit" class="btn btn-solid" [disabled]="contactForm.invalid">
+        Send Your Message
+      </button>
     </div>
   </div>
 </form>
 
+
+  <ng-template #successModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Success</h4>
+      <button type="button" class="close" (click)="modal.dismiss('Cross click')">
+        <span>&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Your message has been sent successfully! <br> We will get back to you soon</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
