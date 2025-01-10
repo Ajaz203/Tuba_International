@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild ,TemplateRef} from '@angular/core';
-import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors, FormControl, FormArray } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
@@ -212,7 +212,7 @@ export class FlightBookingComponent implements OnInit { @ViewChild('errorModal')
         });
     }
 
-    private initForm() {
+    initForm() {
         this.flightForm = this.fb.group({
             fromLocation: [this.fromInputValue, [
                 Validators.required,
@@ -248,7 +248,42 @@ export class FlightBookingComponent implements OnInit { @ViewChild('errorModal')
                 Validators.pattern(/^[0-9]{10}$/)
             ]],
             travel_insurance: [false],
-            airport_pickup: [false]
+            airport_pickup: [false],
+            additionalPassengers: this.fb.array([])
+        });
+
+        // Subscribe to passengers control changes
+        this.flightForm.get('passengers')?.valueChanges.subscribe(value => {
+            this.updateAdditionalPassengers(value);
+        });
+    }
+
+    get additionalPassengersArray() {
+        return this.flightForm.get('additionalPassengers') as FormArray;
+    }
+
+    private updateAdditionalPassengers(passengerCount: number) {
+        const currentLength = this.additionalPassengersArray.length;
+        const targetLength = passengerCount - 1; // -1 because we already have the lead passenger
+
+        if (currentLength < targetLength) {
+            // Add more passenger forms
+            for (let i = currentLength; i < targetLength; i++) {
+                this.additionalPassengersArray.push(this.createPassengerForm());
+            }
+        } else if (currentLength > targetLength) {
+            // Remove excess passenger forms
+            for (let i = currentLength; i > targetLength; i--) {
+                this.additionalPassengersArray.removeAt(i - 1);
+            }
+        }
+    }
+
+    private createPassengerForm() {
+        return this.fb.group({
+            name: ['', Validators.required],
+            dob: ['', Validators.required],
+            passportNumber: ['', Validators.required]
         });
     }
 
