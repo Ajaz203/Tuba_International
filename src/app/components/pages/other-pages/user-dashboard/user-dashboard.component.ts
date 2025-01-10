@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { trigger, state, style, animate, transition } from '@angular/animations';
@@ -20,10 +20,9 @@ import { AuthService } from '../../../../shared/services/auth.service';
       transition('true => false', animate('300ms ease-out')),
       transition('false => true', animate('300ms ease-in'))
     ])
-  ],
-  encapsulation: ViewEncapsulation.None
+  ]
 })
-export class UserDashboardComponent {
+export class UserDashboardComponent implements OnInit {
 logout() {
 throw new Error('Method not implemented.');
 }
@@ -37,6 +36,13 @@ throw new Error('Method not implemented.');
 
   // Active Tab Management
   public activeTab: string = 'flights';
+
+  // New properties for filtering
+  searchQuery: string = '';
+  statusFilter: string = 'all';
+  dateFilter: string = '';
+  filteredFlightBookings: any[] = []; // Filtered flight bookings
+  filteredHotelBookings: any[] = []; // Filtered hotel bookings
 
   constructor(private route: ActivatedRoute, private authService: AuthService) {
     this.route.queryParams.subscribe(params => {
@@ -77,7 +83,38 @@ throw new Error('Method not implemented.');
     const diffTime = Math.abs(checkOutDate.getTime() - checkInDate.getTime());
     return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
   }
-  
+
+  ngOnInit() {
+    // Remove this line
+    // this.loadFlightBookings();
+  }
+
+
+
+  switchTab(tab: string) {
+    this.activeTab = tab;
+    // Reset filters when switching tabs
+    this.searchQuery = '';
+    this.statusFilter = 'all';
+    this.dateFilter = '';
+    // Reinitialize filtered arrays
+    this.filteredFlightBookings = [...this.flightBookings];
+    this.filteredHotelBookings = [...this.hotelBookings];
+  }
+
+  // Add this method to help debug the data structure
+  logBookingStructure() {
+    if (this.flightBookings.length > 0) {
+      console.log('Sample booking structure:', {
+        fullBooking: this.flightBookings[0],
+        airline: this.flightBookings[0]?.flight?.airline,
+        status: this.flightBookings[0]?.status,
+        from: this.flightBookings[0]?.journey?.from,
+        to: this.flightBookings[0]?.journey?.to,
+        date: this.flightBookings[0]?.journey?.date
+      });
+    }
+  }
 }
 
 

@@ -283,7 +283,7 @@ $visa-border-color: rgba(255, 255, 255, 0.1);
           }
 
           &.active {
-            background: linear-gradient(135deg, $primary-color, darken($primary-color, 10%));
+            background: linear-gradient(135deg, #15B1A3 0%, #158DB1 100%);
             color: white;
             box-shadow: 
               0 4px 15px rgba($primary-color, 0.3),
@@ -470,6 +470,7 @@ $visa-border-color: rgba(255, 255, 255, 0.1);
 
               .plane-icon {
                 position: absolute;
+                font-size: 35px;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
@@ -1350,12 +1351,11 @@ $visa-border-color: rgba(255, 255, 255, 0.1);
 
       .card-right {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        justify-content: right;
         
         .action-btn {
           padding: 0.8rem 1.5rem;
-          background: linear-gradient(135deg, $primary-color, darken($primary-color, 10%));
+          background: linear-gradient(135deg, #15B1A3 0%, #158DB1 100%);
           border: none;
           border-radius: 25px;
           color: white;
@@ -1554,7 +1554,7 @@ $visa-border-color: rgba(255, 255, 255, 0.1);
 .visa-item-card {
   background: $visa-card-bg;
   border-radius: 16px;
-  padding: 1.5rem;
+  padding: 0 1.5rem 1.5rem 1.5rem;
   position: relative;
   border: 1px solid $visa-border-color;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1720,7 +1720,7 @@ $visa-border-color: rgba(255, 255, 255, 0.1);
 
     .visa-action-button {
       padding: 0.8rem 1.5rem;
-      background: linear-gradient(135deg, $visa-primary, darken($visa-primary, 10%));
+      background: linear-gradient(135deg, #15B1A3 0%, #158DB1 100%);
       border: none;
       border-radius: 25px;
       color: white;
