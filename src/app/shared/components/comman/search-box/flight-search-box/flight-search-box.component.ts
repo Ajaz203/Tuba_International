@@ -84,7 +84,7 @@ export class FlightSearchBoxComponent {
   public showToSuggestions: boolean = false;
   public isLoading : boolean = false;
   flightResults: any[] = [];
-
+  isFormDisabled: boolean = true;
 
 
   public payload = {
