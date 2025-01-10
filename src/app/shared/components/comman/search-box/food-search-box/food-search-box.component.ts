@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
     imports: [NgClass]
 })
 export class FoodSearchBoxComponent {
-
+  isDisabled = true;
   @Input() text: boolean;
   @Input() borderClass: boolean;
   @Input() searchFix: boolean;

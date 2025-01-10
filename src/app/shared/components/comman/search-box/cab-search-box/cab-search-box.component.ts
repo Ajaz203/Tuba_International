@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
     imports: [NgClass, OwlDateTimeModule,OwlNativeDateTimeModule]
 })
 export class CabSearchBoxComponent {
-
+  isDisabled = true;
   @Input() text: boolean;
   @Input() borderClass: boolean;
   @Input() searchFix: boolean;

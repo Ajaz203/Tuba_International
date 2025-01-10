@@ -6,22 +6,24 @@
     <div class="search-box" [class.rounded10]="borderClass" [ngClass]="{ 'container custom-container' : searchFixed }">
       <div class="left-part">
         <div class="search-body title-hotel">
-          <h6>Tuba International </h6>
-          <input name="text" placeholder="Country" class="form-control ">
+          <h6>Tuba International</h6>
+          <input name="text" placeholder="Country" class="form-control" [disabled]="true">
         </div>
         <div class="search-body">
           <h6>Select Visa</h6>
-          <input type="text" placeholder="Select Your Visa" class="form-control">
+          <input type="text" placeholder="Select Your Visa" class="form-control" [disabled]="true">
         </div>
         <div class="search-body">
           <h6>Search</h6>
-          <input type="text" placeholder="Search Visa" class="form-control">
+          <input type="text" placeholder="Search Visa" class="form-control" [disabled]="true">
         </div>
         <div class="search-body btn-search">
           <div class="right-part">
-            <button (click)="navigateToVisaBooking()" class="btn btn-solid color1">search</button>          </div>
+            <button (click)="navigateToVisaBooking()" class="btn btn-solid color1">search</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
+  
 </div>

@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
     imports: [ClickOutsideDirective, NgClass, NgbInputDatepicker]
 })
 export class FlightSearchBoxTwoComponent {
-
+  isDisabled = true;
   @Input() text: boolean;
   @Input() borderClass: boolean;
   @Input() searchFix: boolean;
