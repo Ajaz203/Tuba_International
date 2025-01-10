@@ -128,7 +128,7 @@ import { CommonModule } from '@angular/common';
           <i class="fa fa-headset"></i>
           <div>
             <p>Need assistance with your visa application?</p>
-            <a href="tel:+919876543210">+91 98765 43210</a>
+            <a href="tel:+919876543210">+91 9643306786</a>
             <small>Available Mon-Sat (9 AM - 6 PM)</small>
           </div>
         </div>
