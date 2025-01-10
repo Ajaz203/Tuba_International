@@ -132,38 +132,84 @@
 
                         <!-- Passenger Details Fields (Step 2) -->
                         <div class="form-fields" [class.active]="currentStep === 2">
-                            <h3 class="section-title">Passenger Details</h3>
+                            <h3 class="section-title">Lead Passenger Details</h3>
 
-                            <div class="floating-input">
-                                <div class="input-wrapper">
-                                    <i class="fas fa-user"></i>
-                                    <input type="text" formControlName="name" placeholder="Full Name"
-                                        [class.is-invalid]="nameControl?.invalid && nameControl?.touched">
-                                    <div class="input-glow"></div>
+                            <!-- Lead Passenger -->
+                            <div class="passenger-details">
+                                <div class="floating-input">
+                                    <div class="input-wrapper">
+                                        <i class="fas fa-user"></i>
+                                        <input type="text" formControlName="name" placeholder="Full Name"
+                                            [class.is-invalid]="nameControl?.invalid && nameControl?.touched">
+                                        <div class="input-glow"></div>
+                                    </div>
+                                    <div class="error-message" *ngIf="nameError">{{ nameError }}</div>
                                 </div>
-                                <div class="error-message" *ngIf="nameError">{{ nameError }}</div>
+
+                                <div class="form-grid">
+                                    <div class="floating-input">
+                                        <div class="input-wrapper">
+                                            <i class="fas fa-envelope"></i>
+                                            <input type="email" formControlName="email" placeholder="Email Address"
+                                                [class.is-invalid]="emailControl?.invalid && emailControl?.touched">
+                                            <div class="input-glow"></div>
+                                        </div>
+                                        <div class="error-message" *ngIf="emailError">{{ emailError }}</div>
+                                    </div>
+
+                                    <div class="floating-input">
+                                        <div class="input-wrapper">
+                                            <i class="fas fa-phone"></i>
+                                            <input type="tel" formControlName="phone" placeholder="Phone Number"
+                                                (input)="onPhoneInput($event)"
+                                                [class.is-invalid]="phoneControl?.invalid && phoneControl?.touched">
+                                            <div class="input-glow"></div>
+                                        </div>
+                                        <div class="error-message" *ngIf="phoneError">{{ phoneError }}</div>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="form-grid">
-                                <div class="floating-input">
-                                    <div class="input-wrapper">
-                                        <i class="fas fa-envelope"></i>
-                                        <input type="email" formControlName="email" placeholder="Email Address"
-                                            [class.is-invalid]="emailControl?.invalid && emailControl?.touched">
-                                        <div class="input-glow"></div>
+                            <!-- Additional Passengers -->
+                            <div formArrayName="additionalPassengers" class="additional-passengers">
+                                <h3 class="section-title" *ngIf="additionalPassengersArray.length > 0">Additional Passengers</h3>
+                                
+                                <div *ngFor="let passenger of additionalPassengersArray.controls; let i = index" 
+                                     [formGroupName]="i" 
+                                     class="passenger-details">
+                                    <h4 class="passenger-number">Passenger {{i + 2}}</h4>
+                                    
+                                    <div class="floating-input">
+                                        <div class="input-wrapper">
+                                            <i class="fas fa-user"></i>
+                                            <input type="text" formControlName="name" placeholder="Full Name"
+                                                [class.is-invalid]="passenger.get('name')?.invalid && passenger.get('name')?.touched">
+                                            <div class="input-glow"></div>
+                                        </div>
+                                        <div class="error-message" *ngIf="passenger.get('name')?.invalid && passenger.get('name')?.touched">
+                                            Name is required
+                                        </div>
                                     </div>
-                                    <div class="error-message" *ngIf="emailError">{{ emailError }}</div>
-                                </div>
 
-                                <div class="floating-input">
-                                    <div class="input-wrapper">
-                                        <i class="fas fa-phone"></i>
-                                        <input type="tel" formControlName="phone" placeholder="Phone Number"
-                                            (input)="onPhoneInput($event)"
-                                            [class.is-invalid]="phoneControl?.invalid && phoneControl?.touched">
-                                        <div class="input-glow"></div>
+                                    <div class="form-grid">
+                                        <div class="floating-input">
+                                            <div class="input-wrapper">
+                                                <i class="fas fa-calendar"></i>
+                                                <input type="date" formControlName="dob" placeholder="Date of Birth"
+                                                    [class.is-invalid]="passenger.get('dob')?.invalid && passenger.get('dob')?.touched">
+                                                <div class="input-glow"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="floating-input">
+                                            <div class="input-wrapper">
+                                                <i class="fas fa-passport"></i>
+                                                <input type="text" formControlName="passportNumber" placeholder="Passport Number"
+                                                    [class.is-invalid]="passenger.get('passportNumber')?.invalid && passenger.get('passportNumber')?.touched">
+                                                <div class="input-glow"></div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="error-message" *ngIf="phoneError">{{ phoneError }}</div>
                                 </div>
                             </div>
 
