@@ -1,3 +1,4 @@
+
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
   <div *ngIf="type === 'register'" class="form-group">
     <label for="name">Full name</label>
@@ -12,6 +13,23 @@
       Name is required
     </small>
   </div>
+  <div *ngIf="type === 'register'" class="form-group">
+    <label for="phone">Phone Number</label>
+    <input
+      type="text"
+      class="form-control"
+      id="phone"
+      formControlName="phone"
+      placeholder="Enter your phone number"
+    />
+    <small
+      *ngIf="loginForm.get('phone')?.invalid && loginForm.get('phone')?.touched"
+      class="text-danger"
+    >
+      Valid phone number is required
+    </small>
+  </div>
+  
 
   <div class="form-group">
     <label for="email">

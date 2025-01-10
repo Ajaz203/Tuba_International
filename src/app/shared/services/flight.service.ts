@@ -83,5 +83,9 @@ getflight(data: any) {
       }))
     );
   }
+
+  getFlightBookings(): Observable<any> {
+    return this.http.get<any>('/api/flight-bookings'); // Replace with your actual API endpoint
+  }
 }
 

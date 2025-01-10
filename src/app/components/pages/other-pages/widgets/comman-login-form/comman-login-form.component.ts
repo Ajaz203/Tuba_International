@@ -17,7 +17,7 @@ export class CommanLoginFormComponent implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private authService: AuthService,private router: Router) {}
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -32,6 +32,10 @@ export class CommanLoginFormComponent implements OnInit {
       password: [
         '',
         [Validators.required, Validators.minLength(6)],
+      ],
+      phone: [
+        '',
+        this.type === 'register' ? [Validators.required, Validators.pattern(/^[0-9]{10}$/)] : [], // Phone number only for registration
       ],
       rememberMe: [false], // Only applicable for login
     });
@@ -50,7 +54,6 @@ export class CommanLoginFormComponent implements OnInit {
         (response) => {
           console.log('Register Successful:', response);
           this.router.navigate(['login']);
-
         },
         (error) => {
           console.error('Register Error:', error);
@@ -61,9 +64,8 @@ export class CommanLoginFormComponent implements OnInit {
         (response) => {
           console.log('Login Successful:', response);
           this.router.navigate(['user-dashboard'], {
-            queryParams: { email: formData.emailOrUsername }
+            queryParams: { email: formData.emailOrUsername },
           });
-
         },
         (error) => {
           console.error('Login Error:', error);
@@ -72,13 +74,20 @@ export class CommanLoginFormComponent implements OnInit {
     }
   }
 
+  
   toggleType(): void {
-    // this.type = this.type === 'register' ? 'login' : 'register';
-    this.router.navigate(['/page/other-pages/register']);
-    this.ngOnInit(); 
+    if (this.type === 'register') {
+      this.type = 'login';
+      this.router.navigate(['/page/other-pages/login']);
+    } else {
+      this.type = 'register';
+      this.router.navigate(['/page/other-pages/register']);
+    }
+    this.ngOnInit(); // Reinitialize the form with the new type
   }
+  
+
   goToForgotPassword(): void {
     this.router.navigate(['forgot-password']);
   }
- 
 }
