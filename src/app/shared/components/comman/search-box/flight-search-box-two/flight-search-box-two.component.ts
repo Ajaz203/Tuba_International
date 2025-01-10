@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 })
 export class FlightSearchBoxTwoComponent {
   isDisabled = true;
+  
   @Input() text: boolean;
   @Input() borderClass: boolean;
   @Input() searchFix: boolean;
