@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../../../shared/services/auth.service';
-
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -24,7 +24,7 @@ import { AuthService } from '../../../../shared/services/auth.service';
 })
 export class UserDashboardComponent implements OnInit {
 logout() {
-throw new Error('Method not implemented.');
+this.router.navigate(['/home/mix-demo/classic']);
 }
   userData: any = {}; // User profile data
   flightBookings: any[] = []; // Flight bookings
@@ -45,7 +45,7 @@ throw new Error('Method not implemented.');
   filteredFlightBookings: any[] = []; // Filtered flight bookings
   filteredHotelBookings: any[] = []; // Filtered hotel bookings
 
-  constructor(private route: ActivatedRoute, private authService: AuthService) {
+  constructor(private route: ActivatedRoute, private authService: AuthService, private router: Router) {
     this.route.queryParams.subscribe(params => {
       if (params['email']) {
         this.email = params['email'];
