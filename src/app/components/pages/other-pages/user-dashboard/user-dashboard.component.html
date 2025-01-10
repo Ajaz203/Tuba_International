@@ -5,7 +5,7 @@
       <div class="profile-card">
         <div class="profile-info">
           <div class="avatar-wrapper">
-            <img src="assets/images/default-avatar.png" alt="User Profile">
+            <img src="/assets/imges2/user.png" alt="User Profile">
             <div class="status-badge online"></div>
           </div>
           <div class="user-details">
@@ -22,6 +22,13 @@
               <div class="stat-label">Total Bookings</div>
             </div>
           </div>
+          <!-- Logout Button with unique classes -->
+          <button class="dashboard-logout-btn">
+            <span class="dashboard-logout-icon-wrap">
+              <i class="fas fa-sign-out-alt dashboard-logout-icon"></i>
+            </span>
+            <span class="dashboard-logout-text">Logout</span>
+          </button>
         </div>
       </div>
       
@@ -299,7 +306,190 @@
 </div>
 
 
-        <!-- Similar structure for other tabs -->
+         <!-- Tours Tab Content -->
+<div *ngSwitchCase="'tours'" class="content-section animate-fade">
+  <!-- Search Section -->
+  <div class="search-filter-section gradient-card">
+    <div class="search-box">
+      <i class="fas fa-search pulse-icon"></i>
+      <input type="text" placeholder="Search tours...">
+    </div>
+    <div class="filter-options">
+      <select>
+        <option value="all">All Status</option>
+        <option value="confirmed">Confirmed</option>
+        <option value="pending">Pending</option>
+        <option value="cancelled">Cancelled</option>
+      </select>
+      <input type="date">
+    </div>
+  </div>
+
+  <!-- Tour Cards -->
+  <div class="booking-cards">
+    <div *ngFor="let tour of tourBookings; let i = index" 
+         class="booking-card gradient-card"
+         [ngStyle]="{'animation-delay': i * 0.1 + 's'}">
+      
+      <!-- Left Section -->
+      <div class="card-left">
+        <div class="destination-section">
+          <div class="destination-icon">
+            <i class="fas fa-map-marker-alt floating-icon"></i>
+          </div>
+          <div class="destination-info">
+            <h3>{{ tour.destination | titlecase }}</h3>
+            <span class="status-badge" [ngClass]="tour.status">
+              <i class="fas" [ngClass]="{
+                'fa-check-circle pulse-icon': tour.status === 'confirmed',
+                'fa-clock rotate-icon': tour.status === 'pending',
+                'fa-times-circle shake-icon': tour.status === 'cancelled'
+              }"></i>
+              {{ tour.status | titlecase }}
+            </span>
+          </div>
+        </div>
+
+        <!-- Tour Details -->
+        <div class="tour-info">
+          <div class="info-item">
+            <i class="fas fa-calendar-alt bounce-icon"></i>
+            <div class="info-content">
+              <label>Travel Date</label>
+              <span>{{ tour.travel_date | date:'mediumDate' }}</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i class="fas fa-clock rotate-icon"></i>
+            <div class="info-content">
+              <label>Duration</label>
+              <span>{{ tour.duration }} Days</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i class="fas fa-users swing-icon"></i>
+            <div class="info-content">
+              <label>Group Size</label>
+              <span>{{ tour.members }} Members</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i class="fas fa-utensils bounce-icon"></i>
+            <div class="info-content">
+              <label>Meal Plan</label>
+              <span>{{ tour.meal_preference | titlecase }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Section -->
+      <div class="card-right">
+        <button class="action-btn">
+          <i class="fas fa-eye pulse-icon"></i>
+          <span>View Details</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Visa Tab Content -->
+<div *ngSwitchCase="'visa'" class="visa-content-wrapper animate-fade">
+  <!-- Search Section -->
+  <div class="visa-search-container">
+    <div class="visa-search-box">
+      <i class="fas fa-search visa-search-icon"></i>
+      <input 
+        type="text" 
+        placeholder="Search visas by country, type..." 
+        class="visa-search-input"
+      >
+    </div>
+    <div class="visa-filter-group">
+      <select class="visa-status-select">
+        <option value="all">All Status</option>
+        <option value="confirmed">Confirmed</option>
+        <option value="pending">Pending</option>
+        <option value="rejected">Rejected</option>
+      </select>
+      <input type="date" class="visa-date-input">
+    </div>
+  </div>
+
+  <!-- Visa Cards Container -->
+  <div class="visa-grid-container">
+    <div *ngFor="let visa of visaRequests; let i = index" 
+         class="visa-item-card"
+         [ngStyle]="{'animation-delay': i * 0.1 + 's'}">
+      
+      <!-- Status Indicator -->
+      <div class="visa-status-indicator" [ngClass]="visa.status?.toLowerCase()">
+        <i class="fas" [ngClass]="{
+          'fa-check-circle visa-icon-success': visa.status === 'confirmed',
+          'fa-clock-o visa-icon-pending': visa.status === 'pending',
+          'fa-times-circle visa-icon-rejected': visa.status === 'rejected'
+        }"></i>
+        {{ visa.status }}
+      </div>
+
+      <!-- Visa Content -->
+      <div class="visa-content-body">
+        <div class="visa-destination-header">
+          <div class="visa-country-icon">
+            <i class="fas fa-globe-americas"></i>
+          </div>
+          <h3 class="visa-country-name">{{ visa.country | titlecase }}</h3>
+        </div>
+        
+        <div class="visa-details-grid">
+          <div class="visa-detail-item">
+            <i class="fas fa-passport visa-detail-icon"></i>
+            <div class="visa-detail-text">
+              <span class="visa-detail-label">Visa Type</span>
+              <span class="visa-detail-value">{{ visa.visaType | titlecase }}</span>
+            </div>
+          </div>
+          
+          <div class="visa-detail-item">
+            <i class="fas fa-users visa-detail-icon"></i>
+            <div class="visa-detail-text">
+              <span class="visa-detail-label">Travelers</span>
+              <span class="visa-detail-value">{{ visa.passengers }}</span>
+            </div>
+          </div>
+
+          <div class="visa-detail-item">
+            <i class="fas fa-calendar-alt visa-detail-icon"></i>
+            <div class="visa-detail-text">
+              <span class="visa-detail-label">Processing Time</span>
+              <span class="visa-detail-value">{{ visa.processingTime || '7-14 days' }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visa Footer -->
+      <div class="visa-card-footer">
+        <div class="visa-purpose-wrapper">
+          <i class="fas fa-briefcase visa-purpose-icon"></i>
+          <div class="visa-purpose-text">
+            <span class="visa-purpose-label">Purpose of Visit</span>
+            <span class="visa-purpose-value">{{ visa.purpose || 'Not Specified' }}</span>
+          </div>
+        </div>
+        <button class="visa-action-button">
+          <i class="fas fa-eye visa-button-icon"></i>
+          <span>View Details</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
       </div>
     </div>
   </div>

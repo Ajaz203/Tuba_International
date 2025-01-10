@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { trigger, state, style, animate, transition } from '@angular/animations';
@@ -20,9 +20,13 @@ import { AuthService } from '../../../../shared/services/auth.service';
       transition('true => false', animate('300ms ease-out')),
       transition('false => true', animate('300ms ease-in'))
     ])
-  ]
+  ],
+  encapsulation: ViewEncapsulation.None
 })
 export class UserDashboardComponent {
+logout() {
+throw new Error('Method not implemented.');
+}
   userData: any = {}; // User profile data
   flightBookings: any[] = []; // Flight bookings
   hotelBookings: any[] = []; // Hotel bookings
@@ -49,8 +53,8 @@ export class UserDashboardComponent {
               this.flightBookings = response.data.flightBookings; // Flight bookings
               this.hotelBookings = response.data.hotelBookings; // Hotel bookings
               this.cabBookings = response.data.cabBookings; // Cab bookings
-              this.tourBookings = response.data.tourBookings; // Tour bookings
-              this.visaRequests = response.data.visaRequests; // Visa requests
+              this.tourBookings = response.data.TourData; // Tour bookings (correct mapping)
+              this.visaRequests = response.data.eVisaStampings;
             } else {
               console.log('No user data found for email:', this.email);
             }
