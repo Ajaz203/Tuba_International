@@ -1,0 +1,129 @@
+<div class="dashboard-container">
+  <div class="dashboard-layout">
+    <!-- Profile Header - Left Side -->
+    <div class="profile-sidebar">
+      <div class="profile-card">
+        <div class="profile-info">
+          <div class="avatar-wrapper">
+            <img src="/assets/imges2/user.png" alt="User Profile" />
+            <div class="status-badge online"></div>
+          </div>
+          <div class="user-details">
+            <h2>{{ userData.fullName }}</h2>
+            <p class="member-info">
+              Member since {{ userData.createdAt | date : "MMMM yyyy" }}
+            </p>
+            <div class="contact-info">
+              <span
+                ><i class="fas fa-envelope"></i>
+                {{ userData.emailOrUsername }}</span
+              >
+              <span
+                ><i class="fas fa-phone"></i>
+                {{ userData.phone || "N/A" }}</span
+              >
+            </div>
+          </div>
+          <div class="stats-container">
+            <div class="stat-card">
+              <div class="stat-value">{{ totalBookingCount }}</div>
+              <div class="stat-label">Total Bookings</div>
+            </div>
+          </div>
+          <!-- Logout Button with unique classes -->
+          <button class="dashboard-logout-btn">
+            <span class="dashboard-logout-icon-wrap">
+              <i class="fas fa-sign-out-alt dashboard-logout-icon"></i>
+            </span>
+            <span class="dashboard-logout-text">Logout</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content Area - Right Side -->
+    <div class="main-content">
+      <!-- Navigation Tabs - Top -->
+      <div class="nav-tabs">
+        <button
+          class="nav-tab"
+          [class.active]="activeTab === 'flights'"
+          (click)="setActiveTab('flights')"
+        >
+          <i class="fas fa-plane"></i>
+          <span>Flights</span>
+        </button>
+        <button
+          class="nav-tab"
+          [class.active]="activeTab === 'hotels'"
+          (click)="setActiveTab('hotels')"
+        >
+          <i class="fas fa-hotel"></i>
+          <span>Hotels</span>
+        </button>
+        <button
+          class="nav-tab"
+          [class.active]="activeTab === 'cabs'"
+          (click)="setActiveTab('cabs')"
+        >
+          <i class="fas fa-taxi"></i>
+          <span>Cabs</span>
+        </button>
+        <button
+          class="nav-tab"
+          [class.active]="activeTab === 'tours'"
+          (click)="setActiveTab('tours')"
+        >
+          <i class="fas fa-map-marked-alt"></i>
+          <span>Tours</span>
+        </button>
+        <button
+          class="nav-tab"
+          [class.active]="activeTab === 'visa'"
+          (click)="setActiveTab('visa')"
+        >
+          <i class="fas fa-passport"></i>
+          <span>Visa</span>
+        </button>
+      </div>
+
+      <!-- Tab Content - Below Tabs -->
+      <div class="tab-content" [ngSwitch]="activeTab">
+        <!-- Flights Tab -->
+        <div *ngSwitchCase="'flights'" class="content-section animate-fade">
+          <div class="booking-cards">
+            <div class="booking-card"></div>
+          </div>
+        </div>
+        <!-- Hotels Tab Content -->
+        <div *ngSwitchCase="'hotels'" class="content-section animate-fade">
+          <div class="booking-cards">
+            <div class="booking-card"></div>
+          </div>
+        </div>
+        <!-- Cabs Tab Content -->
+        <div *ngSwitchCase="'cabs'" class="content-section animate-fade">
+          <div class="booking-cards">
+            <div class="booking-card"></div>
+          </div>
+        </div>
+        <!-- Tours Tab Content -->
+        <div *ngSwitchCase="'tours'" class="content-section animate-fade">
+          <div class="booking-cards">
+            <div class="booking-card"></div>
+          </div>
+        </div>
+        <!-- Visa Tab Content -->
+        <div *ngSwitchCase="'visa'" class="visa-content-wrapper animate-fade">
+            <div class="booking-cards">
+                <div class="booking-card"></div>
+              </div>
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
