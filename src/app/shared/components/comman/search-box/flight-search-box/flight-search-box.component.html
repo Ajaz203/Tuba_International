@@ -1,59 +1,29 @@
 <form (ngSubmit)="submitForm()" #flightForm="ngForm">
   <div class="radio-form">
-    <input 
-      id="radio-1" 
-      type="radio" 
-      name="type" 
-      [value]="2" 
-      [(ngModel)]="payload.type" 
-      (change)="toggleReturnDate()" 
-    />
+    <input id="radio-1" type="radio" name="type" [value]="2" [(ngModel)]="payload.type" (change)="toggleReturnDate()"
+      [disabled]="isFormDisabled" />
     <label for="radio-1" class="radio-label">One Way Flight</label>
 
-    <input 
-      id="radio-2" 
-      type="radio" 
-      name="type" 
-      [value]="1" 
-      [(ngModel)]="payload.type" 
-      (change)="toggleReturnDate()" 
-    />
+    <input id="radio-2" type="radio" name="type" [value]="1" [(ngModel)]="payload.type" (change)="toggleReturnDate()"
+      [disabled]="isFormDisabled" />
     <label for="radio-2" class="radio-label">Round Trip</label>
   </div>
 
   <div class="form-group">
-    <input
-      type="text"
-      class="form-control open-"
-      placeholder="From"
-      [(ngModel)]="fromInputValue" 
-      name="departure"
-      (input)="onInput('from', $event)" 
-    />
+    <input type="text" class="form-control open-" placeholder="From" [(ngModel)]="fromInputValue" name="departure"
+      (input)="onInput('from', $event)" [disabled]="isFormDisabled" />
     <ul class="suggestions-list" *ngIf="fromSuggestions.length > 0 && showFromSuggestions">
-      <li
-        *ngFor="let suggestion of fromSuggestions"
-        (click)="selectFromSuggestion(suggestion)"
-      >
+      <li *ngFor="let suggestion of fromSuggestions" (click)="selectFromSuggestion(suggestion)">
         {{ suggestion.name }}
       </li>
     </ul>
   </div>
 
   <div class="form-group">
-    <input
-      type="text"
-      class="form-control open-"
-      placeholder="To"
-      [(ngModel)]="toInputValue" 
-      name="arrival"
-      (input)="onInput('to', $event)" 
-    />
+    <input type="text" class="form-control open-" placeholder="To" [(ngModel)]="toInputValue" name="arrival"
+      (input)="onInput('to', $event)" [disabled]="isFormDisabled" />
     <ul class="suggestions-list" *ngIf="toSuggestions.length > 0 && showToSuggestions">
-      <li
-        *ngFor="let suggestion of toSuggestions"
-        (click)="selectToSuggestion(suggestion)"
-      >
+      <li *ngFor="let suggestion of toSuggestions" (click)="selectToSuggestion(suggestion)">
         {{ suggestion.name }}
       </li>
     </ul>
@@ -61,58 +31,31 @@
 
   <div class="form-group row">
     <div class="col">
-      <input
-        type="date"
-        class="form-control"
-        name="outbound_date"
-        [(ngModel)]="payload.outbound_date"
-        placeholder="Depart Date"
-      />
+      <input type="date" class="form-control" name="outbound_date" [(ngModel)]="payload.outbound_date"
+        placeholder="Depart Date" [disabled]="isFormDisabled" />
     </div>
     <div class="col" *ngIf="payload.type === 1">
-      <input
-        type="date"
-        class="form-control"
-        name="return_date"
-        [(ngModel)]="payload.return_date"
-        placeholder="Return Date"
-      />
+      <input type="date" class="form-control" name="return_date" [(ngModel)]="payload.return_date"
+        placeholder="Return Date" [disabled]="isFormDisabled" />
     </div>
   </div>
 
   <div class="form-group">
-    <input
-      type="text"
-      class="form-control open-select"
-      placeholder="Traveler"
-      (click)="openTraveler()"
-      readonly
-    />
+    <input type="text" class="form-control open-select" placeholder="Traveler" (click)="openTraveler()" readonly
+      [disabled]="isFormDisabled" />
     <div class="selector-box-flight" [class.show]="isTraveler">
       <div class="room-cls">
         <div class="qty-box">
           <label>Adult</label>
           <div class="input-group">
-            <button
-              type="button"
-              class="btn quantity-left-minus"
-              [disabled]="payload.adults <= 1"
-              (click)="updateTraveler('adults', -1)"
-            >
+            <button type="button" class="btn quantity-left-minus" [disabled]="payload.adults <= 1 || isFormDisabled"
+              (click)="updateTraveler('adults', -1)">
               -
             </button>
-            <input
-              type="text"
-              class="form-control qty-input input-number"
-              name="adults"
-              [(ngModel)]="payload.adults"
-              readonly
-            />
-            <button
-              type="button"
-              class="btn quantity-right-plus"
-              (click)="updateTraveler('adults', 1)"
-            >
+            <input type="text" class="form-control qty-input input-number" name="adults" [(ngModel)]="payload.adults"
+              readonly [disabled]="isFormDisabled" />
+            <button type="button" class="btn quantity-right-plus" [disabled]="isFormDisabled"
+              (click)="updateTraveler('adults', 1)">
               +
             </button>
           </div>
@@ -120,26 +63,14 @@
         <div class="qty-box">
           <label>Children</label>
           <div class="input-group">
-            <button
-              type="button"
-              class="btn quantity-left-minus"
-              [disabled]="payload.children <= 0"
-              (click)="updateTraveler('children', -1)"
-            >
+            <button type="button" class="btn quantity-left-minus" [disabled]="payload.children <= 0 || isFormDisabled"
+              (click)="updateTraveler('children', -1)">
               -
             </button>
-            <input
-              type="text"
-              class="form-control qty-input input-number"
-              name="children"
-              [(ngModel)]="payload.children"
-              readonly
-            />
-            <button
-              type="button"
-              class="btn quantity-right-plus"
-              (click)="updateTraveler('children', 1)"
-            >
+            <input type="text" class="form-control qty-input input-number" name="children"
+              [(ngModel)]="payload.children" readonly [disabled]="isFormDisabled" />
+            <button type="button" class="btn quantity-right-plus" [disabled]="isFormDisabled"
+              (click)="updateTraveler('children', 1)">
               +
             </button>
           </div>
@@ -148,14 +79,12 @@
     </div>
   </div>
 
-  <button
-    type="submit"
-    class="btn btn-rounded color1"
-    [disabled]="!payload.departure_id || !payload.arrival_id || !payload.outbound_date"
-  >
-    Search Flights
-  </button>
+  <button type="submit" class="btn btn-rounded color1"  > <a style="color: white;" href="/flight/booking/book-now">Search Flights </a></button>
+
+
+  
 </form>
+
 
 
 
@@ -220,19 +149,19 @@
               <img [src]="selectedFlight.image_link" [alt]="selectedFlight.airline">
               <span>{{selectedFlight.airline}}</span>
             </div>
-            
+
             <div class="flight-path">
               <div class="time-location">
                 <span class="time">{{selectedFlight.departure_time | date:'shortTime'}}</span>
                 <span class="location">{{selectedFlight.departure_airport}}</span>
               </div>
-              
+
               <div class="duration">
                 <div class="line"></div>
                 <span class="plane-icon">✈</span>
                 <div class="time">{{selectedFlight.duration}}</div>
               </div>
-              
+
               <div class="time-location">
                 <span class="time">{{selectedFlight.arrival_time | date:'shortTime'}}</span>
                 <span class="location">{{selectedFlight.arrival_airport}}</span>
@@ -248,7 +177,7 @@
 
       <div class="passenger-details">
         <h5>Passenger Information</h5>
-        
+
         <!-- Adult Passengers -->
         <div *ngFor="let i of getRange(payload.adults); let index = index" class="passenger-section">
           <h6 class="passenger-title">Adult Passenger {{index + 1}}</h6>

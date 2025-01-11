@@ -7,16 +7,16 @@
       <div class="left-part">
         <div class="search-body">
           <h6>depart from</h6>
-          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Starting from">
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Starting from" [disabled]="true">
         </div>
         <div class="search-body">
           <h6>where to</h6>
-          <input type="text" class="form-control" placeholder="Going to">
+          <input type="text" class="form-control" placeholder="Going to" [disabled]="true">
         </div>
         <div class="search-body">
           <h6>check out</h6>
           <input class="form-control" placeholder="During Date" name="dp" ngbDatepicker #d="ngbDatepicker"
-            (click)="d.toggle()" />
+            (click)="d.toggle()" [disabled]="true" />
         </div>
         <div class="search-body btn-search">
           <div class="right-part">

@@ -88,3 +88,10 @@
 
  
 </form>
+
+
+<!-- Add this to your component template -->
+<div *ngIf="message" class="alert" [ngClass]="{ 'alert-success': messageType === 'success', 'alert-danger': messageType === 'error' }">
+  <span>{{ message }}</span>
+  <button (click)="closeMessage()" class="close-btn">X</button>
+</div>
