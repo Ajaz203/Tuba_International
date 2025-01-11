@@ -1204,12 +1204,12 @@ export class NavService {
           path: '/page/other-pages/register',
           type: 'link',
         },
-        {
-          title: 'user dashboard',
-          path: '/page/other-pages/user-dashboard',
-          type: 'link',
-          badgeIcon: true,
-        },
+        // {
+        //   title: 'user dashboard',
+        //   path: '/page/other-pages/user-dashboard',
+        //   type: 'link',
+        //   badgeIcon: true,
+        // },
       ],
     },
 
