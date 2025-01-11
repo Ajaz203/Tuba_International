@@ -58,54 +58,66 @@ export class CommanLoginFormComponent implements OnInit {
     const formData = this.loginForm.value;
   
     if (this.type === 'register') {
-      this.authService.register(formData).subscribe(
-        (response) => {
-          console.log('Register Successful:', response);
-          this.showMessage('Registration successful! You can now log in.', 'success');
-          this.loginForm.reset(); // Reset the form after success
-          this.router.navigate(['login']);
-        },
-        (error) => {
-          console.error('Register Error:', error);
-          if (error.status === 400) {
-            this.showMessage('User already exists, please log in.', 'error');
-          } else {
-            this.showMessage('Registration failed, please try again.', 'error');
-          }
-          this.loginForm.reset(); // Reset the form after error
-        }
-      );
+      this.handleRegister(formData);
     } else if (this.type === 'login') {
-      this.authService.login(formData).subscribe(
-        (response) => {
-          console.log('Login Successful:', response);
-          this.showMessage('Login successful! Welcome back.', 'success');
-          this.loginForm.reset(); // Reset the form after success
-          this.router.navigate(['user-dashboard'], {
-            queryParams: { email: formData.emailOrUsername },
-          });
-        },
-        (error) => {
-          console.error('Login Error:', error);
-          this.showMessage('Login failed. Invalid credentials.', 'error');
-          this.loginForm.reset(); // Reset the form after error
-        }
-      );
+      this.handleLogin(formData);
     }
   }
+  
+  private handleRegister(formData: any): void {
+    this.authService.register(formData).subscribe({
+      next: (response) => {
+        console.log('Register Successful:', response);
+        this.showMessage('Registration successful! You can now log in.', 'success');
+        this.loginForm.reset(); // Reset the form after success
+        this.router.navigate(['login']);
+      },
+      error: (error) => {
+        console.error('Register Error:', error);
+        const message =
+          error.status === 400
+            ? 'User already exists, please log in.'
+            : 'Registration failed, please try again.';
+        this.showMessage(message, 'error');
+        this.loginForm.reset(); // Reset the form after error
+      },
+    });
+  }
+  
+  private handleLogin(formData: any): void {
+    this.authService.login(formData).subscribe({
+      next: (response) => {
+        console.log('Login Successful:', response);
+        this.showMessage('Login successful! Welcome back.', 'success'); // Ensure this line is executed
+        this.loginForm.reset(); // Reset the form after success
+        this.router.navigate(['user-dashboard'], {
+          queryParams: { email: formData.emailOrUsername },
+        });
+      },
+      error: (error) => {
+        console.error('Login Error:', error);
+        this.showMessage('Login failed. Invalid credentials.', 'error');
+        this.loginForm.reset(); // Reset the form after error
+      },
+    });
+  }
+  
+  
   
   
 
   // Show or hide the message
   showMessage(message: string, type: string): void {
+    console.log(`Displaying message: ${message}, Type: ${type}`);
     this.message = message;
     this.messageType = type;
-
-    // Optionally, close the message after 5 seconds
+  
+    // Auto-close the message after 5 seconds
     setTimeout(() => {
       this.closeMessage();
     }, 5000);
   }
+  
 
   // Close the message
   closeMessage(): void {
@@ -114,16 +126,30 @@ export class CommanLoginFormComponent implements OnInit {
   }
 
   toggleType(): void {
+    this.type = this.type === 'register' ? 'login' : 'register';
+    this.router.navigate([`/page/other-pages/${this.type}`]);
+  
+    // Update validators dynamically
     if (this.type === 'register') {
-      this.type = 'login';
-      this.router.navigate(['/page/other-pages/login']);
+      this.loginForm.get('fullName')?.setValidators([Validators.required]);
+      this.loginForm.get('phone')?.setValidators([
+        Validators.required,
+        Validators.pattern(/^[0-9]{10}$/),
+      ]);
     } else {
-      this.type = 'register';
-      this.router.navigate(['/page/other-pages/register']);
+      this.loginForm.get('fullName')?.clearValidators();
+      this.loginForm.get('phone')?.clearValidators();
     }
-    this.ngOnInit(); // Reinitialize the form with the new type
+  
+    this.loginForm.get('fullName')?.updateValueAndValidity();
+    this.loginForm.get('phone')?.updateValueAndValidity();
   }
-
+  
+  resetForm(): void {
+    this.loginForm.reset();
+    this.toggleType(); // Ensure validators are updated
+  }
+  
   goToForgotPassword(): void {
     this.router.navigate(['forgot-password']);
   }
