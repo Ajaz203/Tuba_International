@@ -62,30 +62,6 @@ export class CommanLoginFormComponent implements OnInit {
     if (this.type === 'register') {
       this.handleRegister(formData);
     } else if (this.type === 'login') {
-<<<<<<< HEAD
-      this.authService.login(formData).subscribe(
-        (response) => {
-          console.log('Login Successful:', response);
-          console.log('Calling showMessage...');
-          this.showMessage('Login successful! Welcome back.', 'success');
-          this.loginForm.reset(); // Reset the form after success
-          this.router.navigate(['user-dashboard'], {
-            queryParams: { email: formData.emailOrUsername },
-          });
-        },
-        (error) => {
-          console.error('Login Error:', error);
-          this.showMessage('Login failed. Invalid credentials.', 'error');
-          this.loginForm.reset(); // Reset the form after error
-        }
-      );
-    }
-  }
-  
-  closePopup() {
-    this.showPopup = false;
-  }
-=======
       this.handleLogin(formData);
     }
   }
@@ -131,7 +107,6 @@ export class CommanLoginFormComponent implements OnInit {
   
   
   
->>>>>>> 444b417024f304675b567b1e92d82027254a3ac6
 
   // Show or hide the message
   showMessage(message: string, type: string): void {
