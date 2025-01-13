@@ -91,10 +91,16 @@
 
 
 <!-- Add this to your component template -->
-<div *ngIf="message" class="alert" [ngClass]="{ 'alert-success': messageType === 'success', 'alert-danger': messageType === 'error' }">
-  <span>{{ message }}</span>
-  <button (click)="closeMessage()" class="close-btn">X</button>
+<div *ngIf="message" class="alert" [ngClass]="{ 
+  'alert-success': messageType === 'success',
+  'alert-danger': messageType === 'error'
+}">
+<span>{{ message }}</span>
+<button (click)="closeMessage()" class="close-btn">X</button>
 </div>
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 444b417024f304675b567b1e92d82027254a3ac6

@@ -39,5 +39,9 @@ export class AuthService {
   Evisa(data: any) {
     return this.http.post(`${this.apiUrl}applyEVisa`, data);
   }
+  
+getAdminData( ) {
+  return this.http.get(this.apiUrl + `admin-panel` );
+}
 
 }
