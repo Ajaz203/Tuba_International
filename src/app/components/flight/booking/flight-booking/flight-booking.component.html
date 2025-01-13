@@ -1,4 +1,4 @@
-<app-header [headerClass]="'light_header'"></app-header>
+<app-header [headerClass]="'overlay-black'"></app-header>
 
 <!-- Futuristic Hero Section -->
 <div class="hero-container">
@@ -133,8 +133,8 @@
                         <!-- Passenger Details Fields (Step 2) -->
                         <div class="form-fields" [class.active]="currentStep === 2">
                             <h3 class="section-title">Lead Passenger Details</h3>
-
-                            <!-- Lead Passenger -->
+                    
+                            <!-- Lead Passenger Information -->
                             <div class="passenger-details">
                                 <div class="floating-input">
                                     <div class="input-wrapper">
@@ -145,40 +145,46 @@
                                     </div>
                                     <div class="error-message" *ngIf="nameError">{{ nameError }}</div>
                                 </div>
-
-                                <div class="form-grid">
-                                    <div class="floating-input">
-                                        <div class="input-wrapper">
-                                            <i class="fas fa-envelope"></i>
-                                            <input type="email" formControlName="email" placeholder="Email Address"
-                                                [class.is-invalid]="emailControl?.invalid && emailControl?.touched">
-                                            <div class="input-glow"></div>
-                                        </div>
-                                        <div class="error-message" *ngIf="emailError">{{ emailError }}</div>
+                    
+                                <div class="floating-input">
+                                    <div class="input-wrapper">
+                                        <i class="fas fa-envelope"></i>
+                                        <input type="email" formControlName="email" placeholder="Email Address"
+                                            [class.is-invalid]="emailControl?.invalid && emailControl?.touched">
+                                        <div class="input-glow"></div>
                                     </div>
-
-                                    <div class="floating-input">
-                                        <div class="input-wrapper">
-                                            <i class="fas fa-phone"></i>
-                                            <input type="tel" formControlName="phone" placeholder="Phone Number"
-                                                (input)="onPhoneInput($event)"
-                                                [class.is-invalid]="phoneControl?.invalid && phoneControl?.touched">
-                                            <div class="input-glow"></div>
-                                        </div>
-                                        <div class="error-message" *ngIf="phoneError">{{ phoneError }}</div>
-                                    </div>
+                                    <div class="error-message" *ngIf="emailError">{{ emailError }}</div>
                                 </div>
+                    
+                                <div class="floating-input">
+                                    <div class="input-wrapper">
+                                        <i class="fas fa-phone"></i>
+                                        <input type="tel" formControlName="phone" placeholder="Phone Number"
+                                            (input)="onPhoneInput($event)" [class.is-invalid]="phoneControl?.invalid && phoneControl?.touched">
+                                        <div class="input-glow"></div>
+                                    </div>
+                                    <div class="error-message" *ngIf="phoneError">{{ phoneError }}</div>
+                                </div>
+                    
+                                <div class="floating-input">
+                                    <div class="input-wrapper">
+                                        <i class="fas fa-passport"></i>
+                                        <input type="text" formControlName="passportNumber" placeholder="Passport Number"
+                                            [class.is-invalid]="passportControl?.invalid && passportControl?.touched">
+                                        <div class="input-glow"></div>
+                                    </div>
+                                    <div class="error-message" *ngIf="passportError">{{ passportError }}</div>
+                                </div>
+                                
                             </div>
-
+                    
                             <!-- Additional Passengers -->
                             <div formArrayName="additionalPassengers" class="additional-passengers">
                                 <h3 class="section-title" *ngIf="additionalPassengersArray.length > 0">Additional Passengers</h3>
-                                
-                                <div *ngFor="let passenger of additionalPassengersArray.controls; let i = index" 
-                                     [formGroupName]="i" 
-                                     class="passenger-details">
+                                <div *ngFor="let passenger of additionalPassengersArray.controls; let i = index"
+                                    [formGroupName]="i" class="passenger-details">
                                     <h4 class="passenger-number">Passenger {{i + 2}}</h4>
-                                    
+                    
                                     <div class="floating-input">
                                         <div class="input-wrapper">
                                             <i class="fas fa-user"></i>
@@ -190,29 +196,30 @@
                                             Name is required
                                         </div>
                                     </div>
-
-                                    <div class="form-grid">
-                                        <div class="floating-input">
-                                            <div class="input-wrapper">
-                                                <i class="fas fa-calendar"></i>
-                                                <input type="date" formControlName="dob" placeholder="Date of Birth"
-                                                    [class.is-invalid]="passenger.get('dob')?.invalid && passenger.get('dob')?.touched">
-                                                <div class="input-glow"></div>
-                                            </div>
+                    
+                                    <div class="floating-input">
+                                        <div class="input-wrapper">
+                                            <i class="fas fa-calendar"></i>
+                                            <input type="date" formControlName="dob" placeholder="Date of Birth"
+                                                [class.is-invalid]="passenger.get('dob')?.invalid && passenger.get('dob')?.touched">
+                                            <div class="input-glow"></div>
                                         </div>
-
-                                        <div class="floating-input">
-                                            <div class="input-wrapper">
-                                                <i class="fas fa-passport"></i>
-                                                <input type="text" formControlName="passportNumber" placeholder="Passport Number"
-                                                    [class.is-invalid]="passenger.get('passportNumber')?.invalid && passenger.get('passportNumber')?.touched">
-                                                <div class="input-glow"></div>
-                                            </div>
+                                    </div>
+                    
+                                    <div class="floating-input">
+                                        <div class="input-wrapper">
+                                            <i class="fas fa-passport"></i>
+                                            <input type="text" formControlName="passportNumber" placeholder="Passport Number"
+                                                [class.is-invalid]="passenger.get('passportNumber')?.invalid && passenger.get('passportNumber')?.touched">
+                                            <div class="input-glow"></div>
+                                        </div>
+                                        <div class="error-message" *ngIf="passenger.get('passportNumber')?.invalid && passenger.get('passportNumber')?.touched">
+                                            Passport number is required
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
+                    
                             <!-- Additional Services -->
                             <div class="additional-services">
                                 <h3 class="section-title">Additional Services</h3>
@@ -234,6 +241,7 @@
                                 </div>
                             </div>
                         </div>
+                    
 
                         <!-- Confirmation Fields (Step 3) -->
                         <div class="form-fields" [class.active]="currentStep === 3">
@@ -572,7 +580,7 @@
 <ng-template #errorModal let-modal>
     <div class="modal-content neo-card modal-success">
         <div class="modal-body">
-       
+
             <div class="flight-route-visual">
                 <div class="departure-point">
                     <div class="location-details">
@@ -592,16 +600,16 @@
             </div>
 
 
-        <div class="modal-body">
-            <p >{{ errorMessage }}</p>
-        </div>
-       
-        <div class="action-buttons">
-           
-            <button class="btn-done neo-button" (click)="closeModal()">
-                <span>Close</span>
-            </button>
-        </div>
+            <div class="modal-body">
+                <p>{{ errorMessage }}</p>
+            </div>
+
+            <div class="action-buttons">
+
+                <button class="btn-done neo-button" (click)="closeModal()">
+                    <span>Close</span>
+                </button>
+            </div>
         </div>
     </div>
 </ng-template>

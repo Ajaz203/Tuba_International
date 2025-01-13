@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../../../../../shared/services/auth.service';
 import { Router } from '@angular/router';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-comman-login-form',
@@ -14,7 +16,7 @@ import { Router } from '@angular/router';
 })
 export class CommanLoginFormComponent implements OnInit {
   @Input() type: string = 'login'; // Default type is 'login'
-
+  showPopup = false;
   loginForm: FormGroup;
   message: string = '';  // Message content
   messageType: string = ''; // 'success' or 'error'
@@ -79,6 +81,7 @@ export class CommanLoginFormComponent implements OnInit {
       this.authService.login(formData).subscribe(
         (response) => {
           console.log('Login Successful:', response);
+          console.log('Calling showMessage...');
           this.showMessage('Login successful! Welcome back.', 'success');
           this.loginForm.reset(); // Reset the form after success
           this.router.navigate(['user-dashboard'], {
@@ -94,7 +97,9 @@ export class CommanLoginFormComponent implements OnInit {
     }
   }
   
-  
+  closePopup() {
+    this.showPopup = false;
+  }
 
   // Show or hide the message
   showMessage(message: string, type: string): void {
@@ -127,5 +132,16 @@ export class CommanLoginFormComponent implements OnInit {
   goToForgotPassword(): void {
     this.router.navigate(['forgot-password']);
   }
+
+
+    private messageSubject = new BehaviorSubject<{ message: string; type: string } | null>(null);
+    message$ = this.messageSubject.asObservable();
+  
+  
+    clearMessage() {
+      this.messageSubject.next(null);
+    }
+
+
 }
 
