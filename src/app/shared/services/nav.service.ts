@@ -1207,24 +1207,16 @@ export class NavService {
         // },
         {
           title: 'Admin Login',
-          path: '/admin-dashboard',
+          path: '/Admin-login',
           type: 'link',
-<<<<<<< HEAD
         }
         
-=======
-        },
->>>>>>> 193c1036aefcb05e24d8cec83ea9cd3d3ee9dd88
         // {
         //   title: 'user dashboard',
         //   path: '/page/other-pages/user-dashboard',
         //   type: 'link',
         //   badgeIcon: true,
         // },
-<<<<<<< HEAD
-
-=======
->>>>>>> 193c1036aefcb05e24d8cec83ea9cd3d3ee9dd88
       ],
     },
 

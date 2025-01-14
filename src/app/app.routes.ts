@@ -44,7 +44,7 @@ export const routes: Routes = [
         component:AdminDashboardComponent
       },
       {
-        path:'login',
+        path:'Admin-login',
         component:AdminLoginComponent
       },
      

@@ -1,39 +1,35 @@
+<app-header [headerClass]="'overlay-black'"></app-header>
+
 <section>
-    <div class="background">
-      <div class="shape"></div>
-      <div class="shape"></div>
+  <div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <h3>Admin Login</h3>
+
+    <label for="username">Username</label>
+    <input type="text" placeholder="Email or Phone" id="username" formControlName="emailOrPhone" />
+    <small *ngIf="loginForm.get('emailOrPhone')?.invalid && loginForm.get('emailOrPhone')?.touched" class="text-danger">
+      Enter a valid email or phone number
+    </small>
+
+    <label for="password">Password</label>
+    <div class="password-container">
+      <input [type]="showPassword ? 'text' : 'password'" placeholder="Password" id="password"
+        formControlName="password" />
+      <button type="button" class="toggle-password" (click)="togglePasswordVisibility()">
+        <i [ngClass]="showPassword ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
+      </button>
     </div>
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <h3>Admin Login</h3>
-  
-      <label for="username">Username</label>
-      <input
-        type="text"
-        placeholder="Email or Phone"
-        id="username"
-        formControlName="emailOrPhone"
-      />
-      <small *ngIf="loginForm.get('emailOrPhone')?.invalid && loginForm.get('emailOrPhone')?.touched" class="text-danger">
-        Enter a valid email or phone number
-      </small>
-  
-      <label for="password">Password</label>
-      <div class="password-container">
-        <input
-          [type]="showPassword ? 'text' : 'password'"
-          placeholder="Password"
-          id="password"
-          formControlName="password"
-        />
-        <button type="button" class="toggle-password" (click)="togglePasswordVisibility()">
-          <i [ngClass]="showPassword ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
-        </button>
-      </div>
-      <small *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-danger">
-        Password is required
-      </small>
-  
-      <button [disabled]="loginForm.invalid">Log In</button>
-    </form>
-  </section>
-  
+    <small *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-danger">
+      Password is required
+    </small>
+
+    <button>Log In</button>
+  </form>
+</section>
+
+
+<app-layout [loaderType]="'basic'"></app-layout>
+<!-- <app-footer [location]="true"></app-footer> -->

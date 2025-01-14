@@ -90,7 +90,7 @@ export class AdminDashboardComponent {
     
       
       logout() {
-        this.router.navigate(['/login']);
+        this.router.navigate(['/Admin-login']);
         }
       
     }

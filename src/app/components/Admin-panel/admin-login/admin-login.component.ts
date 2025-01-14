@@ -3,11 +3,14 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { AuthService } from '../../../shared/services/auth.service';
 import { Router } from '@angular/router'; // Import Router
 import { CommonModule } from '@angular/common';
+import { HeaderComponent } from '../../../shared/components/header/header.component';
+import { FooterComponent } from '../../../shared/components/footer/footer.component';
+import { LayoutComponent } from '../../../shared/components/ui/layout/layout.component';
 
 @Component({
   selector: 'app-admin-login',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, HeaderComponent, FooterComponent, LayoutComponent],
   templateUrl: './admin-login.component.html',
   styleUrls: ['./admin-login.component.scss']
 })
