@@ -13,7 +13,7 @@ import { FlightSelectionModalComponent } from '../widgets/flight-selection-modal
 import { HttpClient ,HttpResponse } from '@angular/common/http';
 
 interface BookingData {
-    flight: any; // Could be replaced with specific flight details type
+    flight: any; 
     passenger: {
         name: string;
         email: string;
