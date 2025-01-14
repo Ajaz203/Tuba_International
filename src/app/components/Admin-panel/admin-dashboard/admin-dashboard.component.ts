@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../../shared/services/auth.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-admin-dashboard',
   standalone: true,
@@ -20,12 +21,14 @@ import { AuthService } from '../../../shared/services/auth.service';
   ]
 })
 export class AdminDashboardComponent {
-
-  logout() {
-    throw new Error('Method not implemented.');
-    }
+  users = [
+    { name: 'John Doe', email: 'john.doe@example.com', role: 'Admin', status: 'Active' },
+    { name: 'Jane Smith', email: 'jane.smith@example.com', role: 'User', status: 'Inactive' },
+    { name: 'Sam Wilson', email: 'sam.wilson@example.com', role: 'Moderator', status: 'Active' },
+  ];
+ 
       userData: any = {}; // User profile data
-      flightBookings: any[] = []; // Flight bookings
+      flightBookings: any[] = [];
       hotelBookings: any[] = []; // Hotel bookings
       cabBookings: any[] = []; // Cab bookings
       tourBookings: any[] = []; // Tour bookings
@@ -43,43 +46,52 @@ export class AdminDashboardComponent {
       filteredFlightBookings: any[] = []; // Filtered flight bookings
       filteredHotelBookings: any[] = []; // Filtered hotel bookings
     
-      constructor(private route: ActivatedRoute, private authService: AuthService) {
-    
-            this.authService.getAdminData().subscribe(
-              (response: any) => {
-                if (response) {
-                  console.log('User data fetched successfully:', response);
-                  this.userData = response.data.userData; // User profile data
-                  this.flightBookings = response.data.flightBookings; // Flight bookings
-                  this.hotelBookings = response.data.hotelBookings; // Hotel bookings
-                  this.cabBookings = response.data.cabBookings; // Cab bookings
-                  this.tourBookings = response.data.TourData; // Tour bookings (correct mapping)
-                  this.visaRequests = response.data.eVisaStampings;
-                  this.totalBookingCount = response.totalBookings; // Set total bookings count
-                } else {
-                  console.log('No user data found for email:', this.email);
-                }
-              },
-              (error) => {
-                console.error('Error fetching user data:', error);
-              }
-            );
-          
+      constructor(private route: ActivatedRoute, private authService: AuthService, private router: Router) {
+      
+
+        // Fetch user data by email
+        this.authService.getAdminData().subscribe(
+          (response: any) => {
+            if (response) {
+              console.log('User data fetched successfully:', response);
+              this.flightBookings = response.data.flightBookings; // Flight bookings
+              console.log('Flight bookings:', this.flightBookings);
+              this.userData = response.data.userData; // User profile data
+              console.log('User data:', this.userData);
+              this.hotelBookings = response.data.hotelBookings; // Hotel bookings
+              console.log('Hotel bookings:', this.hotelBookings);
+              this.cabBookings = response.data.cabBookings; // Cab bookings
+              console.log('Cab bookings:', this.cabBookings);
+              this.tourBookings = response.data.TourData; // Tour bookings (correct mapping)
+              console.log('Tour bookings:', this.tourBookings);
+              this.visaRequests = response.data.eVisaStampings;
+              console.log('Visa requests:', this.visaRequests);
+              this.totalBookingCount = response.totalBookings; // Set total bookings count
+            } else {
+              console.log('No user data found for email:', this.email);
+            }
+          },
+          (error) => {
+            console.error('Error fetching user data:', error);
+          }
+        );
       }
     
+      
+      
+      
+      ngOnInit() {
+      }
+      
+      
       setActiveTab(tab: string): void {
         this.activeTab = tab;
       }
     
       
-    
-      ngOnInit() {
-        
-      }
-    
-    
-    
-    
+      logout() {
+        this.router.navigate(['/login']);
+        }
       
     }
     

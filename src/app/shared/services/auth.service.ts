@@ -43,5 +43,8 @@ export class AuthService {
 getAdminData( ) {
   return this.http.get(this.apiUrl + `admin-panel` );
 }
+adminLogin(data: any) {
+  return this.http.post(`${this.apiUrl}adminLogin`, data);
+}
 
 }

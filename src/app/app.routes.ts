@@ -6,6 +6,7 @@ import { ForgotPasswordComponent } from './components/pages/other-pages/forgot-p
 import { LogInComponent } from './components/pages/other-pages/log-in/log-in.component';
 import { UserDashboardComponent } from './components/pages/other-pages/user-dashboard/user-dashboard.component';
 import { AdminDashboardComponent } from './components/Admin-panel/admin-dashboard/admin-dashboard.component';
+import { AdminLoginComponent } from './components/Admin-panel/admin-login/admin-login.component';
 // import { CabBookingComponent } from './components/pages/other-pages/cab-booking/cab-booking.component';
 
 export const routes: Routes = [
@@ -41,8 +42,11 @@ export const routes: Routes = [
       {
         path:'admin-dashboard',
         component:AdminDashboardComponent
-      }
-     
+      },
+      {
+        path:'login',
+        component:AdminLoginComponent
+      },
      
 
 ];
