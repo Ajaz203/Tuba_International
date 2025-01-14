@@ -1880,25 +1880,22 @@ $visa-border-color: rgba(255, 255, 255, 0.1);
   }
 }
 
-/* General Table Container */
+
 .table-container {
   width: 100%;
-  max-width: 100%; /* Ensures maximum width is within the container */
-  overflow-x: auto; /* Enables horizontal scrolling */
+  overflow-x: auto !important; /* Enables horizontal scrolling */
   border-radius: 10px;
   background-color: #121212; /* Subtle background for the container */
   margin: 10px 0; /* Add margin for spacing */
 }
 
-/* Table Styles */
 .black-theme-table {
   width: 100%;
-  min-width: 800px; /* Set a minimum width */
-  border-collapse: collapse;
-  background-color: #1c1c1c; /* Deep black table background */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Elevated look */
+  min-width: 1200px; /* Set a minimum width for horizontal scrolling */
+  border-collapse: collapse !important;
+  background-color: #1c1c1c;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
-  overflow: hidden;
 }
 
 /* Table Header */
@@ -1912,7 +1909,6 @@ $visa-border-color: rgba(255, 255, 255, 0.1);
   font-size: 14px;
   letter-spacing: 0.1em;
   white-space: nowrap; /* Prevent wrapping */
-  max-width: 200px; /* Fixed width for header */
 }
 
 /* Table Body */
@@ -1921,7 +1917,6 @@ $visa-border-color: rgba(255, 255, 255, 0.1);
   color: #dcdcdc; 
   border-bottom: 1px solid #444; 
   text-align: left;
-  max-width: 200px; /* Fixed width for cells */
   white-space: nowrap; /* Prevent text wrapping */
   overflow: hidden; /* Hide overflow text */
   text-overflow: ellipsis; 
@@ -1932,25 +1927,14 @@ $visa-border-color: rgba(255, 255, 255, 0.1);
   background-color: #2b2b2b; /* Slightly lighter for alternating rows */
 }
 
-/* Status Colors */
-.black-theme-table span.active {
-  color: #4caf50; /* Vibrant green for active */
-  font-weight: bold;
-}
-
-.black-theme-table span.inactive {
-  color: #f44336; /* Vibrant red for inactive */
-  font-weight: bold;
-}
-
-/* Table Row Hover Effect (No Scaling) */
+/* Hover Effect */
 .black-theme-table tbody tr:hover {
   background-color: #333; /* Subtle highlight */
   color: #fff; /* Text becomes white for contrast */
   cursor: pointer;
 }
 
-/* Scrollbar Styling for Responsive Tables */
+/* Scrollbar Styling */
 .table-container::-webkit-scrollbar {
   height: 8px;
 }
@@ -1968,19 +1952,19 @@ $visa-border-color: rgba(255, 255, 255, 0.1);
 @media (max-width: 768px) {
   .black-theme-table th,
   .black-theme-table td {
-    font-size: 12px; /* Reduce font size */
-    padding: 8px; /* Decrease padding */
+    font-size: 12px;
+    padding: 8px;
   }
 }
 
 @media (max-width: 480px) {
   .black-theme-table th,
   .black-theme-table td {
-    font-size: 11px; /* Further reduce font size */
-    padding: 6px; /* Further decrease padding */
+    font-size: 11px;
+    padding: 6px;
   }
 
   .black-theme-table th {
-    white-space: nowrap; /* Prevent header text from wrapping */
+    white-space: nowrap;
   }
 }
