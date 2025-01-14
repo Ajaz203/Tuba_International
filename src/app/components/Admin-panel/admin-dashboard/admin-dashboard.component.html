@@ -9,18 +9,18 @@
             <div class="status-badge online"></div>
           </div>
           <div class="user-details">
-            <h2>{{ userData.fullName }}</h2>
+            <h2>Tuba International</h2>
             <p class="member-info">
-              Member since {{ userData.createdAt | date : "MMMM yyyy" }}
+              Member since <span> Jan 2025</span>
             </p>
             <div class="contact-info">
               <span
                 ><i class="fas fa-envelope"></i>
-                {{ userData.emailOrUsername }}</span
+                tuba&#64;gmail.com</span
               >
               <span
                 ><i class="fas fa-phone"></i>
-                {{ userData.phone || "N/A" }}</span
+                9999999999</span
               >
             </div>
           </div>
@@ -92,7 +92,55 @@
         <!-- Flights Tab -->
         <div *ngSwitchCase="'flights'" class="content-section animate-fade">
           <div class="booking-cards">
-            <div class="booking-card"></div>
+            <div class="booking-card">
+              <div class="table-container">
+                <table class="black-theme-table" *ngIf="flightBookings && flightBookings.length > 0; else noData">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Passenger Name</th>
+                      <th>Email</th>
+                      <th>Phone</th>
+                      <th>From</th>
+                      <th>To</th>
+                      <th>Airline</th>
+                      <th>Departure Time</th>
+                      <th>Arrival Time</th>
+                      <th>Duration</th>
+                      <th>Fare (INR)</th>
+                      <th>Total Price (INR)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let booking of flightBookings; let i = index">
+                      <td>{{ i + 1 }}</td>
+                      <td>{{ booking.passenger?.name }}</td>
+                      <td>{{ booking.passenger?.email }}</td>
+                      <td>{{ booking.passenger?.phone }}</td>
+                      <td>{{ booking.journey?.from }}</td>
+                      <td>{{ booking.journey?.to }}</td>
+                      <td>{{ booking.flight?.airline }}</td>
+                      <td>{{ booking.flight?.departure_time | date: 'short' }}</td>
+                      <td>{{ booking.flight?.arrival_time | date: 'short' }}</td>
+                      <td>{{ booking.flight?.duration }}</td>
+                      <td>{{ booking.flight?.fare }}</td>
+                      <td>{{ booking.flight?.total_price }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                
+                <ng-template #noData>
+                  <p>No flight bookings available.</p>
+                </ng-template>
+                
+                <ng-template #noData>
+                  <p>No flight bookings available.</p>
+                </ng-template>
+                
+              </div>
+              
+            </div>
+              
           </div>
         </div>
         <!-- Hotels Tab Content -->

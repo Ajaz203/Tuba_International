@@ -49,8 +49,12 @@ $visa-border-color: rgba(255, 255, 255, 0.1);
 
       .profile-card {
         background: $dark-bg-card;
-        border: 1px solid $dark-border;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        // border: 1px solid $dark-border;
+        // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.2),
+        0 5px 15px rgba($primary-color, 0.2);
+      border-color: rgba($primary-color, 0.3);
         border-radius: 12px;
         padding: 1.5rem;
 
@@ -228,7 +232,7 @@ $visa-border-color: rgba(255, 255, 255, 0.1);
         border-radius: 16px;
         box-shadow: 
           0 4px 20px rgba(0, 0, 0, 0.2),
-          inset 0 2px 0 rgba(255, 255, 255, 0.1);
+          inset 0 4px 0 rgba(96, 2, 247, 0.1);
         margin-bottom: 2rem;
         border: 1px solid rgba($primary-color, 0.1);
         backdrop-filter: blur(10px);
@@ -385,7 +389,7 @@ $visa-border-color: rgba(255, 255, 255, 0.1);
           background: linear-gradient(145deg, $dark-bg-card, darken($dark-bg-card, 3%));
           border-radius: 12px;
           border: 1px solid rgba($primary-color, 0.1);
-          padding: 16px;
+          // padding: 16px;
           transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
           animation: fadeIn 0.5s ease;
 
@@ -1212,7 +1216,7 @@ $visa-border-color: rgba(255, 255, 255, 0.1);
         rgba(darken($dark-bg-card, 5%), 0.95)
       );
       border: 1px solid rgba($primary-color, 0.15);
-      padding: 1.8rem;
+      // padding: 1.8rem;
       display: flex;
       justify-content: space-between;
       gap: 2rem;
@@ -1872,5 +1876,110 @@ $visa-border-color: rgba(255, 255, 255, 0.1);
   }
   75% { 
     transform: rotate(20deg); 
+  }
+}
+
+/* General Table Container */
+.table-container {
+  width: 100%;
+  max-width: 100%; /* Ensures maximum width is within the container */
+  overflow-x: auto; /* Enables horizontal scrolling */
+  border-radius: 10px;
+  background-color: #121212; /* Subtle background for the container */
+  margin: 10px 0; /* Add margin for spacing */
+}
+
+/* Table Styles */
+.black-theme-table {
+  width: 100%;
+  min-width: 800px; /* Set a minimum width */
+  border-collapse: collapse;
+  background-color: #1c1c1c; /* Deep black table background */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Elevated look */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Table Header */
+.black-theme-table th {
+  background-color: #292929; 
+  color: #00c6ff; 
+  text-align: left;
+  padding: 15px;
+  border-bottom: 2px solid #00c6ff;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  white-space: nowrap; /* Prevent wrapping */
+  max-width: 200px; /* Fixed width for header */
+}
+
+/* Table Body */
+.black-theme-table td {
+  padding: 12px 15px;
+  color: #dcdcdc; 
+  border-bottom: 1px solid #444; 
+  text-align: left;
+  max-width: 200px; /* Fixed width for cells */
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; 
+}
+
+/* Zebra Striping */
+.black-theme-table tbody tr:nth-child(even) {
+  background-color: #2b2b2b; /* Slightly lighter for alternating rows */
+}
+
+/* Status Colors */
+.black-theme-table span.active {
+  color: #4caf50; /* Vibrant green for active */
+  font-weight: bold;
+}
+
+.black-theme-table span.inactive {
+  color: #f44336; /* Vibrant red for inactive */
+  font-weight: bold;
+}
+
+/* Table Row Hover Effect (No Scaling) */
+.black-theme-table tbody tr:hover {
+  background-color: #333; /* Subtle highlight */
+  color: #fff; /* Text becomes white for contrast */
+  cursor: pointer;
+}
+
+/* Scrollbar Styling for Responsive Tables */
+.table-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .black-theme-table th,
+  .black-theme-table td {
+    font-size: 12px; /* Reduce font size */
+    padding: 8px; /* Decrease padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .black-theme-table th,
+  .black-theme-table td {
+    font-size: 11px; /* Further reduce font size */
+    padding: 6px; /* Further decrease padding */
+  }
+
+  .black-theme-table th {
+    white-space: nowrap; /* Prevent header text from wrapping */
   }
 }
