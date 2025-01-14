@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../../../../../shared/services/auth.service';
 import { Router } from '@angular/router';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-comman-login-form',
@@ -14,7 +16,7 @@ import { Router } from '@angular/router';
 })
 export class CommanLoginFormComponent implements OnInit {
   @Input() type: string = 'login'; // Default type is 'login'
-
+  showPopup = false;
   loginForm: FormGroup;
   message: string = '';  // Message content
   messageType: string = ''; // 'success' or 'error'
@@ -153,5 +155,16 @@ export class CommanLoginFormComponent implements OnInit {
   goToForgotPassword(): void {
     this.router.navigate(['forgot-password']);
   }
+
+
+    private messageSubject = new BehaviorSubject<{ message: string; type: string } | null>(null);
+    message$ = this.messageSubject.asObservable();
+  
+  
+    clearMessage() {
+      this.messageSubject.next(null);
+    }
+
+
 }
 

@@ -5,28 +5,25 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { LayoutComponent } from '../../../../shared/components/ui/layout/layout.component';
 import { FooterComponent } from '../../../../shared/components/footer/footer.component';
-import { FlightPromoCodeComponent } from '../widgets/flight-promo-code/flight-promo-code.component';
 import { FlightBookingSummaryComponent } from '../widgets/flight-booking-summary/flight-booking-summary.component';
-import { FlightTravelInsuranceComponent } from '../widgets/flight-travel-insurance/flight-travel-insurance.component';
-import { FlightTravellerDetailsComponent } from '../widgets/flight-traveller-details/flight-traveller-details.component';
-import { FlightInformationComponent } from '../widgets/flight-information/flight-information.component';
-import { SelectedFlightComponent } from '../widgets/selected-flight/selected-flight.component';
-import { FlightBookingBreadcrumbComponent } from '../widgets/flight-booking-breadcrumb/flight-booking-breadcrumb.component';
 import { HeaderComponent } from '../../../../shared/components/header/header.component';
-import { AnimationComponent } from '../../../../shared/components/comman/animation/animation.component';
-import { BreadcrumbsComponent } from '../../../../shared/components/comman/breadcrumbs/breadcrumbs.component';
 import { FlightService } from '../../../../shared/services/flight.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FlightSelectionModalComponent } from '../widgets/flight-selection-modal/flight-selection-modal.component';
 import { HttpClient ,HttpResponse } from '@angular/common/http';
 
 interface BookingData {
-    flight: any;
+    flight: any; // Could be replaced with specific flight details type
     passenger: {
         name: string;
         email: string;
         phone: string;
+        passportNumber: string;
+        dob?: string;
         totalPassengers: number;
+        additionalPassengers: AdditionalPassenger[];
+        travelInsurance: string,
+        airportPickup: string
     };
     journey: {
         from: string;
@@ -34,6 +31,13 @@ interface BookingData {
         date: string;
     };
 }
+
+interface AdditionalPassenger {
+    name: string;
+    dob: string;
+    passportNumber: string;
+}
+
 
 @Component({
     selector: 'app-flight-booking',
@@ -45,20 +49,15 @@ interface BookingData {
         ReactiveFormsModule,
         FormsModule,
         HeaderComponent,
-        BreadcrumbsComponent,
-        FlightBookingBreadcrumbComponent,
-        SelectedFlightComponent,
-        FlightInformationComponent,
-        FlightTravellerDetailsComponent,
-        FlightTravelInsuranceComponent,
         FlightBookingSummaryComponent,
-        FlightPromoCodeComponent,
+    
         FooterComponent,
         LayoutComponent,
-        AnimationComponent
+      
     ]
 })
-export class FlightBookingComponent implements OnInit { @ViewChild('errorModal') errorModal!: TemplateRef<any>;
+export class FlightBookingComponent implements OnInit {
+    @ViewChild('errorModal') errorModal!: TemplateRef<any>;
     flightForm: FormGroup;
     isSubmitting = false;
     flights: any[] = [];
@@ -77,60 +76,6 @@ export class FlightBookingComponent implements OnInit { @ViewChild('errorModal')
     public parent = "Home";
     public subParent = "flights";
     public child = "review";
-
-    features = [
-        {
-            icon: 'tag',
-            title: 'Best Price Guarantee',
-            description: 'Get the best deals and competitive prices on all flights'
-        },
-        {
-            icon: 'headset',
-            title: '24/7 Support',
-            description: 'Round-the-clock assistance for all your travel needs'
-        },
-        {
-            icon: 'shield-alt',
-            title: 'Secure Booking',
-            description: 'Safe and encrypted transactions for worry-free booking'
-        },
-        {
-            icon: 'gift',
-            title: 'Reward Points',
-            description: 'Earn points on every booking for future discounts'
-        }
-    ];
-
-    policies = [
-        {
-            icon: 'shield-alt',
-            title: 'Cancellation Policy',
-            items: [
-                'Free cancellation within 24 hours',
-                'Refund up to 75% before 72 hours',
-                'Reschedule option available'
-            ]
-        },
-        {
-            icon: 'plane-departure',
-            title: 'Travel Guidelines',
-            items: [
-                'Check-in 2 hours before departure',
-                'Valid ID proof required',
-                'Baggage restrictions apply'
-            ]
-        },
-        {
-            icon: 'heart',
-            title: 'Safety Measures',
-            items: [
-                'Regular sanitization',
-                'Mask mandatory',
-                'Temperature screening'
-            ]
-        }
-    ];
-
     public fromSuggestions: any[] = [];
     public toSuggestions: any[] = [];
     public showFromSuggestions: boolean = false;
@@ -149,16 +94,29 @@ export class FlightBookingComponent implements OnInit { @ViewChild('errorModal')
         travel_class: 1,
         adults: 1,
         children: 0,
-        name: '',
-        email: '',
-        phone: '',
+        passengers: [], // Array to hold details of all passengers
 
+        additionalPassengers: [], // Added to capture additional passengers
+        travelInsurance: false,  // Added for optional service
+        airportPickup: false     // Added for optional service
     };
 
-    // Add these properties to store error messages
+
+
+
     private _fromLocationErrorMsg: string = '';
     private _toLocationErrorMsg: string = '';
     private _errorMessage: string = '';
+    passenger: any;
+    travelClassControl: any;
+    travelClassError: any;
+    returnDateControl: any;
+    returnDateError: any;
+    passportControl: any;
+    passportError: any;
+
+
+  
 
     constructor(
         private fb: FormBuilder,
@@ -173,90 +131,7 @@ export class FlightBookingComponent implements OnInit { @ViewChild('errorModal')
         
     }
 
-    ngOnInit() {
-        document.documentElement.style.setProperty('--theme-color1', '66, 145, 184');
-        document.documentElement.style.setProperty('--theme-color2', '66, 145, 184');
-        this.fetchFlights(); 
-
-        // Simulate loading delay
-        setTimeout(() => {
-            this.isLoadingSummary = false;
-        }, 1500);
-
-        // Add form value changes subscription
-        this.flightForm.valueChanges.subscribe(() => {
-            this.checkFormValidity();
-        });
-
-        // Sync form date with search payload
-        this.flightForm.get('departureDate')?.valueChanges.subscribe(value => {
-            this.searchPayload.outbound_date = value;
-        });
-
-        // Sync passengers
-        this.flightForm.get('passengers')?.valueChanges.subscribe(value => {
-            this.searchPayload.adults = value;
-        });
-
-        // Handle form value updates
-        this.fromLocationControl?.valueChanges.subscribe(value => {
-            if (value !== this.fromInputValue) {
-                this.fromInputValue = value;
-            }
-        });
-
-        this.toLocationControl?.valueChanges.subscribe(value => {
-            if (value !== this.toInputValue) {
-                this.toInputValue = value;
-            }
-        });
-    }
-
-    initForm() {
-        this.flightForm = this.fb.group({
-            fromLocation: [this.fromInputValue, [
-                Validators.required,
-                Validators.minLength(3),
-                Validators.pattern(/^[a-zA-Z\s\-()]+$/)
-            ]],
-            toLocation: [this.toInputValue, [
-                Validators.required,
-                Validators.minLength(3),
-                Validators.pattern(/^[a-zA-Z\s\-()]+$/)
-            ]],
-            departureDate: ['', [
-                Validators.required,
-                this.futureDateValidator()
-            ]],
-            passengers: ['', [
-                Validators.required,
-                Validators.min(1),
-                Validators.max(9)
-            ]],
-            name: ['', [
-                Validators.required,
-                Validators.minLength(3),
-                Validators.pattern(/^[a-zA-Z\s]+$/)
-            ]],
-            email: ['', [
-                Validators.required,
-                Validators.email,
-                Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)
-            ]],
-            phone: ['', [
-                Validators.required,
-                Validators.pattern(/^[0-9]{10}$/)
-            ]],
-            travel_insurance: [false],
-            airport_pickup: [false],
-            additionalPassengers: this.fb.array([])
-        });
-
-        // Subscribe to passengers control changes
-        this.flightForm.get('passengers')?.valueChanges.subscribe(value => {
-            this.updateAdditionalPassengers(value);
-        });
-    }
+   
 
     get additionalPassengersArray() {
         return this.flightForm.get('additionalPassengers') as FormArray;
@@ -387,21 +262,29 @@ export class FlightBookingComponent implements OnInit { @ViewChild('errorModal')
         if (this.flightForm.valid) {
             this.isSubmitting = true;
 
-            // Store the form data
             this.bookingData = {
                 flight: this.selectedFlight,
                 passenger: {
-                    name: this.flightForm.get('name')?.value,
-                    email: this.flightForm.get('email')?.value,
-                    phone: this.flightForm.get('phone')?.value,
-                    totalPassengers: this.flightForm.get('passengers')?.value
+                  name: this.flightForm.get('name')?.value,
+                  email: this.flightForm.get('email')?.value,
+                  phone: this.flightForm.get('phone')?.value,
+                  passportNumber: this.flightForm.get('passportNumber')?.value,
+                  totalPassengers: this.flightForm.get('passengers')?.value,
+                  travelInsurance: this.flightForm.get('travel_insurance')?.value,
+                  airportPickup: this.flightForm.get('airport_pickup')?.value,
+                  additionalPassengers: this.flightForm.get('additionalPassengers')?.value.map((passenger: any) => ({
+                    name: passenger.name,
+                    dob: passenger.dob,
+                    passportNumber: passenger.passportNumber,
+                  })),
                 },
                 journey: {
-                    from: this.flightForm.get('fromLocation')?.value,
-                    to: this.flightForm.get('toLocation')?.value,
-                    date: this.flightForm.get('departureDate')?.value,
+                  from: this.flightForm.get('fromLocation')?.value,
+                  to: this.flightForm.get('toLocation')?.value,
+                  date: this.flightForm.get('departureDate')?.value,
                 }
-            };
+              };
+              
 
             console.log('Booking Data:', this.bookingData);
 
@@ -411,6 +294,92 @@ export class FlightBookingComponent implements OnInit { @ViewChild('errorModal')
         }
     }
 
+
+    ngOnInit() {
+        document.documentElement.style.setProperty('--theme-color1', '66, 145, 184');
+        document.documentElement.style.setProperty('--theme-color2', '66, 145, 184');
+        this.fetchFlights(); 
+
+        // Simulate loading delay
+        setTimeout(() => {
+            this.isLoadingSummary = false;
+        }, 1500);
+
+        // Add form value changes subscription
+        this.flightForm.valueChanges.subscribe(() => {
+            this.checkFormValidity();
+        });
+
+        // Sync form date with search payload
+        this.flightForm.get('departureDate')?.valueChanges.subscribe(value => {
+            this.searchPayload.outbound_date = value;
+        });
+
+        // Sync passengers
+        this.flightForm.get('passengers')?.valueChanges.subscribe(value => {
+            this.searchPayload.adults = value;
+        });
+
+        // Handle form value updates
+        this.fromLocationControl?.valueChanges.subscribe(value => {
+            if (value !== this.fromInputValue) {
+                this.fromInputValue = value;
+            }
+        });
+
+        this.toLocationControl?.valueChanges.subscribe(value => {
+            if (value !== this.toInputValue) {
+                this.toInputValue = value;
+            }
+        });
+    }
+
+    initForm() {
+        this.flightForm = this.fb.group({
+            fromLocation: [this.fromInputValue, [
+                Validators.required,
+                Validators.minLength(3),
+                Validators.pattern(/^[a-zA-Z\s\-()]+$/)
+            ]],
+            toLocation: [this.toInputValue, [
+                Validators.required,
+                Validators.minLength(3),
+                Validators.pattern(/^[a-zA-Z\s\-()]+$/)
+            ]],
+            departureDate: ['', [
+                Validators.required,
+                this.futureDateValidator()
+            ]],
+            passengers: ['', [
+                Validators.required,
+                Validators.min(1),
+                Validators.max(9)
+            ]],
+            name: ['', [
+                Validators.required,
+                Validators.minLength(3),
+                Validators.pattern(/^[a-zA-Z\s]+$/)
+            ]],
+            email: ['', [
+                Validators.required,
+                Validators.email,
+                Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)
+            ]],
+            phone: ['', [
+                Validators.required,
+                Validators.pattern(/^[0-9]{10}$/)
+            ]],
+            passportNumber: [''],
+            travel_insurance: [false],
+            airport_pickup: [false],
+            additionalPassengers: this.fb.array([])
+        });
+
+        // Subscribe to passengers control changes
+        this.flightForm.get('passengers')?.valueChanges.subscribe(value => {
+            this.updateAdditionalPassengers(value);
+        });
+    }
     private sendBookingData(bookingData: any) {
         console.log('Booking Data:', bookingData);
         this.http.post('https://tuba-mongo-backend.onrender.com/bookFlight', bookingData, { observe: 'response' }).subscribe(
@@ -740,4 +709,58 @@ export class FlightBookingComponent implements OnInit { @ViewChild('errorModal')
     closeModal(): void {
         this.resetAndCloseModal();
     }
+
+    features = [
+        {
+            icon: 'tag',
+            title: 'Best Price Guarantee',
+            description: 'Get the best deals and competitive prices on all flights'
+        },
+        {
+            icon: 'headset',
+            title: '24/7 Support',
+            description: 'Round-the-clock assistance for all your travel needs'
+        },
+        {
+            icon: 'shield-alt',
+            title: 'Secure Booking',
+            description: 'Safe and encrypted transactions for worry-free booking'
+        },
+        {
+            icon: 'gift',
+            title: 'Reward Points',
+            description: 'Earn points on every booking for future discounts'
+        }
+    ];
+
+    policies = [
+        {
+            icon: 'shield-alt',
+            title: 'Cancellation Policy',
+            items: [
+                'Free cancellation within 24 hours',
+                'Refund up to 75% before 72 hours',
+                'Reschedule option available'
+            ]
+        },
+        {
+            icon: 'plane-departure',
+            title: 'Travel Guidelines',
+            items: [
+                'Check-in 2 hours before departure',
+                'Valid ID proof required',
+                'Baggage restrictions apply'
+            ]
+        },
+        {
+            icon: 'heart',
+            title: 'Safety Measures',
+            items: [
+                'Regular sanitization',
+                'Mask mandatory',
+                'Temperature screening'
+            ]
+        }
+    ];
+
 }

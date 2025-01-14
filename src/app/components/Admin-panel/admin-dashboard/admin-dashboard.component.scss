@@ -1923,7 +1923,7 @@ $visa-border-color: rgba(255, 255, 255, 0.1);
   max-width: 200px; /* Fixed width for cells */
   white-space: nowrap; /* Prevent text wrapping */
   overflow: hidden; /* Hide overflow text */
-  text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+  text-overflow: ellipsis; 
 }
 
 /* Zebra Striping */
