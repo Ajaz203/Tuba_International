@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 // Menu
 export interface Menu {
@@ -1195,21 +1196,35 @@ export class NavService {
           type: 'link',
         },
         {
-          title: 'log in',
+          title: 'User Login',
           path: '/page/other-pages/log-in',
           type: 'link',
         },
+        // {
+        //   title: 'register',
+        //   path: '/page/other-pages/register',
+        //   type: 'link',
+        // },
         {
-          title: 'register',
-          path: '/page/other-pages/register',
+          title: 'Admin Login',
+          path: '/admin-dashboard',
           type: 'link',
+<<<<<<< HEAD
+        }
+        
+=======
         },
+>>>>>>> 193c1036aefcb05e24d8cec83ea9cd3d3ee9dd88
         // {
         //   title: 'user dashboard',
         //   path: '/page/other-pages/user-dashboard',
         //   type: 'link',
         //   badgeIcon: true,
         // },
+<<<<<<< HEAD
+
+=======
+>>>>>>> 193c1036aefcb05e24d8cec83ea9cd3d3ee9dd88
       ],
     },
 
