@@ -10,7 +10,7 @@ import { LayoutComponent } from '../../../shared/components/ui/layout/layout.com
 @Component({
   selector: 'app-admin-login',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, HeaderComponent, FooterComponent, LayoutComponent],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, HeaderComponent, LayoutComponent],
   templateUrl: './admin-login.component.html',
   styleUrls: ['./admin-login.component.scss']
 })
