@@ -145,3 +145,85 @@ button:hover{
         display: none;
     }
 }
+
+
+
+.alert {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px;
+    border-radius: 5px;
+    color: white;
+    z-index: 1000;
+    font-size: 16px;
+    width: 90%;
+    max-width: 400px; /* Limit width on larger screens */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for better visibility */
+    word-wrap: break-word; /* Prevent text overflow */
+    text-align: center; /* Center the text */
+    transition: opacity 0.3s ease; /* Add a smooth fade-in/fade-out effect */
+  }
+  
+  /* Success alert styles */
+  .alert-success {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  /* Error alert styles */
+  .alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
+  /* Close button styles */
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: inherit;
+    cursor: pointer;
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    line-height: 1;
+    /* Align the button properly */
+  }
+  
+  /* Error message styles */
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  /* Media Queries for Responsiveness */
+  
+  /* For smaller screens (max-width: 768px) */
+  @media (max-width: 768px) {
+    .alert {
+      font-size: 14px; /* Adjust font size for smaller devices */
+      padding: 12px; /* Reduce padding */
+    }
+  
+    .close-btn {
+      font-size: 12px; /* Reduce close button size */
+    }
+  }
+  
+  /* For extra small screens (max-width: 480px) */
+  @media (max-width: 480px) {
+    .alert {
+      font-size: 12px; /* Further reduce font size for very small screens */
+      padding: 10px; /* Reduce padding */
+      max-width: 90%; /* Ensure the alert takes more width on small screens */
+    }
+  
+    .close-btn {
+      font-size: 10px; /* Reduce close button size even more */
+    }
+  }
+  
