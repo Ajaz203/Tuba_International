@@ -21,11 +21,7 @@ import { Router } from '@angular/router';
   ]
 })
 export class AdminDashboardComponent {
-  users = [
-    { name: 'John Doe', email: 'john.doe@example.com', role: 'Admin', status: 'Active' },
-    { name: 'Jane Smith', email: 'jane.smith@example.com', role: 'User', status: 'Inactive' },
-    { name: 'Sam Wilson', email: 'sam.wilson@example.com', role: 'Moderator', status: 'Active' },
-  ];
+ 
  
       userData: any = {}; // User profile data
       flightBookings: any[] = [];
