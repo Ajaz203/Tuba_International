@@ -41,11 +41,7 @@ export class AdminDashboardComponent {
       dateFilter: string = '';
       filteredFlightBookings: any[] = []; // Filtered flight bookings
       filteredHotelBookings: any[] = []; // Filtered hotel bookings
-currentDate: string|number|Date;
-totalHotels: any;
-totalCabs: any;
-totalVisa: any;
-totalFlights: any;
+
     
       constructor(private route: ActivatedRoute, private authService: AuthService, private router: Router) {
       
