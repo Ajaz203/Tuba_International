@@ -34,7 +34,7 @@ $visa-border-color: rgba(255, 255, 255, 0.1);
   color: $dark-text-primary;
   min-height: 100vh;
   padding: 2rem;
-  min-width: max-content;
+  // min-width: max-content;
   
   .dashboard-layout {
     display: grid;
@@ -47,6 +47,14 @@ $visa-border-color: rgba(255, 255, 255, 0.1);
       position: sticky;
       top: 2rem;
       height: fit-content;
+      
+      top: 0;
+      left: 0;
+ 
+      background-color: #1c1c1c; 
+      z-index: 10; 
+     
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
 
       .profile-card {
         background: $dark-bg-card;
@@ -1878,58 +1886,57 @@ $visa-border-color: rgba(255, 255, 255, 0.1);
 }
 
 
-.table-container {
-  width: 100%;
-  // overflow-x: auto !important;
-  border-radius: 10px;
-  background-color: #121212; /* Subtle background for the container */
-  margin: 10px 0; /* Add margin for spacing */
-}
+// .table-container {
+//   width: 100%;
 
-.black-theme-table {
-  width: 100%;
-  // min-width: 1200px; 
-  border-collapse: collapse !important;
-  background-color: #1c1c1c;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-  border-radius: 10px;
-}
+//   border-radius: 10px;
+//   background-color: #121212;
+//   margin: 10px 0; 
+// }
 
-/* Table Header */
-.black-theme-table th {
-  background-color: #292929; 
-  color: #00c6ff; 
-  text-align: left;
-  padding: 15px;
-  border-bottom: 2px solid #00c6ff;
-  text-transform: uppercase;
-  font-size: 14px;
-  letter-spacing: 0.1em;
-  white-space: nowrap; /* Prevent wrapping */
-}
+// .black-theme-table {
+//   width: 100%;
+//   border-collapse: collapse !important;
+//   background-color: #1c1c1c;
+//   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+//   border-radius: 10px;
+// }
 
-/* Table Body */
-.black-theme-table td {
-  padding: 12px 15px;
-  color: #dcdcdc; 
-  border-bottom: 1px solid #444; 
-  text-align: left;
-  white-space: nowrap; /* Prevent text wrapping */
-  overflow: hidden; /* Hide overflow text */
-  text-overflow: ellipsis; 
-}
 
-/* Zebra Striping */
-.black-theme-table tbody tr:nth-child(even) {
-  background-color: #2b2b2b; /* Slightly lighter for alternating rows */
-}
+// .black-theme-table th {
+//   background-color: #292929; 
+//   color: #00c6ff; 
+//   text-align: left;
+//   padding: 15px;
+//   border-bottom: 2px solid #00c6ff;
+//   text-transform: uppercase;
+//   font-size: 14px;
+//   letter-spacing: 0.1em;
+//   white-space: nowrap; 
+// }
 
-/* Hover Effect */
-.black-theme-table tbody tr:hover {
-  background-color: #333; /* Subtle highlight */
-  color: #fff; /* Text becomes white for contrast */
-  cursor: pointer;
-}
+
+// .black-theme-table td {
+//   padding: 12px 15px;
+//   color: #dcdcdc; 
+//   border-bottom: 1px solid #444; 
+//   text-align: left;
+//   white-space: nowrap; 
+//   overflow: hidden; 
+//   text-overflow: ellipsis; 
+// }
+
+
+// .black-theme-table tbody tr:nth-child(even) {
+//   background-color: #2b2b2b;
+// }
+
+
+// .black-theme-table tbody tr:hover {
+//   background-color: #333; 
+//   color: #fff; 
+//   cursor: pointer;
+// }
 
 /* Scrollbar Styling */
 // .table-container::-webkit-scrollbar {
@@ -1976,4 +1983,38 @@ $visa-border-color: rgba(255, 255, 255, 0.1);
 .black-theme-table{
 width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;}
+  margin-top: 10px;
+}
+
+
+
+/* Table Container */
+.table-container {
+  width: calc(100% - 900px); 
+  overflow-x: auto; /* Allow horizontal scrolling if needed */
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #121212; /* Background color */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  width: 970px;
+}
+
+/* Main Table Styling */
+.black-theme-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: #1c1c1c; /* Dark background */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Header and Body Styles (keep existing table styles) */
+.black-theme-table th,
+.black-theme-table td {
+  padding: 12px 15px;
+  text-align: left;
+  color: #dcdcdc;
+  white-space: nowrap;
+}
