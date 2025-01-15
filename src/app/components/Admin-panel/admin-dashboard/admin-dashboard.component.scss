@@ -2018,3 +2018,42 @@ width: 100%;
   color: #dcdcdc;
   white-space: nowrap;
 }
+
+.table-container {
+  max-height: 400px; /* Set your desired height */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.black-theme-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.black-theme-table th,
+.black-theme-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 2px solid #00c6ff;
+  box-sizing: border-box; /* Ensure padding doesn't affect table layout */
+}
+
+.black-theme-table th {
+  background-color: #292929;
+  color: #00c6ff;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  position: sticky;
+  top: 0;
+  z-index: 1; /* Keep the header above the table body */
+  background-color: #292929;
+}
+
+
+
+.black-theme-table td {
+  border-bottom: 1px solid #ddd; /* Add a border to the table rows */
+}
+
+
+
