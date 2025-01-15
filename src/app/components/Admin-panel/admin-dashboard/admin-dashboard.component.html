@@ -139,25 +139,159 @@
         <!-- Hotels Tab Content -->
         <div *ngSwitchCase="'hotels'" class="content-section animate-fade">
           <div class="booking-cards">
-            <div class="booking-card"></div>
+            <div class="booking-card">
+              <div class="table-container">
+                <table class="black-theme-table">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Hotel Name</th>
+                      <th>Check-In</th>
+                      <th>Check-Out</th>
+                      <th>Contact</th>
+                      <th>Email</th>
+                      <th>Reference No</th>
+                      <th>Rent</th>
+                      <th>Rating</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let booking of hotelBookings; let i = index">
+                      <td>{{ i + 1 }}</td>
+                      <td>{{ booking.selectedHotelName }}</td>
+                      <td>{{ booking.checkIn }}</td>
+                      <td>{{ booking.checkOut }}</td>
+                      <td>{{ booking.contact }}</td>
+                      <td>{{ booking.email }}</td>
+                      <td>{{ booking.referenceNo }}</td>
+                      <td>{{ booking.rent }}</td>
+                      <td>{{ booking.selectedHotelRating }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <ng-template #noData>
+                  <p *ngIf="hotelBookings.length === 0">No Hotel bookings available.</p>
+                </ng-template>
+              </div>
+              
+            </div>
           </div>
         </div>
         <!-- Cabs Tab Content -->
         <div *ngSwitchCase="'cabs'" class="content-section animate-fade">
           <div class="booking-cards">
-            <div class="booking-card"></div>
+            <div class="booking-card">
+              <div class="table-container">
+                <h3>Cab Bookings</h3>
+                <table class="black-theme-table">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Contact No</th>
+                      <th>Pickup Time</th>
+                      <th>Vehicle Type</th>
+                      <th>Reference No</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let booking of cabBookings; let i = index">
+                      <td>{{ i + 1 }}</td>
+                      <td>{{ booking.name }}</td>
+                      <td>{{ booking.email }}</td>
+                      <td>{{ booking.contact_no }}</td>
+                      <td>{{ booking.pickupTime }}</td>
+                      <td>{{ booking.vehicleType }}</td>
+                      <td>{{ booking.referenceNo }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <ng-template #noDataCabs>
+                  <p *ngIf="cabBookings.length === 0">No Cab bookings available.</p>
+                </ng-template>
+              </div>
+            </div>
           </div>
         </div>
         <!-- Tours Tab Content -->
         <div *ngSwitchCase="'tours'" class="content-section animate-fade">
           <div class="booking-cards">
-            <div class="booking-card"></div>
+            <div class="booking-card">
+              <div class="table-container">
+                <h3>Tour Bookings</h3>
+                <table class="black-theme-table">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Phone</th>
+                      <th>Destination</th>
+                      <th>Travel Date</th>
+                      <th>Duration</th>
+                      <th>Members</th>
+                      <th>Meal Preference</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let booking of tourBookings; let i = index">
+                      <td>{{ i + 1 }}</td>
+                      <td>{{ booking.name }}</td>
+                      <td>{{ booking.email }}</td>
+                      <td>{{ booking.phone }}</td>
+                      <td>{{ booking.destination }}</td>
+                      <td>{{ booking.travel_date | date: 'yyyy-MM-dd' }}</td>
+                      <td>{{ booking.duration }}</td>
+                      <td>{{ booking.members }}</td>
+                      <td>{{ booking.meal_preference }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <ng-template #noDataTours>
+                  <p *ngIf="tourBookings.length === 0">No Tour bookings available.</p>
+                </ng-template>
+              </div>
+              
+              
+            </div>
           </div>
         </div>
         <!-- Visa Tab Content -->
         <div *ngSwitchCase="'visa'" class="visa-content-wrapper animate-fade">
             <div class="booking-cards">
-                <div class="booking-card"></div>
+                <div class="booking-card">
+                  <div class="table-container">
+                    <h3>Visa Requests</h3>
+                    <table class="black-theme-table">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Name</th>
+                          <th>Email</th>
+                          <th>Contact No</th>
+                          <th>Country</th>
+                          <th>Visa Type</th>
+                          <th>Passengers</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let request of visaRequests; let i = index">
+                          <td>{{ i + 1 }}</td>
+                          <td>{{ request.name }}</td>
+                          <td>{{ request.email }}</td>
+                          <td>{{ request.contactNo }}</td>
+                          <td>{{ request.country }}</td>
+                          <td>{{ request.visaType }}</td>
+                          <td>{{ request.passengers }}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <ng-template #noDataVisa>
+                      <p *ngIf="visaRequests.length === 0">No Visa requests available.</p>
+                    </ng-template>
+                  </div>
+                </div>
               </div>
         </div>
 
