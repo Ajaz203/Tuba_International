@@ -484,7 +484,7 @@ blockquote footer {
   
   /* Subtitle Styling */
   .e-visa-subtitle {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     color: #ff6d00;
     font-weight: bold;
     margin-bottom: 30px;
@@ -536,7 +536,7 @@ blockquote footer {
   }
   
   .e-visa-icon {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 10px;
     color: #ff6d00;
   }
@@ -611,7 +611,7 @@ blockquote footer {
   }
   
   .e-visa-step-icon {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #ff6d00;
     margin-right: 20px;
     flex-shrink: 0;
@@ -667,7 +667,7 @@ blockquote footer {
   }
   
   .e-visa-tip-icon {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #ff6d00;
     margin-right: 15px;
     flex-shrink: 0;
@@ -881,4 +881,108 @@ blockquote footer {
   }
 }
 
-    
+    /* Alert Styles */
+.alert {
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px;
+  border-radius: 5px;
+  color: white;
+  z-index: 1000;
+  font-size: 16px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  word-wrap: break-word;
+  text-align: center;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: inherit;
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 12px;
+}
+.alert {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px;
+  border-radius: 5px;
+  color: white;
+  z-index: 1000;
+  font-size: 16px;
+  width: 90%;
+  /* Ensure it fits smaller screens */
+  max-width: 400px;
+  /* Limit width on larger screens */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Add subtle shadow for better visibility */
+  word-wrap: break-word;
+  /* Prevent text overflow */
+  text-align: center;
+  /* Center the text */
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: inherit;
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  line-height: 1;
+  /* Align the button properly */
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .alert {
+    font-size: 14px;
+    /* Adjust font size for smaller devices */
+    padding: 12px;
+    /* Reduce padding */
+  }
+
+  .close-btn {
+    font-size: 12px;
+    /* Reduce close button size */
+  }
+}
