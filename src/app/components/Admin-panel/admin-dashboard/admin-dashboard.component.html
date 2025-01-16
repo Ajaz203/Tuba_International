@@ -318,7 +318,6 @@
                       <th>Family Members</th>
                       <th>Request Created</th>
 
-<<<<<<< HEAD
                           <th>Status</th>
                         </tr>
                       </thead>
@@ -358,7 +357,7 @@
             <!-- Hajj/Umrah Tab Content -->
             <div *ngSwitchCase="'Hajj/Umrah'" class="visa-content-wrapper animate-fade">
               <div class="booking-cards">
-                <div class="booking-card">
+                <div class="table-container">
                   <table class="black-theme-table">
                     <thead>
                       <tr>
@@ -430,119 +429,6 @@
                   
                 </div>
               </div>
-=======
-                      <th>Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr *ngFor="let visa of visaData; let i = index">
-                      <td>{{ i + 1 }}</td>
-                      <td>{{ visa.name }}</td>
-                      <td>{{ visa.email }}</td>
-                      <td>{{ visa.contact_no }}</td>
-                      <td>{{ visa.passport_number }}</td>
-                      <td>{{ visa.visa_type }}</td>
-                      <td>{{ visa.travel_date | date: 'yyyy-MM-dd' }}</td>
-                      <td>{{ visa.visa_duration }}</td>
-                      <td>{{ visa.nationality || 'N/A' }}</td>
-                      <td>{{ visa.destination_country }}</td>
-                      <td>{{ visa.address || 'N/A' }}</td>
-                      <td>{{ visa.date_of_birth ? (visa.date_of_birth | date: 'yyyy-MM-dd') : 'N/A' }}</td>
-                      <td>{{ visa.purpose_of_visit || 'N/A' }}</td>
-                      <td>
-                        <ul>
-                          <li *ngFor="let member of visa.family_members">{{ member }}</li>
-                        </ul>
-                        <span *ngIf="visa.family_members.length === 0">None</span>
-                      </td>
-                      <td>{{ visa.createdAt | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
-                      <td>{{ visa.status }}</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <ng-template #noVisaData>
-                  <p *ngIf="visaData.length === 0">No visa applications available.</p>
-                </ng-template>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div *ngSwitchCase="'Hajj/Umrah'" class="visa-content-wrapper animate-fade">
-          <div class="booking-cards">
-            <div class="booking-card">
-              <div class="table-container">
-                <table class="black-theme-table">
-                  <thead>
-                    <tr>
-                      <th>#</th>
-                      <th>Name</th>
-                      <th>Email</th>
-                      <th>Contact No</th>
-                      <th>Country</th>
-                      <th>Visa Type</th>
-                      <th>Passengers</th>
-                      <th>Request Created</th>
-
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr *ngFor="let request of visaRequests; let i = index">
-                      <td>{{ i + 1 }}</td>
-                      <td>{{ request.name }}</td>
-                      <td>{{ request.email }}</td>
-                      <td>{{ request.contactNo }}</td>
-                      <td>{{ request.country }}</td>
-                      <td>{{ request.visaType }}</td>
-                      <td>{{ request.passengers }}</td>
-                      <td>{{ request.createdAt | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
-                    </tr>
-                  </tbody>
-
-                </table>
-              </div>
-
-              <ng-template #noDataVisa>
-                <p *ngIf="visaRequests.length === 0">No Visa requests available.</p>
-              </ng-template>
-            </div>
-          </div>
-        </div>
-        <div *ngSwitchCase="'Contact Us'" class="Contact-content-wrapper animate-fade">
-          <div class="booking-cards">
-            <div class="booking-card">
-              <div class="table-container">
-                <table class="black-theme-table">
-                  <thead>
-                    <tr>
-                      <th>#</th>
-                      <th>First Name</th>
-                      <th>Last Name</th>
-                      <th>Email</th>
-                      <th>Phone Number</th>
-                      <th>Message</th>
-                      <th>Created At</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr *ngFor="let contact of contactRequests; let i = index">
-                      <td>{{ i + 1 }}</td>
-                      <td>{{ contact.firstName }}</td>
-                      <td>{{ contact.lastName }}</td>
-                      <td>{{ contact.email }}</td>
-                      <td>{{ contact.phoneNumber }}</td>
-                      <td>{{ contact.message }}</td>
-                      <td>{{ contact.createdAt | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <ng-template #noContactMessages>
-                  <p *ngIf="contactRequests.length === 0">No contact messages available.</p>
-                </ng-template>
-              </div>
-
-            </div>
-          </div>
->>>>>>> da766e248d1218b4acdcf301d789c0d96d7dc5b2
         </div>
 
       </div>
