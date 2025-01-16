@@ -114,41 +114,70 @@
                   <thead>
                     <tr>
                       <th>#</th>
-                      <th>Name</th>
+                      <th>Logo</th>
+                      <th>Passenger Name</th>
                       <th>Email</th>
                       <th>Phone</th>
                       <th>From</th>
                       <th>To</th>
+                      <th>Departure Airport</th>
+                      <th>Arrival Airport</th>
                       <th>Airline</th>
+                      <th>Travel Class</th>
                       <th>Departure Time</th>
                       <th>Arrival Time</th>
                       <th>Duration</th>
                       <th>Fare (INR)</th>
                       <th>Total Price (INR)</th>
+                      <th>Total Passengers</th>
+                      <th>Additional Passengers</th>
+                      <th>Request Created</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr *ngFor="let booking of flightBookings; let i = index">
                       <td>{{ i + 1 }}</td>
+                      <td>
+                        <img [src]="booking.flight?.image_link" alt="Airline Logo" width="50" height="50" />
+                      </td>
                       <td>{{ booking.passenger?.name }}</td>
                       <td>{{ booking.passenger?.email }}</td>
                       <td>{{ booking.passenger?.phone }}</td>
                       <td>{{ booking.journey?.from }}</td>
                       <td>{{ booking.journey?.to }}</td>
+                      <td>{{ booking.flight?.departure_airport }}</td>
+                      <td>{{ booking.flight?.arrival_airport }}</td>
                       <td>{{ booking.flight?.airline }}</td>
+                      
+                      <td>{{ booking.flight?.travel_class === 1 ? 'Economy' : 'Business' }}</td>
                       <td>{{ booking.flight?.departure_time | date: 'short' }}</td>
                       <td>{{ booking.flight?.arrival_time | date: 'short' }}</td>
                       <td>{{ booking.flight?.duration }}</td>
-                      <td>{{ booking.flight?.fare }}</td>
-                      <td>{{ booking.flight?.total_price }}</td>
+                      <td>{{ booking.flight?.fare | currency: 'INR' }}</td>
+                      <td>{{ booking.flight?.total_price | currency: 'INR' }}</td>
+                      <td>{{ booking.passenger?.totalPassengers }}</td>
+                      
+                      <td>
+                        <ul>
+                          <li *ngFor="let passenger of booking.passenger?.additionalPassengers">
+                            {{ passenger.name }}
+                          </li>
+                          <li *ngIf="booking.passenger?.additionalPassengers.length === 0">
+                            No additional passengers
+                          </li>
+                        </ul>
+                      </td>
+                      <td>{{ booking.createdAt | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
+
                     </tr>
                   </tbody>
                 </table>
-                
+              
                 <ng-template #noData>
                   <p>No flight bookings available.</p>
                 </ng-template>
               </div>
+              
             </div>
           </div>
         </div>
@@ -161,27 +190,38 @@
                   <thead>
                     <tr>
                       <th>#</th>
+                      <th>Hotel Image</th>
                       <th>Hotel Name</th>
                       <th>Check-In</th>
                       <th>Check-Out</th>
                       <th>Contact</th>
                       <th>Email</th>
-                      <th>Reference No</th>
                       <th>Rent</th>
                       <th>Rating</th>
+                      <th>Travellers</th>
+                      <th>Request Created</th>
+
                     </tr>
                   </thead>
                   <tbody>
                     <tr *ngFor="let booking of hotelBookings; let i = index">
                       <td>{{ i + 1 }}</td>
+                      <td>
+                        <img [src]="booking.selectedHotelImage" alt="Hotel Image" width="50" height="50" />
+                      </td>
                       <td>{{ booking.selectedHotelName }}</td>
-                      <td>{{ booking.checkIn }}</td>
-                      <td>{{ booking.checkOut }}</td>
+                      <td>{{ booking.checkIn | date: 'yyyy-MM-dd' }}</td>
+                      <td>{{ booking.checkOut | date: 'yyyy-MM-dd' }}</td>
                       <td>{{ booking.contact }}</td>
                       <td>{{ booking.email }}</td>
-                      <td>{{ booking.referenceNo }}</td>
                       <td>{{ booking.rent }}</td>
                       <td>{{ booking.selectedHotelRating }}</td>
+                      <td>
+                        <ul>
+                          <li *ngFor="let traveller of booking.travellers">Name: {{ traveller.name }} | ID: {{ traveller.id }}</li>
+                        </ul>
+                      </td>
+                      <td>{{ booking.createdAt | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -198,7 +238,6 @@
           <div class="booking-cards">
             <div class="booking-card">
               <div class="table-container">
-                <h3>Cab Bookings</h3>
                 <table class="black-theme-table">
                   <thead>
                     <tr>
@@ -208,7 +247,8 @@
                       <th>Contact No</th>
                       <th>Pickup Time</th>
                       <th>Vehicle Type</th>
-                      <th>Reference No</th>
+                      <th>Request Created</th>
+                      <th> Status</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -219,7 +259,8 @@
                       <td>{{ booking.contact_no }}</td>
                       <td>{{ booking.pickupTime }}</td>
                       <td>{{ booking.vehicleType }}</td>
-                      <td>{{ booking.referenceNo }}</td>
+                      <td>{{ booking.createdAt | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
+                      <td>{{ booking.status }}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -235,7 +276,6 @@
           <div class="booking-cards">
             <div class="booking-card">
               <div class="table-container">
-                <h3>Tour Bookings</h3>
                 <table class="black-theme-table">
                   <thead>
                     <tr>
@@ -248,6 +288,10 @@
                       <th>Duration</th>
                       <th>Members</th>
                       <th>Meal Preference</th>
+                      <th>Airport Pickup</th>
+                      <th>Requirements Details</th>
+                      <th>Local Guide</th>
+                      <th>Request Created</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -260,7 +304,11 @@
                       <td>{{ booking.travel_date | date: 'yyyy-MM-dd' }}</td>
                       <td>{{ booking.duration }}</td>
                       <td>{{ booking.members }}</td>
-                      <td>{{ booking.meal_preference }}</td>
+                      <td>{{ booking.meal_preference || 'N/A' }}</td>
+                      <td>{{ booking.airport_pickup || 'N/A' }}</td>
+                      <td>{{ booking.requirements_details || 'N/A' }}</td>
+                      <td>{{ booking.local_guide || 'N/A' }}</td>
+                      <td>{{ booking.createdAt | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -268,6 +316,7 @@
                   <p *ngIf="tourBookings.length === 0">No Tour bookings available.</p>
                 </ng-template>
               </div>
+              
               
               
             </div>
@@ -278,7 +327,7 @@
             <div class="booking-cards">
                 <div class="booking-card">
                   <div class="table-container">
-                    <h3>Visa Requests</h3>
+                    <h3>Visa Applications</h3>
                     <table class="black-theme-table">
                       <thead>
                         <tr>
@@ -286,38 +335,126 @@
                           <th>Name</th>
                           <th>Email</th>
                           <th>Contact No</th>
-                          <th>Country</th>
+                          <th>Passport No</th>
                           <th>Visa Type</th>
-                          <th>Passengers</th>
+                          <th>Travel Date</th>
+                          <th>Duration (Days)</th>
+                          <th>Nationality</th>
+                          <th>Destination Country</th>
+                          <th>Address</th>
+                          <th>Date of Birth</th>
+                          <th>Purpose of Visit</th>
+                          <th>Family Members</th>
+                          <th>Request Created</th>
+
+                          <th>Status</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr *ngFor="let request of visaRequests; let i = index">
+                        <tr *ngFor="let visa of visaData; let i = index">
                           <td>{{ i + 1 }}</td>
-                          <td>{{ request.name }}</td>
-                          <td>{{ request.email }}</td>
-                          <td>{{ request.contactNo }}</td>
-                          <td>{{ request.country }}</td>
-                          <td>{{ request.visaType }}</td>
-                          <td>{{ request.passengers }}</td>
+                          <td>{{ visa.name }}</td>
+                          <td>{{ visa.email }}</td>
+                          <td>{{ visa.contact_no }}</td>
+                          <td>{{ visa.passport_number }}</td>
+                          <td>{{ visa.visa_type }}</td>
+                          <td>{{ visa.travel_date | date: 'yyyy-MM-dd' }}</td>
+                          <td>{{ visa.visa_duration }}</td>
+                          <td>{{ visa.nationality || 'N/A' }}</td>
+                          <td>{{ visa.destination_country }}</td>
+                          <td>{{ visa.address || 'N/A' }}</td>
+                          <td>{{ visa.date_of_birth ? (visa.date_of_birth | date: 'yyyy-MM-dd') : 'N/A' }}</td>
+                          <td>{{ visa.purpose_of_visit || 'N/A' }}</td>
+                          <td>
+                            <ul>
+                              <li *ngFor="let member of visa.family_members">{{ member }}</li>
+                            </ul>
+                            <span *ngIf="visa.family_members.length === 0">None</span>
+                          </td>
+                          <td>{{ visa.createdAt | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
+                          <td>{{ visa.status }}</td>
                         </tr>
                       </tbody>
                     </table>
-                    <ng-template #noDataVisa>
-                      <p *ngIf="visaRequests.length === 0">No Visa requests available.</p>
+                    <ng-template #noVisaData>
+                      <p *ngIf="visaData.length === 0">No visa applications available.</p>
                     </ng-template>
                   </div>
                 </div>
               </div>
-        </div>
-        <div *ngSwitchCase="'Hajj/Umrah'" class="visa-content-wrapper animate-fade">
-            <div class="booking-cards">
-                <div class="booking-card"></div>
+            </div>
+            <div *ngSwitchCase="'Hajj/Umrah'" class="visa-content-wrapper animate-fade">
+              <div class="booking-cards">
+                <div class="booking-card">
+
+                  <table class="black-theme-table">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Contact No</th>
+                        <th>Country</th>
+                        <th>Visa Type</th>
+                        <th>Passengers</th>
+                        <th>Request Created</th>
+
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let request of visaRequests; let i = index">
+                      <td>{{ i + 1 }}</td>
+                      <td>{{ request.name }}</td>
+                      <td>{{ request.email }}</td>
+                      <td>{{ request.contactNo }}</td>
+                      <td>{{ request.country }}</td>
+                      <td>{{ request.visaType }}</td>
+                      <td>{{ request.passengers }}</td>
+                      <td>{{ request.createdAt | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                 
+                <ng-template #noDataVisa>
+                  <p *ngIf="visaRequests.length === 0">No Visa requests available.</p>
+                </ng-template>
               </div>
-        </div>
-        <div *ngSwitchCase="'Contact Us'" class="Contact-content-wrapper animate-fade">
+            </div>
+            </div>
+            <div *ngSwitchCase="'Contact Us'" class="Contact-content-wrapper animate-fade">
             <div class="booking-cards">
-                <div class="booking-card"></div>
+                <div class="booking-card">
+                  <div class="table-container">
+                    <table class="black-theme-table">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>First Name</th>
+                          <th>Last Name</th>
+                          <th>Email</th>
+                          <th>Phone Number</th>
+                          <th>Message</th>
+                          <th>Created At</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let contact of contactRequests; let i = index">
+                          <td>{{ i + 1 }}</td>
+                          <td>{{ contact.firstName }}</td>
+                          <td>{{ contact.lastName }}</td>
+                          <td>{{ contact.email }}</td>
+                          <td>{{ contact.phoneNumber }}</td>
+                          <td>{{ contact.message }}</td>
+                          <td>{{ contact.createdAt | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <ng-template #noContactMessages>
+                      <p *ngIf="contactRequests.length === 0">No contact messages available.</p>
+                    </ng-template>
+                  </div>
+                  
+                </div>
               </div>
         </div>
 

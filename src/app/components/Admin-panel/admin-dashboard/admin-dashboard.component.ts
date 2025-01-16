@@ -29,6 +29,8 @@ export class AdminDashboardComponent {
       cabBookings: any[] = []; // Cab bookings
       tourBookings: any[] = []; // Tour bookings
       visaRequests: any[] = []; // Visa requests
+      visaData: any[] = []; // Visa data
+      contactRequests: any[] = []; // Contact requests
       totalBookingCount: number = 0; // Total number of bookings
       public email: string = ''; // User email for query parameters
     
@@ -61,9 +63,14 @@ export class AdminDashboardComponent {
               console.log('Cab bookings:', this.cabBookings);
               this.tourBookings = response.data.TourData; // Tour bookings (correct mapping)
               console.log('Tour bookings:', this.tourBookings);
-              this.visaRequests = response.data.eVisaStampings;
-              console.log('Visa requests:', this.visaRequests);
+              this.visaRequests = response.data.AllVisaData; // hajj/umrah/eVisa requests
+              console.log('hajj/umrah/eVisa requests:', this.visaRequests);
+              this.visaData = response.data.visaData; // Visa data
+              console.log('Visa requests:', this.visaData); 
+              this.contactRequests = response.data.ContactUsData; // Contact requests
+              console.log('Contact requests:', this.contactRequests);
               this.totalBookingCount = response.totalBookings; // Set total bookings count
+              
             } else {
               console.log('No user data found for email:', this.email);
             }
