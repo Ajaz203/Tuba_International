@@ -54,21 +54,13 @@ export class AdminDashboardComponent {
             if (response) {
               console.log('User data fetched successfully:', response);
               this.flightBookings = response.data.flightBookings; // Flight bookings
-              console.log('Flight bookings:', this.flightBookings);
               this.userData = response.data.userData; // User profile data
-              console.log('User data:', this.userData);
               this.hotelBookings = response.data.hotelBookings; // Hotel bookings
-              console.log('Hotel bookings:', this.hotelBookings);
               this.cabBookings = response.data.cabBookings; // Cab bookings
-              console.log('Cab bookings:', this.cabBookings);
               this.tourBookings = response.data.TourData; // Tour bookings (correct mapping)
-              console.log('Tour bookings:', this.tourBookings);
               this.visaRequests = response.data.AllVisaData; // hajj/umrah/eVisa requests
-              console.log('hajj/umrah/eVisa requests:', this.visaRequests);
               this.visaData = response.data.visaData; // Visa data
-              console.log('Visa requests:', this.visaData); 
               this.contactRequests = response.data.ContactUsData; // Contact requests
-              console.log('Contact requests:', this.contactRequests);
               this.totalBookingCount = response.totalBookings; // Set total bookings count
               
             } else {

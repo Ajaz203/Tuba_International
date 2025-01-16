@@ -135,7 +135,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let booking of flightBookings; let i = index">
+                    <tr *ngFor="let booking of flightBookings.slice().reverse(); let i = index">
                       <td>{{ i + 1 }}</td>
                       <td>
                         <img [src]="booking.flight?.image_link" alt="Airline Logo" width="50" height="50" />
@@ -204,7 +204,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let booking of hotelBookings; let i = index">
+                    <tr *ngFor="let booking of hotelBookings.slice().reverse(); let i = index">
                       <td>{{ i + 1 }}</td>
                       <td>
                         <img [src]="booking.selectedHotelImage" alt="Hotel Image" width="50" height="50" />
@@ -253,7 +253,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let booking of cabBookings; let i = index">
+                    <tr *ngFor="let booking of cabBookings.slice().reverse(); let i = index">
                       <td>{{ i + 1 }}</td>
                       <td>{{ booking.name }}</td>
                       <td>{{ booking.email }}</td>
@@ -297,7 +297,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let booking of tourBookings; let i = index">
+                    <tr *ngFor="let booking of tourBookings.slice().reverse(); let i = index">
                       <td>{{ i + 1 }}</td>
                       <td>{{ booking.name }}</td>
                       <td>{{ booking.email }}</td>
@@ -353,7 +353,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr *ngFor="let visa of visaData; let i = index">
+                        <tr *ngFor="let visa of visaData.slice().reverse(); let i = index">
                           <td>{{ i + 1 }}</td>
                           <td>{{ visa.name }}</td>
                           <td>{{ visa.email }}</td>
@@ -385,10 +385,10 @@
                 </div>
               </div>
             </div>
+            <!-- Hajj/Umrah Tab Content -->
             <div *ngSwitchCase="'Hajj/Umrah'" class="visa-content-wrapper animate-fade">
               <div class="booking-cards">
                 <div class="booking-card">
-
                   <table class="black-theme-table">
                     <thead>
                       <tr>
@@ -399,30 +399,31 @@
                         <th>Country</th>
                         <th>Visa Type</th>
                         <th>Passengers</th>
-                        <th>Request Created</th>
-
+                        <!-- <th>Request Created</th> -->
                       </tr>
-                  </thead>
-                  <tbody>
-                    <tr *ngFor="let request of visaRequests; let i = index">
-                      <td>{{ i + 1 }}</td>
-                      <td>{{ request.name }}</td>
-                      <td>{{ request.email }}</td>
-                      <td>{{ request.contactNo }}</td>
-                      <td>{{ request.country }}</td>
-                      <td>{{ request.visaType }}</td>
-                      <td>{{ request.passengers }}</td>
-                      <td>{{ request.createdAt | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
-                    </tr>
-                  </tbody>
-                </table>
-                 
-                <ng-template #noDataVisa>
-                  <p *ngIf="visaRequests.length === 0">No Visa requests available.</p>
-                </ng-template>
-              </div>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let request of visaRequests.slice().reverse(); let i = index">
+                        <td>{{ i + 1 }}</td>
+                        <td>{{ request.name }}</td>
+                        <td>{{ request.email }}</td>
+                        <td>{{ request.contactNo }}</td>
+                        <td>{{ request.country }}</td>
+                        <td>{{ request.visaType }}</td>
+                        <td>{{ request.passengers }}</td>
+                        <!-- <td>{{ request.createdAt | date: 'yyyy-MM-dd HH:mm:ss' }}</td> -->
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+                  <ng-template #noDataVisa>
+                    <p *ngIf="visaRequests.length === 0">No Visa requests available.</p>
+                  </ng-template>
+                </div>
+                
             </div>
             </div>
+            <!-- Contact Us Tab Content -->
             <div *ngSwitchCase="'Contact Us'" class="Contact-content-wrapper animate-fade">
             <div class="booking-cards">
                 <div class="booking-card">
@@ -440,7 +441,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr *ngFor="let contact of contactRequests; let i = index">
+                        <tr *ngFor="let contact of contactRequests.slice().reverse(); let i = index">
                           <td>{{ i + 1 }}</td>
                           <td>{{ contact.firstName }}</td>
                           <td>{{ contact.lastName }}</td>
@@ -455,6 +456,7 @@
                       <p *ngIf="contactRequests.length === 0">No contact messages available.</p>
                     </ng-template>
                   </div>
+                  
                   
                 </div>
               </div>
