@@ -1,18 +1,18 @@
 import { Component, HostListener, inject, Input, TemplateRef, ViewChild } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule, NgClass } from '@angular/common';
-import { FormBuilder, FormGroup, Validators,ReactiveFormsModule ,FormArray} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormArray } from '@angular/forms';
 import { HotelService } from '../../../../services/hotel.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
-    selector: 'app-search-box-one',
-    templateUrl: './search-box-one.component.html',
-    styleUrls: ['./search-box-one.component.scss'],
-    standalone: true,
-    imports: [NgClass, CommonModule,ReactiveFormsModule],
-    styles: `
+  selector: 'app-search-box-one',
+  templateUrl: './search-box-one.component.html',
+  styleUrls: ['./search-box-one.component.scss'],
+  standalone: true,
+  imports: [NgClass, CommonModule, ReactiveFormsModule],
+  styles: `
 		.dark-modal .modal-content {
 			background-color: #292b2c;
 			color: white;
@@ -27,16 +27,17 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class SearchBoxOneComponent {
   private exchangeRateUSDToINR: number = 83;
-  hotels: any[] = []; 
+  hotels: any[] = [];
   pagedHotels: any[] = [];
   currentPage = 0;
-  itemsPerPage = 8 ;
-  totalPages = 0; 
+  itemsPerPage = 8;
+  totalPages = 0;
   selectedHotelName: string = '';
   selectedHotelPrice: number = 0;
   private modalService = inject(NgbModal);
-  public isLoading : boolean = false;
-
+  public isLoading: boolean = false;
+  public message: string | null = null; // Initialize message
+  public messageType: 'success' | 'error' | null = null; // Initialize messageType
 
   @Input() text: boolean = false;
   @Input() borderClass: boolean = false;
@@ -47,17 +48,17 @@ export class SearchBoxOneComponent {
   public guest: number = 1;
 
   hotelSearchForm: FormGroup;
-bookingForm: FormGroup<any>;
-// hotels: any;
+  bookingForm: FormGroup<any>;
+  // hotels: any;
 
   @ViewChild('searchResultsModal') searchResultsModal!: TemplateRef<any>;
   @ViewChild('content') bookingModal!: TemplateRef<any>;
 
   constructor(private fb: FormBuilder, private hotelService: HotelService) {
 
-    
 
- 
+
+
     this.bookingForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       contact: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]],
@@ -65,15 +66,15 @@ bookingForm: FormGroup<any>;
       checkOut: ['', Validators.required],
       travellers: this.fb.array([this.createTravellerGroup()]),
     });
-  
+
 
     this.updatePage();
 
     this.hotelSearchForm = this.fb.group({
       q: ['', [Validators.required]],
       check_in_date: ['', Validators.required],
-      check_out_date: ['', Validators.required], 
-      guests: [this.guest, [Validators.required, Validators.min(1)]], 
+      check_out_date: ['', Validators.required],
+      guests: [this.guest, [Validators.required, Validators.min(1)]],
     });
   }
 
@@ -86,7 +87,7 @@ bookingForm: FormGroup<any>;
       this.searchFixed = false;
     }
   }
-  
+
   changeValue(value: number) {
     const currentGuests = this.hotelSearchForm.get('guests')?.value;
     const newGuests = currentGuests + value;
@@ -96,49 +97,49 @@ bookingForm: FormGroup<any>;
     }
   }
   // search hotels function
- // ... existing imports ...
+  // ... existing imports ...
 
-onSubmit() {
-  if (this.hotelSearchForm.valid) {
-    this.isLoading = true;
-    this.hotelService.hotelSearch(this.hotelSearchForm.value).subscribe({
-      next: (res: any) => {
-        if (res?.data?.properties) {
-          this.hotels = res.data.properties.map((property: any) => ({
-            name: property.name,
-            rating: property.overall_rating,
-            image: property.images?.[0]?.thumbnail || 'default-image-url.jpg',
-            price: this.convertToINR(property.rate_per_night?.extracted_lowest),
-            originalPrice: property.rate_per_night?.extracted_lowest
-          }));
-          
-          this.updatePage();
-          // Open modal with results
-          this.modalService.open(this.searchResultsModal, {
-            size: 'xl',
-            scrollable: true,
-            centered: true
-          });
+  onSubmit() {
+    if (this.hotelSearchForm.valid) {
+      this.isLoading = true;
+      this.hotelService.hotelSearch(this.hotelSearchForm.value).subscribe({
+        next: (res: any) => {
+          if (res?.data?.properties) {
+            this.hotels = res.data.properties.map((property: any) => ({
+              name: property.name,
+              rating: property.overall_rating,
+              image: property.images?.[0]?.thumbnail || 'default-image-url.jpg',
+              price: this.convertToINR(property.rate_per_night?.extracted_lowest),
+              originalPrice: property.rate_per_night?.extracted_lowest
+            }));
+
+            this.updatePage();
+            // Open modal with results
+            this.modalService.open(this.searchResultsModal, {
+              size: 'xl',
+              scrollable: true,
+              centered: true
+            });
+          }
+          this.isLoading = false;
+        },
+        error: (error) => {
+          console.error('Search error:', error);
+          this.isLoading = false;
         }
-        this.isLoading = false;
-      },
-      error: (error) => {
-        console.error('Search error:', error);
-        this.isLoading = false;
-      }
-    });
+      });
+    }
   }
-}
 
-private convertToINR(usdPrice: number | string): number {
-  if (!usdPrice || isNaN(Number(usdPrice))) return 0;
-  const cleanPrice = typeof usdPrice === 'string' 
-    ? parseFloat(usdPrice.replace(/[^0-9.]/g, ''))
-    : usdPrice;
-  return Math.round(cleanPrice * this.exchangeRateUSDToINR);
-}
-  
-  
+  private convertToINR(usdPrice: number | string): number {
+    if (!usdPrice || isNaN(Number(usdPrice))) return 0;
+    const cleanPrice = typeof usdPrice === 'string'
+      ? parseFloat(usdPrice.replace(/[^0-9.]/g, ''))
+      : usdPrice;
+    return Math.round(cleanPrice * this.exchangeRateUSDToINR);
+  }
+
+
 
   updatePage() {
     const startIndex = this.currentPage * this.itemsPerPage;
@@ -166,8 +167,8 @@ private convertToINR(usdPrice: number | string): number {
     this.modalService.open(content, { centered: true });
   }
   // open(content: TemplateRef<any>) {
-	// 	this.modalService.open(content, { centered: true });
-	// }
+  // 	this.modalService.open(content, { centered: true });
+  // }
 
 
 
@@ -203,38 +204,49 @@ private convertToINR(usdPrice: number | string): number {
     if (this.bookingForm.valid) {
       const checkInDate = new Date(this.bookingForm.value.checkIn);
       const checkOutDate = new Date(this.bookingForm.value.checkOut);
-      
+
       const timeDiff = checkOutDate.getTime() - checkInDate.getTime();
       const numberOfDays = timeDiff / (1000 * 3600 * 24); // Convert milliseconds to days
-  
+
       // Fetch the hotel price
       const hotelPrice = this.getHotelPrice(); // Get the price for the selected hotel
-  
+
       const bookingData = {
         ...this.bookingForm.value,
         numberOfDays,
         hotelPrice,
-        selectedHotelName: this.selectedHotelName, 
-        selectedHotelImage: this.hotels.find(hotel => hotel.name === this.selectedHotelName)?.image,     
+        selectedHotelName: this.selectedHotelName,
+        selectedHotelImage: this.hotels.find(hotel => hotel.name === this.selectedHotelName)?.image,
         selectedHotelRating: this.hotels.find(hotel => hotel.name === this.selectedHotelName)?.rating
       };
-  
+
       console.log('Booking Form Data:', bookingData); // Log the complete form data
-  
+
       this.hotelService.hotelBooking(bookingData).subscribe(
         (res) => {
           console.log('Booking successful', res);
           this.modalService.dismissAll();
+
+          // Set success message
+          this.message = 'Hooray! Your Stay is confirmed!';
+          this.messageType = 'success';
+
+          // Hide the message after 3 seconds
+          setTimeout(() => {
+            this.message = '';
+          }, 3000);
         },
         (error) => {
           console.error('Booking failed', error);
+          this.message = 'Booking failed. Please try again.';
+          this.messageType = 'error';
         }
       );
     } else {
       console.log('Form is invalid');
     }
   }
-  
+
 }
 
 

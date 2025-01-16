@@ -1,60 +1,63 @@
-@if(text){
-<h2 class="title-top text-white">book rooms, homes & apts</h2>
-}
+<div class="search-panel">
+  @if(text){
+  <h2 class="title-top text-white">book rooms, homes & apts</h2>
+  }
 
-<div class="search-section mb-5" [ngClass]="{ 'shadow' : shadow,'search-fixed' : searchFixed && searchFix }">
-  <div class="search-box" [class.rounded10]="borderClass" [ngClass]="{ 'container custom-container' : searchFixed }">
-    <div class="left-part">
-      <form [formGroup]="hotelSearchForm" (ngSubmit)="onSubmit()" class="d-flex align-items-center">
-        <div class="search-body title-hotel">
-          <h6>hotel</h6>
-          <input type="text" name="text" placeholder="Location" class="form-control" formControlName="q">
-          <div *ngIf="hotelSearchForm.get('q')?.invalid && hotelSearchForm.get('text')?.touched" class="text-danger">
-            Name is required .
-          </div>
-        </div>
-        <div class="search-body">
-          <h6>check in</h6>
-          <input class="form-control" placeholder="18 april" name="dp" type="date" formControlName="check_in_date">
-          <div *ngIf="hotelSearchForm.get('check_in_date')?.invalid && hotelSearchForm.get('checkIn')?.touched"
-            class="text-danger">
-            Check-in date is required.
-          </div>
-        </div>
-        <div class="search-body">
-          <h6>check out</h6>
-          <input class="form-control" placeholder="20 april" name="dp" type="date" formControlName="check_out_date">
-          <div *ngIf="hotelSearchForm.get('check_out_date')?.invalid && hotelSearchForm.get('checkOut')?.touched"
-            class="text-danger">
-            Check-out date is required.
-          </div>
-        </div>
-        <div class="search-body">
-          <h6>guests</h6>
-          <div class="qty-box">
-            <div class="input-group">
-              <span class="input-group-prepend">
-                <button type="button" class="btn quantity-left-minus" (click)="changeValue(-1)">
-                  <i class="fas fa-chevron-down"></i>
-                </button>
-              </span>
-              <input type="text" name="quantity" class="form-control input-number" [value]="guest" readonly>
-              <span class="input-group-prepend">
-                <button type="button" class="btn quantity-right-plus" (click)="changeValue(1)">
-                  <i class="fas fa-chevron-up"></i>
-                </button>
-              </span>
+  <div class="search-section " [ngClass]="{ 'shadow' : shadow,'search-fixed' : searchFixed && searchFix }">
+    <div class="search-box" [class.rounded10]="borderClass" [ngClass]="{ 'container custom-container' : searchFixed }">
+      <div class="left-part">
+        <form [formGroup]="hotelSearchForm" (ngSubmit)="onSubmit()" class="d-flex align-items-center">
+          <div class="search-body title-hotel">
+            <h6>hotel</h6>
+            <input type="text" name="text" placeholder="Location" class="form-control" formControlName="q">
+            <div *ngIf="hotelSearchForm.get('q')?.invalid && hotelSearchForm.get('text')?.touched" class="text-danger">
+              Name is required .
             </div>
           </div>
-        </div>
-        <div class="search-body">
-          <h6>&nbsp;</h6>
-          <button type="submit" class="btn btn-solid color1">Search</button>
-        </div>
-      </form>
+          <div class="search-body">
+            <h6>check in</h6>
+            <input class="form-control" placeholder="18 april" name="dp" type="date" formControlName="check_in_date">
+            <div *ngIf="hotelSearchForm.get('check_in_date')?.invalid && hotelSearchForm.get('checkIn')?.touched"
+              class="text-danger">
+              Check-in date is required.
+            </div>
+          </div>
+          <div class="search-body">
+            <h6>check out</h6>
+            <input class="form-control" placeholder="20 april" name="dp" type="date" formControlName="check_out_date">
+            <div *ngIf="hotelSearchForm.get('check_out_date')?.invalid && hotelSearchForm.get('checkOut')?.touched"
+              class="text-danger">
+              Check-out date is required.
+            </div>
+          </div>
+          <div class="search-body">
+            <h6>guests</h6>
+            <div class="qty-box">
+              <div class="input-group">
+                <span class="input-group-prepend">
+                  <button type="button" class="btn quantity-left-minus" (click)="changeValue(-1)">
+                    <i class="fas fa-chevron-down"></i>
+                  </button>
+                </span>
+                <input type="text" name="quantity" class="form-control input-number" [value]="guest" readonly>
+                <span class="input-group-prepend">
+                  <button type="button" class="btn quantity-right-plus" (click)="changeValue(1)">
+                    <i class="fas fa-chevron-up"></i>
+                  </button>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="search-body">
+            <h6>&nbsp;</h6>
+            <button type="submit" class="btn btn-solid color1">Search</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </div>
+
 
 <div *ngIf="isLoading" class="loader-overlay">
   <div class="loader">
@@ -153,8 +156,8 @@
       <div class="mb-3">
         <div class="d-flex align-items-center mb-2">
           <label for="travellers" class="form-label">Travellers:</label>&nbsp;&nbsp;
-          <button type="button" class="btn btn-outline-secondary " (click)="decreaseTraveller()"><i
-              class="fa fa-minus" aria-hidden="true"></i>
+          <button type="button" class="btn btn-outline-secondary " (click)="decreaseTraveller()"><i class="fa fa-minus"
+              aria-hidden="true"></i>
           </button>
           <span class="mx-2">{{ travellers.length }}</span>
           <button type="button" class="btn btn-outline-secondary" (click)="increaseTraveller()"><i class="fa fa-plus"
@@ -181,3 +184,11 @@
   </div>
 
 </ng-template>
+
+<div *ngIf="message" class="alert" [ngClass]="{ 
+  'alert-success': messageType === 'success',
+  'alert-danger': messageType === 'error'
+}">
+  <span>{{ message }}</span>
+  <!-- <button (click)="closeMessage()" class="close-btn">X</button> -->
+</div>

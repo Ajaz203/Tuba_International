@@ -5,6 +5,9 @@ import { Observable, map } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
+  getVisaRequests() {
+    throw new Error('Method not implemented.');
+  }
   apiUrl = 'https://tuba-mongo-backend.onrender.com/';
 
   constructor( private http: HttpClient) { }
