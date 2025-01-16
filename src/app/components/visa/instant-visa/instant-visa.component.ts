@@ -2,7 +2,6 @@ import { Component, Input } from '@angular/core';
 import { PagesService } from '../../../shared/services/pages.service';
 import { LayoutComponent } from '../../../shared/components/ui/layout/layout.component';
 import { FooterComponent } from '../../../shared/components/footer/footer.component';
-import { BreadcrumbsComponent } from '../../../shared/components/comman/breadcrumbs/breadcrumbs.component';
 import { HeaderComponent } from '../../../shared/components/header/header.component';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -15,13 +14,15 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
   providers: [PagesService],
   templateUrl: './instant-visa.component.html',
   styleUrl: './instant-visa.component.scss',
-  imports: [LayoutComponent, CommonModule, FooterComponent, BreadcrumbsComponent, HeaderComponent, ReactiveFormsModule]
+  imports: [LayoutComponent, CommonModule, FooterComponent, HeaderComponent, ReactiveFormsModule]
 })
 export class InstantVisaComponent {
   visaForm: FormGroup;
   evisaForm: FormGroup;
   showModal = false;
   showEvisaModal = false;
+  message: string = '';  // Message content
+  messageType: string = ''; 
 
   constructor(private router: Router, private authService: AuthService, private fb: FormBuilder) {
     this.visaForm = this.fb.group({
@@ -352,12 +353,55 @@ export class InstantVisaComponent {
     if (this.visaForm.valid) {
       console.log(this.visaForm.value);
       this.authService.hajjVisa(this.visaForm.value).subscribe((response: any) => {
-        console.log(response);
+        console.log(response); // Log the entire response
+        if (response.msg && response.msg.includes('successfully')) { // Check for success message
+          this.message = 'Application submitted successfully!'; // Set success message
+          this.messageType = 'success'; // Set message type to success
+        } else {
+          this.message = 'Submission failed: ' + response.msg; // Set error message
+          this.messageType = 'error'; // Set message type to error
+          console.error('Submission failed:', response); // Log if submission failed
+        }
         this.closeModal();
+        
+        // Reset the form and clear the message after 3 seconds
+        setTimeout(() => {
+          this.visaForm.reset(); // Reset the form
+          this.closeMessage(); // Clear the message
+        }, 3000);
+        
+      }, (error) => {
+        this.message = 'An error occurred during submission.'; // Set error message
+        this.messageType = 'error'; // Set message type to error
+        console.error('Error occurred:', error); // Log any errors
+        
+        // Reset the form and clear the message after 3 seconds
+        setTimeout(() => {
+          this.visaForm.reset(); // Reset the form
+          this.closeMessage(); // Clear the message
+        }, 3000);
       });
     }
   }
+
+  showMessage(message: string, type: string): void {
+    console.log(`Displaying message: ${message}, Type: ${type}`);
+    this.message = message;
+    this.messageType = type;
   
+    // Auto-close the message after 5 seconds
+    setTimeout(() => {
+      this.closeMessage();
+    }, 5000);
+  }
+  
+
+  // Close the message
+  closeMessage(): void {
+    this.message = '';
+    this.messageType = '';
+  }
+
   EvisaFormSection() {
     this.showEvisaModal = true;
   }
@@ -372,8 +416,33 @@ export class InstantVisaComponent {
     if (this.evisaForm.valid) {
       console.log(this.evisaForm.value);
       this.authService.Evisa(this.evisaForm.value).subscribe((response: any) => {
-        console.log(response);
+        console.log(response); // Log the entire response
+        if (response.msg && response.msg.includes('successfully')) { // Check for success message
+          this.message = 'E-Visa application submitted successfully!'; // Set success message
+          this.messageType = 'success'; // Set message type to success
+        } else {
+          this.message = 'Submission failed: ' + response.msg; // Set error message
+          this.messageType = 'error'; // Set message type to error
+          console.error('Submission failed:', response); // Log if submission failed
+        }
         this.closeEvisaModal();
+        
+        // Reset the form and clear the message after 3 seconds
+        setTimeout(() => {
+          this.evisaForm.reset(); // Reset the form
+          this.closeMessage(); // Clear the message
+        }, 3000);
+        
+      }, (error) => {
+        this.message = 'An error occurred during submission.'; // Set error message
+        this.messageType = 'error'; // Set message type to error
+        console.error('Error occurred:', error); // Log any errors
+        
+        // Reset the form and clear the message after 3 seconds
+        setTimeout(() => {
+          this.evisaForm.reset(); // Reset the form
+          this.closeMessage(); // Clear the message
+        }, 3000);
       });
     }
   }
