@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { router } from './shared/routes/routes';
+import { authGuard, authGuardForUserDashboard } from './auth.guard';
 import { ApplyVisaComponent } from './components/visa/apply-visa/apply-visa.component';
 import { InstantVisaComponent } from './components/visa/instant-visa/instant-visa.component';
 import { ForgotPasswordComponent } from './components/pages/other-pages/forgot-password/forgot-password.component';
@@ -37,11 +38,13 @@ export const routes: Routes = [
       },
       {
         path:'user-dashboard',
-        component:UserDashboardComponent
+        component:UserDashboardComponent,
+        canActivate: [authGuardForUserDashboard],
       },
       {
-        path:'admin-dashboard',
-        component:AdminDashboardComponent
+        path: 'admin-dashboard',
+        component: AdminDashboardComponent,
+        canActivate: [authGuard],
       },
       {
         path:'Admin-login',
