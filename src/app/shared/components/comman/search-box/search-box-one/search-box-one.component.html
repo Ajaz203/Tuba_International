@@ -6,7 +6,7 @@
   <div class="search-section " [ngClass]="{ 'shadow' : shadow,'search-fixed' : searchFixed && searchFix }">
     <div class="search-box" [class.rounded10]="borderClass" [ngClass]="{ 'container custom-container' : searchFixed }">
       <div class="left-part">
-        <form [formGroup]="hotelSearchForm" (ngSubmit)="onSubmit()" class="d-flex align-items-center">
+        <form [formGroup]="hotelSearchForm" (ngSubmit)="onSubmit()" >
           <div class="search-body title-hotel">
             <h6>hotel</h6>
             <input type="text" name="text" placeholder="Location" class="form-control" formControlName="q">
@@ -57,6 +57,10 @@
     </div>
   </div>
 </div>
+
+
+
+
 
 
 <div *ngIf="isLoading" class="loader-overlay">
