@@ -6,17 +6,9 @@ import { Observable, BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-<<<<<<< HEAD
   private apiUrl = 'https://tuba-mongo-backend.onrender.com/';
   private isAuthenticated = new BehaviorSubject<boolean>(false); // Tracks authentication status
-  private userRole = new BehaviorSubject<string | null>(null); // Tracks user role
   private userEmail = new BehaviorSubject<string | null>(null); // Tracks user email
-=======
-  getVisaRequests() {
-    throw new Error('Method not implemented.');
-  }
-  apiUrl = 'https://tuba-mongo-backend.onrender.com/';
->>>>>>> 067b276211b18b10da5b2bff91588ab914c38809
 
   constructor(private http: HttpClient) {}
 
