@@ -34,6 +34,7 @@ export class CurrencyComponent {
       symbol: "€",
       price: 0.95 // price of euro
     },
+   
     {
       name: 'Australian Dollar',
       currency: 'AUD',

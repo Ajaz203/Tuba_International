@@ -348,3 +348,36 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+
+.alert {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px;
+  border-radius: 5px;
+  color: white;
+  z-index: 1000;
+  font-size: 16px;
+  width: 90%;
+  /* Ensure it fits smaller screens */
+  max-width: 400px;
+  /* Limit width on larger screens */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Add subtle shadow for better visibility */
+  word-wrap: break-word;
+  /* Prevent text overflow */
+  text-align: center;
+  /* Center the text */
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}

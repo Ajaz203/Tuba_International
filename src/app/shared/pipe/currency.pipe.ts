@@ -11,7 +11,7 @@ export class CurrencySymbolPipe implements PipeTransform {
   public currency: number;
   public formateCurrency: string;
 
-  transform(value:number, currencyValue: string) {
+    transform(value:number, currencyValue: string) {
     if(currencyValue == 'usd'){
       this.currency = value * 1;
       this.formateCurrency = formatCurrency(this.currency,'en_US', '$', 'USD', '1.2-2');
