@@ -29,34 +29,34 @@
                       <div class="col">
                         <div class="form-group">
                           <label class="font-xs-white">pick up location</label>
-                          <input type="text" class="form-control open-select" id="exampleInputEmail1" placeholder="pick up">
+                          <input type="text" class="form-control open-select" id="exampleInputEmail1" placeholder="pick up" disabled>
                           <img src="assets/images/icon/from.png" class="img-fluid blur-up lazyload" alt="pickup-icon">
                         </div>
                       </div>
                       <div class="col">
                         <div class="form-group">
                           <label class="font-xs-white">drop off location</label>
-                          <input type="text" class="form-control open-select" placeholder="drop off">
+                          <input type="text" class="form-control open-select" placeholder="drop off" disabled>
                           <img src="assets/images/icon/location.png" class="img-fluid blur-up lazyload" alt="location-icon">
                         </div>
                       </div>
                       <div class="col">
                         <div class="form-group">
                           <label class="font-xs-white">pick up</label>
-                          <input class="form-control datetimepicker-input digits" placeholder="pick up date & time" type="text" [owlDateTimeTrigger]="pickup" [owlDateTime]="pickup">
+                          <input class="form-control datetimepicker-input digits" placeholder="pick up date & time" type="text" [owlDateTimeTrigger]="pickup" [owlDateTime]="pickup" [disabled]="isFormDisabled">
                           <owl-date-time #pickup></owl-date-time>
                         </div>
                       </div>
                       <div id="dropdate" class="col" [ngClass]="{ 'd-none': selectedValue == 'option2', 'd-block': selectedValue == 'option1' }">
                         <div class="form-group">
                           <label class="font-xs-white">drop off</label>
-                          <input class="form-control datetimepicker-input digits" placeholder="pick up date & time" type="text" [owlDateTimeTrigger]="drop" [owlDateTime]="drop">
+                          <input class="form-control datetimepicker-input digits" placeholder="pick up date & time" type="text" [owlDateTimeTrigger]="drop" [owlDateTime]="drop" [disabled]="isFormDisabled">
                           <owl-date-time #drop></owl-date-time>
                         </div>
                       </div>
                       <div class="col search-col">
                         <div class="search-btn">
-                          <a href="javascript:void(0)" class="btn btn-solid color1" [routerLink]="['/cab/listing/list-view/left-sidebar']">search</a>
+                          <a href="javascript:void(0)" class="btn btn-solid color1" [routerLink]="['/cab/booking/booking']">search</a>
                         </div>
                       </div>
                     </form>

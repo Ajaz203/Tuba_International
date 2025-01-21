@@ -2,9 +2,9 @@
   <div class="snow" count="30"></div>
   <div class="effect_image" style="background-size: {{ bg_size + '%'}};">
     <img src="assets/images/tour/background/2.png" alt="background-image">
-    <div class="effect_content" style="top: {{ top + '%'}};">
+    <div class="effect_content" [style.top]="top + '%'">
       <div>
-        <h1 style="font-size: {{ font_size + '%'}};">book your travel</h1>
+        <h1 [style.font-size]="font_size + '%'">book your travel</h1>
       </div>
     </div>
   </div>

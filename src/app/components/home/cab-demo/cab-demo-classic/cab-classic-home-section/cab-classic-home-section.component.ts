@@ -11,7 +11,7 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from '@danielmoncada/angul
     imports: [OwlDateTimeModule,OwlNativeDateTimeModule, NgClass, RouterLink]
 })
 export class CabClassicHomeSectionComponent {
-
+  isFormDisabled: boolean = true;
   public selectedValue: string;
 
   sameLocation(event: Event){

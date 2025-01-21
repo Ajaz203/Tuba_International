@@ -1,15 +1,15 @@
 <form>
   <div class="row w-100">
       <div class="form-group col p-0">
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Starting from">
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Starting from" disabled>
         <img src="assets/images/icon/table-no.png" class="img-fluid blur-up lazyload" alt="no.icon">
       </div>
       <div class="form-group col p-0">
-        <input type="text" class="form-control" placeholder="Going to">
+        <input type="text" class="form-control" placeholder="Going to" disabled>
         <img src="assets/images/icon/table-no.png" class="img-fluid blur-up lazyload" alt="no.icon">
       </div>
       <div class="form-group col p-0">
-        <input class="form-control" placeholder="During Date" name="dp" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" />
+        <input class="form-control" placeholder="During Date" name="dp" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" disabled />
       </div>
   </div>
   <a href="javascript:void(0)" class="btn btn-rounded color1" [routerLink]="['/tour/booking/tour-booking']">search</a>
