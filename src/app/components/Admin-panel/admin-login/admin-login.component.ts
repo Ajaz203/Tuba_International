@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../../shared/services/auth.service';
-import { Router } from '@angular/router'; // Import Router
+import { Router, ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from '../../../shared/components/header/header.component';
-import { FooterComponent } from '../../../shared/components/footer/footer.component';
 import { LayoutComponent } from '../../../shared/components/ui/layout/layout.component';
 
 @Component({
@@ -17,13 +17,15 @@ import { LayoutComponent } from '../../../shared/components/ui/layout/layout.com
 export class AdminLoginComponent {
   loginForm: FormGroup;
   showPassword: boolean = false;
-  message: string | null = null;  // Holds the alert message
-  messageType: 'success' | 'error' | null = null;  // Holds the type of the message ('success' or 'error')
+
+  message: string | null = null;
+  messageType: 'success' | 'error' | null = null;
 
   constructor(
-    private fb: FormBuilder, 
-    private authService: AuthService, 
-    private router: Router
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router,
+    private route: ActivatedRoute
   ) {
     this.loginForm = this.fb.group({
       emailOrPhone: ['', [this.emailOrPhoneValidator]],
@@ -31,7 +33,6 @@ export class AdminLoginComponent {
     });
   }
 
-  // Custom validator for email or phone
   emailOrPhoneValidator(control: any) {
     const value = control.value || '';
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -41,7 +42,7 @@ export class AdminLoginComponent {
     }
     return null;
   }
-
+  
   // Toggle password visibility
   togglePasswordVisibility() {
     this.showPassword = !this.showPassword;
@@ -53,10 +54,11 @@ export class AdminLoginComponent {
     this.messageType = null;
   }
 
-  // On form submission
+
   onSubmit() {
     if (this.loginForm.invalid) {
-      console.log('Form is invalid');
+      this.message = 'Invalid form data!';
+      this.messageType = 'error';
       return;
     }
 
@@ -68,35 +70,20 @@ export class AdminLoginComponent {
       role: 'admin',
     };
 
-    console.log('Form data:', payload);
-
-    // Attempt login
     this.authService.adminLogin(payload).subscribe(
       (response) => {
-        console.log('Login successful:', response);
         this.message = 'Login successful!';
         this.messageType = 'success';
-        
-        // Reset the form and message after 3 seconds
+        const returnUrl = this.route.snapshot.queryParams['returnUrl'] || 'admin-dashboard';
         setTimeout(() => {
-          this.message = null; // Clear message
-          this.messageType = null; // Clear message type
-          this.loginForm.reset(); // Reset the form
-        }, 3000); // 3 seconds delay
-
-        this.router.navigate(['admin-dashboard']);
+          this.message = null;
+          this.messageType = null;
+          this.router.navigate([returnUrl]);
+        }, 1000);
       },
       (error) => {
-        console.error('Login failed:', error);
-        this.message = 'Invalid email/phone or password. Please try again.';
+        this.message = 'Invalid email/phone or password.';
         this.messageType = 'error';
-        
-        // Reset the form and message after 3 seconds
-        setTimeout(() => {
-          this.message = null; // Clear message
-          this.messageType = null; // Clear message type
-          this.loginForm.reset(); // Reset the form
-        }, 3000); // 3 seconds delay
       }
     );
   }
