@@ -5,7 +5,7 @@
       "blogTitle": "Twice profit than before you",
       "description": "This beachfront resort offers luxurious rooms with stunning ocean views and a range of amenities, including a spa and water sports center",
       "location": "phonics, new york",
-      "url": "/assets/imges2/bali.jpg",
+      "url": "/assets/imges2/4.jpg",
       "date": "05",
       "month": "nov"
     },
@@ -14,7 +14,7 @@
       "blogTitle": "A Slice of Paradise: Exploring Bali's Hidden Gems",
       "description": "Discover the serene water temples, lush rice terraces, and secluded beaches that make Bali a tropical paradise like no other",
       "location": "Bali, Indonesia",
-      "url": "/assets/imges2/bali2.jpg",
+      "url": "/assets/imges2/5.jpg",
       "date": "25",
       "month": "jan"
     },
@@ -23,7 +23,7 @@
       "blogTitle": "Cultural Odyssey: Unraveling the Charms of Kyoto",
       "description": "Immerse yourself in the rich history, exquisite temples, and traditional tea ceremonies that define the cultural tapestry of Kyoto",
       "location": "Kyoto, Japan",
-      "url": "/assets/imges2/japan.jpg",
+      "url": "/assets/imges2/6.jpg",
       "date": "10",
       "month": "aug"
     },
@@ -32,7 +32,7 @@
       "blogTitle": "Rustic Retreat: Exploring the Countryside of Tuscany",
       "description": "Journey through rolling vineyards, charming medieval towns, and savor the finest wines and cuisine in the heart of Tuscany",
       "location": "Tuscany, Italy",
-      "url": "assets/images/portfolio/9.jpg",
+      "url": "/assets/imges2/7.jpg",
       "date": 12,
       "month": "june"
     },
@@ -122,7 +122,7 @@
       "blogTitle": "Rustic Retreat: Exploring the Countryside of Tuscany",
       "description": "Journey through rolling vineyards, charming medieval towns, and savor the finest wines and cuisine in the heart of Tuscany",
       "location": "Tuscany, Italy",
-      "url": "assets/images/flights/blog/4.jpg",
+      "url": "/assets/imges2/10.jpg",
       "date": 12,
       "month": "june"
     },
