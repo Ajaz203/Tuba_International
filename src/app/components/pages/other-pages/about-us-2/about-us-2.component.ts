@@ -35,7 +35,11 @@ export class AboutUs2Component {
   public aboutTestimonial: number[];
   public aboutBlog: number[];
   public blog: blogs[];
+public hotelTestimonial: testimonial[];
+  public tourTestimonial: testimonial[];
 
+  public hotelTestimonialId = [1,2,3];
+  
   constructor(private pageService: PagesService, private hotelService: HotelService) {
     this.pageService.pages().subscribe(response => {
       this.aboutDetail = response.otherPages;
@@ -43,6 +47,17 @@ export class AboutUs2Component {
        this.aboutDetail.about.forEach((items) => {
         this.aboutTestimonial = items.testimonial;
         this.aboutBlog = items.blog;
+      })
+      this.hotelService.testimonial().subscribe(response => {
+        this.testimonial = response.testimonial;
+  
+        if(Array.isArray(this.hotelTestimonialId)) {
+          this.hotelTestimonial = this.testimonial?.filter((item) => {
+            return this.hotelTestimonialId.includes(item.id)
+          })
+        }
+  
+        
       })
     })
 
@@ -55,6 +70,8 @@ export class AboutUs2Component {
        })
      }
     })
+
+  
 
     this.hotelService.blog().subscribe(response => {
       this.blog = response.blog;
