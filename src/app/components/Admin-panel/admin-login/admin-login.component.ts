@@ -54,14 +54,13 @@ export class AdminLoginComponent {
     this.messageType = null;
   }
 
-
   onSubmit() {
     if (this.loginForm.invalid) {
       this.message = 'Invalid form data!';
       this.messageType = 'error';
       return;
     }
-
+  
     const formData = this.loginForm.value;
     const payload = {
       email: formData.emailOrPhone.includes('@') ? formData.emailOrPhone : undefined,
@@ -69,7 +68,7 @@ export class AdminLoginComponent {
       password: formData.password,
       role: 'admin',
     };
-
+  
     this.authService.adminLogin(payload).subscribe(
       (response) => {
         this.message = 'Login successful!';
@@ -82,9 +81,15 @@ export class AdminLoginComponent {
         }, 1000);
       },
       (error) => {
-        this.message = 'Invalid email/phone or password.';
+        // Check if the backend sends an error message
+        if (error.error && error.error.msg) {
+          this.message = error.error.msg; // Display the actual error message
+        } else {
+          this.message = 'Invalid email/phone or password.'; // Default message if no custom message
+        }
         this.messageType = 'error';
       }
     );
   }
+  
 }
