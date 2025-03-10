@@ -1,0 +1,36 @@
+<app-header [headerClass]="'inner-page'"></app-header>
+
+<app-breadcrumbs [type]="'pages'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child"></app-breadcrumbs>
+
+<section class="blog_section blog-inner ratio_55 section-b-space">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="slide-3 no-arrow">
+            <app-blog [blogs]="hotelBlog" [type]="'basic'" [border]="true" [colorClass]="'color-1'"></app-blog>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blog-section dark-cls section-b-space" [style.background-image]="'url(assets/images/cab/grey-bg.jpg)'">
+  <img src="assets/images/cab/grey-bg.jpg" alt="background-image" class="img-fluid blur-up lazyload bg-img" style="display: none;">
+  <div class="container">
+    <div class="slide-2  no-arrow ">
+      <app-blog [blogs]="cabBlog" [type]="'simple'" [buttonClass]="'btn-curve'" [postedBy]="true"></app-blog>
+    </div>
+  </div>
+</section>
+
+<section class="blog_section section-b-space ratio_55">
+  <div class="container">
+    <div class="slide-3 no-arrow">
+      <app-blog [blogs]="flightBlog" [type]="'basic'" [border]="false" [colorClass]="''"></app-blog>
+    </div>
+  </div>
+</section>
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout></app-layout>

@@ -1,0 +1,13 @@
+<app-header [headerClass]="'light_header'"></app-header>
+
+<app-breadcrumbs [type]="'pages'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child"></app-breadcrumbs>
+
+<section class="portfolio-section bg-white small-section ratio2_3 sticky-section">
+  <div class="container">
+    <app-portfolio-images-section [gridType]="'3-grid'" [details]="true"></app-portfolio-images-section>
+  </div>
+</section>
+
+<app-footer [places]="true" [sticky]="true"></app-footer>
+
+<app-layout [loaderType]="'basic'"></app-layout>

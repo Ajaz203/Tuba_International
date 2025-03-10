@@ -1,0 +1,14 @@
+<div>
+  @for(details of faqDetails; track details){
+    <div class="card">
+      <div class="card-header">
+        <h5>
+          {{ details.title }}
+        </h5>
+      </div>
+      <div class="card-body">
+        {{ details.description }}
+      </div>
+    </div>
+  }
+</div>

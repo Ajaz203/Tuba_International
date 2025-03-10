@@ -1,0 +1,42 @@
+<app-header [headerClass]="'light_header'"></app-header>
+
+<app-breadcrumbs [type]="'pages'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child"></app-breadcrumbs>
+
+<section class="portfolio-section creative-section bg-white small-section ratio_square">
+  <div class="container">
+    @if(portfolio){
+      @for(details of portfolio; track details){
+        <div class="filter-button-group">
+          @if(details.tab){
+            <ul>
+              @for(tabData of details.tab; track tabData){
+              <li [class.active]="activeTab == tabData.value" (click)="getTabData(tabData.value)">{{ tabData.title }}</li>
+              }
+            </ul>
+          }
+        </div>
+        <div class="row m-0 content grid zoom-gallery" gallerize>
+          @if(details.creativeSectionMasonry){
+            <ngx-masonry [options]="masonryOptions" [ordered]="true">
+              @for(images of images; track images; let i = $index){
+                <div class="popular grid-item wow zoomIn p-0 col-md-4 col-6" [ngClass]="images.class" ngxMasonryItem>
+                  <div class="overlay">
+                    <div class="portfolio-image">
+                      <a href="javascript:void(0)" class="bg-size" [style.background-image]="'url('+ images.image +')'" (click)="lightbox.open(i)">
+                        <img [src]="images.image" class="img-fluid blur-up lazyload bg-img" alt="destination-image" style="display: none;">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              }
+            </ngx-masonry>
+          }
+        </div>
+      }
+    }
+  </div>
+</section>
+
+<app-footer [places]="true"></app-footer>
+
+<app-layout [loaderType]="'basic'"></app-layout>

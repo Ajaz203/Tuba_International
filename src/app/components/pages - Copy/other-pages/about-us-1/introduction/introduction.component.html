@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-xl-7" [class.order-xl-1]="classic">
+    <div class="image-section">
+      <app-animated-images [images]="gallery" [type]="'about'" [classic]="classic"></app-animated-images>
+    </div>
+  </div>
+  <div class="col-xl-5">
+    <div class="about-text" [class.ps-0]="classic">
+      <div>
+        <div class="title-3">
+          <span class="title-label">introduction</span>
+        </div>
+        <h5><span>multipurpose theme</span></h5>
+        <h2>welcome to Tuba International </h2>
+        <p>Tuba International Travel is your trusted partner for seamless global journeys. With our expertise in e-visa
+          services, we help you navigate the complexities of international travel with ease. Whether you're traveling for
+          business, tourism, or medical reasons, our comprehensive travel solutions ensure a smooth and hassle-free
+          experience from start to finish. Stay informed, stay prepared, and embark on your next adventure with confidence.</p>
+          <a href="https://linkedin.com/in/ajaz-ahamad-797a65194" target="_blank" rel="noopener noreferrer">
+            <img src="assets/images/mix/Ajaz.png" class="img-fluid blur-up lazyload" alt="sign">
+          </a>
+          <div class="buttons-about">
+          <a href="javascript:void(0)"  class="btn btn-lower btn-curve" >view more</a>
+          <a [routerLink]="['/page/other-pages/contact-us-1']" class="btn btn-lower black-btn btn-curve">contact us</a>        </div>
+      </div>
+    </div>
+  </div>
+</div>

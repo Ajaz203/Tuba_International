@@ -1,0 +1,34 @@
+<app-header [headerClass]="'light_header'"></app-header>
+
+<app-breadcrumbs [type]="'pages'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child"></app-breadcrumbs>
+
+<section class="portfolio-creative small-section ratio_55">
+  <div class="container">
+    <div class="order-section row m-0">
+      @for(details of portfolio; track details){
+        @if(details.creativeSection){
+          @for(images of details.creativeSection; track images){
+            <div class="col-lg-4 p-0">
+              <div class="img-sec bg-size" [style.background-image]="'url('+ images.image +')'">
+                <img [src]="images.image" class="img-fluid blur-up lazyload bg-img" alt="destination-image" style="display: none;">
+              </div>
+            </div>
+            <div class="col-lg-4 p-0">
+              <div class="content-sec center-con">
+                <div>
+                  <h3>{{ images.title }}</h3>
+                  <p>{{ images.description }}</p>
+                  <a href="javascript:void(0)" class="btn btn-curve">read more</a>
+                </div>
+              </div>
+            </div>
+          }
+        }
+      }
+    </div>
+  </div>
+</section>
+
+<app-footer [places]="true"></app-footer>
+
+<app-layout [loaderType]="'basic'"></app-layout>

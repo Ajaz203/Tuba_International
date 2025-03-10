@@ -1,0 +1,17 @@
+<app-header [headerClass]="'inner-page'"></app-header>
+
+<app-breadcrumbs [type]="'pages'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child"></app-breadcrumbs>
+
+@if(cabModern){
+  <app-cab-modern-call [images]="cabModern.call" [animation]="false" [titleType]="'basic'" [sectionClass]="false"></app-cab-modern-call>
+}
+
+@if(homeSectionData){
+  <app-hotel-classic-about-hotel [hotelImages]="homeSectionData.hotelImages"></app-hotel-classic-about-hotel>
+}
+
+<app-restaurant-classic-our-restaurant></app-restaurant-classic-our-restaurant>
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout></app-layout>

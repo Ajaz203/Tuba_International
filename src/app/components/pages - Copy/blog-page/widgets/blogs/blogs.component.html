@@ -1,0 +1,88 @@
+@if(mix){
+  <div class="row">
+    @for(details of blog | slice: 0:1; track details; let i = $index){
+    <div class="col-12">
+      <div class="blog-wrap">
+        <div class="blog-image">
+          <a href="javascript:void(0)">
+            <img src="assets/images/portfolio/13.jpg" class="img-fluid blur-up lazyload" alt="blog-image">
+          </a>
+        </div>
+        <div class="blog-details">
+          <div>
+            <h6>
+              <i class="fas fa-map-marker-alt"></i> {{ details.location }}
+              <i class="fas fa-clock ms-2"></i> {{ details.date }} {{ details.month }}, 2019
+            </h6>
+            <a href="javascript:void(0)">
+              <h5>{{ details.blogTitle }}</h5>
+
+            </a>
+            <p>{{ details.description }}</p>
+            <h6 class="link"><a href="javascript:void(0)">read more</a></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+}
+<div class="row" [ngClass]="{ 'content grid blog-masonry' : masonry }">
+  @if(masonry){
+    <ngx-masonry [options]="masonryOptions"  [ordered]="true">
+      @for(details of blog; track details){
+        <div class="grid-item wow fadeInUp col-sm-6" ngxMasonryItem style="width: 28%;">
+          <div class="overlay">
+            <div class="portfolio-image">
+              <a href="javascript:void(0)">
+                <img [src]="details.url" alt="blog-image" class="img-fluid blur-up lazyload">
+              </a>
+            </div>
+            <div class="blog-details">
+              <h6>
+                <i class="fas fa-map-marker-alt"></i> {{ details.location }}
+                <i class="fas fa-clock ms-2"></i> {{ details.date }} {{ details.month }}, 2019
+              </h6>
+              <a href="javascript:void(0)">
+                <h5>{{ details.blogTitle }}</h5>
+
+              </a>
+              <p>{{ details.description }}</p>
+              <h6 class="link"><a href="javascript:void(0)">read more</a></h6>
+
+            </div>
+          </div>
+        </div>
+      }
+    </ngx-masonry>
+  }@else {
+    @for(details of blog; track details){
+      <div class="col-md-6" [class.col-lg-4]="gridType == '3-grid'">
+        <div class="blog-wrap wow fadeInUp">
+          <div class="blog-image">
+            <a href="javascript:void(0)" class="bg-size" [style.background-image]="'url('+ details.url +')'">
+              <img [src]="details.url" class="img-fluid blur-up lazyload bg-img" alt="blog-image" style="display: none;">
+            </a>
+            <div class="blog-label">
+              <div>
+                <h3>{{ details.date }}</h3>
+                <h6>{{ details.month }}</h6>
+              </div>
+            </div>
+          </div>
+          <div class="blog-details">
+            <h6><i class="fas fa-map-marker-alt"></i>{{ details.location }}</h6>
+            <a href="javascript:void(0)">
+              <h5>{{ details.blogTitle }}</h5>
+
+            </a>
+            <p>{{ details.description }}
+            </p>
+          </div>
+        </div>
+      </div>
+    }
+  }
+</div>
+
+<app-blog-pagination></app-blog-pagination>

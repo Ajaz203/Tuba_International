@@ -1,0 +1,427 @@
+<div class="dashboard-container">
+  <div class="dashboard-layout">
+    <!-- Profile Header - Left Side -->
+    <div class="profile-sidebar">
+      <div class="profile-card">
+        <div class="profile-info">
+          <div class="avatar-wrapper">
+            <img src="/assets/imges2/user.png" alt="User Profile" />
+            <div class="status-badge online"></div>
+          </div>
+          <div class="user-details">
+            <h2>{{ userData.fullName }}</h2>
+            <p class="member-info">
+              Member since {{ userData.createdAt | date : "MMMM yyyy" }}
+            </p>
+            <div class="contact-info">
+              <span
+                ><i class="fas fa-envelope"></i>
+                {{ userData.emailOrUsername }}</span
+              >
+              <span
+                ><i class="fas fa-phone"></i>
+                {{ userData.phone || "N/A" }}</span
+              >
+            </div>
+          </div>
+          <div class="stats-container">
+            <div class="stat-card">
+              <div class="stat-value">{{ totalBookingCount }}</div>
+              <div class="stat-label">Total Bookings</div>
+            </div>
+          </div>
+          <!-- Logout Button with unique classes -->
+          <button class="dashboard-logout-btn">
+            <span class="dashboard-logout-icon-wrap">
+              <i class="fas fa-sign-out-alt dashboard-logout-icon"></i>
+            </span>
+            <span class="dashboard-logout-text" (click)="logout()">Logout</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content Area - Right Side -->
+    <div class="main-content">
+      <!-- Navigation Tabs - Top -->
+      <div class="nav-tabs">
+        <button
+          class="nav-tab"
+          [class.active]="activeTab === 'flights'"
+          (click)="setActiveTab('flights')"
+        >
+          <i class="fas fa-plane"></i>
+          <span>Flights</span>
+        </button>
+        <button
+          class="nav-tab"
+          [class.active]="activeTab === 'hotels'"
+          (click)="setActiveTab('hotels')"
+        >
+          <i class="fas fa-hotel"></i>
+          <span>Hotels</span>
+        </button>
+        <button
+          class="nav-tab"
+          [class.active]="activeTab === 'cabs'"
+          (click)="setActiveTab('cabs')"
+        >
+          <i class="fas fa-taxi"></i>
+          <span>Cabs</span>
+        </button>
+        <button
+          class="nav-tab"
+          [class.active]="activeTab === 'tours'"
+          (click)="setActiveTab('tours')"
+        >
+          <i class="fas fa-map-marked-alt"></i>
+          <span>Tours</span>
+        </button>
+        <button
+          class="nav-tab"
+          [class.active]="activeTab === 'visa'"
+          (click)="setActiveTab('visa')"
+        >
+          <i class="fas fa-passport"></i>
+          <span>Visa</span>
+        </button>
+      </div>
+
+      <!-- Tab Content - Below Tabs -->
+      <div class="tab-content" [ngSwitch]="activeTab">
+        <!-- Flights Tab -->
+        <div *ngSwitchCase="'flights'" class="content-section animate-fade">
+          <div class="booking-cards">
+            <div class="booking-card" *ngFor="let booking of flightBookings">
+              <div class="card-header">
+                <div class="airline-info">
+                  <i class="fas fa-plane"></i>
+                  <span>{{ booking.flight.airline }}</span>
+                </div>
+                <div class="status-badge">Confirmed</div>
+                <!-- Update status if dynamic -->
+              </div>
+              <div class="flight-route">
+                <div class="route-point">
+                  <div class="time">
+                    {{ booking.flight.departure_time | date : "hh:mm a" }}
+                  </div>
+                  <div class="city">{{ booking.journey.from }}</div>
+                </div>
+                <div class="route-line">
+                  <div class="plane-icon">✈</div>
+                </div>
+                <div class="route-point">
+                  <div class="time">
+                    {{ booking.flight.arrival_time | date : "hh:mm a" }}
+                  </div>
+                  <div class="city">{{ booking.journey.to }}</div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="details">
+                  <span
+                    ><i class="fas fa-calendar"></i>
+                    {{ booking.journey.date | date }}</span
+                  >
+                  <span
+                    ><i class="fas fa-users"></i>
+                    {{ booking.passenger.totalPassengers }} passengers</span
+                  >
+                  <span class="price">{{
+                    booking.flight.total_price
+                      | currency : booking.flight.currency
+                  }}</span>
+                </div>
+                <button class="action-btn">View Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hotels Tab Content -->
+        <div *ngSwitchCase="'hotels'" class="content-section animate-fade">
+          <div class="booking-cards hotel-cards">
+            <div *ngFor="let hotel of hotelBookings" class="booking-card hotel-card">
+              <div class="hotel-image">
+                <img
+                  [src]="hotel.selectedHotelImage"
+                  [alt]="hotel.selectedHotelName"
+                />
+                <span class="status-badge">Confirmed</span>
+                <!-- Assuming status is always confirmed -->
+              </div>
+
+              <div class="hotel-info">
+                <div class="hotel-header">
+                  <h3>{{ hotel.selectedHotelName }}</h3>
+                  <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <span>{{ hotel.selectedHotelRating }}</span>
+                  </div>
+                </div>
+
+                <div class="hotel-location">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>Location Not Provided</span>
+                  <!-- Placeholder for location -->
+                </div>
+
+                <div class="hotel-details">
+                  <div class="detail-item">
+                    <i class="fas fa-bed"></i>
+                    <span>Standard Room</span>
+                    <!-- Placeholder for room type -->
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-users"></i>
+                    <span>{{ hotel.travellers.length }} Guests</span>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-moon"></i>
+                    <span
+                      >{{
+                        calculateNights(hotel.checkIn, hotel.checkOut)
+                      }}
+                      Nights</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="hotel-footer">
+                <div class="stay-dates">
+                  <div class="date-group">
+                    <small>Check In</small>
+                    <span>{{ hotel.checkIn | date }}</span>
+                  </div>
+                  <i class="fas fa-arrow-right"></i>
+                  <div class="date-group">
+                    <small>Check Out</small>
+                    <span>{{ hotel.checkOut | date }}</span>
+                  </div>
+                </div>
+
+                <div class="price-action">
+                  <div class="price">
+                    <small>Total Price</small>
+                    <span>{{ hotel.rent | currency : "INR" }}</span>
+                  </div>
+                  <button class="action-btn">
+                    <span>View Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cabs Tab Content -->
+        <div *ngSwitchCase="'cabs'" class="content-section animate-fade">
+          <div class="booking-cards cab-cards">
+            <div class="booking-card cab-card" *ngFor="let cab of cabBookings">
+              <div class="cab-info">
+                <div class="vehicle-type">
+                  <i class="fas fa-car"></i>
+                  <span>{{ cab.vehicleType }}</span>
+                </div>
+                <div class="status-badge">Confirmed</div>
+              </div>
+
+              <div class="journey-details">
+                <div class="location-point">
+                  <i class="fas fa-map-marker-alt pickup"></i>
+                  <div class="location-info">
+                    <small>Pickup</small>
+                    <span>{{
+                      cab.pickupLocation || "Location not specified"
+                    }}</span>
+                  </div>
+                </div>
+                <div class="journey-line">
+                  <div class="journey-stats">
+                    <span class="duration">{{ cab.pickupTime }}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-footer">
+                <div class="details">
+                  <span
+                    ><i class="fas fa-calendar"></i>
+                    {{ cab.date | date : "mediumDate" }}</span
+                  >
+                  <span><i class="fas fa-clock"></i> {{ cab.pickupTime }}</span>
+                </div>
+                <button class="action-btn">
+                  <span>View Details</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tours Tab Content -->
+        <div *ngSwitchCase="'tours'" class="content-section animate-fade">
+          <div class="booking-cards">
+            <div *ngFor="let tour of tourBookings; let i = index" class="booking-card gradient-card">
+              <!-- Left Section -->
+              <div class="card-left">
+                <div class="destination-section">
+                  <div class="destination-icon">
+                    <i class="fas fa-map-marker-alt floating-icon"></i>
+                  </div>
+                  <div class="destination-info">
+                    <h3>{{ tour.destination | titlecase }}</h3>
+                    <span class="status-badge" [ngClass]="tour.status">
+                      <i
+                        class="fas"
+                        [ngClass]="{
+                          'fa-check-circle pulse-icon':
+                            tour.status === 'confirmed',
+                          'fa-clock rotate-icon': tour.status === 'pending',
+                          'fa-times-circle shake-icon':
+                            tour.status === 'cancelled'
+                        }"
+                      ></i>
+                      {{ tour.status | titlecase }}
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Tour Details -->
+                <div class="tour-info">
+                  <div class="info-item">
+                    <i class="fas fa-calendar-alt bounce-icon"></i>
+                    <div class="info-content">
+                      <label>Travel Date</label>
+                      <span>{{ tour.travel_date | date : "mediumDate" }}</span>
+                    </div>
+                  </div>
+
+                  <div class="info-item">
+                    <i class="fas fa-clock rotate-icon"></i>
+                    <div class="info-content">
+                      <label>Duration</label>
+                      <span>{{ tour.duration }} Days</span>
+                    </div>
+                  </div>
+
+                  <div class="info-item">
+                    <i class="fas fa-users swing-icon"></i>
+                    <div class="info-content">
+                      <label>Group Size</label>
+                      <span>{{ tour.members }} Members</span>
+                    </div>
+                  </div>
+
+                  <div class="info-item">
+                    <i class="fas fa-utensils bounce-icon"></i>
+                    <div class="info-content">
+                      <label>Meal Plan</label>
+                      <span>{{ tour.meal_preference | titlecase }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Section -->
+              <div class="card-right">
+                <button class="action-btn">
+                  <i class="fas fa-eye pulse-icon"></i>
+                  <span>View Details</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visa Tab Content -->
+        <div *ngSwitchCase="'visa'" class="visa-content-wrapper animate-fade">
+          <div class="visa-grid-container">
+            <div *ngFor="let visa of visaRequests; let i = index" class="visa-item-card">
+              <!-- Status Indicator -->
+              <div
+                class="visa-status-indicator"
+                [ngClass]="visa.status?.toLowerCase()"
+              >
+                <i
+                  class="fas"
+                  [ngClass]="{
+                    'fa-check-circle visa-icon-success':
+                      visa.status === 'confirmed',
+                    'fa-clock-o visa-icon-pending': visa.status === 'pending',
+                    'fa-times-circle visa-icon-rejected':
+                      visa.status === 'rejected'
+                  }"
+                ></i>
+                {{ visa.status }}
+              </div>
+
+              <!-- Visa Content -->
+              <div class="visa-content-body">
+                <div class="visa-destination-header">
+                  <div class="visa-country-icon">
+                    <i class="fas fa-globe-americas"></i>
+                  </div>
+                  <h3 class="visa-country-name">
+                    {{ visa.country | titlecase }}
+                  </h3>
+                </div>
+
+                <div class="visa-details-grid">
+                  <div class="visa-detail-item">
+                    <i class="fas fa-passport visa-detail-icon"></i>
+                    <div class="visa-detail-text">
+                      <span class="visa-detail-label">Visa Type</span>
+                      <span class="visa-detail-value">{{
+                        visa.visaType | titlecase
+                      }}</span>
+                    </div>
+                  </div>
+
+                  <div class="visa-detail-item">
+                    <i class="fas fa-users visa-detail-icon"></i>
+                    <div class="visa-detail-text">
+                      <span class="visa-detail-label">Travelers</span>
+                      <span class="visa-detail-value">{{
+                        visa.passengers
+                      }}</span>
+                    </div>
+                  </div>
+
+                  <div class="visa-detail-item">
+                    <i class="fas fa-calendar-alt visa-detail-icon"></i>
+                    <div class="visa-detail-text">
+                      <span class="visa-detail-label">Processing Time</span>
+                      <span class="visa-detail-value">{{
+                        visa.processingTime || "7-14 days"
+                      }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Visa Footer -->
+              <div class="visa-card-footer">
+                <div class="visa-purpose-wrapper">
+                  <i class="fas fa-briefcase visa-purpose-icon"></i>
+                  <div class="visa-purpose-text">
+                    <span class="visa-purpose-label">Purpose of Visit</span>
+                    <span class="visa-purpose-value">{{
+                      visa.purpose || "Not Specified"
+                    }}</span>
+                  </div>
+                </div>
+                <button class="visa-action-button">
+                  <i class="fas fa-eye visa-button-icon"></i>
+                  <span>View Details</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<app-header [headerClass]="'inner-page'"></app-header>
+
+<app-breadcrumbs [type]="'pages'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child"></app-breadcrumbs>
+
+<section class="">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <h5 class="card-header">Ratio Classes: Change your image proportion by just adding class</h5>
+          <div class="card-body">
+            <h5>If you use image as background than add class ".bg-img" in image and add below class in
+              parent.</h5>
+            <h5>.ratio_40 - 40%</h5>
+            <h5>.ratio_45 - 45%</h5>
+            <h5>.ratio2_1 - 50%</h5>
+            <h5>.ratio2_3 - 60%</h5>
+            <h5>.ratio3_2 - 66.66%</h5>
+            <h5>.ratio_landscape - 75%</h5>
+            <h5>.ratio_square - 100%</h5>
+            <h5>.ratio_asos - 127.77%</h5>
+            <h5>.ratio_portrait - 150%</h5>
+            <h5>.ratio1_2 - 200%</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+@if(imageRatioDetail){
+  @for(details of imageRatioDetail.ratioDetails; track details){
+    <section class="portfolio-section bg-white" [ngClass]="details.ratioClass">
+      <div class="container">
+        <app-title [type]="'simple'" [title]="details.title" [subTitle]="details.subTitle"></app-title>
+        <div class="row content grid zoom-gallery">
+          @for(images of imageRatioDetail.images; track images){
+            <div class="grid-item wow zoomIn col-lg-3 col-sm-6">
+              <div class="overlay">
+                <div class="portfolio-image">
+                  <a href="javascript:void(0)" class="bg-size" [style.background-image]="'url('+ images.url +')'">
+                    <img [src]="images.url" alt="image" class="img-fluid blur-up lazyload bg-img" style="display: none;">
+                  </a>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </section>
+  }
+}
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout></app-layout>

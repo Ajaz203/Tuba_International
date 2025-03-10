@@ -1,0 +1,17 @@
+<app-header [headerClass]="'light_header'"></app-header>
+
+<section class="pt-0 parallax-section">
+  @for(details of portfolio; track details){
+    @if(details.parallaxImages){
+      @for(images of details.parallaxImages; track images){
+        <div class="full_banner bg-size" [style.background-image]="'url('+ images.image +')'">
+          <img [src]="images.image" class="img-fluid blur-up lazyload bg-img" alt="destination-image" style="display: none;">
+        </div>
+      }
+    }
+  }
+</section>
+
+<app-footer [places]="true" ></app-footer>
+
+<app-layout [loaderType]="'basic'"></app-layout>

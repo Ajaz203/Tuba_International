@@ -1,0 +1,31 @@
+<app-header [headerClass]="'light_header'"></app-header>
+
+<section class="p-0 center-slide">
+  <div class="center-slider no-arrow">
+    @for(details of portfolio; track details){
+      @if(details.centerSlideImages){
+        <owl-carousel-o [options]="options">
+          @for(images of details.centerSlideImages; track images){
+            <ng-template carouselSlide>
+              <div>
+                <div class="image-center bg-size" [style.background-image]="'url('+ images.image +')'">
+                  <img [src]="images.image" class="img-fluid blur-up lazyload bg-img" alt="background-image" style="display: none;">
+                  <div class="center-content">
+                    <div>
+                      <h3>{{ images.title }}</h3>
+                      <h6>{{ images.description }} </h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          }
+        </owl-carousel-o>
+        }
+    }
+  </div>
+</section>
+
+<app-footer [places]="true"></app-footer>
+
+<app-layout [loaderType]="'basic'"></app-layout>

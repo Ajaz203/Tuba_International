@@ -1,0 +1,54 @@
+<app-header [headerClass]="'inner-page'"></app-header>
+
+<app-breadcrumbs [type]="'pages'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child"></app-breadcrumbs>
+
+<section class="section-b-space animated-section dark-cls bg-size" [style.background-image]="'url(assets/imges2/grey-bg.jpg)'">
+  <img src="assets/imges2/grey-bg.jpg" alt="background-image" class="img-fluid blur-up lazyload bg-img" style="display: none;">
+  <app-animations [type]="'dots'"></app-animations>
+  <div class="container">
+    <app-title [type]="'simple'" [title]="'new'" [subTitle]="'awesome service'"></app-title>
+    <div class="row service-section">
+      @for(service of cabServices; track service){
+        <div class="col-lg-4">
+          <app-services [type]="'classic'" [service]="service"></app-services>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+
+<section class="animated-section">
+  <app-animations [type]="'dots'"></app-animations>
+  <div class="container">
+    <app-title [type]="'basic'" [title]="'Tuba'" [subTitle]="'awesome service'" [background_text]="'Service'"></app-title>
+    <div class="row service_section">
+      @for(services of hotelServices; track services){
+        <div class="col-lg-4 col-6">
+          <app-services [service]="services" [type]="'basic'"></app-services>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="">
+  <div class="container">
+    <app-title [type]="'classic'" [titleClass]="'title-5'" [title]="'new'" [subTitle]="'some good reason'" [description]="description"></app-title>
+    <div class="row service-part">
+      @for(service of tourService; track service){
+      <div class="col-lg-4">
+        <app-services [service]="service" [type]="'simple'"></app-services>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+
+@if(cabClassic){
+  <app-cab-classic-rica-benefits [benefits]="cabClassic.ricaBenefits"></app-cab-classic-rica-benefits>
+}
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout></app-layout>

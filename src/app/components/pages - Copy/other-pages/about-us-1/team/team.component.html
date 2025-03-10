@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col">
+    <div class="team-slider no-arrow">
+      @if(team){
+        <owl-carousel-o [options]="options">
+          @for(details of team; track details){
+            <ng-template carouselSlide>
+              <div>
+                <div class="team-box">
+                  <div class="img-part">
+                    <img [src]="details.image" class="img-fluid blur-up lazyload" [class.radius-cls]="classic" alt="team-member-image">
+                  </div>
+                  <div class="team-content" [class.radius-cls]="classic">
+                    <h3>{{ details.name }}</h3>
+                    <h6>{{ details.designation }}</h6>
+                  </div>
+                  <div class="team-social" [class.radius-cls]="classic">
+                    <a href="javascript:void(0)" class="social-box">
+                      <img src="assets/images/icon/social/google.png" class="img-fluid blur-up lazyload" alt="google-icon">
+                    </a>
+                    <a href="javascript:void(0)" class="social-box">
+                      <img src="assets/images/icon/social/twitter.png" class="img-fluid blur-up lazyload" alt="twitter-icon">
+                    </a>
+                    <a href="javascript:void(0)" class="social-box">
+                      <img src="assets/images/icon/social/facebook.png" class="img-fluid blur-up lazyload" alt="facebook-icon">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          }
+        </owl-carousel-o>
+      }
+    </div>
+  </div>
+</div>

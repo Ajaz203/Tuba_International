@@ -1,0 +1,30 @@
+<app-header [headerClass]="'inner-page'"></app-header>
+
+<app-breadcrumbs [type]="'pages'" [bg_image]="bg_image" [title]="title" [parent]="parent" [child]="child"></app-breadcrumbs>
+
+<section class="testimonial-section  animated-section">
+  <app-animations [type]="'dots'"></app-animations>
+  <div class="container">
+    <app-title [type]="'basic'" [title]="'our'" [subTitle]="'our happy customer'" [background_text]="'customer'"></app-title>
+    <div class="slide-1">
+      <app-testimonial [type]="'basic'" [testimonial]="hotelTestimonial"></app-testimonial>
+    </div>
+  </div>
+</section>
+
+<section class="testimonial_section pt-0 section-b-space">
+  <div class="container">
+    <app-title [type]="'classic'" [titleClass]="'title-5'" [title]="'latest'" [subTitle]="'our guests love us'" [description]="description"></app-title>
+    <div class="row">
+      <div class="offset-lg-1 col-lg-10">
+        <div class="slide-1 arrow-classic">
+          <app-testimonial [type]="'simple'" [testimonial]="tourTestimonial"></app-testimonial>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer [location]="true"></app-footer>
+
+<app-layout></app-layout>

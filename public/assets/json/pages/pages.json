@@ -427,27 +427,22 @@
             {
               "id": 1,
               "name": "Qari Mohd Intezar",
-              "image": "assets/images/inner-pages/team/1.jpg",
+              "image": "assets/images/inner-pages/team/10.jpg",
               "designation": "CEO"
             },
             {
               "id": 2,
-              "name": "Lucas Smith",
-              "image": "assets/images/inner-pages/team/2.jpg",
+              "name": "Qari Mohd Intezar",
+              "image": "assets/images/inner-pages/team/11.jpg",
               "designation": "marketing"
             },
             {
               "id": 3,
-              "name": "Pablo Himenez",
-              "image": "assets/images/inner-pages/team/3.jpg",
+              "name": "Qari Mohd Intezar",
+              "image": "assets/images/inner-pages/team/15.jpg",
               "designation": "customer service"
-            },
-            {
-              "id": 4,
-              "name": "Lucas Smith",
-              "image": "assets/images/inner-pages/team/2.jpg",
-              "designation": "marketing"
             }
+            
           ],
           "testimonial": [1,2],
           "fact": [
