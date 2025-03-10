@@ -1,0 +1,348 @@
+{
+  "tour": [
+    {
+      "id": 1,
+      "img": "assets/images/tour/tour/7.jpg",
+      "title": "beautiful Bali",
+      "description": "Bali, a tropical paradise nestled in Indonesia's archipelago, captivates with its lush landscapes, serene beaches, and vibrant cultural tapestry, offering a perfect blend of relaxation and adventure in an enchanting island setting.",
+      "days": 6,
+      "night": 7,
+      "tripDetails": "Kuta (2N) → Lombok (2N) → Ubud (2N)",
+      "include": "include at this price",
+      "images": [
+        {
+          "url": "assets/video/sea.mp4",
+          "fileType": "video"
+        },
+        {
+          "url": "assets/images/tour/tour/7.jpg",
+          "fileType": "image"
+        },
+        {
+          "url": "assets/images/tour/tour/8.jpg",
+          "fileType": "image"
+        }
+      ],
+      "tag": true,
+      "tagTitle": "Recommended",
+      "category": "popular",
+      "rating": 4,
+      "price": 1300,
+      "discountPrice": 1245,
+      "trip": "11 to 15 nights",
+      "flights": "with flights",
+      "travelType": "beach",
+      "deal": true,
+      "dealText": "8 people booked this package today",
+      "includesDetails": [
+        {
+          "icon": "assets/images/icon/tour/hotel.png",
+          "title": "hotels",
+          "includes": true
+        },
+        {
+          "icon": "assets/images/icon/tour/airplane.png",
+          "title": "flights",
+          "includes": true
+        },
+        {
+          "icon": "assets/images/icon/tour/fork.png",
+          "title": "meals",
+          "includes": true
+        },
+        {
+          "icon": "assets/images/icon/tour/photo-camera.png",
+          "title": "sightseeing",
+          "includes": true
+        },
+        {
+          "icon": "assets/images/icon/tour/visa.png",
+          "title": "visa",
+          "includes": true
+        }
+      ],
+      "tags": ["four","with_flights","beach","11_15_nights"]
+    },
+    {
+      "id": 2,
+      "img": "assets/images/tour/tour/8.jpg",
+      "title": "best of europe",
+      "description": "A captivating journey through the continent's rich tapestry of cultures, where historic landmarks, artistic masterpieces, and culinary delights converge to create an unforgettable mosaic of experiences.",
+      "days": 5,
+      "night": 6,
+      "tripDetails": "Kuta (2N) → Lombok (2N) → Ubud (2N)",
+      "include": "include at this price",
+      "images": [
+        {
+          "url": "assets/images/tour/tour/8.jpg",
+          "fileType": "image"
+        },
+        {
+          "url": "assets/images/tour/tour/9.jpg",
+          "fileType": "image"
+        }
+      ],
+      "tag": false,
+      "category": "latest",
+      "rating": 2,
+      "price": 1200,
+      "discountPrice": 1180,
+      "trip": "above 21 nights",
+      "flights": "without flights",
+      "travelType": "family",
+      "includesDetails": [
+        {
+          "icon": "assets/images/icon/tour/hotel.png",
+          "title": "hotels",
+          "includes": true
+        },
+        {
+          "icon": "assets/images/icon/tour/airplane.png",
+          "title": "flights",
+          "includes": true
+        },
+        {
+          "icon": "assets/images/icon/tour/fork.png",
+          "title": "meals",
+          "includes": true
+        },
+        {
+          "icon": "assets/images/icon/tour/photo-camera.png",
+          "title": "sightseeing",
+          "includes": false
+        },
+        {
+          "icon": "assets/images/icon/tour/visa.png",
+          "title": "visa",
+          "includes": false
+        }
+      ],
+      "tags": ["two","without_flights","family","21_nights"]
+    },
+    {
+      "id": 3,
+      "img": "assets/images/tour/tour/9.jpg",
+      "title": "dubai adventure",
+      "description": "Embark on a thrilling journey through a dazzling metropolis where futuristic skyscrapers meet ancient traditions, offering an unparalleled fusion of luxury, adrenaline-pumping activities, and awe-inspiring desert landscapes.",
+      "days": 5,
+      "night": 6,
+      "tripDetails": "Kuta (2N) → Lombok (2N) → Ubud (2N)",
+      "include": "include at this price",
+      "images": [
+        {
+          "url": "assets/images/tour/tour/9.jpg",
+          "fileType": "image"
+        },
+        {
+          "url": "assets/images/tour/tour/10.jpg",
+          "fileType": "image"
+        }
+      ],
+      "tag": false,
+      "category": "popular",
+      "rating": 5,
+      "price": 1400,
+      "discountPrice": 1350,
+      "trip": "4 to 7 nights",
+      "flights": "with flights",
+      "travelType": "adventure",
+      "includesDetails": [
+        {
+          "icon": "assets/images/icon/tour/hotel.png",
+          "title": "hotels",
+          "includes": true
+        },
+        {
+          "icon": "assets/images/icon/tour/airplane.png",
+          "title": "flights",
+          "includes": true
+        },
+        {
+          "icon": "assets/images/icon/tour/fork.png",
+          "title": "meals",
+          "includes": true
+        },
+        {
+          "icon": "assets/images/icon/tour/photo-camera.png",
+          "title": "sightseeing",
+          "includes": true
+        },
+        {
+          "icon": "assets/images/icon/tour/visa.png",
+          "title": "visa",
+          "includes": true
+        }
+      ],
+      "tags": ["five","with_flights","adventure","4_7_nights"]
+    },
+    {
+      "id": 4,
+      "img": "assets/images/tour/tour/10.jpg",
+      "title": "exploring sydney",
+      "description": "Embark on a captivating exploration of Sydney, where iconic landmarks like the Sydney Opera House and Harbour Bridge blend seamlessly with vibrant neighborhoods, offering a perfect fusion of cosmopolitan culture and natural beauty along its stunning coastline.",
+      "days": 4,
+      "night": 5,
+      "tripDetails": "Kuta (2N) → Lombok (2N) → Ubud (2N)",
+      "include": "include at this price",
+      "images": [
+        {
+          "url": "assets/images/tour/tour/10.jpg",
+          "fileType": "image"
+        },
+        {
+          "url": "assets/images/tour/tour/11.jpg",
+          "fileType": "image"
+        }
+      ],
+      "tag": false,
+      "category": "latest",
+      "rating": 4,
+      "price": 1500,
+      "discountPrice": 1430,
+      "trip": "15 to 21 nights",
+      "flights": "without flights",
+      "travelType": "cruise",
+      "includesDetails": [
+        {
+          "icon": "assets/images/icon/tour/hotel.png",
+          "title": "hotels",
+          "includes": true
+        },
+        {
+          "icon": "assets/images/icon/tour/airplane.png",
+          "title": "flights",
+          "includes": true
+        },
+        {
+          "icon": "assets/images/icon/tour/fork.png",
+          "title": "meals",
+          "includes": true
+        },
+        {
+          "icon": "assets/images/icon/tour/photo-camera.png",
+          "title": "sightseeing",
+          "includes": true
+        },
+        {
+          "icon": "assets/images/icon/tour/visa.png",
+          "title": "visa",
+          "includes": true
+        }
+      ],
+      "tags": ["four","without_flights","cruise","15_21_nights"]
+    },
+    {
+      "id": 5,
+      "img": "assets/images/tour/tour/11.jpg",
+      "title": "splendid spain",
+      "description": "Spain, a land of vibrant culture and rich history, captivates with its splendid blend of passionate flamenco, stunning architecture, and sun-kissed beaches.",
+      "days": 6,
+      "night": 7,
+      "tripDetails": "Kuta (2N) → Lombok (2N) → Ubud (2N)",
+      "include": "include at this price",
+      "images": [
+        {
+          "url": "assets/images/tour/tour/11.jpg",
+          "fileType": "image"
+        },
+        {
+          "url": "assets/images/tour/tour/12.jpg",
+          "fileType": "image"
+        }
+      ],
+      "tag": true,
+      "tagTitle": "certified",
+      "category": "latest",
+      "rating": 4,
+      "price": 1450,
+      "discountPrice": 1430,
+      "trip": "upto 3 nights",
+      "flights": "with flights",
+      "travelType": "shopping",
+      "includesDetails": [
+        {
+          "icon": "assets/images/icon/tour/hotel.png",
+          "title": "hotels",
+          "includes": true
+        },
+        {
+          "icon": "assets/images/icon/tour/airplane.png",
+          "title": "flights",
+          "includes": true
+        },
+        {
+          "icon": "assets/images/icon/tour/fork.png",
+          "title": "meals",
+          "includes": true
+        },
+        {
+          "icon": "assets/images/icon/tour/photo-camera.png",
+          "title": "sightseeing",
+          "includes": false
+        },
+        {
+          "icon": "assets/images/icon/tour/visa.png",
+          "title": "visa",
+          "includes": false
+        }
+      ],
+      "tags": ["four","with_flights","shopping","3_nights"]
+    },
+    {
+      "id": 6,
+      "img": "assets/images/tour/tour/12.jpg",
+      "title": "simply mauritius",
+      "description": "Mauritius, a tropical paradise in the Indian Ocean, captivates with its pristine beaches, vibrant coral reefs, and a unique blend of cultures, offering visitors a harmonious escape to lush landscapes and crystal-clear waters.",
+      "days": 3,
+      "night": 4,
+      "tripDetails": "Kuta (2N) → Lombok (2N) → Ubud (2N)",
+      "include": "include at this price",
+      "images": [
+        {
+          "url": "assets/images/tour/tour/12.jpg",
+          "fileType": "image"
+        },
+        {
+          "url": "assets/images/tour/tour/13.jpg",
+          "fileType": "image"
+        }
+      ],
+      "tag": false,
+      "category": "trend",
+      "rating": 5,
+      "price": 1100,
+      "discountPrice": 1000,
+      "trip": "7 to 11 nights",
+      "flights": "without flights",
+      "travelType": "honeymoon",
+      "includesDetails": [
+        {
+          "icon": "assets/images/icon/tour/hotel.png",
+          "title": "hotels",
+          "includes": true
+        },
+        {
+          "icon": "assets/images/icon/tour/airplane.png",
+          "title": "flights",
+          "includes": true
+        },
+        {
+          "icon": "assets/images/icon/tour/fork.png",
+          "title": "meals",
+          "includes": true
+        },
+        {
+          "icon": "assets/images/icon/tour/photo-camera.png",
+          "title": "sightseeing",
+          "includes": true
+        },
+        {
+          "icon": "assets/images/icon/tour/visa.png",
+          "title": "visa",
+          "includes": true
+        }
+      ],
+      "tags": ["five","without_flights","honeymoon","7_11_nights"]
+    }
+  ]
+}

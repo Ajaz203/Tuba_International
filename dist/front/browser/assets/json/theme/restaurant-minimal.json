@@ -1,0 +1,91 @@
+{
+  "category": [
+    {
+      "id": 1,
+      "title": "maxican",
+      "restaurant": 23,
+      "image": "assets/images/restaurant/dishes/15.jpg"
+    },
+    {
+      "id": 2,
+      "title": "italian",
+      "restaurant": 20,
+      "image": "assets/images/restaurant/dishes/1.jpg"
+    },
+    {
+      "id": 3,
+      "title": "bakery",
+      "restaurant": 25,
+      "image": "assets/images/restaurant/dishes/11.jpg"
+    },
+    {
+      "id": 4,
+      "title": "deserts",
+      "restaurant": 15,
+      "image": "assets/images/restaurant/dishes/10.jpg"
+    },
+    {
+      "id": 5,
+      "title": "non veg",
+      "restaurant": 14,
+      "image": "assets/images/restaurant/dishes/14.jpg"
+    },
+    {
+      "id": 6,
+      "title": "chinese",
+      "restaurant": 17,
+      "image": "assets/images/restaurant/dishes/7.jpg"
+    },
+    {
+      "id": 7,
+      "title": "healthy",
+      "restaurant": 15,
+      "image": "assets/images/restaurant/dishes/8.jpg"
+    },
+    {
+      "id": 8,
+      "title": "burger",
+      "restaurant": 30,
+      "image": "assets/images/restaurant/dishes/9.jpg"
+    }
+  ],
+  "banner": [
+    {
+      "id": 1,
+      "title": "Buy 1 get 1 free",
+      "subTitle": "all pizza",
+      "image": "assets/images/restaurant/dishes/17.jpg",
+      "left": true
+    },
+    {
+      "id": 2,
+      "title": "only $12",
+      "subTitle": "tasty burger",
+      "image": "assets/images/restaurant/dishes/16.jpg",
+      "right": true
+    }
+  ],
+  "booking": [
+    {
+      "id": 1,
+      "title": "Order Food threw website or app",
+      "image": "assets/images/icon/order-steps/1.png"
+    },
+    {
+      "id": 2,
+      "title": "User receives confirmation",
+      "image": "assets/images/icon/order-steps/2.png"
+    },
+    {
+      "id": 3,
+      "title": "order processing & food preparation",
+      "image": "assets/images/icon/order-steps/3.png"
+    },
+    {
+      "id": 4,
+      "title": "food is on its way to deliver",
+      "image": "assets/images/icon/order-steps/4.png"
+    }
+  ],
+  "restaurant": [1,2,3,4,5,6,7,8]
+}

@@ -1,0 +1,81 @@
+{
+  "cabGallery": [
+    {
+      "id": 1,
+      "image": "/assets/imges2/car1.jpg",
+      "type": "main"
+    },
+    {
+      "id": 2,
+      "image": "/assets/imges2/car2.jpg",
+      "type": "main"
+    },
+    {
+      "id": 3,
+      "image": "/assets/imges2/car5.jpg",
+      "type": "main"
+    },
+    {
+      "id": 4,
+      "image": "/assets/imges2/car2.jpg",
+      "type": "interior"
+    },
+    {
+      "id": 5,
+      "image": "/assets/imges2/car3.jpg",
+      "type": "interior"
+    },
+    {
+      "id": 6,
+      "image": "/assets/imges2/car4.jpg",
+      "type": "exterior"
+    },
+    {
+      "id": 7,
+      "image": "/assets/imges2/car5.jpg",
+      "type": "exterior"
+    }
+  ],
+  "cabDetails": [
+    {
+      "title": "include in this price:",
+      "details": [
+        {
+          "data": "cancellation"
+        },
+         {
+          "data": "theft protection"
+        },
+         {
+          "data": "local taxes"
+        },
+         {
+          "data": "Prices are inclusive of all the taxes"
+        },
+         {
+          "data": "fuel charges"
+        },
+         {
+          "data": "driver allowance"
+        }
+      ]
+    },
+    {
+      "title": "exclude in this price:",
+      "details": [
+        {
+          "data": "late return charges"
+        },
+         {
+          "data": "Night Allowance"
+        },
+         {
+          "data": "Parking"
+        },
+         {
+          "data": "toll / state tax"
+        }
+      ]
+    }
+  ]
+}

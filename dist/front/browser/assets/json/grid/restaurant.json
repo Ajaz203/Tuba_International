@@ -1,0 +1,206 @@
+{
+  "restaurant": [
+    {
+      "id": 1,
+      "restaurantName": "italian restro",
+      "image": "assets/images/restaurant/dishes/7.jpg",
+      "images": [
+        {
+          "url": "assets/images/restaurant/dishes/7.jpg",
+          "fileType": "image"
+        },
+        {
+          "url": "assets/images/restaurant/dishes/8.jpg",
+          "fileType": "image"
+        }
+      ],
+      "foodList": "fast food, cafe, italian",
+      "time": "11.30am - 11.30pm (mon-sun)",
+      "price": 25,
+      "rating": 4.5,
+      "tag": true,
+      "tagTitle": "Recommended",
+      "restaurantType": "popular",
+      "popular": "pure_veg",
+      "cuisines": "western",
+      "delivery": "upto_20",
+      "tags": ["pure_veg","western","five","upto_20"]
+    },
+    {
+      "id": 2,
+      "restaurantName": "Sizzle Bites Grill",
+      "image": "assets/images/restaurant/dishes/8.jpg",
+      "images": [
+        {
+          "url": "assets/images/restaurant/dishes/8.jpg",
+          "fileType": "image"
+        },
+        {
+          "url": "assets/images/restaurant/dishes/9.jpg",
+          "fileType": "image"
+        }
+      ],
+      "foodList": "sizzling steaks, grilled to perfection",
+      "time": "11.30am - 11.30pm (mon-sun)",
+      "price": 30,
+      "rating": 2.8,
+      "tag": false,
+      "restaurantType": "latest",
+      "popular": "non_veg",
+      "cuisines": "western",
+      "delivery": "upto_60",
+      "tags": ["non_veg","western","two","upto_60"]
+    },
+    {
+      "id": 3,
+      "restaurantName": "Pasta Paradise",
+      "image": "assets/images/restaurant/dishes/9.jpg",
+      "images": [
+        {
+          "url": "assets/images/restaurant/dishes/9.jpg",
+          "fileType": "image"
+        },
+        {
+          "url": "assets/images/restaurant/dishes/10.jpg",
+          "fileType": "image"
+        }
+      ],
+      "foodList": "variety of Italian pasta",
+      "time": "11.30am - 11.30pm (mon-sun)",
+      "price": 50,
+      "rating": 3.0,
+      "tag": false,
+      "restaurantType": "popular",
+      "popular": "non_veg",
+      "cuisines": "dessert",
+      "delivery": "upto_45",
+      "tags": ["non_veg","dessert","three","upto_45"]
+    },
+    {
+      "id": 4,
+      "restaurantName": "Wok Wonders",
+      "image": "assets/images/restaurant/dishes/10.jpg",
+      "images": [
+        {
+          "url": "assets/images/restaurant/dishes/10.jpg",
+          "fileType": "image"
+        },
+        {
+          "url": "assets/images/restaurant/dishes/11.jpg",
+          "fileType": "image"
+        }
+      ],
+      "foodList": "delectable stir-fried and wok-cooked dishes",
+      "time": "11.30am - 11.30pm (mon-sun)",
+      "price": 40,
+      "rating": 4.2,
+      "tag": false,
+      "restaurantType": "trend",
+      "popular": "pure_veg",
+      "cuisines": "italian",
+      "delivery": "upto_30",
+      "tags": ["pure_veg","italian","four","upto_30"]
+    },
+    {
+      "id": 5,
+      "restaurantName": "Mango Tango Cafe",
+      "image": "assets/images/restaurant/dishes/11.jpg",
+      "images": [
+        {
+          "url": "assets/images/restaurant/dishes/11.jpg",
+          "fileType": "image"
+        },
+        {
+          "url": "assets/images/restaurant/dishes/12.jpg",
+          "fileType": "image"
+        }
+      ],
+      "foodList": "tropical delights",
+      "time": "11.30am - 11.30pm (mon-sun)",
+      "price": 25,
+      "rating": 2.5,
+      "tag": true,
+      "tagTitle": "Recommended",
+      "restaurantType": "popular",
+      "popular": "free_delivery",
+      "cuisines": "chinese",
+      "delivery": "upto_60",
+      "tags": ["free_delivery","chinese","two","upto_60"]
+    },
+    {
+      "id": 6,
+      "restaurantName": "BBQ Shack",
+      "image": "assets/images/restaurant/dishes/12.jpg",
+      "images": [
+        {
+          "url": "assets/images/restaurant/dishes/12.jpg",
+          "fileType": "image"
+        },
+        {
+          "url": "assets/images/restaurant/dishes/13.jpg",
+          "fileType": "image"
+        }
+      ],
+      "foodList": "barbecue haven, renowned for its slow-smoked meats",
+      "time": "11.30am - 11.30pm (mon-sun)",
+      "price": 15,
+      "rating": 4.5,
+      "tag": false,
+      "restaurantType": "latest",
+      "popular": "non_veg",
+      "cuisines": "seafood",
+      "delivery": "upto_30",
+      "tags": ["non_veg","seafood","five","upto_30"]
+    },
+    {
+      "id": 7,
+      "restaurantName": "Green Garden Bistro",
+      "image": "assets/images/restaurant/dishes/13.jpg",
+      "images": [
+        {
+          "url": "assets/images/restaurant/dishes/13.jpg",
+          "fileType": "image"
+        },
+        {
+          "url": "assets/images/restaurant/dishes/14.jpg",
+          "fileType": "image"
+        }
+      ],
+      "foodList": "fresh salads, vegetarian delights",
+      "time": "11.30am - 11.30pm (mon-sun)",
+      "price": 20,
+      "rating": 3.0,
+      "tag": false,
+      "restaurantType": "popular",
+      "popular": "pure_veg",
+      "cuisines": "pizza",
+      "delivery": "upto_45",
+      "tags": ["pure_veg","pizza","three","upto_45"]
+    },
+    {
+      "id": 8,
+      "restaurantName": "Sweet Dessert Bar",
+      "image": "assets/images/restaurant/dishes/14.jpg",
+      "images": [
+        {
+          "url": "assets/images/restaurant/dishes/14.jpg",
+          "fileType": "image"
+        },
+        {
+          "url": "assets/images/restaurant/dishes/8.jpg",
+          "fileType": "image"
+        }
+      ],
+      "foodList": "sweet tooth with an array of delightful desserts",
+      "time": "11.30am - 11.30pm (mon-sun)",
+      "price": 45,
+      "rating": 4.9,
+      "tag": false,
+      "restaurantType": "trend",
+      "popular": "free_delivery",
+      "cuisines": "dessert",
+      "delivery": "upto_20",
+      "tags": ["free_delivery","dessert","five","upto_20"]
+    }
+  ]
+}

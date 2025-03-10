@@ -1,0 +1,447 @@
+{
+  "restaurantOrders": [
+    {
+      "id": 1,
+      "title": "bestseller",
+      "value": "bestseller",
+      "totalItems": 5,
+      "items": [
+        {
+          "id": 1,
+          "title": "Veg Cheese Quesadillas",
+          "description": "Mexican quesadillas overloaded with exotic vegetables, layered with house special salsa sauce and lots of cheese.",
+          "price": "10",
+          "mealType": "veg",
+          "itemsValue": 1,
+          "customized": true,
+          "cartItem": true
+        },
+        {
+          "id": 2,
+          "title": "Barbaresca Pasta",
+          "description": "Spinach ravioli with combination sauce, broccoli, zucchini.",
+          "price": "10",
+          "mealType": "non-veg",
+          "itemsValue": 1,
+          "cartItem": true
+        },
+        {
+          "id": 3,
+          "title": "Sprouts Salad",
+          "description": "Tomato, cucumber, peppers, olives, onion, feta, iceberg lettuce.",
+          "price": "10",
+          "mealType": "veg",
+          "itemsValue": 1,
+          "cartItem": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "quick bites",
+      "value": "bites",
+      "children": [
+        {
+          "id": 1,
+          "title": "potato chips",
+          "value": "chips",
+          "totalItems": 5,
+          "items": [
+            {
+              "id": 1,
+              "title": "Veg Cheese Quesadillas",
+              "description": "Mexican quesadillas overloaded with exotic vegetables, layered with house special salsa sauce and lots of cheese.",
+              "price": "10",
+              "mealType": "veg",
+              "itemsValue": 1
+            },
+            {
+              "id": 2,
+              "title": "Barbaresca Pasta",
+              "description": "Spinach ravioli with combination sauce, broccoli, zucchini.",
+              "price": "10",
+              "mealType": "non-veg",
+              "itemsValue": 1
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "salad",
+          "value": "salad",
+          "totalItems": 5,
+          "items": [
+            {
+              "id": 1,
+              "title": "Veg Cheese Quesadillas",
+              "description": "Mexican quesadillas overloaded with exotic vegetables, layered with house special salsa sauce and lots of cheese.",
+              "price": "10",
+              "mealType": "veg",
+              "itemsValue": 1
+            },
+            {
+              "id": 2,
+              "title": "Barbaresca Pasta",
+              "description": "Spinach ravioli with combination sauce, broccoli, zucchini.",
+              "price": "10",
+              "mealType": "non-veg",
+              "itemsValue": 1
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "fries",
+          "value": "fries",
+          "totalItems": 5,
+          "items": [
+            {
+              "id": 1,
+              "title": "Veg Cheese Quesadillas",
+              "description": "Mexican quesadillas overloaded with exotic vegetables, layered with house special salsa sauce and lots of cheese.",
+              "price": "10",
+              "mealType": "veg",
+              "itemsValue": 1
+            },
+            {
+              "id": 2,
+              "title": "Barbaresca Pasta",
+              "description": "Spinach ravioli with combination sauce, broccoli, zucchini.",
+              "price": "10",
+              "mealType": "non-veg",
+              "itemsValue": 1
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "title": "cheese sticks",
+          "value": "sticks",
+          "totalItems": 5,
+          "items": [
+            {
+              "id": 1,
+              "title": "Sprouts Salad",
+              "description": "Tomato, cucumber, peppers, olives, onion, feta, iceberg lettuce.",
+              "price": "10",
+              "mealType": "veg",
+              "itemsValue": 1
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "title": "garlic bread",
+          "value": "bread",
+          "totalItems": 5,
+          "items": [
+            {
+              "id": 1,
+              "title": "Barbaresca Pasta",
+              "description": "Spinach ravioli with combination sauce, broccoli, zucchini.",
+              "price": "10",
+              "mealType": "non-veg",
+              "itemsValue": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "sandwich",
+      "value": "sandwich",
+      "totalItems": 5,
+      "items": [
+        {
+          "id": 1,
+          "title": "Sprouts Salad",
+          "description": "Tomato, cucumber, peppers, olives, onion, feta, iceberg lettuce.",
+          "price": "10",
+          "mealType": "non-veg",
+          "itemsValue": 1
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "pizza",
+      "value": "pizza",
+      "totalItems": 5,
+      "items": [
+        {
+          "id": 1,
+          "title": "Sprouts Salad",
+          "description": "Tomato, cucumber, peppers, olives, onion, feta, iceberg lettuce.",
+          "price": "10",
+          "mealType": "veg",
+          "itemsValue": 1
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "combo",
+      "value": "combo",
+      "totalItems": 5,
+      "items": [
+        {
+          "id": 1,
+          "title": "Veg Cheese Quesadillas",
+          "description": "Mexican quesadillas overloaded with exotic vegetables, layered with house special salsa sauce and lots of cheese.",
+          "price": "10",
+          "mealType": "veg",
+          "itemsValue": 1
+        },
+        {
+          "id": 2,
+          "title": "Sprouts Salad",
+          "description": "Tomato, cucumber, peppers, olives, onion, feta, iceberg lettuce.",
+          "price": "10",
+          "mealType": "non-veg",
+          "itemsValue": 1
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "deserts",
+      "value": "deserts",
+      "children": [
+        {
+          "id": 1,
+          "title": "cheesecakes",
+          "value": "cheesecakes",
+          "totalItems": 5,
+          "items": [
+            {
+              "id": 1,
+              "title": "Sprouts Salad",
+              "description": "Tomato, cucumber, peppers, olives, onion, feta, iceberg lettuce.",
+              "price": "10",
+              "mealType": "non-veg",
+              "itemsValue": 1
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "lime pie",
+          "value": "lime",
+          "totalItems": 5,
+          "items": [
+            {
+              "id": 1,
+              "title": "Veg Cheese Quesadillas",
+              "description": "Mexican quesadillas overloaded with exotic vegetables, layered with house special salsa sauce and lots of cheese.",
+              "price": "10",
+              "mealType": "veg",
+              "itemsValue": 1
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "cream cream",
+          "value": "cream",
+          "totalItems": 5,
+          "items": [
+            {
+              "id": 1,
+              "title": "Veg Cheese Quesadillas",
+              "description": "Mexican quesadillas overloaded with exotic vegetables, layered with house special salsa sauce and lots of cheese.",
+              "price": "10",
+              "mealType": "veg",
+              "itemsValue": 1
+            },
+            {
+              "id": 2,
+              "title": "Sprouts Salad",
+              "description": "Spinach ravioli with combination sauce, broccoli, zucchini.",
+              "price": "10",
+              "mealType": "non-veg",
+              "itemsValue": 1
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "title": "rice pudding",
+          "value": "pudding",
+          "totalItems": 5,
+          "items": [
+            {
+              "id": 1,
+              "title": "Veg Cheese Quesadillas",
+              "description": "Mexican quesadillas overloaded with exotic vegetables, layered with house special salsa sauce and lots of cheese.",
+              "price": "10",
+              "mealType": "veg",
+              "itemsValue": 1
+            },
+            {
+              "id": 2,
+              "title": "Barbaresca Pasta",
+              "description": "Spinach ravioli with combination sauce, broccoli, zucchini.",
+              "price": "10",
+              "mealType": "non-veg",
+              "itemsValue": 1
+            },
+            {
+              "id": 3,
+              "title": "Sprouts Salad",
+              "description": "Spinach ravioli with combination sauce, broccoli, zucchini.",
+              "price": "10",
+              "mealType": "non-veg",
+              "itemsValue": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "restaurantOverview": [
+    {
+      "id": 1,
+      "sectionClass": "",
+      "items": [
+        {
+          "id": 1,
+          "title": "Phone number: 09876543210"
+        },
+        {
+          "id": 2,
+          "title": "cuisine",
+          "data": [
+            {
+              "item": "Fast Food"
+            },
+            {
+              "item": "cafe"
+            },
+            {
+              "item": "italian"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "opening hours",
+          "data": [
+            {
+              "item": "Monday to Friday: 11.00 a.m. to 11.00 p.m."
+            },
+            {
+              "item": "Saturday & Sunday: 10.00 a.m. to 12.00 p.m."
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "title": "address",
+          "data": [
+            {
+              "item": "9716 Riverside Dr, Mays Landing, NJ 08330"
+            },
+            {
+              "item": "24 Lafayette Drive, Ladson, SC 29456"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "sectionClass": "about-sec mt-sm-0 mt-2",
+      "items": [
+        {
+          "id": 1,
+          "title": "facility",
+          "data": [
+            {
+              "item": "card accepted"
+            },
+            {
+              "item": "parking availble"
+            },
+            {
+              "item": "banquet area"
+            },
+            {
+              "item": "home delivery"
+            },
+            {
+              "item": "table booking"
+            },
+            {
+              "item": "available for events"
+            },
+            {
+              "item": "game zone"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "restaurantGallery": [
+    {
+      "id": 1,
+      "image": "assets/images/restaurant/environment/1.jpg",
+      "fileType": "image"
+    },
+    {
+      "id": 2,
+      "image": "assets/images/restaurant/environment/2.jpg",
+      "fileType": "image"
+    },
+    {
+      "id": 3,
+      "image": "assets/images/restaurant/environment/3.jpg",
+      "fileType": "image"
+    },
+    {
+      "id": 4,
+      "image": "assets/images/restaurant/environment/4.jpg",
+      "fileType": "image"
+    },
+    {
+      "id": 5,
+      "image": "assets/images/restaurant/environment/5.jpg",
+      "fileType": "image"
+    },
+    {
+      "id": 6,
+      "image": "assets/images/restaurant/environment/6.jpg",
+      "fileType": "image"
+    }
+  ],
+  "restaurantLocation": {
+      "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.9147718689!2d-74.11976358820196!3d40.69740344169578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1568001991098!5m2!1sen!2sin"
+  },
+  "restaurantReview": [
+    {
+      "id": 1,
+      "title": "Wonderful Experience...!!",
+      "by": "xyz",
+      "date": "jun 18, 2019",
+      "review": "Serve a healthy and good food. Having a parking facility and there are also waiting area available. These place is perfect for Celebration of birthday",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "title": "Excellent Arrangements",
+      "by": "xyz",
+      "date": "jun 18, 2019",
+      "review": "Italian Restro is one of the most favourite restaurant of all time. Here you can get all kind of food in very hygienic preparations and tasty. Staff are also very cooperative and humble. I would like to recommend this restaurant for all food lovers.",
+      "rating": 4
+    },
+    {
+      "id": 3,
+      "title": "Best Italian cuisine",
+      "by": "xyz",
+      "date": "jun 18, 2019",
+      "review": "The best Italian cuisine restaurant, the dishes are very authentic. A must try for all the Italian and Mexican food lovers.I am sure once u visit, you will be a fan of this place.",
+      "rating": 3
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "cab": [
+    {
+      "id": 1,
+      "carName": "Peugeot Citroen",
+      "carImage": "assets/images/cab/car/5.png",
+      "carImages": [
+        {
+          "url": "assets/images/cab/car/12.jpg",
+          "fileType": "image"
+        },
+        {
+          "url": "assets/images/cab/car/13.jpg",
+          "fileType": "image"
+        }
+      ],
+      "carType": "sadan",
+      "price": 1200,
+      "fare": 25,
+      "per_km": 10,
+      "passenger": 5,
+      "luggage": 2,
+      "gearbox": "automatic",
+      "carOption": "automatic",
+      "rating": 4,
+      "category": "popular",
+      "tags": ["sadan","four","1_5","automatic"]
+    },
+    {
+      "id": 2,
+      "carName": "Suzuki",
+      "carImage": "assets/images/cab/car/6.png",
+      "carImages": [
+        {
+          "url": "assets/images/cab/car/14.jpg",
+          "fileType": "image"
+        },
+        {
+          "url": "assets/images/cab/car/15.jpg",
+          "fileType": "image"
+        }
+      ],
+      "carType": "medium",
+      "price": 1500,
+      "fare": 20,
+      "per_km": 12,
+      "passenger": 4,
+      "luggage": 2,
+      "gearbox": "manual",
+      "carOption": "manual",
+      "rating": 2,
+      "category": "latest",
+      "tags": ["medium","two","1_5","manual"]
+    },
+    {
+      "id": 3,
+      "carName": "Fiat Chrysler",
+      "carImage": "assets/images/cab/car/7.png",
+      "carImages": [
+        {
+          "url": "assets/images/cab/car/16.jpg",
+          "fileType": "image"
+        },
+        {
+          "url": "assets/images/cab/car/17.jpg",
+          "fileType": "image"
+        }
+      ],
+      "carType": "mini",
+      "price": 1300,
+      "fare": 22,
+      "per_km": 11,
+      "passenger": 2,
+      "luggage": 1,
+      "gearbox": "automatic",
+      "carOption": "air conditioning",
+      "rating": 4,
+      "category": "popular",
+      "tags": ["mini","four","1_5","air_conditioning"]
+    },
+    {
+      "id": 4,
+      "carName": "Honda",
+      "carImage": "assets/images/cab/car/8.png",
+      "carImages": [
+        {
+          "url": "assets/images/cab/car/17.jpg",
+          "fileType": "image"
+        },
+        {
+          "url": "assets/images/cab/car/19.jpg",
+          "fileType": "image"
+        }
+      ],
+      "carType": "standard",
+      "price": 1600,
+      "fare": 27,
+      "per_km": 15,
+      "passenger": 6,
+      "luggage": 3,
+      "gearbox": "automatic",
+      "carOption": "automatic",
+      "rating": 5,
+      "category": "latest",
+      "tags": ["standard","five","6_10","automatic"]
+    },
+    {
+      "id": 5,
+      "carName": "Ford",
+      "carImage": "assets/images/cab/car/9.png",
+      "carImages": [
+        {
+          "url": "assets/images/cab/car/20.jpg",
+          "fileType": "image"
+        },
+        {
+          "url": "assets/images/cab/car/13.jpg",
+          "fileType": "image"
+        }
+      ],
+      "carType": "tempo travel",
+      "price": 2000,
+      "fare": 30,
+      "per_km": 20,
+      "passenger": 6,
+      "luggage": 3,
+      "gearbox": "manual",
+      "carOption": "manual",
+      "rating": 5,
+      "category": "popular",
+      "tags": ["tempo","five","6_10","manual"]
+    },
+    {
+      "id": 6,
+      "carName": "Hyundai-Kia",
+      "carImage": "assets/images/cab/car/10.png",
+      "carImages": [
+        {
+          "url": "assets/images/cab/car/14.jpg",
+          "fileType": "image"
+        },
+        {
+          "url": "assets/images/cab/car/15.jpg",
+          "fileType": "image"
+        }
+      ],
+      "carType": "SUV",
+      "price": 1200,
+      "fare": 25,
+      "per_km": 10,
+      "passenger": 12,
+      "luggage": 2,
+      "gearbox": "automatic",
+      "carOption": "automatic",
+      "rating": 4,
+      "category": "trend",
+      "tags": ["suv","four","10_more","automatic"]
+    },
+    {
+      "id": 7,
+      "carName": "General Motors",
+      "carImage": "assets/images/cab/car/11.png",
+      "carImages": [
+        {
+          "url": "assets/images/cab/car/16.jpg",
+          "fileType": "image"
+        },
+        {
+          "url": "assets/images/cab/car/17.jpg",
+          "fileType": "image"
+        }
+      ],
+      "carType": "luxury",
+      "price": 1300,
+      "fare": 22,
+      "per_km": 11,
+      "passenger": 2,
+      "luggage": 1,
+      "gearbox": "automatic",
+      "carOption": "air conditioning",
+      "rating": 3,
+      "category": "trend",
+      "tags": ["luxury","three","1_5","air_conditioning"]
+    },
+    {
+      "id": 8,
+      "carName": "Suzuki",
+      "carImage": "assets/images/cab/car/6.png",
+      "carImages": [
+        {
+          "url": "assets/images/cab/car/14.jpg",
+          "fileType": "image"
+        },
+        {
+          "url": "assets/images/cab/car/15.jpg",
+          "fileType": "image"
+        }
+      ],
+      "carType": "medium",
+      "price": 1500,
+      "fare": 20,
+      "per_km": 12,
+      "passenger": 14,
+      "luggage": 2,
+      "gearbox": "manual",
+      "carOption": "manual",
+      "rating": 2,
+      "category": "latest",
+      "tags": ["medium","two","10_more","manual"]
+    }
+  ]
+}
