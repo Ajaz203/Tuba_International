@@ -1,0 +1,20 @@
+{
+  "hosting": {
+    "public": "dist/front/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "custom-404": {
+      "source": "**",
+      "destination": "/page/other-pages/404" 
+    }
+  }
+}

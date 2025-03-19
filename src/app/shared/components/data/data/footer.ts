@@ -46,7 +46,7 @@ export const footerAbout = [
   {
     id: 2,
     title: "about us",
-    path: "/page/other-pages/about-us-1",
+    path: "/page/other-pages/about-us-2",
   },
   {
     id: 3,

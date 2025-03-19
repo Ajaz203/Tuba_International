@@ -8,6 +8,7 @@ import { LogInComponent } from './components/pages/other-pages/log-in/log-in.com
 import { UserDashboardComponent } from './components/pages/other-pages/user-dashboard/user-dashboard.component';
 import { AdminDashboardComponent } from './components/Admin-panel/admin-dashboard/admin-dashboard.component';
 import { AdminLoginComponent } from './components/Admin-panel/admin-login/admin-login.component';
+import { ErrorPage404Component } from './components/pages/other-pages/error-page-404/error-page-404.component';
 // import { CabBookingComponent } from './components/pages/other-pages/cab-booking/cab-booking.component';
 
 export const routes: Routes = [
@@ -51,5 +52,7 @@ export const routes: Routes = [
         component:AdminLoginComponent
       },
      
-
+      { path: 'page/other-pages/404', component:ErrorPage404Component  },
+      // Catch-all route for 404
+      { path: '**', component:ErrorPage404Component  },
 ];
