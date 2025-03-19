@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "front": {
+    "Tuba_International": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -18,7 +18,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-          "outputPath": "dist/front",
+          "outputPath": "dist/Tuba_International",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -67,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "front:build:production"
+              "buildTarget": "Tuba_International:build:production"
             },
             "development": {
-              "buildTarget": "front:build:development"
+              "buildTarget": "Tuba_International:build:development"
             }
           },
           "defaultConfiguration": "development"
