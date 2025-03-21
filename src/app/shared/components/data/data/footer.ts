@@ -1,3 +1,5 @@
+import { UrlHandlingStrategy } from "@angular/router"
+
 export const topPlacesData = [
   {
     id: 1,
@@ -78,16 +80,17 @@ export const footerAbout = [
 
 export const footerUsefulLink = [
   
-  {
-    id: 2,
-    title: "our vehicle",
-    path: "/home/cab/classic",
-  },
-  {
-    id: 3,
-    title: "latest video",
-    path: "/page/element-pages/video",
-  },
+  // {
+  //   id: 2,
+  //   title: "our vehicle",
+  //   path: "/home/cab/classic",
+  // },
+  // {
+  //   id: 3,
+  //   title: "latest video",
+  //   path: "/page/element-pages/video",
+  //    url: "https://youtu.be/N1B4M1SmLVA?si=em5JMihDe0EJVz_v"
+  // },
   {
     id: 4,
     title: "services",

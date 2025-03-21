@@ -128,7 +128,7 @@ export class CommanLoginFormComponent implements OnInit {
   }
 
   toggleType(): void {
-    this.type = this.type === 'register' ? 'login' : 'register';
+    this.type = this.type === 'register' ? 'log-in' : 'register';
     this.router.navigate([`/page/other-pages/${this.type}`]);
   
     // Update validators dynamically

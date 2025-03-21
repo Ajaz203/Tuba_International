@@ -1,1 +1,0 @@
-import{Kc as o,_ as r,ba as i}from"./chunk-SEETC4WC.js";var c=(()=>{class t{constructor(e){this.http=e}pages(){return this.http.get("assets/json/pages/pages.json")}static{this.\u0275fac=function(s){return new(s||t)(i(o))}}static{this.\u0275prov=r({token:t,factory:t.\u0275fac,providedIn:"root"})}}return t})();export{c as a};
