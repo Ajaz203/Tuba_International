@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { flight, flights } from '../interface/flight';
@@ -86,6 +86,15 @@ getflight(data: any) {
 
   getFlightBookings(): Observable<any> {
     return this.http.get<any>('/api/flight-bookings'); // Replace with your actual API endpoint
+  }
+
+  sendBookingData(bookingData: any): Observable<HttpResponse<any>> {
+    return this.http.post<any>(`${this.apiUrl}bookFlight`, bookingData, { observe: 'response' });
+  }
+
+  // Fetch flights
+  fetchFlights(): Observable<HttpResponse<any>> {
+    return this.http.get<any>(`${this.apiUrl}getBookingData`, { observe: 'response' });
   }
 }
 

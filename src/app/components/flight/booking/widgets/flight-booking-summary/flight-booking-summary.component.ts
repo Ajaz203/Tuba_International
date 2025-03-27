@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlightService } from '../../../../../shared/services/flight.service';
 
@@ -9,9 +9,19 @@ import { FlightService } from '../../../../../shared/services/flight.service';
     standalone: true,
     imports: [CommonModule]
 })
-export class FlightBookingSummaryComponent {
-    @Input() flightDetails: any; // Define the input property
-    @Input() isLoading: boolean = false; // If you have this input as well
+export class FlightBookingSummaryComponent implements OnInit, OnChanges {
+    @Input() flightDetails: any;
+    @Input() isLoading: boolean = false;
 
- 
+    constructor(private flightService: FlightService) {}
+
+    ngOnInit() {
+        // No need to fetch data here as it comes from parent
+    }
+
+    ngOnChanges(changes: SimpleChanges) {
+        if (changes['flightDetails'] && changes['flightDetails'].currentValue) {
+            console.log('Flight details updated:', this.flightDetails);
+        }
+    }
 }

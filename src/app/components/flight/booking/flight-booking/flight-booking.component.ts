@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild ,TemplateRef} from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors, FormControl, FormArray } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -10,10 +10,10 @@ import { HeaderComponent } from '../../../../shared/components/header/header.com
 import { FlightService } from '../../../../shared/services/flight.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FlightSelectionModalComponent } from '../widgets/flight-selection-modal/flight-selection-modal.component';
-import { HttpClient ,HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 
 interface BookingData {
-    flight: any; 
+    flight: any;
     passenger: {
         name: string;
         email: string;
@@ -50,10 +50,10 @@ interface AdditionalPassenger {
         FormsModule,
         HeaderComponent,
         FlightBookingSummaryComponent,
-    
+
         FooterComponent,
         LayoutComponent,
-      
+
     ]
 })
 export class FlightBookingComponent implements OnInit {
@@ -68,7 +68,7 @@ export class FlightBookingComponent implements OnInit {
     errorMessage: string = '';
     isFormValid: boolean = false;
     @ViewChild('bookingSuccessModal') bookingSuccessModal: any;
-    selectedFlight: any;
+    // selectedFlight: any;
     bookingData: BookingData | null = null;
 
     public title = "Flight Booking";
@@ -115,23 +115,45 @@ export class FlightBookingComponent implements OnInit {
     passportControl: any;
     passportError: any;
 
+    selectedFlight: any = null; // Initially no flight selected
 
-  
+    selectFlight(flight: any) {
+        this.selectedFlight = flight;
+        // Update currentBooking with the selected flight details
+        this.currentBooking = {
+            flight_number: flight.flight_number,
+            airline: flight.airline,
+            image_link: flight.image_link,
+            departure_time: flight.departure_time,
+            arrival_time: flight.arrival_time,
+            departure_airport: flight.departure_airport,
+            arrival_airport: flight.arrival_airport,
+            duration: flight.duration,
+            baggage_allowance: flight.baggage_allowance,
+            travel_class: flight.travel_class,
+            fare: flight.fare,
+            taxes: flight.taxes,
+            total_price: flight.total_price,
+            is_best_price: flight.is_best_price
+        };
+        console.log('Updated currentBooking:', this.currentBooking);
+    }
+
 
     constructor(
         private fb: FormBuilder,
         private flightService: FlightService,
         public modalService: NgbModal,
         private http: HttpClient,
- 
+
     ) {
         this.initForm();
         this.minDate = new Date().toISOString().split('T')[0];
 
-        
+
     }
 
-   
+
 
     get additionalPassengersArray() {
         return this.flightForm.get('additionalPassengers') as FormArray;
@@ -157,8 +179,7 @@ export class FlightBookingComponent implements OnInit {
     private createPassengerForm() {
         return this.fb.group({
             name: ['', Validators.required],
-            dob: ['', Validators.required],
-            passportNumber: ['', Validators.required]
+            passportNumber: [''] // Made optional like the main form
         });
     }
 
@@ -265,26 +286,26 @@ export class FlightBookingComponent implements OnInit {
             this.bookingData = {
                 flight: this.selectedFlight,
                 passenger: {
-                  name: this.flightForm.get('name')?.value,
-                  email: this.flightForm.get('email')?.value,
-                  phone: this.flightForm.get('phone')?.value,
-                  passportNumber: this.flightForm.get('passportNumber')?.value,
-                  totalPassengers: this.flightForm.get('passengers')?.value,
-                  travelInsurance: this.flightForm.get('travel_insurance')?.value,
-                  airportPickup: this.flightForm.get('airport_pickup')?.value,
-                  additionalPassengers: this.flightForm.get('additionalPassengers')?.value.map((passenger: any) => ({
-                    name: passenger.name,
-                    dob: passenger.dob,
-                    passportNumber: passenger.passportNumber,
-                  })),
+                    name: this.flightForm.get('name')?.value,
+                    email: this.flightForm.get('email')?.value,
+                    phone: this.flightForm.get('phone')?.value,
+                    passportNumber: this.flightForm.get('passportNumber')?.value,
+                    totalPassengers: this.flightForm.get('passengers')?.value,
+                    travelInsurance: this.flightForm.get('travel_insurance')?.value,
+                    airportPickup: this.flightForm.get('airport_pickup')?.value,
+                    additionalPassengers: this.flightForm.get('additionalPassengers')?.value.map((passenger: any) => ({
+                        name: passenger.name,
+                        dob: passenger.dob,
+                        passportNumber: passenger.passportNumber,
+                    })),
                 },
                 journey: {
-                  from: this.flightForm.get('fromLocation')?.value,
-                  to: this.flightForm.get('toLocation')?.value,
-                  date: this.flightForm.get('departureDate')?.value,
+                    from: this.flightForm.get('fromLocation')?.value,
+                    to: this.flightForm.get('toLocation')?.value,
+                    date: this.flightForm.get('departureDate')?.value,
                 }
-              };
-              
+            };
+
 
             console.log('Booking Data:', this.bookingData);
 
@@ -298,7 +319,7 @@ export class FlightBookingComponent implements OnInit {
     ngOnInit() {
         document.documentElement.style.setProperty('--theme-color1', '66, 145, 184');
         document.documentElement.style.setProperty('--theme-color2', '66, 145, 184');
-        this.fetchFlights(); 
+        this.fetchFlights();
 
         // Simulate loading delay
         setTimeout(() => {
@@ -369,7 +390,7 @@ export class FlightBookingComponent implements OnInit {
                 Validators.required,
                 Validators.pattern(/^[0-9]{10}$/)
             ]],
-            passportNumber: [''],
+            passportNumber: [''], // Removed validators to make it optional
             travel_insurance: [false],
             airport_pickup: [false],
             additionalPassengers: this.fb.array([])
@@ -380,53 +401,58 @@ export class FlightBookingComponent implements OnInit {
             this.updateAdditionalPassengers(value);
         });
     }
-    private sendBookingData(bookingData: any) {
+    sendBookingData(bookingData: any) {
         console.log('Booking Data:', bookingData);
-        this.http.post('https://tuba-mongo-backend.onrender.com/bookFlight', bookingData, { observe: 'response' }).subscribe(
+        this.isSubmitting = true;
+
+        this.flightService.sendBookingData(bookingData).subscribe(
             (response: HttpResponse<any>) => {
                 if (response.status === 200 || response.status === 201) {
                     console.log('Booking data sent successfully:', response);
-                    this.openSuccessModal(); // Open success modal
+                    this.openSuccessModal();
                 } else {
-                    this.showErrorMessage('Unexpected response from the server.'); // Handle unexpected response
+                    this.showErrorMessage('Unexpected response from the server.');
                 }
-                this.isSubmitting = false; // Reset submitting state
+                this.isSubmitting = false;
             },
-            error => {
+            (error) => {
                 console.error('Error sending booking data:', error);
-                this.isSubmitting = false; // Reset submitting state
-                this.showErrorMessage('Failed to send booking data. Please try again.'); // Show error message
+                this.isSubmitting = false;
+                this.showErrorMessage('Failed to send booking data. Please try again.');
             }
         );
-    } 
-
-    private showErrorMessage(message: string) {
-        alert(message); 
     }
 
-    private fetchFlights() {
-        this.http.get('https://tuba-mongo-backend.onrender.com/getBookingData', { observe: 'response' }).subscribe(
-            (response: HttpResponse<any>) => { // Specify the response type
+    // Fetch flights
+    fetchFlights() {
+        this.flightService.fetchFlights().subscribe(
+            (response: HttpResponse<any>) => {
                 if (response.status === 200) {
-                    this.flights = response.body; // Assuming the flight data is in the response body
+                    this.flights = response.body;
                     console.log('Fetched flights successfully:', this.flights);
                 } else {
-                    this.showErrorMessage('Unexpected response from the server while fetching flights.'); // Handle unexpected response
+                    this.showErrorMessage('Unexpected response from the server while fetching flights.');
                 }
             },
-            error => {
+            (error) => {
                 console.error('Error fetching flights:', error);
-                this.showErrorMessage('Failed to fetch flights. Please try again.'); // Show error message
+                this.showErrorMessage('Failed to fetch flights. Please try again.');
             }
         );
     }
+
+    // Show error message
+    private showErrorMessage(message: string) {
+        alert(message);
+    }
+
+    // Open success modal
     private openSuccessModal() {
-        // Open the success modal
-        const modalRef = this.modalService.open(this.bookingSuccessModal, {
+        this.modalService.open(this.bookingSuccessModal, {
             centered: true,
             backdrop: 'static',
             size: 'md',
-            windowClass: 'booking-success-modal'
+            windowClass: 'booking-success-modal',
         });
     }
     private showSuccessMessage() {
@@ -497,14 +523,24 @@ export class FlightBookingComponent implements OnInit {
             }
         });
 
+        // Validate additional passengers if any
+        if (this.additionalPassengersArray.length > 0) {
+            this.additionalPassengersArray.controls.forEach(control => {
+                if (control.get('name')?.invalid) {
+                    control.get('name')?.markAsTouched();
+                    isValid = false;
+                }
+            });
+        }
+
         if (!isValid) {
-            this.showErrorMessage('Please fill in all passenger details correctly');
+            this.showErrorMessage('Please fill in all required passenger details correctly');
         }
 
         return isValid;
     }
-   
-    
+
+
 
     // Custom validator for future date
     private futureDateValidator() {
@@ -613,7 +649,7 @@ export class FlightBookingComponent implements OnInit {
         this.errorMessage = message; // Set the error message
         this.modalService.open(this.errorModal, { centered: true }); // Open the modal
     }
-   
+
 
     private showFlightSelectionModal(flights: any[]): void {
         const modalRef = this.modalService.open(FlightSelectionModalComponent, {
@@ -628,8 +664,7 @@ export class FlightBookingComponent implements OnInit {
 
         modalRef.result.then((selectedFlight) => {
             if (selectedFlight) {
-                this.selectedFlight = selectedFlight; // Ensure this is set correctly
-                console.log('Selected Flight:', this.selectedFlight); // Log the selected flight
+                this.selectFlight(selectedFlight); // Use the selectFlight method to update both selectedFlight and currentBooking
                 this.currentStep++; // Move to passenger details
             }
         }, (dismissReason) => {

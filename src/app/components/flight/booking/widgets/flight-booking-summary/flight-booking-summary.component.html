@@ -1,4 +1,3 @@
-
 <div class="neo-summary loading" *ngIf="isLoading">
     <div class="skeleton-loader">
         <div class="skeleton-line"></div>
@@ -7,96 +6,88 @@
     </div>
 </div>
 
-
-<div class="neo-summary" *ngIf="!isLoading">
-  
+<div class="neo-summary" [class.no-data]="!flightDetails">
     <div class="summary-header">
-      <div class="airline-brand">
-      
-        <div class="robotic-frame">
-            <div class="target-box"></div>
-            <div class="scan-lines"></div>
-            <div class="corner-marks">
-                <span></span><span></span><span></span><span></span>
+        <div class="airline-brand">
+            <div class="robotic-frame">
+                <div class="target-box"></div>
+                <div class="scan-lines"></div>
+                <div class="corner-marks">
+                    <span></span><span></span><span></span><span></span>
+                </div>
+                <div class="data-readout">
+                    <div class="data-line">STATUS: {{flightDetails?.status || 'SELECT FLIGHT'}}</div>
+                    <div class="data-line">FLIGHT: {{flightDetails?.flight_number || 'N/A'}}</div>
+                    <div class="data-line">SYSTEM: ACTIVE</div>
+                </div>
             </div>
-            <div class="data-readout">
-                <div class="data-line">STATUS: ANALYZING</div>
-                <div class="data-line">FLIGHT: {{flightDetails?.flightNumber || 'TI-123'}}</div>
-                <div class="data-line">SYSTEM: ACTIVE</div>
+            
+            <div class="plane-container">
+                <div class="mechanical-part left"></div>
+                <div class="mechanical-part right"></div>
+                <img [src]="flightDetails?.image_link || 'assets/imges2/airliner-DFA4YMAT.png'" alt="Airline" class="flying-plane">
+                <div class="targeting-dot"></div>
             </div>
-        </div>
-        
-      
-        <div class="plane-container">
-            <div class="mechanical-part left"></div>
-            <div class="mechanical-part right"></div>
-            <img src="assets/imges2/airliner-DFA4YMAT.png" alt="Airline" class="flying-plane">
-            <div class="targeting-dot"></div>
-        </div>
-        
-        <div class="price-badge">Best Price</div>
+            
+            <div class="price-badge" *ngIf="flightDetails?.is_best_price">Best Price</div>
         </div>
     </div>
 
-
     <div class="flight-route">
         <div class="route-point departure">
-            <div class="time">{{flightDetails?.departureTime || '10:00 AM'}}</div>
-            <div class="city">{{flightDetails?.from || 'Delhi (DEL)'}}</div>
+            <div class="time">{{flightDetails?.departure_time ? (flightDetails.departure_time | date:'shortTime') : '--:--'}}</div>
+            <div class="city">{{flightDetails?.departure_airport || 'Select Departure'}}</div>
         </div>
         <div class="route-line">
             <div class="line"></div>
             <i class="fas fa-plane"></i>
         </div>
         <div class="route-point arrival">
-            <div class="time">{{flightDetails?.arrivalTime || '12:00 PM'}}</div>
-            <div class="city">{{flightDetails?.to || 'Mumbai (BOM)'}}</div>
+            <div class="time">{{flightDetails?.arrival_time ? (flightDetails.arrival_time | date:'shortTime') : '--:--'}}</div>
+            <div class="city">{{flightDetails?.arrival_airport || 'Select Arrival'}}</div>
         </div>
     </div>
 
-  
     <div class="flight-info">
         <div class="info-item">
             <i class="fas fa-clock"></i>
             <div class="info-content">
                 <span class="label">Duration</span>
-                <span class="value">2h 00m</span>
+                <span class="value">{{flightDetails?.duration || '--:--'}}</span>
             </div>
         </div>
         <div class="info-item">
             <i class="fas fa-suitcase"></i>
             <div class="info-content">
                 <span class="label">Baggage</span>
-                <span class="value">15 KG</span>
+                <span class="value">{{flightDetails?.baggage_allowance || '15 KG'}}</span>
             </div>
         </div>
         <div class="info-item">
             <i class="fas fa-couch"></i>
             <div class="info-content">
                 <span class="label">Class</span>
-                <span class="value">Economy</span>
+                <span class="value">{{flightDetails?.travel_class === 1 ? 'Economy' : (flightDetails?.travel_class === 2 ? 'Business' : 'Select Class')}}</span>
             </div>
         </div>
     </div>
-
 
     <div class="price-breakdown">
         <h3>Price Details</h3>
         <div class="price-item">
             <span>Base Fare</span>
-            <span class="amount">₹4,500</span>
+            <span class="amount">₹{{flightDetails?.fare || '0'}}</span>
         </div>
         <div class="price-item">
             <span>Taxes & Fees</span>
-            <span class="amount">₹500</span>
+            <span class="amount">₹{{flightDetails?.taxes || '0'}}</span>
         </div>
         <div class="price-item total">
             <span>Total Amount</span>
-            <span class="amount">₹5,000</span>
+            <span class="amount">₹{{flightDetails?.total_price || '0'}}</span>
         </div>
     </div>
 
-   
     <div class="features-section">
         <h3>What's Included</h3>
         <div class="features-grid">
@@ -119,7 +110,6 @@
         </div>
     </div>
 
-  
     <div class="support-section">
         <i class="fas fa-headset"></i>
         <div class="support-content">
